@@ -1,125 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DSA 100 — LeetCode Roadmap | C++ & Java</title>
-  <meta name="description" content="100-question LeetCode roadmap covering Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, and Dynamic Programming. Track your progress with clickable LeetCode links." />
-  <meta name="theme-color" content="#0d1117" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DSA 100 — LeetCode Roadmap | C++ & Java</title>
+<meta name="description" content="100 LeetCode problems organized by topic — Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, DP. Track your progress with clickable LeetCode links."/>
+<meta name="theme-color" content="#0d1117"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── Reset ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ── Variables ──────────────────────────────────────────────── */
+:root{
+  --bg:#0d1117;--sur:#161b22;--elv:#21262d;
+  --brd:#30363d;--brd2:#21262d;
+  --t1:#e6edf3;--t2:#8b949e;--t3:#6e7681;
+  --lnk:#58a6ff;--lnkh:#79c0ff;
+  --acc:#58a6ff;
+  --e:#3fb950;--eb:rgba(63,185,80,.12);--ebo:rgba(63,185,80,.28);
+  --m:#d29922;--mb:rgba(210,153,34,.12);--mbo:rgba(210,153,34,.28);
+  --h:#f85149;--hb:rgba(248,81,73,.12);--hbo:rgba(248,81,73,.28);
+  --r:5px;--rs:3px;
+  --mono:'JetBrains Mono','Fira Code',ui-monospace,monospace;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+html{scroll-behavior:smooth;scroll-padding-top:168px}
+body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--sans)}
+
+/* ── Sticky wrapper ─────────────────────────────────────────── */
+.sticky{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--brd)}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.hd{border-bottom:1px solid var(--brd2)}
+.hd-in{max-width:960px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hd-l{}
+.hd-title{font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.2;color:var(--t1)}
+.hd-sub{font-size:11px;color:var(--t3);margin-top:2px}
+.hd-r{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+
+/* Stats chips */
+.chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-size:11px;font-weight:600;padding:2px 7px;border-radius:var(--rs);border:1px solid var(--brd);background:var(--sur);color:var(--t2);white-space:nowrap}
+.chip.tot{color:var(--t1)}
+.chip.e{color:var(--e);background:var(--eb);border-color:var(--ebo)}
+.chip.m{color:var(--m);background:var(--mb);border-color:var(--mbo)}
+.chip.h{color:var(--h);background:var(--hb);border-color:var(--hbo)}
+
+/* Progress row */
+.prog{display:flex;align-items:center;gap:8px}
+.prog-lbl{font-size:12px;color:var(--t2);white-space:nowrap}
+.prog-lbl strong{color:var(--t1)}
+.prog-track{width:110px;height:4px;background:var(--elv);border-radius:99px;overflow:hidden;flex-shrink:0}
+.prog-fill{height:100%;width:0%;background:var(--acc);border-radius:99px;transition:width .25s ease}
+.prog-pct{font-size:11px;font-weight:600;color:var(--t3);font-family:var(--mono);min-width:30px;text-align:right}
+
+/* ── Controls ───────────────────────────────────────────────── */
+.ctrl{border-bottom:1px solid var(--brd2)}
+.ctrl-in{max-width:960px;margin:0 auto;padding:7px 18px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+
+/* Search */
+.srch{position:relative;flex:1;min-width:160px}
+.srch-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:13px;height:13px;color:var(--t3);pointer-events:none}
+.srch-inp{width:100%;padding:6px 26px 6px 28px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--r);color:var(--t1);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .12s}
+.srch-inp::placeholder{color:var(--t3)}
+.srch-inp:focus{border-color:var(--acc)}
+.srch-clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--t3);cursor:pointer;font-size:11px;padding:2px 4px;display:none;line-height:1}
+.srch-clr:hover{color:var(--t1)}
+
+/* Filter buttons */
+.fgrp{display:flex;gap:3px;flex-wrap:wrap}
+.fb{padding:4px 9px;background:transparent;border:1px solid var(--brd);border-radius:var(--rs);color:var(--t2);font-size:12px;font-weight:500;cursor:pointer;transition:all .1s;white-space:nowrap}
+.fb:hover{border-color:var(--t3);color:var(--t1)}
+.fb.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.fb[data-f="easy"].on{background:var(--e);border-color:var(--e)}
+.fb[data-f="medium"].on{background:var(--m);border-color:var(--m)}
+.fb[data-f="hard"].on{background:var(--h);border-color:var(--h)}
+
+/* Action buttons */
+.acts{display:flex;gap:5px;margin-left:auto}
+.btn{padding:5px 11px;border-radius:var(--rs);border:1px solid var(--brd);background:var(--sur);color:var(--t2);font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:3px;transition:all .1s;white-space:nowrap}
+.btn:hover{border-color:var(--t3);color:var(--t1)}
+.btn-r{color:var(--h);border-color:var(--hbo)}
+.btn-r:hover{background:var(--hb);border-color:var(--h);color:var(--h)}
+
+/* ── Topic nav ──────────────────────────────────────────────── */
+.tnav{overflow-x:auto;scrollbar-width:none}
+.tnav::-webkit-scrollbar{display:none}
+.tnav-in{max-width:960px;margin:0 auto;padding:0 18px;display:flex}
+.tl{padding:7px 12px;font-size:12px;font-weight:500;color:var(--t2);border-bottom:2px solid transparent;transition:all .1s;white-space:nowrap;cursor:pointer;text-decoration:none}
+.tl:hover{color:var(--t1);border-bottom-color:var(--brd)}
+.tl.on{color:var(--acc);border-bottom-color:var(--acc)}
+
+/* ── Main ───────────────────────────────────────────────────── */
+.main{max-width:960px;margin:0 auto;padding:20px 18px 64px}
+
+/* Results info */
+.rinfo{display:none;font-size:12px;color:var(--t3);margin-bottom:14px;padding:5px 9px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--rs)}
+
+/* ── Topic sections ─────────────────────────────────────────── */
+.sec{margin-bottom:30px}
+.sec-hdr{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--brd);margin-bottom:0}
+.sec-name{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t1)}
+.sec-cnt{font-size:11px;color:var(--t3);font-family:var(--mono)}
+.sec-done{margin-left:auto;font-size:11px;font-weight:600;color:var(--t3);font-family:var(--mono)}
+.sec-done.ok{color:var(--e)}
+
+/* ── Table ──────────────────────────────────────────────────── */
+.qt{width:100%;border-collapse:collapse;table-layout:fixed}
+.qt .cn{width:42px}.qt .cd{width:88px}.qt .cs{width:50px}
+/* .cp takes remaining */
+
+.qt thead th{padding:5px 8px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--t3);border-bottom:1px solid var(--brd2);text-align:left}
+.qt thead th.cn{text-align:center}
+.qt thead th.cs{text-align:center}
+
+.qr{border-bottom:1px solid var(--brd2);transition:background .1s}
+.qr:last-child{border-bottom:none}
+.qr:hover{background:var(--sur)}
+.qr td{padding:9px 8px;vertical-align:middle}
+
+/* Number cell */
+.cn{text-align:center;font-family:var(--mono);font-size:12px;color:var(--t3)}
+
+/* Problem link */
+.ql{color:var(--t1);font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:color .1s}
+.ql:hover{color:var(--lnkh)}
+.ql:hover .eli{opacity:1}
+.eli{opacity:0;color:var(--t3);flex-shrink:0;transition:opacity .1s}
+
+/* Difficulty badge */
+.db{display:inline-block;padding:2px 6px;border-radius:var(--rs);font-size:11px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.de{color:var(--e);background:var(--eb);border-color:var(--ebo)}
+.dm{color:var(--m);background:var(--mb);border-color:var(--mbo)}
+.dh{color:var(--h);background:var(--hb);border-color:var(--hbo)}
+
+/* Checkbox */
+.cs{text-align:center}
+.cb{appearance:none;-webkit-appearance:none;width:15px;height:15px;border:1.5px solid var(--brd);border-radius:3px;background:transparent;cursor:pointer;position:relative;vertical-align:middle;transition:all .12s;display:inline-block}
+.cb:hover{border-color:var(--acc)}
+.cb:checked{background:var(--acc);border-color:var(--acc)}
+.cb:checked::after{content:'';position:absolute;left:3px;top:1px;width:5px;height:7px;border:1.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg)}
+
+/* Done row */
+.rd .ql{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--t3)}
+.rd .cn{opacity:.4}
+.rd .db{opacity:.4}
+
+/* ── Empty ──────────────────────────────────────────────────── */
+.empty{display:none;flex-direction:column;align-items:center;gap:10px;padding:60px 20px;color:var(--t3);text-align:center}
+.empty-ico{font-size:32px}
+.empty p{font-size:14px}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.foot{border-top:1px solid var(--brd2);padding:18px 18px;text-align:center;font-size:12px;color:var(--t3)}
+.foot a{color:var(--lnk)}
+.foot a:hover{text-decoration:underline}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media(max-width:640px){
+  html{scroll-padding-top:210px}
+  .hd-in{padding:8px 12px}
+  .hd-r{align-items:flex-start;margin-left:0;width:100%}
+  .chips{justify-content:flex-start}
+  .prog{justify-content:flex-start}
+  .prog-track{width:80px}
+  .ctrl-in{padding:6px 12px}
+  .acts{margin-left:0}
+  .tnav-in{padding:0 12px}
+  .main{padding:14px 12px 48px}
+  .qt .cn,.qt thead th.cn{display:none}
+  .qt .cd{width:72px}
+  .ql{font-size:12px}
+}
+@media(max-width:400px){
+  .fb{padding:3px 6px;font-size:11px}
+  .chip{font-size:10px;padding:2px 5px}
+}
+</style>
 </head>
 <body>
 
-  <!-- ── STICKY TOP (header + controls + topic nav) ──────────────────────── -->
-  <div class="sticky-top">
+<!-- ── STICKY HEADER ─────────────────────────────────────────── -->
+<div class="sticky">
 
-    <!-- Header -->
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="header-left">
-          <h1 class="site-title">DSA 100</h1>
-          <span class="site-subtitle">LeetCode Roadmap — Beginner to Interview Ready &nbsp;·&nbsp; C++ + Java</span>
-        </div>
-        <div class="header-right">
-          <div class="stats-row">
-            <span class="stat-chip total">100 Total</span>
-            <span class="stat-chip easy">50 Easy</span>
-            <span class="stat-chip medium">30 Medium</span>
-            <span class="stat-chip hard">20 Hard</span>
-          </div>
-          <div class="progress-row">
-            <span class="progress-label">Solved: <strong id="solved-count">0</strong> / 100</span>
-            <div class="progress-track">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
-            <span class="progress-pct" id="progress-pct">0%</span>
-          </div>
-        </div>
+  <header class="hd">
+    <div class="hd-in">
+      <div class="hd-l">
+        <div class="hd-title">DSA 100</div>
+        <div class="hd-sub">LeetCode Roadmap — C++ &amp; Java · Beginner to Interview Ready</div>
       </div>
-    </header>
-
-    <!-- Controls -->
-    <div class="controls-bar">
-      <div class="controls-inner">
-        <!-- Search -->
-        <div class="search-wrap">
-          <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-          </svg>
-          <input
-            type="search"
-            id="search-input"
-            class="search-input"
-            placeholder="Search questions, topics, difficulty..."
-            autocomplete="off"
-            spellcheck="false"
-          />
-          <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+      <div class="hd-r">
+        <div class="chips">
+          <span class="chip tot">100 Total</span>
+          <span class="chip e">50 Easy</span>
+          <span class="chip m">30 Medium</span>
+          <span class="chip h">20 Hard</span>
         </div>
-
-        <!-- Filters -->
-        <div class="filter-group" id="filter-group" role="group" aria-label="Filter by difficulty">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="easy">Easy</button>
-          <button class="filter-btn" data-filter="medium">Medium</button>
-          <button class="filter-btn" data-filter="hard">Hard</button>
-          <button class="filter-btn" data-filter="done">✓ Done</button>
-          <button class="filter-btn" data-filter="pending">○ Pending</button>
-        </div>
-
-        <!-- Actions -->
-        <div class="action-group">
-          <a
-            href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf"
-            download
-            class="btn"
-            title="Download PDF with clickable LeetCode links"
-          >↓ PDF</a>
-          <button id="reset-btn" class="btn btn-danger" title="Reset all progress">Reset</button>
+        <div class="prog">
+          <span class="prog-lbl">Solved: <strong id="sn">0</strong> / 100</span>
+          <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
+          <span class="prog-pct" id="pp">0%</span>
         </div>
       </div>
     </div>
+  </header>
 
-    <!-- Topic navigation -->
-    <nav class="topic-nav" aria-label="Jump to topic">
-      <div class="topic-nav-inner">
-        <a class="topic-link" data-id="arrays"     href="#topic-arrays">Arrays</a>
-        <a class="topic-link" data-id="strings"    href="#topic-strings">Strings</a>
-        <a class="topic-link" data-id="linked-list"href="#topic-linked-list">Linked List</a>
-        <a class="topic-link" data-id="stack-queue"href="#topic-stack-queue">Stack / Queue</a>
-        <a class="topic-link" data-id="trees"      href="#topic-trees">Trees</a>
-        <a class="topic-link" data-id="graphs"     href="#topic-graphs">Graphs</a>
-        <a class="topic-link" data-id="dp"         href="#topic-dp">DP</a>
+  <div class="ctrl">
+    <div class="ctrl-in">
+      <div class="srch">
+        <svg class="srch-ico" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+        </svg>
+        <input id="si" class="srch-inp" type="search" placeholder="Search questions, topics, difficulty..." autocomplete="off" spellcheck="false"/>
+        <button class="srch-clr" id="sx" aria-label="Clear search">✕</button>
       </div>
-    </nav>
-
-  </div><!-- /.sticky-top -->
-
-  <!-- ── MAIN CONTENT ─────────────────────────────────────────────────────── -->
-  <main class="main-content" id="main-content" role="main">
-    <div id="results-info" class="results-info" style="display:none;"></div>
-    <div id="questions-container"></div>
-    <div id="empty-state" class="empty-state" style="display:none;">
-      <div class="empty-icon">🔍</div>
-      <p>No questions match your search or filter.</p>
-      <button onclick="clearSearch()" class="btn">Clear Search</button>
+      <div class="fgrp" id="fg">
+        <button class="fb on" data-f="all">All</button>
+        <button class="fb" data-f="easy">Easy</button>
+        <button class="fb" data-f="medium">Medium</button>
+        <button class="fb" data-f="hard">Hard</button>
+        <button class="fb" data-f="done">✓ Done</button>
+        <button class="fb" data-f="pending">○ Pending</button>
+      </div>
+      <div class="acts">
+        <a href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf" download class="btn" title="Download PDF with clickable links">↓ PDF</a>
+        <button id="rb" class="btn btn-r">Reset</button>
+      </div>
     </div>
-  </main>
+  </div>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <p>
-      Pehle 30–45 min khud attempt karo → daily session mein discuss karo → C++ + Java implement karo → next day revise
-      &nbsp;·&nbsp;
-      <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </footer>
+  <nav class="tnav" aria-label="Jump to topic">
+    <div class="tnav-in">
+      <a class="tl" data-id="arrays" href="#s-arrays">Arrays</a>
+      <a class="tl" data-id="strings" href="#s-strings">Strings</a>
+      <a class="tl" data-id="linked-list" href="#s-linked-list">Linked List</a>
+      <a class="tl" data-id="stack-queue" href="#s-stack-queue">Stack / Queue</a>
+      <a class="tl" data-id="trees" href="#s-trees">Trees</a>
+      <a class="tl" data-id="graphs" href="#s-graphs">Graphs</a>
+      <a class="tl" data-id="dp" href="#s-dp">DP</a>
+    </div>
+  </nav>
 
-  <!-- Scripts — data first, then app -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+</div>
+
+<!-- ── MAIN ──────────────────────────────────────────────────── -->
+<main class="main">
+  <div id="ri" class="rinfo"></div>
+  <div id="qc"></div>
+  <div id="es" class="empty">
+    <div class="empty-ico">🔍</div>
+    <p>No questions found. Try a different search or filter.</p>
+    <button onclick="clrSrch()" class="btn" style="margin-top:4px">Clear Search</button>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>Pehle 30–45 min khud attempt karo · daily session mein discuss karo · C++ + Java implement karo
+  &nbsp;·&nbsp; <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+<script>
+// ────────────────────────────────────────────────────────────────────────────
+// DATA  —  Single source of truth: 100 questions, exact from PDF
+// 50 Easy · 30 Medium · 20 Hard
+// ────────────────────────────────────────────────────────────────────────────
+const TOPICS = ["Arrays","Strings","Linked List","Stack / Queue","Trees","Graphs","Dynamic Programming"];
+const TIDS   = {"Arrays":"arrays","Strings":"strings","Linked List":"linked-list","Stack / Queue":"stack-queue","Trees":"trees","Graphs":"graphs","Dynamic Programming":"dp"};
+
+const P = [
+// ── ARRAYS ── 15 Easy · 6 Medium · 4 Hard = 25 ─────────────────────────────
+{id:1, t:"Arrays",title:"Two Sum",                            d:"Easy",  u:"https://leetcode.com/problems/two-sum/"},
+{id:2, t:"Arrays",title:"Best Time to Buy and Sell Stock",    d:"Easy",  u:"https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"},
+{id:3, t:"Arrays",title:"Contains Duplicate",                 d:"Easy",  u:"https://leetcode.com/problems/contains-duplicate/"},
+{id:4, t:"Arrays",title:"Maximum Subarray",                   d:"Easy",  u:"https://leetcode.com/problems/maximum-subarray/"},
+{id:5, t:"Arrays",title:"Plus One",                           d:"Easy",  u:"https://leetcode.com/problems/plus-one/"},
+{id:6, t:"Arrays",title:"Remove Duplicates from Sorted Array",d:"Easy",  u:"https://leetcode.com/problems/remove-duplicates-from-sorted-array/"},
+{id:7, t:"Arrays",title:"Remove Element",                     d:"Easy",  u:"https://leetcode.com/problems/remove-element/"},
+{id:8, t:"Arrays",title:"Merge Sorted Array",                 d:"Easy",  u:"https://leetcode.com/problems/merge-sorted-array/"},
+{id:9, t:"Arrays",title:"Intersection of Two Arrays",         d:"Easy",  u:"https://leetcode.com/problems/intersection-of-two-arrays/"},
+{id:10,t:"Arrays",title:"Move Zeroes",                        d:"Easy",  u:"https://leetcode.com/problems/move-zeroes/"},
+{id:11,t:"Arrays",title:"Majority Element",                   d:"Easy",  u:"https://leetcode.com/problems/majority-element/"},
+{id:12,t:"Arrays",title:"Missing Number",                     d:"Easy",  u:"https://leetcode.com/problems/missing-number/"},
+{id:13,t:"Arrays",title:"Single Number",                      d:"Easy",  u:"https://leetcode.com/problems/single-number/"},
+{id:14,t:"Arrays",title:"Find Pivot Index",                   d:"Easy",  u:"https://leetcode.com/problems/find-pivot-index/"},
+{id:15,t:"Arrays",title:"Running Sum of 1d Array",            d:"Easy",  u:"https://leetcode.com/problems/running-sum-of-1d-array/"},
+{id:16,t:"Arrays",title:"Merge Intervals",                    d:"Medium",u:"https://leetcode.com/problems/merge-intervals/"},
+{id:17,t:"Arrays",title:"3Sum",                               d:"Medium",u:"https://leetcode.com/problems/3sum/"},
+{id:18,t:"Arrays",title:"Product of Array Except Self",       d:"Medium",u:"https://leetcode.com/problems/product-of-array-except-self/"},
+{id:19,t:"Arrays",title:"Maximum Product Subarray",           d:"Medium",u:"https://leetcode.com/problems/maximum-product-subarray/"},
+{id:20,t:"Arrays",title:"Subarray Sum Equals K",              d:"Medium",u:"https://leetcode.com/problems/subarray-sum-equals-k/"},
+{id:21,t:"Arrays",title:"Container With Most Water",          d:"Medium",u:"https://leetcode.com/problems/container-with-most-water/"},
+{id:22,t:"Arrays",title:"Sliding Window Median",              d:"Hard",  u:"https://leetcode.com/problems/sliding-window-median/"},
+{id:23,t:"Arrays",title:"Trapping Rain Water",                d:"Hard",  u:"https://leetcode.com/problems/trapping-rain-water/"},
+{id:24,t:"Arrays",title:"First Missing Positive",             d:"Hard",  u:"https://leetcode.com/problems/first-missing-positive/"},
+{id:25,t:"Arrays",title:"Median of Two Sorted Arrays",        d:"Hard",  u:"https://leetcode.com/problems/median-of-two-sorted-arrays/"},
+
+// ── STRINGS ── 8 Easy · 4 Medium · 3 Hard = 15 ──────────────────────────────
+{id:26,t:"Strings",title:"Valid Anagram",                                   d:"Easy",  u:"https://leetcode.com/problems/valid-anagram/"},
+{id:27,t:"Strings",title:"Valid Palindrome",                                d:"Easy",  u:"https://leetcode.com/problems/valid-palindrome/"},
+{id:28,t:"Strings",title:"Longest Common Prefix",                           d:"Easy",  u:"https://leetcode.com/problems/longest-common-prefix/"},
+{id:29,t:"Strings",title:"Roman to Integer",                                d:"Easy",  u:"https://leetcode.com/problems/roman-to-integer/"},
+{id:30,t:"Strings",title:"Length of Last Word",                             d:"Easy",  u:"https://leetcode.com/problems/length-of-last-word/"},
+{id:31,t:"Strings",title:"Reverse String",                                  d:"Easy",  u:"https://leetcode.com/problems/reverse-string/"},
+{id:32,t:"Strings",title:"Is Subsequence",                                  d:"Easy",  u:"https://leetcode.com/problems/is-subsequence/"},
+{id:33,t:"Strings",title:"First Unique Character in a String",              d:"Easy",  u:"https://leetcode.com/problems/first-unique-character-in-a-string/"},
+{id:34,t:"Strings",title:"Longest Substring Without Repeating Characters",  d:"Medium",u:"https://leetcode.com/problems/longest-substring-without-repeating-characters/"},
+{id:35,t:"Strings",title:"Group Anagrams",                                  d:"Medium",u:"https://leetcode.com/problems/group-anagrams/"},
+{id:36,t:"Strings",title:"Longest Palindromic Substring",                   d:"Medium",u:"https://leetcode.com/problems/longest-palindromic-substring/"},
+{id:37,t:"Strings",title:"String to Integer (atoi)",                        d:"Medium",u:"https://leetcode.com/problems/string-to-integer-atoi/"},
+{id:38,t:"Strings",title:"Minimum Window Substring",                        d:"Hard",  u:"https://leetcode.com/problems/minimum-window-substring/"},
+{id:39,t:"Strings",title:"Regular Expression Matching",                     d:"Hard",  u:"https://leetcode.com/problems/regular-expression-matching/"},
+{id:40,t:"Strings",title:"Wildcard Matching",                               d:"Hard",  u:"https://leetcode.com/problems/wildcard-matching/"},
+
+// ── LINKED LIST ── 8 Easy · 4 Medium · 3 Hard = 15 ──────────────────────────
+{id:41,t:"Linked List",title:"Reverse Linked List",                d:"Easy",  u:"https://leetcode.com/problems/reverse-linked-list/"},
+{id:42,t:"Linked List",title:"Merge Two Sorted Lists",             d:"Easy",  u:"https://leetcode.com/problems/merge-two-sorted-lists/"},
+{id:43,t:"Linked List",title:"Linked List Cycle",                  d:"Easy",  u:"https://leetcode.com/problems/linked-list-cycle/"},
+{id:44,t:"Linked List",title:"Middle of the Linked List",          d:"Easy",  u:"https://leetcode.com/problems/middle-of-the-linked-list/"},
+{id:45,t:"Linked List",title:"Remove Linked List Elements",        d:"Easy",  u:"https://leetcode.com/problems/remove-linked-list-elements/"},
+{id:46,t:"Linked List",title:"Palindrome Linked List",             d:"Easy",  u:"https://leetcode.com/problems/palindrome-linked-list/"},
+{id:47,t:"Linked List",title:"Intersection of Two Linked Lists",   d:"Easy",  u:"https://leetcode.com/problems/intersection-of-two-linked-lists/"},
+{id:48,t:"Linked List",title:"Remove Duplicates from Sorted List", d:"Easy",  u:"https://leetcode.com/problems/remove-duplicates-from-sorted-list/"},
+{id:49,t:"Linked List",title:"Remove Nth Node From End of List",   d:"Medium",u:"https://leetcode.com/problems/remove-nth-node-from-end-of-list/"},
+{id:50,t:"Linked List",title:"Add Two Numbers",                    d:"Medium",u:"https://leetcode.com/problems/add-two-numbers/"},
+{id:51,t:"Linked List",title:"Reorder List",                       d:"Medium",u:"https://leetcode.com/problems/reorder-list/"},
+{id:52,t:"Linked List",title:"Copy List with Random Pointer",      d:"Medium",u:"https://leetcode.com/problems/copy-list-with-random-pointer/"},
+{id:53,t:"Linked List",title:"Reverse Nodes in k-Group",           d:"Hard",  u:"https://leetcode.com/problems/reverse-nodes-in-k-group/"},
+{id:54,t:"Linked List",title:"Merge k Sorted Lists",               d:"Hard",  u:"https://leetcode.com/problems/merge-k-sorted-lists/"},
+{id:55,t:"Linked List",title:"LRU Cache",                          d:"Hard",  u:"https://leetcode.com/problems/lru-cache/"},
+
+// ── STACK / QUEUE ── 6 Easy · 4 Medium · 3 Hard = 13 ────────────────────────
+{id:56,t:"Stack / Queue",title:"Implement Queue using Stacks",       d:"Easy",  u:"https://leetcode.com/problems/implement-queue-using-stacks/"},
+{id:57,t:"Stack / Queue",title:"Implement Stack using Queues",       d:"Easy",  u:"https://leetcode.com/problems/implement-stack-using-queues/"},
+{id:58,t:"Stack / Queue",title:"Next Greater Element I",             d:"Easy",  u:"https://leetcode.com/problems/next-greater-element-i/"},
+{id:59,t:"Stack / Queue",title:"Baseball Game",                      d:"Easy",  u:"https://leetcode.com/problems/baseball-game/"},
+{id:60,t:"Stack / Queue",title:"Backspace String Compare",           d:"Easy",  u:"https://leetcode.com/problems/backspace-string-compare/"},
+{id:61,t:"Stack / Queue",title:"Valid Parentheses",                  d:"Easy",  u:"https://leetcode.com/problems/valid-parentheses/"},
+{id:62,t:"Stack / Queue",title:"Min Stack",                          d:"Medium",u:"https://leetcode.com/problems/min-stack/"},
+{id:63,t:"Stack / Queue",title:"Evaluate Reverse Polish Notation",   d:"Medium",u:"https://leetcode.com/problems/evaluate-reverse-polish-notation/"},
+{id:64,t:"Stack / Queue",title:"Daily Temperatures",                 d:"Medium",u:"https://leetcode.com/problems/daily-temperatures/"},
+{id:65,t:"Stack / Queue",title:"Simplify Path",                      d:"Medium",u:"https://leetcode.com/problems/simplify-path/"},
+{id:66,t:"Stack / Queue",title:"Asteroid Collision",                 d:"Hard",  u:"https://leetcode.com/problems/asteroid-collision/"},
+{id:67,t:"Stack / Queue",title:"Largest Rectangle in Histogram",     d:"Hard",  u:"https://leetcode.com/problems/largest-rectangle-in-histogram/"},
+{id:68,t:"Stack / Queue",title:"Sliding Window Maximum",             d:"Hard",  u:"https://leetcode.com/problems/sliding-window-maximum/"},
+
+// ── TREES ── 8 Easy · 4 Medium · 2 Hard = 14 ────────────────────────────────
+{id:69,t:"Trees",title:"Maximum Depth of Binary Tree",              d:"Easy",  u:"https://leetcode.com/problems/maximum-depth-of-binary-tree/"},
+{id:70,t:"Trees",title:"Same Tree",                                 d:"Easy",  u:"https://leetcode.com/problems/same-tree/"},
+{id:71,t:"Trees",title:"Invert Binary Tree",                        d:"Easy",  u:"https://leetcode.com/problems/invert-binary-tree/"},
+{id:72,t:"Trees",title:"Symmetric Tree",                            d:"Easy",  u:"https://leetcode.com/problems/symmetric-tree/"},
+{id:73,t:"Trees",title:"Binary Tree Inorder Traversal",             d:"Easy",  u:"https://leetcode.com/problems/binary-tree-inorder-traversal/"},
+{id:74,t:"Trees",title:"Binary Tree Preorder Traversal",            d:"Easy",  u:"https://leetcode.com/problems/binary-tree-preorder-traversal/"},
+{id:75,t:"Trees",title:"Binary Tree Postorder Traversal",           d:"Easy",  u:"https://leetcode.com/problems/binary-tree-postorder-traversal/"},
+{id:76,t:"Trees",title:"Search in a Binary Search Tree",            d:"Easy",  u:"https://leetcode.com/problems/search-in-a-binary-search-tree/"},
+{id:77,t:"Trees",title:"Binary Tree Level Order Traversal",         d:"Medium",u:"https://leetcode.com/problems/binary-tree-level-order-traversal/"},
+{id:78,t:"Trees",title:"Validate Binary Search Tree",               d:"Medium",u:"https://leetcode.com/problems/validate-binary-search-tree/"},
+{id:79,t:"Trees",title:"Lowest Common Ancestor of a Binary Tree",   d:"Medium",u:"https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"},
+{id:80,t:"Trees",title:"Kth Smallest Element in a BST",             d:"Medium",u:"https://leetcode.com/problems/kth-smallest-element-in-a-bst/"},
+{id:81,t:"Trees",title:"Binary Tree Maximum Path Sum",              d:"Hard",  u:"https://leetcode.com/problems/binary-tree-maximum-path-sum/"},
+{id:82,t:"Trees",title:"Serialize and Deserialize Binary Tree",     d:"Hard",  u:"https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"},
+
+// ── GRAPHS ── 2 Easy · 5 Medium · 3 Hard = 10 ───────────────────────────────
+{id:83,t:"Graphs",title:"Find if Path Exists in Graph",  d:"Easy",  u:"https://leetcode.com/problems/find-if-path-exists-in-graph/"},
+{id:84,t:"Graphs",title:"Flood Fill",                    d:"Easy",  u:"https://leetcode.com/problems/flood-fill/"},
+{id:85,t:"Graphs",title:"Number of Islands",             d:"Medium",u:"https://leetcode.com/problems/number-of-islands/"},
+{id:86,t:"Graphs",title:"Clone Graph",                   d:"Medium",u:"https://leetcode.com/problems/clone-graph/"},
+{id:87,t:"Graphs",title:"Rotting Oranges",               d:"Medium",u:"https://leetcode.com/problems/rotting-oranges/"},
+{id:88,t:"Graphs",title:"Course Schedule",               d:"Medium",u:"https://leetcode.com/problems/course-schedule/"},
+{id:89,t:"Graphs",title:"Pacific Atlantic Water Flow",   d:"Medium",u:"https://leetcode.com/problems/pacific-atlantic-water-flow/"},
+{id:90,t:"Graphs",title:"Word Ladder",                   d:"Hard",  u:"https://leetcode.com/problems/word-ladder/"},
+{id:91,t:"Graphs",title:"Alien Dictionary",              d:"Hard",  u:"https://leetcode.com/problems/alien-dictionary/"},
+{id:92,t:"Graphs",title:"Reconstruct Itinerary",         d:"Hard",  u:"https://leetcode.com/problems/reconstruct-itinerary/"},
+
+// ── DYNAMIC PROGRAMMING ── 3 Easy · 3 Medium · 2 Hard = 8 ───────────────────
+{id:93, t:"Dynamic Programming",title:"Climbing Stairs",                d:"Easy",  u:"https://leetcode.com/problems/climbing-stairs/"},
+{id:94, t:"Dynamic Programming",title:"Min Cost Climbing Stairs",       d:"Easy",  u:"https://leetcode.com/problems/min-cost-climbing-stairs/"},
+{id:95, t:"Dynamic Programming",title:"House Robber",                   d:"Easy",  u:"https://leetcode.com/problems/house-robber/"},
+{id:96, t:"Dynamic Programming",title:"Coin Change",                    d:"Medium",u:"https://leetcode.com/problems/coin-change/"},
+{id:97, t:"Dynamic Programming",title:"Longest Increasing Subsequence", d:"Medium",u:"https://leetcode.com/problems/longest-increasing-subsequence/"},
+{id:98, t:"Dynamic Programming",title:"Partition Equal Subset Sum",     d:"Medium",u:"https://leetcode.com/problems/partition-equal-subset-sum/"},
+{id:99, t:"Dynamic Programming",title:"Edit Distance",                  d:"Hard",  u:"https://leetcode.com/problems/edit-distance/"},
+{id:100,t:"Dynamic Programming",title:"Burst Balloons",                 d:"Hard",  u:"https://leetcode.com/problems/burst-balloons/"},
+];
+
+// ── Sanity check ─────────────────────────────────────────────────────────────
+(function(){
+  const e = P.filter(x=>x.d==="Easy").length;
+  const m = P.filter(x=>x.d==="Medium").length;
+  const h = P.filter(x=>x.d==="Hard").length;
+  if(P.length!==100||e!==50||m!==30||h!==20){
+    console.error("DATA CHECK FAILED",P.length,e,m,h);
+  } else {
+    console.log("✓ Data OK: 100 questions, 50E 30M 20H");
+  }
+})();
+
+// ────────────────────────────────────────────────────────────────────────────
+// STATE
+// ────────────────────────────────────────────────────────────────────────────
+const KEY = 'dsa100_v3_done';
+let done   = new Set();
+let filt   = 'all';   // current difficulty/status filter
+let query  = '';      // current search string
+
+// ────────────────────────────────────────────────────────────────────────────
+// PERSISTENCE
+// ────────────────────────────────────────────────────────────────────────────
+function load(){
+  try{ done = new Set((JSON.parse(localStorage.getItem(KEY))||[]).map(Number)); }
+  catch(_){ done = new Set(); }
+}
+function save(){
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// FILTER LOGIC
+// ────────────────────────────────────────────────────────────────────────────
+function getFiltered(){
+  return P.filter(p=>{
+    if(query){
+      const q = query.toLowerCase();
+      if(!p.title.toLowerCase().includes(q) &&
+         !p.t.toLowerCase().includes(q) &&
+         !p.d.toLowerCase().includes(q) &&
+         !String(p.id).includes(q)) return false;
+    }
+    if(filt==='easy')    return p.d==='Easy';
+    if(filt==='medium')  return p.d==='Medium';
+    if(filt==='hard')    return p.d==='Hard';
+    if(filt==='done')    return done.has(p.id);
+    if(filt==='pending') return !done.has(p.id);
+    return true;
+  });
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// HTML BUILDERS
+// ────────────────────────────────────────────────────────────────────────────
+function esc(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function extSvg(){
+  return '<svg class="eli" width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"/></svg>';
+}
+
+function buildRow(p){
+  const ok = done.has(p.id);
+  const dc = p.d==='Easy'?'de':p.d==='Medium'?'dm':'dh';
+  const n  = String(p.id).padStart(2,'0');
+  return `<tr class="qr${ok?' rd':''}" data-id="${p.id}">
+    <td class="cn">${n}</td>
+    <td><a class="ql" href="${esc(p.u)}" target="_blank" rel="noopener noreferrer" title="Open on LeetCode">${esc(p.title)}${extSvg()}</a></td>
+    <td class="cd"><span class="db ${dc}">${p.d}</span></td>
+    <td class="cs"><input type="checkbox" class="cb" data-id="${p.id}"${ok?' checked':''} aria-label="${esc(p.title)}"></td>
+  </tr>`;
+}
+
+function buildSection(topic, probs){
+  const id   = TIDS[topic];
+  const dc   = probs.filter(p=>done.has(p.id)).length;
+  const ok   = dc===probs.length;
+  return `<section class="sec" id="s-${id}">
+    <div class="sec-hdr">
+      <span class="sec-name">${esc(topic)}</span>
+      <span class="sec-cnt">${probs.length} problems</span>
+      <span class="sec-done${ok?' ok':''}" id="sd-${id}">${dc}/${probs.length} solved</span>
+    </div>
+    <table class="qt" role="table">
+      <thead><tr>
+        <th class="cn" scope="col">#</th>
+        <th class="cp" scope="col">Problem</th>
+        <th class="cd" scope="col">Difficulty</th>
+        <th class="cs" scope="col">Done</th>
+      </tr></thead>
+      <tbody>${probs.map(buildRow).join('')}</tbody>
+    </table>
+  </section>`;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// RENDER
+// ────────────────────────────────────────────────────────────────────────────
+function render(){
+  const f  = getFiltered();
+  const qc = document.getElementById('qc');
+  const es = document.getElementById('es');
+  const ri = document.getElementById('ri');
+
+  updProg();
+
+  if(f.length===0){
+    qc.innerHTML = '';
+    es.style.display = 'flex';
+    ri.style.display = 'none';
+    return;
+  }
+
+  es.style.display = 'none';
+
+  const isF = query || filt!=='all';
+  if(isF){
+    ri.style.display = 'block';
+    ri.textContent = `Showing ${f.length} of 100 questions`;
+  } else {
+    ri.style.display = 'none';
+  }
+
+  // Group by topic in canonical order
+  const byT = {};
+  TOPICS.forEach(t=>{ byT[t]=[]; });
+  f.forEach(p=>{ if(byT[p.t]) byT[p.t].push(p); });
+
+  let html = '';
+  TOPICS.forEach(t=>{ if(byT[t].length>0) html+=buildSection(t,byT[t]); });
+  qc.innerHTML = html;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// PROGRESS
+// ────────────────────────────────────────────────────────────────────────────
+function updProg(){
+  const n   = done.size;
+  const pct = Math.round(n);
+  document.getElementById('sn').textContent = n;
+  document.getElementById('pf').style.width = pct+'%';
+  document.getElementById('pp').textContent = pct+'%';
+}
+
+function updSecDone(secId){
+  const sec = document.getElementById('s-'+secId);
+  if(!sec) return;
+  const all = sec.querySelectorAll('.cb').length;
+  const chk = sec.querySelectorAll('.cb:checked').length;
+  const el  = document.getElementById('sd-'+secId);
+  if(!el) return;
+  el.textContent = chk+'/'+all+' solved';
+  el.className   = 'sec-done'+(chk===all?' ok':'');
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// CHECKBOX  (event delegation on #qc)
+// ────────────────────────────────────────────────────────────────────────────
+document.getElementById('qc').addEventListener('change', function(e){
+  const cb = e.target;
+  if(!cb.classList.contains('cb')) return;
+  const id  = Number(cb.dataset.id);
+  const row = cb.closest('tr');
+  if(cb.checked){ done.add(id);    row.classList.add('rd'); }
+  else          { done.delete(id); row.classList.remove('rd'); }
+  save();
+  updProg();
+  const sec = cb.closest('.sec');
+  if(sec) updSecDone(sec.id.replace('s-',''));
+});
+
+// ────────────────────────────────────────────────────────────────────────────
+// SEARCH
+// ────────────────────────────────────────────────────────────────────────────
+const SI = document.getElementById('si');
+const SX = document.getElementById('sx');
+
+SI.addEventListener('input', ()=>{
+  query = SI.value.trim();
+  SX.style.display = query ? 'block' : 'none';
+  render();
+});
+
+SX.addEventListener('click', clrSrch);
+
+function clrSrch(){
+  SI.value = ''; query = '';
+  SX.style.display = 'none';
+  render();
+}
+window.clrSrch = clrSrch;
+
+// ────────────────────────────────────────────────────────────────────────────
+// FILTERS
+// ────────────────────────────────────────────────────────────────────────────
+document.getElementById('fg').addEventListener('click', function(e){
+  const btn = e.target.closest('.fb');
+  if(!btn) return;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  filt = btn.dataset.f;
+  render();
+});
+
+// ────────────────────────────────────────────────────────────────────────────
+// TOPIC NAVIGATION
+// ────────────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.tl').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    const id = a.dataset.id;
+    // Clear search + reset filter so section is visible
+    SI.value = ''; query = '';
+    SX.style.display = 'none';
+    filt = 'all';
+    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+    document.querySelector('.fb[data-f="all"]').classList.add('on');
+    render();
+    // Scroll after DOM settles
+    requestAnimationFrame(()=>{
+      const sec = document.getElementById('s-'+id);
+      if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+});
+
+// Highlight active topic link on scroll
+let stmr;
+window.addEventListener('scroll', ()=>{
+  clearTimeout(stmr);
+  stmr = setTimeout(()=>{
+    const secs = document.querySelectorAll('.sec');
+    let active = null;
+    secs.forEach(s=>{
+      if(s.getBoundingClientRect().top <= 200) active = s.id.replace('s-','');
+    });
+    document.querySelectorAll('.tl').forEach(a=>a.classList.remove('on'));
+    if(active){
+      const lnk = document.querySelector(`.tl[data-id="${active}"]`);
+      if(lnk) lnk.classList.add('on');
+    }
+  }, 50);
+},{passive:true});
+
+// ────────────────────────────────────────────────────────────────────────────
+// RESET
+// ────────────────────────────────────────────────────────────────────────────
+document.getElementById('rb').addEventListener('click', ()=>{
+  if(!confirm('Reset all progress?\n\nThis will clear all 100 solved checkboxes.\nThis cannot be undone.')) return;
+  done.clear();
+  save();
+  render();
+});
+
+// ────────────────────────────────────────────────────────────────────────────
+// BOOT
+// ────────────────────────────────────────────────────────────────────────────
+load();
+render();
+</script>
 </body>
 </html>
