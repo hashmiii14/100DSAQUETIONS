@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA 100 — LeetCode Roadmap | C++ & Java</title>
+  <meta name="description" content="A curated 100-question LeetCode roadmap covering Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, and Dynamic Programming. Track your DSA progress with clickable LeetCode links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-badge">C++ &amp; Java Solutions</div>
+      <h1 class="hero-title">DSA 100<span class="accent">.</span></h1>
+      <p class="hero-subtitle">LeetCode Roadmap — Beginner to Interview-Ready</p>
+      <p class="hero-tagline">
+        Arrays → Strings → Linked List → Stack/Queue → Trees → Graphs → DP
+      </p>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-pill easy">
+          <span class="stat-num">50</span>
+          <span class="stat-label">Easy</span>
+        </div>
+        <div class="stat-pill medium">
+          <span class="stat-num">30</span>
+          <span class="stat-label">Medium</span>
+        </div>
+        <div class="stat-pill hard">
+          <span class="stat-num">20</span>
+          <span class="stat-label">Hard</span>
+        </div>
+        <div class="stat-pill total">
+          <span class="stat-num">100</span>
+          <span class="stat-label">Total</span>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-section">
+        <div class="progress-header">
+          <span>Your Progress</span>
+          <span id="progress-text">0 / 100 solved</span>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="hero-actions">
+        <a href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf" download class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+        <button class="btn btn-secondary" id="reset-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg>
+          Reset Progress
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── SECTIONS ──────────────────────────────────────────────────── -->
+  <main class="container main-content" id="questions-root"></main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built with ❤️ for DSA enthusiasts &nbsp;·&nbsp;
+        <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://leetcode.com" target="_blank" rel="noopener">LeetCode</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
