@@ -4,84 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DSA 100 — LeetCode Roadmap | C++ & Java</title>
-  <meta name="description" content="A curated 100-question LeetCode roadmap covering Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, and Dynamic Programming. Track your DSA progress with clickable LeetCode links." />
+  <meta name="description" content="100-question LeetCode roadmap covering Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, and Dynamic Programming. Track your progress with clickable LeetCode links." />
+  <meta name="theme-color" content="#0d1117" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ── HERO ─────────────────────────────────────────────────────── -->
-  <header class="hero">
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-badge">C++ &amp; Java Solutions</div>
-      <h1 class="hero-title">DSA 100<span class="accent">.</span></h1>
-      <p class="hero-subtitle">LeetCode Roadmap — Beginner to Interview-Ready</p>
-      <p class="hero-tagline">
-        Arrays → Strings → Linked List → Stack/Queue → Trees → Graphs → DP
-      </p>
+  <!-- ── STICKY TOP (header + controls + topic nav) ──────────────────────── -->
+  <div class="sticky-top">
 
-      <!-- Stats -->
-      <div class="stats-row">
-        <div class="stat-pill easy">
-          <span class="stat-num">50</span>
-          <span class="stat-label">Easy</span>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-left">
+          <h1 class="site-title">DSA 100</h1>
+          <span class="site-subtitle">LeetCode Roadmap — Beginner to Interview Ready &nbsp;·&nbsp; C++ + Java</span>
         </div>
-        <div class="stat-pill medium">
-          <span class="stat-num">30</span>
-          <span class="stat-label">Medium</span>
-        </div>
-        <div class="stat-pill hard">
-          <span class="stat-num">20</span>
-          <span class="stat-label">Hard</span>
-        </div>
-        <div class="stat-pill total">
-          <span class="stat-num">100</span>
-          <span class="stat-label">Total</span>
+        <div class="header-right">
+          <div class="stats-row">
+            <span class="stat-chip total">100 Total</span>
+            <span class="stat-chip easy">50 Easy</span>
+            <span class="stat-chip medium">30 Medium</span>
+            <span class="stat-chip hard">20 Hard</span>
+          </div>
+          <div class="progress-row">
+            <span class="progress-label">Solved: <strong id="solved-count">0</strong> / 100</span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-pct" id="progress-pct">0%</span>
+          </div>
         </div>
       </div>
+    </header>
 
-      <!-- Progress bar -->
-      <div class="progress-section">
-        <div class="progress-header">
-          <span>Your Progress</span>
-          <span id="progress-text">0 / 100 solved</span>
+    <!-- Controls -->
+    <div class="controls-bar">
+      <div class="controls-inner">
+        <!-- Search -->
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search questions, topics, difficulty..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
         </div>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar" id="progress-bar"></div>
-        </div>
-      </div>
 
-      <!-- Actions -->
-      <div class="hero-actions">
-        <a href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf" download class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download PDF
-        </a>
-        <button class="btn btn-secondary" id="reset-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5"/></svg>
-          Reset Progress
-        </button>
+        <!-- Filters -->
+        <div class="filter-group" id="filter-group" role="group" aria-label="Filter by difficulty">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="easy">Easy</button>
+          <button class="filter-btn" data-filter="medium">Medium</button>
+          <button class="filter-btn" data-filter="hard">Hard</button>
+          <button class="filter-btn" data-filter="done">✓ Done</button>
+          <button class="filter-btn" data-filter="pending">○ Pending</button>
+        </div>
+
+        <!-- Actions -->
+        <div class="action-group">
+          <a
+            href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf"
+            download
+            class="btn"
+            title="Download PDF with clickable LeetCode links"
+          >↓ PDF</a>
+          <button id="reset-btn" class="btn btn-danger" title="Reset all progress">Reset</button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- ── SECTIONS ──────────────────────────────────────────────────── -->
-  <main class="container main-content" id="questions-root"></main>
+    <!-- Topic navigation -->
+    <nav class="topic-nav" aria-label="Jump to topic">
+      <div class="topic-nav-inner">
+        <a class="topic-link" data-id="arrays"     href="#topic-arrays">Arrays</a>
+        <a class="topic-link" data-id="strings"    href="#topic-strings">Strings</a>
+        <a class="topic-link" data-id="linked-list"href="#topic-linked-list">Linked List</a>
+        <a class="topic-link" data-id="stack-queue"href="#topic-stack-queue">Stack / Queue</a>
+        <a class="topic-link" data-id="trees"      href="#topic-trees">Trees</a>
+        <a class="topic-link" data-id="graphs"     href="#topic-graphs">Graphs</a>
+        <a class="topic-link" data-id="dp"         href="#topic-dp">DP</a>
+      </div>
+    </nav>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
-  <footer class="footer">
-    <div class="container">
-      <p>Built with ❤️ for DSA enthusiasts &nbsp;·&nbsp;
-        <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener">GitHub</a>
-        &nbsp;·&nbsp;
-        <a href="https://leetcode.com" target="_blank" rel="noopener">LeetCode</a>
-      </p>
+  </div><!-- /.sticky-top -->
+
+  <!-- ── MAIN CONTENT ─────────────────────────────────────────────────────── -->
+  <main class="main-content" id="main-content" role="main">
+    <div id="results-info" class="results-info" style="display:none;"></div>
+    <div id="questions-container"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <div class="empty-icon">🔍</div>
+      <p>No questions match your search or filter.</p>
+      <button onclick="clearSearch()" class="btn">Clear Search</button>
     </div>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      Pehle 30–45 min khud attempt karo → daily session mein discuss karo → C++ + Java implement karo → next day revise
+      &nbsp;·&nbsp;
+      <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scripts — data first, then app -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
