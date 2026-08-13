@@ -7,11 +7,9 @@ class DSAApp {
     this.problems = typeof PROBLEMS !== 'undefined' ? PROBLEMS : [];
     this.patterns = typeof PATTERNS_LIBRARY !== 'undefined' ? PATTERNS_LIBRARY : [];
     this.dsAlgo = typeof DS_ALGO_LIBRARY !== 'undefined' ? DS_ALGO_LIBRARY : { dataStructures: [], algorithms: [] };
-    this.tracks = typeof INTERVIEW_TRACKS !== 'undefined' ? INTERVIEW_TRACKS : [];
 
     this.state = typeof state !== 'undefined' ? state : null;
     this.recommender = typeof RecommendationEngine !== 'undefined' ? new RecommendationEngine(this.problems, this.state) : null;
-    this.simulator = typeof InterviewSimulator !== 'undefined' ? new InterviewSimulator(this.problems) : null;
 
     // View & Filter state
     this.currentView = 'explorer';
@@ -30,10 +28,6 @@ class DSAApp {
     this.activeSolutionTab = 'optimal'; // 'optimal' | 'brute'
     this.activeLang = 'cpp'; // 'cpp' | 'java' | 'python' | 'javascript'
 
-    // Mock Interview Active State
-    this.activeSimSession = null;
-    this.simTimerInterval = null;
-
     this.init();
   }
 
@@ -43,7 +37,6 @@ class DSAApp {
     this.renderNav();
     this.renderExplorer();
     this.renderDashboard();
-    this.renderInterviewMode();
   }
 
   readUrlParams() {
@@ -95,8 +88,8 @@ class DSAApp {
     const beginnerBtn = document.getElementById('btn-beginner');
     if (beginnerBtn) beginnerBtn.addEventListener('click', () => this.switchView('guide'));
 
-    const interviewBtn = document.getElementById('btn-interview-ready');
-    if (interviewBtn) interviewBtn.addEventListener('click', () => this.switchView('interview'));
+    const dashQuickBtn = document.getElementById('btn-dash-quick');
+    if (dashQuickBtn) dashQuickBtn.addEventListener('click', () => this.switchView('dashboard'));
 
     // Search input
     const searchInp = document.getElementById('search-input');
@@ -244,12 +237,6 @@ class DSAApp {
       }
     });
 
-    // Mock Interview Simulator Start Button
-    const startSimBtn = document.getElementById('btn-start-sim');
-    if (startSimBtn) {
-      startSimBtn.addEventListener('click', () => this.startMockInterviewSession());
-    }
-
     // Legal / Trust Links
     const linkAbout = document.getElementById('link-about');
     const linkPrivacy = document.getElementById('link-privacy');
@@ -257,9 +244,9 @@ class DSAApp {
     const linkContact = document.getElementById('link-contact');
     const legalCloseBtn = document.getElementById('legal-modal-close-btn');
 
-    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an interview-focused Data Structures and Algorithms learning platform. Built for software engineers and computer science students preparing for technical coding interviews at product companies and top tech firms.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively across topics, educational guides, pattern recognition, and multi-language solutions.</p>'); });
+    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an educational Data Structures and Algorithms platform. Built for software engineers and computer science students learning algorithms and solving practice problems.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively with educational guides, pattern breakdowns, 100% verified LeetCode links, and multi-language solutions.</p>'); });
     if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Privacy Policy', '<p><strong>Privacy Policy:</strong> DSAProblems.site respects user privacy. Progress data, solved questions, bookmarks, and notes are stored locally in your browser storage (localStorage). We do not collect or sell personal identifying data.</p><p style="margin-top:10px;">Third-party services like Google AdSense may use cookies to serve relevant ads based on browsing visits. Users may manage ad settings directly through Google Ads settings.</p>'); });
-    if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational and interview preparation purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
+    if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
     if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Contact Support', '<p><strong>Contact Us:</strong> Have feedback, suggestions, or technical questions about DSAProblems.site?</p><p style="margin-top:10px;">Reach out via GitHub Repository issue tracker: <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener noreferrer">github.com/hashmiii14/100DSAQUETIONS</a></p>'); });
     if (legalCloseBtn) legalCloseBtn.addEventListener('click', () => this.closeLegalModal());
   }
@@ -327,7 +314,6 @@ class DSAApp {
     this.updateUrlParams();
 
     if (viewName === 'dashboard') this.renderDashboard();
-    if (viewName === 'interview') this.renderInterviewMode();
   }
 
   getFilteredProblems() {
@@ -662,85 +648,6 @@ class DSAApp {
         </div>
       `;
     }
-  }
-
-  renderInterviewMode() {
-    const container = document.getElementById('sim-active-container');
-    if (!container) return;
-  }
-
-  startMockInterviewSession() {
-    const diffSelect = document.getElementById('sim-diff-select');
-    const durSelect = document.getElementById('sim-duration-select');
-
-    const diff = diffSelect ? diffSelect.value : 'Mixed';
-    const durMinutes = durSelect ? parseInt(durSelect.value, 10) : 45;
-
-    this.activeSimSession = this.simulator.startSession({ difficulty: diff, durationMinutes: durMinutes });
-    const container = document.getElementById('sim-active-container');
-    if (!container) return;
-
-    container.style.display = 'block';
-
-    if (this.simTimerInterval) clearInterval(this.simTimerInterval);
-
-    this.simTimerInterval = setInterval(() => {
-      if (!this.activeSimSession) return;
-      this.activeSimSession.remainingSeconds--;
-      if (this.activeSimSession.remainingSeconds <= 0) {
-        clearInterval(this.simTimerInterval);
-        this.finishMockInterviewSession();
-      } else {
-        this.renderSimActiveSession();
-      }
-    }, 1000);
-
-    this.renderSimActiveSession();
-  }
-
-  renderSimActiveSession() {
-    const container = document.getElementById('sim-active-container');
-    if (!container || !this.activeSimSession) return;
-
-    const sec = this.activeSimSession.remainingSeconds;
-    const mins = Math.floor(sec / 60);
-    const secs = sec % 60;
-    const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-
-    let qHtml = this.activeSimSession.problems.map((p, idx) => `
-      <div style="background: var(--bg-elevated); padding: 12px; border-radius: var(--radius); margin-bottom: 8px;">
-        <strong>Q${idx + 1}: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
-        <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
-        <a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" style="margin-left:8px;">Solve on LeetCode ↗</a>
-        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(p.statement)}</div>
-        <button class="btn-secondary" style="font-size: 11px; margin-top: 6px;" onclick="app.openProblemModal(${p.id})">Open Problem Workspace →</button>
-      </div>
-    `).join('');
-
-    container.innerHTML = `
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <h4 style="color: var(--accent);">⏱️ Live Timer: <span style="font-family: var(--font-mono); font-size: 18px;">${timeStr}</span></h4>
-        <button class="btn-primary" style="font-size: 12px;" onclick="app.finishMockInterviewSession()">Submit Session</button>
-      </div>
-      <div>${qHtml}</div>
-    `;
-  }
-
-  finishMockInterviewSession() {
-    if (this.simTimerInterval) clearInterval(this.simTimerInterval);
-    const results = this.simulator.finishSession();
-
-    const container = document.getElementById('sim-active-container');
-    if (!container || !results) return;
-
-    container.innerHTML = `
-      <div style="background: var(--bg-surface); border: 2px solid var(--accent); padding: 16px; border-radius: var(--radius-lg);">
-        <h3 style="color: var(--accent);">Mock Interview Complete!</h3>
-        <p style="margin-top: 6px; font-size: 13px;">Session Score: <strong>${results.scorePct}%</strong> (${results.attemptedCount} of ${results.totalCount} completed)</p>
-        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Time Elapsed: ${Math.floor(results.timeSpentSeconds / 60)} minutes ${results.timeSpentSeconds % 60} seconds</p>
-        <div style="margin-top: 10px; font-weight: 600; font-size: 13px;">${results.recommendation}</div>
-      </div>
-    `;
   }
 
   escapeHtml(str) {
