@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DSA Problems — 1000 Coding Interview Questions & Comprehensive Educational Guide</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive 30-chapter DSA theory textbook, mathematical formulas, multi-language solutions, and progress tracking."/>
-<meta name="theme-color" content="#ffffff"/>
+<title>DSA Problems — Modern DSA Learning Operating System & 1000 Curriculum</title>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. Structured DSA Sheet, topic & pattern filters, 30-chapter textbook, multi-language solutions, interactive dashboard, and local browser progress tracking."/>
+<meta name="theme-color" content="#0b0f19"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
@@ -16,8 +16,8 @@
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
 
 <!-- Open Graph SEO -->
-<meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Educational Guide"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, complete 30-chapter DSA master textbook, and multi-language solutions (C++, Java, Python, JS)."/>
+<meta property="og:title" content="DSA Problems — Modern DSA Learning Operating System"/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with verified LeetCode links, 30-chapter DSA textbook, structured DSA sheet, and multi-language solutions (C++, Java, Python, JS)."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -28,7 +28,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
 <!-- Styles -->
 <link rel="stylesheet" href="style.css"/>
@@ -47,7 +47,7 @@
 
 <div class="app-container">
 
-  <!-- Header -->
+  <!-- Header Topbar -->
   <header class="site-header">
     <div class="header-inner">
       <div class="brand-section">
@@ -55,624 +55,587 @@
         <span class="brand-tag">1000 CURRICULUM</span>
       </div>
 
+      <!-- Quick Command Search Trigger -->
+      <div class="header-search-bar">
+        <button class="quick-search-trigger" onclick="app.openCommandPalette()" aria-label="Open Command Search Palette">
+          <span>🔍 Search 1000 problems, topics, patterns...</span>
+          <span class="shortcut-badge">Ctrl K</span>
+        </button>
+      </div>
+
+      <!-- Primary View Navigation Tabs -->
       <nav class="nav-tabs" id="main-nav">
+        <button class="nav-btn" data-view="sheet">📑 DSA Sheet</button>
         <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-        <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
+        <button class="nav-btn" data-view="topics">🏷️ Topics</button>
+        <button class="nav-btn" data-view="patterns">🔄 Patterns</button>
+        <button class="nav-btn" data-view="companies">🏢 Companies</button>
         <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
-        <button class="nav-btn" data-view="about">💡 About Us</button>
-        <button class="nav-btn" data-view="privacy">🔒 Privacy Policy</button>
-        <button class="nav-btn" data-view="contact">✉️ Contact</button>
+        <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
       </nav>
 
       <div class="header-right">
+        <!-- Streak Indicator Badge -->
+        <div class="streak-badge" id="header-streak-badge">
+          🔥 <span id="header-streak-count">1</span>d Streak
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
         <button class="mobile-toggle-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
+  <!-- Mobile Navigation Drawer -->
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-header">
-      <strong style="font-size: 16px; color: var(--text-primary);">DSAProblems Menu</strong>
+      <strong style="font-size: 16px; color: var(--text-primary);">DSAProblems Operating System</strong>
       <button class="btn-secondary" id="drawer-close-btn" style="padding: 4px 8px;">✕</button>
     </div>
     <nav class="drawer-nav" id="drawer-nav">
+      <button class="nav-btn" data-view="sheet">📑 DSA Sheet</button>
       <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-      <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
+      <button class="nav-btn" data-view="topics">🏷️ Topics</button>
+      <button class="nav-btn" data-view="patterns">🔄 Patterns</button>
+      <button class="nav-btn" data-view="companies">🏢 Companies</button>
+      <button class="nav-btn" data-view="bookmarks">⭐ Bookmarks</button>
+      <button class="nav-btn" data-view="daily">🎯 Daily Practice</button>
+      <button class="nav-btn" data-view="revision">🔁 Revision Mode</button>
       <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
+      <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
+      <button class="nav-btn" data-view="settings">⚙️ Settings</button>
       <button class="nav-btn" data-view="about">💡 About Us</button>
       <button class="nav-btn" data-view="privacy">🔒 Privacy Policy</button>
       <button class="nav-btn" data-view="contact">✉️ Contact</button>
     </nav>
   </aside>
 
-  <!-- VIEW 1: Explorer & Questions -->
-  <section class="view-section active" id="view-explorer">
-    
-    <!-- Hero Banner -->
-    <div class="hero-banner">
-      <div class="hero-content">
-        <h1>Master Data Structures & Algorithms</h1>
-        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a 30-chapter exhaustive computer science textbook.</p>
-      </div>
-      <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Chapters</button>
-        <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
-      </div>
-    </div>
+  <!-- App Shell Layout Grid (Sidebar + Main Content) -->
+  <div class="app-shell-layout">
 
-    <!-- Filter Panel -->
-    <div class="filter-panel">
-      <div class="search-row">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" class="search-input" placeholder="Search 1000 problems by title, topic, pattern, tag, or #ID..."/>
-        </div>
-        <button class="btn-secondary" id="btn-clear-filters" style="font-size: 12px; white-space: nowrap;">Reset Filters</button>
-      </div>
-
-      <div class="filter-group" data-filter-type="difficulty">
-        <span class="filter-label">Difficulty:</span>
-        <button class="chip-btn active" data-val="all">All (1000)</button>
-        <button class="chip-btn easy" data-val="easy">Easy (400)</button>
-        <button class="chip-btn medium" data-val="medium">Medium (500)</button>
-        <button class="chip-btn hard" data-val="hard">Hard (100)</button>
-      </div>
-
-      <div class="filter-group" data-filter-type="status">
-        <span class="filter-label">Status:</span>
-        <button class="chip-btn active" data-val="all">All</button>
-        <button class="chip-btn" data-val="unsolved">Unsolved</button>
-        <button class="chip-btn" data-val="solved">Solved ✓</button>
-        <button class="chip-btn" data-val="bookmarked">Bookmarked ★</button>
-      </div>
-
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Curriculum Stage: </label>
-          <select id="select-stage" class="select-filter">
-            <option value="all">All 8 Stages</option>
-            <option value="Stage 0 — Programming Foundations">Stage 0 — Programming Foundations</option>
-            <option value="Stage 1 — Core Easy Patterns">Stage 1 — Core Easy Patterns</option>
-            <option value="Stage 2 — Core Data Structures">Stage 2 — Core Data Structures</option>
-            <option value="Stage 3 — Core Algorithms">Stage 3 — Core Algorithms</option>
-            <option value="Stage 4 — Advanced Trees & Graphs">Stage 4 — Advanced Trees & Graphs</option>
-            <option value="Stage 5 — Dynamic Programming">Stage 5 — Dynamic Programming</option>
-            <option value="Stage 6 — Advanced Interview Patterns">Stage 6 — Advanced Interview Patterns</option>
-            <option value="Stage 7 — Interview Mastery">Stage 7 — Interview Mastery</option>
-          </select>
-        </div>
-
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Topic: </label>
-          <select id="select-topic" class="select-filter">
-            <option value="all">All Topics</option>
-          </select>
-        </div>
-
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Pattern: </label>
-          <select id="select-pattern" class="select-filter">
-            <option value="all">All Patterns</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <!-- Results Table Header & Info -->
-    <div class="table-header-info">
-      <span id="table-results-info">Showing 1–50 of 1000 problems</span>
-    </div>
-
-    <!-- Desktop Problem Table -->
-    <div class="problem-table-wrapper">
-      <table class="problem-table">
-        <thead>
-          <tr>
-            <th class="col-num">#</th>
-            <th>Problem Title</th>
-            <th>Difficulty</th>
-            <th>Stage & Topic</th>
-            <th>LeetCode Link</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="problem-tbody">
-          <!-- Rendered via JavaScript -->
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Mobile Card List View (For screens <= 768px) -->
-    <div class="mobile-card-list" id="mobile-problem-card-list">
-      <!-- Rendered via JavaScript -->
-    </div>
-
-    <!-- Pagination Controls -->
-    <div class="pagination">
-      <button class="page-btn" id="page-prev">← Previous</button>
-      <span class="page-info" id="page-info">Page 1 of 20</span>
-      <button class="page-btn" id="page-next">Next →</button>
-    </div>
-
-  </section>
-
-  <!-- VIEW 2: Educational DSA Guide (30-Chapter Exhaustive Master Textbook) -->
-  <section class="view-section" id="view-guide">
-    <div class="card" style="margin-bottom: 24px;">
-      <h2>📚 Data Structures & Algorithms — Exhaustive 30-Chapter Master Textbook</h2>
-      <p>A complete computer science reference manual covering memory models, mathematical proofs, internal data structure mechanics, algorithm invariants, complexity cheat sheets, and direct practice problem triggers.</p>
-    </div>
-
-    <!-- Chapters 1–2: Foundations & Asymptotic Complexity -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Chapters 1–2: Programming Foundations & Asymptotic Complexity</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapter 1 — Programming Foundations & Memory Architecture</h4>
-          <p>Understanding program execution, RAM layout, CPU L1/L2/L3 cache hierarchies, stack vs heap memory, and pointer references:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
-            <li><strong>Stack Memory:</strong> Fast contiguously managed activation stack frames storing local primitive variables.</li>
-            <li><strong>Heap Memory:</strong> Dynamically allocated buffer memory accessed via pointer addresses and reference handles.</li>
-            <li><strong>Abstract Data Types (ADT):</strong> Formal mathematical specifications defining supported operations independently of underlying storage code.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 2 — Asymptotic Analysis & Master Theorem</h4>
-          <p>Formal definitions of mathematical upper, lower, and tight growth bounds as input size N approaches infinity:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Formal Limits:</strong> <code>f(N) = O(g(N)) ⇔ ∃ c&gt;0, N₀&gt;0 s.t. f(N) ≤ c·g(N) ∀ N ≥ N₀</code>.</li>
-            <li><strong>Master Theorem Formula:</strong> <code>T(N) = a·T(N/b) + f(N)</code> governing divide-and-conquer recursion trees.</li>
-            <li><strong>Amortized Doubling Proof:</strong> Dynamic array capacity doubling achieves <code>O(1)</code> average insertion cost.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Foundations →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 3–5: Arrays, Strings, Subarrays & Hashing -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Chapters 3–5: Arrays, Strings, Pattern Matching & Hashing</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapters 3–4 — Arrays, Two Pointers & Subarrays</h4>
-          <p>Contiguous RAM allocation, cache spatial locality, prefix sums, difference arrays, and Kadane's algorithm:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Address Calculation:</strong> <code>Address(A[i]) = Base + i · ElementSize</code> for instant <code>O(1)</code> lookups.</li>
-            <li><strong>Kadane's Algorithm:</strong> Maximum contiguous subarray sum state recurrence <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
-            <li><strong>Prefix Sums:</strong> <code>P[i] = P[i-1] + A[i]</code> allowing range sum queries in <code>O(1)</code> time.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Arrays →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 5 — String Processing & KMP Matching</h4>
-          <p>Character encodings (ASCII/UTF-8), polynomial rolling hashing, KMP algorithm, and Z-algorithm:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>KMP Algorithm:</strong> Partial match LPS table matching string patterns in <code>O(N + M)</code>.</li>
-            <li><strong>Rabin-Karp Rolling Hash:</strong> Polynomial hashing converting substrings into integers modulo prime <code>M</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Strings →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 9 — Hash Tables & Collision Resolution</h4>
-          <p>Hash functions, separate chaining, open addressing (linear/quadratic probing, double hashing), load factor <code>α = N/M</code>, and LRU Cache:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Probing Formulas:</strong> Linear probing <code>h(k,i) = (h'(k)+i) mod m</code> & Double Hashing <code>h(k,i) = (h₁(k)+i·h₂(k)) mod m</code>.</li>
-            <li><strong>LRU Cache Architecture:</strong> Hash Map + Doubly Linked List for <code>O(1)</code> evicted updates.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Hash Tables →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 6–8: Linked Lists, Stacks & Queues -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Chapters 6–8: Linked Lists, Stacks, Monotonic Stacks & Deques</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapter 6 — Linked Lists & Memory Pointer Invariants</h4>
-          <p>Singly, doubly, and circular linked lists with pointer address mechanics:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Floyd's Cycle Detection Proof:</strong> Fast (2 steps) and slow (1 step) pointers meeting inside cycle.</li>
-            <li><strong>In-Place Reversal:</strong> Reversing next pointers iteratively using <code>prev, curr, next</code> pointers.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Linked Lists →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapters 7–8 — Stacks, Monotonic Stacks & Deques</h4>
-          <p>LIFO/FIFO principles, function call stacks, Shunting-Yard expression parsing, and monotonic deques:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Monotonic Stack:</strong> Strictly ordered stack elements for Next Greater Element in <code>O(N)</code>.</li>
-            <li><strong>Sliding Window Deque:</strong> Double-ended queue storing candidate max elements in <code>O(N)</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Stacks & Queues →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 10–12: Searching, Sorting & Recursion -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Chapters 10–12: Searching Invariants, Sorting & Backtracking</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapter 10 — Binary Search Invariants</h4>
-          <p>Logarithmic binary search space invariants, lower/upper bounds, rotated arrays, and answer space search:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Lower & Upper Bounds:</strong> Identifying first and last occurrence indices of target values.</li>
-            <li><strong>Search on Answer Space:</strong> Binary searching monotonic feasibility functions <code>isValid(mid)</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Binary Search →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 11 — Sorting Algorithms & Comparators</h4>
-          <p>Merge Sort, QuickSort (Lomuto/Hoare partitioning), HeapSort, Counting/Radix Sort, and custom comparators:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Merge Sort (Stable O(N log N)):</strong> Divide-and-conquer splitting and merging sorted halves.</li>
-            <li><strong>QuickSort (In-Place Average O(N log N)):</strong> Partitioning array around pivot elements.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Sorting →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 12 — Recursion & Backtracking Framework</h4>
-          <p>Call stack recursion frames, state space trees, backtracking state templates, and constraint pruning:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Backtracking Template:</strong> <code>choose() → explore() → unchoose()</code> state recursion loop.</li>
-            <li><strong>Pruning:</strong> Skipping invalid decision tree branches in N-Queens and Sudoku solvers.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Backtracking →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 13–16: Trees, BST, Heaps & Tries -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 13–16: Trees, BST, Heaps, Priority Queues & Tries</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapters 13–14 — Trees & Binary Search Trees (BST)</h4>
-          <p>DFS Traversals (Preorder, Inorder, Postorder), BFS Level Order, Tree Height/Diameter, LCA, and BST balancing:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Traversals:</strong> DFS Preorder (cloning), Inorder (sorted BST output), Postorder (height/bottom-up).</li>
-            <li><strong>Lowest Common Ancestor (LCA):</strong> Finding first common ancestor node where paths split.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Trees →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapters 15–16 — Heaps, Priority Queues & Tries</h4>
-          <p>Array-backed complete binary trees, <code>O(N)</code> Heapify proof, Top K, Two Heaps, and Trie Prefix Trees:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>O(N) Heapify Proof:</strong> Building valid Heap from unsorted array in linear time.</li>
-            <li><strong>Trie Prefix Tree:</strong> Character node arrays providing <code>O(Length)</code> word lookups.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Heaps & Tries →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 17–20: Graphs, Shortest Paths & DSU -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 17–20: Graph Algorithms, Shortest Paths, MST & DSU</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapters 17–19 — Graph Traversals & Shortest Paths</h4>
-          <p>Adjacency Lists, BFS, DFS, Topological Sort (Kahn's & DFS), 0-1 BFS, Dijkstra, Bellman-Ford, and Floyd-Warshall:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Dijkstra's Algorithm:</strong> Priority Queue shortest path in weighted graphs in <code>O((V+E) log V)</code>.</li>
-            <li><strong>Bellman-Ford:</strong> Single-source shortest path supporting negative edge weights and negative cycles.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Graphs →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapter 20 — Minimum Spanning Trees & DSU</h4>
-          <p>Kruskal's & Prim's MST algorithms, Disjoint Set Union (DSU) path compression and rank union:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Disjoint Set Union (DSU):</strong> Path compression + rank union for <code>O(α(N))</code> set connectivity.</li>
-            <li><strong>Kruskal's MST:</strong> Greedy edge selection using DSU set cycle checking in <code>O(E log E)</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice DSU & MST →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 21–24: DP, Greedy, Bits & Math -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 21–24: Dynamic Programming, Greedy, Bits & Math</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapter 21 — Dynamic Programming (DP) Masterclass</h4>
-          <p>State, Transition, Base Case, Memoization vs Tabulation, 0/1 Knapsack, LCS, LIS, Edit Distance, Bitmask DP:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>0/1 Knapsack State:</strong> <code>dp[i][w] = max(dp[i-1][w], dp[i-1][w-w_i] + v_i)</code>.</li>
-            <li><strong>LCS String DP:</strong> <code>dp[i][j] = (S1[i]==S2[j]) ? dp[i-1][j-1]+1 : max(dp[i-1][j], dp[i][j-1])</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Dynamic Programming')">Practice Dynamic Programming →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapters 22–24 — Greedy, Bit Manipulation & Math</h4>
-          <p>Exchange argument proofs, Activity Selection, Bitwise identities, Sieve of Eratosthenes, and Modular Exponentiation:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Bitwise Operators:</strong> Clear lowest set bit <code>n &amp; (n-1)</code> and power of two test.</li>
-            <li><strong>Fast Modular Exponentiation:</strong> Binary exponentiation calculating <code>A^B mod M</code> in <code>O(log B)</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Bit Manipulation & Math →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chapters 25–30: Advanced Structures, Geometry & Master Cheat Sheet -->
-    <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">⚫ Chapters 25–30: Advanced Data Structures, Geometry & Master Complexity Reference</h3>
-      <div class="grid-cards">
-        <div class="card">
-          <h4>Chapters 25–27 — Range Queries & Computational Geometry</h4>
-          <p>Fenwick Trees (BIT), Segment Trees (Lazy Propagation), Sparse Tables, Sweep Line, Binary Lifting, Convex Hull:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Segment Tree:</strong> Binary tree performing range queries and point updates in <code>O(log N)</code>.</li>
-            <li><strong>Binary Lifting:</strong> Precomputing 2^k ancestors for <code>O(log N)</code> LCA tree queries.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Advanced Structures →</button>
-        </div>
-
-        <div class="card">
-          <h4>Chapters 28–30 — Problem-Solving Pattern Matrix & Master Cheat Sheet</h4>
-          <p>Pattern recognition matrix ("When you see X → Think Y"), Real-World applications, and Master Complexity Reference Table:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Pattern Signals:</strong> Contiguous subsegment → Sliding Window; Next Greater Element → Monotonic Stack; Top K → Min-Heap.</li>
-            <li><strong>Master Complexity Reference:</strong> Comprehensive complexity matrix for all data structures and algorithms.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Interview Mastery')">Practice Master Problems →</button>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- VIEW 3: Dashboard -->
-  <section class="view-section" id="view-dashboard">
-    <div class="card" style="margin-bottom: 20px;">
-      <h2>📊 Learner Progress Dashboard</h2>
-      <p>Track your overall progress, difficulty distribution, streak history, and smart recommendations.</p>
-    </div>
-
-    <div class="grid-cards" style="margin-bottom: 20px;">
-      <div class="card">
-        <h3>Total Solved</h3>
-        <h2 id="dash-solved-total" style="font-size: 28px; color: var(--accent);">0 / 1000</h2>
-      </div>
-      <div class="card">
-        <h3>Easy Solved</h3>
-        <h2 id="dash-easy-count" style="font-size: 28px; color: var(--easy);">0 / 400</h2>
-      </div>
-      <div class="card">
-        <h3>Medium Solved</h3>
-        <h2 id="dash-med-count" style="font-size: 28px; color: var(--medium);">0 / 500</h2>
-      </div>
-      <div class="card">
-        <h3>Hard Solved</h3>
-        <h2 id="dash-hard-count" style="font-size: 28px; color: var(--hard);">0 / 100</h2>
-      </div>
-    </div>
-
-    <div id="dash-recommendation" style="margin-bottom: 20px;"></div>
-
-    <!-- Admin & Content Quality Control Duplicate Detector -->
-    <div class="card" style="border-top: 3px solid var(--accent); margin-bottom: 20px;">
-      <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-primary);">🛡️ Question Quality Control & Duplicate Prevention Engine</h3>
-      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
-        Test new questions against our canonical dataset before adding them to prevent exact, normalized, or semantic duplicate entries.
-      </p>
-      
-      <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px;">
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Question Title</label>
-          <input type="text" id="admin-dedup-title" placeholder="e.g. Find Whether Any Number Appears More Than Once" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
-        </div>
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Problem Statement</label>
-          <textarea id="admin-dedup-statement" rows="2" placeholder="e.g. Given an integer array, return true if any value appears at least twice in the array..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
-        </div>
-      </div>
-
-      <button class="btn-primary" style="padding: 9px 18px; font-size: 13px;" onclick="
-        const title = document.getElementById('admin-dedup-title').value;
-        const stmt = document.getElementById('admin-dedup-statement').value;
-        const res = app.checkQuestionDuplicate(title, stmt);
-        const out = document.getElementById('admin-dedup-result');
-        out.style.display = 'block';
-        if (res.isDuplicate) {
-          out.style.background = 'rgba(239, 68, 68, 0.1)';
-          out.style.border = '1px solid var(--hard)';
-          out.innerHTML = `<strong style='color:var(--hard);'>⚠️ DUPLICATE DETECTED (${res.score}% Match)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
-        } else {
-          out.style.background = 'rgba(16, 185, 129, 0.1)';
-          out.style.border = '1px solid var(--easy)';
-          out.innerHTML = `<strong style='color:var(--easy);'>✓ QUESTION APPROVED (${res.score}% Similarity)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
-        }
-      ">🔍 Run Duplicate Prevention Analysis</button>
-
-      <div id="admin-dedup-result" style="display: none; margin-top: 14px; padding: 12px; border-radius: var(--radius);"></div>
-    </div>
-  </section>
-
-  <!-- VIEW 4: About Us -->
-  <section class="view-section" id="view-about">
-    <div class="card" style="margin-bottom: 24px;">
-      <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">💡 About DSA Problems</h1>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
-        Welcome to <strong>DSAProblems.site</strong> — a free, open, and comprehensive educational platform designed to empower software developers, computer science students, and self-taught programmers to master Data Structures and Algorithms (DSA).
-      </p>
-    </div>
-
-    <div class="grid-cards" style="margin-bottom: 24px;">
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 17px;">🎯 Our Mission</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          Technical coding interviews can feel overwhelming without a structured roadmap. Our mission is to demystify complex algorithmic concepts by offering a hand-curated 1000-question curriculum split across 8 progressive stages — from basic syntax to competitive interview mastery.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--easy); margin-bottom: 8px; font-size: 17px;">⚡ Progressive 8-Stage Learning</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          Instead of randomly solving problems, our platform organizes 1000 problems into logical stages (Foundations, Core Patterns, Data Structures, Algorithms, Advanced Trees & Graphs, Dynamic Programming, and Interview Patterns). Each problem is accompanied by pattern recognition guides.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--medium); margin-bottom: 8px; font-size: 17px;">💻 Multi-Language Support</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          We provide well-commented code solutions in four popular programming languages: C++, Java, Python, and JavaScript. Learn how data structures and memory models behave across different paradigms and language runtimes.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--hard); margin-bottom: 8px; font-size: 17px;">🔒 Privacy & Open Access</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          DSAProblems.site requires zero sign-up or accounts. Your progress, solved statuses, bookmarks, and personal revision notes stay safely in your own browser's local storage.
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3 style="margin-bottom: 12px; font-size: 18px; color: var(--text-primary);">🌟 Key Platform Features</h3>
-      <ul style="padding-left: 20px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.8;">
-        <li><strong>1000 Hand-Picked Problems:</strong> 100% verified external links to official LeetCode problems with clear difficulty badges.</li>
-        <li><strong>30-Chapter Interactive DSA Textbook:</strong> Comprehensive guides covering math, memory layouts, asymptotic analysis, dynamic programming state transitions, and graph theory.</li>
-        <li><strong>Progressive Hints:</strong> Get guided hints before viewing full optimal & brute-force implementations.</li>
-        <li><strong>Smart Recommendation Engine:</strong> Personalized problem suggestions based on your weak areas and solved patterns.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- VIEW 5: Privacy Policy -->
-  <section class="view-section" id="view-privacy">
-    <div class="card" style="margin-bottom: 24px;">
-      <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">🔒 Privacy Policy</h1>
-      <p style="font-size: 12.5px; color: var(--text-muted);">Effective Date: August 13, 2026</p>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 10px;">
-        At <strong>DSAProblems.site</strong>, user privacy is fundamental to our platform design. This Privacy Policy document outlines the types of information we do and do not collect, how local storage is utilized, and third-party advertising disclosures.
-      </p>
-    </div>
-
-    <div style="display: flex; flex-direction: column; gap: 16px;">
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 16px;">1. Information We Do Not Collect</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          DSAProblems.site does not require user registration, logins, passwords, or personal profile creation. We do not collect personal identifying information such as your name, phone number, physical address, or account credentials.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 16px;">2. Local Storage Usage (Browser Storage)</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          To allow you to track your learning progress, DSAProblems.site stores minimal preference data locally in your browser's HTML5 <code>localStorage</code>. This includes:
-        </p>
-        <ul style="padding-left: 20px; font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin-top: 8px;">
-          <li>Your list of solved problem IDs</li>
-          <li>Your bookmarked problem IDs</li>
-          <li>Your personal study notes added to specific problems</li>
-          <li>Your current problem-solving daily streak</li>
-          <li>UI preferences (e.g. active language tabs or stage filter)</li>
-        </ul>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-top: 8px;">
-          This data remains strictly on your device and is never transmitted to our servers or third parties. You can clear this data at any time via your browser settings.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 16px;">3. Third-Party Advertising & Cookies (Google AdSense)</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          DSAProblems.site uses Google AdSense to serve advertisements.
-        </p>
-        <ul style="padding-left: 20px; font-size: 13px; color: var(--text-secondary); line-height: 1.8; margin-top: 8px;">
-          <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-          <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</li>
-          <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">Google Ad Settings</a> or <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">aboutads.info</a>.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 16px;">4. External Web Links</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          Our service contains links to external websites (such as LeetCode). We are not responsible for the privacy practices, content, or policies of third-party external sites. We encourage users to read the privacy statements of any linked platform.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3 style="color: var(--accent); margin-bottom: 8px; font-size: 16px;">5. Contact for Privacy Inquiries</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
-          If you have questions or suggestions about our Privacy Policy, feel free to contact us via email at:
-          <br/>
-          <strong style="color: var(--accent); display: inline-block; margin-top: 6px;">✉️ mdhashmi955@gmail.com</strong>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIEW 6: Contact Section -->
-  <section class="view-section" id="view-contact">
-    <div class="card" style="margin-bottom: 24px;">
-      <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">✉️ Contact Us</h1>
-      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
-        Have questions, feedback, solution suggestions, or business inquiries about <strong>DSAProblems.site</strong>? Reach out to us directly!
-      </p>
-    </div>
-
-    <div style="margin-bottom: 24px;">
-      <!-- Direct Gmail Card -->
-      <div class="card" style="border-top: 3px solid var(--accent);">
-        <div style="font-size: 32px; margin-bottom: 8px;">📬</div>
-        <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-primary);">Email Direct</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Send an email directly to our founder and lead developer.</p>
-        <div style="background: var(--bg-elevated); padding: 10px 14px; border-radius: var(--radius); font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-bottom: 14px; border: 1px solid var(--border); word-break: break-all;">
-          mdhashmi955@gmail.com
-        </div>
-        <a href="mailto:mdhashmi955@gmail.com?subject=DSAProblems.site%20Inquiry" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-size: 13px; padding: 8px 16px; width: 100%;">
-          ✉️ Send Email to mdhashmi955@gmail.com
+    <!-- Desktop Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-section-title">Core Learning</div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" data-view="sheet" href="#" onclick="event.preventDefault(); app.switchView('sheet');">
+          <span>📑 DSA Sheet</span>
+          <span class="sidebar-count-badge">1000</span>
         </a>
-      </div>
-    </div>
+        <a class="sidebar-link" data-view="explorer" href="#" onclick="event.preventDefault(); app.switchView('explorer');">
+          <span>🚀 All Problems</span>
+          <span class="sidebar-count-badge" id="sidebar-solved-count">0/1000</span>
+        </a>
+        <a class="sidebar-link" data-view="dashboard" href="#" onclick="event.preventDefault(); app.switchView('dashboard');">
+          <span>📊 Dashboard</span>
+        </a>
+      </nav>
 
-    <!-- Quick Message Form Card -->
-    <div class="card">
-      <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--text-primary);">📝 Send a Quick Message</h3>
-      <form id="contact-form" onsubmit="event.preventDefault(); app.handleContactFormSubmit();">
-        <div style="display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px;">
-          <div>
-            <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Name</label>
-            <input type="text" id="contact-name" required placeholder="John Doe" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+      <div class="sidebar-section-title">Discovery & Practice</div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" data-view="topics" href="#" onclick="event.preventDefault(); app.switchView('topics');">
+          <span>🏷️ Topics</span>
+        </a>
+        <a class="sidebar-link" data-view="patterns" href="#" onclick="event.preventDefault(); app.switchView('patterns');">
+          <span>🔄 Patterns</span>
+        </a>
+        <a class="sidebar-link" data-view="companies" href="#" onclick="event.preventDefault(); app.switchView('companies');">
+          <span>🏢 Companies</span>
+        </a>
+        <a class="sidebar-link" data-view="bookmarks" href="#" onclick="event.preventDefault(); app.switchView('bookmarks');">
+          <span>⭐ Bookmarks</span>
+          <span class="sidebar-count-badge" id="sidebar-bookmark-count">0</span>
+        </a>
+        <a class="sidebar-link" data-view="daily" href="#" onclick="event.preventDefault(); app.switchView('daily');">
+          <span>🎯 Daily Practice</span>
+        </a>
+        <a class="sidebar-link" data-view="revision" href="#" onclick="event.preventDefault(); app.switchView('revision');">
+          <span>🔁 Revision Queue</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-section-title">Resources</div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" data-view="guide" href="#" onclick="event.preventDefault(); app.switchView('guide');">
+          <span>📚 DSA Guide</span>
+        </a>
+        <a class="sidebar-link" data-view="settings" href="#" onclick="event.preventDefault(); app.switchView('settings');">
+          <span>⚙️ Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main class="app-main">
+
+      <!-- VIEW 0: Structured DSA Sheet (Namaste DSA Sheet UX) -->
+      <section class="view-section" id="view-sheet">
+        
+        <!-- Sheet Hero Header -->
+        <div class="hero-banner">
+          <div class="hero-content">
+            <h1>Structured DSA Sheet</h1>
+            <p>1000 curated interview problems organized by difficulty, stage, and topic accordions. Complete questions step-by-step with real-time progress tracking.</p>
           </div>
-          <div>
-            <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Email</label>
-            <input type="email" id="contact-email" required placeholder="your.email@example.com" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="app.continueLastProblem()">▶ Continue Where I Left Off</button>
+            <button class="btn-secondary" onclick="app.switchView('daily')">🎯 Today's Practice</button>
+            <button class="btn-secondary" onclick="app.switchView('bookmarks')">⭐ Bookmarked</button>
+            <button class="btn-secondary" onclick="app.openRandomProblem()">🎲 Random Problem</button>
           </div>
         </div>
 
-        <div style="margin-bottom: 14px;">
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Subject</label>
-          <input type="text" id="contact-subject" required placeholder="Feedback / Bug Report / Inquiry" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+        <!-- Filter & Search Toolbar -->
+        <div class="filter-panel">
+          <div class="search-row">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="sheet-search-input" class="search-input" placeholder="Filter sheet by title, topic, pattern, tag..." oninput="app.handleSheetSearch(this.value)"/>
+            </div>
+            <button class="btn-secondary" onclick="app.toggleExpandAllAccordions()" style="font-size: 12px; white-space: nowrap;" id="btn-toggle-accordions">Expand All Accordions</button>
+          </div>
+          <div class="filter-group" id="sheet-diff-filters">
+            <span class="filter-label">Difficulty:</span>
+            <button class="chip-btn active" data-val="all" onclick="app.filterSheetByDifficulty('all', this)">All</button>
+            <button class="chip-btn easy" data-val="easy" onclick="app.filterSheetByDifficulty('easy', this)">Easy</button>
+            <button class="chip-btn medium" data-val="medium" onclick="app.filterSheetByDifficulty('medium', this)">Medium</button>
+            <button class="chip-btn hard" data-val="hard" onclick="app.filterSheetByDifficulty('hard', this)">Hard</button>
+          </div>
         </div>
 
-        <div style="margin-bottom: 16px;">
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Message</label>
-          <textarea id="contact-message" required rows="4" placeholder="Write your message here..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
+        <!-- Accordion Container -->
+        <div id="sheet-accordions" class="sheet-accordions-container">
+          <!-- Accordions rendered dynamically via JS -->
         </div>
 
-        <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13px;">🚀 Send Message to mdhashmi955@gmail.com</button>
-      </form>
-      <div id="contact-status-msg" style="margin-top: 14px; display: none; padding: 12px; border-radius: var(--radius); font-size: 13px;"></div>
-    </div>
-  </section>
+      </section>
+
+      <!-- VIEW 1: All Problems Explorer Table View -->
+      <section class="view-section active" id="view-explorer">
+        
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+          <div class="hero-content">
+            <h1>Master Data Structures & Algorithms</h1>
+            <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a 30-chapter computer science textbook.</p>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Chapters</button>
+            <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
+          </div>
+        </div>
+
+        <!-- Filter Panel -->
+        <div class="filter-panel">
+          <div class="search-row">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="search-input" class="search-input" placeholder="Search 1000 problems by title, topic, pattern, tag, or #ID..."/>
+            </div>
+            <button class="btn-secondary" id="btn-clear-filters" style="font-size: 12px; white-space: nowrap;">Reset Filters</button>
+          </div>
+
+          <div class="filter-group" data-filter-type="difficulty">
+            <span class="filter-label">Difficulty:</span>
+            <button class="chip-btn active" data-val="all">All (1000)</button>
+            <button class="chip-btn easy" data-val="easy">Easy (400)</button>
+            <button class="chip-btn medium" data-val="medium">Medium (500)</button>
+            <button class="chip-btn hard" data-val="hard">Hard (100)</button>
+          </div>
+
+          <div class="filter-group" data-filter-type="status">
+            <span class="filter-label">Status:</span>
+            <button class="chip-btn active" data-val="all">All</button>
+            <button class="chip-btn" data-val="unsolved">Unsolved</button>
+            <button class="chip-btn" data-val="solved">Solved ✓</button>
+            <button class="chip-btn" data-val="bookmarked">Bookmarked ★</button>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Curriculum Stage: </label>
+              <select id="select-stage" class="select-filter">
+                <option value="all">All 8 Stages</option>
+                <option value="Stage 0 — Programming Foundations">Stage 0 — Programming Foundations</option>
+                <option value="Stage 1 — Core Easy Patterns">Stage 1 — Core Easy Patterns</option>
+                <option value="Stage 2 — Core Data Structures">Stage 2 — Core Data Structures</option>
+                <option value="Stage 3 — Core Algorithms">Stage 3 — Core Algorithms</option>
+                <option value="Stage 4 — Advanced Trees & Graphs">Stage 4 — Advanced Trees & Graphs</option>
+                <option value="Stage 5 — Dynamic Programming">Stage 5 — Dynamic Programming</option>
+                <option value="Stage 6 — Advanced Interview Patterns">Stage 6 — Advanced Interview Patterns</option>
+                <option value="Stage 7 — Interview Mastery">Stage 7 — Interview Mastery</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Topic: </label>
+              <select id="select-topic" class="select-filter">
+                <option value="all">All Topics</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Pattern: </label>
+              <select id="select-pattern" class="select-filter">
+                <option value="all">All Patterns</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Table Header & Info -->
+        <div class="table-header-info">
+          <span id="table-results-info">Showing 1–50 of 1000 problems</span>
+        </div>
+
+        <!-- Desktop Problem Table -->
+        <div class="problem-table-wrapper">
+          <table class="problem-table">
+            <thead>
+              <tr>
+                <th class="col-num">#</th>
+                <th>Problem Title</th>
+                <th>Difficulty</th>
+                <th>Stage & Topic</th>
+                <th>LeetCode Link</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="problem-tbody">
+              <!-- Rendered via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile Card List View (For screens <= 768px) -->
+        <div class="mobile-card-list" id="mobile-problem-card-list">
+          <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+          <button class="page-btn" id="page-prev">← Previous</button>
+          <span class="page-info" id="page-info">Page 1 of 20</span>
+          <button class="page-btn" id="page-next">Next →</button>
+        </div>
+
+      </section>
+
+      <!-- VIEW: Topics Grid -->
+      <section class="view-section" id="view-topics">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>🏷️ Topics Mastery Matrix</h2>
+          <p>Explore all core DSA topics, monitor topic-level completion rates, and practice specific data structures.</p>
+        </div>
+        <div class="grid-cards" id="topics-grid-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW: Patterns Library -->
+      <section class="view-section" id="view-patterns">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>🔄 Algorithmic Pattern Recognition Library</h2>
+          <p>Master pattern recognition ("When you see X, think of Y") with descriptions, clues, and template code for 15+ patterns.</p>
+        </div>
+        <div class="grid-cards" id="patterns-grid-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW: Companies Experience -->
+      <section class="view-section" id="view-companies">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>🏢 Company-Specific Interview Track</h2>
+          <p>Practice recurring DSA questions tagged by top technology companies (Google, Amazon, Meta, Microsoft, Uber, Apple, Netflix).</p>
+        </div>
+        <div class="grid-cards" id="companies-grid-container">
+          <!-- Populated by JS -->
+        </div>
+        <div id="company-questions-section" style="margin-top: 24px;"></div>
+      </section>
+
+      <!-- VIEW: Bookmarks & Revision Queue -->
+      <section class="view-section" id="view-bookmarks">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>⭐ Bookmarked Problems</h2>
+          <p>Your saved problems for targeted review and revision practice.</p>
+        </div>
+        <div id="bookmarks-list-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW: Daily Practice Challenge -->
+      <section class="view-section" id="view-daily">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>🎯 Daily Practice Challenge</h2>
+          <p>5 carefully selected problems for today (1 Easy, 2 Medium, 2 Pattern-based).</p>
+        </div>
+        <div class="grid-cards" id="daily-list-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW: Revision Mode -->
+      <section class="view-section" id="view-revision">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>🔁 Spaced Repetition Revision Queue</h2>
+          <p>Review previously solved problems due for revision to retain algorithmic concepts long-term.</p>
+        </div>
+        <div id="revision-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- VIEW: Educational DSA Guide Textbook -->
+      <section class="view-section" id="view-guide">
+        <div class="card" style="margin-bottom: 24px;">
+          <h2>📚 Data Structures & Algorithms — Exhaustive 30-Chapter Master Textbook</h2>
+          <p>A complete computer science reference manual covering memory models, mathematical proofs, internal data structure mechanics, algorithm invariants, complexity cheat sheets, and direct practice problem triggers.</p>
+        </div>
+
+        <!-- Chapters 1–2: Foundations & Asymptotic Complexity -->
+        <div style="margin-bottom: 28px;">
+          <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Chapters 1–2: Programming Foundations & Asymptotic Complexity</h3>
+          <div class="grid-cards">
+            <div class="card">
+              <h4>Chapter 1 — Programming Foundations & Memory Architecture</h4>
+              <p>Understanding program execution, RAM layout, CPU L1/L2/L3 cache hierarchies, stack vs heap memory, and pointer references:</p>
+              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
+                <li><strong>Stack Memory:</strong> Fast contiguously managed activation stack frames storing local primitive variables.</li>
+                <li><strong>Heap Memory:</strong> Dynamically allocated buffer memory accessed via pointer addresses and reference handles.</li>
+                <li><strong>Abstract Data Types (ADT):</strong> Formal mathematical specifications defining supported operations independently of underlying storage code.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>Chapter 2 — Asymptotic Analysis & Master Theorem</h4>
+              <p>Formal definitions of mathematical upper, lower, and tight growth bounds as input size N approaches infinity:</p>
+              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                <li><strong>Formal Limits:</strong> <code>f(N) = O(g(N)) ⇔ ∃ c&gt;0, N₀&gt;0 s.t. f(N) ≤ c·g(N) ∀ N ≥ N₀</code>.</li>
+                <li><strong>Master Theorem Formula:</strong> <code>T(N) = a·T(N/b) + f(N)</code> governing divide-and-conquer recursion trees.</li>
+                <li><strong>Amortized Doubling Proof:</strong> Dynamic array capacity doubling achieves <code>O(1)</code> average insertion cost.</li>
+              </ul>
+              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Foundations →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters 3–5: Arrays, Strings & Hashing -->
+        <div style="margin-bottom: 28px;">
+          <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Chapters 3–5: Arrays, Strings, Pattern Matching & Hashing</h3>
+          <div class="grid-cards">
+            <div class="card">
+              <h4>Chapters 3–4 — Arrays, Two Pointers & Subarrays</h4>
+              <p>Contiguous RAM allocation, cache spatial locality, prefix sums, difference arrays, and Kadane's algorithm:</p>
+              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                <li><strong>Address Calculation:</strong> <code>Address(A[i]) = Base + i · ElementSize</code> for instant <code>O(1)</code> lookups.</li>
+                <li><strong>Kadane's Algorithm:</strong> Maximum contiguous subarray sum state recurrence <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
+                <li><strong>Prefix Sums:</strong> <code>P[i] = P[i-1] + A[i]</code> allowing range sum queries in <code>O(1)</code> time.</li>
+              </ul>
+              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays')">Practice Arrays →</button>
+            </div>
+
+            <div class="card">
+              <h4>Chapter 5 — String Processing & KMP Matching</h4>
+              <p>Character encodings (ASCII/UTF-8), polynomial rolling hashing, KMP algorithm, and Z-algorithm:</p>
+              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+                <li><strong>KMP Algorithm:</strong> Partial match LPS table matching string patterns in <code>O(N + M)</code>.</li>
+                <li><strong>Rabin-Karp Rolling Hash:</strong> Polynomial hashing converting substrings into integers modulo prime <code>M</code>.</li>
+              </ul>
+              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Strings')">Practice Strings →</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- VIEW: Dashboard -->
+      <section class="view-section" id="view-dashboard">
+        <div class="card" style="margin-bottom: 20px;">
+          <h2>📊 Learner Progress Dashboard</h2>
+          <p>Track your overall progress, difficulty distribution, streak history, and smart recommendations.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">Total Solved</div>
+            <div class="stat-value" id="dash-solved-total">0 / 1000</div>
+            <div class="progress-bar-lg">
+              <div class="progress-bar-fill" id="dash-solved-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header" style="color: var(--easy);">Easy Solved</div>
+            <div class="stat-value" id="dash-easy-count" style="color: var(--easy);">0 / 400</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header" style="color: var(--medium);">Medium Solved</div>
+            <div class="stat-value" id="dash-med-count" style="color: var(--medium);">0 / 500</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header" style="color: var(--hard);">Hard Solved</div>
+            <div class="stat-value" id="dash-hard-count" style="color: var(--hard);">0 / 100</div>
+          </div>
+        </div>
+
+        <div id="dash-recommendation" style="margin-bottom: 20px;"></div>
+
+        <!-- Question Quality Control & Duplicate Prevention Engine -->
+        <div class="card" style="border-top: 3px solid var(--accent); margin-bottom: 20px;">
+          <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-primary);">🛡️ Question Quality Control & Duplicate Prevention Engine</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+            Test new questions against our canonical dataset before adding them to prevent exact, normalized, or semantic duplicate entries.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Question Title</label>
+              <input type="text" id="admin-dedup-title" placeholder="e.g. Find Whether Any Number Appears More Than Once" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Problem Statement</label>
+              <textarea id="admin-dedup-statement" rows="2" placeholder="e.g. Given an integer array, return true if any value appears at least twice in the array..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="padding: 9px 18px; font-size: 13px;" onclick="
+            const title = document.getElementById('admin-dedup-title').value;
+            const stmt = document.getElementById('admin-dedup-statement').value;
+            const res = app.checkQuestionDuplicate(title, stmt);
+            const out = document.getElementById('admin-dedup-result');
+            out.style.display = 'block';
+            if (res.isDuplicate) {
+              out.style.background = 'rgba(239, 68, 68, 0.1)';
+              out.style.border = '1px solid var(--hard)';
+              out.innerHTML = `<strong style='color:var(--hard);'>⚠️ DUPLICATE DETECTED (${res.score}% Match)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
+            } else {
+              out.style.background = 'rgba(16, 185, 129, 0.1)';
+              out.style.border = '1px solid var(--easy)';
+              out.innerHTML = `<strong style='color:var(--easy);'>✓ QUESTION APPROVED (${res.score}% Similarity)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
+            }
+          ">🔍 Run Duplicate Prevention Analysis</button>
+
+          <div id="admin-dedup-result" style="display: none; margin-top: 14px; padding: 12px; border-radius: var(--radius);"></div>
+        </div>
+      </section>
+
+      <!-- VIEW: Settings & Data Management -->
+      <section class="view-section" id="view-settings">
+        <div class="card" style="margin-bottom: 24px;">
+          <h2>⚙️ Preferences & Local Data Management</h2>
+          <p>Customize your theme, language preferences, and export/import your progress JSON file.</p>
+        </div>
+
+        <div class="grid-cards" style="margin-bottom: 24px;">
+          <div class="card">
+            <h3>🎨 Theme Selection</h3>
+            <p>Choose your preferred interface appearance.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button class="btn-secondary" onclick="app.setTheme('dark')">🌙 Dark Mode</button>
+              <button class="btn-secondary" onclick="app.setTheme('light')">☀️ Light Mode</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>💻 Default Preferred Language</h3>
+            <p>Select your primary programming language for solution code blocks.</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button class="chip-btn" onclick="app.setPreferredLanguage('cpp')">C++</button>
+              <button class="chip-btn" onclick="app.setPreferredLanguage('java')">Java</button>
+              <button class="chip-btn" onclick="app.setPreferredLanguage('python')">Python</button>
+              <button class="chip-btn" onclick="app.setPreferredLanguage('javascript')">JavaScript</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>📥 Export & Import Progress</h3>
+            <p>Backup or transfer your solved problems, bookmarks, and notes JSON file.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn-primary" onclick="app.exportProgressData()">💾 Export Backup JSON</button>
+              <label class="btn-secondary" style="cursor: pointer;">
+                📂 Import Backup JSON
+                <input type="file" id="import-json-input" accept=".json" style="display: none;" onchange="app.importProgressData(event)"/>
+              </label>
+            </div>
+          </div>
+
+          <div class="card" style="border-color: var(--hard-border);">
+            <h3 style="color: var(--hard);">⚠️ Danger Zone — Reset Progress</h3>
+            <p>Clear all local progress data (solved statuses, bookmarks, notes, streak).</p>
+            <button class="btn-secondary" style="border-color: var(--hard); color: var(--hard);" onclick="app.resetAllProgress()">🗑️ Reset All Progress</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: About Us -->
+      <section class="view-section" id="view-about">
+        <div class="card" style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">💡 About DSA Problems</h1>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+            Welcome to <strong>DSAProblems.site</strong> — a free, open, and comprehensive educational platform designed to empower software developers, computer science students, and self-taught programmers to master Data Structures and Algorithms (DSA).
+          </p>
+        </div>
+      </section>
+
+      <!-- VIEW: Privacy Policy -->
+      <section class="view-section" id="view-privacy">
+        <div class="card" style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">🔒 Privacy Policy</h1>
+          <p style="font-size: 12.5px; color: var(--text-muted);">Effective Date: August 13, 2026</p>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 10px;">
+            At <strong>DSAProblems.site</strong>, user privacy is fundamental to our platform design.
+          </p>
+        </div>
+      </section>
+
+      <!-- VIEW: Contact Section -->
+      <section class="view-section" id="view-contact">
+        <div class="card" style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">✉️ Contact Us</h1>
+          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
+            Have questions, feedback, solution suggestions, or business inquiries about <strong>DSAProblems.site</strong>? Reach out to us directly!
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--text-primary);">📝 Send a Quick Message</h3>
+          <form id="contact-form" onsubmit="event.preventDefault(); app.handleContactFormSubmit();">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Name</label>
+                <input type="text" id="contact-name" required placeholder="John Doe" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Email</label>
+                <input type="email" id="contact-email" required placeholder="your.email@example.com" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Subject</label>
+              <input type="text" id="contact-subject" required placeholder="Feedback / Bug Report / Inquiry" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Message</label>
+              <textarea id="contact-message" required rows="4" placeholder="Write your message here..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13px;">🚀 Send Message to mdhashmi955@gmail.com</button>
+          </form>
+          <div id="contact-status-msg" style="margin-top: 14px; display: none; padding: 12px; border-radius: var(--radius); font-size: 13px;"></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <!-- Footer with Legal / Trust Links -->
   <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--text-muted);">
@@ -790,6 +753,16 @@
   </div>
 </div>
 
+<!-- Global Command Search Palette Modal (Ctrl + K) -->
+<div class="modal-overlay" id="modal-command-palette">
+  <div class="modal-window command-palette-window">
+    <input type="text" id="command-search-input" class="command-search-input" placeholder="Search 1000 problems by title, topic, pattern..." oninput="app.handleCommandSearch(this.value)" autocomplete="off"/>
+    <div class="command-results-list" id="command-results-list">
+      <!-- Populated via JS -->
+    </div>
+  </div>
+</div>
+
 <!-- Legal Trust Modals -->
 <div class="modal-overlay" id="legal-modal-overlay">
   <div class="modal-window" style="max-width: 650px;">
@@ -802,6 +775,9 @@
     </div>
   </div>
 </div>
+
+<!-- Floating Toast Container -->
+<div class="toast-container" id="toast-container"></div>
 
 </body>
 </html>

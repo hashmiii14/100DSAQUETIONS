@@ -20,6 +20,11 @@ class DSAApp {
     this.filterStatus = 'all';
     this.filterStage = 'all';
 
+    // Sheet specific filters
+    this.sheetSearchQuery = '';
+    this.sheetFilterDifficulty = 'all';
+    this.expandedAccordions = new Set(); // Stores expanded stage/topic keys
+
     // Pagination
     this.currentPage = 1;
     this.pageSize = 50;
@@ -28,6 +33,9 @@ class DSAApp {
     this.activeModalProblem = null;
     this.activeSolutionTab = 'optimal'; // 'optimal' | 'brute'
     this.activeLang = 'cpp'; // 'cpp' | 'java' | 'python' | 'javascript'
+
+    // Rate limiting & contact
+    this.lastContactSubmit = 0;
 
     this.init();
   }
@@ -48,25 +56,60 @@ class DSAApp {
   init() {
     this.getProblems();
     this.readUrlParams();
+    this.applyInitialTheme();
     this.bindEvents();
+    this.bindGlobalKeyboardShortcuts();
     this.renderNav();
+    this.renderSidebar();
     this.switchView(this.currentView);
     this.renderExplorer();
     this.renderDashboard();
+    this.renderSheet();
 
-    // Fallback polling to handle network delays or async dataset loading
+    // Fallback polling for async dataset loading
     if (!this.problems || this.problems.length === 0) {
       const pollTimer = setInterval(() => {
         if (this.getProblems().length > 0) {
           clearInterval(pollTimer);
           if (this.recommender) this.recommender.problems = this.problems;
           this.renderNav();
+          this.renderSidebar();
           this.renderExplorer();
           this.renderDashboard();
+          this.renderSheet();
         }
       }, 100);
       setTimeout(() => clearInterval(pollTimer), 5000);
     }
+  }
+
+  applyInitialTheme() {
+    const savedTheme = (this.state && this.state.theme) ? this.state.theme : (localStorage.getItem('dsaproblems_theme_v3') || 'dark');
+    this.setTheme(savedTheme, false);
+  }
+
+  setTheme(themeName, showToastMsg = true) {
+    if (this.state && typeof this.state.setTheme === 'function') {
+      this.state.setTheme(themeName);
+    } else {
+      localStorage.setItem('dsaproblems_theme_v3', themeName);
+      document.documentElement.setAttribute('data-theme', themeName);
+    }
+
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+      themeIcon.textContent = themeName === 'dark' ? '🌙' : '☀️';
+    }
+
+    if (showToastMsg) {
+      this.showToast(`Switched to ${themeName === 'dark' ? 'Dark' : 'Light'} Mode 🎨`);
+    }
+  }
+
+  toggleTheme() {
+    const curTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const nextTheme = curTheme === 'dark' ? 'light' : 'dark';
+    this.setTheme(nextTheme, true);
   }
 
   readUrlParams() {
@@ -78,7 +121,7 @@ class DSAApp {
     if (params.has('search')) this.searchQuery = (params.get('search') || '').slice(0, 100);
     
     if (params.has('view')) {
-      const allowedViews = ['explorer', 'guide', 'dashboard', 'about', 'privacy', 'contact'];
+      const allowedViews = ['sheet', 'explorer', 'topics', 'patterns', 'companies', 'bookmarks', 'daily', 'revision', 'dashboard', 'guide', 'settings', 'about', 'privacy', 'contact'];
       const requestedView = params.get('view');
       if (allowedViews.includes(requestedView)) {
         this.currentView = requestedView;
@@ -90,7 +133,6 @@ class DSAApp {
       if (searchInp) searchInp.value = this.searchQuery;
     }
 
-    // Direct Problem ID or Slug opening
     let targetPid = null;
     if (params.has('p')) {
       targetPid = Number(params.get('p'));
@@ -111,7 +153,7 @@ class DSAApp {
     if (targetPid && !isNaN(targetPid)) {
       setTimeout(() => {
         this.openProblemModal(targetPid);
-      }, 100);
+      }, 150);
     }
   }
 
@@ -129,16 +171,18 @@ class DSAApp {
   }
 
   bindEvents() {
-    // Nav buttons
-    document.querySelectorAll('.nav-btn').forEach(btn => {
+    // Topbar & Sidebar nav buttons
+    document.querySelectorAll('.nav-btn, .sidebar-link').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const view = e.currentTarget.dataset.view;
-        this.switchView(view);
-        this.closeMobileDrawer();
+        if (view) {
+          this.switchView(view);
+          this.closeMobileDrawer();
+        }
       });
     });
 
-    // Mobile Drawer Toggle & Backdrop
+    // Mobile Drawer Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const drawerCloseBtn = document.getElementById('drawer-close-btn');
     const backdrop = document.getElementById('drawer-backdrop');
@@ -154,7 +198,7 @@ class DSAApp {
     const dashQuickBtn = document.getElementById('btn-dash-quick');
     if (dashQuickBtn) dashQuickBtn.addEventListener('click', () => this.switchView('dashboard'));
 
-    // Search input
+    // Explorer Search Input
     const searchInp = document.getElementById('search-input');
     if (searchInp) {
       searchInp.addEventListener('input', (e) => {
@@ -165,10 +209,12 @@ class DSAApp {
       });
     }
 
-    // Filter Chips & Selects
+    // Explorer Filter Chips & Selects
     document.querySelectorAll('.filter-group .chip-btn').forEach(chip => {
       chip.addEventListener('click', (e) => {
         const parent = e.target.closest('.filter-group');
+        if (!parent || !parent.dataset.filterType) return;
+
         const filterType = parent.dataset.filterType;
         const val = e.target.dataset.val;
 
@@ -229,14 +275,6 @@ class DSAApp {
         if (e.target === modalOverlay) this.closeModal();
       });
     }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.closeModal();
-        this.closeMobileDrawer();
-        this.closeLegalModal();
-      }
-    });
 
     const prevBtn = document.getElementById('modal-prev-btn');
     if (prevBtn) prevBtn.addEventListener('click', () => this.navigateModal(-1));
@@ -320,11 +358,109 @@ class DSAApp {
     const linkContact = document.getElementById('link-contact');
     const legalCloseBtn = document.getElementById('legal-modal-close-btn');
 
-    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.switchView('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.switchView('privacy'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.switchView('about'); if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.switchView('privacy'); if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') window.scrollTo({ top: 0, behavior: 'smooth' }); });
     if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
-    if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.switchView('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.switchView('contact'); if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') window.scrollTo({ top: 0, behavior: 'smooth' }); });
     if (legalCloseBtn) legalCloseBtn.addEventListener('click', () => this.closeLegalModal());
+  }
+
+  bindGlobalKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+K or Cmd+K for Command Search Palette
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        this.openCommandPalette();
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        this.closeModal();
+        this.closeCommandPalette();
+        this.closeMobileDrawer();
+        this.closeLegalModal();
+      }
+    });
+
+    const cmdOverlay = document.getElementById('modal-command-palette');
+    if (cmdOverlay) {
+      cmdOverlay.addEventListener('click', (e) => {
+        if (e.target === cmdOverlay) this.closeCommandPalette();
+      });
+    }
+  }
+
+  openCommandPalette() {
+    const palette = document.getElementById('modal-command-palette');
+    const input = document.getElementById('command-search-input');
+    if (palette) {
+      palette.classList.add('open');
+      if (input) {
+        input.value = '';
+        input.focus();
+        this.handleCommandSearch('');
+      }
+    }
+  }
+
+  closeCommandPalette() {
+    const palette = document.getElementById('modal-command-palette');
+    if (palette) palette.classList.remove('open');
+  }
+
+  handleCommandSearch(query) {
+    const q = (query || '').toLowerCase().trim();
+    const resultsContainer = document.getElementById('command-results-list');
+    if (!resultsContainer) return;
+
+    const problems = this.getProblems();
+    const matches = problems.filter(p => {
+      if (!q) return true;
+      return (
+        String(p.id).includes(q) ||
+        p.title.toLowerCase().includes(q) ||
+        p.topic.toLowerCase().includes(q) ||
+        p.pattern.toLowerCase().includes(q)
+      );
+    }).slice(0, 15); // Show top 15 matches
+
+    if (matches.length === 0) {
+      resultsContainer.innerHTML = `<div style="padding: 20px; text-align: center; color: var(--text-muted);">No problems found matching "${this.escapeHtml(q)}"</div>`;
+      return;
+    }
+
+    resultsContainer.innerHTML = matches.map(p => `
+      <div class="command-item" onclick="app.closeCommandPalette(); app.openProblemModal(${p.id});">
+        <div>
+          <span style="font-family: var(--font-mono); font-weight: 700; color: var(--text-muted); margin-right: 8px;">#${String(p.id).padStart(3, '0')}</span>
+          <strong style="color: var(--text-primary);">${this.escapeHtml(p.title)}</strong>
+          <span style="font-size: 11px; color: var(--text-muted); margin-left: 8px;">(${this.escapeHtml(p.topic)})</span>
+        </div>
+        <span class="badge badge-${p.difficulty.toLowerCase()}">${p.difficulty}</span>
+      </div>
+    `).join('');
+  }
+
+  showToast(message) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = message;
+
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        if (toast.remove) {
+          toast.remove();
+        } else if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 200);
+    }, 2500);
   }
 
   copyToClipboard(text) {
@@ -351,7 +487,6 @@ class DSAApp {
   handleContactFormSubmit() {
     const now = Date.now();
     if (this.lastContactSubmit && (now - this.lastContactSubmit < 10000)) {
-      this.logSecurityEvent('RATE_LIMIT_CONTACT', 'Client submitted contact form before 10s cooldown.');
       const statusMsg = document.getElementById('contact-status-msg');
       if (statusMsg) {
         statusMsg.style.display = 'block';
@@ -375,7 +510,6 @@ class DSAApp {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email && !emailRegex.test(email)) {
-      this.logSecurityEvent('INVALID_EMAIL_SUBMIT', `Invalid email pattern: ${email}`);
       const statusMsg = document.getElementById('contact-status-msg');
       if (statusMsg) {
         statusMsg.style.display = 'block';
@@ -388,10 +522,7 @@ class DSAApp {
     }
 
     this.lastContactSubmit = now;
-    this.logSecurityEvent('CONTACT_SUBMIT_SUCCESS', `Subject: ${subject}`);
-
     const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
     window.location.href = mailtoUrl;
 
     const statusMsg = document.getElementById('contact-status-msg');
@@ -402,16 +533,6 @@ class DSAApp {
       statusMsg.style.border = '1px solid var(--easy)';
       statusMsg.innerHTML = `<strong>✓ Mail client launched!</strong> If your mail app did not open automatically, please send your email directly to <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent); font-weight: bold;">mdhashmi955@gmail.com</a>.`;
     }
-  }
-
-  logSecurityEvent(eventType, details) {
-    try {
-      const timestamp = new Date().toISOString();
-      const logs = JSON.parse(localStorage.getItem('dsaproblems_sec_logs_v1') || '[]');
-      logs.push({ timestamp, eventType, details });
-      if (logs.length > 50) logs.shift();
-      localStorage.setItem('dsaproblems_sec_logs_v1', JSON.stringify(logs));
-    } catch (_) {}
   }
 
   openLegalModal(title, bodyHtml) {
@@ -476,7 +597,8 @@ class DSAApp {
   switchView(viewName) {
     this.currentView = viewName;
 
-    document.querySelectorAll('.nav-btn').forEach(btn => {
+    // Update active tab buttons in topbar and sidebar
+    document.querySelectorAll('.nav-btn, .sidebar-link').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.view === viewName);
     });
 
@@ -489,9 +611,507 @@ class DSAApp {
 
     this.updateUrlParams();
 
+    // Render targeted view modules dynamically
+    if (viewName === 'sheet') this.renderSheet();
     if (viewName === 'dashboard') this.renderDashboard();
+    if (viewName === 'topics') this.renderTopics();
+    if (viewName === 'patterns') this.renderPatterns();
+    if (viewName === 'companies') this.renderCompanies();
+    if (viewName === 'bookmarks') this.renderBookmarks();
+    if (viewName === 'daily') this.renderDaily();
+    if (viewName === 'revision') this.renderRevision();
+
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
+  renderSidebar() {
+    const solvedCountEl = document.getElementById('sidebar-solved-count');
+    if (solvedCountEl) {
+      const solved = this.state && this.state.done ? this.state.done.size : 0;
+      solvedCountEl.textContent = `${solved}/1000`;
+    }
+
+    const bmCountEl = document.getElementById('sidebar-bookmark-count');
+    if (bmCountEl) {
+      const bm = this.state && this.state.bookmarked ? this.state.bookmarked.size : 0;
+      bmCountEl.textContent = `${bm}`;
+    }
+
+    const streakCountEl = document.getElementById('header-streak-count');
+    if (streakCountEl && this.state && this.state.streakData) {
+      streakCountEl.textContent = this.state.streakData.current || 1;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     DSA Sheet View Renderer (Namaste DSA Sheet UX)
+     ───────────────────────────────────────────────────────────────────────── */
+  renderSheet() {
+    const container = document.getElementById('sheet-accordions');
+    if (!container) return;
+
+    const problems = this.getProblems();
+    if (!problems || problems.length === 0) return;
+
+    // Group problems by Curriculum Stage & Topic
+    const stages = {};
+    problems.forEach(p => {
+      const stageName = p.phase || p.stage || p.curriculumStage || 'Core Curriculum';
+      const topicName = p.topic || 'General DSA';
+
+      if (!stages[stageName]) stages[stageName] = {};
+      if (!stages[stageName][topicName]) stages[stageName][topicName] = [];
+
+      // Filter by sheet search and difficulty
+      if (this.sheetSearchQuery) {
+        const q = this.sheetSearchQuery.toLowerCase();
+        const matchTitle = p.title.toLowerCase().includes(q);
+        const matchPattern = p.pattern.toLowerCase().includes(q);
+        if (!matchTitle && !matchPattern) return;
+      }
+
+      if (this.sheetFilterDifficulty !== 'all') {
+        if (p.difficulty.toLowerCase() !== this.sheetFilterDifficulty.toLowerCase()) return;
+      }
+
+      stages[stageName][topicName].push(p);
+    });
+
+    let html = '';
+    let accordionIndex = 0;
+
+    for (const stageName in stages) {
+      for (const topicName in stages[stageName]) {
+        const topicProblems = stages[stageName][topicName];
+        if (topicProblems.length === 0) continue;
+
+        accordionIndex++;
+        const accordionKey = `acc-${accordionIndex}`;
+        const isOpen = this.expandedAccordions.has(accordionKey) || accordionIndex === 1; // First default open
+
+        const solvedCount = topicProblems.filter(p => this.state && this.state.done.has(p.id)).length;
+        const totalCount = topicProblems.length;
+        const pct = Math.round((solvedCount / totalCount) * 100);
+
+        let rowsHtml = '';
+        topicProblems.forEach(p => {
+          const isDone = this.state && this.state.done ? this.state.done.has(p.id) : false;
+          const isStarred = this.state && this.state.bookmarked ? this.state.bookmarked.has(p.id) : false;
+          const numStr = String(p.id).padStart(3, '0');
+          const diffClass = p.difficulty.toLowerCase();
+
+          rowsHtml += `
+            <tr class="problem-row ${isDone ? 'done' : ''}">
+              <td style="width: 45px;"><input type="checkbox" class="action-cb" ${isDone ? 'checked' : ''} onchange="app.toggleDone(${p.id}, event)"></td>
+              <td class="col-num">#${numStr}</td>
+              <td class="col-title"><span class="q-title-link" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</span></td>
+              <td><span class="badge badge-${diffClass}">${p.difficulty}</span></td>
+              <td><span class="pattern-tag">${this.escapeHtml(p.pattern)}</span></td>
+              <td><a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" onclick="event.stopPropagation();">Practice ↗</a></td>
+              <td style="width: 50px;"><button class="star-btn ${isStarred ? 'starred' : ''}" onclick="app.toggleBookmark(${p.id}, event)">★</button></td>
+            </tr>
+          `;
+        });
+
+        html += `
+          <div class="topic-accordion ${isOpen ? 'open' : ''}" id="${accordionKey}">
+            <div class="accordion-header" onclick="app.toggleAccordion('${accordionKey}')">
+              <div class="accordion-title-group">
+                <span class="accordion-icon">►</span>
+                <span class="accordion-title">${this.escapeHtml(stageName)} — ${this.escapeHtml(topicName)}</span>
+              </div>
+              <div class="accordion-progress-group">
+                <span class="accordion-count">${solvedCount} / ${totalCount} completed</span>
+                <div class="mini-progress-bar">
+                  <div class="mini-progress-fill" style="width: ${pct}%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-content">
+              <table class="problem-table">
+                <tbody>
+                  ${rowsHtml}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    if (!html) {
+      container.innerHTML = `<div class="card" style="text-align:center; padding: 40px; color: var(--text-secondary);">No problems match your current search/filter criteria.</div>`;
+      return;
+    }
+
+    container.innerHTML = html;
+  }
+
+  toggleAccordion(key) {
+    const acc = document.getElementById(key);
+    if (!acc) return;
+
+    if (acc.classList.contains('open')) {
+      acc.classList.remove('open');
+      this.expandedAccordions.delete(key);
+    } else {
+      acc.classList.add('open');
+      this.expandedAccordions.add(key);
+    }
+  }
+
+  toggleExpandAllAccordions() {
+    const accordions = document.querySelectorAll('.topic-accordion');
+    const anyClosed = Array.from(accordions).some(a => !a.classList.contains('open'));
+
+    accordions.forEach(a => {
+      if (anyClosed) {
+        a.classList.add('open');
+        this.expandedAccordions.add(a.id);
+      } else {
+        a.classList.remove('open');
+        this.expandedAccordions.delete(a.id);
+      }
+    });
+
+    const btn = document.getElementById('btn-toggle-accordions');
+    if (btn) btn.textContent = anyClosed ? 'Collapse All Accordions' : 'Expand All Accordions';
+  }
+
+  handleSheetSearch(query) {
+    this.sheetSearchQuery = query;
+    this.renderSheet();
+  }
+
+  filterSheetByDifficulty(diff, btnEl) {
+    this.sheetFilterDifficulty = diff;
+    const parent = document.getElementById('sheet-diff-filters');
+    if (parent) {
+      parent.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    }
+    if (btnEl) btnEl.classList.add('active');
+    this.renderSheet();
+  }
+
+  continueLastProblem() {
+    const doneSet = this.state && this.state.done ? this.state.done : new Set();
+    const nextUnsolved = this.getProblems().find(p => !doneSet.has(p.id));
+    if (nextUnsolved) {
+      this.openProblemModal(nextUnsolved.id);
+    } else {
+      this.openProblemModal(1);
+    }
+  }
+
+  openRandomProblem() {
+    const problems = this.getProblems();
+    if (problems.length === 0) return;
+    const randomIdx = Math.floor(Math.random() * problems.length);
+    this.openProblemModal(problems[randomIdx].id);
+    this.showToast(`🎲 Opened random problem: #${problems[randomIdx].id} ${problems[randomIdx].title}`);
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Discovery Views (Topics, Patterns, Companies, Bookmarks, Daily, Revision)
+     ───────────────────────────────────────────────────────────────────────── */
+  renderTopics() {
+    const container = document.getElementById('topics-grid-container');
+    if (!container) return;
+
+    const topicsMap = {};
+    this.getProblems().forEach(p => {
+      if (!topicsMap[p.topic]) topicsMap[p.topic] = { total: 0, solved: 0 };
+      topicsMap[p.topic].total++;
+      if (this.state && this.state.done.has(p.id)) topicsMap[p.topic].solved++;
+    });
+
+    container.innerHTML = Object.keys(topicsMap).map(t => {
+      const item = topicsMap[t];
+      const pct = Math.round((item.solved / item.total) * 100);
+      return `
+        <div class="card">
+          <h3>${this.escapeHtml(t)}</h3>
+          <p style="font-size: 12.5px; color: var(--text-secondary); mb-2;">${item.solved} of ${item.total} problems completed</p>
+          <div class="progress-bar-lg" style="margin-bottom: 14px;">
+            <div class="progress-bar-fill" style="width: ${pct}%;"></div>
+          </div>
+          <button class="btn-primary" style="font-size: 12px; width: 100%;" onclick="app.filterByTopicAndSwitch('${this.escapeHtml(t)}')">Practice Topic (${pct}%) →</button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  renderPatterns() {
+    const container = document.getElementById('patterns-grid-container');
+    if (!container) return;
+
+    container.innerHTML = this.patterns.map(pt => `
+      <div class="card">
+        <div>
+          <h3>🔄 ${this.escapeHtml(pt.name)}</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">${this.escapeHtml(pt.description)}</p>
+          <div style="background: var(--bg-elevated); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 11.5px; margin-bottom: 12px;">
+            <strong>Signals:</strong> ${pt.clues ? pt.clues.map(c => this.escapeHtml(c)).join(' • ') : 'Standard pattern.'}
+          </div>
+        </div>
+        <button class="btn-secondary" style="font-size: 12px; width: 100%;" onclick="app.filterByPatternAndSwitch('${this.escapeHtml(pt.name)}')">Practice Pattern →</button>
+      </div>
+    `).join('');
+  }
+
+  filterByPatternAndSwitch(patternName) {
+    this.resetFilters();
+    this.filterPattern = patternName;
+    const patternSelect = document.getElementById('select-pattern');
+    if (patternSelect) patternSelect.value = patternName;
+    this.switchView('explorer');
+  }
+
+  renderCompanies() {
+    const container = document.getElementById('companies-grid-container');
+    if (!container) return;
+
+    const companies = [
+      { name: 'Google', icon: '🌐', count: 245 },
+      { name: 'Amazon', icon: '📦', count: 320 },
+      { name: 'Meta', icon: '♾️', count: 198 },
+      { name: 'Microsoft', icon: '🪟', count: 215 },
+      { name: 'Uber', icon: '🚗', count: 142 },
+      { name: 'Adobe', icon: '🅰️', count: 110 },
+      { name: 'Apple', icon: '🍎', count: 165 }
+    ];
+
+    container.innerHTML = companies.map(c => `
+      <div class="card">
+        <div>
+          <h3>${c.icon} ${c.name}</h3>
+          <p style="font-size: 13px; color: var(--text-secondary);">${c.count}+ recurring interview questions tagged for ${c.name}.</p>
+        </div>
+        <button class="btn-secondary" style="font-size: 12px; width: 100%; margin-top: 10px;" onclick="app.filterByCompany('${c.name}')">Filter ${c.name} Questions →</button>
+      </div>
+    `).join('');
+  }
+
+  filterByCompany(companyName) {
+    this.resetFilters();
+    this.searchQuery = companyName;
+    const searchInp = document.getElementById('search-input');
+    if (searchInp) searchInp.value = companyName;
+    this.switchView('explorer');
+  }
+
+  renderBookmarks() {
+    const container = document.getElementById('bookmarks-list-container');
+    if (!container) return;
+
+    const bmSet = this.state && this.state.bookmarked ? this.state.bookmarked : new Set();
+    const bmProblems = this.getProblems().filter(p => bmSet.has(p.id));
+
+    if (bmProblems.length === 0) {
+      container.innerHTML = `
+        <div class="card" style="text-align: center; padding: 40px;">
+          <h3>No Bookmarked Problems Yet</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px;">Save important problems while practicing to review them later.</p>
+          <button class="btn-primary" style="margin: 0 auto; display: inline-flex;" onclick="app.switchView('sheet')">Browse DSA Sheet →</button>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="problem-table-wrapper">
+        <table class="problem-table">
+          <thead>
+            <tr>
+              <th class="col-num">#</th>
+              <th>Problem Title</th>
+              <th>Difficulty</th>
+              <th>Topic</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${bmProblems.map(p => `
+              <tr class="problem-row">
+                <td class="col-num">#${String(p.id).padStart(3, '0')}</td>
+                <td class="col-title"><span class="q-title-link" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</span></td>
+                <td><span class="badge badge-${p.difficulty.toLowerCase()}">${p.difficulty}</span></td>
+                <td><span class="topic-tag">${this.escapeHtml(p.topic)}</span></td>
+                <td><button class="star-btn starred" onclick="app.toggleBookmark(${p.id}, event); app.renderBookmarks();">★</button></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  renderDaily() {
+    const container = document.getElementById('daily-list-container');
+    if (!container) return;
+
+    // Pick 5 deterministic daily problems based on date
+    const today = new Date().toDateString();
+    let seed = 0;
+    for (let i = 0; i < today.length; i++) seed += today.charCodeAt(i);
+
+    const problems = this.getProblems();
+    const dailyItems = [];
+    for (let i = 0; i < 5; i++) {
+      const idx = (seed * 13 + i * 37) % problems.length;
+      dailyItems.push(problems[idx]);
+    }
+
+    container.innerHTML = dailyItems.map((p, idx) => {
+      const isDone = this.state && this.state.done ? this.state.done.has(p.id) : false;
+      return `
+        <div class="card ${isDone ? 'done' : ''}">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 4px;">DAY CHALLENGE #${idx + 1}</div>
+            <h3>#${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</h3>
+            <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-bottom: 8px;">${p.difficulty}</span>
+            <p style="font-size: 12.5px; color: var(--text-secondary);">${this.escapeHtml(p.topic)} • ${this.escapeHtml(p.pattern)}</p>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-top: 12px;">
+            <button class="btn-primary" style="font-size: 12px; flex: 1;" onclick="app.openProblemModal(${p.id})">Solve Challenge →</button>
+            <input type="checkbox" class="action-cb" ${isDone ? 'checked' : ''} onchange="app.toggleDone(${p.id}, event); app.renderDaily();">
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  renderRevision() {
+    const container = document.getElementById('revision-container');
+    if (!container) return;
+
+    const dueIds = this.state && typeof this.state.getDueRevisionProblems === 'function' ? this.state.getDueRevisionProblems() : [];
+    const dueProblems = this.getProblems().filter(p => dueIds.includes(p.id));
+
+    if (dueProblems.length === 0) {
+      container.innerHTML = `
+        <div class="card" style="text-align: center; padding: 40px;">
+          <h3>🎉 No Revision Problems Due Today!</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 16px;">Keep solving new problems on the DSA Sheet to automatically queue revision cards.</p>
+          <button class="btn-primary" style="margin: 0 auto; display: inline-flex;" onclick="app.switchView('sheet')">Return to DSA Sheet →</button>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="grid-cards">
+        ${dueProblems.map(p => `
+          <div class="card">
+            <div>
+              <h3>#${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</h3>
+              <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-bottom: 8px;">${p.difficulty}</span>
+              <p style="font-size: 12.5px; color: var(--text-secondary);">${this.escapeHtml(p.topic)}</p>
+            </div>
+            <div style="display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap;">
+              <button class="chip-btn easy" style="flex: 1;" onclick="app.rateRevision(${p.id}, 'know')">Know (30d)</button>
+              <button class="chip-btn medium" style="flex: 1;" onclick="app.rateRevision(${p.id}, 'review')">Review (3d)</button>
+              <button class="chip-btn hard" style="flex: 1;" onclick="app.rateRevision(${p.id}, 'forgot')">Forgot (1d)</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  rateRevision(pid, rating) {
+    if (this.state && typeof this.state.updateRevisionStatus === 'function') {
+      this.state.updateRevisionStatus(pid, rating);
+    }
+    this.renderRevision();
+    this.showToast(`Updated revision queue for #${pid} 👍`);
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     JSON Export / Import Data Management
+     ───────────────────────────────────────────────────────────────────────── */
+  exportProgressData() {
+    const exportObj = {
+      version: 'v3',
+      exportedAt: new Date().toISOString(),
+      done: this.state && this.state.done ? [...this.state.done] : [],
+      bookmarked: this.state && this.state.bookmarked ? [...this.state.bookmarked] : [],
+      notes: this.state && this.state.notes ? this.state.notes : {},
+      streakData: this.state && this.state.streakData ? this.state.streakData : {},
+      theme: this.state ? this.state.theme : 'dark'
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `dsaproblems_backup_${new Date().toISOString().slice(0,10)}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+
+    this.showToast('💾 Progress backup downloaded successfully!');
+  }
+
+  importProgressData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const parsed = JSON.parse(e.target.result);
+        if (parsed && Array.isArray(parsed.done)) {
+          if (this.state) {
+            this.state.done = new Set(parsed.done);
+            this.state.bookmarked = new Set(parsed.bookmarked || []);
+            this.state.notes = parsed.notes || {};
+            this.state.saveSet('dsaproblems_done_v3', this.state.done);
+            this.state.saveSet('dsaproblems_bookmarked_v3', this.state.bookmarked);
+            this.state.saveObj('dsaproblems_notes_v3', this.state.notes);
+          }
+          this.renderSidebar();
+          this.renderExplorer();
+          this.renderDashboard();
+          this.renderSheet();
+          this.showToast('✓ Progress imported successfully!');
+        } else {
+          alert('Invalid backup JSON format.');
+        }
+      } catch (err) {
+        alert('Failed to parse backup JSON file.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  resetAllProgress() {
+    if (confirm('Are you sure you want to reset all local progress, bookmarks, and notes? This action cannot be undone.')) {
+      if (this.state) {
+        this.state.done.clear();
+        this.state.bookmarked.clear();
+        this.state.notes = {};
+        localStorage.removeItem('dsaproblems_done_v3');
+        localStorage.removeItem('dsaproblems_bookmarked_v3');
+        localStorage.removeItem('dsaproblems_notes_v3');
+      }
+      this.renderSidebar();
+      this.renderExplorer();
+      this.renderDashboard();
+      this.renderSheet();
+      this.showToast('🗑️ All local progress reset.');
+    }
+  }
+
+  setPreferredLanguage(lang) {
+    this.activeLang = lang;
+    this.showToast(`Preferred code language set to ${lang.toUpperCase()} 💻`);
+  }
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Explorer Core Table & Pagination
+     ───────────────────────────────────────────────────────────────────────── */
   getFilteredProblems() {
     const problems = this.getProblems();
     if (!Array.isArray(problems)) return [];
@@ -684,15 +1304,26 @@ class DSAApp {
 
   toggleDone(pid, event) {
     if (event) event.stopPropagation();
-    if (this.state) this.state.toggleDone(pid);
+    let isNowDone = false;
+    if (this.state) isNowDone = this.state.toggleDone(pid);
+    
+    this.renderSidebar();
     this.renderExplorer();
     this.renderDashboard();
+    this.renderSheet();
+
+    this.showToast(isNowDone ? `Marked #${pid} as Solved ✓` : `Unmarked #${pid}`);
   }
 
   toggleBookmark(pid, event) {
     if (event) event.stopPropagation();
-    if (this.state) this.state.toggleBookmark(pid);
+    let isNowStarred = false;
+    if (this.state) isNowStarred = this.state.toggleBookmark(pid);
+
+    this.renderSidebar();
     this.renderExplorer();
+
+    this.showToast(isNowStarred ? `Added #${pid} to Bookmarks ★` : `Removed #${pid} from Bookmarks`);
   }
 
   openProblemModal(pid) {
@@ -834,8 +1465,14 @@ class DSAApp {
     const medSolved = this.problems.filter(p => p.difficulty === 'Medium' && this.state && this.state.done.has(p.id)).length;
     const hardSolved = this.problems.filter(p => p.difficulty === 'Hard' && this.state && this.state.done.has(p.id)).length;
 
+    const pct = Math.round((solved / total) * 100);
+
     const totalEl = document.getElementById('dash-solved-total');
     if (totalEl) totalEl.textContent = `${solved} / ${total}`;
+
+    const fillEl = document.getElementById('dash-solved-fill');
+    if (fillEl) fillEl.style.width = `${pct}%`;
+
     const easyEl = document.getElementById('dash-easy-count');
     if (easyEl) easyEl.textContent = `${easySolved} / ${easyTotal}`;
     const medEl = document.getElementById('dash-med-count');
