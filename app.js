@@ -37,7 +37,6 @@ class DSAApp {
     this.bindEvents();
     this.renderNav();
     this.renderExplorer();
-    this.renderLearningPath();
     this.renderDashboard();
   }
 
@@ -89,11 +88,11 @@ class DSAApp {
     if (backdrop) backdrop.addEventListener('click', () => this.closeMobileDrawer());
 
     // Hero CTAs
-    const learnPathBtn = document.getElementById('btn-learn-path');
-    if (learnPathBtn) learnPathBtn.addEventListener('click', () => this.switchView('path'));
-
     const beginnerBtn = document.getElementById('btn-beginner');
     if (beginnerBtn) beginnerBtn.addEventListener('click', () => this.switchView('guide'));
+
+    const dashQuickBtn = document.getElementById('btn-dash-quick');
+    if (dashQuickBtn) dashQuickBtn.addEventListener('click', () => this.switchView('dashboard'));
 
     // Search input
     const searchInp = document.getElementById('search-input');
@@ -295,15 +294,6 @@ class DSAApp {
     this.switchView('explorer');
   }
 
-  filterByStageAndSwitch(stageName) {
-    this.resetFilters();
-    this.filterStage = stageName;
-    const stageSelect = document.getElementById('select-stage');
-    if (stageSelect) stageSelect.value = stageName;
-
-    this.switchView('explorer');
-  }
-
   resetFilters() {
     this.searchQuery = '';
     this.filterDifficulty = 'all';
@@ -349,7 +339,6 @@ class DSAApp {
 
     this.updateUrlParams();
 
-    if (viewName === 'path') this.renderLearningPath();
     if (viewName === 'dashboard') this.renderDashboard();
   }
 
@@ -457,7 +446,6 @@ class DSAApp {
       const isStarred = this.state.bookmarked.has(p.id);
       const numStr = String(p.id).padStart(3, '0');
       const diffClass = p.difficulty.toLowerCase();
-      const stageName = p.stage || p.curriculumStage || 'Stage 0';
 
       const leetcodeLinkHtml = `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" onclick="event.stopPropagation();">Solve on LeetCode ↗</a>`;
 
@@ -505,45 +493,6 @@ class DSAApp {
     this.renderPagination(totalPages, this.currentPage);
   }
 
-  renderLearningPath() {
-    const container = document.getElementById('learning-path-container');
-    if (!container) return;
-
-    const stagesInfo = [
-      { name: "Stage 0 — Programming Foundations", range: "Questions 1–60", desc: "Complexity analysis, dynamic arrays, strings, basic recursion, and math implementation." },
-      { name: "Stage 1 — Core Easy Patterns", range: "Questions 61–180", desc: "Two Pointers, Sliding Window, Prefix Sum, Hashing, Stack/Queue, and Binary Search." },
-      { name: "Stage 2 — Core Data Structures", range: "Questions 181–300", desc: "Linked Lists, Deques, Binary Search Trees, Heaps, Priority Queues, and LRU Cache." },
-      { name: "Stage 3 — Core Algorithms", range: "Questions 301–450", desc: "Advanced sorting algorithms, Binary Search on answer space, Backtracking, and Greedy choice." },
-      { name: "Stage 4 — Advanced Trees & Graphs", range: "Questions 451–600", desc: "Tries, BFS/DFS traversals, Kahn's Topological Sort, Disjoint Set Union (DSU), and Shortest Path." },
-      { name: "Stage 5 — Dynamic Programming", range: "Questions 601–750", desc: "1D DP, 2D Grid DP, 0/1 Knapsack, Unbounded Knapsack, LCS, LIS, and Subsequence DP." },
-      { name: "Stage 6 — Advanced Interview Patterns", range: "Questions 751–900", desc: "Monotonic Stack/Queue, Bit Manipulation, Sweep Line, Segment Trees, and Advanced Graph algorithms." },
-      { name: "Stage 7 — Interview Mastery", range: "Questions 901–1000", desc: "Mixed high-frequency FAANG interview questions, system design DSA patterns, and hard problem sets." }
-    ];
-
-    let html = '';
-    stagesInfo.forEach(st => {
-      const stageProbs = this.problems.filter(p => (p.stage || p.curriculumStage) === st.name);
-      const solvedInStage = stageProbs.filter(p => this.state.done.has(p.id)).length;
-      const totalInStage = stageProbs.length || 1;
-      const pct = Math.round((solvedInStage / totalInStage) * 100);
-
-      html += `<div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="font-size:12px; font-weight:700; color:var(--accent); text-transform:uppercase;">${st.range}</span>
-          <span class="badge badge-easy" style="background:var(--accent-bg); color:var(--accent); border-color:var(--accent-border);">${pct}% Solved</span>
-        </div>
-        <h3>${this.escapeHtml(st.name)}</h3>
-        <p>${this.escapeHtml(st.desc)}</p>
-        <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-size:12px; color:var(--text-muted);">${solvedInStage} / ${totalInStage} Solved</span>
-          <button class="btn-primary" style="font-size:12px; padding:6px 14px;" onclick="app.filterByStageAndSwitch('${st.name}')">Explore Stage Problems →</button>
-        </div>
-      </div>`;
-    });
-
-    container.innerHTML = html;
-  }
-
   renderPagination(totalPages, currentPage) {
     const prevBtn = document.getElementById('page-prev');
     const nextBtn = document.getElementById('page-next');
@@ -578,7 +527,6 @@ class DSAApp {
     if (event) event.stopPropagation();
     this.state.toggleDone(pid);
     this.renderExplorer();
-    this.renderLearningPath();
     this.renderDashboard();
   }
 
