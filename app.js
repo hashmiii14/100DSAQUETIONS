@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // app.js — Main Orchestrator & View Controller for DSAProblems.site
-// Premium Dark-Mode-First DSA Sheet & 1000 Question Curriculum
+// Premium Clean Developer DSA Sheet & 1000 Question Curriculum
 // ─────────────────────────────────────────────────────────────────────────────
 
 class DSAApp {
@@ -26,7 +26,7 @@ class DSAApp {
     this.activeProblem = null;
     this.activeLang = 'cpp'; // 'cpp' | 'java' | 'python' | 'javascript'
 
-    // Guide State
+    // DSA Guide State
     this.activeGuideTopic = 'fundamentals';
 
     this.init();
@@ -71,8 +71,8 @@ class DSAApp {
   }
 
   applyInitialTheme() {
-    // DARK MODE IS DEFAULT
-    const savedTheme = (this.state && this.state.theme) ? this.state.theme : (localStorage.getItem('dsaproblems_theme_v3') || 'dark');
+    // DEFAULT THEME IS LIGHT MODE
+    const savedTheme = (this.state && this.state.theme) ? this.state.theme : (localStorage.getItem('dsaproblems_theme_v3') || 'light');
     this.setTheme(savedTheme);
   }
 
@@ -85,12 +85,12 @@ class DSAApp {
     }
     const themeIcon = document.getElementById('theme-icon');
     if (themeIcon) {
-      themeIcon.textContent = themeName === 'dark' ? '🌙' : '☀️';
+      themeIcon.textContent = themeName === 'dark' ? '☀️' : '🌙';
     }
   }
 
   toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     this.setTheme(next);
   }
@@ -772,37 +772,72 @@ class DSAApp {
     }
   }
 
-  /* ── Expanded 16-Topic Guide Data & Renderer ────────────────────────────── */
+  /* ── Full 17-Topic DSA Guide Theory & Code Dataset ─────────────────────── */
   getGuideTopicData() {
     return [
       {
         id: 'fundamentals',
-        title: '1. DSA Fundamentals & Complexity',
-        summary: 'Understand Big O notation, time complexity bounds, space complexity, and optimal problem-solving strategies.',
-        content: `
-          <p><strong>Time & Space Complexity:</strong> Algorithm efficiency is evaluated using Asymptotic Analysis to determine scaling behavior as input size N grows.</p>
+        title: '1. DSA Fundamentals & Complexity Analysis',
+        summary: 'Understand Big O, Big Omega, Big Theta notations, time vs space bounds, and asymptotic analysis.',
+        theory: `
+          <h3>What is DSA & Why it Matters</h3>
+          <p>Data Structures provide organized storage mechanisms for information, while Algorithms specify precise procedures to solve computational tasks. Choosing the optimal data structure drastically impacts system execution time and memory footprint.</p>
+
+          <h3>Asymptotic Notation</h3>
           <ul>
-            <li><strong>O(1)</strong>: Constant Time (HashMap lookup, Stack Push/Pop).</li>
-            <li><strong>O(log N)</strong>: Logarithmic Time (Binary Search, Balanced BST).</li>
-            <li><strong>O(N)</strong>: Linear Time (Single Array Traversal, Linear Search).</li>
-            <li><strong>O(N log N)</strong>: Linearithmic Time (Merge Sort, Quick Sort).</li>
-            <li><strong>O(N²)</strong>: Quadratic Time (Nested Loops, Bubble Sort).</li>
+            <li><strong>Big O (O):</strong> Upper bound / worst-case execution complexity limit.</li>
+            <li><strong>Big Omega (Ω):</strong> Lower bound / best-case execution complexity limit.</li>
+            <li><strong>Big Theta (Θ):</strong> Tight bound / average-case complexity when lower and upper bounds coincide.</li>
+          </ul>
+
+          <h3>Common Complexity Classes</h3>
+          <ul>
+            <li><strong>O(1) Constant:</strong> Direct array indexing, stack push/pop operations.</li>
+            <li><strong>O(log N) Logarithmic:</strong> Binary search, balanced BST operations.</li>
+            <li><strong>O(N) Linear:</strong> Single loop array traversal, linear search.</li>
+            <li><strong>O(N log N) Linearithmic:</strong> Merge sort, quicksort average case.</li>
+            <li><strong>O(N²) Quadratic:</strong> Nested loop iterations over N items.</li>
           </ul>
         `,
-        code: `// Time Complexity Rule of Thumb
-// N <= 10^8  -> O(N) or O(N log N)
-// N <= 10^4  -> O(N^2)
-// N <= 500   -> O(N^3)`
+        code: `// Analyzing Loop Time Complexity
+void exampleComplexity(vector<int>& arr) {
+    int n = arr.size();
+    
+    // O(1) Constant Operation
+    int first = arr[0];
+    
+    // O(N) Linear Loop
+    for (int i = 0; i < n; i++) {
+        // O(1) work
+    }
+    
+    // O(log N) Binary Search Loop
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == 42) break;
+        if (arr[mid] < 42) low = mid + 1;
+        else high = mid - 1;
+    }
+}`
       },
       {
         id: 'arrays',
         title: '2. Arrays & Subarray Techniques',
-        summary: 'Master array traversals, prefix sums, sliding window mechanics, two-pointer strategies, and Kadane algorithm.',
-        content: `
-          <p><strong>Core Patterns:</strong> Contiguous Subarray Sums, Prefix Arrays, Two Pointers, and Windowing.</p>
-          <p><strong>Kadane's Algorithm:</strong> Find maximum contiguous subarray sum in linear time O(N).</p>
+        summary: 'Array indexing, traversals, prefix sums, two pointers, sliding window, and Kadane\'s algorithm.',
+        theory: `
+          <h3>Array Data Structure</h3>
+          <p>Contiguous block of memory storing homogenous elements. Offers O(1) random access via index computation but requires O(N) shift operations for insertions/deletions.</p>
+
+          <h3>Key Techniques</h3>
+          <ul>
+            <li><strong>Prefix Sum:</strong> Precompute prefix sums <code>pref[i] = pref[i-1] + arr[i]</code> to obtain subarray sum in range [L, R] in O(1) time.</li>
+            <li><strong>Two Pointers:</strong> Opposite or same direction pointers to reduce quadratic search bounds to O(N).</li>
+            <li><strong>Kadane's Algorithm:</strong> Find maximum sum contiguous subarray in single O(N) pass.</li>
+          </ul>
         `,
-        code: `int maxSubArray(vector<int>& nums) {
+        code: `// Kadane's Algorithm for Maximum Subarray Sum
+int maxSubArray(vector<int>& nums) {
     int maxSoFar = nums[0], currentMax = nums[0];
     for (size_t i = 1; i < nums.size(); ++i) {
         currentMax = max(nums[i], currentMax + nums[i]);
@@ -813,46 +848,76 @@ class DSAApp {
       },
       {
         id: 'strings',
-        title: '3. Strings & Frequency Maps',
-        summary: 'String traversal, character counting, anagrams, palindrome verification, and string matching algorithms.',
-        content: `
-          <p><strong>Key Concepts:</strong> Fixed-size frequency arrays (ASCII/lowercase 26-element arrays) provide O(1) space hashing for string problems.</p>
+        title: '3. Strings & Frequency Hashing',
+        summary: 'Character frequency maps, substring searching, palindrome verification, and two-pointer string manipulation.',
+        theory: `
+          <h3>String Operations</h3>
+          <p>Strings are sequence representations of characters. In C++ and Java, strings can be mutable or immutable. Fixed-size frequency arrays of size 26 or 256 provide instant O(1) character lookup.</p>
         `,
-        code: `bool isAnagram(string s, string t) {
-    if (s.length() != t.length()) return false;
-    int count[26] = {0};
-    for (char c : s) count[c - 'a']++;
-    for (char c : t) {
-        if (--count[c - 'a'] < 0) return false;
+        code: `// Valid Palindrome using Two Pointers
+bool isPalindrome(string s) {
+    int left = 0, right = s.length() - 1;
+    while (left < right) {
+        while (left < right && !isalnum(s[left])) left++;
+        while (left < right && !isalnum(s[right])) right--;
+        if (tolower(s[left]) != tolower(s[right])) return false;
+        left++; right--;
     }
     return true;
 }`
       },
       {
-        id: 'linkedlist',
-        title: '4. Linked Lists & Fast-Slow Pointers',
-        summary: 'Singly and doubly linked lists, pointer manipulation, cycle detection (Floyd\'s Tortoise & Hare), and list reversal.',
-        content: `
-          <p><strong>Cycle Detection:</strong> Use two pointers moving at different speeds (1 step vs 2 steps). If a cycle exists, fast and slow pointers will meet.</p>
+        id: 'searchsort',
+        title: '4. Searching & Sorting Algorithms',
+        summary: 'Linear search, Binary search, Bubble sort, Selection sort, Insertion sort, Merge sort, and Quick sort.',
+        theory: `
+          <h3>Comparison of Sorting Algorithms</h3>
+          <ul>
+            <li><strong>Merge Sort:</strong> O(N log N) time, O(N) space. Stable divide-and-conquer algorithm.</li>
+            <li><strong>Quick Sort:</strong> O(N log N) average time, O(1) auxiliary space. In-place partitioning.</li>
+            <li><strong>Binary Search:</strong> O(log N) time on sorted collections.</li>
+          </ul>
         `,
-        code: `bool hasCycle(ListNode *head) {
-    ListNode *slow = head, *fast = head;
-    while (fast && fast->next) {
-        slow = slow->next;
-        fast = fast->next->next;
-        if (slow == fast) return true;
+        code: `// Merge Sort Implementation
+void merge(vector<int>& arr, int l, int m, int r) {
+    vector<int> temp(r - l + 1);
+    int i = l, j = m + 1, k = 0;
+    while (i <= m && j <= r) temp[k++] = (arr[i] <= arr[j]) ? arr[i++] : arr[j++];
+    while (i <= m) temp[k++] = arr[i++];
+    while (j <= r) temp[k++] = arr[j++];
+    for (i = l, k = 0; i <= r; i++, k++) arr[i] = temp[k];
+}`
+      },
+      {
+        id: 'linkedlist',
+        title: '5. Linked Lists & Fast-Slow Pointers',
+        summary: 'Singly & doubly linked lists, pointer manipulation, cycle detection (Floyd\'s algorithm), and node reversal.',
+        theory: `
+          <h3>Linked List Fundamentals</h3>
+          <p>Dynamic node collection linked via next pointers. Provides O(1) prepend/insertion when node references are known.</p>
+        `,
+        code: `// Reverse Singly Linked List
+ListNode* reverseList(ListNode* head) {
+    ListNode *prev = nullptr, *curr = head;
+    while (curr) {
+        ListNode* nextTemp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextTemp;
     }
-    return false;
+    return prev;
 }`
       },
       {
         id: 'stackqueue',
-        title: '5. Stack, Queue & Monotonic Stack',
-        summary: 'LIFO & FIFO primitives, expression parsing, next greater element using Monotonic Stack, and sliding window maximum.',
-        content: `
-          <p><strong>Monotonic Stack:</strong> Maintain elements in strictly increasing or decreasing order to process nearest greater/smaller queries in linear time.</p>
+        title: '6. Stack, Queue & Monotonic Stack',
+        summary: 'LIFO stack, FIFO queue, double-ended queue, monotonic stacks, and parentheses matching.',
+        theory: `
+          <h3>Monotonic Stack Pattern</h3>
+          <p>Maintains stack elements in strictly monotonic increasing or decreasing order to query nearest greater or smaller elements in O(N) overall runtime.</p>
         `,
-        code: `vector<int> nextGreaterElement(vector<int>& nums) {
+        code: `// Next Greater Element via Monotonic Stack
+vector<int> nextGreaterElement(vector<int>& nums) {
     int n = nums.size();
     vector<int> res(n, -1);
     stack<int> st;
@@ -868,12 +933,14 @@ class DSAApp {
       },
       {
         id: 'recursion',
-        title: '6. Recursion & Backtracking',
-        summary: 'Subsets, permutations, combination sums, N-Queens, and recursive tree exploration with pruning.',
-        content: `
-          <p><strong>Backtracking Template:</strong> Choose, Explore, Un-choose (backtrack).</p>
+        title: '7. Recursion & Backtracking',
+        summary: 'Base cases, recursive call trees, subset generation, permutations, and search space pruning.',
+        theory: `
+          <h3>Backtracking Framework</h3>
+          <p>Systematic state-space exploration. Base cases handle target solutions, while state choice, recursive call, and un-choice (backtrack) explore candidates.</p>
         `,
-        code: `void backtrack(vector<vector<int>>& res, vector<int>& candidate, vector<int>& nums, int start) {
+        code: `// Backtracking Subsets Generation
+void backtrack(vector<vector<int>>& res, vector<int>& candidate, vector<int>& nums, int start) {
     res.push_back(candidate);
     for (int i = start; i < nums.size(); i++) {
         candidate.push_back(nums[i]);
@@ -884,10 +951,11 @@ class DSAApp {
       },
       {
         id: 'binarysearch',
-        title: '7. Binary Search & Search Space Optimization',
-        summary: 'Logarithmic search on sorted arrays, lower/upper bound calculations, and searching on answer spaces.',
-        content: `
-          <p><strong>Binary Search Space:</strong> When monotonic decision functions hold, apply binary search on output domains.</p>
+        title: '8. Binary Search & Decision Space',
+        summary: 'Logarithmic search on sorted arrays, lower/upper bounds, and searching on answer domains.',
+        theory: `
+          <h3>Binary Search on Answer Space</h3>
+          <p>When feasibility criteria satisfy monotonic properties <code>[FFFFTTTT]</code>, binary search directly pinpoints the optimal threshold.</p>
         `,
         code: `int binarySearch(vector<int>& nums, int target) {
     int left = 0, right = nums.size() - 1;
@@ -902,12 +970,19 @@ class DSAApp {
       },
       {
         id: 'trees',
-        title: '8. Binary Trees & Traversals',
-        summary: 'DFS (Preorder, Inorder, Postorder), BFS (Level-Order Traversal), height computation, and tree paths.',
-        content: `
-          <p><strong>Level-Order Traversal:</strong> Process binary tree nodes level-by-level using a FIFO Queue.</p>
+        title: '9. Binary Trees & Traversals',
+        summary: 'DFS (Preorder, Inorder, Postorder), BFS (Level-Order), tree depth, and structural properties.',
+        theory: `
+          <h3>Tree Traversals</h3>
+          <ul>
+            <li><strong>Preorder:</strong> Root -> Left -> Right</li>
+            <li><strong>Inorder:</strong> Left -> Root -> Right</li>
+            <li><strong>Postorder:</strong> Left -> Right -> Root</li>
+            <li><strong>Level-Order:</strong> BFS queue traversal level by level.</li>
+          </ul>
         `,
-        code: `vector<vector<int>> levelOrder(TreeNode* root) {
+        code: `// Level-Order Traversal (BFS)
+vector<vector<int>> levelOrder(TreeNode* root) {
     vector<vector<int>> res;
     if (!root) return res;
     queue<TreeNode*> q;
@@ -928,101 +1003,212 @@ class DSAApp {
       },
       {
         id: 'bst',
-        title: '9. Binary Search Tree (BST)',
-        summary: 'BST invariant properties, Inorder traversal sorting, insertion, deletion, and validation.',
-        content: `
-          <p><strong>BST Property:</strong> Left subtree values < root value < Right subtree values. Inorder traversal yields sorted elements.</p>
-        `
+        title: '10. Binary Search Tree (BST)',
+        summary: 'BST ordering properties, search, insertion, deletion, and validation.',
+        theory: `
+          <h3>BST Invariant</h3>
+          <p>For any node: all left subtree keys < node key < all right subtree keys. Inorder traversal produces strictly sorted elements.</p>
+        `,
+        code: `TreeNode* searchBST(TreeNode* root, int val) {
+    if (!root || root->val == val) return root;
+    return val < root->val ? searchBST(root->left, val) : searchBST(root->right, val);
+}`
       },
       {
         id: 'heap',
-        title: '10. Heap / Priority Queue',
-        summary: 'Min Heap and Max Heap operations, top K frequent elements, Kth largest element in a stream.',
-        content: `
-          <p><strong>Top K Elements Pattern:</strong> Use a Min-Heap of fixed size K to track top K largest elements in O(N log K) time.</p>
-        `
+        title: '11. Heap & Priority Queue',
+        summary: 'Min-Heap & Max-Heap invariants, heapify, top K frequent items, and stream processing.',
+        theory: `
+          <h3>Top K Elements Pattern</h3>
+          <p>Maintain a Min-Heap of size K while iterating over elements. Yields O(N log K) time instead of full O(N log N) sorting.</p>
+        `,
+        code: `int findKthLargest(vector<int>& nums, int k) {
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    for (int num : nums) {
+        minHeap.push(num);
+        if (minHeap.size() > k) minHeap.pop();
+    }
+    return minHeap.top();
+}`
       },
       {
         id: 'hashing',
-        title: '11. Hashing & Frequency Tables',
-        summary: 'HashMap and HashSet operations, collision handling, frequency counting, and prefix sum index maps.',
-        content: `
-          <p><strong>Subarray Sum Equals K:</strong> Store prefix sums in a HashMap to count zero-sum or K-sum contiguous subarrays in O(N).</p>
-        `
+        title: '12. Hashing & Frequency Tables',
+        summary: 'HashMap and HashSet primitives, hash collisions, frequency counting, and index tracking.',
+        theory: `
+          <h3>Hash Operations</h3>
+          <p>Provides average O(1) time complexity for lookup, insert, and delete operations via hash functions.</p>
+        `,
+        code: `vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> mp;
+    for (int i = 0; i < nums.size(); i++) {
+        int complement = target - nums[i];
+        if (mp.count(complement)) return {mp[complement], i};
+        mp[nums[i]] = i;
+    }
+    return {};
+}`
       },
       {
         id: 'graphs',
-        title: '12. Graph Algorithms & Traversals',
-        summary: 'Graph representations (Adjacency List), BFS, DFS, Connected Components, Cycle Detection, Topological Sort, Dijkstra, and Union Find (DSU).',
-        content: `
-          <p><strong>BFS Shortest Path:</strong> Unweighted graphs find shortest distance paths using BFS queue traversal.</p>
-        `
+        title: '13. Graph Algorithms & Traversals',
+        summary: 'Adjacency lists, BFS, DFS, Connected Components, Cycle Detection, Topological Sort, Dijkstra, and Union-Find (DSU).',
+        theory: `
+          <h3>Breadth-First Search (BFS)</h3>
+          <p>Explores nodes distance by distance from start node using a queue. Guarantees shortest path in unweighted graphs.</p>
+        `,
+        code: `void bfsGraph(int startNode, vector<vector<int>>& adj, vector<bool>& visited) {
+    queue<int> q;
+    q.push(startNode);
+    visited[startNode] = true;
+    while (!q.empty()) {
+        int u = q.front(); q.pop();
+        for (int v : adj[u]) {
+            if (!visited[v]) {
+                visited[v] = true;
+                q.push(v);
+            }
+        }
+    }
+}`
       },
       {
         id: 'greedy',
-        title: '13. Greedy Algorithms',
-        summary: 'Local optimal choices making globally optimal solutions, interval scheduling, sorting-based greedy tactics.',
-        content: `
-          <p><strong>Interval Overlaps:</strong> Sort intervals by end-time to maximize non-overlapping selections.</p>
-        `
+        title: '14. Greedy Algorithms',
+        summary: 'Making local optimal choices to yield global optimal outcomes, interval scheduling, and greedy sorting.',
+        theory: `
+          <h3>Greedy Strategy</h3>
+          <p>Works when locally optimal decisions guarantee global optimality. Example: Non-overlapping interval selection by sorting end-times.</p>
+        `,
+        code: `int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+    if (intervals.empty()) return 0;
+    sort(intervals.begin(), intervals.end(), [](const auto& a, const auto& b) {
+        return a[1] < b[1];
+    });
+    int count = 0, prevEnd = intervals[0][1];
+    for (size_t i = 1; i < intervals.size(); i++) {
+        if (intervals[i][0] < prevEnd) count++;
+        else prevEnd = intervals[i][1];
+    }
+    return count;
+}`
       },
       {
         id: 'dp',
-        title: '14. Dynamic Programming (DP)',
-        summary: 'Overlapping subproblems and optimal substructure. Memoization (Top-Down) vs Tabulation (Bottom-Up), 0/1 Knapsack, Subsequence DP, and Grid DP.',
-        content: `
-          <p><strong>Climbing Stairs / Fibonacci State Transition:</strong> dp[i] = dp[i-1] + dp[i-2].</p>
-        `
+        title: '15. Dynamic Programming (DP)',
+        summary: 'Overlapping subproblems, optimal substructure, Memoization vs Tabulation, 1D/2D DP, Knapsack, and Subsequences.',
+        theory: `
+          <h3>DP Framework</h3>
+          <ul>
+            <li><strong>State Definition:</strong> Define what <code>dp[i]</code> or <code>dp[i][j]</code> represents.</li>
+            <li><strong>Base Cases:</strong> Initialize initial states (e.g. <code>dp[0] = 1</code>).</li>
+            <li><strong>State Transition Equation:</strong> Define recursive relationship.</li>
+          </ul>
+        `,
+        code: `// 0/1 Knapsack Bottom-Up DP
+int knapsack(int W, vector<int>& wt, vector<int>& val, int n) {
+    vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
+    for (int i = 1; i <= n; i++) {
+        for (int w = 1; w <= W; w++) {
+            if (wt[i - 1] <= w) {
+                dp[i][w] = max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);
+            } else {
+                dp[i][w] = dp[i - 1][w];
+            }
+        }
+    }
+    return dp[n][W];
+}`
       },
       {
         id: 'trie',
-        title: '15. Trie (Prefix Tree)',
-        summary: 'Efficient dictionary lookup, autocomplete, prefix search, and bitwise XOR Trie operations.',
-        content: `
-          <p><strong>Trie Node:</strong> Each node contains 26 pointers for lowercase letters and a boolean isEnd flag.</p>
-        `
+        title: '16. Trie (Prefix Tree)',
+        summary: 'Trie node architecture, insert, word search, prefix search, and dictionary retrieval.',
+        theory: `
+          <h3>Trie Structure</h3>
+          <p>Tree structure where each node represents a character. Enables prefix search in O(L) time where L is key length.</p>
+        `,
+        code: `class TrieNode {
+public:
+    TrieNode* children[26];
+    bool isWord;
+    TrieNode() {
+        isWord = false;
+        for (int i = 0; i < 26; i++) children[i] = nullptr;
+    }
+};`
       },
       {
         id: 'bit',
-        title: '16. Bit Manipulation',
-        summary: 'Bitwise AND, OR, XOR, NOT, left/right shifts, bit counting, power of two checks, and single number patterns.',
-        content: `
-          <p><strong>Single Number XOR Trick:</strong> x ^ x = 0 and x ^ 0 = x. XORing all elements cancels duplicates.</p>
-        `
+        title: '17. Bit Manipulation',
+        summary: 'Binary representations, Bitwise AND, OR, XOR, NOT, shift operators, and single number tricks.',
+        theory: `
+          <h3>Bitwise Tricks</h3>
+          <ul>
+            <li><code>n & (n - 1)</code>: Clears the lowest set bit (used to test power of 2).</li>
+            <li><code>a ^ a = 0</code> and <code>a ^ 0 = a</code>: Identifies unique single numbers.</li>
+          </ul>
+        `,
+        code: `int singleNumber(vector<int>& nums) {
+    int result = 0;
+    for (int num : nums) result ^= num;
+    return result;
+}`
       }
     ];
   }
 
   renderGuideSection() {
     const navList = document.getElementById('guide-topics-nav');
+    const mobileSelect = document.getElementById('guide-mobile-select');
     const contentArea = document.getElementById('guide-content-area');
-    if (!navList || !contentArea) return;
+    if (!contentArea) return;
 
     const topics = this.getGuideTopicData();
-    let navHtml = '';
 
-    topics.forEach(t => {
-      const isActive = t.id === this.activeGuideTopic;
-      navHtml += `<li class="guide-nav-item ${isActive ? 'active' : ''}" onclick="app.selectGuideTopic('${t.id}')">${t.title}</li>`;
-    });
+    // Populate Mobile Dropdown
+    if (mobileSelect) {
+      let mobileOptionsHtml = '';
+      topics.forEach(t => {
+        const isSelected = t.id === this.activeGuideTopic ? 'selected' : '';
+        mobileOptionsHtml += `<option value="${t.id}" ${isSelected}>${t.title}</option>`;
+      });
+      mobileSelect.innerHTML = mobileOptionsHtml;
+    }
 
-    navList.innerHTML = navHtml;
+    // Populate Desktop Sidebar
+    if (navList) {
+      let navHtml = '';
+      topics.forEach(t => {
+        const isActive = t.id === this.activeGuideTopic;
+        navHtml += `<li class="guide-nav-item ${isActive ? 'active' : ''}" onclick="app.selectGuideTopic('${t.id}')">${t.title}</li>`;
+      });
+      navList.innerHTML = navHtml;
+    }
 
-    const selected = topics.find(t => t.id === this.activeGuideTopic) || topics[0];
+    const currentIdx = topics.findIndex(t => t.id === this.activeGuideTopic);
+    const selectedIdx = currentIdx !== -1 ? currentIdx : 0;
+    const selected = topics[selectedIdx];
+
+    const prevTopic = selectedIdx > 0 ? topics[selectedIdx - 1] : null;
+    const nextTopic = selectedIdx < topics.length - 1 ? topics[selectedIdx + 1] : null;
 
     contentArea.innerHTML = `
       <div class="guide-article">
         <h2>${selected.title}</h2>
         <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">${selected.summary}</p>
-        <div>${selected.content}</div>
+        <div>${selected.theory}</div>
         ${selected.code ? `
           <div style="margin-top: 20px;">
-            <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px;">C++ / TEMPLATE CODE</strong>
-            <div class="code-block-wrap">
-              <pre><code>${this.escapeHtml(selected.code)}</code></pre>
-            </div>
+            <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px;">C++ CODE TEMPLATE / EXAMPLE</strong>
+            <div class="code-block-wrap"><pre><code>${this.escapeHtml(selected.code)}</code></pre></div>
           </div>
         ` : ''}
+
+        <div class="guide-nav-controls">
+          ${prevTopic ? `<button class="btn-secondary" onclick="app.selectGuideTopic('${prevTopic.id}')">← ${prevTopic.title}</button>` : `<div></div>`}
+          ${nextTopic ? `<button class="btn-primary" onclick="app.selectGuideTopic('${nextTopic.id}')">${nextTopic.title} →</button>` : `<div></div>`}
+        </div>
       </div>
     `;
   }
@@ -1030,6 +1216,9 @@ class DSAApp {
   selectGuideTopic(topicId) {
     this.activeGuideTopic = topicId;
     this.renderGuideSection();
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   /* ── Admin Quality Tool ──────────────────────────────────────────────────── */

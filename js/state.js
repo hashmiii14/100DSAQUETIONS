@@ -17,7 +17,7 @@ class AppState {
     this.notes = this.loadObj(STORAGE_KEYS.NOTES);
     this.revisionQueue = this.loadObj(STORAGE_KEYS.REVISION); // { pid: { nextDue: timestamp, intervalDays: 1, status: 'due' } }
     this.streakData = this.loadObj(STORAGE_KEYS.STREAK, { current: 1, max: 1, lastDate: new Date().toDateString() });
-    this.theme = localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
+    this.theme = localStorage.getItem(STORAGE_KEYS.THEME) || 'light';
 
     this.checkAndUpdateStreak();
   }
