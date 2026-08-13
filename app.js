@@ -788,7 +788,7 @@ class DSAApp {
   navigateModal(direction) {
     if (!this.activeModalProblem) return;
     const currentId = this.activeModalProblem.id;
-    const maxId = this.problems.length || 100;
+    const maxId = this.problems.length || 1000;
     const nextId = Math.min(maxId, Math.max(1, currentId + direction));
     this.openProblemModal(nextId);
   }

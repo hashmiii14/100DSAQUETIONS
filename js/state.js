@@ -25,8 +25,8 @@ class AppState {
   mapToCanonicalId(id) {
     id = Number(id);
     if (isNaN(id) || id <= 0) return 1;
-    if (id <= 100) return id;
-    return ((id - 1) % 100) + 1;
+    if (id <= 1000) return id;
+    return ((id - 1) % 1000) + 1;
   }
 
   loadSet(key) {

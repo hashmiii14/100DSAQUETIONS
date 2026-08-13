@@ -184,8 +184,8 @@ console.log("Testing default explorer rendering...");
 const problems = appInstance.getFilteredProblems();
 console.log(`Explorer Filtered Problems Count: ${problems.length}`);
 
-if (problems.length !== 100) {
-  console.error(`❌ FAIL: Expected 100 problems, got ${problems.length}`);
+if (problems.length !== 1000) {
+  console.error(`❌ FAIL: Expected 1000 problems, got ${problems.length}`);
   process.exit(1);
 }
 
