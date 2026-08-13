@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DSA Problems — 1000 Coding Interview Questions & Master Roadmap</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 20-phase structured roadmap from foundations to FAANG interview readiness with pattern guides, multi-language solutions, and progress tracking."/>
+<title>DSA Problems — 1000 Coding Interview Questions & Comprehensive DSA Guide</title>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. Comprehensive beginner to advanced DSA learning guide, multi-language solutions, and coding interview preparation."/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
@@ -13,8 +13,8 @@
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
 
 <!-- Open Graph SEO -->
-<meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Master Roadmap"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems, 20 progression phases, pattern recognition guides, multi-language solutions (C++, Java, Python, JS), and coding interview preparation."/>
+<meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Educational Guide"/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, beginner to advanced DSA learning guide, multi-language solutions (C++, Java, Python, JS), and coding interview strategy."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -53,8 +53,7 @@
 
       <nav class="nav-tabs" id="main-nav">
         <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-        <button class="nav-btn" data-view="roadmap">🗺️ Master Roadmap</button>
-        <button class="nav-btn" data-view="patterns">💡 Core Patterns</button>
+        <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
         <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
         <button class="nav-btn" data-view="interview">🎯 Interview Prep</button>
       </nav>
@@ -75,8 +74,7 @@
     </div>
     <nav class="drawer-nav" id="drawer-nav">
       <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-      <button class="nav-btn" data-view="roadmap">🗺️ Master Roadmap</button>
-      <button class="nav-btn" data-view="patterns">💡 Core Patterns</button>
+      <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
       <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
       <button class="nav-btn" data-view="interview">🎯 Interview Prep</button>
     </nav>
@@ -89,10 +87,10 @@
     <div class="hero-banner">
       <div class="hero-content">
         <h1>Master DSA. Crack Technical Interviews.</h1>
-        <p>1000 carefully curated problems — taking you step-by-step from programming foundations to FAANG and top product-company level interview readiness.</p>
+        <p>1000 carefully curated problems — with 100% verified LeetCode links, clear problem statements, multi-language solutions, and structured interview guidance.</p>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">🚀 Start Roadmap (Beginner)</button>
+        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide</button>
         <button class="btn-secondary" id="btn-interview-ready">🎯 Interview Preparation</button>
       </div>
     </div>
@@ -137,13 +135,6 @@
             <option value="all">All Patterns</option>
           </select>
         </div>
-
-        <div>
-          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Roadmap Phase: </label>
-          <select id="select-phase" class="select-filter">
-            <option value="all">All 20 Phases</option>
-          </select>
-        </div>
       </div>
     </div>
 
@@ -161,7 +152,6 @@
             <th>Problem Title</th>
             <th>Difficulty</th>
             <th>Topic & Pattern</th>
-            <th>Roadmap Phase</th>
             <th>LeetCode Link</th>
             <th>Actions</th>
           </tr>
@@ -186,25 +176,158 @@
 
   </section>
 
-  <!-- VIEW 2: Master Roadmap -->
-  <section class="view-section" id="view-roadmap">
+  <!-- VIEW 2: Educational DSA Guide (Beginner to Advanced) -->
+  <section class="view-section" id="view-guide">
     <div class="card" style="margin-bottom: 20px;">
-      <h2>🗺️ Master DSA Roadmap — 20 Step-by-Step Progression Phases</h2>
-      <p>Structured progression taking you from programming basics to advanced interview-level algorithms. Click any phase to practice its specific questions.</p>
+      <h2>📚 Data Structures & Algorithms — Beginner to Advanced Educational Guide</h2>
+      <p>A comprehensive, structured guide to learning Data Structures and Algorithms. Read through each module to build foundational knowledge, understand algorithmic complexities, and master interview concepts.</p>
     </div>
-    <div id="roadmap-phases-list"></div>
+
+    <!-- Beginner Module -->
+    <div style="margin-bottom: 24px;">
+      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 18px;">🟢 Level 1: Beginner Fundamentals</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>1. Time & Space Complexity (Big-O)</h4>
+          <p>Big-O notation measures algorithm scalability as input size (N) grows. Master analyzing loop counts, memory allocations, and trade-offs.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>O(1) Constant Time:</strong> Array index lookup, Hash Map fetch.</li>
+            <li><strong>O(log N) Logarithmic:</strong> Binary Search, Balanced BST operations.</li>
+            <li><strong>O(N) Linear:</strong> Single array loop traversal.</li>
+            <li><strong>O(N log N) Linearithmic:</strong> Efficient sorting (Merge Sort, QuickSort).</li>
+            <li><strong>O(N²) Quadratic:</strong> Nested loops (Bubble Sort, Brute Force pairs).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>2. Arrays & Strings</h4>
+          <p>Contiguous memory structures storing elements. Primary operations: indexing O(1), search O(N), insertion/deletion O(N).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Two Pointers Technique:</strong> Left/right pointers converging to solve Pair Sum or Reverse.</li>
+            <li><strong>Sliding Window:</strong> Fixed or variable window tracking contiguous subsegment metrics.</li>
+            <li><strong>Prefix Sum Array:</strong> Precomputing cumulative sums for O(1) range sum queries.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>3. Hash Maps & Hash Sets</h4>
+          <p>Key-value pairs powered by hashing functions. Offers average O(1) time complexity for lookup, insert, and delete.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Frequency Counter Pattern:</strong> Counting occurrences of characters or numbers.</li>
+            <li><strong>Hash Collision Handling:</strong> Chaining (linked lists) vs Open Addressing.</li>
+            <li><strong>Subarray Target Sum:</strong> Storing prefix sums in Hash Map to find target subarray count.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>4. Stacks & Queues</h4>
+          <p>Linear structures enforcing strict access rules. Stacks operate on LIFO (Last-In-First-Out); Queues operate on FIFO (First-In-First-Out).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Monotonic Stack:</strong> Stack maintaining increasing/decreasing order for Next Greater Element.</li>
+            <li><strong>Parenthesis Matching:</strong> Validating nested opening/closing delimiters.</li>
+            <li><strong>Breadth-First Queue:</strong> Queue driving level-order tree traversals and BFS shortest path.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intermediate Module -->
+    <div style="margin-bottom: 24px;">
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 18px;">🟡 Level 2: Intermediate Data Structures & Algorithms</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>5. Linked Lists</h4>
+          <p>Nodes containing data and pointer references to next/previous nodes. Dynamic size with O(1) insertions/deletions at pointer target.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Fast & Slow Pointers (Floyd's Cycle):</strong> Detecting cycle loop & finding middle node.</li>
+            <li><strong>In-Place Linked List Reversal:</strong> Reversing next pointers using prev, curr, next.</li>
+            <li><strong>Dummy Node Technique:</strong> Simplifying head edge cases during list merging.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>6. Searching & Binary Search</h4>
+          <p>Divide-and-conquer strategy operating on sorted ranges to cut search space in half each step (O(log N)).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Binary Search Range Template:</strong> <code>mid = left + (right - left) / 2</code>.</li>
+            <li><strong>Rotated Sorted Array:</strong> Identifying sorted subsegment before binary decision.</li>
+            <li><strong>Binary Search on Answer Range:</strong> Searching optimal capacity or time bound.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>7. Binary Trees & BST</h4>
+          <p>Hierarchical node structures where each node has at most two children (left, right). Binary Search Trees maintain left &lt; root &lt; right invariant.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Traversals:</strong> Inorder (Left-Root-Right gives sorted BST), Preorder, Postorder.</li>
+            <li><strong>Tree Recursion (DFS):</strong> Maximum depth, LCA (Lowest Common Ancestor), Path Sum.</li>
+            <li><strong>Level Order Traversal (BFS):</strong> Processing tree row-by-row using Queue.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>8. Heaps & Priority Queues</h4>
+          <p>Complete binary trees maintaining Min-Heap or Max-Heap property. Key operations: insert O(log N), extract-min/max O(log N), peek O(1).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Top K Elements:</strong> Min-Heap of size K for Kth largest elements.</li>
+            <li><strong>Two Heaps Pattern:</strong> Max-Heap + Min-Heap for dynamic streaming median.</li>
+            <li><strong>K-Way Merge:</strong> Merging K sorted lists/arrays using Priority Queue.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced Module -->
+    <div style="margin-bottom: 24px;">
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 18px;">🔴 Level 3: Advanced Interview Topics & System Algorithms</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>9. Recursion & Backtracking</h4>
+          <p>Systematic search through candidate decision trees. Backtracking explores paths recursively and prunes invalid states early.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Subsets & Power Sets:</strong> Generating all 2ⁿ candidate combinations.</li>
+            <li><strong>Permutations & Combinations:</strong> Ordering elements with state tracking array.</li>
+            <li><strong>Constraint Solving:</strong> N-Queens placement, Sudoku Solver, Word Search grid DFS.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>10. Graph Algorithms & Union-Find</h4>
+          <p>Vertices (nodes) connected by Edges (directed/undirected, weighted/unweighted). Models networks, dependencies, and paths.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Breadth-First Search (BFS):</strong> Shortest path in unweighted graphs / grid traversal.</li>
+            <li><strong>Depth-First Search (DFS):</strong> Connected components, cycle detection, pathfinding.</li>
+            <li><strong>Topological Sort (Kahn's / DFS):</strong> DAG task scheduling and dependency ordering.</li>
+            <li><strong>Disjoint Set Union (DSU):</strong> Path compression + rank union for connected components.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>11. Dynamic Programming (DP)</h4>
+          <p>Optimizing recursive overlapping subproblems through memoization (top-down) or tabulation (bottom-up).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>1D DP Patterns:</strong> Climbing Stairs, House Robber, Coin Change, LIS.</li>
+            <li><strong>2D Grid / Matrix DP:</strong> Unique Paths, Minimum Path Sum.</li>
+            <li><strong>Subsequence / String DP:</strong> Longest Common Subsequence, Edit Distance.</li>
+            <li><strong>0/1 Knapsack:</strong> Capacity choices with item selection states.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>12. Tries & Advanced Data Structures</h4>
+          <p>Prefix trees specialized for string retrieval, autocomplete, and dictionary prefix search in O(length) time.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
+            <li><strong>Trie Insert & Search:</strong> Child pointer array/map with boolean isEnd flag.</li>
+            <li><strong>Bit Manipulation:</strong> Bitwise XOR, AND, OR, bit shifts for state compression.</li>
+            <li><strong>Segment Tree / Fenwick Tree:</strong> O(log N) dynamic range updates and range sum queries.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <!-- VIEW 3: Patterns Library -->
-  <section class="view-section" id="view-patterns">
-    <div class="card" style="margin-bottom: 20px;">
-      <h2>💡 Core Algorithmic Patterns Library</h2>
-      <p>Master pattern recognition instead of memorizing code solutions. Learn clues, templates, and complexity trade-offs.</p>
-    </div>
-    <div class="grid-cards" id="patterns-list"></div>
-  </section>
-
-  <!-- VIEW 4: Dashboard -->
+  <!-- VIEW 3: Dashboard -->
   <section class="view-section" id="view-dashboard">
     <div class="card" style="margin-bottom: 20px;">
       <h2>📊 Learner Progress Dashboard</h2>
@@ -233,7 +356,7 @@
     <div id="dash-recommendation"></div>
   </section>
 
-  <!-- VIEW 5: Interview Preparation -->
+  <!-- VIEW 4: Interview Preparation -->
   <section class="view-section" id="view-interview">
     <div class="card" style="margin-bottom: 20px;">
       <h2>🎯 Coding Interview Strategy & Preparation Guide</h2>

@@ -59,11 +59,13 @@ def validate():
                 errors.append(f"Problem #{p['id']} missing field: '{field}'")
 
         url = p.get("leetcodeUrl")
-        if url is not None:
-            if not isinstance(url, str) or not url.startswith("https://leetcode.com/problems/"):
-                errors.append(f"Problem #{p['id']} has invalid LeetCode URL: '{url}'")
-            else:
-                leetcode_link_count += 1
+        if not isinstance(url, str) or not url.startswith("https://leetcode.com/problems/"):
+            errors.append(f"Problem #{p['id']} has invalid LeetCode URL: '{url}'")
+        else:
+            leetcode_link_count += 1
+
+    if leetcode_link_count != 1000:
+        errors.append(f"LeetCode link count mismatch! Expected 1000, got {leetcode_link_count}")
 
     if errors:
         print("\n[FAIL] QA Validation FAILED with errors:")
@@ -74,7 +76,7 @@ def validate():
         sys.exit(1)
     else:
         print("\n[SUCCESS] All 1000 DSA Problems passed Quality Control Validation perfectly!")
-        print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt} | Verified LeetCode Links = {leetcode_link_count}")
+        print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt} | Verified 100% LeetCode Links = {leetcode_link_count}")
 
 if __name__ == "__main__":
     validate()

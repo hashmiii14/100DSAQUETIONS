@@ -19,7 +19,6 @@ class DSAApp {
     this.filterDifficulty = 'all';
     this.filterTopic = 'all';
     this.filterPattern = 'all';
-    this.filterPhase = 'all';
     this.filterStatus = 'all';
 
     // Pagination
@@ -43,8 +42,6 @@ class DSAApp {
     this.bindEvents();
     this.renderNav();
     this.renderExplorer();
-    this.renderRoadmap();
-    this.renderPatterns();
     this.renderDashboard();
     this.renderInterviewMode();
   }
@@ -54,7 +51,6 @@ class DSAApp {
     if (params.has('difficulty')) this.filterDifficulty = params.get('difficulty');
     if (params.has('topic')) this.filterTopic = params.get('topic');
     if (params.has('pattern')) this.filterPattern = params.get('pattern');
-    if (params.has('phase')) this.filterPhase = params.get('phase');
     if (params.has('search')) this.searchQuery = params.get('search');
     if (params.has('view')) this.currentView = params.get('view');
 
@@ -69,7 +65,6 @@ class DSAApp {
     if (this.filterDifficulty !== 'all') params.set('difficulty', this.filterDifficulty);
     if (this.filterTopic !== 'all') params.set('topic', this.filterTopic);
     if (this.filterPattern !== 'all') params.set('pattern', this.filterPattern);
-    if (this.filterPhase !== 'all') params.set('phase', this.filterPhase);
     if (this.searchQuery) params.set('search', this.searchQuery);
     if (this.currentView !== 'explorer') params.set('view', this.currentView);
 
@@ -98,7 +93,7 @@ class DSAApp {
 
     // Hero CTAs
     const beginnerBtn = document.getElementById('btn-beginner');
-    if (beginnerBtn) beginnerBtn.addEventListener('click', () => this.switchView('roadmap'));
+    if (beginnerBtn) beginnerBtn.addEventListener('click', () => this.switchView('guide'));
 
     const interviewBtn = document.getElementById('btn-interview-ready');
     if (interviewBtn) interviewBtn.addEventListener('click', () => this.switchView('interview'));
@@ -147,16 +142,6 @@ class DSAApp {
     if (patternSelect) {
       patternSelect.addEventListener('change', (e) => {
         this.filterPattern = e.target.value;
-        this.currentPage = 1;
-        this.updateUrlParams();
-        this.renderExplorer();
-      });
-    }
-
-    const phaseSelect = document.getElementById('select-phase');
-    if (phaseSelect) {
-      phaseSelect.addEventListener('change', (e) => {
-        this.filterPhase = e.target.value;
         this.currentPage = 1;
         this.updateUrlParams();
         this.renderExplorer();
@@ -272,7 +257,7 @@ class DSAApp {
     const linkContact = document.getElementById('link-contact');
     const legalCloseBtn = document.getElementById('legal-modal-close-btn');
 
-    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an interview-focused Data Structures and Algorithms learning platform. Built for software engineers and computer science students preparing for technical coding interviews at product companies and top tech firms.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively across 20 roadmap phases, pattern recognition guides, and multi-language solutions.</p>'); });
+    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an interview-focused Data Structures and Algorithms learning platform. Built for software engineers and computer science students preparing for technical coding interviews at product companies and top tech firms.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively across topics, educational guides, pattern recognition, and multi-language solutions.</p>'); });
     if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Privacy Policy', '<p><strong>Privacy Policy:</strong> DSAProblems.site respects user privacy. Progress data, solved questions, bookmarks, and notes are stored locally in your browser storage (localStorage). We do not collect or sell personal identifying data.</p><p style="margin-top:10px;">Third-party services like Google AdSense may use cookies to serve relevant ads based on browsing visits. Users may manage ad settings directly through Google Ads settings.</p>'); });
     if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational and interview preparation purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
     if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Contact Support', '<p><strong>Contact Us:</strong> Have feedback, suggestions, or technical questions about DSAProblems.site?</p><p style="margin-top:10px;">Reach out via GitHub Repository issue tracker: <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener noreferrer">github.com/hashmiii14/100DSAQUETIONS</a></p>'); });
@@ -305,7 +290,6 @@ class DSAApp {
     this.filterDifficulty = 'all';
     this.filterTopic = 'all';
     this.filterPattern = 'all';
-    this.filterPhase = 'all';
     this.filterStatus = 'all';
 
     const searchInp = document.getElementById('search-input');
@@ -320,9 +304,6 @@ class DSAApp {
 
     const patternSelect = document.getElementById('select-pattern');
     if (patternSelect) patternSelect.value = 'all';
-
-    const phaseSelect = document.getElementById('select-phase');
-    if (phaseSelect) phaseSelect.value = 'all';
 
     this.currentPage = 1;
     this.updateUrlParams();
@@ -346,7 +327,6 @@ class DSAApp {
     this.updateUrlParams();
 
     if (viewName === 'dashboard') this.renderDashboard();
-    if (viewName === 'roadmap') this.renderRoadmap();
     if (viewName === 'interview') this.renderInterviewMode();
   }
 
@@ -373,10 +353,6 @@ class DSAApp {
 
       if (this.filterPattern !== 'all') {
         if (!p.pattern.toLowerCase().includes(this.filterPattern.toLowerCase())) return false;
-      }
-
-      if (this.filterPhase !== 'all') {
-        if (p.phase !== this.filterPhase && p.roadmapPhase !== this.filterPhase) return false;
       }
 
       if (this.filterStatus !== 'all') {
@@ -414,18 +390,6 @@ class DSAApp {
       });
     }
 
-    const phaseSelect = document.getElementById('select-phase');
-    if (phaseSelect && phaseSelect.children.length <= 1) {
-      const phases = [...new Set(this.problems.map(p => p.phase))];
-      phases.forEach(ph => {
-        const opt = document.createElement('option');
-        opt.value = ph;
-        opt.textContent = ph;
-        if (this.filterPhase === ph) opt.selected = true;
-        phaseSelect.appendChild(opt);
-      });
-    }
-
     const streakCountEl = document.getElementById('streak-count');
     if (streakCountEl && this.state) {
       streakCountEl.textContent = `${this.state.streakData.current} Days`;
@@ -444,15 +408,14 @@ class DSAApp {
 
     const infoEl = document.getElementById('table-results-info');
     if (infoEl) {
-      const filterLabel = this.filterPhase !== 'all' ? ` (Filtered by ${this.filterPhase})` : '';
-      infoEl.textContent = `Showing ${totalFiltered === 0 ? 0 : startIdx + 1}–${Math.min(startIdx + this.pageSize, totalFiltered)} of ${totalFiltered} problems${filterLabel}`;
+      infoEl.textContent = `Showing ${totalFiltered === 0 ? 0 : startIdx + 1}–${Math.min(startIdx + this.pageSize, totalFiltered)} of ${totalFiltered} problems`;
     }
 
     const tbody = document.getElementById('problem-tbody');
     const mobileCardList = document.getElementById('mobile-problem-card-list');
 
     if (pageItems.length === 0) {
-      if (tbody) tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding: 40px; color: var(--text-secondary);">No problems match your current filter criteria.</td></tr>`;
+      if (tbody) tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--text-secondary);">No problems match your current filter criteria.</td></tr>`;
       if (mobileCardList) mobileCardList.innerHTML = `<div class="card" style="text-align:center; padding: 30px; color: var(--text-secondary);">No problems match your criteria.</div>`;
       this.renderPagination(0, 1);
       return;
@@ -467,9 +430,7 @@ class DSAApp {
       const numStr = String(p.id).padStart(3, '0');
       const diffClass = p.difficulty.toLowerCase();
 
-      const leetcodeLinkHtml = p.leetcodeUrl
-        ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" onclick="event.stopPropagation();">Solve on LeetCode ↗</a>`
-        : `<span class="badge" style="background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--border);">Original Problem</span>`;
+      const leetcodeLinkHtml = `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" onclick="event.stopPropagation();">Solve on LeetCode ↗</a>`;
 
       tableHtml += `<tr class="problem-row ${isDone ? 'done' : ''}" data-id="${p.id}">
         <td class="col-num">#${numStr}</td>
@@ -481,7 +442,6 @@ class DSAApp {
           <span class="topic-tag">${this.escapeHtml(p.topic)}</span>
           <span class="pattern-tag">${this.escapeHtml(p.pattern)}</span>
         </td>
-        <td style="font-size: 11px; color: var(--text-muted);">${this.escapeHtml(p.phase.split(' — ')[0])}</td>
         <td>${leetcodeLinkHtml}</td>
         <td style="display: flex; gap: 10px; align-items: center;">
           <input type="checkbox" class="action-cb" ${isDone ? 'checked' : ''} onchange="app.toggleDone(${p.id}, event)" title="Mark Solved">
@@ -577,12 +537,10 @@ class DSAApp {
     diffBadge.className = `badge badge-${p.difficulty.toLowerCase()}`;
     diffBadge.textContent = p.difficulty;
 
-    document.getElementById('modal-topic').textContent = `${p.topic} • ${p.pattern} • ${p.phase}`;
+    document.getElementById('modal-topic').textContent = `${p.topic} • ${p.pattern}`;
     document.getElementById('modal-statement').textContent = p.statement;
 
-    const lcBtnHtml = p.leetcodeUrl
-      ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:12px; text-decoration:none;">Solve on LeetCode ↗</a>`
-      : `<span class="badge" style="background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--border);">Original Problem</span>`;
+    const lcBtnHtml = `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:12px; text-decoration:none;">Solve on LeetCode ↗</a>`;
 
     const lcContainer = document.getElementById('modal-leetcode-container');
     if (lcContainer) lcContainer.innerHTML = lcBtnHtml;
@@ -673,93 +631,6 @@ class DSAApp {
     this.activeModalProblem = null;
   }
 
-  renderRoadmap() {
-    const roadmapContainer = document.getElementById('roadmap-phases-list');
-    if (!roadmapContainer) return;
-
-    const phases = [
-      "Phase 1 — Programming & Problem Solving Foundations",
-      "Phase 2 — Arrays & Strings",
-      "Phase 3 — Hashing",
-      "Phase 4 — Two Pointers",
-      "Phase 5 — Sliding Window",
-      "Phase 6 — Searching & Binary Search",
-      "Phase 7 — Sorting & Custom Comparators",
-      "Phase 8 — Linked Lists",
-      "Phase 9 — Stack & Queue",
-      "Phase 10 — Recursion & Backtracking",
-      "Phase 11 — Trees & BST",
-      "Phase 12 — Heap / Priority Queue",
-      "Phase 13 — Greedy Algorithms",
-      "Phase 14 — Graph Algorithms",
-      "Phase 15 — Trie",
-      "Phase 16 — Dynamic Programming",
-      "Phase 17 — Advanced Data Structures",
-      "Phase 18 — Math & Bit Manipulation",
-      "Phase 19 — Mixed Interview Problems",
-      "Phase 20 — FAANG & Product Level"
-    ];
-
-    let html = '';
-    phases.forEach((ph) => {
-      const phaseProblems = this.problems.filter(p => p.phase === ph);
-      const solvedInPhase = phaseProblems.filter(p => this.state.done.has(p.id)).length;
-      const pct = phaseProblems.length > 0 ? Math.round((solvedInPhase / phaseProblems.length) * 100) : 0;
-
-      html += `<div class="card" style="margin-bottom: 14px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-          <h3 style="margin:0;">${this.escapeHtml(ph)}</h3>
-          <span class="badge badge-${pct === 100 ? 'easy' : 'medium'}">${solvedInPhase} / ${phaseProblems.length} Solved (${pct}%)</span>
-        </div>
-        <div style="height: 6px; background: var(--bg-elevated); border-radius: 99px; overflow: hidden; margin-bottom: 10px;">
-          <div style="width: ${pct}%; height: 100%; background: var(--accent); transition: width 0.3s;"></div>
-        </div>
-        <button class="btn-secondary" style="font-size: 12px;" onclick="app.filterByPhase('${this.escapeHtml(ph)}')">View Phase Questions (${phaseProblems.length}) →</button>
-      </div>`;
-    });
-
-    roadmapContainer.innerHTML = html;
-  }
-
-  filterByPhase(phaseName) {
-    this.resetFilters();
-    this.filterPhase = phaseName;
-    const phaseSelect = document.getElementById('select-phase');
-    if (phaseSelect) phaseSelect.value = phaseName;
-    this.switchView('explorer');
-  }
-
-  renderPatterns() {
-    const container = document.getElementById('patterns-list');
-    if (!container) return;
-
-    let html = '';
-    this.patterns.forEach(pt => {
-      html += `<div class="card">
-        <h3 style="color: var(--accent);">${this.escapeHtml(pt.name)}</h3>
-        <p>${this.escapeHtml(pt.description)}</p>
-        <div style="margin-bottom: 10px;">
-          <strong>Recognition Clues:</strong>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary);">
-            ${pt.clues.map(c => `<li>${this.escapeHtml(c)}</li>`).join('')}
-          </ul>
-        </div>
-        <pre class="code-block">${this.escapeHtml(pt.template)}</pre>
-        <button class="btn-secondary" style="font-size: 12px; margin-top: 10px;" onclick="app.filterByPatternName('${this.escapeHtml(pt.name)}')">View Pattern Problems →</button>
-      </div>`;
-    });
-
-    container.innerHTML = html;
-  }
-
-  filterByPatternName(pname) {
-    this.resetFilters();
-    this.filterPattern = pname;
-    const patternSelect = document.getElementById('select-pattern');
-    if (patternSelect) patternSelect.value = pname;
-    this.switchView('explorer');
-  }
-
   renderDashboard() {
     const total = this.problems.length; // 1000
     const solved = this.state.done.size;
@@ -779,11 +650,15 @@ class DSAApp {
     const nextRec = this.recommender.getSmartNextQuestion();
     const recContainer = document.getElementById('dash-recommendation');
     if (recContainer && nextRec && nextRec.problem) {
+      const p = nextRec.problem;
       recContainer.innerHTML = `
         <div class="card" style="border-left: 4px solid var(--accent);">
-          <h3 style="margin-bottom: 4px;">Smart Recommended Question: #${String(nextRec.problem.id).padStart(3, '0')} ${this.escapeHtml(nextRec.problem.title)}</h3>
-          <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">${this.escapeHtml(nextRec.reason)}</p>
-          <button class="btn-primary" style="font-size: 12px;" onclick="app.openProblemModal(${nextRec.problem.id})">Solve Problem Now →</button>
+          <h3 style="margin-bottom: 4px;">Smart Recommended Question: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</h3>
+          <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 12px;">${this.escapeHtml(nextRec.reason)}</p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 12px; text-decoration: none;">Solve on LeetCode ↗</a>
+            <button class="btn-secondary" style="font-size: 12px;" onclick="app.openProblemModal(${p.id})">Open Question Workspace →</button>
+          </div>
         </div>
       `;
     }
@@ -832,20 +707,15 @@ class DSAApp {
     const secs = sec % 60;
     const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 
-    let qHtml = this.activeSimSession.problems.map((p, idx) => {
-      const lcBtnHtml = p.leetcodeUrl
-        ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" style="margin-left:8px;">Solve on LeetCode ↗</a>`
-        : '';
-      return `
-        <div style="background: var(--bg-elevated); padding: 12px; border-radius: var(--radius); margin-bottom: 8px;">
-          <strong>Q${idx + 1}: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
-          <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
-          ${lcBtnHtml}
-          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(p.statement)}</div>
-          <button class="btn-secondary" style="font-size: 11px; margin-top: 6px;" onclick="app.openProblemModal(${p.id})">Open Problem Workspace →</button>
-        </div>
-      `;
-    }).join('');
+    let qHtml = this.activeSimSession.problems.map((p, idx) => `
+      <div style="background: var(--bg-elevated); padding: 12px; border-radius: var(--radius); margin-bottom: 8px;">
+        <strong>Q${idx + 1}: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
+        <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
+        <a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" style="margin-left:8px;">Solve on LeetCode ↗</a>
+        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(p.statement)}</div>
+        <button class="btn-secondary" style="font-size: 11px; margin-top: 6px;" onclick="app.openProblemModal(${p.id})">Open Problem Workspace →</button>
+      </div>
+    `).join('');
 
     container.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
