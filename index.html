@@ -173,18 +173,18 @@
 
   </section>
 
-  <!-- VIEW 2: Educational DSA Guide (Beginner to Advanced) -->
+  <!-- VIEW 2: Educational DSA Guide (15 Encyclopedic Modules) -->
   <section class="view-section" id="view-guide">
     <div class="card" style="margin-bottom: 24px;">
-      <h2>📚 Data Structures & Algorithms — Complete Educational Guide</h2>
-      <p>An encyclopedic, structured reference to master computer science fundamentals, data structures, and algorithmic techniques from beginner level to advanced product-company interview standards.</p>
+      <h2>📚 Data Structures & Algorithms — Encyclopedic Educational Guide</h2>
+      <p>A comprehensive, structured reference to master computer science fundamentals, data structures, and algorithmic techniques from beginner level to advanced product-company interview standards.</p>
     </div>
 
     <!-- Section 1: Complexity Analysis -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ 1. Asymptotic Analysis & Complexity Masterclass</h3>
+      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Module 1: Asymptotic Analysis & Big-O Complexity Matrix</h3>
       <div class="card" style="margin-bottom: 16px;">
-        <h4>Big-O Time Complexity Comparison Table</h4>
+        <h4>Big-O Time & Space Complexity Reference Matrix</h4>
         <p>Big-O quantifies upper-bound growth rates relative to input size <code>N</code>. Below is the essential complexity hierarchy:</p>
         <div style="overflow-x: auto;">
           <table class="problem-table" style="font-size: 12.5px;">
@@ -193,8 +193,8 @@
                 <th>Notation</th>
                 <th>Name</th>
                 <th>Growth Rate</th>
-                <th>Max N for 1s Execution</th>
-                <th>Typical Examples</th>
+                <th>Max N (1 sec)</th>
+                <th>Typical Operations</th>
               </tr>
             </thead>
             <tbody>
@@ -203,7 +203,7 @@
                 <td>Constant</td>
                 <td>Flat</td>
                 <td>∞</td>
-                <td>Array index access, Hash Map lookup, Stack push/pop</td>
+                <td>Array index access, Hash Map fetch, Stack push/pop</td>
               </tr>
               <tr>
                 <td><code>O(log N)</code></td>
@@ -255,137 +255,136 @@
 
     <!-- Section 2: Fundamental Data Structures -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 2. Fundamental Linear Data Structures</h3>
+      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Module 2–5: Linear Data Structures & Subarray Techniques</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Arrays & Dynamic Arrays</h4>
-          <p>Contiguous block of memory allocation enabling <code>O(1)</code> random access indexing. Dynamic arrays (C++ <code>vector</code>, Python <code>list</code>, Java <code>ArrayList</code>) double capacity upon overflow with amortized <code>O(1)</code> insertions.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Two Pointers:</strong> Fast/slow pointers for in-place array mutation or pair sum search.</li>
-            <li><strong>Prefix Sums:</strong> <code>P[i] = P[i-1] + A[i]</code> allows range sum queries in <code>O(1)</code> time.</li>
-            <li><strong>Kadane's Algorithm:</strong> Max contiguous subarray sum in single <code>O(N)</code> pass.</li>
+          <h4>Module 2: Arrays, Strings & Two Pointers</h4>
+          <p>Contiguous memory allocations enabling <code>O(1)</code> index lookups. Master Two Pointers and Sliding Window subsegment mechanics.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Two Pointers:</strong> Converging pointers (left & right) to solve <code>O(N)</code> Sorted Pair Sums.</li>
+            <li><strong>Sliding Window:</strong> Maintaining dynamic window constraints for subsegment metrics.</li>
+            <li><strong>Prefix Sums:</strong> Precomputing <code>P[i] = P[i-1] + A[i]</code> for <code>O(1)</code> range queries.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Strings & Character Processing</h4>
-          <p>Arrays of immutable or mutable characters. Key operations include pattern matching, substring extraction, and sliding window string parsing.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Sliding Window:</strong> Maintaining dynamic character frequency hash array for subsegments.</li>
-            <li><strong>KMP Algorithm:</strong> String pattern matching using Partial Match Table (LPS) in <code>O(N + M)</code>.</li>
-            <li><strong>Rabin-Karp:</strong> Rolling hash mechanism for multi-pattern substring matching.</li>
+          <h4>Module 3: Hash Tables & Hash Sets</h4>
+          <p>Key-value mappings translating keys to bucket indices. Delivers average <code>O(1)</code> insertions, lookups, and deletions.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Collision Resolution:</strong> Chaining (linked lists) vs Open Addressing (linear probing).</li>
+            <li><strong>Frequency Counter Pattern:</strong> Checking anagrams, duplicate counts, and complement pairs.</li>
+            <li><strong>LRU Cache Design:</strong> Combining Hash Map + Doubly Linked List for <code>O(1)</code> cache evicted updates.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Hash Maps & Hash Sets</h4>
-          <p>Key-value mappings backed by hash functions translating keys to bucket indices. Delivers average <code>O(1)</code> time complexity for insertion, retrieval, and removal.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Chaining vs Open Addressing:</strong> Resolving hash collisions via linked buckets or probing.</li>
-            <li><strong>Frequency Counter Pattern:</strong> Checking anagrams, array duplicates, and complement pairs.</li>
-            <li><strong>LRU Cache Architecture:</strong> Combining Hash Map + Doubly Linked List for <code>O(1)</code> updates.</li>
+          <h4>Module 4: Linked Lists & Memory Mechanics</h4>
+          <p>Node pointers allocating data dynamically without requirement for contiguous memory blocks.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Fast & Slow Pointers (Floyd's Cycle):</strong> Cycle detection and middle node discovery.</li>
+            <li><strong>In-Place Reversal:</strong> Reversing next pointers iteratively using <code>prev, curr, next</code>.</li>
+            <li><strong>Dummy Node Technique:</strong> Avoiding null head edge case checks when merging lists.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Stacks & Queues</h4>
-          <p>Linear sequence structures with restricted entry and exit policies. Stacks enforce <strong>LIFO</strong> (Last-In-First-Out); Queues enforce <strong>FIFO</strong> (First-In-First-Out).</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Monotonic Stack:</strong> Stack keeping elements strictly increasing/decreasing for Next Greater Element.</li>
-            <li><strong>Expression Parsing:</strong> Evaluating Infix, Prefix, and Postfix (RPN) mathematical expressions.</li>
-            <li><strong>Deques & BFS:</strong> Double-ended queues enabling <code>O(1)</code> operations at both ends for sliding window max.</li>
+          <h4>Module 5: Stacks, Monotonic Stacks & Queues</h4>
+          <p>Linear structures enforcing strict LIFO (Last-In-First-Out) and FIFO (First-In-First-Out) access mechanics.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Monotonic Stack:</strong> Maintaining ordered elements to find Next Greater Element in <code>O(N)</code>.</li>
+            <li><strong>Expression Evaluation:</strong> Postfix / Reverse Polish Notation calculation.</li>
+            <li><strong>Deques (Double-Ended Queues):</strong> <code>O(1)</code> push/pop at both ends for Sliding Window Maximum.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Section 3: Intermediate Hierarchical & Tree Structures -->
+    <!-- Section 3: Intermediate Searching & Sorting -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 3. Trees, Binary Search Trees & Heaps</h3>
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Module 6–9: Searching, Sorting, Trees & Heaps</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Binary Trees & Recursive Traversals</h4>
-          <p>Hierarchical tree nodes containing data and at most two pointers (left child, right child). Recursive Depth-First Search (DFS) provides three standard traversal orders:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Inorder (Left-Root-Right):</strong> Yields sorted sequence when applied to Binary Search Trees.</li>
-            <li><strong>Preorder (Root-Left-Right):</strong> Ideal for tree cloning and prefix serialization.</li>
-            <li><strong>Postorder (Left-Right-Root):</strong> Perfect for bottom-up computation (e.g. subtree tree height/diameter).</li>
+          <h4>Module 6: Searching & Binary Search Variations</h4>
+          <p>Divide-and-conquer search algorithm halving search space at each iteration (<code>O(log N)</code>).</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Lower & Upper Bounds:</strong> Finding first and last occurrences of target values.</li>
+            <li><strong>Rotated Sorted Array:</strong> Evaluating mid boundary conditions relative to target range.</li>
+            <li><strong>Binary Search on Answer Space:</strong> Finding minimum capacity or time limit matching target feasibility.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Binary Search Trees (BST) & Self-Balancing</h4>
-          <p>Binary trees upholding the BST invariant: <code>Left Subtree &lt; Node &lt; Right Subtree</code>. Operations execute in <code>O(H)</code> where H is tree height (<code>O(log N)</code> when balanced).</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>BST Insert/Search/Delete:</strong> Traversal by binary decision comparisons.</li>
-            <li><strong>AVL & Red-Black Concepts:</strong> Tree rotations maintaining height balanced at <code>O(log N)</code>.</li>
-            <li><strong>LCA (Lowest Common Ancestor):</strong> Finding split point where node values bracket target keys.</li>
+          <h4>Module 7: Sorting Algorithms & Custom Comparators</h4>
+          <p>Ordering elements according to relational criteria. Inplace vs Stable sorting algorithms.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Merge Sort:</strong> Divide-and-conquer stable sorting executing in <code>O(N log N)</code> time and <code>O(N)</code> space.</li>
+            <li><strong>QuickSort:</strong> Partitioning around pivot element executing in average <code>O(N log N)</code> time.</li>
+            <li><strong>Custom Comparators:</strong> Multi-attribute custom sorting lambda functions in C++, Java, Python, JS.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Heaps & Priority Queues</h4>
-          <p>Complete binary trees stored compactly in arrays where parent indices satisfy <code>P[i] &lt;= P[2i+1]</code> (Min-Heap) or <code>P[i] &gt;= P[2i+1]</code> (Max-Heap).</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Heapify Operation:</strong> Building heap from unsorted array in linear <code>O(N)</code> time.</li>
-            <li><strong>Top K Frequent Elements:</strong> Maintaining Min-Heap of size K in <code>O(N log K)</code> time.</li>
-            <li><strong>Two Heaps Median Finding:</strong> Max-Heap for lower half + Min-Heap for upper half.</li>
+          <h4>Module 8: Binary Trees, BST & Self-Balancing</h4>
+          <p>Hierarchical tree node structures. Binary Search Trees satisfy <code>Left &lt; Root &lt; Right</code> invariant.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Inorder Traversal:</strong> Yields sorted element order when traversing BSTs.</li>
+            <li><strong>Tree Height & Diameter:</strong> Bottom-up recursive tree postorder calculations.</li>
+            <li><strong>Lowest Common Ancestor (LCA):</strong> Identifying branching split point for candidate target nodes.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Trie (Prefix Trees)</h4>
-          <p>Tree structure designed for fast character prefix retrieval. Each node contains a character child array (26 for lowercase English) and an <code>isEndOfWord</code> boolean flag.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Insert & Search:</strong> Word insertion/lookup in <code>O(W)</code> time where W is word length.</li>
-            <li><strong>Autocomplete Engine:</strong> Finding all words matching prefix string.</li>
-            <li><strong>Aho-Corasick Automaton:</strong> Multi-pattern string searching using suffix failure links.</li>
+          <h4>Module 9: Heaps & Priority Queues</h4>
+          <p>Complete binary trees maintaining Min-Heap or Max-Heap property stored efficiently in arrays.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>O(N) Heapify:</strong> Building valid Heap from unsorted array in linear time.</li>
+            <li><strong>Top K Elements:</strong> Maintaining Min-Heap of size K for <code>O(N log K)</code> processing.</li>
+            <li><strong>Two Heaps Pattern:</strong> Max-Heap + Min-Heap for real-time streaming median calculations.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Section 4: Advanced Graph Algorithms & DP -->
+    <!-- Section 4: Advanced Graphs, DP & Backtracking -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 4. Graph Algorithms, Dynamic Programming & Backtracking</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Module 10–15: Tries, Advanced Graphs, DP & Bit Manipulation</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Graph Representations & Traversals</h4>
-          <p>Vertices (nodes) connected by Edges. Represented via Adjacency Lists or Matrices. Fundamentals include BFS for shortest paths and DFS for connectivity.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>BFS (Breadth-First Search):</strong> Level-order queue traversal finding shortest distance in unweighted graphs.</li>
-            <li><strong>DFS (Depth-First Search):</strong> Recursion stack searching deep paths, connected components, cycle detection.</li>
-            <li><strong>Topological Sort:</strong> Ordering DAG (Directed Acyclic Graph) vertices via Kahn's BFS or DFS Postorder.</li>
+          <h4>Module 10: Tries (Prefix Trees) & Autocomplete</h4>
+          <p>Tree structure designed for character prefix lookup. Delivers <code>O(Length)</code> word operations.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Prefix Searching:</strong> Finding all words matching candidate string prefix.</li>
+            <li><strong>Word Search II:</strong> Trie + Grid DFS Backtracking to find dictionary words.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Shortest Path & Union-Find (DSU)</h4>
-          <p>Advanced graph techniques for weighted networks and dynamic set connectivity.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Dijkstra's Algorithm:</strong> Single-source shortest path using Priority Queue in <code>O((V + E) log V)</code>.</li>
-            <li><strong>Bellman-Ford:</strong> Handles negative edge weights and detects negative cycles in <code>O(V * E)</code>.</li>
-            <li><strong>Disjoint Set Union (DSU):</strong> Path compression + rank union for near-constant <code>O(α(N))</code> set union/find.</li>
+          <h4>Module 11 & 12: Graph Shortest Path & DSU</h4>
+          <p>Representations via Adjacency Lists/Matrices modeling networks, components, and weighted distances.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>BFS Shortest Path:</strong> Level-order queue traversal for unweighted graphs.</li>
+            <li><strong>Dijkstra's Algorithm:</strong> Weighted single-source shortest path using Priority Queue.</li>
+            <li><strong>Disjoint Set Union (DSU):</strong> Path compression + union by rank for <code>O(α(N))</code> connectivity.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Dynamic Programming (DP) Masterclass</h4>
-          <p>Optimization technique transforming exponential recursive problems into polynomial solutions by caching overlapping subproblems.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Memoization (Top-Down):</strong> Recursion + Hash/Array caching.</li>
-            <li><strong>Tabulation (Bottom-Up):</strong> Iterative state-transition table building.</li>
-            <li><strong>Classic DP Patterns:</strong> 0/1 Knapsack, Unbounded Knapsack, Longest Common Subsequence (LCS), Edit Distance, Coin Change.</li>
+          <h4>Module 13 & 14: Topological Sort & Dynamic Programming</h4>
+          <p>Task dependency resolution and subproblem caching optimization.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Topological Sorting:</strong> Kahn's BFS Algorithm and DFS Postorder for DAG dependencies.</li>
+            <li><strong>Dynamic Programming (DP):</strong> Top-Down Memoization vs Bottom-Up Tabulation.</li>
+            <li><strong>DP Patterns:</strong> 0/1 Knapsack, Coin Change, Longest Common Subsequence (LCS), Edit Distance.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Backtracking & Greedy Strategies</h4>
-          <p>Algorithmic paradigms for decision-tree exploration and local optimization.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.6;">
-            <li><strong>Backtracking:</strong> Recursive trial-and-error (Subsets, Permutations, N-Queens, Sudoku Solver).</li>
-            <li><strong>Greedy Choice Property:</strong> Making locally optimal choice at each step (Activity Selection, Huffman Coding).</li>
-            <li><strong>Bit Manipulation:</strong> Fast bitwise operations (<code>XOR</code> single number, bitmasks for DP states).</li>
+          <h4>Module 15: Backtracking & Bit Manipulation</h4>
+          <p>Decision-tree search and fast bitwise binary computations.</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+            <li><strong>Backtracking Template:</strong> Recursive choice state, pruning, and backtracking cleanup.</li>
+            <li><strong>Bitwise XOR Tricks:</strong> <code>x ^ x = 0</code> and <code>x ^ 0 = x</code> for single number discovery.</li>
+            <li><strong>Fast Exponentiation:</strong> <code>O(log N)</code> modular power calculation.</li>
           </ul>
         </div>
       </div>
@@ -513,7 +512,7 @@
         <pre class="code-block" id="sol-code-display">// Code solution</pre>
       </div>
 
-      <!-- Interview Communication & Tips -->
+      <!-- Problem & Pattern Tip -->
       <div style="margin-bottom: 16px;">
         <h4 style="margin-bottom: 6px;">💡 Problem & Pattern Tip</h4>
         <p id="modal-interview-tip" style="font-size: 12px; color: var(--text-secondary);"></p>
