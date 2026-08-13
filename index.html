@@ -40,6 +40,7 @@
 <script src="data/tracks.js"></script>
 <script src="js/state.js"></script>
 <script src="js/recommendation.js"></script>
+<script src="js/duplicate_prevention.js"></script>
 <script src="app.js"></script>
 </head>
 <body>
@@ -446,23 +447,61 @@
     <div class="grid-cards" style="margin-bottom: 20px;">
       <div class="card">
         <h3>Total Solved</h3>
-        <h2 id="dash-solved-total" style="font-size: 28px; color: var(--accent);">0 / 1000</h2>
+        <h2 id="dash-solved-total" style="font-size: 28px; color: var(--accent);">0 / 100</h2>
       </div>
       <div class="card">
         <h3>Easy Solved</h3>
-        <h2 id="dash-easy-count" style="font-size: 28px; color: var(--easy);">0 / 400</h2>
+        <h2 id="dash-easy-count" style="font-size: 28px; color: var(--easy);">0 / 50</h2>
       </div>
       <div class="card">
         <h3>Medium Solved</h3>
-        <h2 id="dash-med-count" style="font-size: 28px; color: var(--medium);">0 / 500</h2>
+        <h2 id="dash-med-count" style="font-size: 28px; color: var(--medium);">0 / 30</h2>
       </div>
       <div class="card">
         <h3>Hard Solved</h3>
-        <h2 id="dash-hard-count" style="font-size: 28px; color: var(--hard);">0 / 100</h2>
+        <h2 id="dash-hard-count" style="font-size: 28px; color: var(--hard);">0 / 20</h2>
       </div>
     </div>
 
-    <div id="dash-recommendation"></div>
+    <div id="dash-recommendation" style="margin-bottom: 20px;"></div>
+
+    <!-- Admin & Content Quality Control Duplicate Detector -->
+    <div class="card" style="border-top: 3px solid var(--accent); margin-bottom: 20px;">
+      <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-primary);">🛡️ Question Quality Control & Duplicate Prevention Engine</h3>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
+        Test new questions against our canonical dataset before adding them to prevent exact, normalized, or semantic duplicate entries.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px;">
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Question Title</label>
+          <input type="text" id="admin-dedup-title" placeholder="e.g. Find Whether Any Number Appears More Than Once" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Problem Statement</label>
+          <textarea id="admin-dedup-statement" rows="2" placeholder="e.g. Given an integer array, return true if any value appears at least twice in the array..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
+        </div>
+      </div>
+
+      <button class="btn-primary" style="padding: 9px 18px; font-size: 13px;" onclick="
+        const title = document.getElementById('admin-dedup-title').value;
+        const stmt = document.getElementById('admin-dedup-statement').value;
+        const res = app.checkQuestionDuplicate(title, stmt);
+        const out = document.getElementById('admin-dedup-result');
+        out.style.display = 'block';
+        if (res.isDuplicate) {
+          out.style.background = 'rgba(239, 68, 68, 0.1)';
+          out.style.border = '1px solid var(--hard)';
+          out.innerHTML = `<strong style='color:var(--hard);'>⚠️ DUPLICATE DETECTED (${res.score}% Match)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
+        } else {
+          out.style.background = 'rgba(16, 185, 129, 0.1)';
+          out.style.border = '1px solid var(--easy)';
+          out.innerHTML = `<strong style='color:var(--easy);'>✓ QUESTION APPROVED (${res.score}% Similarity)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
+        }
+      ">🔍 Run Duplicate Prevention Analysis</button>
+
+      <div id="admin-dedup-result" style="display: none; margin-top: 14px; padding: 12px; border-radius: var(--radius);"></div>
+    </div>
   </section>
 
   <!-- VIEW 4: About Us -->

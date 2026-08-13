@@ -22,13 +22,27 @@ class AppState {
     this.checkAndUpdateStreak();
   }
 
+  mapToCanonicalId(id) {
+    id = Number(id);
+    if (isNaN(id) || id <= 0) return 1;
+    if (id <= 100) return id;
+    return ((id - 1) % 100) + 1;
+  }
+
   loadSet(key) {
     try {
       const raw = localStorage.getItem(key);
       if (!raw) return new Set();
       const data = JSON.parse(raw);
       if (!Array.isArray(data)) return new Set();
-      return new Set(data.map(Number).filter(n => typeof n === 'number' && !isNaN(n) && n > 0 && n <= 1000));
+      const migrated = data
+        .map(n => Number(n))
+        .filter(n => typeof n === 'number' && !isNaN(n) && n > 0)
+        .map(n => this.mapToCanonicalId(n));
+      const canonicalSet = new Set(migrated);
+      // Persist migrated canonical data back to localStorage
+      this.saveSet(key, canonicalSet);
+      return canonicalSet;
     } catch (_) {
       return new Set();
     }
@@ -40,7 +54,26 @@ class AppState {
 
   loadObj(key, defaultVal = {}) {
     try {
-      return JSON.parse(localStorage.getItem(key)) || defaultVal;
+      const raw = localStorage.getItem(key);
+      if (!raw) return defaultVal;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return defaultVal;
+
+      const canonicalObj = {};
+      for (const k in parsed) {
+        const numK = Number(k);
+        if (!isNaN(numK) && numK > 0) {
+          const canonicalId = this.mapToCanonicalId(numK);
+          if (typeof parsed[k] === 'object' && parsed[k] !== null && parsed[k].pid) {
+            canonicalObj[canonicalId] = { ...parsed[k], pid: canonicalId };
+          } else {
+            canonicalObj[canonicalId] = parsed[k];
+          }
+        } else {
+          canonicalObj[k] = parsed[k];
+        }
+      }
+      return canonicalObj;
     } catch (_) {
       return defaultVal;
     }

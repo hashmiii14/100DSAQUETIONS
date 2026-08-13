@@ -89,6 +89,30 @@ class DSAApp {
       const searchInp = document.getElementById('search-input');
       if (searchInp) searchInp.value = this.searchQuery;
     }
+
+    // Direct Problem ID or Slug opening
+    let targetPid = null;
+    if (params.has('p')) {
+      targetPid = Number(params.get('p'));
+    } else if (params.has('slug')) {
+      const targetSlug = params.get('slug').toLowerCase();
+      const pMatch = this.getProblems().find(p => p.slug === targetSlug);
+      if (pMatch) targetPid = pMatch.id;
+    } else if (window.location.hash) {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (hash.startsWith('problem-')) {
+        targetPid = Number(hash.replace('problem-', ''));
+      } else {
+        const pMatch = this.getProblems().find(p => p.slug === hash);
+        if (pMatch) targetPid = pMatch.id;
+      }
+    }
+
+    if (targetPid && !isNaN(targetPid)) {
+      setTimeout(() => {
+        this.openProblemModal(targetPid);
+      }, 100);
+    }
   }
 
   updateUrlParams() {
@@ -764,8 +788,17 @@ class DSAApp {
   navigateModal(direction) {
     if (!this.activeModalProblem) return;
     const currentId = this.activeModalProblem.id;
-    const nextId = Math.min(1000, Math.max(1, currentId + direction));
+    const maxId = this.problems.length || 100;
+    const nextId = Math.min(maxId, Math.max(1, currentId + direction));
     this.openProblemModal(nextId);
+  }
+
+  checkQuestionDuplicate(title, statement) {
+    if (typeof DSADuplicateChecker === 'undefined') {
+      return { isDuplicate: false, score: 0, status: 'APPROVED', reason: 'Checker engine not loaded.' };
+    }
+    const checker = new DSADuplicateChecker(this.getProblems());
+    return checker.checkDuplicate({ title, statement });
   }
 
   updateModalSolutionView() {

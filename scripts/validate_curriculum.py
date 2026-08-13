@@ -23,7 +23,7 @@ def validate():
     print(f"Starting Automated QA Validation on data/questions.js...")
     print(f"Loaded {len(problems)} problems.")
 
-    assert len(problems) == 1000, f"Expected 1000 problems, got {len(problems)}"
+    assert len(problems) == 100, f"Expected 100 problems, got {len(problems)}"
 
     easy_cnt = 0
     med_cnt = 0
@@ -50,9 +50,9 @@ def validate():
         stage = p.get("stage") or p.get("curriculumStage")
         assert stage and "Stage" in stage, f"Missing or invalid stage for #{pid}"
 
-    assert link_cnt == 1000, f"Expected 1000 LeetCode URLs, got {link_cnt}"
+    assert link_cnt == 100, f"Expected 100 LeetCode URLs, got {link_cnt}"
 
-    print(f"\n[SUCCESS] All 1000 Interleaved DSA Problems passed Quality Control Validation perfectly!")
+    print(f"\n[SUCCESS] All 100 Canonical DSA Problems passed Quality Control Validation perfectly!")
     print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt} | Verified 100% LeetCode Links = {link_cnt}")
 
 if __name__ == "__main__":

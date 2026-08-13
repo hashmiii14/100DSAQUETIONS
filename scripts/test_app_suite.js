@@ -21,10 +21,10 @@ console.log("\n[Test 1] Testing Data File Loading & Object Models...");
 const PROBLEMS = require('../data/questions.js');
 
 assert(Array.isArray(PROBLEMS), "PROBLEMS must be an array");
-assert(PROBLEMS.length === 1000, `Expected 1000 problems, found ${PROBLEMS.length}`);
+assert(PROBLEMS.length === 100, `Expected 100 problems, found ${PROBLEMS.length}`);
 
-// 2. Validate all 1000 problems fields
-console.log("\n[Test 2] Validating Data Schema for all 1000 problems...");
+// 2. Validate all 100 problems fields
+console.log("\n[Test 2] Validating Data Schema for all 100 problems...");
 let easyCount = 0, medCount = 0, hardCount = 0;
 const validDifficulties = new Set(['Easy', 'Medium', 'Hard']);
 const seenIds = new Set();
@@ -59,10 +59,10 @@ PROBLEMS.forEach((p, idx) => {
   if (p.difficulty === 'Hard') hardCount++;
 });
 
-console.log(`   Data Verification Passed: Total 1000 | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount}`);
-assert(easyCount === 400, `Expected 400 Easy problems, found ${easyCount}`);
-assert(medCount === 500, `Expected 500 Medium problems, found ${medCount}`);
-assert(hardCount === 100, `Expected 100 Hard problems, found ${hardCount}`);
+console.log(`   Data Verification Passed: Total 100 | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount}`);
+assert(easyCount === 50, `Expected 50 Easy problems, found ${easyCount}`);
+assert(medCount === 30, `Expected 30 Medium problems, found ${medCount}`);
+assert(hardCount === 20, `Expected 20 Hard problems, found ${hardCount}`);
 
 // 3. Test AppState logic
 console.log("\n[Test 3] Testing AppState & Storage Operations...");

@@ -32,7 +32,7 @@ PROBLEMS.forEach((p, idx) => {
 });
 
 if (errors === 0) {
-  console.log(`✅ ALL 1000 PROBLEMS VERIFIED PERFECTLY WITH ZERO ERRORS!`);
+  console.log(`✅ ALL ${PROBLEMS.length} CANONICAL PROBLEMS VERIFIED PERFECTLY WITH ZERO ERRORS!`);
 } else {
   console.error(`❌ FOUND ${errors} ERRORS IN DATASET!`);
   process.exit(1);
