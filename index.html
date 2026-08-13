@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DSA Problems — 1000 Coding Interview Questions & Comprehensive Educational Guide</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive 28-level DSA theory textbook, mathematical formulas, multi-language solutions, and progress tracking."/>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive 30-chapter DSA theory textbook, mathematical formulas, multi-language solutions, and progress tracking."/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
@@ -14,7 +14,7 @@
 
 <!-- Open Graph SEO -->
 <meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Educational Guide"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, complete 28-level DSA textbook, and multi-language solutions (C++, Java, Python, JS)."/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, complete 30-chapter DSA master textbook, and multi-language solutions (C++, Java, Python, JS)."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -84,10 +84,10 @@
     <div class="hero-banner">
       <div class="hero-content">
         <h1>Master Data Structures & Algorithms</h1>
-        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a 28-level complete computer science textbook.</p>
+        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a 30-chapter exhaustive computer science textbook.</p>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Textbook & Levels</button>
+        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Chapters</button>
         <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
       </div>
     </div>
@@ -188,58 +188,58 @@
 
   </section>
 
-  <!-- VIEW 2: Educational DSA Guide (28-Level Complete Textbook) -->
+  <!-- VIEW 2: Educational DSA Guide (30-Chapter Exhaustive Master Textbook) -->
   <section class="view-section" id="view-guide">
     <div class="card" style="margin-bottom: 24px;">
-      <h2>📚 Data Structures & Algorithms — World-Class 28-Level Textbook</h2>
-      <p>A complete computer science reference manual from zero foundations to competitive-programming and FAANG interview mastery.</p>
+      <h2>📚 Data Structures & Algorithms — Exhaustive 30-Chapter Master Textbook</h2>
+      <p>A complete computer science reference manual covering memory models, mathematical proofs, internal data structure mechanics, algorithm invariants, complexity cheat sheets, and direct practice problem triggers.</p>
     </div>
 
-    <!-- Levels 0–1: Foundations & Complexity -->
+    <!-- Chapters 1–2: Foundations & Asymptotic Complexity -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Levels 0–1: Programming Foundations & Asymptotic Complexity</h3>
+      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Chapters 1–2: Programming Foundations & Asymptotic Complexity</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Level 0 — Programming & Memory Foundations</h4>
-          <p>Understanding variables, memory allocations, pointer references, stack vs heap memory, and integer overflow constraints:</p>
+          <h4>Chapter 1 — Programming Foundations & Memory Architecture</h4>
+          <p>Understanding program execution, RAM layout, CPU L1/L2/L3 cache hierarchies, stack vs heap memory, and pointer references:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
-            <li><strong>Stack Memory:</strong> Fast call stack frames for local primitives and function execution.</li>
-            <li><strong>Heap Memory:</strong> Dynamic memory allocation for dynamic arrays and node pointers.</li>
-            <li><strong>Abstract Data Types (ADT):</strong> Formal specification defining operations independently of implementation.</li>
+            <li><strong>Stack Memory:</strong> Fast contiguously managed activation stack frames storing local primitive variables.</li>
+            <li><strong>Heap Memory:</strong> Dynamically allocated buffer memory accessed via pointer addresses and reference handles.</li>
+            <li><strong>Abstract Data Types (ADT):</strong> Formal mathematical specifications defining supported operations independently of underlying storage code.</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Level 1 — Asymptotic Analysis & Master Theorem</h4>
-          <p>Formal definitions of mathematical upper, lower, and tight growth bounds:</p>
+          <h4>Chapter 2 — Asymptotic Analysis & Master Theorem</h4>
+          <p>Formal definitions of mathematical upper, lower, and tight growth bounds as input size N approaches infinity:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Big-O / Big-Ω / Big-Θ:</strong> Limits governing worst, best, and tight execution growth rates.</li>
-            <li><strong>Master Theorem:</strong> <code>T(N) = a·T(N/b) + f(N)</code> cases for divide-and-conquer runtime analysis.</li>
-            <li><strong>Amortized Analysis:</strong> Average cost over dynamic array capacity doubling sequences.</li>
+            <li><strong>Formal Limits:</strong> <code>f(N) = O(g(N)) ⇔ ∃ c&gt;0, N₀&gt;0 s.t. f(N) ≤ c·g(N) ∀ N ≥ N₀</code>.</li>
+            <li><strong>Master Theorem Formula:</strong> <code>T(N) = a·T(N/b) + f(N)</code> governing divide-and-conquer recursion trees.</li>
+            <li><strong>Amortized Doubling Proof:</strong> Dynamic array capacity doubling achieves <code>O(1)</code> average insertion cost.</li>
           </ul>
           <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Foundations →</button>
         </div>
       </div>
     </div>
 
-    <!-- Levels 2–3: Arrays, Strings & Hashing -->
+    <!-- Chapters 3–5: Arrays, Strings, Subarrays & Hashing -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Levels 2–3: Arrays, Strings, Subarray Patterns & Hashing</h3>
+      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Chapters 3–5: Arrays, Strings, Pattern Matching & Hashing</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Level 2 — Arrays & Subarray Techniques</h4>
-          <p>Contiguous RAM allocation, cache spatial locality, and range update mechanisms:</p>
+          <h4>Chapters 3–4 — Arrays, Two Pointers & Subarrays</h4>
+          <p>Contiguous RAM allocation, cache spatial locality, prefix sums, difference arrays, and Kadane's algorithm:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Prefix Sum & Difference Arrays:</strong> Range sum queries in <code>O(1)</code> & range updates in <code>O(1)</code>.</li>
-            <li><strong>Kadane's Algorithm:</strong> Maximum subarray sum state recurrence <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
-            <li><strong>Two Pointers & Sliding Window:</strong> Converging pointers & dynamic subsegment window constraints.</li>
+            <li><strong>Address Calculation:</strong> <code>Address(A[i]) = Base + i · ElementSize</code> for instant <code>O(1)</code> lookups.</li>
+            <li><strong>Kadane's Algorithm:</strong> Maximum contiguous subarray sum state recurrence <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
+            <li><strong>Prefix Sums:</strong> <code>P[i] = P[i-1] + A[i]</code> allowing range sum queries in <code>O(1)</code> time.</li>
           </ul>
           <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Arrays →</button>
         </div>
 
         <div class="card">
-          <h4>Level 3 — Strings & Pattern Matching</h4>
-          <p>String representation, ASCII/Unicode, KMP, Rabin-Karp, Z-Algorithm, and Manacher's Algorithm:</p>
+          <h4>Chapter 5 — String Processing & KMP Matching</h4>
+          <p>Character encodings (ASCII/UTF-8), polynomial rolling hashing, KMP algorithm, and Z-algorithm:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>KMP Algorithm:</strong> Partial match LPS table matching string patterns in <code>O(N + M)</code>.</li>
             <li><strong>Rabin-Karp Rolling Hash:</strong> Polynomial hashing converting substrings into integers modulo prime <code>M</code>.</li>
@@ -248,10 +248,10 @@
         </div>
 
         <div class="card">
-          <h4>Level 6 — Hash Tables & Collision Resolution</h4>
-          <p>Hash functions, buckets, load factor <code>α = N / M</code>, separate chaining, open addressing, and LRU Cache:</p>
+          <h4>Chapter 9 — Hash Tables & Collision Resolution</h4>
+          <p>Hash functions, separate chaining, open addressing (linear/quadratic probing, double hashing), load factor <code>α = N/M</code>, and LRU Cache:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Probing Formulas:</strong> Linear probing, quadratic probing, and double hashing collision handling.</li>
+            <li><strong>Probing Formulas:</strong> Linear probing <code>h(k,i) = (h'(k)+i) mod m</code> & Double Hashing <code>h(k,i) = (h₁(k)+i·h₂(k)) mod m</code>.</li>
             <li><strong>LRU Cache Architecture:</strong> Hash Map + Doubly Linked List for <code>O(1)</code> evicted updates.</li>
           </ul>
           <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Hash Tables →</button>
@@ -259,13 +259,13 @@
       </div>
     </div>
 
-    <!-- Levels 4–5: Linked Lists, Stacks & Queues -->
+    <!-- Chapters 6–8: Linked Lists, Stacks & Queues -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Levels 4–5: Linked Lists, Stacks, Monotonic Stacks & Deques</h3>
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Chapters 6–8: Linked Lists, Stacks, Monotonic Stacks & Deques</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Level 4 — Linked Lists & Pointer Mechanics</h4>
-          <p>Singly, doubly, and circular linked lists with pointer address invariants:</p>
+          <h4>Chapter 6 — Linked Lists & Memory Pointer Invariants</h4>
+          <p>Singly, doubly, and circular linked lists with pointer address mechanics:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Floyd's Cycle Detection Proof:</strong> Fast (2 steps) and slow (1 step) pointers meeting inside cycle.</li>
             <li><strong>In-Place Reversal:</strong> Reversing next pointers iteratively using <code>prev, curr, next</code> pointers.</li>
@@ -274,8 +274,8 @@
         </div>
 
         <div class="card">
-          <h4>Level 5 — Stacks, Monotonic Stacks & Deques</h4>
-          <p>Linear structures enforcing strict LIFO/FIFO constraints and monotonic ordering invariants:</p>
+          <h4>Chapters 7–8 — Stacks, Monotonic Stacks & Deques</h4>
+          <p>LIFO/FIFO principles, function call stacks, Shunting-Yard expression parsing, and monotonic deques:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Monotonic Stack:</strong> Strictly ordered stack elements for Next Greater Element in <code>O(N)</code>.</li>
             <li><strong>Sliding Window Deque:</strong> Double-ended queue storing candidate max elements in <code>O(N)</code>.</li>
@@ -285,12 +285,12 @@
       </div>
     </div>
 
-    <!-- Levels 7–9: Searching, Sorting & Recursion -->
+    <!-- Chapters 10–12: Searching, Sorting & Recursion -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Levels 7–9: Searching Invariants, Sorting & Backtracking</h3>
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Chapters 10–12: Searching Invariants, Sorting & Backtracking</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Level 7 — Searching Algorithms & Invariants</h4>
+          <h4>Chapter 10 — Binary Search Invariants</h4>
           <p>Logarithmic binary search space invariants, lower/upper bounds, rotated arrays, and answer space search:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Lower & Upper Bounds:</strong> Identifying first and last occurrence indices of target values.</li>
@@ -300,7 +300,7 @@
         </div>
 
         <div class="card">
-          <h4>Level 8 — Sorting Algorithms & Comparators</h4>
+          <h4>Chapter 11 — Sorting Algorithms & Comparators</h4>
           <p>Merge Sort, QuickSort (Lomuto/Hoare partitioning), HeapSort, Counting/Radix Sort, and custom comparators:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Merge Sort (Stable O(N log N)):</strong> Divide-and-conquer splitting and merging sorted halves.</li>
@@ -310,7 +310,7 @@
         </div>
 
         <div class="card">
-          <h4>Level 9 — Recursion & Backtracking Framework</h4>
+          <h4>Chapter 12 — Recursion & Backtracking Framework</h4>
           <p>Call stack recursion frames, state space trees, backtracking state templates, and constraint pruning:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Backtracking Template:</strong> <code>choose() → explore() → unchoose()</code> state recursion loop.</li>
@@ -321,12 +321,12 @@
       </div>
     </div>
 
-    <!-- Levels 10–13: Trees, BST, Heaps & Tries -->
+    <!-- Chapters 13–16: Trees, BST, Heaps & Tries -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Levels 10–13: Trees, BST, Heaps, Priority Queues & Tries</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 13–16: Trees, BST, Heaps, Priority Queues & Tries</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Levels 10–11 — Trees & Binary Search Trees (BST)</h4>
+          <h4>Chapters 13–14 — Trees & Binary Search Trees (BST)</h4>
           <p>DFS Traversals (Preorder, Inorder, Postorder), BFS Level Order, Tree Height/Diameter, LCA, and BST balancing:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Traversals:</strong> DFS Preorder (cloning), Inorder (sorted BST output), Postorder (height/bottom-up).</li>
@@ -336,7 +336,7 @@
         </div>
 
         <div class="card">
-          <h4>Levels 12–13 — Heaps, Priority Queues & Tries</h4>
+          <h4>Chapters 15–16 — Heaps, Priority Queues & Tries</h4>
           <p>Array-backed complete binary trees, <code>O(N)</code> Heapify proof, Top K, Two Heaps, and Trie Prefix Trees:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>O(N) Heapify Proof:</strong> Building valid Heap from unsorted array in linear time.</li>
@@ -347,12 +347,12 @@
       </div>
     </div>
 
-    <!-- Levels 14–18: Graphs, Shortest Paths & DSU -->
+    <!-- Chapters 17–20: Graphs, Shortest Paths & DSU -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Levels 14–18: Graph Algorithms, Shortest Paths, MST & DSU</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 17–20: Graph Algorithms, Shortest Paths, MST & DSU</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Levels 14–16 — Graph Traversals & Shortest Paths</h4>
+          <h4>Chapters 17–19 — Graph Traversals & Shortest Paths</h4>
           <p>Adjacency Lists, BFS, DFS, Topological Sort (Kahn's & DFS), 0-1 BFS, Dijkstra, Bellman-Ford, and Floyd-Warshall:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Dijkstra's Algorithm:</strong> Priority Queue shortest path in weighted graphs in <code>O((V+E) log V)</code>.</li>
@@ -362,7 +362,7 @@
         </div>
 
         <div class="card">
-          <h4>Levels 17–18 — Minimum Spanning Trees & DSU</h4>
+          <h4>Chapter 20 — Minimum Spanning Trees & DSU</h4>
           <p>Kruskal's & Prim's MST algorithms, Disjoint Set Union (DSU) path compression and rank union:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Disjoint Set Union (DSU):</strong> Path compression + rank union for <code>O(α(N))</code> set connectivity.</li>
@@ -373,12 +373,12 @@
       </div>
     </div>
 
-    <!-- Levels 19–22: DP, Greedy, Bits & Math -->
+    <!-- Chapters 21–24: DP, Greedy, Bits & Math -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Levels 19–22: Dynamic Programming, Greedy, Bits & Math</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Chapters 21–24: Dynamic Programming, Greedy, Bits & Math</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Level 19 — Dynamic Programming (DP) Masterclass</h4>
+          <h4>Chapter 21 — Dynamic Programming (DP) Masterclass</h4>
           <p>State, Transition, Base Case, Memoization vs Tabulation, 0/1 Knapsack, LCS, LIS, Edit Distance, Bitmask DP:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>0/1 Knapsack State:</strong> <code>dp[i][w] = max(dp[i-1][w], dp[i-1][w-w_i] + v_i)</code>.</li>
@@ -388,7 +388,7 @@
         </div>
 
         <div class="card">
-          <h4>Levels 20–22 — Greedy, Bit Manipulation & Math</h4>
+          <h4>Chapters 22–24 — Greedy, Bit Manipulation & Math</h4>
           <p>Exchange argument proofs, Activity Selection, Bitwise identities, Sieve of Eratosthenes, and Modular Exponentiation:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Bitwise Operators:</strong> Clear lowest set bit <code>n &amp; (n-1)</code> and power of two test.</li>
@@ -399,12 +399,12 @@
       </div>
     </div>
 
-    <!-- Levels 23–28: Advanced Structures, Geometry & Master Cheat Sheet -->
+    <!-- Chapters 25–30: Advanced Structures, Geometry & Master Cheat Sheet -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">⚫ Levels 23–28: Advanced Data Structures, Geometry & Master Complexity Reference</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">⚫ Chapters 25–30: Advanced Data Structures, Geometry & Master Complexity Reference</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Levels 23–25 — Range Queries & Computational Geometry</h4>
+          <h4>Chapters 25–27 — Range Queries & Computational Geometry</h4>
           <p>Fenwick Trees (BIT), Segment Trees (Lazy Propagation), Sparse Tables, Sweep Line, Binary Lifting, Convex Hull:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Segment Tree:</strong> Binary tree performing range queries and point updates in <code>O(log N)</code>.</li>
@@ -414,7 +414,7 @@
         </div>
 
         <div class="card">
-          <h4>Levels 26–28 — Problem-Solving Pattern Matrix & Master Cheat Sheet</h4>
+          <h4>Chapters 28–30 — Problem-Solving Pattern Matrix & Master Cheat Sheet</h4>
           <p>Pattern recognition matrix ("When you see X → Think Y"), Real-World applications, and Master Complexity Reference Table:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
             <li><strong>Pattern Signals:</strong> Contiguous subsegment → Sliding Window; Next Greater Element → Monotonic Stack; Top K → Min-Heap.</li>
