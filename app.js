@@ -71,21 +71,23 @@ class DSAApp {
   }
 
   applyInitialTheme() {
-    // DEFAULT THEME IS LIGHT MODE
-    const savedTheme = (this.state && this.state.theme) ? this.state.theme : (localStorage.getItem('dsaproblems_theme_v3') || 'light');
-    this.setTheme(savedTheme);
+    // MANDATORY DEFAULT IS LIGHT / WHITE THEME
+    const savedTheme = localStorage.getItem('dsaproblems_theme_v3');
+    const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+    this.setTheme(initialTheme);
   }
 
   setTheme(themeName) {
-    if (this.state && typeof this.state.setTheme === 'function') {
-      this.state.setTheme(themeName);
-    } else {
-      localStorage.setItem('dsaproblems_theme_v3', themeName);
-      document.documentElement.setAttribute('data-theme', themeName);
+    const validTheme = themeName === 'dark' ? 'dark' : 'light';
+    if (this.state) {
+      this.state.theme = validTheme;
     }
+    localStorage.setItem('dsaproblems_theme_v3', validTheme);
+    document.documentElement.setAttribute('data-theme', validTheme);
+
     const themeIcon = document.getElementById('theme-icon');
     if (themeIcon) {
-      themeIcon.textContent = themeName === 'dark' ? '☀️' : '🌙';
+      themeIcon.textContent = validTheme === 'dark' ? '☀️' : '🌙';
     }
   }
 
