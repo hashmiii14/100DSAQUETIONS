@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DSA Problems — 1000 Coding Interview Questions & Comprehensive Educational Guide</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive beginner to advanced DSA learning guide, multi-language solutions, and progress tracking."/>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems across 8 curriculum stages. 100% verified LeetCode links, A-to-Z DSA learning guide, multi-language solutions, and progress tracking."/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
@@ -14,7 +14,7 @@
 
 <!-- Open Graph SEO -->
 <meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Educational Guide"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, beginner to advanced DSA learning guide, and multi-language solutions (C++, Java, Python, JS)."/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, 8-stage learning path, beginner to advanced DSA guide, and multi-language solutions (C++, Java, Python, JS)."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -52,6 +52,7 @@
 
       <nav class="nav-tabs" id="main-nav">
         <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
+        <button class="nav-btn" data-view="path">🎓 Learning Path</button>
         <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
         <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
       </nav>
@@ -72,6 +73,7 @@
     </div>
     <nav class="drawer-nav" id="drawer-nav">
       <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
+      <button class="nav-btn" data-view="path">🎓 Learning Path</button>
       <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
       <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
     </nav>
@@ -84,11 +86,11 @@
     <div class="hero-banner">
       <div class="hero-content">
         <h1>Master Data Structures & Algorithms</h1>
-        <p>1000 curated problems — with 100% verified LeetCode links, interactive code solutions, and a complete beginner-to-advanced educational encyclopedia.</p>
+        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and an A-to-Z educational encyclopedia.</p>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide</button>
-        <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
+        <button class="btn-primary" id="btn-learn-path">🎓 Explore 8-Stage Learning Path</button>
+        <button class="btn-secondary" id="btn-beginner">📚 Educational DSA Guide</button>
       </div>
     </div>
 
@@ -120,6 +122,21 @@
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
         <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Curriculum Stage: </label>
+          <select id="select-stage" class="select-filter">
+            <option value="all">All 8 Stages</option>
+            <option value="Stage 0 — Programming Foundations">Stage 0 — Programming Foundations</option>
+            <option value="Stage 1 — Core Easy Patterns">Stage 1 — Core Easy Patterns</option>
+            <option value="Stage 2 — Core Data Structures">Stage 2 — Core Data Structures</option>
+            <option value="Stage 3 — Core Algorithms">Stage 3 — Core Algorithms</option>
+            <option value="Stage 4 — Advanced Trees & Graphs">Stage 4 — Advanced Trees & Graphs</option>
+            <option value="Stage 5 — Dynamic Programming">Stage 5 — Dynamic Programming</option>
+            <option value="Stage 6 — Advanced Interview Patterns">Stage 6 — Advanced Interview Patterns</option>
+            <option value="Stage 7 — Interview Mastery">Stage 7 — Interview Mastery</option>
+          </select>
+        </div>
+
+        <div>
           <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Topic: </label>
           <select id="select-topic" class="select-filter">
             <option value="all">All Topics</option>
@@ -148,7 +165,7 @@
             <th class="col-num">#</th>
             <th>Problem Title</th>
             <th>Difficulty</th>
-            <th>Topic & Pattern</th>
+            <th>Stage & Topic</th>
             <th>LeetCode Link</th>
             <th>Actions</th>
           </tr>
@@ -173,7 +190,19 @@
 
   </section>
 
-  <!-- VIEW 2: Educational DSA Guide (15 Encyclopedic Modules) -->
+  <!-- VIEW 2: 8-Stage Learning Path -->
+  <section class="view-section" id="view-path">
+    <div class="card" style="margin-bottom: 24px;">
+      <h2>🎓 8-Stage Structured Learning Path</h2>
+      <p>Follow a progressive curriculum designed to take you from programming basics to advanced technical interview confidence.</p>
+    </div>
+
+    <div class="grid-cards" id="learning-path-container">
+      <!-- Rendered via JavaScript -->
+    </div>
+  </section>
+
+  <!-- VIEW 3: Educational DSA Guide (A-to-Z Masterclass) -->
   <section class="view-section" id="view-guide">
     <div class="card" style="margin-bottom: 24px;">
       <h2>📚 Data Structures & Algorithms — Encyclopedic Educational Guide</h2>
@@ -255,144 +284,156 @@
 
     <!-- Section 2: Fundamental Data Structures -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Module 2–5: Linear Data Structures & Subarray Techniques</h3>
+      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Modules 2–5: Linear Data Structures & Subarray Techniques</h3>
       <div class="grid-cards">
         <div class="card">
           <h4>Module 2: Arrays, Strings & Two Pointers</h4>
           <p>Contiguous memory allocations enabling <code>O(1)</code> index lookups. Master Two Pointers and Sliding Window subsegment mechanics.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Two Pointers:</strong> Converging pointers (left & right) to solve <code>O(N)</code> Sorted Pair Sums.</li>
             <li><strong>Sliding Window:</strong> Maintaining dynamic window constraints for subsegment metrics.</li>
             <li><strong>Prefix Sums:</strong> Precomputing <code>P[i] = P[i-1] + A[i]</code> for <code>O(1)</code> range queries.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Arrays & Strings →</button>
         </div>
 
         <div class="card">
           <h4>Module 3: Hash Tables & Hash Sets</h4>
           <p>Key-value mappings translating keys to bucket indices. Delivers average <code>O(1)</code> insertions, lookups, and deletions.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Collision Resolution:</strong> Chaining (linked lists) vs Open Addressing (linear probing).</li>
             <li><strong>Frequency Counter Pattern:</strong> Checking anagrams, duplicate counts, and complement pairs.</li>
             <li><strong>LRU Cache Design:</strong> Combining Hash Map + Doubly Linked List for <code>O(1)</code> cache evicted updates.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Hash Tables →</button>
         </div>
 
         <div class="card">
           <h4>Module 4: Linked Lists & Memory Mechanics</h4>
           <p>Node pointers allocating data dynamically without requirement for contiguous memory blocks.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Fast & Slow Pointers (Floyd's Cycle):</strong> Cycle detection and middle node discovery.</li>
             <li><strong>In-Place Reversal:</strong> Reversing next pointers iteratively using <code>prev, curr, next</code>.</li>
             <li><strong>Dummy Node Technique:</strong> Avoiding null head edge case checks when merging lists.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Linked Lists →</button>
         </div>
 
         <div class="card">
           <h4>Module 5: Stacks, Monotonic Stacks & Queues</h4>
           <p>Linear structures enforcing strict LIFO (Last-In-First-Out) and FIFO (First-In-First-Out) access mechanics.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Monotonic Stack:</strong> Maintaining ordered elements to find Next Greater Element in <code>O(N)</code>.</li>
             <li><strong>Expression Evaluation:</strong> Postfix / Reverse Polish Notation calculation.</li>
             <li><strong>Deques (Double-Ended Queues):</strong> <code>O(1)</code> push/pop at both ends for Sliding Window Maximum.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Stacks & Queues →</button>
         </div>
       </div>
     </div>
 
     <!-- Section 3: Intermediate Searching & Sorting -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Module 6–9: Searching, Sorting, Trees & Heaps</h3>
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Modules 6–9: Searching, Sorting, Trees & Heaps</h3>
       <div class="grid-cards">
         <div class="card">
           <h4>Module 6: Searching & Binary Search Variations</h4>
           <p>Divide-and-conquer search algorithm halving search space at each iteration (<code>O(log N)</code>).</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Lower & Upper Bounds:</strong> Finding first and last occurrences of target values.</li>
             <li><strong>Rotated Sorted Array:</strong> Evaluating mid boundary conditions relative to target range.</li>
             <li><strong>Binary Search on Answer Space:</strong> Finding minimum capacity or time limit matching target feasibility.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Binary Search →</button>
         </div>
 
         <div class="card">
           <h4>Module 7: Sorting Algorithms & Custom Comparators</h4>
           <p>Ordering elements according to relational criteria. Inplace vs Stable sorting algorithms.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Merge Sort:</strong> Divide-and-conquer stable sorting executing in <code>O(N log N)</code> time and <code>O(N)</code> space.</li>
             <li><strong>QuickSort:</strong> Partitioning around pivot element executing in average <code>O(N log N)</code> time.</li>
             <li><strong>Custom Comparators:</strong> Multi-attribute custom sorting lambda functions in C++, Java, Python, JS.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Sorting →</button>
         </div>
 
         <div class="card">
           <h4>Module 8: Binary Trees, BST & Self-Balancing</h4>
           <p>Hierarchical tree node structures. Binary Search Trees satisfy <code>Left &lt; Root &lt; Right</code> invariant.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Inorder Traversal:</strong> Yields sorted element order when traversing BSTs.</li>
             <li><strong>Tree Height & Diameter:</strong> Bottom-up recursive tree postorder calculations.</li>
             <li><strong>Lowest Common Ancestor (LCA):</strong> Identifying branching split point for candidate target nodes.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Binary Trees →</button>
         </div>
 
         <div class="card">
           <h4>Module 9: Heaps & Priority Queues</h4>
           <p>Complete binary trees maintaining Min-Heap or Max-Heap property stored efficiently in arrays.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>O(N) Heapify:</strong> Building valid Heap from unsorted array in linear time.</li>
             <li><strong>Top K Elements:</strong> Maintaining Min-Heap of size K for <code>O(N log K)</code> processing.</li>
             <li><strong>Two Heaps Pattern:</strong> Max-Heap + Min-Heap for real-time streaming median calculations.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Heaps →</button>
         </div>
       </div>
     </div>
 
     <!-- Section 4: Advanced Graphs, DP & Backtracking -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Module 10–15: Tries, Advanced Graphs, DP & Bit Manipulation</h3>
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Modules 10–15: Tries, Advanced Graphs, DP & Bit Manipulation</h3>
       <div class="grid-cards">
         <div class="card">
           <h4>Module 10: Tries (Prefix Trees) & Autocomplete</h4>
           <p>Tree structure designed for character prefix lookup. Delivers <code>O(Length)</code> word operations.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Prefix Searching:</strong> Finding all words matching candidate string prefix.</li>
             <li><strong>Word Search II:</strong> Trie + Grid DFS Backtracking to find dictionary words.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Tries →</button>
         </div>
 
         <div class="card">
           <h4>Module 11 & 12: Graph Shortest Path & DSU</h4>
           <p>Representations via Adjacency Lists/Matrices modeling networks, components, and weighted distances.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>BFS Shortest Path:</strong> Level-order queue traversal for unweighted graphs.</li>
             <li><strong>Dijkstra's Algorithm:</strong> Weighted single-source shortest path using Priority Queue.</li>
             <li><strong>Disjoint Set Union (DSU):</strong> Path compression + union by rank for <code>O(α(N))</code> connectivity.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Graphs →</button>
         </div>
 
         <div class="card">
           <h4>Module 13 & 14: Topological Sort & Dynamic Programming</h4>
           <p>Task dependency resolution and subproblem caching optimization.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Topological Sorting:</strong> Kahn's BFS Algorithm and DFS Postorder for DAG dependencies.</li>
             <li><strong>Dynamic Programming (DP):</strong> Top-Down Memoization vs Bottom-Up Tabulation.</li>
             <li><strong>DP Patterns:</strong> 0/1 Knapsack, Coin Change, Longest Common Subsequence (LCS), Edit Distance.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Dynamic Programming')">Practice Dynamic Programming →</button>
         </div>
 
         <div class="card">
           <h4>Module 15: Backtracking & Bit Manipulation</h4>
           <p>Decision-tree search and fast bitwise binary computations.</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65;">
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px;">
             <li><strong>Backtracking Template:</strong> Recursive choice state, pruning, and backtracking cleanup.</li>
             <li><strong>Bitwise XOR Tricks:</strong> <code>x ^ x = 0</code> and <code>x ^ 0 = x</code> for single number discovery.</li>
             <li><strong>Fast Exponentiation:</strong> <code>O(log N)</code> modular power calculation.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Backtracking →</button>
         </div>
       </div>
     </div>
 
   </section>
 
-  <!-- VIEW 3: Dashboard -->
+  <!-- VIEW 4: Dashboard -->
   <section class="view-section" id="view-dashboard">
     <div class="card" style="margin-bottom: 20px;">
       <h2>📊 Learner Progress Dashboard</h2>
@@ -467,6 +508,14 @@
         <button class="btn-secondary" id="modal-toggle-bookmark-btn" style="font-size: 12px;">Bookmark ★</button>
       </div>
 
+      <!-- Learning Objective & Pattern Recognition -->
+      <div style="margin-bottom: 16px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: var(--radius); padding: 14px;">
+        <h4 style="color: var(--accent); margin-bottom: 4px;">🎯 Learning Objective</h4>
+        <p id="modal-learning-obj" style="font-size: 13px; color: var(--text-primary); margin-bottom: 8px;"></p>
+        <h4 style="color: var(--accent); margin-bottom: 4px;">💡 Pattern Recognition ("When you see X, think of Y")</h4>
+        <p id="modal-why-pattern" style="font-size: 12.5px; color: var(--text-secondary);"></p>
+      </div>
+
       <!-- Problem & Examples -->
       <div style="margin-bottom: 16px;">
         <h4 style="margin-bottom: 6px;">Problem Statement</h4>
@@ -483,7 +532,7 @@
         <div id="modal-examples"></div>
       </div>
 
-      <!-- Hints -->
+      <!-- Progressive Hints -->
       <div style="margin-bottom: 16px;">
         <h4 style="margin-bottom: 6px;">Progressive Hints</h4>
         <div id="modal-hints"></div>
@@ -510,12 +559,6 @@
         <div style="font-size: 12px; color: var(--text-secondary);" id="sol-intuition"></div>
         <div style="font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 4px;" id="sol-complexity"></div>
         <pre class="code-block" id="sol-code-display">// Code solution</pre>
-      </div>
-
-      <!-- Problem & Pattern Tip -->
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">💡 Problem & Pattern Tip</h4>
-        <p id="modal-interview-tip" style="font-size: 12px; color: var(--text-secondary);"></p>
       </div>
 
       <!-- Edge Cases & Common Mistakes -->

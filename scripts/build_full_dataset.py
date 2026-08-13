@@ -3,10 +3,7 @@ import os
 import re
 
 def title_to_slug(title):
-    # Remove Tier suffix if present
     base_title = title.split(' - Tier')[0].strip()
-    
-    # Common mappings
     special = {
         "Pow(x, n)": "powx-n",
         "Sqrt(x)": "sqrtx",
@@ -24,7 +21,6 @@ def title_to_slug(title):
     if base_title in special:
         return special[base_title]
 
-    # Convert title to slug: lower case, remove non-alphanumeric except spaces/hyphens
     slug = base_title.lower()
     slug = re.sub(r'[^a-z0-9\s-]', '', slug)
     slug = re.sub(r'[\s_]+', '-', slug)
@@ -33,27 +29,15 @@ def title_to_slug(title):
     return slug or "two-sum"
 
 def generate_all_1000():
-    phases = [
-        "Phase 1 — Foundations",
-        "Phase 2 — Arrays & Strings",
-        "Phase 3 — Hashing",
-        "Phase 4 — Two Pointers",
-        "Phase 5 — Sliding Window",
-        "Phase 6 — Searching & Binary Search",
-        "Phase 7 — Sorting",
-        "Phase 8 — Linked Lists",
-        "Phase 9 — Stack & Queue",
-        "Phase 10 — Recursion & Backtracking",
-        "Phase 11 — Trees & BST",
-        "Phase 12 — Heap / Priority Queue",
-        "Phase 13 — Greedy",
-        "Phase 14 — Graphs",
-        "Phase 15 — Trie",
-        "Phase 16 — Dynamic Programming",
-        "Phase 17 — Advanced Data Structures",
-        "Phase 18 — Math & Bit Manipulation",
-        "Phase 19 — Mixed Interview Problems",
-        "Phase 20 — FAANG Level"
+    stages = [
+        "Stage 0 — Programming Foundations",
+        "Stage 1 — Core Easy Patterns",
+        "Stage 2 — Core Data Structures",
+        "Stage 3 — Core Algorithms",
+        "Stage 4 — Advanced Trees & Graphs",
+        "Stage 5 — Dynamic Programming",
+        "Stage 6 — Advanced Interview Patterns",
+        "Stage 7 — Interview Mastery"
     ]
 
     canonical_leetcode = {
@@ -299,39 +283,46 @@ def generate_all_1000():
         if i <= 800: return "Medium"
         return "Hard"
 
-    def get_phase(i):
-        idx = (i - 1) // 50
-        return phases[min(idx, len(phases) - 1)]
+    def get_stage(i):
+        if i <= 60: return stages[0]   # Stage 0 — Programming Foundations
+        if i <= 180: return stages[1]  # Stage 1 — Core Easy Patterns
+        if i <= 300: return stages[2]  # Stage 2 — Core Data Structures
+        if i <= 450: return stages[3]  # Stage 3 — Core Algorithms
+        if i <= 600: return stages[4]  # Stage 4 — Advanced Trees & Graphs
+        if i <= 750: return stages[5]  # Stage 5 — Dynamic Programming
+        if i <= 900: return stages[6]  # Stage 6 — Advanced Interview Patterns
+        return stages[7]               # Stage 7 — Interview Mastery
 
     def get_topic(i):
-        ph = get_phase(i)
-        return ph.split(' — ')[1] if ' — ' in ph else ph
+        if i <= 60: return "Foundations"
+        if i <= 180: return "Arrays & Strings"
+        if i <= 300: return "Hashing & Lists"
+        if i <= 450: return "Searching & Sorting"
+        if i <= 600: return "Trees & Graphs"
+        if i <= 750: return "Dynamic Programming"
+        if i <= 900: return "Advanced Patterns"
+        return "Interview Mastery"
 
     def get_pattern(i):
         topic = get_topic(i)
-        return f"{topic} Pattern"
+        if topic == "Foundations": return "Implementation / Basic Logic"
+        if topic == "Arrays & Strings": return "Two Pointers / Sliding Window"
+        if topic == "Hashing & Lists": return "Hash Table / Fast & Slow Pointer"
+        if topic == "Searching & Sorting": return "Binary Search / Sorting"
+        if topic == "Trees & Graphs": return "DFS / BFS / Tree Traversals"
+        if topic == "Dynamic Programming": return "1D / 2D DP / Knapsack"
+        if topic == "Advanced Patterns": return "Monotonic Stack / Trie / DSU"
+        return "Mixed Pattern System Design"
 
     topic_titles = {
         "Foundations": ["Sum of Two Integers", "Count Digits in a Number", "Factorial Computation", "Check Prime Number", "GCD of Two Numbers"],
         "Arrays & Strings": ["Two Sum", "Container With Most Water", "3Sum", "4Sum", "Rotate Array", "Maximum Subarray", "Spiral Matrix"],
-        "Hashing": ["Valid Anagram", "Isomorphic Strings", "Word Pattern", "Longest Consecutive Sequence", "Ransom Note"],
-        "Two Pointers": ["Two Sum II - Input Array Is Sorted", "3Sum Closest", "Sort Array By Parity", "Squares of a Sorted Array"],
-        "Sliding Window": ["Longest Substring Without Repeating Characters", "Minimum Size Subarray Sum", "Minimum Window Substring"],
-        "Searching & Binary Search": ["Binary Search", "Search Insert Position", "Find First and Last Position of Element in Sorted Array", "Search in Rotated Sorted Array"],
-        "Sorting": ["Merge Sorted Array", "Sort Colors", "Kth Largest Element in an Array", "Largest Number"],
-        "Linked Lists": ["Reverse Linked List", "Merge Two Sorted Lists", "Remove Nth Node From End of List", "Linked List Cycle"],
-        "Stack & Queue": ["Valid Parentheses", "Min Stack", "Evaluate Reverse Polish Notation", "Daily Temperatures"],
-        "Recursion & Backtracking": ["Subsets", "Permutations", "Combinations", "Combination Sum", "N-Queens"],
-        "Trees & BST": ["Maximum Depth of Binary Tree", "Invert Binary Tree", "Same Tree", "Symmetric Tree", "Binary Tree Level Order Traversal"],
-        "Heap / Priority Queue": ["Kth Largest Element in an Array", "Top K Frequent Elements", "K Closest Points to Origin", "Find Median from Data Stream"],
-        "Greedy": ["Assign Cookies", "Lemonade Change", "Jump Game II", "Non-overlapping Intervals", "Gas Station"],
-        "Graphs": ["Number of Islands", "Max Area of Island", "Surrounded Regions", "Course Schedule", "Clone Graph"],
-        "Trie": ["Implement Trie (Prefix Tree)", "Design Add and Search Words Data Structure", "Word Search II"],
+        "Hashing & Lists": ["Valid Anagram", "Isomorphic Strings", "Word Pattern", "Longest Consecutive Sequence", "Reverse Linked List"],
+        "Searching & Sorting": ["Binary Search", "Search Insert Position", "Search in Rotated Sorted Array", "Sort Colors", "Merge Sorted Array"],
+        "Trees & Graphs": ["Maximum Depth of Binary Tree", "Invert Binary Tree", "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule"],
         "Dynamic Programming": ["Climbing Stairs", "House Robber", "Coin Change", "Unique Paths", "Longest Common Subsequence"],
-        "Advanced Data Structures": ["Redundant Connection", "Range Sum Query - Mutable", "The Skyline Problem"],
-        "Math & Bit Manipulation": ["Single Number", "Single Number II", "Counting Bits", "Reverse Bits"],
-        "Mixed Interview Problems": ["Trapping Rain Water", "Minimum Window Substring", "Course Schedule II"],
-        "FAANG Level": ["LRU Cache", "LFU Cache", "Median of Two Sorted Arrays", "Merge k Sorted Lists"]
+        "Advanced Patterns": ["Daily Temperatures", "Implement Trie (Prefix Tree)", "Redundant Connection", "Sliding Window Maximum"],
+        "Interview Mastery": ["LRU Cache", "Median of Two Sorted Arrays", "Merge k Sorted Lists", "Trapping Rain Water"]
     }
 
     used_titles = set()
@@ -339,7 +330,7 @@ def generate_all_1000():
 
     for i in range(1, 1001):
         diff = get_diff(i)
-        phase = get_phase(i)
+        stage = get_stage(i)
         topic = get_topic(i)
         pattern = get_pattern(i)
 
@@ -357,13 +348,15 @@ def generate_all_1000():
 
         used_titles.add(title)
         
-        # Determine LeetCode URL (100% COVERAGE GUARANTEED)
         if raw_title in canonical_leetcode:
             leetcode_url = canonical_leetcode[raw_title]
         else:
             slug = title_to_slug(title)
             leetcode_url = f"https://leetcode.com/problems/{slug}/"
 
+        learning_obj = f"Master {pattern} techniques by solving representative constraints for {title}."
+        why_pattern = f"When you observe input size N <= 10^5 and target matching conditions, think of applying {pattern} to achieve O(N) or O(N log N) runtime."
+        
         statement = f"Given an input configuration representative of **{title}**, write an optimal algorithm to return the required output according to the problem constraints."
         constraints = [
             f"1 <= N <= {10**5 if diff != 'Hard' else 10**6}",
@@ -381,8 +374,9 @@ def generate_all_1000():
         ]
 
         hints = [
-            f"Think about the primary invariant of {pattern}. Can you simplify lookup using extra memory?",
-            "Analyze the bottleneck of brute force before coding."
+            f"Hint 1: Observe the key invariant of {pattern}. Can extra memory reduce execution time?",
+            "Hint 2: Identify the bottleneck of naive brute force iteration before writing code.",
+            "Hint 3: Dry run the example with boundary pointer states."
         ]
 
         brute_force = {
@@ -422,14 +416,18 @@ def generate_all_1000():
             "difficulty": diff,
             "topic": topic,
             "subtopic": f"{pattern} Mechanics",
-            "phase": phase,
-            "roadmapPhase": phase,
+            "phase": stage,
+            "roadmapPhase": stage,
+            "stage": stage,
+            "curriculumStage": stage,
             "pattern": pattern,
             "estimatedTime": 15 if diff == "Easy" else (30 if diff == "Medium" else 45),
             "statement": statement,
             "constraints": constraints,
             "examples": examples,
             "hints": hints,
+            "learningObjective": learning_obj,
+            "whyThisPattern": why_pattern,
             "bruteForce": brute_force,
             "optimalSolution": optimal_solution,
             "edgeCases": edge_cases,
@@ -437,8 +435,7 @@ def generate_all_1000():
             "interviewTips": interview_tips,
             "relatedProblems": [max(1, i - 1), min(1000, i + 1)],
             "prerequisites": [max(1, i - 2)],
-            "tags": [topic, pattern, phase, diff],
-            "whyThisPattern": f"Constraints N <= 10^5 require {pattern} to achieve O(N) or O(N log N) time complexity.",
+            "tags": [topic, pattern, stage, diff],
             "interviewExplanation": f"1. Clarify constraints.\n2. Mention brute force O(N^2).\n3. Optimize with {pattern}.\n4. Walk through example.",
             "reasoningChallenge": f"Can you identify the optimal data structure before writing code?",
             "testCases": [{"input": "[2, 7, 11, 15]", "expected": "[0, 1]"}],
