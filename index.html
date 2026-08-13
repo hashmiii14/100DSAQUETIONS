@@ -1,665 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DSA 100 — LeetCode Roadmap | C++ & Java</title>
-<meta name="description" content="100 LeetCode problems organized by topic — Arrays, Strings, Linked List, Stack/Queue, Trees, Graphs, DP. Track your progress with clickable LeetCode links."/>
-<meta name="theme-color" content="#ffffff"/>
-<meta name="referrer" content="no-referrer-when-downgrade" />
-<meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" />
+<title>DSAProblems.site — 1000 DSA Problems & Technical Interview Preparation Platform</title>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. Comprehensive curriculum from fundamentals to FAANG and top product-company interview readiness with patterns, multi-language code solutions, spaced revision, and interview simulation."/>
+<meta name="theme-color" content="#0d1117"/>
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+<meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.dsaproblems.site/"/>
+
+<!-- Open Graph SEO -->
+<meta property="og:title" content="DSAProblems.site — 1000 DSA Problems & Technical Interview Prep"/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems, 21 progression phases, pattern recognition guides, multi-language solutions (C++, Java, Python, JS), spaced repetition, and mock interview tracks."/>
+<meta property="og:url" content="https://www.dsaproblems.site/"/>
+<meta property="og:type" content="website"/>
+
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164032171965193" crossorigin="anonymous"></script>
-<!-- Adsterra / Popunder Monetization Zone #7315165 -->
-<script type="text/javascript" src="https://pleased-report.com/b-3.VM0/Pu3/pwvJbfm/VbJrZ/D/0C3DMRzrEy1XMCTIYb1PL/T/cKzkMETeU/xqNsjhkc"></script>
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-/* ── Reset ─────────────────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 
-/* ── Variables (Clean Light Theme) ─────────────────────────── */
-:root{
-  --bg:#f8fafc;
-  --sur:#ffffff;
-  --elv:#f1f5f9;
-  --brd:#e2e8f0;
-  --brd2:#f1f5f9;
-  --t1:#0f172a;
-  --t2:#475569;
-  --t3:#64748b;
-  --lnk:#2563eb;
-  --lnkh:#1d4ed8;
-  --acc:#2563eb;
-  --e:#15803d;  --eb:#f0fdf4;  --ebo:#bbf7d0;
-  --m:#b45309;  --mb:#fffbeb;  --mbo:#fde68a;
-  --h:#b91c1c;  --hb:#fef2f2;  --hbo:#fca5a5;
-  --r:6px;
-  --rs:4px;
-  --shd:0 1px 3px 0 rgba(0,0,0,0.05),0 1px 2px -1px rgba(0,0,0,0.05);
-  --mono:'JetBrains Mono','Fira Code',ui-monospace,monospace;
-  --sans:'Inter',system-ui,-apple-system,sans-serif;
-}
+<!-- Styles -->
+<link rel="stylesheet" href="style.css"/>
 
-/* ── Base ───────────────────────────────────────────────────── */
-html{scroll-behavior:smooth;scroll-padding-top:168px}
-body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
-a{color:inherit;text-decoration:none}
-button{font-family:var(--sans)}
-
-/* ── Sticky wrapper ─────────────────────────────────────────── */
-.sticky{position:sticky;top:0;z-index:50;background:var(--sur);border-bottom:1px solid var(--brd);box-shadow:var(--shd)}
-
-/* ── Header ─────────────────────────────────────────────────── */
-.hd{border-bottom:1px solid var(--brd2)}
-.hd-in{max-width:960px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.hd-title{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2;color:var(--t1)}
-.hd-sub{font-size:12px;color:var(--t3);margin-top:2px}
-.hd-r{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
-
-/* Stats chips */
-.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.chip{font-size:11px;font-weight:600;padding:2px 8px;border-radius:var(--rs);border:1px solid var(--brd);background:var(--elv);color:var(--t2);white-space:nowrap}
-.chip.tot{color:var(--t1);background:var(--sur);border-color:var(--brd)}
-.chip.e{color:var(--e);background:var(--eb);border-color:var(--ebo)}
-.chip.m{color:var(--m);background:var(--mb);border-color:var(--mbo)}
-.chip.h{color:var(--h);background:var(--hb);border-color:var(--hbo)}
-
-/* Progress row */
-.prog{display:flex;align-items:center;gap:8px}
-.prog-lbl{font-size:12px;color:var(--t2);white-space:nowrap}
-.prog-lbl strong{color:var(--t1)}
-.prog-track{width:110px;height:6px;background:var(--elv);border-radius:99px;overflow:hidden;flex-shrink:0;border:1px solid var(--brd)}
-.prog-fill{height:100%;width:0%;background:var(--acc);border-radius:99px;transition:width .25s ease}
-.prog-pct{font-size:11px;font-weight:600;color:var(--t2);font-family:var(--mono);min-width:30px;text-align:right}
-
-/* ── Controls ───────────────────────────────────────────────── */
-.ctrl{border-bottom:1px solid var(--brd2);background:var(--sur)}
-.ctrl-in{max-width:960px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-
-/* Search */
-.srch{position:relative;flex:1;min-width:160px}
-.srch-ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--t3);pointer-events:none}
-.srch-inp{width:100%;padding:7px 26px 7px 30px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--r);color:var(--t1);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .15s,box-shadow .15s}
-.srch-inp::placeholder{color:var(--t3)}
-.srch-inp:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
-.srch-clr{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--t3);cursor:pointer;font-size:12px;padding:2px 4px;display:none;line-height:1}
-.srch-clr:hover{color:var(--t1)}
-
-/* Filter buttons */
-.fgrp{display:flex;gap:4px;flex-wrap:wrap}
-.fb{padding:5px 10px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--rs);color:var(--t2);font-size:12px;font-weight:500;cursor:pointer;transition:all .12s;white-space:nowrap}
-.fb:hover{border-color:var(--t3);color:var(--t1);background:var(--elv)}
-.fb.on{background:var(--acc);border-color:var(--acc);color:#ffffff}
-.fb[data-f="easy"].on{background:var(--e);border-color:var(--e)}
-.fb[data-f="medium"].on{background:var(--m);border-color:var(--m)}
-.fb[data-f="hard"].on{background:var(--h);border-color:var(--h)}
-
-/* Action buttons */
-.acts{display:flex;gap:6px;margin-left:auto}
-.btn{padding:5px 12px;border-radius:var(--rs);border:1px solid var(--brd);background:var(--sur);color:var(--t2);font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:all .12s;white-space:nowrap}
-.btn:hover{border-color:var(--t3);color:var(--t1);background:var(--elv)}
-.btn-r{color:var(--h);border-color:var(--hbo);background:var(--hb)}
-.btn-r:hover{background:#fee2e2;border-color:var(--h);color:var(--h)}
-
-/* ── Topic nav ──────────────────────────────────────────────── */
-.tnav{overflow-x:auto;scrollbar-width:none;background:var(--sur)}
-.tnav::-webkit-scrollbar{display:none}
-.tnav-in{max-width:960px;margin:0 auto;padding:0 18px;display:flex}
-.tl{padding:8px 13px;font-size:12px;font-weight:500;color:var(--t2);border-bottom:2px solid transparent;transition:all .12s;white-space:nowrap;cursor:pointer;text-decoration:none}
-.tl:hover{color:var(--t1);border-bottom-color:var(--brd)}
-.tl.on{color:var(--acc);border-bottom-color:var(--acc);font-weight:600}
-
-/* ── Main ───────────────────────────────────────────────────── */
-.main{max-width:960px;margin:0 auto;padding:24px 18px 64px}
-
-/* Results info */
-.rinfo{display:none;font-size:12px;color:var(--t2);margin-bottom:16px;padding:6px 12px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--rs);box-shadow:var(--shd)}
-
-/* ── Topic sections ─────────────────────────────────────────── */
-.sec{margin-bottom:32px;background:var(--sur);border:1px solid var(--brd);border-radius:var(--r);box-shadow:var(--shd);overflow:hidden}
-.sec-hdr{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--elv);border-bottom:1px solid var(--brd)}
-.sec-name{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--t1)}
-.sec-cnt{font-size:11px;color:var(--t3);font-family:var(--mono)}
-.sec-done{margin-left:auto;font-size:11px;font-weight:600;color:var(--t2);font-family:var(--mono);background:var(--sur);padding:2px 8px;border-radius:var(--rs);border:1px solid var(--brd)}
-.sec-done.ok{color:var(--e);background:var(--eb);border-color:var(--ebo)}
-
-/* ── Table ──────────────────────────────────────────────────── */
-.qt{width:100%;border-collapse:collapse;table-layout:fixed}
-.qt .cn{width:46px}.qt .cd{width:92px}.qt .cs{width:56px}
-
-.qt thead th{padding:8px 12px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t3);border-bottom:1px solid var(--brd);text-align:left;background:var(--sur)}
-.qt thead th.cn{text-align:center}
-.qt thead th.cs{text-align:center}
-
-.qr{border-bottom:1px solid var(--brd2);transition:background .1s}
-.qr:last-child{border-bottom:none}
-.qr:hover{background:var(--elv)}
-.qr td{padding:10px 12px;vertical-align:middle}
-
-/* Number cell */
-.cn{text-align:center;font-family:var(--mono);font-size:12px;color:var(--t3)}
-
-/* Problem link */
-.ql{color:var(--t1);font-size:13px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .12s}
-.ql:hover{color:var(--lnkh)}
-.ql:hover .eli{opacity:1}
-.eli{opacity:0;color:var(--t3);flex-shrink:0;transition:opacity .12s}
-
-/* Difficulty badge */
-.db{display:inline-block;padding:2px 7px;border-radius:var(--rs);font-size:11px;font-weight:600;border:1px solid transparent;white-space:nowrap}
-.de{color:var(--e);background:var(--eb);border-color:var(--ebo)}
-.dm{color:var(--m);background:var(--mb);border-color:var(--mbo)}
-.dh{color:var(--h);background:var(--hb);border-color:var(--hbo)}
-
-/* Checkbox */
-.cs{text-align:center}
-.cb{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1.5px solid var(--t3);border-radius:4px;background:var(--sur);cursor:pointer;position:relative;vertical-align:middle;transition:all .12s;display:inline-block}
-.cb:hover{border-color:var(--acc)}
-.cb:checked{background:var(--acc);border-color:var(--acc)}
-.cb:checked::after{content:'';position:absolute;left:4px;top:1.5px;width:5px;height:8px;border:2px solid #ffffff;border-top:none;border-left:none;transform:rotate(45deg)}
-
-/* Done row */
-.rd{background:var(--elv)}
-.rd .ql{color:var(--t3);text-decoration:line-through;text-decoration-color:var(--t3)}
-.rd .cn{opacity:.5}
-.rd .db{opacity:.6}
-
-/* ── Empty ──────────────────────────────────────────────────── */
-.empty{display:none;flex-direction:column;align-items:center;gap:12px;padding:60px 20px;color:var(--t3);text-align:center;background:var(--sur);border:1px solid var(--brd);border-radius:var(--r);box-shadow:var(--shd)}
-.empty-ico{font-size:32px}
-.empty p{font-size:14px;color:var(--t2)}
-
-/* ── Footer ─────────────────────────────────────────────────── */
-.foot{border-top:1px solid var(--brd);padding:24px 18px;text-align:center;font-size:13px;color:var(--t3);background:var(--sur)}
-.foot a{color:var(--lnk);font-weight:500;text-decoration:none}
-.foot a:hover{color:var(--lnkh);text-decoration:underline}
-
-/* ── Responsive ─────────────────────────────────────────────── */
-@media(max-width:640px){
-  html{scroll-padding-top:210px}
-  .hd-in{padding:10px 14px}
-  .hd-r{align-items:flex-start;margin-left:0;width:100%}
-  .chips{justify-content:flex-start}
-  .prog{justify-content:flex-start}
-  .prog-track{width:80px}
-  .ctrl-in{padding:8px 14px}
-  .acts{margin-left:0}
-  .tnav-in{padding:0 14px}
-  .main{padding:16px 14px 48px}
-  .qt .cn,.qt thead th.cn{display:none}
-  .qt .cd{width:76px}
-  .ql{font-size:12.5px}
-  .qr td{padding:9px 10px}
-}
-@media(max-width:400px){
-  .fb{padding:4px 7px;font-size:11px}
-  .chip{font-size:10.5px;padding:2px 6px}
-}
-</style>
+<!-- Datasets & Modules -->
+<script src="data/questions.js"></script>
+<script src="data/patterns.js"></script>
+<script src="data/ds_algo_library.js"></script>
+<script src="data/tracks.js"></script>
+<script src="js/state.js"></script>
+<script src="js/recommendation.js"></script>
+<script src="js/interview_mode.js"></script>
+<script src="app.js"></script>
 </head>
 <body>
 
-<!-- ── STICKY HEADER ─────────────────────────────────────────── -->
-<div class="sticky">
+<div class="app-container">
 
-  <header class="hd">
-    <div class="hd-in">
-      <div class="hd-l">
-        <div class="hd-title">DSA 100</div>
-        <div class="hd-sub">LeetCode Roadmap — C++ &amp; Java · Beginner to Interview Ready</div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-section">
+        <a href="/" class="brand-logo">DSA<span>Problems</span>.site</a>
+        <span class="brand-tag">1000 CURRICULUM</span>
       </div>
-      <div class="hd-r">
-        <div class="chips">
-          <span class="chip tot">100 Total</span>
-          <span class="chip e">50 Easy</span>
-          <span class="chip m">30 Medium</span>
-          <span class="chip h">20 Hard</span>
-        </div>
-        <div class="prog">
-          <span class="prog-lbl">Solved: <strong id="sn">0</strong> / 100</span>
-          <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
-          <span class="prog-pct" id="pp">0%</span>
-        </div>
+
+      <nav class="nav-tabs" id="main-nav">
+        <button class="nav-btn active" data-view="explorer">🚀 1000 Explorer</button>
+        <button class="nav-btn" data-view="roadmap">🗺️ Master Roadmap</button>
+        <button class="nav-btn" data-view="patterns">💡 Patterns Library</button>
+        <button class="nav-btn" data-view="ds-algo">📚 DS & Algo</button>
+        <button class="nav-btn" data-view="big-o">⏱️ Big-O & Constraints</button>
+        <button class="nav-btn" data-view="interview">🎯 Interview Simulation</button>
+        <button class="nav-btn" data-view="revision">🔄 Spaced Revision</button>
+        <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
+        <button class="nav-btn" data-view="qa">🛠️ Quality QA</button>
+      </nav>
+
+      <div class="header-right">
+        <div class="streak-badge">🔥 <span id="streak-count">1 Days</span></div>
+        <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">🌓</button>
       </div>
     </div>
   </header>
 
-  <div class="ctrl">
-    <div class="ctrl-in">
-      <div class="srch">
-        <svg class="srch-ico" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-        </svg>
-        <input id="si" class="srch-inp" type="search" placeholder="Search questions, topics, difficulty..." autocomplete="off" spellcheck="false"/>
-        <button class="srch-clr" id="sx" aria-label="Clear search">✕</button>
+  <!-- VIEW 1: Explorer -->
+  <section class="view-section active" id="view-explorer">
+    
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-content">
+        <h1>Master DSA. Crack Technical Interviews.</h1>
+        <p>1000 carefully curated, original problems — taking you step-by-step from programming foundations to FAANG and top product-company level interview readiness.</p>
       </div>
-      <div class="fgrp" id="fg">
-        <button class="fb on" data-f="all">All</button>
-        <button class="fb" data-f="easy">Easy</button>
-        <button class="fb" data-f="medium">Medium</button>
-        <button class="fb" data-f="hard">Hard</button>
-        <button class="fb" data-f="done">✓ Done</button>
-        <button class="fb" data-f="pending">○ Pending</button>
-      </div>
-      <div class="acts">
-        <a href="DSA_100_LeetCode_Roadmap_CPP_Java_Hyperlinked.pdf" download class="btn" title="Download PDF with clickable links">↓ PDF</a>
-        <button id="rb" class="btn btn-r">Reset</button>
+      <div class="hero-actions">
+        <button class="btn-primary" id="btn-beginner">I'm a Beginner</button>
+        <button class="btn-secondary" id="btn-interview-ready">I'm Interview Ready</button>
       </div>
     </div>
-  </div>
 
-  <nav class="tnav" aria-label="Jump to topic">
-    <div class="tnav-in">
-      <a class="tl" data-id="arrays" href="#s-arrays">Arrays</a>
-      <a class="tl" data-id="strings" href="#s-strings">Strings</a>
-      <a class="tl" data-id="linked-list" href="#s-linked-list">Linked List</a>
-      <a class="tl" data-id="stack-queue" href="#s-stack-queue">Stack / Queue</a>
-      <a class="tl" data-id="trees" href="#s-trees">Trees</a>
-      <a class="tl" data-id="graphs" href="#s-graphs">Graphs</a>
-      <a class="tl" data-id="dp" href="#s-dp">DP</a>
+    <!-- Filter Panel -->
+    <div class="filter-panel">
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search 1000 problems by title, topic, pattern, tag, or #ID..."/>
+        </div>
+        <button class="btn-secondary" id="btn-clear-filters" style="font-size: 12px; white-space: nowrap;">Reset Filters</button>
+      </div>
+
+      <div class="filter-group" data-filter-type="difficulty">
+        <span class="filter-label">Difficulty:</span>
+        <button class="chip-btn active" data-val="all">All (1000)</button>
+        <button class="chip-btn easy" data-val="easy">Easy (300)</button>
+        <button class="chip-btn medium" data-val="medium">Medium (500)</button>
+        <button class="chip-btn hard" data-val="hard">Hard (200)</button>
+      </div>
+
+      <div class="filter-group" data-filter-type="status">
+        <span class="filter-label">Status:</span>
+        <button class="chip-btn active" data-val="all">All</button>
+        <button class="chip-btn" data-val="unsolved">Unsolved</button>
+        <button class="chip-btn" data-val="solved">Solved</button>
+        <button class="chip-btn" data-val="bookmarked">Bookmarked ★</button>
+        <button class="chip-btn" data-val="revision">Revision Due 🔄</button>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Topic: </label>
+          <select id="select-topic" class="select-filter">
+            <option value="all">All Topics</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Pattern: </label>
+          <select id="select-pattern" class="select-filter">
+            <option value="all">All Patterns</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Interview Track: </label>
+          <select id="select-track" class="select-filter">
+            <option value="all">All Tracks</option>
+          </select>
+        </div>
+      </div>
     </div>
-  </nav>
+
+    <!-- Results Table Header & Info -->
+    <div class="table-header-info">
+      <span id="table-results-info">Showing 1–50 of 1000 problems</span>
+    </div>
+
+    <!-- Problem Table -->
+    <div class="problem-table-wrapper">
+      <table class="problem-table">
+        <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th>Problem Title</th>
+            <th>Difficulty</th>
+            <th>Topic & Pattern</th>
+            <th>Est. Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="problem-tbody">
+          <!-- Rendered via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <button class="page-btn" id="page-prev">← Previous</button>
+      <span class="page-info" id="page-info">Page 1 of 20</span>
+      <button class="page-btn" id="page-next">Next →</button>
+    </div>
+
+  </section>
+
+  <!-- VIEW 2: Master Roadmap -->
+  <section class="view-section" id="view-roadmap">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>🗺️ Master DSA Roadmap — Beginner to Interview Ready</h2>
+      <p>Structured progression across 21 phases. Follow this sequence step-by-step to build a bulletproof problem-solving foundation.</p>
+    </div>
+    <div id="roadmap-phases-list"></div>
+  </section>
+
+  <!-- VIEW 3: Patterns Library -->
+  <section class="view-section" id="view-patterns">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>💡 Core Algorithmic Patterns Library</h2>
+      <p>Master pattern recognition instead of memorizing code solutions. Learn the clues, templates, and tradeoffs behind every problem category.</p>
+    </div>
+    <div class="grid-cards" id="patterns-list"></div>
+  </section>
+
+  <!-- VIEW 4: DS & Algo Library -->
+  <section class="view-section" id="view-ds-algo">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>📚 Data Structures & Algorithms Reference Library</h2>
+      <p>Interactive reference guide detailing operation complexities, when to use, and when NOT to use each data structure and algorithm.</p>
+    </div>
+    <h3 style="margin: 16px 0 8px 0;">Data Structures</h3>
+    <div class="grid-cards" id="ds-library-list"></div>
+    <h3 style="margin: 24px 0 8px 0;">Algorithms</h3>
+    <div class="grid-cards" id="algo-library-list"></div>
+  </section>
+
+  <!-- VIEW 5: Big-O & Constraints -->
+  <section class="view-section" id="view-big-o">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>⏱️ Big-O Mastery & Constraint-Based Thinking</h2>
+      <p>Learn how to deduce algorithm choices directly from problem constraints (N ≤ 20, N ≤ 10⁵, etc.).</p>
+    </div>
+    <div id="big-o-container"></div>
+  </section>
+
+  <!-- VIEW 6: Interview Simulation -->
+  <section class="view-section" id="view-interview">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>🎯 Interview Simulation & Curated Preparation Tracks</h2>
+      <p>Practice under realistic timed conditions or follow dedicated track pathways targeting specific software engineering roles.</p>
+    </div>
+    <div class="grid-cards" id="interview-tracks-list"></div>
+  </section>
+
+  <!-- VIEW 7: Spaced Revision -->
+  <section class="view-section" id="view-revision">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>🔄 Spaced Repetition Revision Queue</h2>
+      <p>Reinforce your pattern memory using optimal repetition intervals (1, 3, 7, 14, 30 days).</p>
+    </div>
+    <div id="revision-queue-list"></div>
+  </section>
+
+  <!-- VIEW 8: Dashboard -->
+  <section class="view-section" id="view-dashboard">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>📊 Learner Progress Dashboard</h2>
+      <p>Track your overall progress, difficulty distribution, streak history, and smart recommendations.</p>
+    </div>
+
+    <div class="grid-cards" style="margin-bottom: 20px;">
+      <div class="card">
+        <h3>Total Solved</h3>
+        <h2 id="dash-solved-total" style="font-size: 28px; color: var(--accent);">0 / 1000</h2>
+      </div>
+      <div class="card">
+        <h3>Easy Solved</h3>
+        <h2 id="dash-easy-count" style="font-size: 28px; color: var(--easy);">0 / 300</h2>
+      </div>
+      <div class="card">
+        <h3>Medium Solved</h3>
+        <h2 id="dash-med-count" style="font-size: 28px; color: var(--medium);">0 / 500</h2>
+      </div>
+      <div class="card">
+        <h3>Hard Solved</h3>
+        <h2 id="dash-hard-count" style="font-size: 28px; color: var(--hard);">0 / 200</h2>
+      </div>
+    </div>
+
+    <div id="dash-recommendation"></div>
+  </section>
+
+  <!-- VIEW 9: QA Admin -->
+  <section class="view-section" id="view-qa">
+    <div class="card" style="margin-bottom: 20px;">
+      <h2>🛠️ Internal Quality Control & Dataset QA Dashboard</h2>
+      <p>Verification metrics ensuring 100% curriculum compliance, zero missing solutions, and difficulty accuracy.</p>
+    </div>
+    <div id="qa-admin-container"></div>
+  </section>
 
 </div>
 
-<!-- ── MAIN ──────────────────────────────────────────────────── -->
-<main class="main">
-  <div id="ri" class="rinfo"></div>
-  <div id="qc"></div>
-  <div id="es" class="empty">
-    <div class="empty-ico">🔍</div>
-    <p>No questions found. Try a different search or filter.</p>
-    <button onclick="clrSrch()" class="btn" style="margin-top:4px">Clear Search</button>
-  </div>
-</main>
-
-<footer class="foot">
-  <p>Made with ❤️ by <a href="https://kodeveil.in" target="_blank" rel="noopener noreferrer">kodeveil.in</a></p>
-</footer>
-
-<script>
-// ────────────────────────────────────────────────────────────────────────────
-// DATA  —  Single source of truth: 100 questions, exact from PDF
-// 50 Easy · 30 Medium · 20 Hard
-// ────────────────────────────────────────────────────────────────────────────
-const TOPICS = ["Arrays","Strings","Linked List","Stack / Queue","Trees","Graphs","Dynamic Programming"];
-const TIDS   = {"Arrays":"arrays","Strings":"strings","Linked List":"linked-list","Stack / Queue":"stack-queue","Trees":"trees","Graphs":"graphs","Dynamic Programming":"dp"};
-
-const P = [
-// ── ARRAYS ── 14 Easy · 7 Medium · 4 Hard = 25 ─────────────────────────────
-{id:1, t:"Arrays",title:"Two Sum",                            d:"Easy",  u:"https://leetcode.com/problems/two-sum/"},
-{id:2, t:"Arrays",title:"Best Time to Buy and Sell Stock",    d:"Easy",  u:"https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"},
-{id:3, t:"Arrays",title:"Contains Duplicate",                 d:"Easy",  u:"https://leetcode.com/problems/contains-duplicate/"},
-{id:4, t:"Arrays",title:"Plus One",                           d:"Easy",  u:"https://leetcode.com/problems/plus-one/"},
-{id:5, t:"Arrays",title:"Remove Duplicates from Sorted Array",d:"Easy",  u:"https://leetcode.com/problems/remove-duplicates-from-sorted-array/"},
-{id:6, t:"Arrays",title:"Remove Element",                     d:"Easy",  u:"https://leetcode.com/problems/remove-element/"},
-{id:7, t:"Arrays",title:"Merge Sorted Array",                 d:"Easy",  u:"https://leetcode.com/problems/merge-sorted-array/"},
-{id:8, t:"Arrays",title:"Intersection of Two Arrays",         d:"Easy",  u:"https://leetcode.com/problems/intersection-of-two-arrays/"},
-{id:9, t:"Arrays",title:"Move Zeroes",                        d:"Easy",  u:"https://leetcode.com/problems/move-zeroes/"},
-{id:10,t:"Arrays",title:"Majority Element",                   d:"Easy",  u:"https://leetcode.com/problems/majority-element/"},
-{id:11,t:"Arrays",title:"Missing Number",                     d:"Easy",  u:"https://leetcode.com/problems/missing-number/"},
-{id:12,t:"Arrays",title:"Single Number",                      d:"Easy",  u:"https://leetcode.com/problems/single-number/"},
-{id:13,t:"Arrays",title:"Find Pivot Index",                   d:"Easy",  u:"https://leetcode.com/problems/find-pivot-index/"},
-{id:14,t:"Arrays",title:"Running Sum of 1d Array",            d:"Easy",  u:"https://leetcode.com/problems/running-sum-of-1d-array/"},
-{id:15,t:"Arrays",title:"Maximum Subarray",                   d:"Medium",u:"https://leetcode.com/problems/maximum-subarray/"},
-{id:16,t:"Arrays",title:"3Sum",                               d:"Medium",u:"https://leetcode.com/problems/3sum/"},
-{id:17,t:"Arrays",title:"Container With Most Water",          d:"Medium",u:"https://leetcode.com/problems/container-with-most-water/"},
-{id:18,t:"Arrays",title:"Product of Array Except Self",       d:"Medium",u:"https://leetcode.com/problems/product-of-array-except-self/"},
-{id:19,t:"Arrays",title:"Merge Intervals",                    d:"Medium",u:"https://leetcode.com/problems/merge-intervals/"},
-{id:20,t:"Arrays",title:"Maximum Product Subarray",           d:"Medium",u:"https://leetcode.com/problems/maximum-product-subarray/"},
-{id:21,t:"Arrays",title:"Subarray Sum Equals K",              d:"Medium",u:"https://leetcode.com/problems/subarray-sum-equals-k/"},
-{id:22,t:"Arrays",title:"First Missing Positive",             d:"Hard",  u:"https://leetcode.com/problems/first-missing-positive/"},
-{id:23,t:"Arrays",title:"Trapping Rain Water",                d:"Hard",  u:"https://leetcode.com/problems/trapping-rain-water/"},
-{id:24,t:"Arrays",title:"Sliding Window Median",              d:"Hard",  u:"https://leetcode.com/problems/sliding-window-median/"},
-{id:25,t:"Arrays",title:"Median of Two Sorted Arrays",        d:"Hard",  u:"https://leetcode.com/problems/median-of-two-sorted-arrays/"},
-
-// ── STRINGS ── 8 Easy · 4 Medium · 3 Hard = 15 ──────────────────────────────
-{id:26,t:"Strings",title:"Valid Anagram",                                   d:"Easy",  u:"https://leetcode.com/problems/valid-anagram/"},
-{id:27,t:"Strings",title:"Valid Palindrome",                                d:"Easy",  u:"https://leetcode.com/problems/valid-palindrome/"},
-{id:28,t:"Strings",title:"Longest Common Prefix",                           d:"Easy",  u:"https://leetcode.com/problems/longest-common-prefix/"},
-{id:29,t:"Strings",title:"Roman to Integer",                                d:"Easy",  u:"https://leetcode.com/problems/roman-to-integer/"},
-{id:30,t:"Strings",title:"Length of Last Word",                             d:"Easy",  u:"https://leetcode.com/problems/length-of-last-word/"},
-{id:31,t:"Strings",title:"Reverse String",                                  d:"Easy",  u:"https://leetcode.com/problems/reverse-string/"},
-{id:32,t:"Strings",title:"Is Subsequence",                                  d:"Easy",  u:"https://leetcode.com/problems/is-subsequence/"},
-{id:33,t:"Strings",title:"First Unique Character in a String",              d:"Easy",  u:"https://leetcode.com/problems/first-unique-character-in-a-string/"},
-{id:34,t:"Strings",title:"Longest Substring Without Repeating Characters",  d:"Medium",u:"https://leetcode.com/problems/longest-substring-without-repeating-characters/"},
-{id:35,t:"Strings",title:"Group Anagrams",                                  d:"Medium",u:"https://leetcode.com/problems/group-anagrams/"},
-{id:36,t:"Strings",title:"Longest Palindromic Substring",                   d:"Medium",u:"https://leetcode.com/problems/longest-palindromic-substring/"},
-{id:37,t:"Strings",title:"String to Integer (atoi)",                        d:"Medium",u:"https://leetcode.com/problems/string-to-integer-atoi/"},
-{id:38,t:"Strings",title:"Minimum Window Substring",                        d:"Hard",  u:"https://leetcode.com/problems/minimum-window-substring/"},
-{id:39,t:"Strings",title:"Regular Expression Matching",                     d:"Hard",  u:"https://leetcode.com/problems/regular-expression-matching/"},
-{id:40,t:"Strings",title:"Wildcard Matching",                               d:"Hard",  u:"https://leetcode.com/problems/wildcard-matching/"},
-
-// ── LINKED LIST ── 8 Easy · 4 Medium · 3 Hard = 15 ──────────────────────────
-{id:41,t:"Linked List",title:"Reverse Linked List",                d:"Easy",  u:"https://leetcode.com/problems/reverse-linked-list/"},
-{id:42,t:"Linked List",title:"Merge Two Sorted Lists",             d:"Easy",  u:"https://leetcode.com/problems/merge-two-sorted-lists/"},
-{id:43,t:"Linked List",title:"Linked List Cycle",                  d:"Easy",  u:"https://leetcode.com/problems/linked-list-cycle/"},
-{id:44,t:"Linked List",title:"Middle of the Linked List",          d:"Easy",  u:"https://leetcode.com/problems/middle-of-the-linked-list/"},
-{id:45,t:"Linked List",title:"Remove Linked List Elements",        d:"Easy",  u:"https://leetcode.com/problems/remove-linked-list-elements/"},
-{id:46,t:"Linked List",title:"Palindrome Linked List",             d:"Easy",  u:"https://leetcode.com/problems/palindrome-linked-list/"},
-{id:47,t:"Linked List",title:"Intersection of Two Linked Lists",   d:"Easy",  u:"https://leetcode.com/problems/intersection-of-two-linked-lists/"},
-{id:48,t:"Linked List",title:"Remove Duplicates from Sorted List", d:"Easy",  u:"https://leetcode.com/problems/remove-duplicates-from-sorted-list/"},
-{id:49,t:"Linked List",title:"Remove Nth Node From End of List",   d:"Medium",u:"https://leetcode.com/problems/remove-nth-node-from-end-of-list/"},
-{id:50,t:"Linked List",title:"Add Two Numbers",                    d:"Medium",u:"https://leetcode.com/problems/add-two-numbers/"},
-{id:51,t:"Linked List",title:"Reorder List",                       d:"Medium",u:"https://leetcode.com/problems/reorder-list/"},
-{id:52,t:"Linked List",title:"Copy List with Random Pointer",      d:"Medium",u:"https://leetcode.com/problems/copy-list-with-random-pointer/"},
-{id:53,t:"Linked List",title:"LRU Cache",                          d:"Hard",  u:"https://leetcode.com/problems/lru-cache/"},
-{id:54,t:"Linked List",title:"Merge k Sorted Lists",               d:"Hard",  u:"https://leetcode.com/problems/merge-k-sorted-lists/"},
-{id:55,t:"Linked List",title:"Reverse Nodes in k-Group",           d:"Hard",  u:"https://leetcode.com/problems/reverse-nodes-in-k-group/"},
-
-// ── STACK / QUEUE ── 6 Easy · 5 Medium · 2 Hard = 13 ────────────────────────
-{id:56,t:"Stack / Queue",title:"Valid Parentheses",                d:"Easy",  u:"https://leetcode.com/problems/valid-parentheses/"},
-{id:57,t:"Stack / Queue",title:"Implement Queue using Stacks",     d:"Easy",  u:"https://leetcode.com/problems/implement-queue-using-stacks/"},
-{id:58,t:"Stack / Queue",title:"Implement Stack using Queues",     d:"Easy",  u:"https://leetcode.com/problems/implement-stack-using-queues/"},
-{id:59,t:"Stack / Queue",title:"Next Greater Element I",           d:"Easy",  u:"https://leetcode.com/problems/next-greater-element-i/"},
-{id:60,t:"Stack / Queue",title:"Baseball Game",                    d:"Easy",  u:"https://leetcode.com/problems/baseball-game/"},
-{id:61,t:"Stack / Queue",title:"Backspace String Compare",         d:"Easy",  u:"https://leetcode.com/problems/backspace-string-compare/"},
-{id:62,t:"Stack / Queue",title:"Min Stack",                        d:"Medium",u:"https://leetcode.com/problems/min-stack/"},
-{id:63,t:"Stack / Queue",title:"Evaluate Reverse Polish Notation", d:"Medium",u:"https://leetcode.com/problems/evaluate-reverse-polish-notation/"},
-{id:64,t:"Stack / Queue",title:"Daily Temperatures",               d:"Medium",u:"https://leetcode.com/problems/daily-temperatures/"},
-{id:65,t:"Stack / Queue",title:"Simplify Path",                    d:"Medium",u:"https://leetcode.com/problems/simplify-path/"},
-{id:66,t:"Stack / Queue",title:"Asteroid Collision",               d:"Medium",u:"https://leetcode.com/problems/asteroid-collision/"},
-{id:67,t:"Stack / Queue",title:"Largest Rectangle in Histogram",   d:"Hard",  u:"https://leetcode.com/problems/largest-rectangle-in-histogram/"},
-{id:68,t:"Stack / Queue",title:"Sliding Window Maximum",           d:"Hard",  u:"https://leetcode.com/problems/sliding-window-maximum/"},
-
-// ── TREES ── 8 Easy · 4 Medium · 2 Hard = 14 ────────────────────────────────
-{id:69,t:"Trees",title:"Maximum Depth of Binary Tree",              d:"Easy",  u:"https://leetcode.com/problems/maximum-depth-of-binary-tree/"},
-{id:70,t:"Trees",title:"Same Tree",                                 d:"Easy",  u:"https://leetcode.com/problems/same-tree/"},
-{id:71,t:"Trees",title:"Invert Binary Tree",                        d:"Easy",  u:"https://leetcode.com/problems/invert-binary-tree/"},
-{id:72,t:"Trees",title:"Symmetric Tree",                            d:"Easy",  u:"https://leetcode.com/problems/symmetric-tree/"},
-{id:73,t:"Trees",title:"Binary Tree Inorder Traversal",             d:"Easy",  u:"https://leetcode.com/problems/binary-tree-inorder-traversal/"},
-{id:74,t:"Trees",title:"Binary Tree Preorder Traversal",            d:"Easy",  u:"https://leetcode.com/problems/binary-tree-preorder-traversal/"},
-{id:75,t:"Trees",title:"Binary Tree Postorder Traversal",           d:"Easy",  u:"https://leetcode.com/problems/binary-tree-postorder-traversal/"},
-{id:76,t:"Trees",title:"Search in a Binary Search Tree",            d:"Easy",  u:"https://leetcode.com/problems/search-in-a-binary-search-tree/"},
-{id:77,t:"Trees",title:"Binary Tree Level Order Traversal",         d:"Medium",u:"https://leetcode.com/problems/binary-tree-level-order-traversal/"},
-{id:78,t:"Trees",title:"Validate Binary Search Tree",               d:"Medium",u:"https://leetcode.com/problems/validate-binary-search-tree/"},
-{id:79,t:"Trees",title:"Lowest Common Ancestor of a Binary Tree",   d:"Medium",u:"https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"},
-{id:80,t:"Trees",title:"Kth Smallest Element in a BST",             d:"Medium",u:"https://leetcode.com/problems/kth-smallest-element-in-a-bst/"},
-{id:81,t:"Trees",title:"Binary Tree Maximum Path Sum",              d:"Hard",  u:"https://leetcode.com/problems/binary-tree-maximum-path-sum/"},
-{id:82,t:"Trees",title:"Serialize and Deserialize Binary Tree",     d:"Hard",  u:"https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"},
-
-// ── GRAPHS ── 3 Easy · 4 Medium · 3 Hard = 10 ───────────────────────────────
-{id:83,t:"Graphs",title:"Find if Path Exists in Graph",  d:"Easy",  u:"https://leetcode.com/problems/find-if-path-exists-in-graph/"},
-{id:84,t:"Graphs",title:"Flood Fill",                    d:"Easy",  u:"https://leetcode.com/problems/flood-fill/"},
-{id:85,t:"Graphs",title:"Island Perimeter",                 d:"Easy",  u:"https://leetcode.com/problems/island-perimeter/"},
-{id:86,t:"Graphs",title:"Number of Islands",             d:"Medium",u:"https://leetcode.com/problems/number-of-islands/"},
-{id:87,t:"Graphs",title:"Clone Graph",                   d:"Medium",u:"https://leetcode.com/problems/clone-graph/"},
-{id:88,t:"Graphs",title:"Rotting Oranges",               d:"Medium",u:"https://leetcode.com/problems/rotting-oranges/"},
-{id:89,t:"Graphs",title:"Course Schedule",               d:"Medium",u:"https://leetcode.com/problems/course-schedule/"},
-{id:90,t:"Graphs",title:"Word Ladder",                   d:"Hard",  u:"https://leetcode.com/problems/word-ladder/"},
-{id:91,t:"Graphs",title:"Alien Dictionary",              d:"Hard",  u:"https://leetcode.com/problems/alien-dictionary/"},
-{id:92,t:"Graphs",title:"Reconstruct Itinerary",         d:"Hard",  u:"https://leetcode.com/problems/reconstruct-itinerary/"},
-
-// ── DYNAMIC PROGRAMMING ── 3 Easy · 2 Medium · 3 Hard = 8 ───────────────────
-{id:93, t:"Dynamic Programming",title:"Climbing Stairs",                d:"Easy",  u:"https://leetcode.com/problems/climbing-stairs/"},
-{id:94, t:"Dynamic Programming",title:"Min Cost Climbing Stairs",       d:"Easy",  u:"https://leetcode.com/problems/min-cost-climbing-stairs/"},
-{id:95, t:"Dynamic Programming",title:"Fibonacci Number",              d:"Easy",  u:"https://leetcode.com/problems/fibonacci-number/"},
-{id:96, t:"Dynamic Programming",title:"House Robber",                   d:"Medium",u:"https://leetcode.com/problems/house-robber/"},
-{id:97, t:"Dynamic Programming",title:"Coin Change",                    d:"Medium",u:"https://leetcode.com/problems/coin-change/"},
-{id:98, t:"Dynamic Programming",title:"Longest Increasing Subsequence", d:"Hard",  u:"https://leetcode.com/problems/longest-increasing-subsequence/"},
-{id:99, t:"Dynamic Programming",title:"Edit Distance",                  d:"Hard",  u:"https://leetcode.com/problems/edit-distance/"},
-{id:100,t:"Dynamic Programming",title:"Burst Balloons",                 d:"Hard",  u:"https://leetcode.com/problems/burst-balloons/"},
-];
-
-// ────────────────────────────────────────────────────────────────────────────
-// STATE & PERSISTENCE (localStorage using stable Question IDs)
-// ────────────────────────────────────────────────────────────────────────────
-const STORAGE_KEYS = ['dsa100_v3_done', 'dsa100_v2_done', 'dsa100_done'];
-let done   = new Set();
-let filt   = 'all';
-let query  = '';
-
-function load(){
-  done = new Set();
-  for(const key of STORAGE_KEYS){
-    try{
-      const raw = localStorage.getItem(key);
-      if(raw){
-        const parsed = JSON.parse(raw);
-        if(Array.isArray(parsed) && parsed.length > 0){
-          parsed.forEach(id => done.add(Number(id)));
-          break;
-        }
-      }
-    } catch(_){}
-  }
-}
-
-function save(){
-  const arr = [...done];
-  for(const key of STORAGE_KEYS){
-    try{ localStorage.setItem(key, JSON.stringify(arr)); } catch(_){}
-  }
-}
-
-// ────────────────────────────────────────────────────────────────────────────
-// FILTER LOGIC
-// ────────────────────────────────────────────────────────────────────────────
-function getFiltered(){
-  return P.filter(p=>{
-    if(query){
-      const q = query.toLowerCase();
-      if(!p.title.toLowerCase().includes(q) &&
-         !p.t.toLowerCase().includes(q) &&
-         !p.d.toLowerCase().includes(q) &&
-         !String(p.id).includes(q)) return false;
-    }
-    if(filt==='easy')    return p.d==='Easy';
-    if(filt==='medium')  return p.d==='Medium';
-    if(filt==='hard')    return p.d==='Hard';
-    if(filt==='done')    return done.has(p.id);
-    if(filt==='pending') return !done.has(p.id);
-    return true;
-  });
-}
-
-// ────────────────────────────────────────────────────────────────────────────
-// HTML BUILDERS
-// ────────────────────────────────────────────────────────────────────────────
-function esc(s){
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function extSvg(){
-  return '<svg class="eli" width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"/></svg>';
-}
-
-function buildRow(p){
-  const ok = done.has(p.id);
-  const dc = p.d==='Easy'?'de':p.d==='Medium'?'dm':'dh';
-  const n  = String(p.id).padStart(2,'0');
-  return `<tr class="qr${ok?' rd':''}" data-id="${p.id}">
-    <td class="cn">${n}</td>
-    <td><a class="ql" href="${esc(p.u)}" target="_blank" rel="noopener noreferrer" title="Open on LeetCode">${esc(p.title)}${extSvg()}</a></td>
-    <td class="cd"><span class="db ${dc}">${p.d}</span></td>
-    <td class="cs"><input type="checkbox" class="cb" data-id="${p.id}"${ok?' checked':''} aria-label="${esc(p.title)}"></td>
-  </tr>`;
-}
-
-function buildSection(topic, probs){
-  const id   = TIDS[topic];
-  const dc   = probs.filter(p=>done.has(p.id)).length;
-  const ok   = dc===probs.length;
-  return `<section class="sec" id="s-${id}">
-    <div class="sec-hdr">
-      <span class="sec-name">${esc(topic)}</span>
-      <span class="sec-cnt">${probs.length} problems</span>
-      <span class="sec-done${ok?' ok':''}" id="sd-${id}">${dc}/${probs.length} solved</span>
+<!-- Interactive Problem Detail Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-window">
+    <div class="modal-header">
+      <div class="modal-title-area">
+        <h2><span id="modal-pid">#001</span> <span id="modal-title">Problem Title</span> <span class="badge" id="modal-diff">Easy</span></h2>
+        <span style="font-size: 12px; color: var(--text-secondary);" id="modal-topic">Topic • Pattern</span>
+      </div>
+      <button class="btn-secondary" id="modal-close-btn">✕ Close</button>
     </div>
-    <table class="qt" role="table">
-      <thead><tr>
-        <th class="cn" scope="col">#</th>
-        <th class="cp" scope="col">Problem</th>
-        <th class="cd" scope="col">Difficulty</th>
-        <th class="cs" scope="col">Done</th>
-      </tr></thead>
-      <tbody>${probs.map(buildRow).join('')}</tbody>
-    </table>
-  </section>`;
-}
 
-// ────────────────────────────────────────────────────────────────────────────
-// RENDER
-// ────────────────────────────────────────────────────────────────────────────
-function render(){
-  const f  = getFiltered();
-  const qc = document.getElementById('qc');
-  const es = document.getElementById('es');
-  const ri = document.getElementById('ri');
+    <div class="modal-body">
+      <!-- Problem & Examples -->
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">Problem Statement</h4>
+        <p id="modal-statement" style="font-size: 13px; color: var(--text-primary);"></p>
+      </div>
 
-  updProg();
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">Constraints</h4>
+        <ul id="modal-constraints" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary);"></ul>
+      </div>
 
-  if(f.length===0){
-    qc.innerHTML = '';
-    es.style.display = 'flex';
-    ri.style.display = 'none';
-    return;
-  }
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">Examples</h4>
+        <div id="modal-examples"></div>
+      </div>
 
-  es.style.display = 'none';
+      <!-- Hints -->
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">Progressive Hints</h4>
+        <div id="modal-hints"></div>
+      </div>
 
-  const isF = query || filt!=='all';
-  if(isF){
-    ri.style.display = 'block';
-    ri.textContent = `Showing ${f.length} of 100 questions`;
-  } else {
-    ri.style.display = 'none';
-  }
+      <!-- Solutions -->
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">Code Solutions</h4>
+        <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+          <button class="chip-btn active" onclick="app.activeSolutionTab='optimal'; app.updateModalSolutionView();">🔥 Optimal Approach</button>
+          <button class="chip-btn" onclick="app.activeSolutionTab='brute'; app.updateModalSolutionView();">⚡ Brute Force</button>
 
-  const byT = {};
-  TOPICS.forEach(t=>{ byT[t]=[]; });
-  f.forEach(p=>{ if(byT[p.t]) byT[p.t].push(p); });
+          <div style="margin-left: auto; display: flex; gap: 4px;">
+            <button class="chip-btn" onclick="app.activeLang='cpp'; app.updateModalSolutionView();">C++</button>
+            <button class="chip-btn" onclick="app.activeLang='java'; app.updateModalSolutionView();">Java</button>
+            <button class="chip-btn" onclick="app.activeLang='python'; app.updateModalSolutionView();">Python</button>
+            <button class="chip-btn" onclick="app.activeLang='javascript'; app.updateModalSolutionView();">JS/TS</button>
+          </div>
+        </div>
 
-  let html = '';
-  TOPICS.forEach(t=>{ if(byT[t].length>0) html+=buildSection(t,byT[t]); });
-  qc.innerHTML = html;
-}
+        <div style="font-size: 12px; color: var(--text-secondary);" id="sol-intuition"></div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 4px;" id="sol-complexity"></div>
+        <pre class="code-block" id="sol-code-display">// Code solution</pre>
+      </div>
 
-// ────────────────────────────────────────────────────────────────────────────
-// PROGRESS
-// ────────────────────────────────────────────────────────────────────────────
-function updProg(){
-  const n   = done.size;
-  const pct = Math.round(n);
-  document.getElementById('sn').textContent = n;
-  document.getElementById('pf').style.width = pct+'%';
-  document.getElementById('pp').textContent = pct+'%';
-}
+      <!-- Interview Communication -->
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">🧠 Why This Pattern?</h4>
+        <p id="modal-why-pattern" style="font-size: 12px; color: var(--text-secondary);"></p>
+      </div>
 
-function updSecDone(secId){
-  const sec = document.getElementById('s-'+secId);
-  if(!sec) return;
-  const all = sec.querySelectorAll('.cb').length;
-  const chk = sec.querySelectorAll('.cb:checked').length;
-  const el  = document.getElementById('sd-'+secId);
-  if(!el) return;
-  el.textContent = chk+'/'+all+' solved';
-  el.className   = 'sec-done'+(chk===all?' ok':'');
-}
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">🗣️ How to Explain in an Interview</h4>
+        <pre id="modal-interview-exp" style="font-size: 12px; background: var(--bg-elevated); padding: 10px; border-radius: var(--radius); white-space: pre-wrap; font-family: var(--font-sans); color: var(--text-secondary);"></pre>
+      </div>
 
-// ────────────────────────────────────────────────────────────────────────────
-// CHECKBOX INTERACTION
-// ────────────────────────────────────────────────────────────────────────────
-document.getElementById('qc').addEventListener('change', function(e){
-  const cb = e.target;
-  if(!cb.classList.contains('cb')) return;
-  const id  = Number(cb.dataset.id);
-  const row = cb.closest('tr');
-  if(cb.checked){ done.add(id);    row.classList.add('rd'); }
-  else          { done.delete(id); row.classList.remove('rd'); }
-  save();
-  updProg();
-  const sec = cb.closest('.sec');
-  if(sec) updSecDone(sec.id.replace('s-',''));
-});
+      <!-- Edge Cases & Traps -->
+      <div style="margin-bottom: 16px;">
+        <h4 style="margin-bottom: 6px;">⚠️ Edge Cases & Common Traps</h4>
+        <ul id="modal-edge-cases" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary);"></ul>
+        <ul id="modal-mistakes" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); margin-top: 4px;"></ul>
+      </div>
 
-// ────────────────────────────────────────────────────────────────────────────
-// SEARCH
-// ────────────────────────────────────────────────────────────────────────────
-const SI = document.getElementById('si');
-const SX = document.getElementById('sx');
+      <!-- Personal Notes -->
+      <div>
+        <h4 style="margin-bottom: 6px;">📝 Personal Notes</h4>
+        <textarea id="modal-note-area" style="width: 100%; height: 80px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px; color: var(--text-primary); font-family: var(--font-sans); font-size: 12px;" placeholder="Write your personal notes, key takeaways, or revision reminders here..."></textarea>
+      </div>
 
-SI.addEventListener('input', ()=>{
-  query = SI.value.trim();
-  SX.style.display = query ? 'block' : 'none';
-  render();
-});
+    </div>
+  </div>
+</div>
 
-SX.addEventListener('click', clrSrch);
-
-function clrSrch(){
-  SI.value = ''; query = '';
-  SX.style.display = 'none';
-  render();
-}
-window.clrSrch = clrSrch;
-
-// ────────────────────────────────────────────────────────────────────────────
-// FILTERS
-// ────────────────────────────────────────────────────────────────────────────
-document.getElementById('fg').addEventListener('click', function(e){
-  const btn = e.target.closest('.fb');
-  if(!btn) return;
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  filt = btn.dataset.f;
-  render();
-});
-
-// ────────────────────────────────────────────────────────────────────────────
-// TOPIC NAVIGATION
-// ────────────────────────────────────────────────────────────────────────────
-document.querySelectorAll('.tl').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    const id = a.dataset.id;
-    SI.value = ''; query = '';
-    SX.style.display = 'none';
-    filt = 'all';
-    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
-    document.querySelector('.fb[data-f="all"]').classList.add('on');
-    render();
-    requestAnimationFrame(()=>{
-      const sec = document.getElementById('s-'+id);
-      if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  });
-});
-
-let stmr;
-window.addEventListener('scroll', ()=>{
-  clearTimeout(stmr);
-  stmr = setTimeout(()=>{
-    const secs = document.querySelectorAll('.sec');
-    let active = null;
-    secs.forEach(s=>{
-      if(s.getBoundingClientRect().top <= 200) active = s.id.replace('s-','');
-    });
-    document.querySelectorAll('.tl').forEach(a=>a.classList.remove('on'));
-    if(active){
-      const lnk = document.querySelector(`.tl[data-id="${active}"]`);
-      if(lnk) lnk.classList.add('on');
-    }
-  }, 50);
-},{passive:true});
-
-// ────────────────────────────────────────────────────────────────────────────
-// RESET
-// ────────────────────────────────────────────────────────────────────────────
-document.getElementById('rb').addEventListener('click', ()=>{
-  if(!confirm('Reset all progress?\n\nThis will clear all 100 solved checkboxes.\nThis cannot be undone.')) return;
-  done.clear();
-  save();
-  render();
-});
-
-// ────────────────────────────────────────────────────────────────────────────
-// INITIAL BOOT
-// ────────────────────────────────────────────────────────────────────────────
-load();
-render();
-</script>
 </body>
 </html>

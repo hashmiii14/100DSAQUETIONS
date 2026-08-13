@@ -1,0 +1,467 @@
+===== PAGE 1 =====
+DSA 100 Roadmap • Page 1
+DSA 100 — LeetCode Roadmap
+Beginner-friendly progression • Arrays → Strings → Linked List → Stack/Queue → Trees → Graphs → DP
+Total
+Easy
+Medium
+Hard
+Solutions
+100
+50
+30
+20
+C++ + Java
+Recommended routine: Pehle 30–45 min khud attempt karo → phir daily online session mein discuss karo → solution
+ko C++ aur Java dono mein implement karo → next day short revision.
+1. Arrays
+#
+LeetCode Problem
+Difficulty
+Done
+1
+Two Sum
+Easy
+I
+2
+Best Time to Buy and Sell Stock
+Easy
+I
+3
+Contains Duplicate
+Easy
+I
+4
+Maximum Subarray
+Easy
+I
+5
+Plus One
+Easy
+I
+6
+Remove Duplicates from Sorted Array
+Easy
+I
+7
+Remove Element
+Easy
+I
+8
+Merge Sorted Array
+Easy
+I
+9
+Intersection of Two Arrays
+Easy
+I
+10
+Move Zeroes
+Easy
+I
+11
+Majority Element
+Easy
+I
+12
+Missing Number
+Easy
+I
+13
+Single Number
+Easy
+I
+14
+Find Pivot Index
+Easy
+I
+15
+Running Sum of 1d Array
+Easy
+I
+16
+Merge Intervals
+Medium
+I
+17
+3Sum
+Medium
+I
+18
+Product of Array Except Self
+Medium
+I
+19
+Maximum Product Subarray
+Medium
+I
+20
+Subarray Sum Equals K
+Medium
+I
+21
+Container With Most Water
+Medium
+I
+22
+Sliding Window Median
+Hard
+I
+23
+Trapping Rain Water
+Hard
+I
+24
+First Missing Positive
+Hard
+I
+25
+Median of Two Sorted Arrays
+Hard
+I
+2. Strings
+
+===== PAGE 2 =====
+DSA 100 Roadmap • Page 2
+#
+LeetCode Problem
+Difficulty
+Done
+26
+Valid Anagram
+Easy
+I
+27
+Valid Palindrome
+Easy
+I
+28
+Longest Common Prefix
+Easy
+I
+29
+Roman to Integer
+Easy
+I
+30
+Length of Last Word
+Easy
+I
+31
+Reverse String
+Easy
+I
+32
+Is Subsequence
+Easy
+I
+33
+First Unique Character in a String
+Easy
+I
+34
+Longest Substring Without Repeating Characters
+Medium
+I
+35
+Group Anagrams
+Medium
+I
+36
+Longest Palindromic Substring
+Medium
+I
+37
+String to Integer (atoi)
+Medium
+I
+38
+Minimum Window Substring
+Hard
+I
+39
+Regular Expression Matching
+Hard
+I
+40
+Wildcard Matching
+Hard
+I
+3. Linked List
+#
+LeetCode Problem
+Difficulty
+Done
+41
+Reverse Linked List
+Easy
+I
+42
+Merge Two Sorted Lists
+Easy
+I
+43
+Linked List Cycle
+Easy
+I
+44
+Middle of the Linked List
+Easy
+I
+45
+Remove Linked List Elements
+Easy
+I
+46
+Palindrome Linked List
+Easy
+I
+47
+Intersection of Two Linked Lists
+Easy
+I
+48
+Remove Duplicates from Sorted List
+Easy
+I
+49
+Remove Nth Node From End of List
+Medium
+I
+50
+Add Two Numbers
+Medium
+I
+51
+Reorder List
+Medium
+I
+52
+Copy List with Random Pointer
+Medium
+I
+53
+Reverse Nodes in k-Group
+Hard
+I
+54
+Merge k Sorted Lists
+Hard
+I
+55
+LRU Cache
+Hard
+I
+4. Stack / Queue
+
+===== PAGE 3 =====
+DSA 100 Roadmap • Page 3
+#
+LeetCode Problem
+Difficulty
+Done
+56
+Implement Queue using Stacks
+Easy
+I
+57
+Implement Stack using Queues
+Easy
+I
+58
+Next Greater Element I
+Easy
+I
+59
+Baseball Game
+Easy
+I
+60
+Backspace String Compare
+Easy
+I
+61
+Valid Parentheses
+Easy
+I
+62
+Min Stack
+Medium
+I
+63
+Evaluate Reverse Polish Notation
+Medium
+I
+64
+Daily Temperatures
+Medium
+I
+65
+Simplify Path
+Medium
+I
+66
+Asteroid Collision
+Hard
+I
+67
+Largest Rectangle in Histogram
+Hard
+I
+68
+Sliding Window Maximum
+Hard
+I
+5. Trees
+#
+LeetCode Problem
+Difficulty
+Done
+69
+Maximum Depth of Binary Tree
+Easy
+I
+70
+Same Tree
+Easy
+I
+71
+Invert Binary Tree
+Easy
+I
+72
+Symmetric Tree
+Easy
+I
+73
+Binary Tree Inorder Traversal
+Easy
+I
+74
+Binary Tree Preorder Traversal
+Easy
+I
+75
+Binary Tree Postorder Traversal
+Easy
+I
+76
+Search in a Binary Search Tree
+Easy
+I
+77
+Binary Tree Level Order Traversal
+Medium
+I
+78
+Validate Binary Search Tree
+Medium
+I
+79
+Lowest Common Ancestor of a Binary Tree
+Medium
+I
+80
+Kth Smallest Element in a BST
+Medium
+I
+81
+Binary Tree Maximum Path Sum
+Hard
+I
+82
+Serialize and Deserialize Binary Tree
+Hard
+I
+6. Graphs
+#
+LeetCode Problem
+Difficulty
+Done
+83
+Find if Path Exists in Graph
+Easy
+I
+84
+Flood Fill
+Easy
+I
+85
+Number of Islands
+Medium
+I
+
+===== PAGE 4 =====
+DSA 100 Roadmap • Page 4
+#
+LeetCode Problem
+Difficulty
+Done
+86
+Clone Graph
+Medium
+I
+87
+Rotting Oranges
+Medium
+I
+88
+Course Schedule
+Medium
+I
+89
+Pacific Atlantic Water Flow
+Medium
+I
+90
+Word Ladder
+Hard
+I
+91
+Alien Dictionary
+Hard
+I
+92
+Reconstruct Itinerary
+Hard
+I
+7. Dynamic Programming
+#
+LeetCode Problem
+Difficulty
+Done
+93
+Climbing Stairs
+Easy
+I
+94
+Min Cost Climbing Stairs
+Easy
+I
+95
+House Robber
+Easy
+I
+96
+Coin Change
+Medium
+I
+97
+Longest Increasing Subsequence
+Medium
+I
+98
+Partition Equal Subset Sum
+Medium
+I
+99
+Edit Distance
+Hard
+I
+100
+Burst Balloons
+Hard
+I
+Language: C++ + Java    Target: DSA fundamentals + common interview patterns. Difficulty is arranged progressively,
+with harder patterns concentrated toward the later stages.
+
