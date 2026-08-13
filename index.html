@@ -48,6 +48,9 @@
 <!-- Ambient Grid Background -->
 <div class="ambient-grid-bg"></div>
 
+<!-- Toast Notification -->
+<div class="toast-notification" id="toast-notification">Notification</div>
+
 <div class="app-container">
 
   <!-- Header Topbar -->
@@ -339,17 +342,99 @@
       </div>
     </section>
 
-    <!-- View 6: Contact -->
+    <!-- View 6: Contact (Overhauled & Enhanced) -->
     <section class="view-section" id="view-contact">
-      <div class="info-card-container" style="text-align: center; align-items: center; max-width: 650px;">
-        <h2 style="font-size: 24px; font-weight: 800;">Get in Touch</h2>
-        <p style="color: var(--text-secondary); line-height: 1.7; max-width: 500px;">
-          For bug reports, incorrect question data reports, feature suggestions, or website improvements, reach out directly via email.
-        </p>
-        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 14px 24px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); margin: 8px 0;">
-          mdhashmi955@gmail.com
+      <div class="info-card-container" style="max-width: 800px;">
+        
+        <!-- Header Card -->
+        <div style="text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+          <h2 style="font-size: 26px; font-weight: 800; color: var(--text-primary);">Contact & Support</h2>
+          <p style="color: var(--text-secondary); margin-top: 6px; font-size: 14.5px;">
+            Have questions, feature requests, or dataset corrections? Reach out directly via email.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 14.5px; color: var(--accent-primary); font-weight: 600;">
+              mdhashmi955@gmail.com
+            </div>
+            <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 8px 16px;">✉️ Open Mail Client</a>
+            <button class="btn-secondary" id="btn-copy-email" onclick="app.copyContactEmail()">📋 Copy Email</button>
+          </div>
         </div>
-        <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 24px; font-size: 14px;">✉️ Email Us</a>
+
+        <!-- Quick Inquiry Topic Category Cards -->
+        <div>
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Select Inquiry Type</h3>
+          <div class="contact-categories-grid">
+            <div class="contact-cat-card active" id="cat-bug" onclick="app.selectContactCategory('bug')">
+              <span class="contact-cat-title">🐛 Report Bug / Link</span>
+              <span class="contact-cat-desc">Broken links, title typos or dataset issues</span>
+            </div>
+            <div class="contact-cat-card" id="cat-feature" onclick="app.selectContactCategory('feature')">
+              <span class="contact-cat-title">💡 Feature Suggestion</span>
+              <span class="contact-cat-desc">Request new DSA tracks, patterns or tools</span>
+            </div>
+            <div class="contact-cat-card" id="cat-correction" onclick="app.selectContactCategory('correction')">
+              <span class="contact-cat-title">📝 Question Correction</span>
+              <span class="contact-cat-desc">Suggest optimal solutions or tag updates</span>
+            </div>
+            <div class="contact-cat-card" id="cat-feedback" onclick="app.selectContactCategory('feedback')">
+              <span class="contact-cat-title">🤝 General Feedback</span>
+              <span class="contact-cat-desc">Developer outreach or general questions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Message Drafter Form -->
+        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">Pre-fill Message to Email</h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">YOUR NAME</label>
+              <input type="text" class="search-input" id="contact-name-input" placeholder="e.g. Alex Smith"/>
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">INQUIRY CATEGORY</label>
+              <select class="filter-select" id="contact-category-select" style="width: 100%;" onchange="app.handleCategorySelectChange(this.value)">
+                <option value="bug">🐛 Report Question / Bug</option>
+                <option value="feature">💡 Feature Suggestion</option>
+                <option value="correction">📝 Question Correction</option>
+                <option value="feedback">🤝 General Feedback</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">EMAIL SUBJECT</label>
+            <input type="text" class="search-input" id="contact-subject-input" value="[DSAProblems] Bug Report / Issue"/>
+          </div>
+
+          <div>
+            <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">MESSAGE DETAILS</label>
+            <textarea class="search-input" id="contact-message-input" style="width: 100%; min-height: 100px; font-family: var(--font-sans);" placeholder="Describe the issue, feature request, or suggestion..."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="btn-primary" id="btn-send-contact" onclick="app.sendContactMessage()" style="padding: 10px 20px; font-size: 13.5px;">✉️ Send via Email Client</button>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div style="margin-top: 10px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Frequently Asked Questions</h3>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-md);">
+              <strong style="font-size: 13.5px; color: var(--text-primary);">How do I report an issue with a question?</strong>
+              <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Select "Report Bug", mention the Problem ID (e.g. #042) and issue description, and send an email directly.</p>
+            </div>
+            <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: var(--radius-md);">
+              <strong style="font-size: 13.5px; color: var(--text-primary);">Is my solving progress saved online?</strong>
+              <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">All progress, bookmarks, and notes are saved locally in your browser (`localStorage`). No account or server transmission is required.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

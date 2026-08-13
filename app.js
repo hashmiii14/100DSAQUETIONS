@@ -702,6 +702,90 @@ class DSAApp {
     });
   }
 
+  /* ── Interactive Contact Helpers ───────────────────────────────────────── */
+  showToast(message) {
+    const toast = document.getElementById('toast-notification');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2500);
+  }
+
+  copyContactEmail() {
+    const email = 'mdhashmi955@gmail.com';
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(() => {
+        this.showToast('📋 Email copied to clipboard: mdhashmi955@gmail.com');
+      }).catch(() => {
+        this.fallbackCopyText(email);
+      });
+    } else {
+      this.fallbackCopyText(email);
+    }
+  }
+
+  fallbackCopyText(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      this.showToast('📋 Email copied to clipboard: mdhashmi955@gmail.com');
+    } catch (_) {
+      this.showToast('mdhashmi955@gmail.com');
+    }
+    document.body.removeChild(textArea);
+  }
+
+  selectContactCategory(catId) {
+    document.querySelectorAll('.contact-cat-card').forEach(card => card.classList.remove('active'));
+    const activeCard = document.getElementById(`cat-${catId}`);
+    if (activeCard) activeCard.classList.add('active');
+
+    const selectEl = document.getElementById('contact-category-select');
+    if (selectEl) selectEl.value = catId;
+
+    const subjectInput = document.getElementById('contact-subject-input');
+    if (subjectInput) {
+      const subjectMap = {
+        'bug': '[DSAProblems] Bug Report / Broken Link',
+        'feature': '[DSAProblems] Feature Suggestion / Track Request',
+        'correction': '[DSAProblems] Dataset / Solution Correction',
+        'feedback': '[DSAProblems] General Inquiry / Feedback'
+      };
+      subjectInput.value = subjectMap[catId] || '[DSAProblems] Inquiry';
+    }
+  }
+
+  handleCategorySelectChange(catId) {
+    this.selectContactCategory(catId);
+  }
+
+  sendContactMessage() {
+    const nameInput = document.getElementById('contact-name-input');
+    const subjectInput = document.getElementById('contact-subject-input');
+    const msgInput = document.getElementById('contact-message-input');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const subject = subjectInput && subjectInput.value.trim() ? subjectInput.value.trim() : '[DSAProblems] Inquiry';
+    const message = msgInput ? msgInput.value.trim() : '';
+
+    let bodyText = `Hi DSAProblems Team,\n\n${message}`;
+    if (name) {
+      bodyText += `\n\nBest regards,\n${name}`;
+    }
+
+    const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+    
+    this.showToast('Opening your default email client...');
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoUrl;
+    }
+  }
+
   /* ── Progress Dashboard View ────────────────────────────────────────────── */
   renderProgressDashboard() {
     const all = this.getProblems();
