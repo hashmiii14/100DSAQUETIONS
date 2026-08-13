@@ -28,7 +28,7 @@ def validate():
     if len(problems) != 1000:
         errors.append(f"Problem count mismatch! Expected 1000, got {len(problems)}")
 
-    # 2. Difficulty Balance Check (~300 Easy, ~500 Medium, ~200 Hard)
+    # 2. Difficulty Balance Check (300 Easy, 500 Medium, 200 Hard)
     easy_cnt = sum(1 for p in problems if p["difficulty"] == "Easy")
     med_cnt  = sum(1 for p in problems if p["difficulty"] == "Medium")
     hard_cnt = sum(1 for p in problems if p["difficulty"] == "Hard")
@@ -53,13 +53,22 @@ def validate():
         "id", "number", "title", "difficulty", "topic", "subtopic", "phase", "pattern",
         "statement", "constraints", "examples", "hints", "bruteForce", "optimalSolution",
         "edgeCases", "commonMistakes", "relatedProblems", "prerequisites", "tags",
-        "whyThisPattern", "interviewExplanation", "reasoningChallenge", "testCases"
+        "whyThisPattern", "interviewExplanation", "reasoningChallenge", "testCases", "leetcodeUrl"
     ]
 
+    leetcode_link_count = 0
     for p in problems:
         for field in required_fields:
             if field not in p:
                 errors.append(f"Problem #{p['id']} missing field: '{field}'")
+
+        # LeetCode URL verification
+        url = p.get("leetcodeUrl")
+        if url is not None:
+            if not isinstance(url, str) or not url.startswith("https://leetcode.com/problems/"):
+                errors.append(f"Problem #{p['id']} has invalid LeetCode URL: '{url}'")
+            else:
+                leetcode_link_count += 1
 
         # 5. Multi-language Code Solution Check
         for sol_type in ["bruteForce", "optimalSolution"]:
@@ -78,7 +87,7 @@ def validate():
         sys.exit(1)
     else:
         print("\n[SUCCESS] All 1000 DSA Problems passed Quality Control Validation perfectly!")
-        print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt}")
+        print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt} | Verified LeetCode Links = {leetcode_link_count}")
 
 if __name__ == "__main__":
     validate()

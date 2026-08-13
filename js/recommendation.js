@@ -8,8 +8,7 @@ class RecommendationEngine {
   getSmartNextQuestion(lastSolvedPid = null) {
     if (lastSolvedPid) {
       const lastP = this.problems.find(p => p.id === Number(lastSolvedPid));
-      if (lastP) {
-        // Recommend a direct next variant or same pattern problem if available
+      if (lastP && this.state && this.state.done) {
         const patternMatches = this.problems.filter(
           p => p.pattern === lastP.pattern && !this.state.done.has(p.id)
         );
@@ -22,17 +21,18 @@ class RecommendationEngine {
       }
     }
 
-    # Find first unsolved problem in sequential curriculum order
-    const nextUnsolved = this.problems.find(p => !this.state.done.has(p.id));
+    // Find first unsolved problem in sequential curriculum order
+    const doneSet = (this.state && this.state.done) ? this.state.done : new Set();
+    const nextUnsolved = this.problems.find(p => !doneSet.has(p.id));
     if (nextUnsolved) {
       return {
         problem: nextUnsolved,
-        reason: `Recommended next problem in Phase '${nextUnsolved.phase}'.`
+        reason: `Recommended next problem in ${nextUnsolved.phase}.`
       };
     }
 
     return {
-      problem: this.problems[0],
+      problem: this.problems[0] || null,
       reason: "Congratulations! You have completed all 1000 problems! Time for revision."
     };
   }
@@ -45,12 +45,13 @@ class RecommendationEngine {
 
   getWeakTopics() {
     const topicStats = {};
+    const doneSet = (this.state && this.state.done) ? this.state.done : new Set();
     this.problems.forEach(p => {
       if (!topicStats[p.topic]) {
         topicStats[p.topic] = { total: 0, solved: 0 };
       }
       topicStats[p.topic].total += 1;
-      if (this.state.done.has(p.id)) {
+      if (doneSet.has(p.id)) {
         topicStats[p.topic].solved += 1;
       }
     });

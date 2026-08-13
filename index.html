@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DSAProblems.site — 1000 DSA Problems & Technical Interview Preparation Platform</title>
 <meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. Comprehensive curriculum from fundamentals to FAANG and top product-company interview readiness with patterns, multi-language code solutions, spaced revision, and interview simulation."/>
-<meta name="theme-color" content="#0d1117"/>
+<meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
 
@@ -66,9 +66,30 @@
       <div class="header-right">
         <div class="streak-badge">🔥 <span id="streak-count">1 Days</span></div>
         <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Light/Dark Theme">🌓</button>
+        <button class="mobile-toggle-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <strong style="font-size: 16px; color: var(--text-primary);">DSAProblems Menu</strong>
+      <button class="btn-secondary" id="drawer-close-btn" style="padding: 4px 8px;">✕</button>
+    </div>
+    <nav class="drawer-nav" id="drawer-nav">
+      <button class="nav-btn active" data-view="explorer">🚀 1000 Explorer</button>
+      <button class="nav-btn" data-view="roadmap">🗺️ Master Roadmap</button>
+      <button class="nav-btn" data-view="patterns">💡 Patterns Library</button>
+      <button class="nav-btn" data-view="ds-algo">📚 DS & Algo</button>
+      <button class="nav-btn" data-view="big-o">⏱️ Big-O & Constraints</button>
+      <button class="nav-btn" data-view="interview">🎯 Interview Simulation</button>
+      <button class="nav-btn" data-view="revision">🔄 Spaced Revision</button>
+      <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
+      <button class="nav-btn" data-view="qa">🛠️ Quality QA</button>
+    </nav>
+  </aside>
 
   <!-- VIEW 1: Explorer -->
   <section class="view-section active" id="view-explorer">
@@ -77,11 +98,11 @@
     <div class="hero-banner">
       <div class="hero-content">
         <h1>Master DSA. Crack Technical Interviews.</h1>
-        <p>1000 carefully curated, original problems — taking you step-by-step from programming foundations to FAANG and top product-company level interview readiness.</p>
+        <p>1000 carefully curated problems — taking you step-by-step from programming foundations to FAANG and top product-company level interview readiness.</p>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">I'm a Beginner</button>
-        <button class="btn-secondary" id="btn-interview-ready">I'm Interview Ready</button>
+        <button class="btn-primary" id="btn-beginner">🚀 Start Here (Beginner)</button>
+        <button class="btn-secondary" id="btn-interview-ready">🎯 Interview Mode</button>
       </div>
     </div>
 
@@ -107,7 +128,7 @@
         <span class="filter-label">Status:</span>
         <button class="chip-btn active" data-val="all">All</button>
         <button class="chip-btn" data-val="unsolved">Unsolved</button>
-        <button class="chip-btn" data-val="solved">Solved</button>
+        <button class="chip-btn" data-val="solved">Solved ✓</button>
         <button class="chip-btn" data-val="bookmarked">Bookmarked ★</button>
         <button class="chip-btn" data-val="revision">Revision Due 🔄</button>
       </div>
@@ -141,7 +162,7 @@
       <span id="table-results-info">Showing 1–50 of 1000 problems</span>
     </div>
 
-    <!-- Problem Table -->
+    <!-- Desktop Problem Table -->
     <div class="problem-table-wrapper">
       <table class="problem-table">
         <thead>
@@ -151,6 +172,7 @@
             <th>Difficulty</th>
             <th>Topic & Pattern</th>
             <th>Est. Time</th>
+            <th>LeetCode Link</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -158,6 +180,11 @@
           <!-- Rendered via JavaScript -->
         </tbody>
       </table>
+    </div>
+
+    <!-- Mobile Card List View (For screens <= 768px) -->
+    <div class="mobile-card-list" id="mobile-problem-card-list">
+      <!-- Rendered via JavaScript -->
     </div>
 
     <!-- Pagination Controls -->
@@ -173,7 +200,7 @@
   <section class="view-section" id="view-roadmap">
     <div class="card" style="margin-bottom: 20px;">
       <h2>🗺️ Master DSA Roadmap — Beginner to Interview Ready</h2>
-      <p>Structured progression across 21 phases. Follow this sequence step-by-step to build a bulletproof problem-solving foundation.</p>
+      <p>Structured progression across 21 phases. Click any phase to explore problems matching that topic sequence.</p>
     </div>
     <div id="roadmap-phases-list"></div>
   </section>
@@ -214,6 +241,38 @@
       <h2>🎯 Interview Simulation & Curated Preparation Tracks</h2>
       <p>Practice under realistic timed conditions or follow dedicated track pathways targeting specific software engineering roles.</p>
     </div>
+
+    <!-- Active Interview Simulator Component -->
+    <div class="card" style="margin-bottom: 20px; border-left: 4px solid var(--accent);" id="interview-sim-box">
+      <h3>🚀 Quick Mock Interview Simulator</h3>
+      <p>Simulate a realistic timed technical interview session with randomized problems from the 1000 dataset.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; align-items: center;">
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Difficulty: </label>
+          <select id="sim-diff-select" class="select-filter">
+            <option value="Mixed">Mixed (Recommended)</option>
+            <option value="Easy">Easy Tier</option>
+            <option value="Medium">Medium Tier</option>
+            <option value="Hard">Hard Tier</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Duration: </label>
+          <select id="sim-duration-select" class="select-filter">
+            <option value="15">15 Minutes (1 Problem)</option>
+            <option value="30">30 Minutes (2 Problems)</option>
+            <option value="45" selected>45 Minutes (3 Problems)</option>
+            <option value="60">60 Minutes (4 Problems)</option>
+          </select>
+        </div>
+        <button class="btn-primary" id="btn-start-sim" style="margin-top: 16px;">Start Mock Interview Timer ⏱️</button>
+      </div>
+      <div id="sim-active-container" style="display: none; margin-top: 16px; border-top: 1px solid var(--border); padding-top: 16px;">
+        <!-- Active Session Rendered Here -->
+      </div>
+    </div>
+
+    <h3 style="margin: 20px 0 10px 0;">Role & Track Practice Pathways</h3>
     <div class="grid-cards" id="interview-tracks-list"></div>
   </section>
 
@@ -271,13 +330,30 @@
   <div class="modal-window">
     <div class="modal-header">
       <div class="modal-title-area">
-        <h2><span id="modal-pid">#001</span> <span id="modal-title">Problem Title</span> <span class="badge" id="modal-diff">Easy</span></h2>
-        <span style="font-size: 12px; color: var(--text-secondary);" id="modal-topic">Topic • Pattern</span>
+        <h2>
+          <span id="modal-pid">#001</span> 
+          <span id="modal-title">Problem Title</span> 
+          <span class="badge" id="modal-diff">Easy</span>
+        </h2>
+        <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px; flex-wrap: wrap;">
+          <span style="font-size: 12px; color: var(--text-secondary);" id="modal-topic">Topic • Pattern</span>
+          <div id="modal-leetcode-container"></div>
+        </div>
       </div>
-      <button class="btn-secondary" id="modal-close-btn">✕ Close</button>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button class="btn-secondary" id="modal-prev-btn" title="Previous Problem">← Prev</button>
+        <button class="btn-secondary" id="modal-next-btn" title="Next Problem">Next →</button>
+        <button class="btn-secondary" id="modal-close-btn">✕ Close</button>
+      </div>
     </div>
 
     <div class="modal-body">
+      <!-- Quick Action Toolbar -->
+      <div style="display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap;">
+        <button class="btn-secondary" id="modal-toggle-solved-btn" style="font-size: 12px;">Mark Solved ✓</button>
+        <button class="btn-secondary" id="modal-toggle-bookmark-btn" style="font-size: 12px;">Bookmark ★</button>
+      </div>
+
       <!-- Problem & Examples -->
       <div style="margin-bottom: 16px;">
         <h4 style="margin-bottom: 6px;">Problem Statement</h4>
@@ -302,16 +378,19 @@
 
       <!-- Solutions -->
       <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">Code Solutions</h4>
-        <div style="display: flex; gap: 8px; margin-bottom: 8px;">
-          <button class="chip-btn active" onclick="app.activeSolutionTab='optimal'; app.updateModalSolutionView();">🔥 Optimal Approach</button>
-          <button class="chip-btn" onclick="app.activeSolutionTab='brute'; app.updateModalSolutionView();">⚡ Brute Force</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <h4>Code Solutions</h4>
+          <button class="btn-secondary" id="modal-copy-code-btn" style="font-size: 11px; padding: 3px 8px;">📋 Copy Code</button>
+        </div>
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+          <button class="chip-btn active" id="sol-tab-optimal">🔥 Optimal Approach</button>
+          <button class="chip-btn" id="sol-tab-brute">⚡ Brute Force</button>
 
           <div style="margin-left: auto; display: flex; gap: 4px;">
-            <button class="chip-btn" onclick="app.activeLang='cpp'; app.updateModalSolutionView();">C++</button>
-            <button class="chip-btn" onclick="app.activeLang='java'; app.updateModalSolutionView();">Java</button>
-            <button class="chip-btn" onclick="app.activeLang='python'; app.updateModalSolutionView();">Python</button>
-            <button class="chip-btn" onclick="app.activeLang='javascript'; app.updateModalSolutionView();">JS/TS</button>
+            <button class="chip-btn" id="lang-btn-cpp">C++</button>
+            <button class="chip-btn" id="lang-btn-java">Java</button>
+            <button class="chip-btn" id="lang-btn-python">Python</button>
+            <button class="chip-btn" id="lang-btn-js">JS/TS</button>
           </div>
         </div>
 
