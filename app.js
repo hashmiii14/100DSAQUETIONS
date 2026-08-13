@@ -230,7 +230,17 @@ class DSAApp {
       });
     }
 
-    const modalBookm    const copyCodeBtn = document.getElementById('modal-copy-code-btn');
+    const modalBookmarkBtn = document.getElementById('modal-toggle-bookmark-btn');
+    if (modalBookmarkBtn) {
+      modalBookmarkBtn.addEventListener('click', () => {
+        if (this.activeModalProblem) {
+          this.toggleBookmark(this.activeModalProblem.id);
+          this.updateModalActions();
+        }
+      });
+    }
+
+    const copyCodeBtn = document.getElementById('modal-copy-code-btn');
     if (copyCodeBtn) {
       copyCodeBtn.addEventListener('click', () => {
         const codeText = document.getElementById('sol-code-display').textContent;
@@ -800,3 +810,4 @@ let app = null;
 document.addEventListener('DOMContentLoaded', () => {
   app = new DSAApp();
 });
+if (typeof module !== 'undefined') module.exports = DSAApp;

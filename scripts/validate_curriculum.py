@@ -13,8 +13,8 @@ def validate():
         content = content.split("const PROBLEMS = ")[1]
     
     # Remove trailing JS module export
-    if ";\nif (typeof module !== 'undefined')" in content:
-        content = content.split(";\nif (typeof module !== 'undefined')")[0]
+    if ";\nif (typeof" in content:
+        content = content.split(";\nif (typeof")[0]
     elif content.endswith(";\n"):
         content = content[:-2]
     
