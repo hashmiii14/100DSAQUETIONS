@@ -257,11 +257,36 @@ class DSAApp {
     const linkContact = document.getElementById('link-contact');
     const legalCloseBtn = document.getElementById('legal-modal-close-btn');
 
-    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an educational Data Structures and Algorithms platform. Built for software engineers and computer science students learning algorithms and solving practice problems.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively across 8 stages with educational guides, pattern breakdowns, 100% verified LeetCode links, and multi-language solutions.</p>'); });
-    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Privacy Policy', '<p><strong>Privacy Policy:</strong> DSAProblems.site respects user privacy. Progress data, solved questions, bookmarks, and notes are stored locally in your browser storage (localStorage). We do not collect or sell personal identifying data.</p><p style="margin-top:10px;">Third-party services like Google AdSense may use cookies to serve relevant ads based on browsing visits. Users may manage ad settings directly through Google Ads settings.</p>'); });
+    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.switchView('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.switchView('privacy'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
-    if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Contact Support', '<p><strong>Contact Us:</strong> Have feedback, suggestions, or technical questions about DSAProblems.site?</p><p style="margin-top:10px;">Reach out via GitHub Repository issue tracker: <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener noreferrer">github.com/hashmiii14/100DSAQUETIONS</a></p>'); });
+    if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.switchView('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     if (legalCloseBtn) legalCloseBtn.addEventListener('click', () => this.closeLegalModal());
+  }
+
+  handleContactFormSubmit() {
+    const nameEl = document.getElementById('contact-name');
+    const emailEl = document.getElementById('contact-email');
+    const subjectEl = document.getElementById('contact-subject');
+    const messageEl = document.getElementById('contact-message');
+
+    const name = nameEl ? nameEl.value : '';
+    const email = emailEl ? emailEl.value : '';
+    const subject = subjectEl ? subjectEl.value : '';
+    const message = messageEl ? messageEl.value : '';
+
+    const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    window.location.href = mailtoUrl;
+
+    const statusMsg = document.getElementById('contact-status-msg');
+    if (statusMsg) {
+      statusMsg.style.display = 'block';
+      statusMsg.style.background = 'rgba(16, 185, 129, 0.15)';
+      statusMsg.style.color = 'var(--easy)';
+      statusMsg.style.border = '1px solid var(--easy)';
+      statusMsg.innerHTML = `<strong>✓ Mail client launched!</strong> If your mail app did not open automatically, please send your email directly to <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent); font-weight: bold;">mdhashmi955@gmail.com</a>.`;
+    }
   }
 
   openLegalModal(title, bodyHtml) {
