@@ -74,7 +74,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 /* ── Container Layout (Fluid 320px - 1920px) ─────────────────────── */
 .app-container {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px 60px 16px;
 }
@@ -83,12 +83,16 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   .app-container { padding: 0 24px 60px 24px; }
 }
 
+@media (min-width: 1280px) {
+  .app-container { padding: 0 32px 60px 32px; }
+}
+
 /* ── Glassmorphism Header ─────────────────────────────────────────── */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 12px 0;
@@ -268,12 +272,12 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: clamp(18px, 4vw, 32px);
+  padding: clamp(20px, 4vw, 36px);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
   box-shadow: var(--shadow);
   position: relative;
@@ -283,13 +287,13 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .hero-banner::before {
   content: '';
   position: absolute;
-  top: -50px; right: -50px; width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+  top: -50px; right: -50px; width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(37,99,235,0.09) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .hero-content h1 {
-  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  font-size: clamp(1.35rem, 3.5vw, 2.1rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
@@ -297,15 +301,15 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .hero-content p {
-  font-size: clamp(0.88rem, 2vw, 0.98rem);
+  font-size: clamp(0.9rem, 2vw, 1.02rem);
   color: var(--text-secondary);
-  max-width: 720px;
+  max-width: 850px;
   line-height: 1.65;
 }
 
 .hero-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -317,7 +321,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 11px 22px;
   font-weight: 600;
   font-size: 13.5px;
   border-radius: var(--radius);
@@ -341,7 +345,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border);
-  padding: 10px 20px;
+  padding: 11px 22px;
   font-weight: 600;
   font-size: 13.5px;
   border-radius: var(--radius);
@@ -369,20 +373,20 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   box-shadow: var(--shadow);
 }
 
 .search-row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .search-box {
   position: relative;
-  flex: 1 1 240px;
+  flex: 1 1 280px;
 }
 
 .search-input {
@@ -427,7 +431,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .chip-btn {
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
   border-radius: var(--radius-sm);
@@ -470,7 +474,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   min-height: 40px;
   transition: border-color 0.15s ease;
   width: 100%;
-  max-width: 220px;
+  max-width: 240px;
 }
 
 .select-filter:focus {
@@ -505,7 +509,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 
 .problem-table th {
   background: var(--bg-elevated);
-  padding: 12px 14px;
+  padding: 12px 16px;
   font-size: 12px;
   font-weight: 700;
   color: var(--text-muted);
@@ -515,7 +519,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .problem-table td {
-  padding: 12px 14px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--border-muted);
   font-size: 13.5px;
 }
@@ -639,7 +643,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .mobile-card-list {
   display: none;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .mobile-q-card {
@@ -686,13 +690,13 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-top: 28px;
   flex-wrap: wrap;
 }
 
 .page-btn {
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 12.5px;
   font-weight: 600;
   background: var(--bg-surface);
@@ -719,7 +723,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   font-family: var(--font-mono);
 }
 
-/* ── Views Sections ──────────────────────────────────────────────── */
+/* ── Views Sections & Multi-Column Laptop Layout ────────────────── */
 .view-section {
   display: none;
 }
@@ -728,24 +732,36 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: block;
 }
 
+/* Dynamic Responsive Multi-Column Grid Scaling */
 .grid-cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: 16px;
+  gap: 20px;
+  margin-top: 18px;
 }
 
 @media (min-width: 640px) {
   .grid-cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 }
 
+@media (min-width: 1024px) {
+  .grid-cards { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+}
+
+@media (min-width: 1440px) {
+  .grid-cards { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+}
+
 .card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: clamp(16px, 3vw, 24px);
+  padding: clamp(18px, 3vw, 26px);
   box-shadow: var(--shadow);
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -755,7 +771,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .card h3 {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
   font-weight: 800;
   margin-bottom: 8px;
   color: var(--text-primary);
@@ -763,7 +779,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .card h4 {
-  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--text-primary);
@@ -772,7 +788,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .card p {
   font-size: 13.5px;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   line-height: 1.65;
 }
 
@@ -785,7 +801,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 12px;
+  padding: 14px;
   backdrop-filter: blur(5px);
 }
 
@@ -797,7 +813,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  max-width: 960px;
+  max-width: 1000px;
   width: 100%;
   max-height: 92vh;
   display: flex;
@@ -807,7 +823,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .modal-header {
-  padding: 16px 20px;
+  padding: 16px 22px;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -818,7 +834,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .modal-title-area h2 {
-  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -827,7 +843,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .modal-body {
-  padding: clamp(16px, 3vw, 24px);
+  padding: clamp(16px, 3vw, 26px);
   overflow-y: auto;
   flex: 1;
 }
@@ -843,7 +859,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   max-width: 100%;
   margin-top: 10px;
   white-space: pre;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .hint-box {
