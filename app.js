@@ -325,6 +325,20 @@ class DSAApp {
   }
 
   handleContactFormSubmit() {
+    const now = Date.now();
+    if (this.lastContactSubmit && (now - this.lastContactSubmit < 10000)) {
+      this.logSecurityEvent('RATE_LIMIT_CONTACT', 'Client submitted contact form before 10s cooldown.');
+      const statusMsg = document.getElementById('contact-status-msg');
+      if (statusMsg) {
+        statusMsg.style.display = 'block';
+        statusMsg.style.background = 'rgba(245, 158, 11, 0.15)';
+        statusMsg.style.color = '#f59e0b';
+        statusMsg.style.border = '1px solid #f59e0b';
+        statusMsg.innerHTML = `<strong>⚠️ Rate Limit Exceeded:</strong> Please wait a few seconds before submitting another message.`;
+      }
+      return;
+    }
+
     const nameEl = document.getElementById('contact-name');
     const emailEl = document.getElementById('contact-email');
     const subjectEl = document.getElementById('contact-subject');
@@ -337,6 +351,7 @@ class DSAApp {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email && !emailRegex.test(email)) {
+      this.logSecurityEvent('INVALID_EMAIL_SUBMIT', `Invalid email pattern: ${email}`);
       const statusMsg = document.getElementById('contact-status-msg');
       if (statusMsg) {
         statusMsg.style.display = 'block';
@@ -347,6 +362,9 @@ class DSAApp {
       }
       return;
     }
+
+    this.lastContactSubmit = now;
+    this.logSecurityEvent('CONTACT_SUBMIT_SUCCESS', `Subject: ${subject}`);
 
     const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
@@ -360,6 +378,16 @@ class DSAApp {
       statusMsg.style.border = '1px solid var(--easy)';
       statusMsg.innerHTML = `<strong>✓ Mail client launched!</strong> If your mail app did not open automatically, please send your email directly to <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent); font-weight: bold;">mdhashmi955@gmail.com</a>.`;
     }
+  }
+
+  logSecurityEvent(eventType, details) {
+    try {
+      const timestamp = new Date().toISOString();
+      const logs = JSON.parse(localStorage.getItem('dsaproblems_sec_logs_v1') || '[]');
+      logs.push({ timestamp, eventType, details });
+      if (logs.length > 50) logs.shift();
+      localStorage.setItem('dsaproblems_sec_logs_v1', JSON.stringify(logs));
+    } catch (_) {}
   }
 
   openLegalModal(title, bodyHtml) {
