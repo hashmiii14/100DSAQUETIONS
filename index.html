@@ -64,6 +64,7 @@
         <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">Guide</button>
         <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress')">Progress</button>
         <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
+        <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact')">Contact</button>
       </nav>
 
       <!-- Header Right Actions -->
@@ -77,7 +78,7 @@
           <span id="theme-icon">🌙</span>
         </button>
 
-        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Menu">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu">☰</button>
       </div>
     </div>
   </header>
@@ -85,15 +86,17 @@
   <!-- Mobile Drawer Backdrop & Menu -->
   <div class="drawer-backdrop" id="drawer-backdrop" onclick="app.toggleMobileMenu(false)"></div>
   <aside class="mobile-drawer" id="mobile-drawer">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <strong style="font-size: 16px;">DSAProblems</strong>
-      <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" style="padding: 2px 8px;">✕</button>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+      <strong style="font-size: 16px;">DSAProblems Navigation</strong>
+      <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" style="padding: 4px 10px;">✕</button>
     </div>
     <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
       <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
       <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">Guide</button>
       <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
       <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
+      <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
+      <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
     </div>
   </aside>
 
@@ -215,21 +218,19 @@
     <section class="view-section" id="view-guide">
       <div class="guide-container">
         <aside class="guide-sidebar">
-          <h3>DSA Guide & Reference</h3>
+          <h3>DSA Guide Topics</h3>
           <ul class="guide-nav-list" id="guide-topics-nav">
-            <li class="guide-nav-item active" onclick="app.showGuideSection('overview')">Overview</li>
-            <li class="guide-nav-item" onclick="app.showGuideSection('ds')">Data Structures</li>
-            <li class="guide-nav-item" onclick="app.showGuideSection('patterns')">Algorithmic Patterns</li>
+            <!-- Dynamically populated topics list -->
           </ul>
         </aside>
 
         <div class="guide-content-area" id="guide-content-area">
-          <div class="guide-article">
-            <h2>Data Structures & Patterns Guide</h2>
-            <p>Comprehensive reference guide for key data structures, operations, and interview patterns.</p>
+          <div class="guide-article" id="guide-article-body">
+            <h2>DSA Learning Guide & Curriculum</h2>
+            <p>Select a topic from the sidebar to explore core concepts, time complexity, common interview patterns, and code templates.</p>
           </div>
           <div class="guide-card-grid" id="guide-card-grid">
-            <!-- Rendered dynamically from PATTERNS_LIBRARY & DS_ALGO_LIBRARY -->
+            <!-- Rendered dynamically -->
           </div>
         </div>
       </div>
@@ -311,12 +312,26 @@
           At DSAProblems.site, we value your privacy. We store all problem solving progress, notes, bookmarks, and user preferences locally in your Web Browser using `localStorage`.
         </p>
         <p style="color: var(--text-secondary); line-height: 1.6;">
-          No personal data or solving statistics are transmitted to external servers.
+          No personal data or solving statistics are transmitted to external servers. External problem links safely open verified problem statements directly on LeetCode.
         </p>
       </div>
     </section>
 
-    <!-- View 6: Admin Quality Control (Relocated) -->
+    <!-- View 6: Contact -->
+    <section class="view-section" id="view-contact">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; text-align: center; align-items: center;">
+        <h2 style="font-size: 22px; font-weight: 800;">Get in Touch</h2>
+        <p style="color: var(--text-secondary); line-height: 1.6; max-width: 500px;">
+          For bug reports, corrections, feature suggestions, or website updates, reach out directly via email.
+        </p>
+        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 16px 24px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); margin: 8px 0;">
+          mdhashmi955@gmail.com
+        </div>
+        <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 24px; font-size: 14px;">✉️ Email Us</a>
+      </div>
+    </section>
+
+    <!-- View 7: Admin Quality Control (Relocated) -->
     <section class="view-section" id="view-admin-quality">
       <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px;">
         <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Dataset Quality & Duplicate Prevention Tool</h2>
@@ -365,8 +380,10 @@
       <a href="/progress" onclick="event.preventDefault(); app.navigate('/progress');">Progress</a>
       <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
       <a href="/privacy" onclick="event.preventDefault(); app.navigate('/privacy');">Privacy</a>
+      <a href="/contact" onclick="event.preventDefault(); app.navigate('/contact');">Contact</a>
     </div>
-    <div>© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
+    <div style="margin-top: 4px;">Contact: <a href="mailto:mdhashmi955@gmail.com" style="color: var(--text-secondary); text-decoration: underline;">mdhashmi955@gmail.com</a></div>
+    <div style="margin-top: 8px; font-size: 11.5px; opacity: 0.8;">© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
   </footer>
 
 </div>

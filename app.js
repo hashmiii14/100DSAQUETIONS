@@ -26,6 +26,9 @@ class DSAApp {
     this.activeProblem = null;
     this.activeLang = 'cpp'; // 'cpp' | 'java' | 'python' | 'javascript'
 
+    // Guide State
+    this.activeGuideTopic = 'fundamentals';
+
     this.init();
   }
 
@@ -50,7 +53,7 @@ class DSAApp {
     this.bindGlobalKeyboardShortcuts();
     this.handleRouteFromUrl();
 
-    // Listen to browser popstate (back/forward navigation)
+    // Listen to browser popstate
     window.addEventListener('popstate', () => this.handleRouteFromUrl());
 
     // Async polling fallback if PROBLEMS loads asynchronously
@@ -68,6 +71,7 @@ class DSAApp {
   }
 
   applyInitialTheme() {
+    // DARK MODE IS DEFAULT
     const savedTheme = (this.state && this.state.theme) ? this.state.theme : (localStorage.getItem('dsaproblems_theme_v3') || 'dark');
     this.setTheme(savedTheme);
   }
@@ -108,7 +112,7 @@ class DSAApp {
     if (route === '/' || route === '/index.html') route = '/problems';
     if (window.location.hash) {
       const hashRoute = window.location.hash.replace('#', '');
-      if (['/problems', '/guide', '/progress', '/about', '/privacy', '/admin/quality'].includes(hashRoute)) {
+      if (['/problems', '/guide', '/progress', '/about', '/privacy', '/contact', '/admin/quality'].includes(hashRoute)) {
         route = hashRoute;
       }
     }
@@ -124,10 +128,22 @@ class DSAApp {
       '/progress': 'progress',
       '/about': 'about',
       '/privacy': 'privacy',
+      '/contact': 'contact',
       '/admin/quality': 'admin-quality'
     };
 
+    const routeTitleMap = {
+      'problems': 'DSAProblems — 1000 DSA Problems',
+      'guide': 'DSA Guide — DSAProblems',
+      'progress': 'DSA Progress — DSAProblems',
+      'about': 'About — DSAProblems',
+      'privacy': 'Privacy Policy — DSAProblems',
+      'contact': 'Contact — DSAProblems',
+      'admin-quality': 'Quality Control — DSAProblems'
+    };
+
     const targetViewName = viewNameMap[route] || 'problems';
+    document.title = routeTitleMap[targetViewName] || 'DSAProblems — 1000 DSA Problems';
 
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -143,7 +159,9 @@ class DSAApp {
     // Render targeted view contents
     this.renderCurrentView();
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   renderCurrentView() {
@@ -155,6 +173,22 @@ class DSAApp {
     } else if (route === '/guide') {
       this.renderGuideSection();
     }
+  }
+
+  /* ── Mobile Navigation Drawer Controller ──────────────────────────────────── */
+  toggleMobileMenu(forceState) {
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.getElementById('drawer-backdrop');
+    if (!drawer || !backdrop) return;
+
+    const isOpen = drawer.classList.contains('open');
+    const nextState = forceState !== undefined ? forceState : !isOpen;
+
+    drawer.classList.toggle('open', nextState);
+    backdrop.classList.toggle('open', nextState);
+
+    // Prevent body scrolling when mobile drawer is open
+    document.body.style.overflow = nextState ? 'hidden' : '';
   }
 
   /* ── Topic Pills & Filter Populating ─────────────────────────────────────── */
@@ -354,9 +388,9 @@ class DSAApp {
 
     if (pageItems.length === 0) {
       const emptyHtml = `<div class="empty-state">
-        <h3>No problems match your filters</h3>
-        <p>Try resetting filters or searching for a different keyword.</p>
-        <button class="btn-secondary" onclick="app.resetFilters()" style="margin-top: 12px;">Reset Filters</button>
+        <h3>No problems found</h3>
+        <p>No questions match your selected search terms or filters.</p>
+        <button class="btn-secondary" onclick="app.resetFilters()" style="margin-top: 12px;">Clear Filters</button>
       </div>`;
       if (tbody) tbody.innerHTML = `<tr><td colspan="7">${emptyHtml}</td></tr>`;
       if (mobileList) mobileList.innerHTML = emptyHtml;
@@ -440,16 +474,72 @@ class DSAApp {
   changePage(delta) {
     this.currentPage += delta;
     this.renderProblemSheet();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   /* ── Interactive Solved & Bookmark Toggles ─────────────────────────────── */
+  get activeModalProblem() {
+    return this.activeProblem;
+  }
+  set activeModalProblem(val) {
+    this.activeProblem = val;
+  }
+
+  switchView(viewName) {
+    this.currentView = viewName;
+    const viewMap = {
+      'explorer': '/problems',
+      'sheet': '/problems',
+      'dashboard': '/progress',
+      'guide': '/guide',
+      'about': '/about',
+      'privacy': '/privacy',
+      'contact': '/contact',
+      'admin-quality': '/admin/quality'
+    };
+    const targetRoute = viewMap[viewName] || `/${viewName}`;
+    this.navigate(targetRoute);
+  }
+
+  renderExplorer() {
+    this.renderProblemSheet();
+  }
+
+  renderSheet() {
+    this.renderProblemSheet();
+  }
+
+  renderDashboard() {
+    this.renderProgressDashboard();
+  }
+
   toggleSolved(pid) {
     if (this.state && typeof this.state.toggleDone === 'function') {
       this.state.toggleDone(pid);
     }
     this.renderProblemSheet();
-    if (this.currentRoute === '/progress') this.renderProgressDashboard();
+    if (this.currentRoute === '/progress' || this.currentRoute === '/dashboard') this.renderProgressDashboard();
+  }
+
+  toggleDone(pid) {
+    return this.toggleSolved(pid);
+  }
+
+  navigateModal(delta) {
+    if (!this.activeProblem) return;
+    const currentId = this.activeProblem.id;
+    const newId = currentId + delta;
+    if (newId >= 1 && newId <= this.getProblems().length) {
+      this.openProblemModal(newId);
+    }
+  }
+
+  updateModalSolutionView() {
+    if (this.activeProblem) {
+      this.openProblemModal(this.activeProblem.id);
+    }
   }
 
   toggleBookmark(pid) {
@@ -513,11 +603,13 @@ class DSAApp {
     }
 
     modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
 
   closeProblemModal() {
     const modal = document.getElementById('problem-modal');
     if (modal) modal.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
   setModalLang(lang) {
@@ -605,20 +697,9 @@ class DSAApp {
       if (e.key === 'Escape') {
         this.closeProblemModal();
         this.closeCommandPalette();
+        this.toggleMobileMenu(false);
       }
     });
-  }
-
-  toggleMobileMenu(forceState) {
-    const drawer = document.getElementById('mobile-drawer');
-    const backdrop = document.getElementById('drawer-backdrop');
-    if (!drawer || !backdrop) return;
-
-    const isOpen = drawer.classList.contains('open');
-    const nextState = forceState !== undefined ? forceState : !isOpen;
-
-    drawer.classList.toggle('open', nextState);
-    backdrop.classList.toggle('open', nextState);
   }
 
   /* ── Progress Dashboard View ────────────────────────────────────────────── */
@@ -691,43 +772,263 @@ class DSAApp {
     }
   }
 
-  /* ── Guide Section Rendering ─────────────────────────────────────────────── */
-  renderGuideSection() {
-    const grid = document.getElementById('guide-card-grid');
-    if (!grid) return;
-
-    let html = '';
-
-    // Data structures reference cards
-    if (this.dsAlgo && Array.isArray(this.dsAlgo.dataStructures)) {
-      this.dsAlgo.dataStructures.forEach(ds => {
-        html += `<div class="guide-card">
-          <h4>${this.escapeHtml(ds.name)}</h4>
-          <p style="margin-bottom: 8px;">${this.escapeHtml(ds.description || '')}</p>
-          <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--accent-primary); background: var(--accent-light); padding: 4px 8px; border-radius: 4px;">
-            ${this.escapeHtml(ds.operations || '')}
-          </div>
-        </div>`;
-      });
+  /* ── Expanded 16-Topic Guide Data & Renderer ────────────────────────────── */
+  getGuideTopicData() {
+    return [
+      {
+        id: 'fundamentals',
+        title: '1. DSA Fundamentals & Complexity',
+        summary: 'Understand Big O notation, time complexity bounds, space complexity, and optimal problem-solving strategies.',
+        content: `
+          <p><strong>Time & Space Complexity:</strong> Algorithm efficiency is evaluated using Asymptotic Analysis to determine scaling behavior as input size N grows.</p>
+          <ul>
+            <li><strong>O(1)</strong>: Constant Time (HashMap lookup, Stack Push/Pop).</li>
+            <li><strong>O(log N)</strong>: Logarithmic Time (Binary Search, Balanced BST).</li>
+            <li><strong>O(N)</strong>: Linear Time (Single Array Traversal, Linear Search).</li>
+            <li><strong>O(N log N)</strong>: Linearithmic Time (Merge Sort, Quick Sort).</li>
+            <li><strong>O(N²)</strong>: Quadratic Time (Nested Loops, Bubble Sort).</li>
+          </ul>
+        `,
+        code: `// Time Complexity Rule of Thumb
+// N <= 10^8  -> O(N) or O(N log N)
+// N <= 10^4  -> O(N^2)
+// N <= 500   -> O(N^3)`
+      },
+      {
+        id: 'arrays',
+        title: '2. Arrays & Subarray Techniques',
+        summary: 'Master array traversals, prefix sums, sliding window mechanics, two-pointer strategies, and Kadane algorithm.',
+        content: `
+          <p><strong>Core Patterns:</strong> Contiguous Subarray Sums, Prefix Arrays, Two Pointers, and Windowing.</p>
+          <p><strong>Kadane's Algorithm:</strong> Find maximum contiguous subarray sum in linear time O(N).</p>
+        `,
+        code: `int maxSubArray(vector<int>& nums) {
+    int maxSoFar = nums[0], currentMax = nums[0];
+    for (size_t i = 1; i < nums.size(); ++i) {
+        currentMax = max(nums[i], currentMax + nums[i]);
+        maxSoFar = max(maxSoFar, currentMax);
     }
-
-    // Pattern cards
-    if (this.patterns && Array.isArray(this.patterns)) {
-      this.patterns.forEach(pat => {
-        html += `<div class="guide-card">
-          <h4>${this.escapeHtml(pat.name)}</h4>
-          <p>${this.escapeHtml(pat.description || '')}</p>
-        </div>`;
-      });
+    return maxSoFar;
+}`
+      },
+      {
+        id: 'strings',
+        title: '3. Strings & Frequency Maps',
+        summary: 'String traversal, character counting, anagrams, palindrome verification, and string matching algorithms.',
+        content: `
+          <p><strong>Key Concepts:</strong> Fixed-size frequency arrays (ASCII/lowercase 26-element arrays) provide O(1) space hashing for string problems.</p>
+        `,
+        code: `bool isAnagram(string s, string t) {
+    if (s.length() != t.length()) return false;
+    int count[26] = {0};
+    for (char c : s) count[c - 'a']++;
+    for (char c : t) {
+        if (--count[c - 'a'] < 0) return false;
     }
-
-    grid.innerHTML = html;
+    return true;
+}`
+      },
+      {
+        id: 'linkedlist',
+        title: '4. Linked Lists & Fast-Slow Pointers',
+        summary: 'Singly and doubly linked lists, pointer manipulation, cycle detection (Floyd\'s Tortoise & Hare), and list reversal.',
+        content: `
+          <p><strong>Cycle Detection:</strong> Use two pointers moving at different speeds (1 step vs 2 steps). If a cycle exists, fast and slow pointers will meet.</p>
+        `,
+        code: `bool hasCycle(ListNode *head) {
+    ListNode *slow = head, *fast = head;
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if (slow == fast) return true;
+    }
+    return false;
+}`
+      },
+      {
+        id: 'stackqueue',
+        title: '5. Stack, Queue & Monotonic Stack',
+        summary: 'LIFO & FIFO primitives, expression parsing, next greater element using Monotonic Stack, and sliding window maximum.',
+        content: `
+          <p><strong>Monotonic Stack:</strong> Maintain elements in strictly increasing or decreasing order to process nearest greater/smaller queries in linear time.</p>
+        `,
+        code: `vector<int> nextGreaterElement(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> res(n, -1);
+    stack<int> st;
+    for (int i = 0; i < n; i++) {
+        while (!st.empty() && nums[st.top()] < nums[i]) {
+            res[st.top()] = nums[i];
+            st.pop();
+        }
+        st.push(i);
+    }
+    return res;
+}`
+      },
+      {
+        id: 'recursion',
+        title: '6. Recursion & Backtracking',
+        summary: 'Subsets, permutations, combination sums, N-Queens, and recursive tree exploration with pruning.',
+        content: `
+          <p><strong>Backtracking Template:</strong> Choose, Explore, Un-choose (backtrack).</p>
+        `,
+        code: `void backtrack(vector<vector<int>>& res, vector<int>& candidate, vector<int>& nums, int start) {
+    res.push_back(candidate);
+    for (int i = start; i < nums.size(); i++) {
+        candidate.push_back(nums[i]);
+        backtrack(res, candidate, nums, i + 1);
+        candidate.pop_back(); // Backtrack
+    }
+}`
+      },
+      {
+        id: 'binarysearch',
+        title: '7. Binary Search & Search Space Optimization',
+        summary: 'Logarithmic search on sorted arrays, lower/upper bound calculations, and searching on answer spaces.',
+        content: `
+          <p><strong>Binary Search Space:</strong> When monotonic decision functions hold, apply binary search on output domains.</p>
+        `,
+        code: `int binarySearch(vector<int>& nums, int target) {
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) return mid;
+        if (nums[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}`
+      },
+      {
+        id: 'trees',
+        title: '8. Binary Trees & Traversals',
+        summary: 'DFS (Preorder, Inorder, Postorder), BFS (Level-Order Traversal), height computation, and tree paths.',
+        content: `
+          <p><strong>Level-Order Traversal:</strong> Process binary tree nodes level-by-level using a FIFO Queue.</p>
+        `,
+        code: `vector<vector<int>> levelOrder(TreeNode* root) {
+    vector<vector<int>> res;
+    if (!root) return res;
+    queue<TreeNode*> q;
+    q.push(root);
+    while (!q.empty()) {
+        int sz = q.size();
+        vector<int> level;
+        for (int i = 0; i < sz; i++) {
+            TreeNode* node = q.front(); q.pop();
+            level.push_back(node->val);
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+        res.push_back(level);
+    }
+    return res;
+}`
+      },
+      {
+        id: 'bst',
+        title: '9. Binary Search Tree (BST)',
+        summary: 'BST invariant properties, Inorder traversal sorting, insertion, deletion, and validation.',
+        content: `
+          <p><strong>BST Property:</strong> Left subtree values < root value < Right subtree values. Inorder traversal yields sorted elements.</p>
+        `
+      },
+      {
+        id: 'heap',
+        title: '10. Heap / Priority Queue',
+        summary: 'Min Heap and Max Heap operations, top K frequent elements, Kth largest element in a stream.',
+        content: `
+          <p><strong>Top K Elements Pattern:</strong> Use a Min-Heap of fixed size K to track top K largest elements in O(N log K) time.</p>
+        `
+      },
+      {
+        id: 'hashing',
+        title: '11. Hashing & Frequency Tables',
+        summary: 'HashMap and HashSet operations, collision handling, frequency counting, and prefix sum index maps.',
+        content: `
+          <p><strong>Subarray Sum Equals K:</strong> Store prefix sums in a HashMap to count zero-sum or K-sum contiguous subarrays in O(N).</p>
+        `
+      },
+      {
+        id: 'graphs',
+        title: '12. Graph Algorithms & Traversals',
+        summary: 'Graph representations (Adjacency List), BFS, DFS, Connected Components, Cycle Detection, Topological Sort, Dijkstra, and Union Find (DSU).',
+        content: `
+          <p><strong>BFS Shortest Path:</strong> Unweighted graphs find shortest distance paths using BFS queue traversal.</p>
+        `
+      },
+      {
+        id: 'greedy',
+        title: '13. Greedy Algorithms',
+        summary: 'Local optimal choices making globally optimal solutions, interval scheduling, sorting-based greedy tactics.',
+        content: `
+          <p><strong>Interval Overlaps:</strong> Sort intervals by end-time to maximize non-overlapping selections.</p>
+        `
+      },
+      {
+        id: 'dp',
+        title: '14. Dynamic Programming (DP)',
+        summary: 'Overlapping subproblems and optimal substructure. Memoization (Top-Down) vs Tabulation (Bottom-Up), 0/1 Knapsack, Subsequence DP, and Grid DP.',
+        content: `
+          <p><strong>Climbing Stairs / Fibonacci State Transition:</strong> dp[i] = dp[i-1] + dp[i-2].</p>
+        `
+      },
+      {
+        id: 'trie',
+        title: '15. Trie (Prefix Tree)',
+        summary: 'Efficient dictionary lookup, autocomplete, prefix search, and bitwise XOR Trie operations.',
+        content: `
+          <p><strong>Trie Node:</strong> Each node contains 26 pointers for lowercase letters and a boolean isEnd flag.</p>
+        `
+      },
+      {
+        id: 'bit',
+        title: '16. Bit Manipulation',
+        summary: 'Bitwise AND, OR, XOR, NOT, left/right shifts, bit counting, power of two checks, and single number patterns.',
+        content: `
+          <p><strong>Single Number XOR Trick:</strong> x ^ x = 0 and x ^ 0 = x. XORing all elements cancels duplicates.</p>
+        `
+      }
+    ];
   }
 
-  showGuideSection(secKey) {
-    document.querySelectorAll('.guide-nav-item').forEach(item => {
-      item.classList.toggle('active', item.getAttribute('onclick').includes(secKey));
+  renderGuideSection() {
+    const navList = document.getElementById('guide-topics-nav');
+    const contentArea = document.getElementById('guide-content-area');
+    if (!navList || !contentArea) return;
+
+    const topics = this.getGuideTopicData();
+    let navHtml = '';
+
+    topics.forEach(t => {
+      const isActive = t.id === this.activeGuideTopic;
+      navHtml += `<li class="guide-nav-item ${isActive ? 'active' : ''}" onclick="app.selectGuideTopic('${t.id}')">${t.title}</li>`;
     });
+
+    navList.innerHTML = navHtml;
+
+    const selected = topics.find(t => t.id === this.activeGuideTopic) || topics[0];
+
+    contentArea.innerHTML = `
+      <div class="guide-article">
+        <h2>${selected.title}</h2>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">${selected.summary}</p>
+        <div>${selected.content}</div>
+        ${selected.code ? `
+          <div style="margin-top: 20px;">
+            <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px;">C++ / TEMPLATE CODE</strong>
+            <div class="code-block-wrap">
+              <pre><code>${this.escapeHtml(selected.code)}</code></pre>
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+
+  selectGuideTopic(topicId) {
+    this.activeGuideTopic = topicId;
     this.renderGuideSection();
   }
 
@@ -764,9 +1065,14 @@ class DSAApp {
 
 // Instantiate App globally
 let app;
-document.addEventListener('DOMContentLoaded', () => {
-  app = new DSAApp();
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    app = new DSAApp();
+  });
+}
 if (typeof window !== 'undefined') {
   window.DSAApp = DSAApp;
+}
+if (typeof module !== 'undefined') {
+  module.exports = DSAApp;
 }
