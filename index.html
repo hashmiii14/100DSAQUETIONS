@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DSA Problems — 1000 Coding Interview Questions & Comprehensive Educational Guide</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive theory, mathematical formulas, multi-language solutions, and progress tracking."/>
+<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. 100% verified LeetCode links, comprehensive topic-by-topic theory, mathematical formulas, multi-language solutions, and progress tracking."/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
@@ -14,7 +14,7 @@
 
 <!-- Open Graph SEO -->
 <meta property="og:title" content="DSA Problems — 1000 Coding Interview Questions & Educational Guide"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, complete DSA theory and formulas reference, and multi-language solutions (C++, Java, Python, JS)."/>
+<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with 100% verified LeetCode links, complete topic-by-topic DSA theory reference, and multi-language solutions (C++, Java, Python, JS)."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -84,10 +84,10 @@
     <div class="hero-banner">
       <div class="hero-content">
         <h1>Master Data Structures & Algorithms</h1>
-        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a complete DSA theory and formula reference.</p>
+        <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a complete topic-by-topic DSA theory textbook.</p>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Formulas</button>
+        <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Topics</button>
         <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
       </div>
     </div>
@@ -188,130 +188,194 @@
 
   </section>
 
-  <!-- VIEW 2: Educational DSA Guide (Complete Theory & Formulas) -->
+  <!-- VIEW 2: Educational DSA Guide (Topic-by-Topic Theory & Concepts) -->
   <section class="view-section" id="view-guide">
     <div class="card" style="margin-bottom: 24px;">
-      <h2>📚 Data Structures & Algorithms — Complete Theory & Formulas Reference</h2>
-      <p>An encyclopedic textbook containing formal definitions, asymptotic analysis limit formulas, data structure internal mechanics, recurrence relations, and algorithm proofs.</p>
+      <h2>📚 Data Structures & Algorithms — Topic-by-Topic Educational Textbook</h2>
+      <p>An encyclopedic reference with complete theoretical explanations, internal memory mechanics, formal definitions, time/space complexity proofs, and direct practice problem triggers.</p>
     </div>
 
-    <!-- Section 1: Formal Asymptotic Theory & Formulas -->
+    <!-- Topic 1: Asymptotic Analysis -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ 1. Asymptotic Theory, Limit Definitions & Master Theorem</h3>
+      <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Topic 1: Asymptotic Analysis & Algorithm Complexity</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Formal Asymptotic Definitions</h4>
-          <p>Mathematical upper, lower, and tight bounds defined using limit behavior:</p>
+          <h4>Formal Asymptotic Notations</h4>
+          <p>Asymptotic analysis evaluates execution runtime and memory growth as input size N approaches infinity:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
-            <li><strong>Big-O (Upper Bound):</strong> <code>f(N) = O(g(N))</code> if <code>∃ c &gt; 0, N₀ &gt; 0</code> such that <code>f(N) ≤ c · g(N) ∀ N ≥ N₀</code>.</li>
-            <li><strong>Big-Ω (Lower Bound):</strong> <code>f(N) = Ω(g(N))</code> if <code>∃ c &gt; 0, N₀ &gt; 0</code> such that <code>f(N) ≥ c · g(N) ∀ N ≥ N₀</code>.</li>
-            <li><strong>Big-Θ (Tight Bound):</strong> <code>f(N) = Θ(g(N))</code> if <code>f(N) = O(g(N))</code> and <code>f(N) = Ω(g(N))</code>.</li>
+            <li><strong>Big-O (Upper Bound):</strong> <code>f(N) = O(g(N))</code> guarantees algorithm worst-case runtime never exceeds <code>c·g(N)</code>.</li>
+            <li><strong>Big-Ω (Lower Bound):</strong> <code>f(N) = Ω(g(N))</code> guarantees best-case execution requires at least <code>c·g(N)</code> steps.</li>
+            <li><strong>Big-Θ (Tight Bound):</strong> <code>f(N) = Θ(g(N))</code> specifies exact growth rate matching both upper and lower bounds.</li>
+            <li><strong>Amortized Analysis:</strong> Average cost over sequence of N operations (e.g. dynamic array capacity doubling).</li>
           </ul>
         </div>
 
         <div class="card">
-          <h4>Master Theorem Formula</h4>
-          <p>For divide-and-conquer recurrences of the form <code>T(N) = a · T(N / b) + f(N)</code> (where <code>a ≥ 1, b &gt; 1</code>):</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
-            <li><strong>Case 1:</strong> If <code>f(N) = O(N^(log_b(a) - ε))</code>, then <code>T(N) = Θ(N^(log_b a))</code>.</li>
-            <li><strong>Case 2:</strong> If <code>f(N) = Θ(N^(log_b a))</code>, then <code>T(N) = Θ(N^(log_b a) · log N)</code>.</li>
-            <li><strong>Case 3:</strong> If <code>f(N) = Ω(N^(log_b(a) + ε))</code>, then <code>T(N) = Θ(f(N))</code>.</li>
+          <h4>Master Theorem for Recurrences</h4>
+          <p>Used to analyze divide-and-conquer recurrences of the form <code>T(N) = a·T(N/b) + f(N)</code>:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>Case 1:</strong> If <code>f(N) = O(N^(log_b a - ε))</code> ⇒ <code>T(N) = Θ(N^(log_b a))</code>.</li>
+            <li><strong>Case 2:</strong> If <code>f(N) = Θ(N^(log_b a))</code> ⇒ <code>T(N) = Θ(N^(log_b a) · log N)</code>.</li>
+            <li><strong>Case 3:</strong> If <code>f(N) = Ω(N^(log_b a + ε))</code> ⇒ <code>T(N) = Θ(f(N))</code>.</li>
           </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Foundations →</button>
         </div>
       </div>
     </div>
 
-    <!-- Section 2: Array & String Mathematical Formulas -->
+    <!-- Topic 2: Arrays & Subarray Techniques -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 2. Array, String & Hash Table Mathematics</h3>
+      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Topic 2: Arrays, Dynamic Arrays & Subarray Mechanics</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Prefix Sum & Subarray Formulas</h4>
-          <p>Precomputing running sums enables <code>O(1)</code> subsegment queries:</p>
+          <h4>Array Memory Architecture</h4>
+          <p>Arrays allocate contiguous RAM memory blocks, giving CPU caches maximum spatial locality and enabling instant <code>O(1)</code> index math: <code>Address = Base + Index · ElementSize</code>.</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Prefix Sum:</strong> <code>P[i] = P[i-1] + A[i]</code>. Range sum <code>Sum(L, R) = P[R] - P[L-1]</code>.</li>
-            <li><strong>Kadane's Transition:</strong> <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
-            <li><strong>2D Matrix Prefix Sum:</strong> <code>P[i][j] = A[i][j] + P[i-1][j] + P[i][j-1] - P[i-1][j-1]</code>.</li>
+            <li><strong>Two Pointers:</strong> Converging left/right pointers for sorted pair sum or palindrome verification.</li>
+            <li><strong>Sliding Window:</strong> Maintaining dynamic subsegments under target constraints in <code>O(N)</code> time.</li>
+            <li><strong>Prefix Sums:</strong> Precomputing <code>P[i] = P[i-1] + A[i]</code> for <code>O(1)</code> range queries.</li>
           </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Arrays & Strings →</button>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Arrays →</button>
         </div>
 
         <div class="card">
-          <h4>Polynomial Rolling Hash (Rabin-Karp)</h4>
-          <p>Converting string substrings into integer hashes modulo prime <code>M</code>:</p>
+          <h4>Subarray Algorithms (Kadane's & Difference Arrays)</h4>
+          <p>Advanced array techniques for optimal contiguous subarray selection and range update processing:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Hash Formula:</strong> <code>H(S) = (S[0]·pⁿ⁻¹ + S[1]·pⁿ⁻² + ... + S[n-1]) mod M</code>.</li>
-            <li><strong>Rolling Shift:</strong> <code>H_new = (p · (H_old - S_old · pⁿ⁻¹) + S_new) mod M</code>.</li>
-            <li><strong>Standard Parameters:</strong> Base <code>p = 31</code> (lowercase), Prime <code>M = 10⁹ + 7</code>.</li>
+            <li><strong>Kadane's Algorithm:</strong> Single-pass maximum subarray sum state recurrence: <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
+            <li><strong>Difference Array:</strong> Range updates <code>+V</code> on <code>[L, R]</code> achieved in <code>O(1)</code> via <code>D[L] += V</code> and <code>D[R+1] -= V</code>.</li>
           </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Hashing →</button>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Subarrays →</button>
         </div>
       </div>
     </div>
 
-    <!-- Section 3: Tree, Heap & Pointer Mechanics -->
+    <!-- Topic 3: Strings & Hashing -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 3. Trees, Heaps & Pointer Invariants</h3>
+      <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Topic 3: Strings, Pattern Matching & Hash Tables</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Binary Tree & BST Formulas</h4>
-          <p>Mathematical invariants for binary tree height and node capacities:</p>
+          <h4>String Processing & KMP Algorithm</h4>
+          <p>String processing algorithms for fast substring matching without redundant backtracking:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Full Tree Capacity:</strong> Max nodes for height H is <code>N = 2^(H+1) - 1</code>.</li>
-            <li><strong>Minimum Height:</strong> Height <code>H = ⌊log₂ N⌋</code>.</li>
-            <li><strong>Tree Diameter:</strong> <code>Diameter(Node) = max(Height(Left) + Height(Right))</code>.</li>
+            <li><strong>KMP Algorithm:</strong> Uses Longest Prefix Suffix (LPS) table to match patterns in <code>O(N + M)</code>.</li>
+            <li><strong>Rabin-Karp Rolling Hash:</strong> Polynomial hashing converting substrings to integers modulo prime <code>M</code>.</li>
           </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Binary Trees →</button>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays & Strings')">Practice Strings →</button>
         </div>
 
         <div class="card">
-          <h4>Binary Heap Index Formulas</h4>
-          <p>Array-based complete binary tree parent-child pointer calculations:</p>
+          <h4>Hash Tables & Collision Resolution</h4>
+          <p>Key-value stores mapping keys to table buckets via hash functions <code>h(k)</code> for average <code>O(1)</code> operations:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Parent Index:</strong> <code>Parent(i) = ⌊(i - 1) / 2⌋</code>.</li>
-            <li><strong>Child Indices:</strong> <code>Left(i) = 2i + 1</code>, <code>Right(i) = 2i + 2</code>.</li>
-            <li><strong>O(N) Heapify Proof:</strong> Sum <code>∑ (N / 2^(h+1)) · O(h) = O(N)</code>.</li>
+            <li><strong>Chaining vs Open Addressing:</strong> Resolving collisions using linked buckets vs linear/quadratic probing.</li>
+            <li><strong>LRU Cache Architecture:</strong> Combining Hash Map + Doubly Linked List for <code>O(1)</code> cache evicted updates.</li>
           </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Heaps →</button>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Hash Tables →</button>
         </div>
       </div>
     </div>
 
-    <!-- Section 4: Graph Edge Relaxations & DP Recurrence Relations -->
+    <!-- Topic 4: Linked Lists, Stacks & Queues -->
     <div style="margin-bottom: 28px;">
-      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 4. Graph Relaxation & Dynamic Programming Recurrences</h3>
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Topic 4: Linked Lists, Stacks, Monotonic Stacks & Queues</h3>
       <div class="grid-cards">
         <div class="card">
-          <h4>Graph Edge Relaxation Formulas</h4>
-          <p>Mathematical conditions for single-source and all-pairs shortest paths:</p>
+          <h4>Linked Lists & Pointer Mechanics</h4>
+          <p>Dynamic node structures connected via memory pointers, avoiding pre-allocated buffer limits:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Dijkstra Relaxation:</strong> <code>if d[u] + w(u, v) &lt; d[v] ⇒ d[v] = d[u] + w(u, v)</code>.</li>
-            <li><strong>Floyd-Warshall DP:</strong> <code>d[i][j] = min(d[i][j], d[i][k] + d[k][j])</code>.</li>
-            <li><strong>DSU Path Compression:</strong> <code>find(x) = (parent[x] == x) ? x : (parent[x] = find(parent[x]))</code>.</li>
+            <li><strong>Floyd's Cycle Detection:</strong> Fast (2 steps) and slow (1 step) pointers meeting inside cycle.</li>
+            <li><strong>In-Place Reversal:</strong> Reversing next pointers iteratively using <code>prev, curr, next</code>.</li>
           </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Graph Algorithms →</button>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Hashing & Lists')">Practice Linked Lists →</button>
         </div>
 
         <div class="card">
-          <h4>Dynamic Programming Recurrence Formulas</h4>
-          <p>Formal DP state transition equations for optimal subproblem resolution:</p>
+          <h4>Monotonic Stacks & Deques</h4>
+          <p>Restricted linear structures with ordering invariants for fast nearest element discovery:</p>
           <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>0/1 Knapsack:</strong> <code>dp[i][w] = max(dp[i-1][w], dp[i-1][w-w_i] + v_i)</code>.</li>
-            <li><strong>LCS String DP:</strong> <code>dp[i][j] = (S1[i]==S2[j]) ? dp[i-1][j-1]+1 : max(dp[i-1][j], dp[i][j-1])</code>.</li>
-            <li><strong>Edit Distance:</strong> <code>dp[i][j] = min(Insert, Delete, Replace) + 1</code>.</li>
+            <li><strong>Monotonic Stack:</strong> Maintaining ordered elements to find Next Greater Element in <code>O(N)</code>.</li>
+            <li><strong>Sliding Window Deque:</strong> Double-ended queue storing candidate max elements in <code>O(N)</code>.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Stacks & Queues →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic 5: Searching & Sorting -->
+    <div style="margin-bottom: 28px;">
+      <h3 style="color: var(--medium); margin-bottom: 12px; font-size: 19px;">🟡 Topic 5: Binary Search Variations & Sorting Algorithms</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Binary Search Invariants</h4>
+          <p>Logarithmic <code>O(log N)</code> search halving candidate space at each step via mid comparison:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>Lower & Upper Bounds:</strong> Identifying first and last occurrence indices of target values.</li>
+            <li><strong>Search on Answer Space:</strong> Binary searching monotonic feasibility functions <code>isValid(mid)</code>.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Binary Search →</button>
+        </div>
+
+        <div class="card">
+          <h4>Sorting Paradigms & Comparators</h4>
+          <p>Ordering elements by relational key comparisons or non-comparison counting buckets:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>Merge Sort (Stable O(N log N)):</strong> Divide-and-conquer splitting and merging sorted halves.</li>
+            <li><strong>QuickSort (In-Place Average O(N log N)):</strong> Partitioning array around pivot elements.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Searching & Sorting')">Practice Sorting →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic 6: Trees, BST, Heaps & Tries -->
+    <div style="margin-bottom: 28px;">
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Topic 6: Trees, BST, Heaps, Priority Queues & Tries</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Binary Trees & BST Traversals</h4>
+          <p>Hierarchical tree node structures. Binary Search Trees enforce <code>Left &lt; Root &lt; Right</code> invariant:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>Traversals:</strong> DFS Preorder (cloning), Inorder (sorted output), Postorder (height/bottom-up).</li>
+            <li><strong>Lowest Common Ancestor (LCA):</strong> Finding first common ancestor node where paths split.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Trees →</button>
+        </div>
+
+        <div class="card">
+          <h4>Heaps, Priority Queues & Tries</h4>
+          <p>Complete binary trees stored in array buffers and character prefix retrieval trees:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>O(N) Heapify:</strong> Building valid Heap from unsorted array in linear time.</li>
+            <li><strong>Trie Prefix Tree:</strong> Character node arrays providing <code>O(Length)</code> word lookups.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Advanced Patterns')">Practice Heaps & Tries →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic 7: Graphs, DP & Bit Manipulation -->
+    <div style="margin-bottom: 28px;">
+      <h3 style="color: var(--hard); margin-bottom: 12px; font-size: 19px;">🔴 Topic 7: Graph Algorithms, Dynamic Programming & Bit Manipulation</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Graph Traversals & Shortest Paths</h4>
+          <p>Network structures modeled via Adjacency Lists representing vertex-edge connectivity:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>Dijkstra's Algorithm:</strong> Priority Queue shortest path in weighted graphs in <code>O((V+E) log V)</code>.</li>
+            <li><strong>Disjoint Set Union (DSU):</strong> Path compression + rank union for <code>O(α(N))</code> set connectivity.</li>
+          </ul>
+          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Trees & Graphs')">Practice Graphs →</button>
+        </div>
+
+        <div class="card">
+          <h4>Dynamic Programming & Bitwise Tricks</h4>
+          <p>Optimization technique caching overlapping subproblems and fast binary bitwise arithmetic:</p>
+          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
+            <li><strong>DP Patterns:</strong> 0/1 Knapsack, Coin Change, LCS, Edit Distance, Longest Increasing Subsequence.</li>
+            <li><strong>Bitwise Operators:</strong> Clear lowest set bit <code>n &amp; (n-1)</code> and power of two test.</li>
           </ul>
           <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Dynamic Programming')">Practice Dynamic Programming →</button>
-        </div>
-
-        <div class="card">
-          <h4>Bit Manipulation Identities</h4>
-          <p>Essential bitwise operators and fast binary integer identities:</p>
-          <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-            <li><strong>Clear Lowest Set Bit:</strong> <code>n &amp; (n - 1)</code>.</li>
-            <li><strong>Isolate Lowest Set Bit:</strong> <code>n &amp; (-n)</code>.</li>
-            <li><strong>Power of Two Test:</strong> <code>n &gt; 0 &amp;&amp; (n &amp; (n - 1)) == 0</code>.</li>
-          </ul>
-          <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Bit Manipulation →</button>
         </div>
       </div>
     </div>
