@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>DSA Problems — Modern DSA Learning Operating System & 1000 Curriculum</title>
-<meta name="description" content="Master 1000 curated Data Structures and Algorithms problems. Structured DSA Sheet, topic & pattern filters, 30-chapter textbook, multi-language solutions, interactive dashboard, and local browser progress tracking."/>
-<meta name="theme-color" content="#0b0f19"/>
+<title>DSAProblems — 1000 DSA Problems</title>
+<meta name="description" content="Practice 1000 DSA problems organized by topic, difficulty and patterns. Track your progress and prepare for coding interviews."/>
+<meta name="theme-color" content="#090d16"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
@@ -16,8 +16,8 @@
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
 
 <!-- Open Graph SEO -->
-<meta property="og:title" content="DSA Problems — Modern DSA Learning Operating System"/>
-<meta property="og:description" content="1000 curated Data Structures and Algorithms problems with verified LeetCode links, 30-chapter DSA textbook, structured DSA sheet, and multi-language solutions (C++, Java, Python, JS)."/>
+<meta property="og:title" content="DSAProblems — 1000 DSA Problems"/>
+<meta property="og:description" content="Practice 1000 DSA problems organized by topic, difficulty and patterns. Track your progress and prepare for coding interviews."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -45,739 +45,331 @@
 </head>
 <body>
 
+<!-- Ambient Grid Background -->
+<div class="ambient-grid-bg"></div>
+
 <div class="app-container">
 
   <!-- Header Topbar -->
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand-section">
-        <a href="/" class="brand-logo">DSA<span>Problems</span>.site</a>
-        <span class="brand-tag">1000 CURRICULUM</span>
-      </div>
+      <a href="/" class="brand-section" onclick="event.preventDefault(); app.navigate('/');">
+        <div class="brand-logo">DSA<span>Problems</span></div>
+        <span class="brand-tag">1000</span>
+      </a>
 
-      <!-- Quick Command Search Trigger -->
-      <div class="header-search-bar">
-        <button class="quick-search-trigger" onclick="app.openCommandPalette()" aria-label="Open Command Search Palette">
-          <span>🔍 Search 1000 problems, topics, patterns...</span>
-          <span class="shortcut-badge">Ctrl K</span>
-        </button>
-      </div>
-
-      <!-- Primary View Navigation Tabs -->
-      <nav class="nav-tabs" id="main-nav">
-        <button class="nav-btn" data-view="sheet">📑 DSA Sheet</button>
-        <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-        <button class="nav-btn" data-view="topics">🏷️ Topics</button>
-        <button class="nav-btn" data-view="patterns">🔄 Patterns</button>
-        <button class="nav-btn" data-view="companies">🏢 Companies</button>
-        <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
-        <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="main-nav">
+        <button class="nav-btn active" data-view="problems" onclick="app.navigate('/problems')">Problems</button>
+        <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">Guide</button>
+        <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress')">Progress</button>
+        <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
       </nav>
 
-      <div class="header-right">
-        <!-- Streak Indicator Badge -->
-        <div class="streak-badge" id="header-streak-badge">
-          🔥 <span id="header-streak-count">1</span>d Streak
-        </div>
+      <!-- Header Right Actions -->
+      <div class="header-actions">
+        <button class="search-trigger-btn" onclick="app.openCommandPalette()" aria-label="Quick Search">
+          <span>Search problems...</span>
+          <span class="shortcut-kbd">⌘K</span>
+        </button>
 
-        <!-- Theme Toggle Button -->
         <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Theme">
           <span id="theme-icon">🌙</span>
         </button>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-toggle-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <!-- Mobile Drawer Backdrop & Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="app.toggleMobileMenu(false)"></div>
   <aside class="mobile-drawer" id="mobile-drawer">
-    <div class="drawer-header">
-      <strong style="font-size: 16px; color: var(--text-primary);">DSAProblems Operating System</strong>
-      <button class="btn-secondary" id="drawer-close-btn" style="padding: 4px 8px;">✕</button>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <strong style="font-size: 16px;">DSAProblems</strong>
+      <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" style="padding: 2px 8px;">✕</button>
     </div>
-    <nav class="drawer-nav" id="drawer-nav">
-      <button class="nav-btn" data-view="sheet">📑 DSA Sheet</button>
-      <button class="nav-btn active" data-view="explorer">🚀 1000 Questions</button>
-      <button class="nav-btn" data-view="topics">🏷️ Topics</button>
-      <button class="nav-btn" data-view="patterns">🔄 Patterns</button>
-      <button class="nav-btn" data-view="companies">🏢 Companies</button>
-      <button class="nav-btn" data-view="bookmarks">⭐ Bookmarks</button>
-      <button class="nav-btn" data-view="daily">🎯 Daily Practice</button>
-      <button class="nav-btn" data-view="revision">🔁 Revision Mode</button>
-      <button class="nav-btn" data-view="dashboard">📊 Dashboard</button>
-      <button class="nav-btn" data-view="guide">📚 DSA Guide</button>
-      <button class="nav-btn" data-view="settings">⚙️ Settings</button>
-      <button class="nav-btn" data-view="about">💡 About Us</button>
-      <button class="nav-btn" data-view="privacy">🔒 Privacy Policy</button>
-      <button class="nav-btn" data-view="contact">✉️ Contact</button>
-    </nav>
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+      <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
+      <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">Guide</button>
+      <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
+      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
+    </div>
   </aside>
 
-  <!-- App Shell Layout Grid (Sidebar + Main Content) -->
-  <div class="app-shell-layout">
+  <!-- Main Content Container -->
+  <main class="main-content">
 
-    <!-- Desktop Sidebar Navigation -->
-    <aside class="app-sidebar">
-      <div class="sidebar-section-title">Core Learning</div>
-      <nav class="sidebar-nav">
-        <a class="sidebar-link active" data-view="sheet" href="#" onclick="event.preventDefault(); app.switchView('sheet');">
-          <span>📑 DSA Sheet</span>
-          <span class="sidebar-count-badge">1000</span>
-        </a>
-        <a class="sidebar-link" data-view="explorer" href="#" onclick="event.preventDefault(); app.switchView('explorer');">
-          <span>🚀 All Problems</span>
-          <span class="sidebar-count-badge" id="sidebar-solved-count">0/1000</span>
-        </a>
-        <a class="sidebar-link" data-view="dashboard" href="#" onclick="event.preventDefault(); app.switchView('dashboard');">
-          <span>📊 Dashboard</span>
-        </a>
-      </nav>
-
-      <div class="sidebar-section-title">Discovery & Practice</div>
-      <nav class="sidebar-nav">
-        <a class="sidebar-link" data-view="topics" href="#" onclick="event.preventDefault(); app.switchView('topics');">
-          <span>🏷️ Topics</span>
-        </a>
-        <a class="sidebar-link" data-view="patterns" href="#" onclick="event.preventDefault(); app.switchView('patterns');">
-          <span>🔄 Patterns</span>
-        </a>
-        <a class="sidebar-link" data-view="companies" href="#" onclick="event.preventDefault(); app.switchView('companies');">
-          <span>🏢 Companies</span>
-        </a>
-        <a class="sidebar-link" data-view="bookmarks" href="#" onclick="event.preventDefault(); app.switchView('bookmarks');">
-          <span>⭐ Bookmarks</span>
-          <span class="sidebar-count-badge" id="sidebar-bookmark-count">0</span>
-        </a>
-        <a class="sidebar-link" data-view="daily" href="#" onclick="event.preventDefault(); app.switchView('daily');">
-          <span>🎯 Daily Practice</span>
-        </a>
-        <a class="sidebar-link" data-view="revision" href="#" onclick="event.preventDefault(); app.switchView('revision');">
-          <span>🔁 Revision Queue</span>
-        </a>
-      </nav>
-
-      <div class="sidebar-section-title">Resources</div>
-      <nav class="sidebar-nav">
-        <a class="sidebar-link" data-view="guide" href="#" onclick="event.preventDefault(); app.switchView('guide');">
-          <span>📚 DSA Guide</span>
-        </a>
-        <a class="sidebar-link" data-view="settings" href="#" onclick="event.preventDefault(); app.switchView('settings');">
-          <span>⚙️ Settings</span>
-        </a>
-      </nav>
-    </aside>
-
-    <!-- Main Content Container -->
-    <main class="app-main">
-
-      <!-- VIEW 0: Structured DSA Sheet (Namaste DSA Sheet UX) -->
-      <section class="view-section" id="view-sheet">
-        
-        <!-- Sheet Hero Header -->
-        <div class="hero-banner">
-          <div class="hero-content">
-            <h1>Structured DSA Sheet</h1>
-            <p>1000 curated interview problems organized by difficulty, stage, and topic accordions. Complete questions step-by-step with real-time progress tracking.</p>
+    <!-- View 1: Main Problem Sheet (Homepage) -->
+    <section class="view-section active" id="view-problems">
+      
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-header">
+          <div class="hero-title-area">
+            <h1>Master DSA, One Problem at a Time.</h1>
+            <p class="hero-subtitle">A curated collection of 1000 problems organized by topic, difficulty and patterns.</p>
           </div>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="app.continueLastProblem()">▶ Continue Where I Left Off</button>
-            <button class="btn-secondary" onclick="app.switchView('daily')">🎯 Today's Practice</button>
-            <button class="btn-secondary" onclick="app.switchView('bookmarks')">⭐ Bookmarked</button>
-            <button class="btn-secondary" onclick="app.openRandomProblem()">🎲 Random Problem</button>
-          </div>
-        </div>
-
-        <!-- Filter & Search Toolbar -->
-        <div class="filter-panel">
-          <div class="search-row">
-            <div class="search-box">
-              <span class="search-icon">🔍</span>
-              <input type="text" id="sheet-search-input" class="search-input" placeholder="Filter sheet by title, topic, pattern, tag..." oninput="app.handleSheetSearch(this.value)"/>
+          <div class="hero-stats-row">
+            <div class="stat-chip">
+              <span class="stat-chip-label">Total:</span>
+              <span class="stat-chip-val">1000</span>
             </div>
-            <button class="btn-secondary" onclick="app.toggleExpandAllAccordions()" style="font-size: 12px; white-space: nowrap;" id="btn-toggle-accordions">Expand All Accordions</button>
-          </div>
-          <div class="filter-group" id="sheet-diff-filters">
-            <span class="filter-label">Difficulty:</span>
-            <button class="chip-btn active" data-val="all" onclick="app.filterSheetByDifficulty('all', this)">All</button>
-            <button class="chip-btn easy" data-val="easy" onclick="app.filterSheetByDifficulty('easy', this)">Easy</button>
-            <button class="chip-btn medium" data-val="medium" onclick="app.filterSheetByDifficulty('medium', this)">Medium</button>
-            <button class="chip-btn hard" data-val="hard" onclick="app.filterSheetByDifficulty('hard', this)">Hard</button>
-          </div>
-        </div>
-
-        <!-- Accordion Container -->
-        <div id="sheet-accordions" class="sheet-accordions-container">
-          <!-- Accordions rendered dynamically via JS -->
-        </div>
-
-      </section>
-
-      <!-- VIEW 1: All Problems Explorer Table View -->
-      <section class="view-section active" id="view-explorer">
-        
-        <!-- Hero Banner -->
-        <div class="hero-banner">
-          <div class="hero-content">
-            <h1>Master Data Structures & Algorithms</h1>
-            <p>1000 curated problems across 8 structured curriculum stages — with 100% verified LeetCode links, interactive code solutions, and a 30-chapter computer science textbook.</p>
-          </div>
-          <div class="hero-actions">
-            <button class="btn-primary" id="btn-beginner">📚 Educational DSA Guide & Chapters</button>
-            <button class="btn-secondary" id="btn-dash-quick">📊 View Progress Dashboard</button>
-          </div>
-        </div>
-
-        <!-- Filter Panel -->
-        <div class="filter-panel">
-          <div class="search-row">
-            <div class="search-box">
-              <span class="search-icon">🔍</span>
-              <input type="text" id="search-input" class="search-input" placeholder="Search 1000 problems by title, topic, pattern, tag, or #ID..."/>
+            <div class="stat-chip">
+              <span class="stat-chip-label">Solved:</span>
+              <span class="stat-chip-val" id="hero-solved-count">0</span>
             </div>
-            <button class="btn-secondary" id="btn-clear-filters" style="font-size: 12px; white-space: nowrap;">Reset Filters</button>
-          </div>
-
-          <div class="filter-group" data-filter-type="difficulty">
-            <span class="filter-label">Difficulty:</span>
-            <button class="chip-btn active" data-val="all">All (1000)</button>
-            <button class="chip-btn easy" data-val="easy">Easy (400)</button>
-            <button class="chip-btn medium" data-val="medium">Medium (500)</button>
-            <button class="chip-btn hard" data-val="hard">Hard (100)</button>
-          </div>
-
-          <div class="filter-group" data-filter-type="status">
-            <span class="filter-label">Status:</span>
-            <button class="chip-btn active" data-val="all">All</button>
-            <button class="chip-btn" data-val="unsolved">Unsolved</button>
-            <button class="chip-btn" data-val="solved">Solved ✓</button>
-            <button class="chip-btn" data-val="bookmarked">Bookmarked ★</button>
-          </div>
-
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <div>
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Curriculum Stage: </label>
-              <select id="select-stage" class="select-filter">
-                <option value="all">All 8 Stages</option>
-                <option value="Stage 0 — Programming Foundations">Stage 0 — Programming Foundations</option>
-                <option value="Stage 1 — Core Easy Patterns">Stage 1 — Core Easy Patterns</option>
-                <option value="Stage 2 — Core Data Structures">Stage 2 — Core Data Structures</option>
-                <option value="Stage 3 — Core Algorithms">Stage 3 — Core Algorithms</option>
-                <option value="Stage 4 — Advanced Trees & Graphs">Stage 4 — Advanced Trees & Graphs</option>
-                <option value="Stage 5 — Dynamic Programming">Stage 5 — Dynamic Programming</option>
-                <option value="Stage 6 — Advanced Interview Patterns">Stage 6 — Advanced Interview Patterns</option>
-                <option value="Stage 7 — Interview Mastery">Stage 7 — Interview Mastery</option>
-              </select>
-            </div>
-
-            <div>
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Topic: </label>
-              <select id="select-topic" class="select-filter">
-                <option value="all">All Topics</option>
-              </select>
-            </div>
-
-            <div>
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Pattern: </label>
-              <select id="select-pattern" class="select-filter">
-                <option value="all">All Patterns</option>
-              </select>
+            <div class="stat-chip">
+              <span class="stat-chip-label">Progress:</span>
+              <span class="stat-chip-val" id="hero-progress-pct">0.0%</span>
             </div>
           </div>
         </div>
+        <div class="hero-progress-bar-wrap">
+          <div class="hero-progress-bar-fill" id="hero-progress-bar"></div>
+        </div>
+      </div>
 
-        <!-- Results Table Header & Info -->
-        <div class="table-header-info">
-          <span id="table-results-info">Showing 1–50 of 1000 problems</span>
+      <!-- Topic Pills Tabs Bar -->
+      <div class="topic-tabs-wrapper">
+        <div class="topic-tabs-list" id="topic-pills-container">
+          <!-- Dynamic Pills rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="filter-controls-bar">
+        <div class="search-input-group">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" class="search-input" id="problem-search-input" placeholder="Search by title, ID, topic or pattern..." oninput="app.handleSearchInput(this.value)"/>
         </div>
 
-        <!-- Desktop Problem Table -->
-        <div class="problem-table-wrapper">
+        <div class="filter-selects-group">
+          <select class="filter-select" id="difficulty-filter" onchange="app.handleDifficultyFilter(this.value)">
+            <option value="all">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+
+          <select class="filter-select" id="status-filter" onchange="app.handleStatusFilter(this.value)">
+            <option value="all">All Status</option>
+            <option value="unsolved">Unsolved</option>
+            <option value="solved">Solved</option>
+            <option value="bookmarked">Bookmarked</option>
+          </select>
+
+          <select class="filter-select" id="topic-filter" onchange="app.handleTopicFilter(this.value)">
+            <option value="all">All Topics</option>
+          </select>
+
+          <select class="filter-select" id="pattern-filter" onchange="app.handlePatternFilter(this.value)">
+            <option value="all">All Patterns</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results Count Info -->
+      <div class="results-meta-row">
+        <div>Showing <span id="results-count">50</span> of <span id="total-results-count">1000</span> problems</div>
+        <button class="btn-secondary" onclick="app.resetFilters()" style="padding: 2px 8px; font-size: 12px;">Reset Filters</button>
+      </div>
+
+      <!-- Desktop Table Container -->
+      <div class="table-container">
+        <table class="problem-table">
+          <thead>
+            <tr>
+              <th class="col-num">#</th>
+              <th class="col-title">Problem</th>
+              <th class="col-diff">Difficulty</th>
+              <th class="col-topic">Topic</th>
+              <th class="col-pattern">Pattern</th>
+              <th class="col-practice">Practice</th>
+              <th class="col-status">Status</th>
+            </tr>
+          </thead>
+          <tbody id="problem-table-body">
+            <!-- Dynamic rows rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Stacked Card List (Hidden on Desktop) -->
+      <div class="mobile-card-list" id="mobile-problem-card-list">
+        <!-- Dynamic mobile cards rendered via JS -->
+      </div>
+
+      <!-- Pagination Bar -->
+      <div class="pagination-bar">
+        <div id="pagination-info">Showing 1–50 of 1000</div>
+        <div class="pagination-controls">
+          <button class="page-btn" id="btn-prev-page" onclick="app.changePage(-1)">← Previous</button>
+          <span id="page-numbers-container" style="font-weight: 600; padding: 0 4px;">Page 1</span>
+          <button class="page-btn" id="btn-next-page" onclick="app.changePage(1)">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 2: Guide / Textbook -->
+    <section class="view-section" id="view-guide">
+      <div class="guide-container">
+        <aside class="guide-sidebar">
+          <h3>DSA Guide & Reference</h3>
+          <ul class="guide-nav-list" id="guide-topics-nav">
+            <li class="guide-nav-item active" onclick="app.showGuideSection('overview')">Overview</li>
+            <li class="guide-nav-item" onclick="app.showGuideSection('ds')">Data Structures</li>
+            <li class="guide-nav-item" onclick="app.showGuideSection('patterns')">Algorithmic Patterns</li>
+          </ul>
+        </aside>
+
+        <div class="guide-content-area" id="guide-content-area">
+          <div class="guide-article">
+            <h2>Data Structures & Patterns Guide</h2>
+            <p>Comprehensive reference guide for key data structures, operations, and interview patterns.</p>
+          </div>
+          <div class="guide-card-grid" id="guide-card-grid">
+            <!-- Rendered dynamically from PATTERNS_LIBRARY & DS_ALGO_LIBRARY -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 3: Progress Dashboard -->
+    <section class="view-section" id="view-progress">
+      <div style="margin-bottom: 20px;">
+        <h2 style="font-size: 20px; font-weight: 800;">Progress Dashboard</h2>
+        <p style="color: var(--text-secondary);">Track your DSA preparation, difficulty breakdown, and topic mastery.</p>
+      </div>
+
+      <div class="progress-grid">
+        <div class="stat-box">
+          <span class="stat-box-title">Total Solved</span>
+          <span class="stat-box-number" id="dash-total-solved">0 / 1000</span>
+          <span class="stat-box-sub" id="dash-pct">0.0% Completed</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Easy Solved</span>
+          <span class="stat-box-number" style="color: var(--easy-color);" id="dash-easy-solved">0 / 400</span>
+          <span class="stat-box-sub" id="dash-easy-pct">0.0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Medium Solved</span>
+          <span class="stat-box-number" style="color: var(--medium-color);" id="dash-medium-solved">0 / 500</span>
+          <span class="stat-box-sub" id="dash-medium-pct">0.0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Hard Solved</span>
+          <span class="stat-box-number" style="color: var(--hard-color);" id="dash-hard-solved">0 / 100</span>
+          <span class="stat-box-sub" id="dash-hard-pct">0.0%</span>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
+        <h3 style="font-size: 16px; margin-bottom: 16px;">Topic Progress Breakdown</h3>
+        <div style="overflow-x: auto;">
           <table class="problem-table">
             <thead>
               <tr>
-                <th class="col-num">#</th>
-                <th>Problem Title</th>
-                <th>Difficulty</th>
-                <th>Stage & Topic</th>
-                <th>LeetCode Link</th>
-                <th>Actions</th>
+                <th>Topic</th>
+                <th>Solved</th>
+                <th>Total</th>
+                <th>Completion</th>
               </tr>
             </thead>
-            <tbody id="problem-tbody">
-              <!-- Rendered via JavaScript -->
+            <tbody id="topic-progress-tbody">
+              <!-- Dynamically populated -->
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
 
-        <!-- Mobile Card List View (For screens <= 768px) -->
-        <div class="mobile-card-list" id="mobile-problem-card-list">
-          <!-- Rendered via JavaScript -->
+    <!-- View 4: About -->
+    <section class="view-section" id="view-about">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+        <h2 style="font-size: 22px; font-weight: 800;">About DSAProblems</h2>
+        <p style="color: var(--text-secondary); line-height: 1.6;">
+          DSAProblems is a clean, premium, developer-focused problem sheet designed to help engineers master Data Structures and Algorithms systematically.
+        </p>
+        <h3 style="font-size: 16px; margin-top: 8px;">The 1000 Curriculum</h3>
+        <p style="color: var(--text-secondary); line-height: 1.6;">
+          The curriculum consists of 1000 real and verified LeetCode problems categorized into 400 Easy, 500 Medium, and 100 Hard questions covering key patterns like Two Pointers, Sliding Window, Monotonic Stack, Binary Search, Trees, Graphs, and Dynamic Programming.
+        </p>
+        <h3 style="font-size: 16px; margin-top: 8px;">Privacy & Progress Persistence</h3>
+        <p style="color: var(--text-secondary); line-height: 1.6;">
+          Your progress, notes, and bookmarks are saved entirely in your browser's local storage (`localStorage`). No account registration or server tracking is required.
+        </p>
+      </div>
+    </section>
+
+    <!-- View 5: Privacy -->
+    <section class="view-section" id="view-privacy">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+        <h2 style="font-size: 22px; font-weight: 800;">Privacy Policy</h2>
+        <p style="color: var(--text-secondary); line-height: 1.6;">
+          At DSAProblems.site, we value your privacy. We store all problem solving progress, notes, bookmarks, and user preferences locally in your Web Browser using `localStorage`.
+        </p>
+        <p style="color: var(--text-secondary); line-height: 1.6;">
+          No personal data or solving statistics are transmitted to external servers.
+        </p>
+      </div>
+    </section>
+
+    <!-- View 6: Admin Quality Control (Relocated) -->
+    <section class="view-section" id="view-admin-quality">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px;">
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Dataset Quality & Duplicate Prevention Tool</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Internal tool for dataset verification and title normalization.</p>
+        <button class="btn-primary" onclick="app.runQualityCheck()">Run Quality Inspection</button>
+        <div id="admin-quality-results" style="margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Problem Solution & Notes Detail Modal -->
+  <div class="modal-overlay" id="problem-modal" onclick="if(event.target === this) app.closeProblemModal()">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span id="modal-problem-id" style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">#001</span>
+          <h3 class="modal-title" id="modal-problem-title" style="display: inline-block; margin-left: 8px;">Problem Title</h3>
         </div>
-
-        <!-- Pagination Controls -->
-        <div class="pagination">
-          <button class="page-btn" id="page-prev">← Previous</button>
-          <span class="page-info" id="page-info">Page 1 of 20</span>
-          <button class="page-btn" id="page-next">Next →</button>
-        </div>
-
-      </section>
-
-      <!-- VIEW: Topics Grid -->
-      <section class="view-section" id="view-topics">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>🏷️ Topics Mastery Matrix</h2>
-          <p>Explore all core DSA topics, monitor topic-level completion rates, and practice specific data structures.</p>
-        </div>
-        <div class="grid-cards" id="topics-grid-container">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- VIEW: Patterns Library -->
-      <section class="view-section" id="view-patterns">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>🔄 Algorithmic Pattern Recognition Library</h2>
-          <p>Master pattern recognition ("When you see X, think of Y") with descriptions, clues, and template code for 15+ patterns.</p>
-        </div>
-        <div class="grid-cards" id="patterns-grid-container">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- VIEW: Companies Experience -->
-      <section class="view-section" id="view-companies">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>🏢 Company-Specific Interview Track</h2>
-          <p>Practice recurring DSA questions tagged by top technology companies (Google, Amazon, Meta, Microsoft, Uber, Apple, Netflix).</p>
-        </div>
-        <div class="grid-cards" id="companies-grid-container">
-          <!-- Populated by JS -->
-        </div>
-        <div id="company-questions-section" style="margin-top: 24px;"></div>
-      </section>
-
-      <!-- VIEW: Bookmarks & Revision Queue -->
-      <section class="view-section" id="view-bookmarks">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>⭐ Bookmarked Problems</h2>
-          <p>Your saved problems for targeted review and revision practice.</p>
-        </div>
-        <div id="bookmarks-list-container">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- VIEW: Daily Practice Challenge -->
-      <section class="view-section" id="view-daily">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>🎯 Daily Practice Challenge</h2>
-          <p>5 carefully selected problems for today (1 Easy, 2 Medium, 2 Pattern-based).</p>
-        </div>
-        <div class="grid-cards" id="daily-list-container">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- VIEW: Revision Mode -->
-      <section class="view-section" id="view-revision">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>🔁 Spaced Repetition Revision Queue</h2>
-          <p>Review previously solved problems due for revision to retain algorithmic concepts long-term.</p>
-        </div>
-        <div id="revision-container">
-          <!-- Populated by JS -->
-        </div>
-      </section>
-
-      <!-- VIEW: Educational DSA Guide Textbook -->
-      <section class="view-section" id="view-guide">
-        <div class="card" style="margin-bottom: 24px;">
-          <h2>📚 Data Structures & Algorithms — Exhaustive 30-Chapter Master Textbook</h2>
-          <p>A complete computer science reference manual covering memory models, mathematical proofs, internal data structure mechanics, algorithm invariants, complexity cheat sheets, and direct practice problem triggers.</p>
-        </div>
-
-        <!-- Chapters 1–2: Foundations & Asymptotic Complexity -->
-        <div style="margin-bottom: 28px;">
-          <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 19px;">⚡ Chapters 1–2: Programming Foundations & Asymptotic Complexity</h3>
-          <div class="grid-cards">
-            <div class="card">
-              <h4>Chapter 1 — Programming Foundations & Memory Architecture</h4>
-              <p>Understanding program execution, RAM layout, CPU L1/L2/L3 cache hierarchies, stack vs heap memory, and pointer references:</p>
-              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7;">
-                <li><strong>Stack Memory:</strong> Fast contiguously managed activation stack frames storing local primitive variables.</li>
-                <li><strong>Heap Memory:</strong> Dynamically allocated buffer memory accessed via pointer addresses and reference handles.</li>
-                <li><strong>Abstract Data Types (ADT):</strong> Formal mathematical specifications defining supported operations independently of underlying storage code.</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h4>Chapter 2 — Asymptotic Analysis & Master Theorem</h4>
-              <p>Formal definitions of mathematical upper, lower, and tight growth bounds as input size N approaches infinity:</p>
-              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-                <li><strong>Formal Limits:</strong> <code>f(N) = O(g(N)) ⇔ ∃ c&gt;0, N₀&gt;0 s.t. f(N) ≤ c·g(N) ∀ N ≥ N₀</code>.</li>
-                <li><strong>Master Theorem Formula:</strong> <code>T(N) = a·T(N/b) + f(N)</code> governing divide-and-conquer recursion trees.</li>
-                <li><strong>Amortized Doubling Proof:</strong> Dynamic array capacity doubling achieves <code>O(1)</code> average insertion cost.</li>
-              </ul>
-              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Foundations')">Practice Foundations →</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chapters 3–5: Arrays, Strings & Hashing -->
-        <div style="margin-bottom: 28px;">
-          <h3 style="color: var(--easy); margin-bottom: 12px; font-size: 19px;">🟢 Chapters 3–5: Arrays, Strings, Pattern Matching & Hashing</h3>
-          <div class="grid-cards">
-            <div class="card">
-              <h4>Chapters 3–4 — Arrays, Two Pointers & Subarrays</h4>
-              <p>Contiguous RAM allocation, cache spatial locality, prefix sums, difference arrays, and Kadane's algorithm:</p>
-              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-                <li><strong>Address Calculation:</strong> <code>Address(A[i]) = Base + i · ElementSize</code> for instant <code>O(1)</code> lookups.</li>
-                <li><strong>Kadane's Algorithm:</strong> Maximum contiguous subarray sum state recurrence <code>dp[i] = max(A[i], dp[i-1] + A[i])</code>.</li>
-                <li><strong>Prefix Sums:</strong> <code>P[i] = P[i-1] + A[i]</code> allowing range sum queries in <code>O(1)</code> time.</li>
-              </ul>
-              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Arrays')">Practice Arrays →</button>
-            </div>
-
-            <div class="card">
-              <h4>Chapter 5 — String Processing & KMP Matching</h4>
-              <p>Character encodings (ASCII/UTF-8), polynomial rolling hashing, KMP algorithm, and Z-algorithm:</p>
-              <ul style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-                <li><strong>KMP Algorithm:</strong> Partial match LPS table matching string patterns in <code>O(N + M)</code>.</li>
-                <li><strong>Rabin-Karp Rolling Hash:</strong> Polynomial hashing converting substrings into integers modulo prime <code>M</code>.</li>
-              </ul>
-              <button class="btn-secondary" style="font-size: 11.5px; padding: 4px 10px;" onclick="app.filterByTopicAndSwitch('Strings')">Practice Strings →</button>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- VIEW: Dashboard -->
-      <section class="view-section" id="view-dashboard">
-        <div class="card" style="margin-bottom: 20px;">
-          <h2>📊 Learner Progress Dashboard</h2>
-          <p>Track your overall progress, difficulty distribution, streak history, and smart recommendations.</p>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-header">Total Solved</div>
-            <div class="stat-value" id="dash-solved-total">0 / 1000</div>
-            <div class="progress-bar-lg">
-              <div class="progress-bar-fill" id="dash-solved-fill" style="width: 0%;"></div>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-header" style="color: var(--easy);">Easy Solved</div>
-            <div class="stat-value" id="dash-easy-count" style="color: var(--easy);">0 / 400</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-header" style="color: var(--medium);">Medium Solved</div>
-            <div class="stat-value" id="dash-med-count" style="color: var(--medium);">0 / 500</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-header" style="color: var(--hard);">Hard Solved</div>
-            <div class="stat-value" id="dash-hard-count" style="color: var(--hard);">0 / 100</div>
-          </div>
-        </div>
-
-        <div id="dash-recommendation" style="margin-bottom: 20px;"></div>
-
-        <!-- Question Quality Control & Duplicate Prevention Engine -->
-        <div class="card" style="border-top: 3px solid var(--accent); margin-bottom: 20px;">
-          <h3 style="font-size: 18px; margin-bottom: 6px; color: var(--text-primary);">🛡️ Question Quality Control & Duplicate Prevention Engine</h3>
-          <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 14px;">
-            Test new questions against our canonical dataset before adding them to prevent exact, normalized, or semantic duplicate entries.
-          </p>
-          
-          <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 14px;">
-            <div>
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Question Title</label>
-              <input type="text" id="admin-dedup-title" placeholder="e.g. Find Whether Any Number Appears More Than Once" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
-            </div>
-            <div>
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Proposed Problem Statement</label>
-              <textarea id="admin-dedup-statement" rows="2" placeholder="e.g. Given an integer array, return true if any value appears at least twice in the array..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
-            </div>
-          </div>
-
-          <button class="btn-primary" style="padding: 9px 18px; font-size: 13px;" onclick="
-            const title = document.getElementById('admin-dedup-title').value;
-            const stmt = document.getElementById('admin-dedup-statement').value;
-            const res = app.checkQuestionDuplicate(title, stmt);
-            const out = document.getElementById('admin-dedup-result');
-            out.style.display = 'block';
-            if (res.isDuplicate) {
-              out.style.background = 'rgba(239, 68, 68, 0.1)';
-              out.style.border = '1px solid var(--hard)';
-              out.innerHTML = `<strong style='color:var(--hard);'>⚠️ DUPLICATE DETECTED (${res.score}% Match)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
-            } else {
-              out.style.background = 'rgba(16, 185, 129, 0.1)';
-              out.style.border = '1px solid var(--easy)';
-              out.innerHTML = `<strong style='color:var(--easy);'>✓ QUESTION APPROVED (${res.score}% Similarity)</strong><br><span style='font-size:12.5px; color:var(--text-primary);'>Status: <strong>${res.status}</strong></span><br><span style='font-size:12px; color:var(--text-secondary);'>Reason: ${app.escapeHtml(res.reason)}</span>`;
-            }
-          ">🔍 Run Duplicate Prevention Analysis</button>
-
-          <div id="admin-dedup-result" style="display: none; margin-top: 14px; padding: 12px; border-radius: var(--radius);"></div>
-        </div>
-      </section>
-
-      <!-- VIEW: Settings & Data Management -->
-      <section class="view-section" id="view-settings">
-        <div class="card" style="margin-bottom: 24px;">
-          <h2>⚙️ Preferences & Local Data Management</h2>
-          <p>Customize your theme, language preferences, and export/import your progress JSON file.</p>
-        </div>
-
-        <div class="grid-cards" style="margin-bottom: 24px;">
-          <div class="card">
-            <h3>🎨 Theme Selection</h3>
-            <p>Choose your preferred interface appearance.</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button class="btn-secondary" onclick="app.setTheme('dark')">🌙 Dark Mode</button>
-              <button class="btn-secondary" onclick="app.setTheme('light')">☀️ Light Mode</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>💻 Default Preferred Language</h3>
-            <p>Select your primary programming language for solution code blocks.</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button class="chip-btn" onclick="app.setPreferredLanguage('cpp')">C++</button>
-              <button class="chip-btn" onclick="app.setPreferredLanguage('java')">Java</button>
-              <button class="chip-btn" onclick="app.setPreferredLanguage('python')">Python</button>
-              <button class="chip-btn" onclick="app.setPreferredLanguage('javascript')">JavaScript</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>📥 Export & Import Progress</h3>
-            <p>Backup or transfer your solved problems, bookmarks, and notes JSON file.</p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <button class="btn-primary" onclick="app.exportProgressData()">💾 Export Backup JSON</button>
-              <label class="btn-secondary" style="cursor: pointer;">
-                📂 Import Backup JSON
-                <input type="file" id="import-json-input" accept=".json" style="display: none;" onchange="app.importProgressData(event)"/>
-              </label>
-            </div>
-          </div>
-
-          <div class="card" style="border-color: var(--hard-border);">
-            <h3 style="color: var(--hard);">⚠️ Danger Zone — Reset Progress</h3>
-            <p>Clear all local progress data (solved statuses, bookmarks, notes, streak).</p>
-            <button class="btn-secondary" style="border-color: var(--hard); color: var(--hard);" onclick="app.resetAllProgress()">🗑️ Reset All Progress</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- VIEW: About Us -->
-      <section class="view-section" id="view-about">
-        <div class="card" style="margin-bottom: 24px;">
-          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">💡 About DSA Problems</h1>
-          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
-            Welcome to <strong>DSAProblems.site</strong> — a free, open, and comprehensive educational platform designed to empower software developers, computer science students, and self-taught programmers to master Data Structures and Algorithms (DSA).
-          </p>
-        </div>
-      </section>
-
-      <!-- VIEW: Privacy Policy -->
-      <section class="view-section" id="view-privacy">
-        <div class="card" style="margin-bottom: 24px;">
-          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">🔒 Privacy Policy</h1>
-          <p style="font-size: 12.5px; color: var(--text-muted);">Effective Date: August 13, 2026</p>
-          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 10px;">
-            At <strong>DSAProblems.site</strong>, user privacy is fundamental to our platform design.
-          </p>
-        </div>
-      </section>
-
-      <!-- VIEW: Contact Section -->
-      <section class="view-section" id="view-contact">
-        <div class="card" style="margin-bottom: 24px;">
-          <h1 style="font-size: 26px; margin-bottom: 8px; color: var(--text-primary);">✉️ Contact Us</h1>
-          <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">
-            Have questions, feedback, solution suggestions, or business inquiries about <strong>DSAProblems.site</strong>? Reach out to us directly!
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 style="font-size: 18px; margin-bottom: 12px; color: var(--text-primary);">📝 Send a Quick Message</h3>
-          <form id="contact-form" onsubmit="event.preventDefault(); app.handleContactFormSubmit();">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px;">
-              <div>
-                <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Name</label>
-                <input type="text" id="contact-name" required placeholder="John Doe" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
-              </div>
-              <div>
-                <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Your Email</label>
-                <input type="email" id="contact-email" required placeholder="your.email@example.com" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
-              </div>
-            </div>
-
-            <div style="margin-bottom: 14px;">
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Subject</label>
-              <input type="text" id="contact-subject" required placeholder="Feedback / Bug Report / Inquiry" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px;"/>
-            </div>
-
-            <div style="margin-bottom: 16px;">
-              <label style="font-size: 12px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Message</label>
-              <textarea id="contact-message" required rows="4" placeholder="Write your message here..." style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-primary); font-size: 13px; font-family: var(--font-sans);"></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary" style="padding: 10px 24px; font-size: 13px;">🚀 Send Message to mdhashmi955@gmail.com</button>
-          </form>
-          <div id="contact-status-msg" style="margin-top: 14px; display: none; padding: 12px; border-radius: var(--radius); font-size: 13px;"></div>
-        </div>
-      </section>
-
-    </main>
+        <button class="modal-close-btn" onclick="app.closeProblemModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-problem-body">
+        <div id="modal-code-display" style="display:none;"></div>
+        <textarea id="modal-note-input" style="display:none;"></textarea>
+      </div>
+    </div>
   </div>
 
-  <!-- Footer with Legal / Trust Links -->
-  <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--text-muted);">
-    <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap;">
-      <a href="#" id="link-about" style="color: var(--text-secondary);">About Us</a>
-      <span>•</span>
-      <a href="#" id="link-privacy" style="color: var(--text-secondary);">Privacy Policy</a>
-      <span>•</span>
-      <a href="#" id="link-terms" style="color: var(--text-secondary);">Terms of Service</a>
-      <span>•</span>
-      <a href="#" id="link-contact" style="color: var(--text-secondary);">Contact</a>
+  <!-- Command Palette Search Modal -->
+  <div class="modal-overlay" id="command-palette-modal" onclick="if(event.target === this) app.closeCommandPalette()">
+    <div class="modal-container" style="max-width: 600px;">
+      <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-color);">
+        <input type="text" class="search-input" id="cmd-palette-input" placeholder="Type to search 1000 problems..." oninput="app.handleCmdPaletteSearch(this.value)"/>
+      </div>
+      <div style="max-height: 400px; overflow-y: auto; padding: 12px 16px;" id="cmd-palette-results">
+        <!-- Dynamic search items -->
+      </div>
     </div>
-    <div>© 2026 DSAProblems.site — Curated 1000 DSA Curriculum for Technical Learning.</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="/problems" onclick="event.preventDefault(); app.navigate('/problems');">Problems</a>
+      <a href="/guide" onclick="event.preventDefault(); app.navigate('/guide');">Guide</a>
+      <a href="/progress" onclick="event.preventDefault(); app.navigate('/progress');">Progress</a>
+      <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
+      <a href="/privacy" onclick="event.preventDefault(); app.navigate('/privacy');">Privacy</a>
+    </div>
+    <div>© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
   </footer>
 
 </div>
-
-<!-- Interactive Problem Detail Modal -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal-window">
-    <div class="modal-header">
-      <div class="modal-title-area">
-        <h2>
-          <span id="modal-pid">#001</span> 
-          <span id="modal-title">Problem Title</span> 
-          <span class="badge" id="modal-diff">Easy</span>
-        </h2>
-        <div style="display: flex; gap: 8px; align-items: center; margin-top: 4px; flex-wrap: wrap;">
-          <span style="font-size: 12px; color: var(--text-secondary);" id="modal-topic">Topic • Pattern</span>
-          <div id="modal-leetcode-container"></div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 8px; align-items: center;">
-        <button class="btn-secondary" id="modal-prev-btn" title="Previous Problem">← Prev</button>
-        <button class="btn-secondary" id="modal-next-btn" title="Next Problem">Next →</button>
-        <button class="btn-secondary" id="modal-close-btn">✕ Close</button>
-      </div>
-    </div>
-
-    <div class="modal-body">
-      <!-- Quick Action Toolbar with LeetCode Button -->
-      <div style="display: flex; gap: 10px; margin-bottom: 16px; align-items: center; flex-wrap: wrap;">
-        <div id="modal-leetcode-toolbar-container"></div>
-        <button class="btn-secondary" id="modal-toggle-solved-btn" style="font-size: 12px;">Mark Solved ✓</button>
-        <button class="btn-secondary" id="modal-toggle-bookmark-btn" style="font-size: 12px;">Bookmark ★</button>
-      </div>
-
-      <!-- Learning Objective & Pattern Recognition -->
-      <div style="margin-bottom: 16px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: var(--radius); padding: 14px;">
-        <h4 style="color: var(--accent); margin-bottom: 4px;">🎯 Learning Objective</h4>
-        <p id="modal-learning-obj" style="font-size: 13px; color: var(--text-primary); margin-bottom: 8px;"></p>
-        <h4 style="color: var(--accent); margin-bottom: 4px;">💡 Pattern Recognition ("When you see X, think of Y")</h4>
-        <p id="modal-why-pattern" style="font-size: 12.5px; color: var(--text-secondary);"></p>
-      </div>
-
-      <!-- Problem & Examples -->
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">Problem Statement</h4>
-        <p id="modal-statement" style="font-size: 13px; color: var(--text-primary);"></p>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">Constraints</h4>
-        <ul id="modal-constraints" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary);"></ul>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">Examples</h4>
-        <div id="modal-examples"></div>
-      </div>
-
-      <!-- Progressive Hints -->
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">Progressive Hints</h4>
-        <div id="modal-hints"></div>
-      </div>
-
-      <!-- Solutions -->
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-          <h4>Code Solutions</h4>
-          <button class="btn-secondary" id="modal-copy-code-btn" style="font-size: 11px; padding: 3px 8px;">📋 Copy Code</button>
-        </div>
-        <div style="display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
-          <button class="chip-btn active" id="sol-tab-optimal">🔥 Optimal Approach</button>
-          <button class="chip-btn" id="sol-tab-brute">⚡ Brute Force</button>
-
-          <div style="margin-left: auto; display: flex; gap: 4px;">
-            <button class="chip-btn" id="lang-btn-cpp">C++</button>
-            <button class="chip-btn" id="lang-btn-java">Java</button>
-            <button class="chip-btn" id="lang-btn-python">Python</button>
-            <button class="chip-btn" id="lang-btn-js">JS/TS</button>
-          </div>
-        </div>
-
-        <div style="font-size: 12px; color: var(--text-secondary);" id="sol-intuition"></div>
-        <div style="font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 4px;" id="sol-complexity"></div>
-        <pre class="code-block" id="sol-code-display">// Code solution</pre>
-      </div>
-
-      <!-- Edge Cases & Common Mistakes -->
-      <div style="margin-bottom: 16px;">
-        <h4 style="margin-bottom: 6px;">⚠️ Edge Cases & Pitfalls</h4>
-        <ul id="modal-edge-cases" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary);"></ul>
-        <ul id="modal-mistakes" style="padding-left: 18px; font-size: 12px; color: var(--text-secondary); margin-top: 4px;"></ul>
-      </div>
-
-      <!-- Personal Notes -->
-      <div>
-        <h4 style="margin-bottom: 6px;">📝 Personal Notes</h4>
-        <textarea id="modal-note-area" style="width: 100%; height: 80px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px; color: var(--text-primary); font-family: var(--font-sans); font-size: 12px;" placeholder="Write your personal notes, key takeaways, or revision reminders here..."></textarea>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Global Command Search Palette Modal (Ctrl + K) -->
-<div class="modal-overlay" id="modal-command-palette">
-  <div class="modal-window command-palette-window">
-    <input type="text" id="command-search-input" class="command-search-input" placeholder="Search 1000 problems by title, topic, pattern..." oninput="app.handleCommandSearch(this.value)" autocomplete="off"/>
-    <div class="command-results-list" id="command-results-list">
-      <!-- Populated via JS -->
-    </div>
-  </div>
-</div>
-
-<!-- Legal Trust Modals -->
-<div class="modal-overlay" id="legal-modal-overlay">
-  <div class="modal-window" style="max-width: 650px;">
-    <div class="modal-header">
-      <h2 id="legal-modal-title" style="font-size: 18px; font-weight: 800;">Legal Information</h2>
-      <button class="btn-secondary" id="legal-modal-close-btn">✕ Close</button>
-    </div>
-    <div class="modal-body" id="legal-modal-body" style="font-size: 13px; line-height: 1.8; color: var(--text-secondary);">
-      <!-- Content populated dynamically -->
-    </div>
-  </div>
-</div>
-
-<!-- Floating Toast Container -->
-<div class="toast-container" id="toast-container"></div>
 
 </body>
 </html>
