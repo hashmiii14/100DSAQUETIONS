@@ -580,12 +580,15 @@ class DSAApp {
     document.getElementById('modal-topic').textContent = `${p.topic} • ${p.pattern} • ${p.phase}`;
     document.getElementById('modal-statement').textContent = p.statement;
 
+    const lcBtnHtml = p.leetcodeUrl
+      ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:12px; text-decoration:none;">Solve on LeetCode ↗</a>`
+      : `<span class="badge" style="background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--border);">Original Problem</span>`;
+
     const lcContainer = document.getElementById('modal-leetcode-container');
-    if (lcContainer) {
-      lcContainer.innerHTML = p.leetcodeUrl
-        ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn">Solve on LeetCode ↗</a>`
-        : `<span class="badge" style="background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--border);">Original Problem</span>`;
-    }
+    if (lcContainer) lcContainer.innerHTML = lcBtnHtml;
+
+    const lcToolbarContainer = document.getElementById('modal-leetcode-toolbar-container');
+    if (lcToolbarContainer) lcToolbarContainer.innerHTML = lcBtnHtml;
 
     document.getElementById('modal-constraints').innerHTML = p.constraints.map(c => `<li>${this.escapeHtml(c)}</li>`).join('');
     document.getElementById('modal-examples').innerHTML = p.examples.map((ex, idx) => `
@@ -829,14 +832,20 @@ class DSAApp {
     const secs = sec % 60;
     const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 
-    let qHtml = this.activeSimSession.problems.map((p, idx) => `
-      <div style="background: var(--bg-elevated); padding: 12px; border-radius: var(--radius); margin-bottom: 8px;">
-        <strong>Q${idx + 1}: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
-        <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
-        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(p.statement)}</div>
-        <button class="btn-secondary" style="font-size: 11px; margin-top: 6px;" onclick="app.openProblemModal(${p.id})">Open Problem Workspace →</button>
-      </div>
-    `).join('');
+    let qHtml = this.activeSimSession.problems.map((p, idx) => {
+      const lcBtnHtml = p.leetcodeUrl
+        ? `<a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="leetcode-btn" style="margin-left:8px;">Solve on LeetCode ↗</a>`
+        : '';
+      return `
+        <div style="background: var(--bg-elevated); padding: 12px; border-radius: var(--radius); margin-bottom: 8px;">
+          <strong>Q${idx + 1}: #${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
+          <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
+          ${lcBtnHtml}
+          <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">${this.escapeHtml(p.statement)}</div>
+          <button class="btn-secondary" style="font-size: 11px; margin-top: 6px;" onclick="app.openProblemModal(${p.id})">Open Problem Workspace →</button>
+        </div>
+      `;
+    }).join('');
 
     container.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
