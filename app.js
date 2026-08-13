@@ -36,6 +36,7 @@ class DSAApp {
     this.readUrlParams();
     this.bindEvents();
     this.renderNav();
+    this.switchView(this.currentView);
     this.renderExplorer();
     this.renderDashboard();
   }
@@ -46,8 +47,15 @@ class DSAApp {
     if (params.has('topic')) this.filterTopic = params.get('topic');
     if (params.has('pattern')) this.filterPattern = params.get('pattern');
     if (params.has('stage')) this.filterStage = params.get('stage');
-    if (params.has('search')) this.searchQuery = params.get('search');
-    if (params.has('view')) this.currentView = params.get('view');
+    if (params.has('search')) this.searchQuery = (params.get('search') || '').slice(0, 100);
+    
+    if (params.has('view')) {
+      const allowedViews = ['explorer', 'guide', 'dashboard', 'about', 'privacy', 'contact'];
+      const requestedView = params.get('view');
+      if (allowedViews.includes(requestedView)) {
+        this.currentView = requestedView;
+      }
+    }
 
     if (this.searchQuery) {
       const searchInp = document.getElementById('search-input');
@@ -284,10 +292,23 @@ class DSAApp {
     const subjectEl = document.getElementById('contact-subject');
     const messageEl = document.getElementById('contact-message');
 
-    const name = nameEl ? nameEl.value : '';
-    const email = emailEl ? emailEl.value : '';
-    const subject = subjectEl ? subjectEl.value : '';
-    const message = messageEl ? messageEl.value : '';
+    const name = nameEl ? nameEl.value.trim().slice(0, 100) : '';
+    const email = emailEl ? emailEl.value.trim().slice(0, 100) : '';
+    const subject = subjectEl ? subjectEl.value.trim().slice(0, 150) : '';
+    const message = messageEl ? messageEl.value.trim().slice(0, 2000) : '';
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email)) {
+      const statusMsg = document.getElementById('contact-status-msg');
+      if (statusMsg) {
+        statusMsg.style.display = 'block';
+        statusMsg.style.background = 'rgba(239, 68, 68, 0.15)';
+        statusMsg.style.color = 'var(--hard)';
+        statusMsg.style.border = '1px solid var(--hard)';
+        statusMsg.innerHTML = `<strong>⚠️ Invalid Email Address!</strong> Please enter a valid email address.`;
+      }
+      return;
+    }
 
     const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     
