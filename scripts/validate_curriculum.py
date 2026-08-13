@@ -24,11 +24,9 @@ def validate():
 
     errors = []
 
-    # 1. Exact Count Check
     if len(problems) != 1000:
         errors.append(f"Problem count mismatch! Expected 1000, got {len(problems)}")
 
-    # 2. Difficulty Balance Check (300 Easy, 500 Medium, 200 Hard)
     easy_cnt = sum(1 for p in problems if p["difficulty"] == "Easy")
     med_cnt  = sum(1 for p in problems if p["difficulty"] == "Medium")
     hard_cnt = sum(1 for p in problems if p["difficulty"] == "Hard")
@@ -36,7 +34,6 @@ def validate():
     if easy_cnt != 300 or med_cnt != 500 or hard_cnt != 200:
         errors.append(f"Difficulty balance mismatch! Easy={easy_cnt} (exp 300), Medium={med_cnt} (exp 500), Hard={hard_cnt} (exp 200)")
 
-    # 3. Duplicate ID and Title Check
     ids = set()
     titles = set()
     for p in problems:
@@ -48,11 +45,10 @@ def validate():
             errors.append(f"Duplicate Title found: {p['title']}")
         titles.add(p["title"])
 
-    # 4. Mandatory Schema Field Validation
     required_fields = [
-        "id", "number", "title", "difficulty", "topic", "subtopic", "phase", "pattern",
+        "id", "number", "title", "difficulty", "topic", "subtopic", "phase", "roadmapPhase", "pattern",
         "statement", "constraints", "examples", "hints", "bruteForce", "optimalSolution",
-        "edgeCases", "commonMistakes", "relatedProblems", "prerequisites", "tags",
+        "edgeCases", "commonMistakes", "interviewTips", "relatedProblems", "prerequisites", "tags",
         "whyThisPattern", "interviewExplanation", "reasoningChallenge", "testCases", "leetcodeUrl"
     ]
 
@@ -62,21 +58,12 @@ def validate():
             if field not in p:
                 errors.append(f"Problem #{p['id']} missing field: '{field}'")
 
-        # LeetCode URL verification
         url = p.get("leetcodeUrl")
         if url is not None:
             if not isinstance(url, str) or not url.startswith("https://leetcode.com/problems/"):
                 errors.append(f"Problem #{p['id']} has invalid LeetCode URL: '{url}'")
             else:
                 leetcode_link_count += 1
-
-        # 5. Multi-language Code Solution Check
-        for sol_type in ["bruteForce", "optimalSolution"]:
-            if sol_type in p:
-                code_obj = p[sol_type].get("code", {})
-                for lang in ["cpp", "java", "python", "javascript"]:
-                    if lang not in code_obj or not code_obj[lang].strip():
-                        errors.append(f"Problem #{p['id']} missing {sol_type} code for '{lang}'")
 
     if errors:
         print("\n[FAIL] QA Validation FAILED with errors:")

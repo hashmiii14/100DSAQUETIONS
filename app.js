@@ -19,8 +19,8 @@ class DSAApp {
     this.filterDifficulty = 'all';
     this.filterTopic = 'all';
     this.filterPattern = 'all';
+    this.filterPhase = 'all';
     this.filterStatus = 'all';
-    this.filterTrack = 'all';
 
     // Pagination
     this.currentPage = 1;
@@ -45,17 +45,8 @@ class DSAApp {
     this.renderExplorer();
     this.renderRoadmap();
     this.renderPatterns();
-    this.renderDsAlgo();
-    this.renderBigO();
-    this.renderRevision();
     this.renderDashboard();
     this.renderInterviewMode();
-    this.renderQA();
-
-    // Set theme
-    if (this.state) {
-      document.documentElement.setAttribute('data-theme', this.state.theme || 'light');
-    }
   }
 
   readUrlParams() {
@@ -63,6 +54,7 @@ class DSAApp {
     if (params.has('difficulty')) this.filterDifficulty = params.get('difficulty');
     if (params.has('topic')) this.filterTopic = params.get('topic');
     if (params.has('pattern')) this.filterPattern = params.get('pattern');
+    if (params.has('phase')) this.filterPhase = params.get('phase');
     if (params.has('search')) this.searchQuery = params.get('search');
     if (params.has('view')) this.currentView = params.get('view');
 
@@ -77,6 +69,7 @@ class DSAApp {
     if (this.filterDifficulty !== 'all') params.set('difficulty', this.filterDifficulty);
     if (this.filterTopic !== 'all') params.set('topic', this.filterTopic);
     if (this.filterPattern !== 'all') params.set('pattern', this.filterPattern);
+    if (this.filterPhase !== 'all') params.set('phase', this.filterPhase);
     if (this.searchQuery) params.set('search', this.searchQuery);
     if (this.currentView !== 'explorer') params.set('view', this.currentView);
 
@@ -85,7 +78,7 @@ class DSAApp {
   }
 
   bindEvents() {
-    // Nav buttons (Desktop & Mobile Drawer)
+    // Nav buttons
     document.querySelectorAll('.nav-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const view = e.currentTarget.dataset.view;
@@ -99,39 +92,16 @@ class DSAApp {
     const drawerCloseBtn = document.getElementById('drawer-close-btn');
     const backdrop = document.getElementById('drawer-backdrop');
 
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => this.openMobileDrawer());
-    }
-    if (drawerCloseBtn) {
-      drawerCloseBtn.addEventListener('click', () => this.closeMobileDrawer());
-    }
-    if (backdrop) {
-      backdrop.addEventListener('click', () => this.closeMobileDrawer());
-    }
-
-    // Theme toggle
-    const themeBtn = document.getElementById('theme-toggle-btn');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        const newTheme = this.state.theme === 'dark' ? 'light' : 'dark';
-        this.state.setTheme(newTheme);
-      });
-    }
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', () => this.openMobileDrawer());
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', () => this.closeMobileDrawer());
+    if (backdrop) backdrop.addEventListener('click', () => this.closeMobileDrawer());
 
     // Hero CTAs
     const beginnerBtn = document.getElementById('btn-beginner');
-    if (beginnerBtn) {
-      beginnerBtn.addEventListener('click', () => {
-        this.switchView('roadmap');
-      });
-    }
+    if (beginnerBtn) beginnerBtn.addEventListener('click', () => this.switchView('roadmap'));
 
     const interviewBtn = document.getElementById('btn-interview-ready');
-    if (interviewBtn) {
-      interviewBtn.addEventListener('click', () => {
-        this.switchView('interview');
-      });
-    }
+    if (interviewBtn) interviewBtn.addEventListener('click', () => this.switchView('interview'));
 
     // Search input
     const searchInp = document.getElementById('search-input');
@@ -183,20 +153,19 @@ class DSAApp {
       });
     }
 
-    const trackSelect = document.getElementById('select-track');
-    if (trackSelect) {
-      trackSelect.addEventListener('change', (e) => {
-        this.filterTrack = e.target.value;
+    const phaseSelect = document.getElementById('select-phase');
+    if (phaseSelect) {
+      phaseSelect.addEventListener('change', (e) => {
+        this.filterPhase = e.target.value;
         this.currentPage = 1;
+        this.updateUrlParams();
         this.renderExplorer();
       });
     }
 
     const clearBtn = document.getElementById('btn-clear-filters');
     if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        this.resetFilters();
-      });
+      clearBtn.addEventListener('click', () => this.resetFilters());
     }
 
     // Modal Events
@@ -210,11 +179,11 @@ class DSAApp {
       });
     }
 
-    // Modal Keyboard Navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closeModal();
         this.closeMobileDrawer();
+        this.closeLegalModal();
       }
     });
 
@@ -295,6 +264,30 @@ class DSAApp {
     if (startSimBtn) {
       startSimBtn.addEventListener('click', () => this.startMockInterviewSession());
     }
+
+    // Legal / Trust Links
+    const linkAbout = document.getElementById('link-about');
+    const linkPrivacy = document.getElementById('link-privacy');
+    const linkTerms = document.getElementById('link-terms');
+    const linkContact = document.getElementById('link-contact');
+    const legalCloseBtn = document.getElementById('legal-modal-close-btn');
+
+    if (linkAbout) linkAbout.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('About Us', '<p><strong>DSAProblems.site</strong> is an interview-focused Data Structures and Algorithms learning platform. Built for software engineers and computer science students preparing for technical coding interviews at product companies and top tech firms.</p><p style="margin-top:10px;">Our 1000-question curriculum is structured progressively across 20 roadmap phases, pattern recognition guides, and multi-language solutions.</p>'); });
+    if (linkPrivacy) linkPrivacy.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Privacy Policy', '<p><strong>Privacy Policy:</strong> DSAProblems.site respects user privacy. Progress data, solved questions, bookmarks, and notes are stored locally in your browser storage (localStorage). We do not collect or sell personal identifying data.</p><p style="margin-top:10px;">Third-party services like Google AdSense may use cookies to serve relevant ads based on browsing visits. Users may manage ad settings directly through Google Ads settings.</p>'); });
+    if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational and interview preparation purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
+    if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Contact Support', '<p><strong>Contact Us:</strong> Have feedback, suggestions, or technical questions about DSAProblems.site?</p><p style="margin-top:10px;">Reach out via GitHub Repository issue tracker: <a href="https://github.com/hashmiii14/100DSAQUETIONS" target="_blank" rel="noopener noreferrer">github.com/hashmiii14/100DSAQUETIONS</a></p>'); });
+    if (legalCloseBtn) legalCloseBtn.addEventListener('click', () => this.closeLegalModal());
+  }
+
+  openLegalModal(title, bodyHtml) {
+    document.getElementById('legal-modal-title').textContent = title;
+    document.getElementById('legal-modal-body').innerHTML = bodyHtml;
+    document.getElementById('legal-modal-overlay').classList.add('open');
+  }
+
+  closeLegalModal() {
+    const overlay = document.getElementById('legal-modal-overlay');
+    if (overlay) overlay.classList.remove('open');
   }
 
   openMobileDrawer() {
@@ -312,8 +305,8 @@ class DSAApp {
     this.filterDifficulty = 'all';
     this.filterTopic = 'all';
     this.filterPattern = 'all';
+    this.filterPhase = 'all';
     this.filterStatus = 'all';
-    this.filterTrack = 'all';
 
     const searchInp = document.getElementById('search-input');
     if (searchInp) searchInp.value = '';
@@ -328,8 +321,8 @@ class DSAApp {
     const patternSelect = document.getElementById('select-pattern');
     if (patternSelect) patternSelect.value = 'all';
 
-    const trackSelect = document.getElementById('select-track');
-    if (trackSelect) trackSelect.value = 'all';
+    const phaseSelect = document.getElementById('select-phase');
+    if (phaseSelect) phaseSelect.value = 'all';
 
     this.currentPage = 1;
     this.updateUrlParams();
@@ -353,7 +346,6 @@ class DSAApp {
     this.updateUrlParams();
 
     if (viewName === 'dashboard') this.renderDashboard();
-    if (viewName === 'revision') this.renderRevision();
     if (viewName === 'roadmap') this.renderRoadmap();
     if (viewName === 'interview') this.renderInterviewMode();
   }
@@ -383,19 +375,14 @@ class DSAApp {
         if (!p.pattern.toLowerCase().includes(this.filterPattern.toLowerCase())) return false;
       }
 
+      if (this.filterPhase !== 'all') {
+        if (p.phase !== this.filterPhase && p.roadmapPhase !== this.filterPhase) return false;
+      }
+
       if (this.filterStatus !== 'all') {
         if (this.filterStatus === 'solved' && !this.state.done.has(p.id)) return false;
         if (this.filterStatus === 'unsolved' && this.state.done.has(p.id)) return false;
         if (this.filterStatus === 'bookmarked' && !this.state.bookmarked.has(p.id)) return false;
-        if (this.filterStatus === 'revision') {
-          const due = this.state.getDueRevisionProblems();
-          if (!due.includes(p.id)) return false;
-        }
-      }
-
-      if (this.filterTrack !== 'all') {
-        const track = this.tracks.find(t => t.id === this.filterTrack);
-        if (track && !track.problemIds.includes(p.id)) return false;
       }
 
       return true;
@@ -427,14 +414,15 @@ class DSAApp {
       });
     }
 
-    const trackSelect = document.getElementById('select-track');
-    if (trackSelect && trackSelect.children.length <= 1) {
-      this.tracks.forEach(tr => {
+    const phaseSelect = document.getElementById('select-phase');
+    if (phaseSelect && phaseSelect.children.length <= 1) {
+      const phases = [...new Set(this.problems.map(p => p.phase))];
+      phases.forEach(ph => {
         const opt = document.createElement('option');
-        opt.value = tr.id;
-        opt.textContent = tr.name;
-        if (this.filterTrack === tr.id) opt.selected = true;
-        trackSelect.appendChild(opt);
+        opt.value = ph;
+        opt.textContent = ph;
+        if (this.filterPhase === ph) opt.selected = true;
+        phaseSelect.appendChild(opt);
       });
     }
 
@@ -456,7 +444,8 @@ class DSAApp {
 
     const infoEl = document.getElementById('table-results-info');
     if (infoEl) {
-      infoEl.textContent = `Showing ${totalFiltered === 0 ? 0 : startIdx + 1}–${Math.min(startIdx + this.pageSize, totalFiltered)} of ${totalFiltered} problems (${this.problems.length} total)`;
+      const filterLabel = this.filterPhase !== 'all' ? ` (Filtered by ${this.filterPhase})` : '';
+      infoEl.textContent = `Showing ${totalFiltered === 0 ? 0 : startIdx + 1}–${Math.min(startIdx + this.pageSize, totalFiltered)} of ${totalFiltered} problems${filterLabel}`;
     }
 
     const tbody = document.getElementById('problem-tbody');
@@ -469,7 +458,6 @@ class DSAApp {
       return;
     }
 
-    // Render Table Rows
     let tableHtml = '';
     let mobileHtml = '';
 
@@ -493,7 +481,7 @@ class DSAApp {
           <span class="topic-tag">${this.escapeHtml(p.topic)}</span>
           <span class="pattern-tag">${this.escapeHtml(p.pattern)}</span>
         </td>
-        <td style="color: var(--text-muted); font-size: 12px;">${p.estimatedTime}m</td>
+        <td style="font-size: 11px; color: var(--text-muted);">${this.escapeHtml(p.phase.split(' — ')[0])}</td>
         <td>${leetcodeLinkHtml}</td>
         <td style="display: flex; gap: 10px; align-items: center;">
           <input type="checkbox" class="action-cb" ${isDone ? 'checked' : ''} onchange="app.toggleDone(${p.id}, event)" title="Mark Solved">
@@ -501,7 +489,6 @@ class DSAApp {
         </td>
       </tr>`;
 
-      // Mobile Card HTML
       mobileHtml += `<div class="mobile-q-card ${isDone ? 'done' : ''}">
         <div class="mobile-q-top">
           <span style="font-family:var(--font-mono); font-weight:700; color:var(--text-muted);">#${numStr}</span>
@@ -590,10 +577,9 @@ class DSAApp {
     diffBadge.className = `badge badge-${p.difficulty.toLowerCase()}`;
     diffBadge.textContent = p.difficulty;
 
-    document.getElementById('modal-topic').textContent = `${p.topic} • ${p.pattern}`;
+    document.getElementById('modal-topic').textContent = `${p.topic} • ${p.pattern} • ${p.phase}`;
     document.getElementById('modal-statement').textContent = p.statement;
 
-    // LeetCode CTA
     const lcContainer = document.getElementById('modal-leetcode-container');
     if (lcContainer) {
       lcContainer.innerHTML = p.leetcodeUrl
@@ -601,7 +587,6 @@ class DSAApp {
         : `<span class="badge" style="background:var(--bg-elevated); color:var(--text-muted); border:1px solid var(--border);">Original Problem</span>`;
     }
 
-    // Constraints & Examples
     document.getElementById('modal-constraints').innerHTML = p.constraints.map(c => `<li>${this.escapeHtml(c)}</li>`).join('');
     document.getElementById('modal-examples').innerHTML = p.examples.map((ex, idx) => `
       <div style="background: var(--bg-elevated); border-radius: var(--radius); padding: 10px; margin-top: 6px;">
@@ -612,7 +597,6 @@ class DSAApp {
       </div>
     `).join('');
 
-    // Progressive Hints
     document.getElementById('modal-hints').innerHTML = p.hints.map((h, idx) => `
       <details class="hint-box">
         <summary style="font-weight: 600; cursor: pointer; color: var(--accent);">💡 Hint ${idx + 1} (Click to Reveal)</summary>
@@ -623,8 +607,9 @@ class DSAApp {
     this.updateModalSolutionView();
     this.updateModalActions();
 
-    document.getElementById('modal-why-pattern').textContent = p.whyThisPattern;
-    document.getElementById('modal-interview-exp').textContent = p.interviewExplanation;
+    const tipEl = document.getElementById('modal-interview-tip');
+    if (tipEl) tipEl.textContent = p.interviewTips || p.whyThisPattern;
+
     document.getElementById('modal-edge-cases').innerHTML = p.edgeCases.map(e => `<li>${this.escapeHtml(e)}</li>`).join('');
     document.getElementById('modal-mistakes').innerHTML = p.commonMistakes.map(m => `<li>${this.escapeHtml(m)}</li>`).join('');
 
@@ -690,27 +675,26 @@ class DSAApp {
     if (!roadmapContainer) return;
 
     const phases = [
-      "Phase 0 — Programming & Problem Solving Foundations",
-      "Phase 1 — Arrays & Strings",
-      "Phase 2 — Hashing",
-      "Phase 3 — Two Pointers",
-      "Phase 4 — Sliding Window",
-      "Phase 5 — Searching & Binary Search",
-      "Phase 6 — Sorting & Custom Comparators",
-      "Phase 7 — Linked Lists",
-      "Phase 8 — Stack & Queue",
-      "Phase 9 — Recursion & Backtracking",
-      "Phase 10 — Trees & BST",
-      "Phase 11 — Heap / Priority Queue",
-      "Phase 12 — Greedy Algorithms",
-      "Phase 13 — Graph Algorithms",
-      "Phase 14 — Trie",
-      "Phase 15 — Dynamic Programming",
-      "Phase 16 — Advanced Data Structures",
-      "Phase 17 — Math & Bit Manipulation",
-      "Phase 18 — Mixed Interview Problems",
-      "Phase 19 — FAANG & Product Company Level",
-      "Phase 20 — Interview Simulation"
+      "Phase 1 — Programming & Problem Solving Foundations",
+      "Phase 2 — Arrays & Strings",
+      "Phase 3 — Hashing",
+      "Phase 4 — Two Pointers",
+      "Phase 5 — Sliding Window",
+      "Phase 6 — Searching & Binary Search",
+      "Phase 7 — Sorting & Custom Comparators",
+      "Phase 8 — Linked Lists",
+      "Phase 9 — Stack & Queue",
+      "Phase 10 — Recursion & Backtracking",
+      "Phase 11 — Trees & BST",
+      "Phase 12 — Heap / Priority Queue",
+      "Phase 13 — Greedy Algorithms",
+      "Phase 14 — Graph Algorithms",
+      "Phase 15 — Trie",
+      "Phase 16 — Dynamic Programming",
+      "Phase 17 — Advanced Data Structures",
+      "Phase 18 — Math & Bit Manipulation",
+      "Phase 19 — Mixed Interview Problems",
+      "Phase 20 — FAANG & Product Level"
     ];
 
     let html = '';
@@ -727,7 +711,7 @@ class DSAApp {
         <div style="height: 6px; background: var(--bg-elevated); border-radius: 99px; overflow: hidden; margin-bottom: 10px;">
           <div style="width: ${pct}%; height: 100%; background: var(--accent); transition: width 0.3s;"></div>
         </div>
-        <button class="btn-secondary" style="font-size: 12px;" onclick="app.filterByPhase('${this.escapeHtml(ph)}')">Explore Phase Problems →</button>
+        <button class="btn-secondary" style="font-size: 12px;" onclick="app.filterByPhase('${this.escapeHtml(ph)}')">View Phase Questions (${phaseProblems.length}) →</button>
       </div>`;
     });
 
@@ -736,7 +720,9 @@ class DSAApp {
 
   filterByPhase(phaseName) {
     this.resetFilters();
-    this.searchQuery = phaseName.split(' — ')[0];
+    this.filterPhase = phaseName;
+    const phaseSelect = document.getElementById('select-phase');
+    if (phaseSelect) phaseSelect.value = phaseName;
     this.switchView('explorer');
   }
 
@@ -765,96 +751,10 @@ class DSAApp {
 
   filterByPatternName(pname) {
     this.resetFilters();
-    this.searchQuery = pname;
+    this.filterPattern = pname;
+    const patternSelect = document.getElementById('select-pattern');
+    if (patternSelect) patternSelect.value = pname;
     this.switchView('explorer');
-  }
-
-  renderDsAlgo() {
-    const dsContainer = document.getElementById('ds-library-list');
-    const algoContainer = document.getElementById('algo-library-list');
-
-    if (dsContainer) {
-      dsContainer.innerHTML = this.dsAlgo.dataStructures.map(ds => `
-        <div class="card">
-          <h3>${this.escapeHtml(ds.name)}</h3>
-          <p>${this.escapeHtml(ds.description)}</p>
-          <div style="font-size: 12px; font-family: var(--font-mono); color: var(--accent); margin-bottom: 6px;">${this.escapeHtml(ds.operations)}</div>
-          <div style="font-size: 12px; color: var(--text-secondary);"><strong>When to use:</strong> ${this.escapeHtml(ds.whenToUse)}</div>
-        </div>
-      `).join('');
-    }
-
-    if (algoContainer) {
-      algoContainer.innerHTML = this.dsAlgo.algorithms.map(al => `
-        <div class="card">
-          <h3>${this.escapeHtml(al.name)}</h3>
-          <div style="font-size: 12px; color: var(--accent); font-family: var(--font-mono);">${this.escapeHtml(al.complexity)}</div>
-          <span class="badge badge-easy" style="margin-top: 8px;">${this.escapeHtml(al.category)}</span>
-        </div>
-      `).join('');
-    }
-  }
-
-  renderBigO() {
-    const container = document.getElementById('big-o-container');
-    if (!container) return;
-
-    container.innerHTML = `
-      <div class="card" style="margin-bottom: 16px;">
-        <h3>Constraint -> Complexity Heuristics</h3>
-        <p>Use these rules of thumb to decide your optimal algorithm before coding.</p>
-        <div style="overflow-x: auto;">
-          <table class="problem-table" style="margin-top: 10px;">
-            <thead>
-              <tr><th>Constraint Size (N)</th><th>Target Time Complexity</th><th>Typical Algorithm Choice</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>N <= 10 to 20</td><td>O(2^N) or O(N!)</td><td>Backtracking, Bitmask DP, Permutations</td></tr>
-              <tr><td>N <= 100</td><td>O(N^4) or O(N^3)</td><td>Floyd-Warshall, Matrix Multiplication, 3D DP</td></tr>
-              <tr><td>N <= 1,000</td><td>O(N^2)</td><td>Nested Loops, Grid DP, All-Pairs Shortest Path</td></tr>
-              <tr><td>N <= 100,000</td><td>O(N log N) or O(N)</td><td>Sorting, Binary Search, Two Pointers, Sliding Window, Heap</td></tr>
-              <tr><td>N <= 1,000,000</td><td>O(N) or O(log N)</td><td>Linear Traversal, Prefix Sum, Binary Search, Bit Manipulation</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
-  }
-
-  renderRevision() {
-    const dueIds = this.state.getDueRevisionProblems();
-    const container = document.getElementById('revision-queue-list');
-    if (!container) return;
-
-    if (dueIds.length === 0) {
-      container.innerHTML = `<div class="card" style="text-align: center; padding: 30px;"><p>No revision items due right now! Great job staying updated.</p></div>`;
-      return;
-    }
-
-    let html = '';
-    dueIds.forEach(id => {
-      const p = this.problems.find(item => item.id === id);
-      if (!p) return;
-
-      html += `<div class="card" style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-        <div>
-          <strong>#${String(p.id).padStart(3, '0')} ${this.escapeHtml(p.title)}</strong>
-          <span class="badge badge-${p.difficulty.toLowerCase()}" style="margin-left: 8px;">${p.difficulty}</span>
-        </div>
-        <div style="display: flex; gap: 6px;">
-          <button class="btn-primary" style="font-size: 11px; padding: 4px 8px;" onclick="app.updateRevision(${p.id}, 'know')">I Know This (+3d)</button>
-          <button class="btn-secondary" style="font-size: 11px; padding: 4px 8px;" onclick="app.updateRevision(${p.id}, 'review')">Review (+1d)</button>
-        </div>
-      </div>`;
-    });
-
-    container.innerHTML = html;
-  }
-
-  updateRevision(pid, rating) {
-    this.state.updateRevisionStatus(pid, rating);
-    this.renderRevision();
-    this.renderDashboard();
   }
 
   renderDashboard() {
@@ -887,17 +787,8 @@ class DSAApp {
   }
 
   renderInterviewMode() {
-    const tracksContainer = document.getElementById('interview-tracks-list');
-    if (!tracksContainer) return;
-
-    tracksContainer.innerHTML = this.tracks.map(tr => `
-      <div class="card">
-        <h3>${this.escapeHtml(tr.name)}</h3>
-        <p>${this.escapeHtml(tr.description)}</p>
-        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Target Role: ${this.escapeHtml(tr.targetRole)}</div>
-        <button class="btn-secondary" style="font-size: 12px;" onclick="app.selectTrack('${tr.id}')">Start Track (${tr.problemIds.length} Qs) →</button>
-      </div>
-    `).join('');
+    const container = document.getElementById('sim-active-container');
+    if (!container) return;
   }
 
   startMockInterviewSession() {
@@ -969,34 +860,6 @@ class DSAApp {
         <p style="margin-top: 6px; font-size: 13px;">Session Score: <strong>${results.scorePct}%</strong> (${results.attemptedCount} of ${results.totalCount} completed)</p>
         <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Time Elapsed: ${Math.floor(results.timeSpentSeconds / 60)} minutes ${results.timeSpentSeconds % 60} seconds</p>
         <div style="margin-top: 10px; font-weight: 600; font-size: 13px;">${results.recommendation}</div>
-      </div>
-    `;
-  }
-
-  selectTrack(trackId) {
-    this.resetFilters();
-    this.filterTrack = trackId;
-    const trackSelect = document.getElementById('select-track');
-    if (trackSelect) trackSelect.value = trackId;
-    this.switchView('explorer');
-  }
-
-  renderQA() {
-    const qaContainer = document.getElementById('qa-admin-container');
-    if (!qaContainer) return;
-
-    const leetcodeCount = this.problems.filter(p => p.leetcodeUrl !== null).length;
-
-    qaContainer.innerHTML = `
-      <div class="card">
-        <h3>Platform Quality Control & Dataset Metrics</h3>
-        <ul style="padding-left: 20px; font-size: 13px; line-height: 1.8;">
-          <li>Total Curated Problems: <strong>1000</strong></li>
-          <li>Difficulty Distribution: <strong>300 Easy, 500 Medium, 200 Hard</strong></li>
-          <li>Verified LeetCode Links: <strong>${leetcodeCount} Verified Links</strong></li>
-          <li>Multi-language Solutions: <strong>1000 C++, 1000 Java, 1000 Python, 1000 JavaScript</strong></li>
-          <li>Validation Status: <strong>PASS (All 1000 schema & link tests passed)</strong></li>
-        </ul>
       </div>
     `;
   }

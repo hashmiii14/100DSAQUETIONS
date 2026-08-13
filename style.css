@@ -1,8 +1,8 @@
-/* ── Reset & CSS Variables ───────────────────────────────────────── */
+/* ── Reset & Light Theme Design System ───────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Light Theme (Default) */
+  /* Clean White/Light Theme Defaults */
   --bg: #f8fafc;
   --bg-surface: #ffffff;
   --bg-elevated: #f1f5f9;
@@ -40,37 +40,6 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-[data-theme="dark"] {
-  --bg: #0d1117;
-  --bg-surface: #161b22;
-  --bg-elevated: #21262d;
-  --bg-hover: #30363d;
-  --border: #30363d;
-  --border-muted: #21262d;
-
-  --text-primary: #f0f6fc;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
-
-  --accent: #58a6ff;
-  --accent-hover: #79c0ff;
-  --accent-bg: rgba(88, 166, 255, 0.12);
-
-  --easy: #3fb950;
-  --easy-bg: rgba(63, 185, 80, 0.12);
-  --easy-border: rgba(63, 185, 80, 0.3);
-
-  --medium: #d29922;
-  --medium-bg: rgba(210, 153, 34, 0.12);
-  --medium-border: rgba(210, 153, 34, 0.3);
-
-  --hard: #f85149;
-  --hard-bg: rgba(248, 81, 73, 0.12);
-  --hard-border: rgba(248, 81, 73, 0.3);
-
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 html, body {
@@ -198,7 +167,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   border-radius: 99px;
 }
 
-.theme-toggle, .mobile-toggle-btn {
+.mobile-toggle-btn {
   min-width: 40px;
   min-height: 40px;
   padding: 8px 12px;
@@ -206,18 +175,14 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-size: 16px;
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
 
-.theme-toggle:hover, .mobile-toggle-btn:hover {
+.mobile-toggle-btn:hover {
   background: var(--bg-elevated);
   color: var(--text-primary);
-}
-
-.mobile-toggle-btn {
-  display: none;
 }
 
 /* ── Mobile Navigation Drawer ───────────────────────────────────── */
@@ -586,7 +551,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   color: #f59e0b;
 }
 
-/* ── Mobile Question Card (shown on max-width 768px) ──────────────── */
+/* ── Mobile Question Card ────────────────────────────────────────── */
 .mobile-card-list {
   display: none;
   flex-direction: column;
