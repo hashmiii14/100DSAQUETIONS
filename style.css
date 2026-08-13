@@ -871,17 +871,18 @@ html, body {
   cursor: not-allowed;
 }
 
-/* ── DSA Guide Layout ───────────────────────────────────────────────────────── */
+/* ── DSA Guide Responsive Layout (Phone, Tablet, Laptop) ─────────────────────── */
 .guide-container {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 24px;
   align-items: start;
+  width: 100%;
 }
 
 .guide-sidebar {
   position: sticky;
-  top: calc(var(--header-height) + 24px);
+  top: calc(var(--header-height) + 20px);
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -889,7 +890,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
 }
 
@@ -911,7 +912,7 @@ html, body {
 .guide-nav-item {
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   font-size: 13px;
   cursor: pointer;
@@ -924,9 +925,23 @@ html, body {
   font-weight: 600;
 }
 
-.guide-mobile-selector {
+.guide-mobile-nav-wrap {
   display: none;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 16px;
+  width: 100%;
+}
+
+.guide-mobile-selector {
+  width: 100%;
+  font-weight: 600;
+  padding: 10px 12px;
+}
+
+.guide-mobile-pills-wrap {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .guide-content-area {
@@ -936,7 +951,13 @@ html, body {
   padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.guide-article {
   width: 100%;
 }
 
@@ -945,6 +966,8 @@ html, body {
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 12px;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
 .guide-article h3 {
@@ -952,6 +975,7 @@ html, body {
   font-weight: 700;
   color: var(--text-primary);
   margin: 16px 0 8px;
+  word-break: break-word;
 }
 
 .guide-article p {
@@ -959,6 +983,7 @@ html, body {
   font-size: 14.5px;
   line-height: 1.7;
   margin-bottom: 12px;
+  word-break: break-word;
 }
 
 .guide-article ul {
@@ -984,6 +1009,7 @@ html, body {
   overflow-x: auto;
   max-width: 100%;
   white-space: pre;
+  box-sizing: border-box;
 }
 
 [data-theme="light"] .code-block-wrap {
@@ -999,60 +1025,22 @@ html, body {
   padding-top: 16px;
   border-top: 1px solid var(--border-color);
   gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* ── Info Cards & Laptop Visibility ──────────────────────────────────────────── */
+/* ── Info Cards & General Layout ─────────────────────────────────────────────── */
 .info-card-container {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 32px;
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-}
-
-/* ── Enhanced Contact Section Styles ────────────────────────────────────────── */
-.contact-categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
-  margin: 12px 0;
-}
-
-.contact-cat-card {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 150ms ease;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.contact-cat-card:hover, .contact-cat-card.active {
-  border-color: var(--accent-primary);
-  background: var(--accent-light);
-}
-
-.contact-cat-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.contact-cat-desc {
-  font-size: 12px;
-  color: var(--text-secondary);
+  gap: 16px;
+  box-sizing: border-box;
 }
 
 .toast-notification {
@@ -1115,7 +1103,7 @@ html, body {
   color: var(--text-secondary);
 }
 
-/* ── Modal / Overlay Component ───────────────────────────────────────────────── */
+/* ── Modal Component ─────────────────────────────────────────────────────────── */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -1198,7 +1186,7 @@ html, body {
   color: var(--accent-primary);
 }
 
-/* ── Buttons & General Components ────────────────────────────────────────────── */
+/* ── Buttons & Components ────────────────────────────────────────────────────── */
 .btn-primary {
   background: var(--accent-primary);
   color: #ffffff;
@@ -1278,7 +1266,14 @@ html, body {
   color: var(--accent-primary);
 }
 
-/* ── Responsive Breakpoints ──────────────────────────────────────────────────── */
+/* ── Responsive Breakpoints (Phone, Tablet, Laptop) ──────────────────────────── */
+@media (max-width: 1024px) {
+  .guide-container {
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 900px) {
   .guide-container {
     grid-template-columns: 1fr;
@@ -1286,8 +1281,8 @@ html, body {
   .guide-sidebar {
     display: none;
   }
-  .guide-mobile-selector {
-    display: block;
+  .guide-mobile-nav-wrap {
+    display: flex;
   }
 }
 
@@ -1310,5 +1305,36 @@ html, body {
 
   .hero-header {
     flex-direction: column;
+  }
+
+  .main-content {
+    padding: 16px 12px 40px;
+  }
+
+  .info-card-container {
+    padding: 20px 16px;
+  }
+
+  .guide-content-area {
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .guide-article h2 {
+    font-size: 19px;
+  }
+
+  .code-block-wrap {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-content-area {
+    padding: 14px 12px;
+  }
+  .guide-article h2 {
+    font-size: 18px;
   }
 }

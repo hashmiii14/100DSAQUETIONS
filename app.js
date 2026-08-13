@@ -740,52 +740,6 @@ class DSAApp {
     document.body.removeChild(textArea);
   }
 
-  selectContactCategory(catId) {
-    document.querySelectorAll('.contact-cat-card').forEach(card => card.classList.remove('active'));
-    const activeCard = document.getElementById(`cat-${catId}`);
-    if (activeCard) activeCard.classList.add('active');
-
-    const selectEl = document.getElementById('contact-category-select');
-    if (selectEl) selectEl.value = catId;
-
-    const subjectInput = document.getElementById('contact-subject-input');
-    if (subjectInput) {
-      const subjectMap = {
-        'bug': '[DSAProblems] Bug Report / Broken Link',
-        'feature': '[DSAProblems] Feature Suggestion / Track Request',
-        'correction': '[DSAProblems] Dataset / Solution Correction',
-        'feedback': '[DSAProblems] General Inquiry / Feedback'
-      };
-      subjectInput.value = subjectMap[catId] || '[DSAProblems] Inquiry';
-    }
-  }
-
-  handleCategorySelectChange(catId) {
-    this.selectContactCategory(catId);
-  }
-
-  sendContactMessage() {
-    const nameInput = document.getElementById('contact-name-input');
-    const subjectInput = document.getElementById('contact-subject-input');
-    const msgInput = document.getElementById('contact-message-input');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const subject = subjectInput && subjectInput.value.trim() ? subjectInput.value.trim() : '[DSAProblems] Inquiry';
-    const message = msgInput ? msgInput.value.trim() : '';
-
-    let bodyText = `Hi DSAProblems Team,\n\n${message}`;
-    if (name) {
-      bodyText += `\n\nBest regards,\n${name}`;
-    }
-
-    const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-    
-    this.showToast('Opening your default email client...');
-    if (typeof window !== 'undefined') {
-      window.location.href = mailtoUrl;
-    }
-  }
-
   /* ── Progress Dashboard View ────────────────────────────────────────────── */
   renderProgressDashboard() {
     const all = this.getProblems();
@@ -1245,12 +1199,13 @@ public:
   renderGuideSection() {
     const navList = document.getElementById('guide-topics-nav');
     const mobileSelect = document.getElementById('guide-mobile-select');
+    const mobilePills = document.getElementById('guide-mobile-pills');
     const contentArea = document.getElementById('guide-content-area');
     if (!contentArea) return;
 
     const topics = this.getGuideTopicData();
 
-    // Populate Mobile Dropdown
+    // Populate Mobile Dropdown Select
     if (mobileSelect) {
       let mobileOptionsHtml = '';
       topics.forEach(t => {
@@ -1258,6 +1213,19 @@ public:
         mobileOptionsHtml += `<option value="${t.id}" ${isSelected}>${t.title}</option>`;
       });
       mobileSelect.innerHTML = mobileOptionsHtml;
+    }
+
+    // Populate Mobile Horizontal Scrollable Pills
+    if (mobilePills) {
+      let pillsHtml = '';
+      topics.forEach(t => {
+        const isActive = t.id === this.activeGuideTopic;
+        const shortName = t.title.split('. ')[1] || t.title;
+        pillsHtml += `<button class="topic-tab-pill ${isActive ? 'active' : ''}" onclick="app.selectGuideTopic('${t.id}')">
+          ${shortName}
+        </button>`;
+      });
+      mobilePills.innerHTML = pillsHtml;
     }
 
     // Populate Desktop Sidebar
