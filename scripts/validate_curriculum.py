@@ -6,14 +6,15 @@ def validate():
         content = f.read()
     
     # Remove leading comments & declaration
-    prefix = "// Automatically generated 1000 DSA Problems Dataset\nconst PROBLEMS = "
+    prefix = "// Automatically generated 1000 DSA Problems Dataset (Interleaved Difficulty Sequence)\nconst PROBLEMS = "
     if content.startswith(prefix):
         content = content[len(prefix):]
+    elif "const PROBLEMS = " in content:
+        content = content.split("const PROBLEMS = ")[1]
     
     # Remove trailing JS module export
-    suffix = ";\nif (typeof module !== 'undefined') module.exports = PROBLEMS;\n"
-    if content.endswith(suffix):
-        content = content[:-len(suffix)]
+    if ";\nif (typeof module !== 'undefined')" in content:
+        content = content.split(";\nif (typeof module !== 'undefined')")[0]
     elif content.endswith(";\n"):
         content = content[:-2]
     
@@ -43,6 +44,7 @@ def validate():
 
         url = p.get("leetcodeUrl", "")
         assert url.startswith("https://leetcode.com/problems/"), f"Invalid LeetCode URL for #{pid}: {url}"
+        assert not url.endswith("/problems//"), f"Malformed LeetCode URL for #{pid}: {url}"
         link_cnt += 1
 
         stage = p.get("stage") or p.get("curriculumStage")
@@ -50,7 +52,7 @@ def validate():
 
     assert link_cnt == 1000, f"Expected 1000 LeetCode URLs, got {link_cnt}"
 
-    print(f"\n[SUCCESS] All 1000 DSA Problems passed Quality Control Validation perfectly!")
+    print(f"\n[SUCCESS] All 1000 Interleaved DSA Problems passed Quality Control Validation perfectly!")
     print(f"   Summary: Total = {len(problems)} | Easy = {easy_cnt} | Medium = {med_cnt} | Hard = {hard_cnt} | Verified 100% LeetCode Links = {link_cnt}")
 
 if __name__ == "__main__":

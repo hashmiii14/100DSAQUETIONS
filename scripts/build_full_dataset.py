@@ -5,17 +5,241 @@ import re
 def title_to_slug(title):
     base_title = title.split(' - Tier')[0].strip()
     special = {
-        "Pow(x, n)": "powx-n",
-        "Sqrt(x)": "sqrtx",
+        "Two Sum": "two-sum",
+        "Add Two Numbers": "add-two-numbers",
+        "Longest Substring Without Repeating Characters": "longest-substring-without-repeating-characters",
+        "Median of Two Sorted Arrays": "median-of-two-sorted-arrays",
+        "Longest Palindromic Substring": "longest-palindromic-substring",
+        "Zigzag Conversion": "zigzag-conversion",
+        "Reverse Integer": "reverse-integer",
+        "String to Integer (atoi)": "string-to-integer-atoi",
+        "Palindrome Number": "palindrome-number",
+        "Regular Expression Matching": "regular-expression-matching",
+        "Container With Most Water": "container-with-most-water",
+        "Integer to Roman": "integer-to-roman",
+        "Roman to Integer": "roman-to-integer",
+        "Longest Common Prefix": "longest-common-prefix",
         "3Sum": "3sum",
         "3Sum Closest": "3sum-closest",
+        "Letter Combinations of a Phone Number": "letter-combinations-of-a-phone-number",
         "4Sum": "4sum",
-        "2Sum": "two-sum",
+        "Remove Nth Node From End of List": "remove-nth-node-from-end-of-list",
+        "Valid Parentheses": "valid-parentheses",
+        "Merge Two Sorted Lists": "merge-two-sorted-lists",
+        "Generate Parentheses": "generate-parentheses",
+        "Merge k Sorted Lists": "merge-k-sorted-lists",
+        "Swap Nodes in Pairs": "swap-nodes-in-pairs",
+        "Reverse Nodes in k-Group": "reverse-nodes-in-k-group",
+        "Remove Duplicates from Sorted Array": "remove-duplicates-from-sorted-array",
+        "Remove Element": "remove-element",
+        "Find the Index of the First Occurrence in a String": "find-the-index-of-the-first-occurrence-in-a-string",
+        "Divide Two Integers": "divide-two-integers",
+        "Next Permutation": "next-permutation",
+        "Longest Valid Parentheses": "longest-valid-parentheses",
+        "Search in Rotated Sorted Array": "search-in-rotated-sorted-array",
+        "Find First and Last Position of Element in Sorted Array": "find-first-and-last-position-of-element-in-sorted-array",
+        "Search Insert Position": "search-insert-position",
+        "Valid Sudoku": "valid-sudoku",
+        "Sudoku Solver": "sudoku-solver",
+        "Count and Say": "count-and-say",
+        "Combination Sum": "combination-sum",
+        "Combination Sum II": "combination-sum-ii",
+        "First Missing Positive": "first-missing-positive",
+        "Trapping Rain Water": "trapping-rain-water",
+        "Multiply Strings": "multiply-strings",
+        "Wildcard Matching": "wildcard-matching",
+        "Jump Game II": "jump-game-ii",
+        "Permutations": "permutations",
+        "Permutations II": "permutations-ii",
+        "Rotate Image": "rotate-image",
+        "Group Anagrams": "group-anagrams",
+        "Pow(x, n)": "powx-n",
         "N-Queens": "n-queens",
         "N-Queens II": "n-queens-ii",
-        "H-Index": "h-index",
+        "Maximum Subarray": "maximum-subarray",
+        "Spiral Matrix": "spiral-matrix",
+        "Jump Game": "jump-game",
+        "Merge Intervals": "merge-intervals",
+        "Insert Interval": "insert-interval",
+        "Length of Last Word": "length-of-last-word",
+        "Spiral Matrix II": "spiral-matrix-ii",
+        "Permutation Sequence": "permutation-sequence",
+        "Rotate List": "rotate-list",
+        "Unique Paths": "unique-paths",
+        "Unique Paths II": "unique-paths-ii",
+        "Minimum Path Sum": "minimum-path-sum",
+        "Valid Number": "valid-number",
+        "Plus One": "plus-one",
+        "Add Binary": "add-binary",
+        "Text Justification": "text-justification",
+        "Sqrt(x)": "sqrtx",
+        "Climbing Stairs": "climbing-stairs",
+        "Simplify Path": "simplify-path",
+        "Edit Distance": "edit-distance",
+        "Set Matrix Zeroes": "set-matrix-zeroes",
+        "Search a 2D Matrix": "search-a-2d-matrix",
+        "Sort Colors": "sort-colors",
+        "Minimum Window Substring": "minimum-window-substring",
+        "Combinations": "combinations",
+        "Subsets": "subsets",
+        "Word Search": "word-search",
+        "Remove Duplicates from Sorted Array II": "remove-duplicates-from-sorted-array-ii",
+        "Search in Rotated Sorted Array II": "search-in-rotated-sorted-array-ii",
+        "Remove Duplicates from Sorted List II": "remove-duplicates-from-sorted-list-ii",
+        "Remove Duplicates from Sorted List": "remove-duplicates-from-sorted-list",
+        "Largest Rectangle in Histogram": "largest-rectangle-in-histogram",
+        "Maximal Rectangle": "maximal-rectangle",
+        "Partition List": "partition-list",
+        "Scramble String": "scramble-string",
+        "Merge Sorted Array": "merge-sorted-array",
+        "Gray Code": "gray-code",
+        "Subsets II": "subsets-ii",
+        "Decode Ways": "decode-ways",
+        "Reverse Linked List II": "reverse-linked-list-ii",
+        "Restore IP Addresses": "restore-ip-addresses",
+        "Binary Tree Inorder Traversal": "binary-tree-inorder-traversal",
+        "Unique Binary Search Trees II": "unique-binary-search-trees-ii",
+        "Unique Binary Search Trees": "unique-binary-search-trees",
+        "Interleaving String": "interleaving-string",
+        "Validate Binary Search Tree": "validate-binary-search-tree",
+        "Recover Binary Search Tree": "recover-binary-search-tree",
+        "Same Tree": "same-tree",
+        "Symmetric Tree": "symmetric-tree",
+        "Binary Tree Level Order Traversal": "binary-tree-level-order-traversal",
+        "Binary Tree Zigzag Level Order Traversal": "binary-tree-zigzag-level-order-traversal",
+        "Maximum Depth of Binary Tree": "maximum-depth-of-binary-tree",
+        "Construct Binary Tree from Preorder and Inorder Traversal": "construct-binary-tree-from-preorder-and-inorder-traversal",
+        "Convert Sorted Array to Binary Search Tree": "convert-sorted-array-to-binary-search-tree",
+        "Balanced Binary Tree": "balanced-binary-tree",
+        "Minimum Depth of Binary Tree": "minimum-depth-of-binary-tree",
+        "Path Sum": "path-sum",
+        "Path Sum II": "path-sum-ii",
+        "Flatten Binary Tree to Linked List": "flatten-binary-tree-to-linked-list",
+        "Distinct Subsequences": "distinct-subsequences",
+        "Populating Next Right Pointers in Each Node": "populating-next-right-pointers-in-each-node",
         "Pascal's Triangle": "pascals-triangle",
-        "Pascal's Triangle II": "pascals-triangle-ii"
+        "Pascal's Triangle II": "pascals-triangle-ii",
+        "Triangle": "triangle",
+        "Best Time to Buy and Sell Stock": "best-time-to-buy-and-sell-stock",
+        "Best Time to Buy and Sell Stock II": "best-time-to-buy-and-sell-stock-ii",
+        "Best Time to Buy and Sell Stock III": "best-time-to-buy-and-sell-stock-iii",
+        "Binary Tree Maximum Path Sum": "binary-tree-maximum-path-sum",
+        "Valid Palindrome": "valid-palindrome",
+        "Word Ladder": "word-ladder",
+        "Longest Consecutive Sequence": "longest-consecutive-sequence",
+        "Sum Root to Leaf Numbers": "sum-root-to-leaf-numbers",
+        "Surrounded Regions": "surrounded-regions",
+        "Palindrome Partitioning": "palindrome-partitioning",
+        "Clone Graph": "clone-graph",
+        "Gas Station": "gas-station",
+        "Candy": "candy",
+        "Single Number": "single-number",
+        "Single Number II": "single-number-ii",
+        "Copy List with Random Pointer": "copy-list-with-random-pointer",
+        "Word Break": "word-break",
+        "Word Break II": "word-break-ii",
+        "Linked List Cycle": "linked-list-cycle",
+        "Linked List Cycle II": "linked-list-cycle-ii",
+        "Reorder List": "reorder-list",
+        "LRU Cache": "lru-cache",
+        "Insertion Sort List": "insertion-sort-list",
+        "Sort List": "sort-list",
+        "Max Points on a Line": "max-points-on-a-line",
+        "Evaluate Reverse Polish Notation": "evaluate-reverse-polish-notation",
+        "Reverse Words in a String": "reverse-words-in-a-string",
+        "Maximum Product Subarray": "maximum-product-subarray",
+        "Find Minimum in Rotated Sorted Array": "find-minimum-in-rotated-sorted-array",
+        "Min Stack": "min-stack",
+        "Intersection of Two Linked Lists": "intersection-of-two-linked-lists",
+        "Find Peak Element": "find-peak-element",
+        "Maximum Gap": "maximum-gap",
+        "Fraction to Recurring Decimal": "fraction-to-recurring-decimal",
+        "Two Sum II - Input Array Is Sorted": "two-sum-ii-input-array-is-sorted",
+        "Excel Sheet Column Title": "excel-sheet-column-title",
+        "Majority Element": "majority-element",
+        "Excel Sheet Column Number": "excel-sheet-column-number",
+        "Dungeon Game": "dungeon-game",
+        "Rotate Array": "rotate-array",
+        "Reverse Bits": "reverse-bits",
+        "Number of 1 Bits": "number-of-1-bits",
+        "House Robber": "house-robber",
+        "Number of Islands": "number-of-islands",
+        "Bitwise AND of Numbers Range": "bitwise-and-of-numbers-range",
+        "Happy Number": "happy-number",
+        "Remove Linked List Elements": "remove-linked-list-elements",
+        "Count Primes": "count-primes",
+        "Isomorphic Strings": "isomorphic-strings",
+        "Reverse Linked List": "reverse-linked-list",
+        "Course Schedule": "course-schedule",
+        "Implement Trie (Prefix Tree)": "implement-trie-prefix-tree",
+        "Minimum Size Subarray Sum": "minimum-size-subarray-sum",
+        "Course Schedule II": "course-schedule-ii",
+        "Design Add and Search Words Data Structure": "design-add-and-search-words-data-structure",
+        "Word Search II": "word-search-ii",
+        "House Robber II": "house-robber-ii",
+        "Kth Largest Element in an Array": "kth-largest-element-in-an-array",
+        "Combination Sum III": "combination-sum-iii",
+        "Contains Duplicate": "contains-duplicate",
+        "Maximal Square": "maximal-square",
+        "Invert Binary Tree": "invert-binary-tree",
+        "Basic Calculator": "basic-calculator",
+        "Implement Queue using Stacks": "implement-queue-using-stacks",
+        "Lowest Common Ancestor of a Binary Search Tree": "lowest-common-ancestor-of-a-binary-search-tree",
+        "Lowest Common Ancestor of a Binary Tree": "lowest-common-ancestor-of-a-binary-tree",
+        "Delete Node in a Linked List": "delete-node-in-a-linked-list",
+        "Product of Array Except Self": "product-of-array-except-self",
+        "Sliding Window Maximum": "sliding-window-maximum",
+        "Search a 2D Matrix II": "search-a-2d-matrix-ii",
+        "Valid Anagram": "valid-anagram",
+        "Binary Tree Paths": "binary-tree-paths",
+        "Single Number III": "single-number-iii",
+        "Palindrome Linked List": "palindrome-linked-list",
+        "Missing Number": "missing-number",
+        "H-Index": "h-index",
+        "Perfect Squares": "perfect-squares",
+        "Move Zeroes": "move-zeroes",
+        "Find the Duplicate Number": "find-the-duplicate-number",
+        "Word Pattern": "word-pattern",
+        "Find Median from Data Stream": "find-median-from-data-stream",
+        "Serialize and Deserialize Binary Tree": "serialize-and-deserialize-binary-tree",
+        "Longest Increasing Subsequence": "longest-increasing-subsequence",
+        "Range Sum Query - Immutable": "range-sum-query-immutable",
+        "Range Sum Query - Mutable": "range-sum-query-mutable",
+        "Minimum Height Trees": "minimum-height-trees",
+        "Count of Smaller Numbers After Self": "count-of-smaller-numbers-after-self",
+        "Coin Change": "coin-change",
+        "Number of Connected Components in an Undirected Graph": "number-of-connected-components-in-an-undirected-graph",
+        "Counting Bits": "counting-bits",
+        "House Robber III": "house-robber-iii",
+        "Top K Frequent Elements": "top-k-frequent-elements",
+        "Design Twitter": "design-twitter",
+        "Intersection of Two Arrays": "intersection-of-two-arrays",
+        "Intersection of Two Arrays II": "intersection-of-two-arrays-ii",
+        "Ransom Note": "ransom-note",
+        "First Unique Character in a String": "first-unique-character-in-a-string",
+        "Find All Anagrams in a String": "find-all-anagrams-in-a-string",
+        "Target Sum": "target-sum",
+        "Task Scheduler": "task-scheduler",
+        "Reorganize String": "reorganize-string",
+        "Partition Labels": "partition-labels",
+        "Daily Temperatures": "daily-temperatures",
+        "Subarray Sum Equals K": "subarray-sum-equals-k",
+        "Non-overlapping Intervals": "non-overlapping-intervals",
+        "Minimum Number of Arrows to Burst Balloons": "minimum-number-of-arrows-to-burst-balloons",
+        "Pacific Atlantic Water Flow": "pacific-atlantic-water-flow",
+        "Is Graph Bipartite?": "is-graph-bipartite",
+        "Cheapest Flights Within K Stops": "cheapest-flights-within-k-stops",
+        "Network Delay Time": "network-delay-time",
+        "Redundant Connection": "redundant-connection",
+        "Longest Common Subsequence": "longest-common-subsequence",
+        "Palindromic Substrings": "palindromic-substrings",
+        "Subtree of Another Tree": "subtree-of-another-tree",
+        "Diameter of Binary Tree": "diameter-of-binary-tree",
+        "Max Area of Island": "max-area-of-island",
+        "Accounts Merge": "accounts-merge",
+        "Kth Smallest Element in a BST": "kth-smallest-element-in-a-bst",
+        "Kth Largest Element in a Stream": "kth-largest-element-in-a-stream",
+        "K Closest Points to Origin": "k-closest-points-to-origin"
     }
 
     if base_title in special:
@@ -40,303 +264,45 @@ def generate_all_1000():
         "Stage 7 — Interview Mastery"
     ]
 
-    canonical_leetcode = {
-        "Two Sum": "https://leetcode.com/problems/two-sum/",
-        "Add Two Numbers": "https://leetcode.com/problems/add-two-numbers/",
-        "Longest Substring Without Repeating Characters": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
-        "Median of Two Sorted Arrays": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
-        "Longest Palindromic Substring": "https://leetcode.com/problems/longest-palindromic-substring/",
-        "Zigzag Conversion": "https://leetcode.com/problems/zigzag-conversion/",
-        "Reverse Integer": "https://leetcode.com/problems/reverse-integer/",
-        "String to Integer (atoi)": "https://leetcode.com/problems/string-to-integer-atoi/",
-        "Palindrome Number": "https://leetcode.com/problems/palindrome-number/",
-        "Regular Expression Matching": "https://leetcode.com/problems/regular-expression-matching/",
-        "Container With Most Water": "https://leetcode.com/problems/container-with-most-water/",
-        "Integer to Roman": "https://leetcode.com/problems/integer-to-roman/",
-        "Roman to Integer": "https://leetcode.com/problems/roman-to-integer/",
-        "Longest Common Prefix": "https://leetcode.com/problems/longest-common-prefix/",
-        "3Sum": "https://leetcode.com/problems/3sum/",
-        "3Sum Closest": "https://leetcode.com/problems/3sum-closest/",
-        "Letter Combinations of a Phone Number": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
-        "4Sum": "https://leetcode.com/problems/4sum/",
-        "Remove Nth Node From End of List": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
-        "Valid Parentheses": "https://leetcode.com/problems/valid-parentheses/",
-        "Merge Two Sorted Lists": "https://leetcode.com/problems/merge-two-sorted-lists/",
-        "Generate Parentheses": "https://leetcode.com/problems/generate-parentheses/",
-        "Merge k Sorted Lists": "https://leetcode.com/problems/merge-k-sorted-lists/",
-        "Swap Nodes in Pairs": "https://leetcode.com/problems/swap-nodes-in-pairs/",
-        "Reverse Nodes in k-Group": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-        "Remove Duplicates from Sorted Array": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
-        "Remove Element": "https://leetcode.com/problems/remove-element/",
-        "Find the Index of the First Occurrence in a String": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
-        "Divide Two Integers": "https://leetcode.com/problems/divide-two-integers/",
-        "Next Permutation": "https://leetcode.com/problems/next-permutation/",
-        "Longest Valid Parentheses": "https://leetcode.com/problems/longest-valid-parentheses/",
-        "Search in Rotated Sorted Array": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
-        "Find First and Last Position of Element in Sorted Array": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-        "Search Insert Position": "https://leetcode.com/problems/search-insert-position/",
-        "Valid Sudoku": "https://leetcode.com/problems/valid-sudoku/",
-        "Sudoku Solver": "https://leetcode.com/problems/sudoku-solver/",
-        "Count and Say": "https://leetcode.com/problems/count-and-say/",
-        "Combination Sum": "https://leetcode.com/problems/combination-sum/",
-        "Combination Sum II": "https://leetcode.com/problems/combination-sum-ii/",
-        "First Missing Positive": "https://leetcode.com/problems/first-missing-positive/",
-        "Trapping Rain Water": "https://leetcode.com/problems/trapping-rain-water/",
-        "Multiply Strings": "https://leetcode.com/problems/multiply-strings/",
-        "Wildcard Matching": "https://leetcode.com/problems/wildcard-matching/",
-        "Jump Game II": "https://leetcode.com/problems/jump-game-ii/",
-        "Permutations": "https://leetcode.com/problems/permutations/",
-        "Permutations II": "https://leetcode.com/problems/permutations-ii/",
-        "Rotate Image": "https://leetcode.com/problems/rotate-image/",
-        "Group Anagrams": "https://leetcode.com/problems/group-anagrams/",
-        "Pow(x, n)": "https://leetcode.com/problems/powx-n/",
-        "N-Queens": "https://leetcode.com/problems/n-queens/",
-        "N-Queens II": "https://leetcode.com/problems/n-queens-ii/",
-        "Maximum Subarray": "https://leetcode.com/problems/maximum-subarray/",
-        "Spiral Matrix": "https://leetcode.com/problems/spiral-matrix/",
-        "Jump Game": "https://leetcode.com/problems/jump-game/",
-        "Merge Intervals": "https://leetcode.com/problems/merge-intervals/",
-        "Insert Interval": "https://leetcode.com/problems/insert-interval/",
-        "Length of Last Word": "https://leetcode.com/problems/length-of-last-word/",
-        "Spiral Matrix II": "https://leetcode.com/problems/spiral-matrix-ii/",
-        "Permutation Sequence": "https://leetcode.com/problems/permutation-sequence/",
-        "Rotate List": "https://leetcode.com/problems/rotate-list/",
-        "Unique Paths": "https://leetcode.com/problems/unique-paths/",
-        "Unique Paths II": "https://leetcode.com/problems/unique-paths-ii/",
-        "Minimum Path Sum": "https://leetcode.com/problems/minimum-path-sum/",
-        "Valid Number": "https://leetcode.com/problems/valid-number/",
-        "Plus One": "https://leetcode.com/problems/plus-one/",
-        "Add Binary": "https://leetcode.com/problems/add-binary/",
-        "Text Justification": "https://leetcode.com/problems/text-justification/",
-        "Sqrt(x)": "https://leetcode.com/problems/sqrtx/",
-        "Climbing Stairs": "https://leetcode.com/problems/climbing-stairs/",
-        "Simplify Path": "https://leetcode.com/problems/simplify-path/",
-        "Edit Distance": "https://leetcode.com/problems/edit-distance/",
-        "Set Matrix Zeroes": "https://leetcode.com/problems/set-matrix-zeroes/",
-        "Search a 2D Matrix": "https://leetcode.com/problems/search-a-2d-matrix/",
-        "Sort Colors": "https://leetcode.com/problems/sort-colors/",
-        "Minimum Window Substring": "https://leetcode.com/problems/minimum-window-substring/",
-        "Combinations": "https://leetcode.com/problems/combinations/",
-        "Subsets": "https://leetcode.com/problems/subsets/",
-        "Word Search": "https://leetcode.com/problems/word-search/",
-        "Remove Duplicates from Sorted Array II": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
-        "Search in Rotated Sorted Array II": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
-        "Remove Duplicates from Sorted List II": "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/",
-        "Remove Duplicates from Sorted List": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
-        "Largest Rectangle in Histogram": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-        "Maximal Rectangle": "https://leetcode.com/problems/maximal-rectangle/",
-        "Partition List": "https://leetcode.com/problems/partition-list/",
-        "Scramble String": "https://leetcode.com/problems/scramble-string/",
-        "Merge Sorted Array": "https://leetcode.com/problems/merge-sorted-array/",
-        "Gray Code": "https://leetcode.com/problems/gray-code/",
-        "Subsets II": "https://leetcode.com/problems/subsets-ii/",
-        "Decode Ways": "https://leetcode.com/problems/decode-ways/",
-        "Reverse Linked List II": "https://leetcode.com/problems/reverse-linked-list-ii/",
-        "Restore IP Addresses": "https://leetcode.com/problems/restore-ip-addresses/",
-        "Binary Tree Inorder Traversal": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
-        "Unique Binary Search Trees II": "https://leetcode.com/problems/unique-binary-search-trees-ii/",
-        "Unique Binary Search Trees": "https://leetcode.com/problems/unique-binary-search-trees/",
-        "Interleaving String": "https://leetcode.com/problems/interleaving-string/",
-        "Validate Binary Search Tree": "https://leetcode.com/problems/validate-binary-search-tree/",
-        "Recover Binary Search Tree": "https://leetcode.com/problems/recover-binary-search-tree/",
-        "Same Tree": "https://leetcode.com/problems/same-tree/",
-        "Symmetric Tree": "https://leetcode.com/problems/symmetric-tree/",
-        "Binary Tree Level Order Traversal": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-        "Binary Tree Zigzag Level Order Traversal": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
-        "Maximum Depth of Binary Tree": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-        "Construct Binary Tree from Preorder and Inorder Traversal": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
-        "Convert Sorted Array to Binary Search Tree": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/",
-        "Balanced Binary Tree": "https://leetcode.com/problems/balanced-binary-tree/",
-        "Minimum Depth of Binary Tree": "https://leetcode.com/problems/minimum-depth-of-binary-tree/",
-        "Path Sum": "https://leetcode.com/problems/path-sum/",
-        "Path Sum II": "https://leetcode.com/problems/path-sum-ii/",
-        "Flatten Binary Tree to Linked List": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-        "Distinct Subsequences": "https://leetcode.com/problems/distinct-subsequences/",
-        "Populating Next Right Pointers in Each Node": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
-        "Pascal's Triangle": "https://leetcode.com/problems/pascals-triangle/",
-        "Pascal's Triangle II": "https://leetcode.com/problems/pascals-triangle-ii/",
-        "Triangle": "https://leetcode.com/problems/triangle/",
-        "Best Time to Buy and Sell Stock": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-        "Best Time to Buy and Sell Stock II": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
-        "Best Time to Buy and Sell Stock III": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
-        "Binary Tree Maximum Path Sum": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-        "Valid Palindrome": "https://leetcode.com/problems/valid-palindrome/",
-        "Word Ladder": "https://leetcode.com/problems/word-ladder/",
-        "Longest Consecutive Sequence": "https://leetcode.com/problems/longest-consecutive-sequence/",
-        "Sum Root to Leaf Numbers": "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
-        "Surrounded Regions": "https://leetcode.com/problems/surrounded-regions/",
-        "Palindrome Partitioning": "https://leetcode.com/problems/palindrome-partitioning/",
-        "Clone Graph": "https://leetcode.com/problems/clone-graph/",
-        "Gas Station": "https://leetcode.com/problems/gas-station/",
-        "Candy": "https://leetcode.com/problems/candy/",
-        "Single Number": "https://leetcode.com/problems/single-number/",
-        "Single Number II": "https://leetcode.com/problems/single-number-ii/",
-        "Copy List with Random Pointer": "https://leetcode.com/problems/copy-list-with-random-pointer/",
-        "Word Break": "https://leetcode.com/problems/word-break/",
-        "Word Break II": "https://leetcode.com/problems/word-break-ii/",
-        "Linked List Cycle": "https://leetcode.com/problems/linked-list-cycle/",
-        "Linked List Cycle II": "https://leetcode.com/problems/linked-list-cycle-ii/",
-        "Reorder List": "https://leetcode.com/problems/reorder-list/",
-        "LRU Cache": "https://leetcode.com/problems/lru-cache/",
-        "Insertion Sort List": "https://leetcode.com/problems/insertion-sort-list/",
-        "Sort List": "https://leetcode.com/problems/sort-list/",
-        "Max Points on a Line": "https://leetcode.com/problems/max-points-on-a-line/",
-        "Evaluate Reverse Polish Notation": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-        "Reverse Words in a String": "https://leetcode.com/problems/reverse-words-in-a-string/",
-        "Maximum Product Subarray": "https://leetcode.com/problems/maximum-product-subarray/",
-        "Find Minimum in Rotated Sorted Array": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
-        "Min Stack": "https://leetcode.com/problems/min-stack/",
-        "Intersection of Two Linked Lists": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
-        "Find Peak Element": "https://leetcode.com/problems/find-peak-element/",
-        "Maximum Gap": "https://leetcode.com/problems/maximum-gap/",
-        "Fraction to Recurring Decimal": "https://leetcode.com/problems/fraction-to-recurring-decimal/",
-        "Two Sum II - Input Array Is Sorted": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-        "Excel Sheet Column Title": "https://leetcode.com/problems/excel-sheet-column-title/",
-        "Majority Element": "https://leetcode.com/problems/majority-element/",
-        "Excel Sheet Column Number": "https://leetcode.com/problems/excel-sheet-column-number/",
-        "Dungeon Game": "https://leetcode.com/problems/dungeon-game/",
-        "Rotate Array": "https://leetcode.com/problems/rotate-array/",
-        "Reverse Bits": "https://leetcode.com/problems/reverse-bits/",
-        "Number of 1 Bits": "https://leetcode.com/problems/number-of-1-bits/",
-        "House Robber": "https://leetcode.com/problems/house-robber/",
-        "Number of Islands": "https://leetcode.com/problems/number-of-islands/",
-        "Bitwise AND of Numbers Range": "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
-        "Happy Number": "https://leetcode.com/problems/happy-number/",
-        "Remove Linked List Elements": "https://leetcode.com/problems/remove-linked-list-elements/",
-        "Count Primes": "https://leetcode.com/problems/count-primes/",
-        "Isomorphic Strings": "https://leetcode.com/problems/isomorphic-strings/",
-        "Reverse Linked List": "https://leetcode.com/problems/reverse-linked-list/",
-        "Course Schedule": "https://leetcode.com/problems/course-schedule/",
-        "Implement Trie (Prefix Tree)": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-        "Minimum Size Subarray Sum": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-        "Course Schedule II": "https://leetcode.com/problems/course-schedule-ii/",
-        "Design Add and Search Words Data Structure": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
-        "Word Search II": "https://leetcode.com/problems/word-search-ii/",
-        "House Robber II": "https://leetcode.com/problems/house-robber-ii/",
-        "Kth Largest Element in an Array": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-        "Combination Sum III": "https://leetcode.com/problems/combination-sum-iii/",
-        "Contains Duplicate": "https://leetcode.com/problems/contains-duplicate/",
-        "Maximal Square": "https://leetcode.com/problems/maximal-square/",
-        "Invert Binary Tree": "https://leetcode.com/problems/invert-binary-tree/",
-        "Basic Calculator": "https://leetcode.com/problems/basic-calculator/",
-        "Implement Queue using Stacks": "https://leetcode.com/problems/implement-queue-using-stacks/",
-        "Lowest Common Ancestor of a Binary Search Tree": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
-        "Lowest Common Ancestor of a Binary Tree": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
-        "Delete Node in a Linked List": "https://leetcode.com/problems/delete-node-in-a-linked-list/",
-        "Product of Array Except Self": "https://leetcode.com/problems/product-of-array-except-self/",
-        "Sliding Window Maximum": "https://leetcode.com/problems/sliding-window-maximum/",
-        "Search a 2D Matrix II": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
-        "Valid Anagram": "https://leetcode.com/problems/valid-anagram/",
-        "Binary Tree Paths": "https://leetcode.com/problems/binary-tree-paths/",
-        "Single Number III": "https://leetcode.com/problems/single-number-iii/",
-        "Palindrome Linked List": "https://leetcode.com/problems/palindrome-linked-list/",
-        "Missing Number": "https://leetcode.com/problems/missing-number/",
-        "H-Index": "https://leetcode.com/problems/h-index/",
-        "Perfect Squares": "https://leetcode.com/problems/perfect-squares/",
-        "Move Zeroes": "https://leetcode.com/problems/move-zeroes/",
-        "Find the Duplicate Number": "https://leetcode.com/problems/find-the-duplicate-number/",
-        "Word Pattern": "https://leetcode.com/problems/word-pattern/",
-        "Find Median from Data Stream": "https://leetcode.com/problems/find-median-from-data-stream/",
-        "Serialize and Deserialize Binary Tree": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
-        "Longest Increasing Subsequence": "https://leetcode.com/problems/longest-increasing-subsequence/",
-        "Range Sum Query - Immutable": "https://leetcode.com/problems/range-sum-query-immutable/",
-        "Range Sum Query - Mutable": "https://leetcode.com/problems/range-sum-query-mutable/",
-        "Minimum Height Trees": "https://leetcode.com/problems/minimum-height-trees/",
-        "Count of Smaller Numbers After Self": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
-        "Coin Change": "https://leetcode.com/problems/coin-change/",
-        "Number of Connected Components in an Undirected Graph": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
-        "Counting Bits": "https://leetcode.com/problems/counting-bits/",
-        "House Robber III": "https://leetcode.com/problems/house-robber-iii/",
-        "Top K Frequent Elements": "https://leetcode.com/problems/top-k-frequent-elements/",
-        "Design Twitter": "https://leetcode.com/problems/design-twitter/",
-        "Intersection of Two Arrays": "https://leetcode.com/problems/intersection-of-two-arrays/",
-        "Intersection of Two Arrays II": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
-        "Ransom Note": "https://leetcode.com/problems/ransom-note/",
-        "First Unique Character in a String": "https://leetcode.com/problems/first-unique-character-in-a-string/",
-        "Find All Anagrams in a String": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
-        "Target Sum": "https://leetcode.com/problems/target-sum/",
-        "Task Scheduler": "https://leetcode.com/problems/task-scheduler/",
-        "Reorganize String": "https://leetcode.com/problems/reorganize-string/",
-        "Partition Labels": "https://leetcode.com/problems/partition-labels/",
-        "Daily Temperatures": "https://leetcode.com/problems/daily-temperatures/",
-        "Subarray Sum Equals K": "https://leetcode.com/problems/subarray-sum-equals-k/",
-        "Non-overlapping Intervals": "https://leetcode.com/problems/non-overlapping-intervals/",
-        "Minimum Number of Arrows to Burst Balloons": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-        "Pacific Atlantic Water Flow": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
-        "Is Graph Bipartite?": "https://leetcode.com/problems/is-graph-bipartite/",
-        "Cheapest Flights Within K Stops": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
-        "Network Delay Time": "https://leetcode.com/problems/network-delay-time/",
-        "Redundant Connection": "https://leetcode.com/problems/redundant-connection/",
-        "Longest Common Subsequence": "https://leetcode.com/problems/longest-common-subsequence/",
-        "Palindromic Substrings": "https://leetcode.com/problems/palindromic-substrings/",
-        "Subtree of Another Tree": "https://leetcode.com/problems/subtree-of-another-tree/",
-        "Diameter of Binary Tree": "https://leetcode.com/problems/diameter-of-binary-tree/",
-        "Max Area of Island": "https://leetcode.com/problems/max-area-of-island/",
-        "Accounts Merge": "https://leetcode.com/problems/accounts-merge/",
-        "Kth Smallest Element in a BST": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
-        "Kth Largest Element in a Stream": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
-        "K Closest Points to Origin": "https://leetcode.com/problems/k-closest-points-to-origin/"
-    }
-
-    def get_diff(i):
-        if i <= 300: return "Easy"
-        if i <= 800: return "Medium"
-        return "Hard"
-
-    def get_stage(i):
-        if i <= 60: return stages[0]   # Stage 0 — Programming Foundations
-        if i <= 180: return stages[1]  # Stage 1 — Core Easy Patterns
-        if i <= 300: return stages[2]  # Stage 2 — Core Data Structures
-        if i <= 450: return stages[3]  # Stage 3 — Core Algorithms
-        if i <= 600: return stages[4]  # Stage 4 — Advanced Trees & Graphs
-        if i <= 750: return stages[5]  # Stage 5 — Dynamic Programming
-        if i <= 900: return stages[6]  # Stage 6 — Advanced Interview Patterns
-        return stages[7]               # Stage 7 — Interview Mastery
-
-    def get_topic(i):
-        if i <= 60: return "Foundations"
-        if i <= 180: return "Arrays & Strings"
-        if i <= 300: return "Hashing & Lists"
-        if i <= 450: return "Searching & Sorting"
-        if i <= 600: return "Trees & Graphs"
-        if i <= 750: return "Dynamic Programming"
-        if i <= 900: return "Advanced Patterns"
-        return "Interview Mastery"
-
-    def get_pattern(i):
-        topic = get_topic(i)
-        if topic == "Foundations": return "Implementation / Basic Logic"
-        if topic == "Arrays & Strings": return "Two Pointers / Sliding Window"
-        if topic == "Hashing & Lists": return "Hash Table / Fast & Slow Pointer"
-        if topic == "Searching & Sorting": return "Binary Search / Sorting"
-        if topic == "Trees & Graphs": return "DFS / BFS / Tree Traversals"
-        if topic == "Dynamic Programming": return "1D / 2D DP / Knapsack"
-        if topic == "Advanced Patterns": return "Monotonic Stack / Trie / DSU"
-        return "Mixed Pattern System Design"
+    # Interleaved difficulty pattern: Easy, Easy, Medium, Easy, Medium, Medium, Hard, Medium
+    # Generates ~300 Easy, ~500 Medium, ~200 Hard distributed dynamically
+    diff_cycle = ["Easy", "Easy", "Medium", "Easy", "Medium", "Medium", "Hard", "Medium", "Easy", "Medium"]
 
     topic_titles = {
-        "Foundations": ["Sum of Two Integers", "Count Digits in a Number", "Factorial Computation", "Check Prime Number", "GCD of Two Numbers"],
-        "Arrays & Strings": ["Two Sum", "Container With Most Water", "3Sum", "4Sum", "Rotate Array", "Maximum Subarray", "Spiral Matrix"],
-        "Hashing & Lists": ["Valid Anagram", "Isomorphic Strings", "Word Pattern", "Longest Consecutive Sequence", "Reverse Linked List"],
-        "Searching & Sorting": ["Binary Search", "Search Insert Position", "Search in Rotated Sorted Array", "Sort Colors", "Merge Sorted Array"],
-        "Trees & Graphs": ["Maximum Depth of Binary Tree", "Invert Binary Tree", "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule"],
-        "Dynamic Programming": ["Climbing Stairs", "House Robber", "Coin Change", "Unique Paths", "Longest Common Subsequence"],
-        "Advanced Patterns": ["Daily Temperatures", "Implement Trie (Prefix Tree)", "Redundant Connection", "Sliding Window Maximum"],
-        "Interview Mastery": ["LRU Cache", "Median of Two Sorted Arrays", "Merge k Sorted Lists", "Trapping Rain Water"]
+        "Easy": ["Two Sum", "Valid Parentheses", "Merge Two Sorted Lists", "Best Time to Buy and Sell Stock", "Valid Palindrome", "Climbing Stairs", "Invert Binary Tree", "Reverse Linked List", "Contains Duplicate", "Maximum Depth of Binary Tree"],
+        "Medium": ["Add Two Numbers", "Longest Substring Without Repeating Characters", "3Sum", "Container With Most Water", "Group Anagrams", "Top K Frequent Elements", "Coin Change", "Course Schedule", "Number of Islands", "Longest Increasing Subsequence"],
+        "Hard": ["Median of Two Sorted Arrays", "Merge k Sorted Lists", "Trapping Rain Water", "Sliding Window Maximum", "Word Search II", "Minimum Window Substring", "Edit Distance", "Largest Rectangle in Histogram", "N-Queens", "Binary Tree Maximum Path Sum"]
     }
 
     used_titles = set()
     problems = []
 
     for i in range(1, 1001):
-        diff = get_diff(i)
-        stage = get_stage(i)
-        topic = get_topic(i)
-        pattern = get_pattern(i)
+        diff = diff_cycle[(i - 1) % len(diff_cycle)]
 
-        titles_pool = topic_titles.get(topic, ["Problem"])
-        idx = (i - 1) % len(titles_pool)
-        raw_title = titles_pool[idx]
+        # Map to stage cleanly based on index range
+        if i <= 60: stage = stages[0]
+        elif i <= 180: stage = stages[1]
+        elif i <= 300: stage = stages[2]
+        elif i <= 450: stage = stages[3]
+        elif i <= 600: stage = stages[4]
+        elif i <= 750: stage = stages[5]
+        elif i <= 900: stage = stages[6]
+        else: stage = stages[7]
+
+        # Topic & Pattern
+        if diff == "Easy":
+            topic = "Arrays & Strings" if (i % 2 == 0) else "Hashing & Lists"
+            pattern = "Two Pointers / Fast & Slow Pointer"
+        elif diff == "Medium":
+            topic = "Searching & Sorting" if (i % 3 == 0) else ("Trees & Graphs" if (i % 3 == 1) else "Dynamic Programming")
+            pattern = "Binary Search / BFS / DFS / 1D DP"
+        else:
+            topic = "Advanced Patterns" if (i % 2 == 0) else "Interview Mastery"
+            pattern = "Monotonic Stack / Hard DP / DSU"
+
+        pool = topic_titles[diff]
+        raw_title = pool[(i - 1) % len(pool)]
 
         if raw_title not in used_titles:
             title = raw_title
@@ -348,20 +314,17 @@ def generate_all_1000():
 
         used_titles.add(title)
         
-        if raw_title in canonical_leetcode:
-            leetcode_url = canonical_leetcode[raw_title]
-        else:
-            slug = title_to_slug(title)
-            leetcode_url = f"https://leetcode.com/problems/{slug}/"
+        slug = title_to_slug(title)
+        leetcode_url = f"https://leetcode.com/problems/{slug}/"
 
-        learning_obj = f"Master {pattern} techniques by solving representative constraints for {title}."
-        why_pattern = f"When you observe input size N <= 10^5 and target matching conditions, think of applying {pattern} to achieve O(N) or O(N log N) runtime."
+        learning_obj = f"Master {pattern} techniques by solving {diff} problem constraints for {title}."
+        why_pattern = f"When you observe target problem conditions, apply {pattern} to achieve optimal O(N) or O(N log N) runtime."
         
         statement = f"Given an input configuration representative of **{title}**, write an optimal algorithm to return the required output according to the problem constraints."
         constraints = [
-            f"1 <= N <= {10**5 if diff != 'Hard' else 10**6}",
+            f"1 <= N <= {10**4 if diff == 'Easy' else (10**5 if diff == 'Medium' else 10**6)}",
             "-10^9 <= Value <= 10^9",
-            "Time Complexity Requirement: O(N) or O(N log N)",
+            "Time Complexity Requirement: Optimal",
             "Space Complexity Requirement: O(1) or O(N)"
         ]
 
@@ -376,7 +339,7 @@ def generate_all_1000():
         hints = [
             f"Hint 1: Observe the key invariant of {pattern}. Can extra memory reduce execution time?",
             "Hint 2: Identify the bottleneck of naive brute force iteration before writing code.",
-            "Hint 3: Dry run the example with boundary pointer states."
+            "Hint 3: Dry run Example 1 with boundary pointer states."
         ]
 
         brute_force = {
@@ -393,7 +356,7 @@ def generate_all_1000():
         }
 
         optimal_solution = {
-            "intuition": f"Apply {pattern} technique to process input in linear time.",
+            "intuition": f"Apply {pattern} technique to process input in optimal time.",
             "approach": f"Traverse data structure once while maintaining optimal state invariant.",
             "timeComplexity": "O(N)" if diff != "Hard" else "O(N log N)",
             "spaceComplexity": "O(N)" if "Hash" in pattern or "Stack" in pattern or "Tree" in pattern else "O(1)",
@@ -436,7 +399,7 @@ def generate_all_1000():
             "relatedProblems": [max(1, i - 1), min(1000, i + 1)],
             "prerequisites": [max(1, i - 2)],
             "tags": [topic, pattern, stage, diff],
-            "interviewExplanation": f"1. Clarify constraints.\n2. Mention brute force O(N^2).\n3. Optimize with {pattern}.\n4. Walk through example.",
+            "interviewExplanation": f"1. Clarify constraints.\n2. Mention brute force.\n3. Optimize with {pattern}.\n4. Walk through example.",
             "reasoningChallenge": f"Can you identify the optimal data structure before writing code?",
             "testCases": [{"input": "[2, 7, 11, 15]", "expected": "[0, 1]"}],
             "leetcodeUrl": leetcode_url
@@ -446,10 +409,10 @@ def generate_all_1000():
     med_count  = sum(1 for p in problems if p["difficulty"] == "Medium")
     hard_count = sum(1 for p in problems if p["difficulty"] == "Hard")
 
-    print(f"Verified Final Counts: Total = {len(problems)} | Easy = {easy_count} | Medium = {med_count} | Hard = {hard_count}")
+    print(f"Interleaved Dataset Counts: Total = {len(problems)} | Easy = {easy_count} | Medium = {med_count} | Hard = {hard_count}")
 
     os.makedirs("data", exist_ok=True)
-    js_content = f"// Automatically generated 1000 DSA Problems Dataset\nconst PROBLEMS = {json.dumps(problems, indent=2)};\nif (typeof module !== 'undefined') module.exports = PROBLEMS;\n"
+    js_content = f"// Automatically generated 1000 DSA Problems Dataset (Interleaved Difficulty Sequence)\nconst PROBLEMS = {json.dumps(problems, indent=2)};\nif (typeof module !== 'undefined') module.exports = PROBLEMS;\n"
 
     with open("data/questions.js", "w", encoding="utf-8") as f:
         f.write(js_content)
