@@ -1,4 +1,4 @@
-/* ── Reset & Premium Light Theme Design System ────────────────────────────── */
+/* ── Reset & Mobile-First Responsive Light Design System ─────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -48,6 +48,7 @@ html, body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -60,15 +61,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
 a:hover { text-decoration: underline; color: var(--accent-hover); }
 button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
 
-/* ── Container Layout ────────────────────────────────────────────── */
+/* ── Container Layout (Fluid 320px - 1920px) ─────────────────────── */
 .app-container {
+  width: 100%;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 20px 60px 20px;
+  padding: 0 16px 60px 16px;
+}
+
+@media (min-width: 768px) {
+  .app-container { padding: 0 24px 60px 24px; }
 }
 
 /* ── Glassmorphism Header ─────────────────────────────────────────── */
@@ -79,8 +91,8 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 14px 0;
-  margin-bottom: 28px;
+  padding: 12px 0;
+  margin-bottom: 24px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -88,18 +100,18 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .brand-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .brand-logo {
-  font-size: 22px;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.03em;
@@ -110,31 +122,36 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .brand-tag {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 99px;
   background: var(--accent-bg);
   color: var(--accent);
   border: 1px solid var(--accent-border);
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .brand-tag { display: inline-block; }
 }
 
 .nav-tabs {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 
 .nav-btn {
-  padding: 9px 18px;
+  padding: 9px 16px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text-secondary);
   border-radius: var(--radius);
   white-space: nowrap;
   transition: all 0.18s ease;
-  min-height: 42px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   border: 1px solid transparent;
@@ -157,30 +174,31 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .streak-badge {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 4px;
+  font-size: 12.5px;
   font-weight: 700;
-  padding: 6px 14px;
+  padding: 6px 12px;
   background: rgba(245, 158, 11, 0.1);
   color: #d97706;
   border: 1px solid rgba(245, 158, 11, 0.35);
   border-radius: 99px;
+  white-space: nowrap;
 }
 
 .mobile-toggle-btn {
-  min-width: 42px;
-  min-height: 42px;
-  padding: 8px 12px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: 20px;
   display: none;
   align-items: center;
   justify-content: center;
@@ -209,10 +227,11 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   position: fixed;
   top: 0; right: -300px; bottom: 0;
   width: 300px;
+  max-width: 85vw;
   background: var(--bg-surface);
   border-left: 1px solid var(--border);
   z-index: 300;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -228,7 +247,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -249,12 +268,12 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 30px 36px;
-  margin-bottom: 28px;
+  padding: clamp(18px, 4vw, 32px);
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
   box-shadow: var(--shadow);
   position: relative;
@@ -270,7 +289,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .hero-content h1 {
-  font-size: 27px;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 8px;
@@ -278,31 +297,38 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .hero-content p {
-  font-size: 14.5px;
+  font-size: clamp(0.88rem, 2vw, 0.98rem);
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 720px;
   line-height: 1.65;
 }
 
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero-actions { width: auto; }
 }
 
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
-  padding: 11px 22px;
+  padding: 10px 20px;
   font-weight: 600;
   font-size: 13.5px;
   border-radius: var(--radius);
   transition: all 0.18s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  min-height: 42px;
+  min-height: 44px;
   box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+  flex: 1 1 auto;
 }
 
 .btn-primary:hover {
@@ -315,15 +341,17 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border);
-  padding: 11px 22px;
+  padding: 10px 20px;
   font-weight: 600;
   font-size: 13.5px;
   border-radius: var(--radius);
   transition: all 0.18s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  min-height: 42px;
+  min-height: 44px;
+  flex: 1 1 auto;
 }
 
 .btn-secondary:hover {
@@ -337,35 +365,37 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 22px 26px;
-  margin-bottom: 28px;
+  padding: clamp(16px, 3vw, 24px);
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   box-shadow: var(--shadow);
 }
 
 .search-row {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .search-box {
   position: relative;
-  flex: 1;
+  flex: 1 1 240px;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 16px 12px 44px;
+  padding: 11px 14px 11px 40px;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: 13.5px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  min-height: 44px;
 }
 
 .search-input:focus {
@@ -379,25 +409,25 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .filter-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .filter-label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--text-muted);
-  min-width: 70px;
+  min-width: 65px;
 }
 
 .chip-btn {
-  padding: 7px 14px;
+  padding: 6px 12px;
   font-size: 12px;
   font-weight: 600;
   border-radius: var(--radius-sm);
@@ -405,9 +435,10 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   border: 1px solid var(--border);
   color: var(--text-secondary);
   transition: all 0.15s ease;
-  min-height: 36px;
+  min-height: 38px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 .chip-btn:hover {
@@ -428,16 +459,18 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .chip-btn.hard.active { background: var(--hard-bg); color: var(--hard); border-color: var(--hard); }
 
 .select-filter {
-  padding: 7px 14px;
-  font-size: 12.5px;
+  padding: 6px 12px;
+  font-size: 12px;
   font-weight: 600;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   outline: none;
-  min-height: 36px;
+  min-height: 40px;
   transition: border-color 0.15s ease;
+  width: 100%;
+  max-width: 220px;
 }
 
 .select-filter:focus {
@@ -449,7 +482,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 13px;
   color: var(--text-secondary);
 }
@@ -458,7 +491,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow-x: auto;
   box-shadow: var(--shadow);
   max-width: 100%;
 }
@@ -467,11 +500,12 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  min-width: 680px;
 }
 
 .problem-table th {
   background: var(--bg-elevated);
-  padding: 14px 16px;
+  padding: 12px 14px;
   font-size: 12px;
   font-weight: 700;
   color: var(--text-muted);
@@ -481,7 +515,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .problem-table td {
-  padding: 14px 16px;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--border-muted);
   font-size: 13.5px;
 }
@@ -503,7 +537,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   font-family: var(--font-mono);
   font-weight: 700;
   color: var(--text-muted);
-  width: 65px;
+  width: 60px;
 }
 
 .col-title {
@@ -558,15 +592,18 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .leetcode-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   font-size: 11.5px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 6px 12px;
   background: rgba(245, 158, 11, 0.1);
   color: #d97706;
   border: 1px solid rgba(245, 158, 11, 0.35);
   border-radius: var(--radius-sm);
   transition: all 0.18s ease;
+  min-height: 38px;
+  white-space: nowrap;
 }
 
 .leetcode-btn:hover {
@@ -577,19 +614,19 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .action-cb {
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   accent-color: var(--accent);
 }
 
 .star-btn {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-muted);
   transition: transform 0.15s ease, color 0.15s ease;
-  padding: 4px;
-  min-width: 34px;
-  min-height: 34px;
+  padding: 6px;
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -598,7 +635,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 .star-btn:hover { transform: scale(1.15); }
 .star-btn.starred { color: #f59e0b; }
 
-/* ── Mobile Question Card ────────────────────────────────────────── */
+/* ── Mobile Question Card View ───────────────────────────────────── */
 .mobile-card-list {
   display: none;
   flex-direction: column;
@@ -632,6 +669,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   font-size: 14.5px;
   font-weight: 700;
   color: var(--text-primary);
+  line-height: 1.4;
 }
 
 .mobile-q-bottom {
@@ -640,6 +678,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   justify-content: space-between;
   gap: 8px;
   margin-top: 6px;
+  flex-wrap: wrap;
 }
 
 /* ── Pagination ──────────────────────────────────────────────────── */
@@ -649,17 +688,18 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   justify-content: center;
   gap: 10px;
   margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .page-btn {
-  padding: 9px 16px;
+  padding: 8px 16px;
   font-size: 12.5px;
   font-weight: 600;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   color: var(--text-primary);
   border-radius: var(--radius);
-  min-height: 38px;
+  min-height: 44px;
   transition: all 0.15s ease;
 }
 
@@ -690,16 +730,20 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 
 .grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 22px;
-  margin-top: 20px;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .grid-cards { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 }
 
 .card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: clamp(16px, 3vw, 24px);
   box-shadow: var(--shadow);
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -711,28 +755,28 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .card h3 {
-  font-size: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 800;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 .card h4 {
-  font-size: 15.5px;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--text-primary);
 }
 
 .card p {
   font-size: 13.5px;
   color: var(--text-secondary);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   line-height: 1.65;
 }
 
-/* ── Modal Window ────────────────────────────────────────────────── */
+/* ── Modal Window & Scrollable Code Blocks ───────────────────────── */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -741,7 +785,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 12px;
   backdrop-filter: blur(5px);
 }
 
@@ -763,27 +807,27 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 .modal-header {
-  padding: 18px 24px;
+  padding: 16px 20px;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   background: var(--bg-elevated);
 }
 
 .modal-title-area h2 {
-  font-size: 19px;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .modal-body {
-  padding: 24px;
+  padding: clamp(16px, 3vw, 24px);
   overflow-y: auto;
   flex: 1;
 }
@@ -818,11 +862,7 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 }
 
 @media (max-width: 768px) {
-  .hero-banner { flex-direction: column; align-items: flex-start; padding: 20px; }
-  .hero-content h1 { font-size: 22px; }
-  .header-inner { gap: 12px; }
   .problem-table-wrapper { display: none; }
   .mobile-card-list { display: flex; }
-  .grid-cards { grid-template-columns: 1fr; }
   .modal-header { flex-direction: column; align-items: flex-start; }
 }
