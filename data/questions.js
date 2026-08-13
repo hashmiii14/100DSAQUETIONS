@@ -90001,4 +90001,5 @@ const PROBLEMS = [
     "leetcodeUrl": "https://leetcode.com/problems/longest-increasing-subsequence/"
   }
 ];
+if (typeof window !== 'undefined') window.PROBLEMS = PROBLEMS;
 if (typeof module !== 'undefined') module.exports = PROBLEMS;

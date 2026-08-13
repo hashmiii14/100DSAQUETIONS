@@ -4,12 +4,12 @@
 
 class DSAApp {
   constructor() {
-    this.problems = typeof PROBLEMS !== 'undefined' ? PROBLEMS : [];
-    this.patterns = typeof PATTERNS_LIBRARY !== 'undefined' ? PATTERNS_LIBRARY : [];
-    this.dsAlgo = typeof DS_ALGO_LIBRARY !== 'undefined' ? DS_ALGO_LIBRARY : { dataStructures: [], algorithms: [] };
+    this.problems = this.getProblems();
+    this.patterns = (typeof window !== 'undefined' && window.PATTERNS_LIBRARY) ? window.PATTERNS_LIBRARY : (typeof PATTERNS_LIBRARY !== 'undefined' ? PATTERNS_LIBRARY : []);
+    this.dsAlgo = (typeof window !== 'undefined' && window.DS_ALGO_LIBRARY) ? window.DS_ALGO_LIBRARY : (typeof DS_ALGO_LIBRARY !== 'undefined' ? DS_ALGO_LIBRARY : { dataStructures: [], algorithms: [] });
 
     this.state = typeof state !== 'undefined' ? state : null;
-    this.recommender = typeof RecommendationEngine !== 'undefined' ? new RecommendationEngine(this.problems, this.state) : null;
+    this.recommender = typeof RecommendationEngine !== 'undefined' ? new RecommendationEngine(this.getProblems(), this.state) : null;
 
     // View & Filter state
     this.currentView = 'explorer';
@@ -32,13 +32,41 @@ class DSAApp {
     this.init();
   }
 
+  getProblems() {
+    if (!this.problems || this.problems.length === 0) {
+      if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS) && window.PROBLEMS.length > 0) {
+        this.problems = window.PROBLEMS;
+      } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS.length > 0) {
+        this.problems = PROBLEMS;
+      } else {
+        this.problems = [];
+      }
+    }
+    return this.problems;
+  }
+
   init() {
+    this.getProblems();
     this.readUrlParams();
     this.bindEvents();
     this.renderNav();
     this.switchView(this.currentView);
     this.renderExplorer();
     this.renderDashboard();
+
+    // Fallback polling to handle network delays or async dataset loading
+    if (!this.problems || this.problems.length === 0) {
+      const pollTimer = setInterval(() => {
+        if (this.getProblems().length > 0) {
+          clearInterval(pollTimer);
+          if (this.recommender) this.recommender.problems = this.problems;
+          this.renderNav();
+          this.renderExplorer();
+          this.renderDashboard();
+        }
+      }, 100);
+      setTimeout(() => clearInterval(pollTimer), 5000);
+    }
   }
 
   readUrlParams() {
@@ -403,20 +431,29 @@ class DSAApp {
   }
 
   getFilteredProblems() {
-    return this.problems.filter(p => {
+    const problems = this.getProblems();
+    if (!Array.isArray(problems)) return [];
+
+    return problems.filter(p => {
+      if (!p || typeof p !== 'object') return false;
+
       if (this.searchQuery) {
         const q = this.searchQuery.toLowerCase();
-        const matchTitle = p.title.toLowerCase().includes(q);
-        const matchId = String(p.id).includes(q);
-        const matchTopic = p.topic.toLowerCase().includes(q);
-        const matchPattern = p.pattern.toLowerCase().includes(q);
-        const matchTag = p.tags && p.tags.some(t => t.toLowerCase().includes(q));
+        const title = (p.title || '').toLowerCase();
+        const topic = (p.topic || '').toLowerCase();
+        const pattern = (p.pattern || '').toLowerCase();
+        const matchTitle = title.includes(q);
+        const matchId = String(p.id || '').includes(q);
+        const matchTopic = topic.includes(q);
+        const matchPattern = pattern.includes(q);
+        const matchTag = p.tags && Array.isArray(p.tags) && p.tags.some(t => typeof t === 'string' && t.toLowerCase().includes(q));
 
         if (!matchTitle && !matchId && !matchTopic && !matchPattern && !matchTag) return false;
       }
 
       if (this.filterDifficulty !== 'all') {
-        if (p.difficulty.toLowerCase() !== this.filterDifficulty.toLowerCase()) return false;
+        const diff = (p.difficulty || '').toLowerCase();
+        if (diff !== this.filterDifficulty.toLowerCase()) return false;
       }
 
       if (this.filterStage !== 'all') {
@@ -425,11 +462,13 @@ class DSAApp {
       }
 
       if (this.filterTopic !== 'all') {
-        if (p.topic.toLowerCase() !== this.filterTopic.toLowerCase()) return false;
+        const topic = (p.topic || '').toLowerCase();
+        if (topic !== this.filterTopic.toLowerCase()) return false;
       }
 
       if (this.filterPattern !== 'all') {
-        if (!p.pattern.toLowerCase().includes(this.filterPattern.toLowerCase())) return false;
+        const pattern = (p.pattern || '').toLowerCase();
+        if (!pattern.includes(this.filterPattern.toLowerCase())) return false;
       }
 
       if (this.filterStatus !== 'all') {

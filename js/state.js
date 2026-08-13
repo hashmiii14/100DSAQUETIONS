@@ -24,8 +24,11 @@ class AppState {
 
   loadSet(key) {
     try {
-      const data = JSON.parse(localStorage.getItem(key) || '[]');
-      return new Set(data.map(Number));
+      const raw = localStorage.getItem(key);
+      if (!raw) return new Set();
+      const data = JSON.parse(raw);
+      if (!Array.isArray(data)) return new Set();
+      return new Set(data.map(Number).filter(n => typeof n === 'number' && !isNaN(n) && n > 0 && n <= 1000));
     } catch (_) {
       return new Set();
     }
