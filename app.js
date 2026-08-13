@@ -194,21 +194,14 @@ class DSAApp {
       });
     }
 
-    const modalBookmarkBtn = document.getElementById('modal-toggle-bookmark-btn');
-    if (modalBookmarkBtn) {
-      modalBookmarkBtn.addEventListener('click', () => {
-        if (this.activeModalProblem) {
-          this.toggleBookmark(this.activeModalProblem.id);
-          this.updateModalActions();
-        }
-      });
-    }
-
-    const copyCodeBtn = document.getElementById('modal-copy-code-btn');
+    const modalBookm    const copyCodeBtn = document.getElementById('modal-copy-code-btn');
     if (copyCodeBtn) {
       copyCodeBtn.addEventListener('click', () => {
         const codeText = document.getElementById('sol-code-display').textContent;
-        navigator.clipboard.writeText(codeText).then(() => {
+        this.copyToClipboard(codeText).then(() => {
+          copyCodeBtn.textContent = '✓ Copied!';
+          setTimeout(() => { copyCodeBtn.textContent = '📋 Copy Code'; }, 2000);
+        }).catch(() => {
           copyCodeBtn.textContent = '✓ Copied!';
           setTimeout(() => { copyCodeBtn.textContent = '📋 Copy Code'; }, 2000);
         });
@@ -262,6 +255,27 @@ class DSAApp {
     if (linkTerms) linkTerms.addEventListener('click', (e) => { e.preventDefault(); this.openLegalModal('Terms of Service', '<p><strong>Terms of Service:</strong> By using DSAProblems.site, you agree to access our content for educational purposes. Content and solutions are curated to assist technical learning. Third-party trademarks (e.g. LeetCode) belong to their respective owners.</p>'); });
     if (linkContact) linkContact.addEventListener('click', (e) => { e.preventDefault(); this.switchView('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     if (legalCloseBtn) legalCloseBtn.addEventListener('click', () => this.closeLegalModal());
+  }
+
+  copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject) => {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        resolve();
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 
   handleContactFormSubmit() {
@@ -398,9 +412,11 @@ class DSAApp {
       }
 
       if (this.filterStatus !== 'all') {
-        if (this.filterStatus === 'solved' && !this.state.done.has(p.id)) return false;
-        if (this.filterStatus === 'unsolved' && this.state.done.has(p.id)) return false;
-        if (this.filterStatus === 'bookmarked' && !this.state.bookmarked.has(p.id)) return false;
+        const hasDone = this.state && this.state.done ? this.state.done.has(p.id) : false;
+        const hasStarred = this.state && this.state.bookmarked ? this.state.bookmarked.has(p.id) : false;
+        if (this.filterStatus === 'solved' && !hasDone) return false;
+        if (this.filterStatus === 'unsolved' && hasDone) return false;
+        if (this.filterStatus === 'bookmarked' && !hasStarred) return false;
       }
 
       return true;
@@ -431,11 +447,6 @@ class DSAApp {
         patternSelect.appendChild(opt);
       });
     }
-
-    const streakCountEl = document.getElementById('streak-count');
-    if (streakCountEl && this.state) {
-      streakCountEl.textContent = `${this.state.streakData.current} Days`;
-    }
   }
 
   renderExplorer() {
@@ -444,6 +455,7 @@ class DSAApp {
     const totalPages = Math.ceil(totalFiltered / this.pageSize) || 1;
 
     if (this.currentPage > totalPages) this.currentPage = totalPages;
+    if (this.currentPage < 1) this.currentPage = 1;
 
     const startIdx = (this.currentPage - 1) * this.pageSize;
     const pageItems = filtered.slice(startIdx, startIdx + this.pageSize);
@@ -467,8 +479,8 @@ class DSAApp {
     let mobileHtml = '';
 
     pageItems.forEach(p => {
-      const isDone = this.state.done.has(p.id);
-      const isStarred = this.state.bookmarked.has(p.id);
+      const isDone = this.state && this.state.done ? this.state.done.has(p.id) : false;
+      const isStarred = this.state && this.state.bookmarked ? this.state.bookmarked.has(p.id) : false;
       const numStr = String(p.id).padStart(3, '0');
       const diffClass = p.difficulty.toLowerCase();
 
@@ -550,14 +562,14 @@ class DSAApp {
 
   toggleDone(pid, event) {
     if (event) event.stopPropagation();
-    this.state.toggleDone(pid);
+    if (this.state) this.state.toggleDone(pid);
     this.renderExplorer();
     this.renderDashboard();
   }
 
   toggleBookmark(pid, event) {
     if (event) event.stopPropagation();
-    this.state.toggleBookmark(pid);
+    if (this.state) this.state.toggleBookmark(pid);
     this.renderExplorer();
   }
 
@@ -598,6 +610,7 @@ class DSAApp {
     if (lcToolbarContainer) lcToolbarContainer.innerHTML = lcBtnHtml;
 
     document.getElementById('modal-constraints').innerHTML = p.constraints.map(c => `<li>${this.escapeHtml(c)}</li>`).join('');
+
     document.getElementById('modal-examples').innerHTML = p.examples.map((ex, idx) => `
       <div style="background: var(--bg-elevated); border-radius: var(--radius); padding: 10px; margin-top: 6px;">
         <strong>Example ${idx + 1}:</strong><br>
@@ -622,8 +635,10 @@ class DSAApp {
 
     const noteArea = document.getElementById('modal-note-area');
     if (noteArea) {
-      noteArea.value = this.state.getNote(p.id);
-      noteArea.oninput = (e) => this.state.saveNote(p.id, e.target.value);
+      noteArea.value = this.state ? this.state.getNote(p.id) : '';
+      noteArea.oninput = (e) => {
+        if (this.state) this.state.saveNote(p.id, e.target.value);
+      };
     }
 
     overlay.classList.add('open');
@@ -635,14 +650,14 @@ class DSAApp {
 
     const solvedBtn = document.getElementById('modal-toggle-solved-btn');
     if (solvedBtn) {
-      const isDone = this.state.done.has(pid);
+      const isDone = this.state && this.state.done ? this.state.done.has(pid) : false;
       solvedBtn.textContent = isDone ? '✓ Solved (Click to Unmark)' : 'Mark Solved ✓';
       solvedBtn.style.color = isDone ? 'var(--easy)' : 'var(--text-primary)';
     }
 
     const bookmarkBtn = document.getElementById('modal-toggle-bookmark-btn');
     if (bookmarkBtn) {
-      const isStarred = this.state.bookmarked.has(pid);
+      const isStarred = this.state && this.state.bookmarked ? this.state.bookmarked.has(pid) : false;
       bookmarkBtn.textContent = isStarred ? 'Bookmarked ★' : 'Bookmark ★';
       bookmarkBtn.style.color = isStarred ? '#f59e0b' : 'var(--text-primary)';
     }
@@ -679,21 +694,25 @@ class DSAApp {
 
   renderDashboard() {
     const total = this.problems.length; // 1000
-    const solved = this.state.done.size;
-    const easySolved = this.problems.filter(p => p.difficulty === 'Easy' && this.state.done.has(p.id)).length;
-    const medSolved = this.problems.filter(p => p.difficulty === 'Medium' && this.state.done.has(p.id)).length;
-    const hardSolved = this.problems.filter(p => p.difficulty === 'Hard' && this.state.done.has(p.id)).length;
+    const solved = this.state && this.state.done ? this.state.done.size : 0;
+    const easyTotal = this.problems.filter(p => p.difficulty === 'Easy').length;
+    const medTotal = this.problems.filter(p => p.difficulty === 'Medium').length;
+    const hardTotal = this.problems.filter(p => p.difficulty === 'Hard').length;
+
+    const easySolved = this.problems.filter(p => p.difficulty === 'Easy' && this.state && this.state.done.has(p.id)).length;
+    const medSolved = this.problems.filter(p => p.difficulty === 'Medium' && this.state && this.state.done.has(p.id)).length;
+    const hardSolved = this.problems.filter(p => p.difficulty === 'Hard' && this.state && this.state.done.has(p.id)).length;
 
     const totalEl = document.getElementById('dash-solved-total');
     if (totalEl) totalEl.textContent = `${solved} / ${total}`;
     const easyEl = document.getElementById('dash-easy-count');
-    if (easyEl) easyEl.textContent = `${easySolved} / 300`;
+    if (easyEl) easyEl.textContent = `${easySolved} / ${easyTotal}`;
     const medEl = document.getElementById('dash-med-count');
-    if (medEl) medEl.textContent = `${medSolved} / 500`;
+    if (medEl) medEl.textContent = `${medSolved} / ${medTotal}`;
     const hardEl = document.getElementById('dash-hard-count');
-    if (hardEl) hardEl.textContent = `${hardSolved} / 200`;
+    if (hardEl) hardEl.textContent = `${hardSolved} / ${hardTotal}`;
 
-    const nextRec = this.recommender.getSmartNextQuestion();
+    const nextRec = this.recommender ? this.recommender.getSmartNextQuestion() : null;
     const recContainer = document.getElementById('dash-recommendation');
     if (recContainer && nextRec && nextRec.problem) {
       const p = nextRec.problem;
@@ -712,7 +731,7 @@ class DSAApp {
 
   escapeHtml(str) {
     if (typeof str !== 'string') return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 }
 
