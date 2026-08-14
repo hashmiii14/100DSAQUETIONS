@@ -181,17 +181,17 @@ class DSAApp {
     };
 
     const routeTitleMap = {
-      'problems': 'DSAProblems — 1000 DSA Problems',
-      'guide': 'DSA Guide — DSAProblems',
-      'progress': 'DSA Progress — DSAProblems',
-      'about': 'About — DSAProblems',
-      'privacy': 'Privacy Policy — DSAProblems',
-      'contact': 'Contact — DSAProblems',
-      'admin-quality': 'Quality Control — DSAProblems'
+      'problems': 'FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.',
+      'guide': 'DSA Guide — FAANG DSA Forge',
+      'progress': 'Learning Progress — FAANG DSA Forge',
+      'about': 'About — FAANG DSA Forge',
+      'privacy': 'Privacy Policy — FAANG DSA Forge',
+      'contact': 'Contact — FAANG DSA Forge',
+      'admin-quality': 'Quality Control — FAANG DSA Forge'
     };
 
     const targetViewName = viewNameMap[route] || 'problems';
-    document.title = routeTitleMap[targetViewName] || 'DSAProblems — 1000 DSA Problems';
+    document.title = routeTitleMap[targetViewName] || 'FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.';
 
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -735,7 +735,7 @@ class DSAApp {
 
         <div style="margin-top: 14px; background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md);">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
-            <span style="font-size: 11.5px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${this.escapeHtml(p.stageName || 'FAANG Master Learning Roadmap')}</span>
+            <span style="font-size: 11.5px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${this.escapeHtml(p.stageName || 'FAANG DSA Forge Learning Path')}</span>
             <span style="font-size: 11px; background: var(--accent-light); color: var(--accent-primary); padding: 2px 6px; border-radius: 4px; font-weight: 600;">Transition: ${this.escapeHtml(p.transitionType || 'EXTEND')}</span>
           </div>
           <div style="font-size: 13px; color: var(--text-primary); font-weight: 600;">What You'll Learn: <span style="font-weight: 400; color: var(--text-secondary);">${this.escapeHtml(p.newConcept || 'Core DSA Pattern')}</span></div>
