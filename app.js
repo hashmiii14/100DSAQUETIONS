@@ -340,6 +340,76 @@ class DSAApp {
     this.renderProblemSheet();
   }
 
+  matchProblemSearch(searchQuery, p) {
+    if (!searchQuery) return true;
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return true;
+
+    // 1. Direct ID Match (#1, 1, 001)
+    const idStr = String(p.id);
+    const cleanQ = q.replace(/^#/, '');
+    if (idStr === cleanQ) return true;
+
+    // 2. Direct string includes on key fields
+    if (p.title && p.title.toLowerCase().includes(q)) return true;
+    if (p.topic && p.topic.toLowerCase().includes(q)) return true;
+    if (p.subtopic && p.subtopic.toLowerCase().includes(q)) return true;
+    if (p.pattern && p.pattern.toLowerCase().includes(q)) return true;
+    if (p.difficulty && p.difficulty.toLowerCase() === q) return true;
+
+    // 3. Computer Science Topic & Pattern Alias Mappings
+    const aliases = {
+      'dp': ['dynamic programming'],
+      'bst': ['trees'],
+      'bt': ['trees'],
+      'binary tree': ['trees'],
+      'tree': ['trees'],
+      'graph': ['graphs'],
+      'bfs': ['graphs', 'trees', 'tree dfs / bfs', 'graph bfs / dfs / topological sort'],
+      'dfs': ['graphs', 'trees', 'tree dfs / bfs', 'graph bfs / dfs / topological sort'],
+      'topological': ['graphs', 'graph bfs / dfs / topological sort'],
+      'dsu': ['advanced data structures', 'disjoint set union'],
+      'union find': ['advanced data structures'],
+      'trie': ['advanced data structures', 'trie / backtracking'],
+      'heap': ['advanced data structures'],
+      'priority queue': ['advanced data structures'],
+      'segment tree': ['advanced data structures'],
+      'array': ['arrays'],
+      'matrix': ['arrays'],
+      'string': ['strings'],
+      'll': ['linked list'],
+      'linkedlist': ['linked list'],
+      'pointer': ['linked list', 'two pointers', 'fast & slow pointers'],
+      'pointers': ['two pointers', 'fast & slow pointers'],
+      'bit': ['bit manipulation & math', 'bit manipulation'],
+      'math': ['bit manipulation & math'],
+      'sort': ['searching & sorting'],
+      'sorting': ['searching & sorting'],
+      'search': ['searching & sorting', 'binary search'],
+      'stack': ['stack / queue', 'monotonic stack / queue'],
+      'queue': ['stack / queue', 'monotonic stack / queue'],
+      'window': ['sliding window'],
+      'sliding': ['sliding window'],
+      'backtracking': ['backtracking', 'trie / backtracking'],
+      'prefix': ['prefix sum'],
+      'hash': ['hashing & array optimization'],
+      'hashing': ['hashing & array optimization']
+    };
+
+    if (aliases[q]) {
+      const targetTerms = aliases[q];
+      const topicLower = (p.topic || '').toLowerCase();
+      const subtopicLower = (p.subtopic || '').toLowerCase();
+      const patternLower = (p.pattern || '').toLowerCase();
+
+      return targetTerms.some(term => 
+        topicLower.includes(term) || subtopicLower.includes(term) || patternLower.includes(term)
+      );
+    }
+
+    return false;
+  }
+
   /* ── Problem Filtering & Pagination Logic ───────────────────────────────── */
   getFilteredProblems() {
     const all = this.getProblems();
@@ -363,11 +433,7 @@ class DSAApp {
 
       // Search query
       if (this.searchQuery) {
-        const idMatch = String(p.id) === this.searchQuery || `#${p.id}` === this.searchQuery;
-        const titleMatch = p.title && p.title.toLowerCase().includes(this.searchQuery);
-        const topicMatch = p.topic && p.topic.toLowerCase().includes(this.searchQuery);
-        const patternMatch = p.pattern && p.pattern.toLowerCase().includes(this.searchQuery);
-        if (!idMatch && !titleMatch && !topicMatch && !patternMatch) return false;
+        if (!this.matchProblemSearch(this.searchQuery, p)) return false;
       }
 
       return true;
@@ -687,26 +753,74 @@ class DSAApp {
     if (!resultsContainer) return;
 
     const q = query.trim().toLowerCase();
-    const matches = this.getProblems().filter(p => {
-      if (!q) return true;
-      return String(p.id) === q || p.title.toLowerCase().includes(q) || (p.topic && p.topic.toLowerCase().includes(q));
-    }).slice(0, 10);
+    const allProblems = this.getProblems();
+    const allTopics = this.getUniqueTopics();
 
-    if (matches.length === 0) {
-      resultsContainer.innerHTML = '<div style="color: var(--text-muted); padding: 12px;">No matching problems found.</div>';
+    // 1. Find matching topics
+    const matchingTopics = q ? allTopics.filter(t => {
+      const tLower = t.toLowerCase();
+      if (tLower.includes(q)) return true;
+      if (q === 'dp' && tLower.includes('dynamic')) return true;
+      if (q === 'tree' && tLower.includes('trees')) return true;
+      if (q === 'graph' && tLower.includes('graphs')) return true;
+      if (q === 'bit' && tLower.includes('bit')) return true;
+      return false;
+    }) : [];
+
+    // 2. Find matching problems
+    const matchingProblems = allProblems.filter(p => this.matchProblemSearch(q, p));
+
+    if (matchingTopics.length === 0 && matchingProblems.length === 0) {
+      resultsContainer.innerHTML = '<div style="color: var(--text-muted); padding: 16px; text-align: center;">No matching problems or topics found.</div>';
       return;
     }
 
     let html = '';
-    matches.forEach(p => {
-      html += `<div style="padding: 8px 12px; border-bottom: 1px solid var(--border-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="app.closeCommandPalette(); app.openProblemModal(${p.id});">
-        <div>
-          <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 11px; margin-right: 6px;">#${String(p.id).padStart(3, '0')}</span>
-          <strong style="color: var(--text-primary); font-size: 13.5px;">${this.escapeHtml(p.title)}</strong>
+
+    // Render Matching Topics Section
+    if (matchingTopics.length > 0) {
+      html += `<div style="margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 8px;">Matching Topics</div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">`;
+      matchingTopics.forEach(top => {
+        const count = allProblems.filter(p => p.topic === top).length;
+        html += `<button class="topic-tab-pill active" style="font-size: 12px; padding: 4px 12px;" onclick="app.handleTopicFilter('${top.replace(/'/g, "\\'")}'); app.closeCommandPalette();">
+          ${this.escapeHtml(top)} <span class="pill-count">(${count})</span>
+        </button>`;
+      });
+      html += `</div></div>`;
+    }
+
+    // Render Problem Matches
+    const displayLimit = q ? 50 : 20;
+    const displayedProblems = matchingProblems.slice(0, displayLimit);
+
+    html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">
+        ${q ? `Matching Problems (${matchingProblems.length})` : 'Popular Problems'}
+      </span>
+      ${matchingProblems.length > displayLimit ? `<span style="font-size: 11px; color: var(--text-muted);">Showing first ${displayLimit} of ${matchingProblems.length}</span>` : ''}
+    </div>`;
+
+    html += `<div style="display: flex; flex-direction: column; gap: 6px;">`;
+    displayedProblems.forEach(p => {
+      const diffClass = (p.difficulty || 'Easy').toLowerCase();
+      html += `<div class="cmd-palette-item" onclick="app.closeCommandPalette(); app.openProblemModal(${p.id});">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 11px;">#${String(p.id).padStart(3, '0')}</span>
+            <strong style="color: var(--text-primary); font-size: 13.5px;">${this.escapeHtml(p.title)}</strong>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--text-secondary);">
+            <span>${this.escapeHtml(p.topic || '')}</span>
+            ${p.pattern ? `<span>•</span><span>${this.escapeHtml(p.pattern)}</span>` : ''}
+          </div>
         </div>
-        <span class="topic-badge">${this.escapeHtml(p.topic || '')}</span>
+        <span class="diff-badge diff-${diffClass}">${this.escapeHtml(p.difficulty)}</span>
       </div>`;
     });
+    html += `</div>`;
+
     resultsContainer.innerHTML = html;
   }
 
