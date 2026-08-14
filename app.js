@@ -778,6 +778,19 @@ class DSAApp {
     }
   }
 
+  openPaytmApp(e) {
+    const paytmUrl = 'paytmmp://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR';
+    const upiId = '8595018458@ptsbi';
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = paytmUrl;
+    } else {
+      if (e) e.preventDefault();
+      this.copyUpiId();
+      this.showToast('📋 UPI ID copied: 8595018458@ptsbi (Scan QR code with Paytm)');
+    }
+  }
+
   fallbackCopyText(text, message) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
