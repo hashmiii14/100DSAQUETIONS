@@ -195,18 +195,20 @@ class AppState {
       }
       if (typeof document.getElementById === 'function') {
         const themeIcon = document.getElementById('theme-icon');
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const mobileLabel = document.getElementById('mobile-theme-label');
+
         if (themeIcon) {
           themeIcon.textContent = validTheme === 'dark' ? '🌙' : '☀️';
         }
-        const btnLight = document.getElementById('theme-btn-light');
-        const btnDark = document.getElementById('theme-btn-dark');
-        if (btnLight) btnLight.classList.toggle('active', validTheme === 'light');
-        if (btnDark) btnDark.classList.toggle('active', validTheme === 'dark');
-
-        const mBtnLight = document.getElementById('mobile-theme-btn-light');
-        const mBtnDark = document.getElementById('mobile-theme-btn-dark');
-        if (mBtnLight) mBtnLight.classList.toggle('active', validTheme === 'light');
-        if (mBtnDark) mBtnDark.classList.toggle('active', validTheme === 'dark');
+        if (themeBtn) {
+          const modeLabel = validTheme === 'dark' ? 'Night Mode (🌙)' : 'Day Mode (☀️)';
+          themeBtn.setAttribute('aria-label', modeLabel);
+          themeBtn.setAttribute('title', modeLabel);
+        }
+        if (mobileLabel) {
+          mobileLabel.textContent = validTheme === 'dark' ? '🌙 Night Mode' : '☀️ Day Mode';
+        }
       }
     }
   }

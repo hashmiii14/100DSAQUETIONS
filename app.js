@@ -86,22 +86,32 @@ class DSAApp {
     document.documentElement.setAttribute('data-theme', validTheme);
 
     const themeIcon = document.getElementById('theme-icon');
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    const mobileLabel = document.getElementById('mobile-theme-label');
+
+    // Day Mode -> show sun icon ☀️
+    // Night Mode -> show moon icon 🌙
     if (themeIcon) {
       themeIcon.textContent = validTheme === 'dark' ? '🌙' : '☀️';
     }
 
-    const btnLight = document.getElementById('theme-btn-light');
-    const btnDark = document.getElementById('theme-btn-dark');
-    if (btnLight) btnLight.classList.toggle('active', validTheme === 'light');
-    if (btnDark) btnDark.classList.toggle('active', validTheme === 'dark');
+    if (themeBtn) {
+      const modeLabel = validTheme === 'dark' ? 'Night Mode (🌙)' : 'Day Mode (☀️)';
+      themeBtn.setAttribute('aria-label', modeLabel);
+      themeBtn.setAttribute('title', modeLabel);
+    }
 
-    const mBtnLight = document.getElementById('mobile-theme-btn-light');
-    const mBtnDark = document.getElementById('mobile-theme-btn-dark');
-    if (mBtnLight) mBtnLight.classList.toggle('active', validTheme === 'light');
-    if (mBtnDark) mBtnDark.classList.toggle('active', validTheme === 'dark');
+    if (mobileLabel) {
+      mobileLabel.textContent = validTheme === 'dark' ? '🌙 Night Mode' : '☀️ Day Mode';
+    }
   }
 
   toggleTheme() {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) {
+      btn.classList.add('animating');
+      setTimeout(() => btn.classList.remove('animating'), 400);
+    }
     const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     this.setTheme(next);
