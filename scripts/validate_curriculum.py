@@ -57,9 +57,9 @@ def validate():
 
     assert easy_cnt > 0, "Must have Easy problems"
     assert med_cnt > 0, "Must have Medium problems"
-    assert easy_cnt == 400, f"Expected 400 Easy problems, got {easy_cnt}"
+    assert easy_cnt == 200, f"Expected 200 Easy problems, got {easy_cnt}"
     assert med_cnt == 500, f"Expected 500 Medium problems, got {med_cnt}"
-    assert hard_cnt == 100, f"Expected 100 Hard problems, got {hard_cnt}"
+    assert hard_cnt == 300, f"Expected 300 Hard problems, got {hard_cnt}"
     assert easy_cnt + med_cnt + hard_cnt == 1000, "Sum of difficulties must be 1000"
 
     print(f"\n[SUCCESS] All 1000 DSA Problems with Verified LeetCode Connections passed Quality Control Validation!")

@@ -64,9 +64,9 @@ PROBLEMS.forEach((p, idx) => {
 });
 
 console.log(`   Data Verification Passed: Total 1000 | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount}`);
-assert(easyCount === 400, `Expected 400 Easy problems, found ${easyCount}`);
+assert(easyCount === 200, `Expected 200 Easy problems, found ${easyCount}`);
 assert(medCount === 500, `Expected 500 Medium problems, found ${medCount}`);
-assert(hardCount === 100, `Expected 100 Hard problems, found ${hardCount}`);
+assert(hardCount === 300, `Expected 300 Hard problems, found ${hardCount}`);
 
 // 3. Test AppState logic
 console.log("\n[Test 3] Testing AppState & Storage Operations...");

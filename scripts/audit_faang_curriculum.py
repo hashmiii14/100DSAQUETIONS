@@ -77,6 +77,9 @@ def run_audit():
         print(f"  {label}: Easy={e}, Medium={m}, Hard={h}")
         
     print(f"  Overall Breakdown: Easy={total_easy}, Medium={total_med}, Hard={total_hard}")
+    assert total_easy == 200, f"Expected 200 Easy problems, got {total_easy}"
+    assert total_med == 500, f"Expected 500 Medium problems, got {total_med}"
+    assert total_hard == 300, f"Expected 300 Hard problems, got {total_hard}"
     assert sum(1 for p in problems[:15] if p['difficulty'] == 'Easy') == 15, "Problems 1-15 must be 100% Easy!"
     assert sum(1 for p in problems[:70] if p['difficulty'] == 'Hard') == 0, "Problems 1-70 must contain ZERO Hard problems!"
     
