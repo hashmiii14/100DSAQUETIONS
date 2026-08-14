@@ -1,10 +1,10 @@
-// Canonical 1000 DSA Problems Dataset — Perfectly Ordered & 100% Verified LeetCode Problems
+// Canonical 1000 DSA Problems Dataset — Standard Taxonomy & Verified LeetCode Connections
 const PROBLEMS = [
   {
     "id": 1,
     "title": "Arrays & Subarray Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -65,7 +65,7 @@ const PROBLEMS = [
     "id": 2,
     "title": "Arrays & Subarray Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -126,7 +126,7 @@ const PROBLEMS = [
     "id": 3,
     "title": "Arrays & Subarray Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -187,7 +187,7 @@ const PROBLEMS = [
     "id": 4,
     "title": "Arrays & Subarray Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -248,7 +248,7 @@ const PROBLEMS = [
     "id": 5,
     "title": "Arrays & Subarray Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -309,7 +309,7 @@ const PROBLEMS = [
     "id": 6,
     "title": "Arrays & Subarray Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -370,7 +370,7 @@ const PROBLEMS = [
     "id": 7,
     "title": "Arrays & Subarray Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -431,7 +431,7 @@ const PROBLEMS = [
     "id": 8,
     "title": "Arrays & Subarray Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -492,7 +492,7 @@ const PROBLEMS = [
     "id": 9,
     "title": "Arrays & Subarray Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -553,7 +553,7 @@ const PROBLEMS = [
     "id": 10,
     "title": "Arrays & Subarray Pattern Variation 58",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -614,7 +614,7 @@ const PROBLEMS = [
     "id": 11,
     "title": "Arrays & Subarray Pattern Variation 64",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -675,7 +675,7 @@ const PROBLEMS = [
     "id": 12,
     "title": "Arrays & Subarray Pattern Variation 70",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -736,7 +736,7 @@ const PROBLEMS = [
     "id": 13,
     "title": "Arrays & Subarray Pattern Variation 76",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -797,7 +797,7 @@ const PROBLEMS = [
     "id": 14,
     "title": "Arrays & Subarray Pattern Variation 82",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -858,7 +858,7 @@ const PROBLEMS = [
     "id": 15,
     "title": "Arrays & Subarray Pattern Variation 88",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -919,7 +919,7 @@ const PROBLEMS = [
     "id": 16,
     "title": "Arrays & Subarray Pattern Variation 94",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -980,7 +980,7 @@ const PROBLEMS = [
     "id": 17,
     "title": "Arrays & Subarray Pattern Variation 100",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -1041,7 +1041,7 @@ const PROBLEMS = [
     "id": 18,
     "title": "Arrays & Subarray Pattern Variation 106",
     "difficulty": "Easy",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -1105,7 +1105,7 @@ const PROBLEMS = [
     "title": "Roman to Integer Challenge",
     "slug": "roman-to-integer-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1214,7 +1214,7 @@ const PROBLEMS = [
     "title": "Longest Common Prefix Optimization",
     "slug": "longest-common-prefix-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1323,7 +1323,7 @@ const PROBLEMS = [
     "title": "Remove Element Challenge",
     "slug": "remove-element-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1432,7 +1432,7 @@ const PROBLEMS = [
     "title": "Find the Index of the First Occurrence in a String Optimization",
     "slug": "find-the-index-of-the-first-occurrence-in-a-string-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1541,7 +1541,7 @@ const PROBLEMS = [
     "title": "Search Insert Position Optimization",
     "slug": "search-insert-position-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1650,7 +1650,7 @@ const PROBLEMS = [
     "title": "Length of Last Word Challenge",
     "slug": "length-of-last-word-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1759,7 +1759,7 @@ const PROBLEMS = [
     "title": "Plus One Optimization",
     "slug": "plus-one-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1868,7 +1868,7 @@ const PROBLEMS = [
     "title": "Add Binary Challenge",
     "slug": "add-binary-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -1977,7 +1977,7 @@ const PROBLEMS = [
     "title": "Sqrt(x) Optimization",
     "slug": "sqrt-x-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2086,7 +2086,7 @@ const PROBLEMS = [
     "title": "Pascal's Triangle Challenge",
     "slug": "pascal-s-triangle-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2195,7 +2195,7 @@ const PROBLEMS = [
     "title": "Pascal's Triangle II Optimization",
     "slug": "pascal-s-triangle-ii-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2304,7 +2304,7 @@ const PROBLEMS = [
     "title": "Best Time to Buy and Sell Stock Optimization",
     "slug": "best-time-to-buy-and-sell-stock-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2413,7 +2413,7 @@ const PROBLEMS = [
     "title": "Excel Sheet Column Title Optimization",
     "slug": "excel-sheet-column-title-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2522,7 +2522,7 @@ const PROBLEMS = [
     "title": "Majority Element Optimization",
     "slug": "majority-element-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2631,7 +2631,7 @@ const PROBLEMS = [
     "title": "Excel Sheet Column Number Optimization",
     "slug": "excel-sheet-column-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2740,7 +2740,7 @@ const PROBLEMS = [
     "title": "Combine Two Tables Challenge",
     "slug": "combine-two-tables-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2849,7 +2849,7 @@ const PROBLEMS = [
     "title": "Employees Earning More Than Their Managers Optimization",
     "slug": "employees-earning-more-than-their-managers-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -2955,7 +2955,7 @@ const PROBLEMS = [
     "id": 36,
     "title": "Arrays & Subarray Pattern Variation 1",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -3019,7 +3019,7 @@ const PROBLEMS = [
     "title": "Duplicate Emails Optimization",
     "slug": "duplicate-emails-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3128,7 +3128,7 @@ const PROBLEMS = [
     "title": "Customers Who Never Order Optimization",
     "slug": "customers-who-never-order-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3234,7 +3234,7 @@ const PROBLEMS = [
     "id": 39,
     "title": "Arrays & Subarray Pattern Variation 2",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -3298,7 +3298,7 @@ const PROBLEMS = [
     "title": "Valid Phone Numbers Optimization",
     "slug": "valid-phone-numbers-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3407,7 +3407,7 @@ const PROBLEMS = [
     "title": "Tenth Line Optimization",
     "slug": "tenth-line-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3516,7 +3516,7 @@ const PROBLEMS = [
     "title": "Delete Duplicate Emails Challenge",
     "slug": "delete-duplicate-emails-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3622,7 +3622,7 @@ const PROBLEMS = [
     "id": 43,
     "title": "Arrays & Subarray Pattern Variation 3",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -3686,7 +3686,7 @@ const PROBLEMS = [
     "title": "Happy Number Optimization",
     "slug": "happy-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3795,7 +3795,7 @@ const PROBLEMS = [
     "title": "Summary Ranges Optimization",
     "slug": "summary-ranges-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -3904,7 +3904,7 @@ const PROBLEMS = [
     "title": "Power of Two Optimization",
     "slug": "power-of-two-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4010,7 +4010,7 @@ const PROBLEMS = [
     "id": 47,
     "title": "Arrays & Subarray Pattern Variation 5",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -4074,7 +4074,7 @@ const PROBLEMS = [
     "title": "Valid Anagram Optimization",
     "slug": "valid-anagram-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4183,7 +4183,7 @@ const PROBLEMS = [
     "title": "Add Digits Challenge",
     "slug": "add-digits-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4292,7 +4292,7 @@ const PROBLEMS = [
     "title": "Ugly Number Optimization",
     "slug": "ugly-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4398,7 +4398,7 @@ const PROBLEMS = [
     "id": 51,
     "title": "Arrays & Subarray Pattern Variation 6",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -4462,7 +4462,7 @@ const PROBLEMS = [
     "title": "Missing Number Optimization",
     "slug": "missing-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4571,7 +4571,7 @@ const PROBLEMS = [
     "title": "First Bad Version Optimization",
     "slug": "first-bad-version-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4680,7 +4680,7 @@ const PROBLEMS = [
     "title": "Word Pattern Optimization",
     "slug": "word-pattern-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4786,7 +4786,7 @@ const PROBLEMS = [
     "id": 55,
     "title": "Arrays & Subarray Pattern Variation 7",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -4850,7 +4850,7 @@ const PROBLEMS = [
     "title": "Nim Game Optimization",
     "slug": "nim-game-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -4959,7 +4959,7 @@ const PROBLEMS = [
     "title": "Power of Three Challenge",
     "slug": "power-of-three-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5068,7 +5068,7 @@ const PROBLEMS = [
     "title": "Power of Four Optimization",
     "slug": "power-of-four-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5174,7 +5174,7 @@ const PROBLEMS = [
     "id": 59,
     "title": "Arrays & Subarray Pattern Variation 9",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -5238,7 +5238,7 @@ const PROBLEMS = [
     "title": "Reverse String Optimization",
     "slug": "reverse-string-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5347,7 +5347,7 @@ const PROBLEMS = [
     "title": "Reverse Vowels of a String Challenge",
     "slug": "reverse-vowels-of-a-string-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5456,7 +5456,7 @@ const PROBLEMS = [
     "title": "Intersection of Two Arrays Optimization",
     "slug": "intersection-of-two-arrays-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5562,7 +5562,7 @@ const PROBLEMS = [
     "id": 63,
     "title": "Arrays & Subarray Pattern Variation 8",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -5626,7 +5626,7 @@ const PROBLEMS = [
     "title": "Intersection of Two Arrays II Optimization",
     "slug": "intersection-of-two-arrays-ii-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5735,7 +5735,7 @@ const PROBLEMS = [
     "title": "Valid Perfect Square Optimization",
     "slug": "valid-perfect-square-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -5841,7 +5841,7 @@ const PROBLEMS = [
     "id": 66,
     "title": "Arrays & Subarray Pattern Variation 11",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -5905,7 +5905,7 @@ const PROBLEMS = [
     "title": "Guess Number Higher or Lower Challenge",
     "slug": "guess-number-higher-or-lower-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6014,7 +6014,7 @@ const PROBLEMS = [
     "title": "Ransom Note Optimization",
     "slug": "ransom-note-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6123,7 +6123,7 @@ const PROBLEMS = [
     "title": "First Unique Character in a String Optimization",
     "slug": "first-unique-character-in-a-string-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6229,7 +6229,7 @@ const PROBLEMS = [
     "id": 70,
     "title": "Arrays & Subarray Pattern Variation 13",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -6293,7 +6293,7 @@ const PROBLEMS = [
     "title": "Find the Difference Optimization",
     "slug": "find-the-difference-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6402,7 +6402,7 @@ const PROBLEMS = [
     "title": "Binary Watch Optimization",
     "slug": "binary-watch-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6511,7 +6511,7 @@ const PROBLEMS = [
     "title": "Sum of Left Leaves Optimization",
     "slug": "sum-of-left-leaves-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6617,7 +6617,7 @@ const PROBLEMS = [
     "id": 74,
     "title": "Arrays & Subarray Pattern Variation 12",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -6681,7 +6681,7 @@ const PROBLEMS = [
     "title": "Convert a Number to Hexadecimal Optimization",
     "slug": "convert-a-number-to-hexadecimal-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6790,7 +6790,7 @@ const PROBLEMS = [
     "title": "Fizz Buzz Optimization",
     "slug": "fizz-buzz-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -6899,7 +6899,7 @@ const PROBLEMS = [
     "title": "Third Maximum Number Optimization",
     "slug": "third-maximum-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7005,7 +7005,7 @@ const PROBLEMS = [
     "id": 78,
     "title": "Arrays & Subarray Pattern Variation 15",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -7069,7 +7069,7 @@ const PROBLEMS = [
     "title": "Add Strings Optimization",
     "slug": "add-strings-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7178,7 +7178,7 @@ const PROBLEMS = [
     "title": "Number of Segments in a String Challenge",
     "slug": "number-of-segments-in-a-string-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7287,7 +7287,7 @@ const PROBLEMS = [
     "title": "Arranging Coins Optimization",
     "slug": "arranging-coins-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7393,7 +7393,7 @@ const PROBLEMS = [
     "id": 82,
     "title": "Arrays & Subarray Pattern Variation 17",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -7457,7 +7457,7 @@ const PROBLEMS = [
     "title": "Find All Numbers Disappeared in an Array Optimization",
     "slug": "find-all-numbers-disappeared-in-an-array-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7566,7 +7566,7 @@ const PROBLEMS = [
     "title": "Assign Cookies Optimization",
     "slug": "assign-cookies-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7675,7 +7675,7 @@ const PROBLEMS = [
     "title": "Hamming Distance Optimization",
     "slug": "hamming-distance-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7781,7 +7781,7 @@ const PROBLEMS = [
     "id": 86,
     "title": "Arrays & Subarray Pattern Variation 14",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -7845,7 +7845,7 @@ const PROBLEMS = [
     "title": "Number Complement Optimization",
     "slug": "number-complement-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -7954,7 +7954,7 @@ const PROBLEMS = [
     "title": "License Key Formatting Challenge",
     "slug": "license-key-formatting-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8063,7 +8063,7 @@ const PROBLEMS = [
     "title": "Construct the Rectangle Optimization",
     "slug": "construct-the-rectangle-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8169,7 +8169,7 @@ const PROBLEMS = [
     "id": 90,
     "title": "Arrays & Subarray Pattern Variation 19",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -8233,7 +8233,7 @@ const PROBLEMS = [
     "title": "Teemo Attacking Optimization",
     "slug": "teemo-attacking-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8342,7 +8342,7 @@ const PROBLEMS = [
     "title": "Keyboard Row Optimization",
     "slug": "keyboard-row-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8448,7 +8448,7 @@ const PROBLEMS = [
     "id": 93,
     "title": "Arrays & Subarray Pattern Variation 21",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -8512,7 +8512,7 @@ const PROBLEMS = [
     "title": "Base 7 Optimization",
     "slug": "base-7-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8621,7 +8621,7 @@ const PROBLEMS = [
     "title": "Relative Ranks Challenge",
     "slug": "relative-ranks-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8730,7 +8730,7 @@ const PROBLEMS = [
     "title": "Perfect Number Optimization",
     "slug": "perfect-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -8836,7 +8836,7 @@ const PROBLEMS = [
     "id": 97,
     "title": "Arrays & Subarray Pattern Variation 18",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -8900,7 +8900,7 @@ const PROBLEMS = [
     "title": "Fibonacci Number Optimization",
     "slug": "fibonacci-number-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9009,7 +9009,7 @@ const PROBLEMS = [
     "title": "Game Play Analysis I Optimization",
     "slug": "game-play-analysis-i-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9118,7 +9118,7 @@ const PROBLEMS = [
     "title": "Detect Capital Challenge",
     "slug": "detect-capital-challenge",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9224,7 +9224,7 @@ const PROBLEMS = [
     "id": 101,
     "title": "Arrays & Subarray Pattern Variation 23",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -9288,7 +9288,7 @@ const PROBLEMS = [
     "title": "Reverse String II Optimization",
     "slug": "reverse-string-ii-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9397,7 +9397,7 @@ const PROBLEMS = [
     "title": "Student Attendance Record I Optimization",
     "slug": "student-attendance-record-i-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9506,7 +9506,7 @@ const PROBLEMS = [
     "title": "Reverse Words in a String III Optimization",
     "slug": "reverse-words-in-a-string-iii-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9612,7 +9612,7 @@ const PROBLEMS = [
     "id": 105,
     "title": "Arrays & Subarray Pattern Variation 25",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -9676,7 +9676,7 @@ const PROBLEMS = [
     "title": "Array Partition Optimization",
     "slug": "array-partition-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9785,7 +9785,7 @@ const PROBLEMS = [
     "title": "Distribute Candies Optimization",
     "slug": "distribute-candies-optimization",
     "difficulty": "Easy",
-    "topic": "Strings & Pattern Matching",
+    "topic": "Strings",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -9894,7 +9894,7 @@ const PROBLEMS = [
     "title": "Isomorphic Strings Challenge",
     "slug": "isomorphic-strings-challenge",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -10000,7 +10000,7 @@ const PROBLEMS = [
     "id": 109,
     "title": "Arrays & Subarray Pattern Variation 20",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -10064,7 +10064,7 @@ const PROBLEMS = [
     "title": "Contains Duplicate Optimization",
     "slug": "contains-duplicate-optimization",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -10173,7 +10173,7 @@ const PROBLEMS = [
     "title": "Contains Duplicate II Optimization",
     "slug": "contains-duplicate-ii-optimization",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -10282,7 +10282,7 @@ const PROBLEMS = [
     "title": "Design HashSet Optimization",
     "slug": "design-hashset-optimization",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -10388,7 +10388,7 @@ const PROBLEMS = [
     "id": 113,
     "title": "Arrays & Subarray Pattern Variation 27",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -10452,7 +10452,7 @@ const PROBLEMS = [
     "title": "Design HashMap Challenge",
     "slug": "design-hashmap-challenge",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -10558,7 +10558,7 @@ const PROBLEMS = [
     "id": 115,
     "title": "Hashing & Frequency Map Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -10619,7 +10619,7 @@ const PROBLEMS = [
     "id": 116,
     "title": "Hashing & Frequency Map Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -10680,7 +10680,7 @@ const PROBLEMS = [
     "id": 117,
     "title": "Arrays & Subarray Pattern Variation 29",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -10741,7 +10741,7 @@ const PROBLEMS = [
     "id": 118,
     "title": "Hashing & Frequency Map Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -10802,7 +10802,7 @@ const PROBLEMS = [
     "id": 119,
     "title": "Hashing & Frequency Map Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -10863,7 +10863,7 @@ const PROBLEMS = [
     "id": 120,
     "title": "Arrays & Subarray Pattern Variation 24",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -10924,7 +10924,7 @@ const PROBLEMS = [
     "id": 121,
     "title": "Hashing & Frequency Map Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -10985,7 +10985,7 @@ const PROBLEMS = [
     "id": 122,
     "title": "Hashing & Frequency Map Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11046,7 +11046,7 @@ const PROBLEMS = [
     "id": 123,
     "title": "Hashing & Frequency Map Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11107,7 +11107,7 @@ const PROBLEMS = [
     "id": 124,
     "title": "Arrays & Subarray Pattern Variation 31",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -11168,7 +11168,7 @@ const PROBLEMS = [
     "id": 125,
     "title": "Hashing & Frequency Map Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11229,7 +11229,7 @@ const PROBLEMS = [
     "id": 126,
     "title": "Hashing & Frequency Map Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11290,7 +11290,7 @@ const PROBLEMS = [
     "id": 127,
     "title": "Hashing & Frequency Map Pattern Variation 58",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11351,7 +11351,7 @@ const PROBLEMS = [
     "id": 128,
     "title": "Arrays & Subarray Pattern Variation 33",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -11412,7 +11412,7 @@ const PROBLEMS = [
     "id": 129,
     "title": "Hashing & Frequency Map Pattern Variation 64",
     "difficulty": "Easy",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -11691,7 +11691,7 @@ const PROBLEMS = [
     "id": 132,
     "title": "Arrays & Subarray Pattern Variation 26",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -12079,7 +12079,7 @@ const PROBLEMS = [
     "id": 136,
     "title": "Arrays & Subarray Pattern Variation 35",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -12467,7 +12467,7 @@ const PROBLEMS = [
     "id": 140,
     "title": "Arrays & Subarray Pattern Variation 37",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -12855,7 +12855,7 @@ const PROBLEMS = [
     "id": 144,
     "title": "Arrays & Subarray Pattern Variation 30",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -13086,7 +13086,7 @@ const PROBLEMS = [
     "id": 147,
     "title": "Arrays & Subarray Pattern Variation 39",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -13378,7 +13378,7 @@ const PROBLEMS = [
     "id": 151,
     "title": "Arrays & Subarray Pattern Variation 41",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -13622,7 +13622,7 @@ const PROBLEMS = [
     "id": 155,
     "title": "Arrays & Subarray Pattern Variation 32",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -13866,7 +13866,7 @@ const PROBLEMS = [
     "id": 159,
     "title": "Arrays & Subarray Pattern Variation 43",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -13991,7 +13991,7 @@ const PROBLEMS = [
     "title": "Range Sum Query - Immutable Optimization",
     "slug": "range-sum-query-immutable-optimization",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -14100,7 +14100,7 @@ const PROBLEMS = [
     "title": "Find Pivot Index Challenge",
     "slug": "find-pivot-index-challenge",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -14206,7 +14206,7 @@ const PROBLEMS = [
     "id": 163,
     "title": "Arrays & Subarray Pattern Variation 45",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -14267,7 +14267,7 @@ const PROBLEMS = [
     "id": 164,
     "title": "Prefix Sum & Difference Arra Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14328,7 +14328,7 @@ const PROBLEMS = [
     "id": 165,
     "title": "Prefix Sum & Difference Arra Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14389,7 +14389,7 @@ const PROBLEMS = [
     "id": 166,
     "title": "Prefix Sum & Difference Arra Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14450,7 +14450,7 @@ const PROBLEMS = [
     "id": 167,
     "title": "Arrays & Subarray Pattern Variation 36",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -14511,7 +14511,7 @@ const PROBLEMS = [
     "id": 168,
     "title": "Prefix Sum & Difference Arra Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14572,7 +14572,7 @@ const PROBLEMS = [
     "id": 169,
     "title": "Prefix Sum & Difference Arra Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14633,7 +14633,7 @@ const PROBLEMS = [
     "id": 170,
     "title": "Prefix Sum & Difference Arra Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -14694,7 +14694,7 @@ const PROBLEMS = [
     "id": 171,
     "title": "Arrays & Subarray Pattern Variation 47",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -14758,7 +14758,7 @@ const PROBLEMS = [
     "title": "Binary Search Challenge",
     "slug": "binary-search-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -14867,7 +14867,7 @@ const PROBLEMS = [
     "title": "Reshape the Matrix Optimization",
     "slug": "reshape-the-matrix-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -14973,7 +14973,7 @@ const PROBLEMS = [
     "id": 174,
     "title": "Arrays & Subarray Pattern Variation 49",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -15037,7 +15037,7 @@ const PROBLEMS = [
     "title": "Toeplitz Matrix Optimization",
     "slug": "toeplitz-matrix-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15146,7 +15146,7 @@ const PROBLEMS = [
     "title": "Transpose Matrix Optimization",
     "slug": "transpose-matrix-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15255,7 +15255,7 @@ const PROBLEMS = [
     "title": "Matrix Cells in Distance Order Optimization",
     "slug": "matrix-cells-in-distance-order-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15361,7 +15361,7 @@ const PROBLEMS = [
     "id": 178,
     "title": "Arrays & Subarray Pattern Variation 38",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -15425,7 +15425,7 @@ const PROBLEMS = [
     "title": "Cells with Odd Values in a Matrix Challenge",
     "slug": "cells-with-odd-values-in-a-matrix-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15534,7 +15534,7 @@ const PROBLEMS = [
     "title": "The K Weakest Rows in a Matrix Challenge",
     "slug": "the-k-weakest-rows-in-a-matrix-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15643,7 +15643,7 @@ const PROBLEMS = [
     "title": "Lucky Numbers in a Matrix Optimization",
     "slug": "lucky-numbers-in-a-matrix-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -15749,7 +15749,7 @@ const PROBLEMS = [
     "id": 182,
     "title": "Arrays & Subarray Pattern Variation 51",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -15810,7 +15810,7 @@ const PROBLEMS = [
     "id": 183,
     "title": "Binary Search & Search Spac Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -15871,7 +15871,7 @@ const PROBLEMS = [
     "id": 184,
     "title": "Binary Search & Search Spac Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -15932,7 +15932,7 @@ const PROBLEMS = [
     "id": 185,
     "title": "Binary Search & Search Spac Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -15993,7 +15993,7 @@ const PROBLEMS = [
     "id": 186,
     "title": "Arrays & Subarray Pattern Variation 53",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -16054,7 +16054,7 @@ const PROBLEMS = [
     "id": 187,
     "title": "Binary Search & Search Spac Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -16115,7 +16115,7 @@ const PROBLEMS = [
     "id": 188,
     "title": "Binary Search & Search Spac Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -16176,7 +16176,7 @@ const PROBLEMS = [
     "id": 189,
     "title": "Binary Search & Search Spac Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -16237,7 +16237,7 @@ const PROBLEMS = [
     "id": 190,
     "title": "Arrays & Subarray Pattern Variation 42",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -16298,7 +16298,7 @@ const PROBLEMS = [
     "id": 191,
     "title": "Binary Search & Search Spac Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -16359,7 +16359,7 @@ const PROBLEMS = [
     "id": 192,
     "title": "Recursion & Backtrackin Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16420,7 +16420,7 @@ const PROBLEMS = [
     "id": 193,
     "title": "Recursion & Backtrackin Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16481,7 +16481,7 @@ const PROBLEMS = [
     "id": 194,
     "title": "Arrays & Subarray Pattern Variation 55",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -16542,7 +16542,7 @@ const PROBLEMS = [
     "id": 195,
     "title": "Recursion & Backtrackin Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16603,7 +16603,7 @@ const PROBLEMS = [
     "id": 196,
     "title": "Recursion & Backtrackin Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16664,7 +16664,7 @@ const PROBLEMS = [
     "id": 197,
     "title": "Recursion & Backtrackin Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16725,7 +16725,7 @@ const PROBLEMS = [
     "id": 198,
     "title": "Arrays & Subarray Pattern Variation 57",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -16786,7 +16786,7 @@ const PROBLEMS = [
     "id": 199,
     "title": "Recursion & Backtrackin Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -16847,7 +16847,7 @@ const PROBLEMS = [
     "id": 200,
     "title": "Linked List FAANG Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -16908,7 +16908,7 @@ const PROBLEMS = [
     "id": 201,
     "title": "Arrays & Subarray Pattern Variation 44",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -16969,7 +16969,7 @@ const PROBLEMS = [
     "id": 202,
     "title": "Linked List FAANG Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -17030,7 +17030,7 @@ const PROBLEMS = [
     "id": 203,
     "title": "Linked List FAANG Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -17091,7 +17091,7 @@ const PROBLEMS = [
     "id": 204,
     "title": "Linked List FAANG Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -17152,7 +17152,7 @@ const PROBLEMS = [
     "id": 205,
     "title": "Arrays & Subarray Pattern Variation 59",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -17213,7 +17213,7 @@ const PROBLEMS = [
     "id": 206,
     "title": "Linked List FAANG Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -17277,7 +17277,7 @@ const PROBLEMS = [
     "title": "Implement Stack using Queues Challenge",
     "slug": "implement-stack-using-queues-challenge",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -17386,7 +17386,7 @@ const PROBLEMS = [
     "title": "Implement Queue using Stacks Challenge",
     "slug": "implement-queue-using-stacks-challenge",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -17492,7 +17492,7 @@ const PROBLEMS = [
     "id": 209,
     "title": "Arrays & Subarray Pattern Variation 61",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -17556,7 +17556,7 @@ const PROBLEMS = [
     "title": "Valid Parentheses Optimization",
     "slug": "valid-parentheses-optimization",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -17665,7 +17665,7 @@ const PROBLEMS = [
     "title": "Rising Temperature Optimization",
     "slug": "rising-temperature-optimization",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -17774,7 +17774,7 @@ const PROBLEMS = [
     "title": "Next Greater Element I Challenge",
     "slug": "next-greater-element-i-challenge",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -17880,7 +17880,7 @@ const PROBLEMS = [
     "id": 213,
     "title": "Arrays & Subarray Pattern Variation 48",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -17944,7 +17944,7 @@ const PROBLEMS = [
     "title": "Remove Outermost Parentheses Challenge",
     "slug": "remove-outermost-parentheses-challenge",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -18050,7 +18050,7 @@ const PROBLEMS = [
     "id": 215,
     "title": "Stack & Monotonic Stac Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18111,7 +18111,7 @@ const PROBLEMS = [
     "id": 216,
     "title": "Stack & Monotonic Stac Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18172,7 +18172,7 @@ const PROBLEMS = [
     "id": 217,
     "title": "Arrays & Subarray Pattern Variation 63",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -18233,7 +18233,7 @@ const PROBLEMS = [
     "id": 218,
     "title": "Stack & Monotonic Stac Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18294,7 +18294,7 @@ const PROBLEMS = [
     "id": 219,
     "title": "Stack & Monotonic Stac Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18355,7 +18355,7 @@ const PROBLEMS = [
     "id": 220,
     "title": "Stack & Monotonic Stac Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18416,7 +18416,7 @@ const PROBLEMS = [
     "id": 221,
     "title": "Arrays & Subarray Pattern Variation 65",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -18477,7 +18477,7 @@ const PROBLEMS = [
     "id": 222,
     "title": "Stack & Monotonic Stac Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18538,7 +18538,7 @@ const PROBLEMS = [
     "id": 223,
     "title": "Stack & Monotonic Stac Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -18599,7 +18599,7 @@ const PROBLEMS = [
     "id": 224,
     "title": "Queue & Dequ Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -18660,7 +18660,7 @@ const PROBLEMS = [
     "id": 225,
     "title": "Arrays & Subarray Pattern Variation 50",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -18721,7 +18721,7 @@ const PROBLEMS = [
     "id": 226,
     "title": "Queue & Dequ Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -18782,7 +18782,7 @@ const PROBLEMS = [
     "id": 227,
     "title": "Queue & Dequ Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -18843,7 +18843,7 @@ const PROBLEMS = [
     "id": 228,
     "title": "Queue & Dequ Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -18904,7 +18904,7 @@ const PROBLEMS = [
     "id": 229,
     "title": "Arrays & Subarray Pattern Variation 67",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -18965,7 +18965,7 @@ const PROBLEMS = [
     "id": 230,
     "title": "Queue & Dequ Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -19029,7 +19029,7 @@ const PROBLEMS = [
     "title": "Binary Tree Inorder Traversal Challenge",
     "slug": "binary-tree-inorder-traversal-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19135,7 +19135,7 @@ const PROBLEMS = [
     "id": 232,
     "title": "Arrays & Subarray Pattern Variation 69",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -19199,7 +19199,7 @@ const PROBLEMS = [
     "title": "Same Tree Optimization",
     "slug": "same-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19308,7 +19308,7 @@ const PROBLEMS = [
     "title": "Symmetric Tree Optimization",
     "slug": "symmetric-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19417,7 +19417,7 @@ const PROBLEMS = [
     "title": "Maximum Depth of Binary Tree Challenge",
     "slug": "maximum-depth-of-binary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19523,7 +19523,7 @@ const PROBLEMS = [
     "id": 236,
     "title": "Arrays & Subarray Pattern Variation 54",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -19587,7 +19587,7 @@ const PROBLEMS = [
     "title": "Balanced Binary Tree Challenge",
     "slug": "balanced-binary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19696,7 +19696,7 @@ const PROBLEMS = [
     "title": "Minimum Depth of Binary Tree Optimization",
     "slug": "minimum-depth-of-binary-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19805,7 +19805,7 @@ const PROBLEMS = [
     "title": "Binary Tree Preorder Traversal Optimization",
     "slug": "binary-tree-preorder-traversal-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -19911,7 +19911,7 @@ const PROBLEMS = [
     "id": 240,
     "title": "Arrays & Subarray Pattern Variation 71",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -19975,7 +19975,7 @@ const PROBLEMS = [
     "title": "Binary Tree Postorder Traversal Optimization",
     "slug": "binary-tree-postorder-traversal-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20084,7 +20084,7 @@ const PROBLEMS = [
     "title": "Invert Binary Tree Optimization",
     "slug": "invert-binary-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20193,7 +20193,7 @@ const PROBLEMS = [
     "title": "Binary Tree Paths Optimization",
     "slug": "binary-tree-paths-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20299,7 +20299,7 @@ const PROBLEMS = [
     "id": 244,
     "title": "Arrays & Subarray Pattern Variation 73",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -20363,7 +20363,7 @@ const PROBLEMS = [
     "title": "Diameter of Binary Tree Challenge",
     "slug": "diameter-of-binary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20472,7 +20472,7 @@ const PROBLEMS = [
     "title": "Maximum Depth of N-ary Tree Challenge",
     "slug": "maximum-depth-of-n-ary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20581,7 +20581,7 @@ const PROBLEMS = [
     "title": "Binary Tree Tilt Challenge",
     "slug": "binary-tree-tilt-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20687,7 +20687,7 @@ const PROBLEMS = [
     "id": 248,
     "title": "Arrays & Subarray Pattern Variation 56",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -20751,7 +20751,7 @@ const PROBLEMS = [
     "title": "Subtree of Another Tree Challenge",
     "slug": "subtree-of-another-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20860,7 +20860,7 @@ const PROBLEMS = [
     "title": "N-ary Tree Preorder Traversal Challenge",
     "slug": "n-ary-tree-preorder-traversal-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -20969,7 +20969,7 @@ const PROBLEMS = [
     "title": "N-ary Tree Postorder Traversal Optimization",
     "slug": "n-ary-tree-postorder-traversal-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21075,7 +21075,7 @@ const PROBLEMS = [
     "id": 252,
     "title": "Arrays & Subarray Pattern Variation 75",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -21139,7 +21139,7 @@ const PROBLEMS = [
     "title": "Merge Two Binary Trees Challenge",
     "slug": "merge-two-binary-trees-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21248,7 +21248,7 @@ const PROBLEMS = [
     "title": "Average of Levels in Binary Tree Challenge",
     "slug": "average-of-levels-in-binary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21357,7 +21357,7 @@ const PROBLEMS = [
     "title": "Second Minimum Node In a Binary Tree Optimization",
     "slug": "second-minimum-node-in-a-binary-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -21463,7 +21463,7 @@ const PROBLEMS = [
     "id": 256,
     "title": "Arrays & Subarray Pattern Variation 77",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -21527,7 +21527,7 @@ const PROBLEMS = [
     "title": "Leaf-Similar Trees Challenge",
     "slug": "leaf-similar-trees-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21636,7 +21636,7 @@ const PROBLEMS = [
     "title": "Increasing Order Search Tree Optimization",
     "slug": "increasing-order-search-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21742,7 +21742,7 @@ const PROBLEMS = [
     "id": 259,
     "title": "Arrays & Subarray Pattern Variation 60",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -21806,7 +21806,7 @@ const PROBLEMS = [
     "title": "Univalued Binary Tree Optimization",
     "slug": "univalued-binary-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -21915,7 +21915,7 @@ const PROBLEMS = [
     "title": "Cousins in Binary Tree Challenge",
     "slug": "cousins-in-binary-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -22024,7 +22024,7 @@ const PROBLEMS = [
     "title": "Find a Corresponding Node of a Binary Tree in a Clone of That Tree Challenge",
     "slug": "find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -22130,7 +22130,7 @@ const PROBLEMS = [
     "id": 263,
     "title": "Arrays & Subarray Pattern Variation 79",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -22191,7 +22191,7 @@ const PROBLEMS = [
     "id": 264,
     "title": "Binary Tree Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "pattern": "Binary Trees Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Trees algorithms.",
     "examples": [
@@ -22252,7 +22252,7 @@ const PROBLEMS = [
     "id": 265,
     "title": "Binary Tree Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "pattern": "Binary Trees Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Trees algorithms.",
     "examples": [
@@ -22316,7 +22316,7 @@ const PROBLEMS = [
     "title": "Convert Sorted Array to Binary Search Tree Optimization",
     "slug": "convert-sorted-array-to-binary-search-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -22422,7 +22422,7 @@ const PROBLEMS = [
     "id": 267,
     "title": "Arrays & Subarray Pattern Variation 81",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -22486,7 +22486,7 @@ const PROBLEMS = [
     "title": "Find Mode in Binary Search Tree Optimization",
     "slug": "find-mode-in-binary-search-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -22595,7 +22595,7 @@ const PROBLEMS = [
     "title": "Search in a Binary Search Tree Optimization",
     "slug": "search-in-a-binary-search-tree-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -22704,7 +22704,7 @@ const PROBLEMS = [
     "title": "Repeated Substring Pattern Challenge",
     "slug": "repeated-substring-pattern-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -22810,7 +22810,7 @@ const PROBLEMS = [
     "id": 271,
     "title": "Arrays & Subarray Pattern Variation 62",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -22874,7 +22874,7 @@ const PROBLEMS = [
     "title": "Minimum Absolute Difference in BST Optimization",
     "slug": "minimum-absolute-difference-in-bst-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -22983,7 +22983,7 @@ const PROBLEMS = [
     "title": "Two Sum IV - Input is a BST Optimization",
     "slug": "two-sum-iv-input-is-a-bst-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -23092,7 +23092,7 @@ const PROBLEMS = [
     "title": "Count Binary Substrings Optimization",
     "slug": "count-binary-substrings-optimization",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -23198,7 +23198,7 @@ const PROBLEMS = [
     "id": 275,
     "title": "Arrays & Subarray Pattern Variation 83",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -23262,7 +23262,7 @@ const PROBLEMS = [
     "title": "Minimum Distance Between BST Nodes Challenge",
     "slug": "minimum-distance-between-bst-nodes-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -23371,7 +23371,7 @@ const PROBLEMS = [
     "title": "Range Sum of BST Challenge",
     "slug": "range-sum-of-bst-challenge",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -23477,7 +23477,7 @@ const PROBLEMS = [
     "id": 278,
     "title": "Binary Search Trees (BST Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -23538,7 +23538,7 @@ const PROBLEMS = [
     "id": 279,
     "title": "Arrays & Subarray Pattern Variation 85",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -23599,7 +23599,7 @@ const PROBLEMS = [
     "id": 280,
     "title": "Binary Search Trees (BST Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -23663,7 +23663,7 @@ const PROBLEMS = [
     "title": "Kth Largest Element in a Stream Optimization",
     "slug": "kth-largest-element-in-a-stream-optimization",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -23769,7 +23769,7 @@ const PROBLEMS = [
     "id": 282,
     "title": "Heap & Priority Queu Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -23830,7 +23830,7 @@ const PROBLEMS = [
     "id": 283,
     "title": "Arrays & Subarray Pattern Variation 66",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -23891,7 +23891,7 @@ const PROBLEMS = [
     "id": 284,
     "title": "Heap & Priority Queu Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -23952,7 +23952,7 @@ const PROBLEMS = [
     "id": 285,
     "title": "Heap & Priority Queu Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24013,7 +24013,7 @@ const PROBLEMS = [
     "id": 286,
     "title": "Arrays & Subarray Pattern Variation 87",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -24074,7 +24074,7 @@ const PROBLEMS = [
     "id": 287,
     "title": "Heap & Priority Queu Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24135,7 +24135,7 @@ const PROBLEMS = [
     "id": 288,
     "title": "Heap & Priority Queu Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24196,7 +24196,7 @@ const PROBLEMS = [
     "id": 289,
     "title": "Heap & Priority Queu Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24257,7 +24257,7 @@ const PROBLEMS = [
     "id": 290,
     "title": "Arrays & Subarray Pattern Variation 89",
     "difficulty": "Hard",
-    "topic": "Arrays & Subarrays",
+    "topic": "Arrays",
     "pattern": "Arrays & Subarrays Pattern",
     "description": "Optimal FAANG interview problem focused on Arrays & Subarrays algorithms.",
     "examples": [
@@ -24318,7 +24318,7 @@ const PROBLEMS = [
     "id": 291,
     "title": "Heap & Priority Queu Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24379,7 +24379,7 @@ const PROBLEMS = [
     "id": 292,
     "title": "Heap & Priority Queu Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24440,7 +24440,7 @@ const PROBLEMS = [
     "id": 293,
     "title": "Heap & Priority Queu Pattern Variation 58",
     "difficulty": "Easy",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -24501,7 +24501,7 @@ const PROBLEMS = [
     "id": 294,
     "title": "All O`one Data Structure",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Doubly Linked List + HashMap",
     "description": "Designs a data structure that supports inc(key), dec(key), getMaxKey(), and getMinKey() operations in O(1) time complexity.",
     "examples": [
@@ -24565,7 +24565,7 @@ const PROBLEMS = [
     "title": "Big Countries Optimization",
     "slug": "big-countries-optimization",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -24671,7 +24671,7 @@ const PROBLEMS = [
     "id": 296,
     "title": "Trie (Prefix Tree Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -24732,7 +24732,7 @@ const PROBLEMS = [
     "id": 297,
     "title": "Trie (Prefix Tree Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -24796,7 +24796,7 @@ const PROBLEMS = [
     "title": "Contains Duplicate III Challenge",
     "slug": "contains-duplicate-iii-challenge",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -24902,7 +24902,7 @@ const PROBLEMS = [
     "id": 299,
     "title": "Trie (Prefix Tree Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -24963,7 +24963,7 @@ const PROBLEMS = [
     "id": 300,
     "title": "Trie (Prefix Tree FAANG Core Problem 10",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -25024,7 +25024,7 @@ const PROBLEMS = [
     "id": 301,
     "title": "Trie (Prefix Tree FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -25088,7 +25088,7 @@ const PROBLEMS = [
     "title": "Group Anagrams Challenge",
     "slug": "group-anagrams-challenge",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -25197,7 +25197,7 @@ const PROBLEMS = [
     "title": "Island Perimeter Optimization",
     "slug": "island-perimeter-optimization",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "subtopic": "Graph Traversal & BFS/DFS",
     "pattern": "Graph Traversal & BFS/DFS",
     "secondary_patterns": [
@@ -25306,7 +25306,7 @@ const PROBLEMS = [
     "title": "Shortest Completing Word Optimization",
     "slug": "shortest-completing-word-optimization",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "subtopic": "Graph Traversal & BFS/DFS",
     "pattern": "Graph Traversal & BFS/DFS",
     "secondary_patterns": [
@@ -25415,7 +25415,7 @@ const PROBLEMS = [
     "title": "Shortest Distance to a Character Optimization",
     "slug": "shortest-distance-to-a-character-optimization",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "subtopic": "Graph Traversal & BFS/DFS",
     "pattern": "Graph Traversal & BFS/DFS",
     "secondary_patterns": [
@@ -25524,7 +25524,7 @@ const PROBLEMS = [
     "title": "Word Frequency Optimization",
     "slug": "word-frequency-optimization",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -25630,7 +25630,7 @@ const PROBLEMS = [
     "id": 307,
     "title": "Graphs, BFS & DF Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -25691,7 +25691,7 @@ const PROBLEMS = [
     "id": 308,
     "title": "Graphs, BFS & DF Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -25752,7 +25752,7 @@ const PROBLEMS = [
     "id": 309,
     "title": "Graphs, BFS & DF Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -25816,7 +25816,7 @@ const PROBLEMS = [
     "title": "Maximum Equal Frequency Challenge",
     "slug": "maximum-equal-frequency-challenge",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -25922,7 +25922,7 @@ const PROBLEMS = [
     "id": 311,
     "title": "Graphs, BFS & DF Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -25983,7 +25983,7 @@ const PROBLEMS = [
     "id": 312,
     "title": "Graphs, BFS & DF Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26047,7 +26047,7 @@ const PROBLEMS = [
     "title": "Sort Characters By Frequency Optimization",
     "slug": "sort-characters-by-frequency-optimization",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -26153,7 +26153,7 @@ const PROBLEMS = [
     "id": 314,
     "title": "Graphs, BFS & DF Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26214,7 +26214,7 @@ const PROBLEMS = [
     "id": 315,
     "title": "Graphs, BFS & DF Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26275,7 +26275,7 @@ const PROBLEMS = [
     "id": 316,
     "title": "Graphs, BFS & DF Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26336,7 +26336,7 @@ const PROBLEMS = [
     "id": 317,
     "title": "Hashing & Frequency Map Pattern Variation 1",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -26397,7 +26397,7 @@ const PROBLEMS = [
     "id": 318,
     "title": "Graphs, BFS & DF Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26458,7 +26458,7 @@ const PROBLEMS = [
     "id": 319,
     "title": "Graphs, BFS & DF Pattern Variation 58",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26519,7 +26519,7 @@ const PROBLEMS = [
     "id": 320,
     "title": "Graphs, BFS & DF FAANG Core Problem 4",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26580,7 +26580,7 @@ const PROBLEMS = [
     "id": 321,
     "title": "Hashing & Frequency Map Pattern Variation 2",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -26641,7 +26641,7 @@ const PROBLEMS = [
     "id": 322,
     "title": "Graphs, BFS & DF FAANG Core Problem 10",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26702,7 +26702,7 @@ const PROBLEMS = [
     "id": 323,
     "title": "Graphs, BFS & DF FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26763,7 +26763,7 @@ const PROBLEMS = [
     "id": 324,
     "title": "Graphs, BFS & DF FAANG Core Problem 22",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26824,7 +26824,7 @@ const PROBLEMS = [
     "id": 325,
     "title": "Hashing & Frequency Map Pattern Variation 3",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -26885,7 +26885,7 @@ const PROBLEMS = [
     "id": 326,
     "title": "Graphs, BFS & DF FAANG Core Problem 28",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -26946,7 +26946,7 @@ const PROBLEMS = [
     "id": 327,
     "title": "Graphs, BFS & DF FAANG Core Problem 34",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -27007,7 +27007,7 @@ const PROBLEMS = [
     "id": 328,
     "title": "Graphs, BFS & DF FAANG Core Problem 40",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -27068,7 +27068,7 @@ const PROBLEMS = [
     "id": 329,
     "title": "Hashing & Frequency Map Pattern Variation 5",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -27129,7 +27129,7 @@ const PROBLEMS = [
     "id": 330,
     "title": "Graphs, BFS & DF FAANG Core Problem 46",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -27190,7 +27190,7 @@ const PROBLEMS = [
     "id": 331,
     "title": "Graphs, BFS & DF FAANG Core Problem 52",
     "difficulty": "Easy",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -27251,7 +27251,7 @@ const PROBLEMS = [
     "id": 332,
     "title": "Topological Sort & Shortest Pat Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27312,7 +27312,7 @@ const PROBLEMS = [
     "id": 333,
     "title": "Hashing & Frequency Map Pattern Variation 6",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -27373,7 +27373,7 @@ const PROBLEMS = [
     "id": 334,
     "title": "Topological Sort & Shortest Pat Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27434,7 +27434,7 @@ const PROBLEMS = [
     "id": 335,
     "title": "Topological Sort & Shortest Pat Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27495,7 +27495,7 @@ const PROBLEMS = [
     "id": 336,
     "title": "Topological Sort & Shortest Pat Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27556,7 +27556,7 @@ const PROBLEMS = [
     "id": 337,
     "title": "Hashing & Frequency Map Pattern Variation 7",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -27617,7 +27617,7 @@ const PROBLEMS = [
     "id": 338,
     "title": "Topological Sort & Shortest Pat Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27678,7 +27678,7 @@ const PROBLEMS = [
     "id": 339,
     "title": "Topological Sort & Shortest Pat Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27739,7 +27739,7 @@ const PROBLEMS = [
     "id": 340,
     "title": "Hashing & Frequency Map Pattern Variation 9",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -27800,7 +27800,7 @@ const PROBLEMS = [
     "id": 341,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 10",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27861,7 +27861,7 @@ const PROBLEMS = [
     "id": 342,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27922,7 +27922,7 @@ const PROBLEMS = [
     "id": 343,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 22",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -27983,7 +27983,7 @@ const PROBLEMS = [
     "id": 344,
     "title": "Hashing & Frequency Map Pattern Variation 8",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -28044,7 +28044,7 @@ const PROBLEMS = [
     "id": 345,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 28",
     "difficulty": "Easy",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -28105,7 +28105,7 @@ const PROBLEMS = [
     "id": 346,
     "title": "Disjoint Set Union (Union Find / DSU Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28166,7 +28166,7 @@ const PROBLEMS = [
     "id": 347,
     "title": "Disjoint Set Union (Union Find / DSU Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28227,7 +28227,7 @@ const PROBLEMS = [
     "id": 348,
     "title": "Hashing & Frequency Map Pattern Variation 11",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -28288,7 +28288,7 @@ const PROBLEMS = [
     "id": 349,
     "title": "Disjoint Set Union (Union Find / DSU Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28349,7 +28349,7 @@ const PROBLEMS = [
     "id": 350,
     "title": "Disjoint Set Union (Union Find / DSU Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28410,7 +28410,7 @@ const PROBLEMS = [
     "id": 351,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 10",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28471,7 +28471,7 @@ const PROBLEMS = [
     "id": 352,
     "title": "Hashing & Frequency Map Pattern Variation 13",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -28532,7 +28532,7 @@ const PROBLEMS = [
     "id": 353,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -28596,7 +28596,7 @@ const PROBLEMS = [
     "title": "Lemonade Change Optimization",
     "slug": "lemonade-change-optimization",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -28705,7 +28705,7 @@ const PROBLEMS = [
     "title": "Fair Candy Swap Challenge",
     "slug": "fair-candy-swap-challenge",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -28811,7 +28811,7 @@ const PROBLEMS = [
     "id": 356,
     "title": "Hashing & Frequency Map Pattern Variation 12",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -28872,7 +28872,7 @@ const PROBLEMS = [
     "id": 357,
     "title": "Greedy Algorithm Pattern Variation 4",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -28933,7 +28933,7 @@ const PROBLEMS = [
     "id": 358,
     "title": "Greedy Algorithm Pattern Variation 10",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -28994,7 +28994,7 @@ const PROBLEMS = [
     "id": 359,
     "title": "Greedy Algorithm Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29055,7 +29055,7 @@ const PROBLEMS = [
     "id": 360,
     "title": "Hashing & Frequency Map Pattern Variation 15",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -29116,7 +29116,7 @@ const PROBLEMS = [
     "id": 361,
     "title": "Greedy Algorithm Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29177,7 +29177,7 @@ const PROBLEMS = [
     "id": 362,
     "title": "Greedy Algorithm Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29238,7 +29238,7 @@ const PROBLEMS = [
     "id": 363,
     "title": "Greedy Algorithm Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29299,7 +29299,7 @@ const PROBLEMS = [
     "id": 364,
     "title": "Hashing & Frequency Map Pattern Variation 17",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -29360,7 +29360,7 @@ const PROBLEMS = [
     "id": 365,
     "title": "Greedy Algorithm Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29421,7 +29421,7 @@ const PROBLEMS = [
     "id": 366,
     "title": "Greedy Algorithm Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29482,7 +29482,7 @@ const PROBLEMS = [
     "id": 367,
     "title": "Hashing & Frequency Map Pattern Variation 14",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -29543,7 +29543,7 @@ const PROBLEMS = [
     "id": 368,
     "title": "Greedy Algorithm Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29604,7 +29604,7 @@ const PROBLEMS = [
     "id": 369,
     "title": "Greedy Algorithm FAANG Core Problem 4",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29665,7 +29665,7 @@ const PROBLEMS = [
     "id": 370,
     "title": "Greedy Algorithm FAANG Core Problem 10",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29726,7 +29726,7 @@ const PROBLEMS = [
     "id": 371,
     "title": "Hashing & Frequency Map Pattern Variation 19",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -29787,7 +29787,7 @@ const PROBLEMS = [
     "id": 372,
     "title": "Greedy Algorithm FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29848,7 +29848,7 @@ const PROBLEMS = [
     "id": 373,
     "title": "Greedy Algorithm FAANG Core Problem 22",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29909,7 +29909,7 @@ const PROBLEMS = [
     "id": 374,
     "title": "Greedy Algorithm FAANG Core Problem 28",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -29970,7 +29970,7 @@ const PROBLEMS = [
     "id": 375,
     "title": "Hashing & Frequency Map Pattern Variation 21",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -30031,7 +30031,7 @@ const PROBLEMS = [
     "id": 376,
     "title": "Greedy Algorithm FAANG Core Problem 34",
     "difficulty": "Easy",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -30092,7 +30092,7 @@ const PROBLEMS = [
     "id": 377,
     "title": "Linked List FAANG Core Problem 16",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30153,7 +30153,7 @@ const PROBLEMS = [
     "id": 378,
     "title": "Linked List FAANG Core Problem 22",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30214,7 +30214,7 @@ const PROBLEMS = [
     "id": 379,
     "title": "Hashing & Frequency Map Pattern Variation 18",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -30275,7 +30275,7 @@ const PROBLEMS = [
     "id": 380,
     "title": "Linked List FAANG Core Problem 28",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30336,7 +30336,7 @@ const PROBLEMS = [
     "id": 381,
     "title": "Linked List FAANG Core Problem 34",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30397,7 +30397,7 @@ const PROBLEMS = [
     "id": 382,
     "title": "Linked List FAANG Core Problem 40",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30458,7 +30458,7 @@ const PROBLEMS = [
     "id": 383,
     "title": "Hashing & Frequency Map Pattern Variation 23",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -30519,7 +30519,7 @@ const PROBLEMS = [
     "id": 384,
     "title": "Linked List Pattern Variation 16",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30580,7 +30580,7 @@ const PROBLEMS = [
     "id": 385,
     "title": "Linked List Pattern Variation 22",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30641,7 +30641,7 @@ const PROBLEMS = [
     "id": 386,
     "title": "Linked List Pattern Variation 28",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30702,7 +30702,7 @@ const PROBLEMS = [
     "id": 387,
     "title": "Hashing & Frequency Map Pattern Variation 25",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -30763,7 +30763,7 @@ const PROBLEMS = [
     "id": 388,
     "title": "Linked List Pattern Variation 34",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30824,7 +30824,7 @@ const PROBLEMS = [
     "id": 389,
     "title": "Linked List Pattern Variation 40",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30885,7 +30885,7 @@ const PROBLEMS = [
     "id": 390,
     "title": "Linked List Pattern Variation 46",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -30946,7 +30946,7 @@ const PROBLEMS = [
     "id": 391,
     "title": "Hashing & Frequency Map Pattern Variation 20",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -31007,7 +31007,7 @@ const PROBLEMS = [
     "id": 392,
     "title": "Linked List Pattern Variation 52",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -31068,7 +31068,7 @@ const PROBLEMS = [
     "id": 393,
     "title": "Linked List Pattern Variation 58",
     "difficulty": "Easy",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -31373,7 +31373,7 @@ const PROBLEMS = [
     "id": 398,
     "title": "Hashing & Frequency Map Pattern Variation 27",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -31617,7 +31617,7 @@ const PROBLEMS = [
     "id": 402,
     "title": "Hashing & Frequency Map Pattern Variation 29",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -31909,7 +31909,7 @@ const PROBLEMS = [
     "id": 406,
     "title": "Hashing & Frequency Map Pattern Variation 24",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -32297,7 +32297,7 @@ const PROBLEMS = [
     "id": 410,
     "title": "Hashing & Frequency Map Pattern Variation 31",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -32589,7 +32589,7 @@ const PROBLEMS = [
     "id": 414,
     "title": "Hashing & Frequency Map Pattern Variation 33",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -32833,7 +32833,7 @@ const PROBLEMS = [
     "id": 418,
     "title": "Hashing & Frequency Map Pattern Variation 26",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -33077,7 +33077,7 @@ const PROBLEMS = [
     "id": 422,
     "title": "Hashing & Frequency Map Pattern Variation 35",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -33260,7 +33260,7 @@ const PROBLEMS = [
     "id": 425,
     "title": "Hashing & Frequency Map Pattern Variation 37",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -33504,7 +33504,7 @@ const PROBLEMS = [
     "id": 429,
     "title": "Hashing & Frequency Map Pattern Variation 30",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -33748,7 +33748,7 @@ const PROBLEMS = [
     "id": 433,
     "title": "Hashing & Frequency Map Pattern Variation 39",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -33992,7 +33992,7 @@ const PROBLEMS = [
     "id": 437,
     "title": "Hashing & Frequency Map Pattern Variation 41",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -34236,7 +34236,7 @@ const PROBLEMS = [
     "id": 441,
     "title": "Hashing & Frequency Map Pattern Variation 32",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -34361,7 +34361,7 @@ const PROBLEMS = [
     "title": "Product of Array Except Self Challenge",
     "slug": "product-of-array-except-self-challenge",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -34470,7 +34470,7 @@ const PROBLEMS = [
     "title": "Range Sum Query 2D - Immutable Optimization",
     "slug": "range-sum-query-2d-immutable-optimization",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -34576,7 +34576,7 @@ const PROBLEMS = [
     "id": 445,
     "title": "Hashing & Frequency Map Pattern Variation 43",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -34640,7 +34640,7 @@ const PROBLEMS = [
     "title": "Range Sum Query - Mutable Optimization",
     "slug": "range-sum-query-mutable-optimization",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -34749,7 +34749,7 @@ const PROBLEMS = [
     "title": "Subarray Sum Equals K Optimization",
     "slug": "subarray-sum-equals-k-optimization",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -34855,7 +34855,7 @@ const PROBLEMS = [
     "id": 448,
     "title": "Prefix Sum & Difference Arra Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -34916,7 +34916,7 @@ const PROBLEMS = [
     "id": 449,
     "title": "Hashing & Frequency Map Pattern Variation 45",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -34977,7 +34977,7 @@ const PROBLEMS = [
     "id": 450,
     "title": "Prefix Sum & Difference Arra Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35038,7 +35038,7 @@ const PROBLEMS = [
     "id": 451,
     "title": "Prefix Sum & Difference Arra Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35099,7 +35099,7 @@ const PROBLEMS = [
     "id": 452,
     "title": "Hashing & Frequency Map Pattern Variation 36",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -35160,7 +35160,7 @@ const PROBLEMS = [
     "id": 453,
     "title": "Prefix Sum & Difference Arra Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35221,7 +35221,7 @@ const PROBLEMS = [
     "id": 454,
     "title": "Prefix Sum & Difference Arra Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35282,7 +35282,7 @@ const PROBLEMS = [
     "id": 455,
     "title": "Prefix Sum & Difference Arra Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35343,7 +35343,7 @@ const PROBLEMS = [
     "id": 456,
     "title": "Hashing & Frequency Map Pattern Variation 47",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -35404,7 +35404,7 @@ const PROBLEMS = [
     "id": 457,
     "title": "Prefix Sum & Difference Arra Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35465,7 +35465,7 @@ const PROBLEMS = [
     "id": 458,
     "title": "Prefix Sum & Difference Arra Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35526,7 +35526,7 @@ const PROBLEMS = [
     "id": 459,
     "title": "Prefix Sum & Difference Arra Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35587,7 +35587,7 @@ const PROBLEMS = [
     "id": 460,
     "title": "Hashing & Frequency Map Pattern Variation 49",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -35648,7 +35648,7 @@ const PROBLEMS = [
     "id": 461,
     "title": "Prefix Sum & Difference Arra Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35709,7 +35709,7 @@ const PROBLEMS = [
     "id": 462,
     "title": "Prefix Sum & Difference Arra Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35770,7 +35770,7 @@ const PROBLEMS = [
     "id": 463,
     "title": "Prefix Sum & Difference Arra Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35831,7 +35831,7 @@ const PROBLEMS = [
     "id": 464,
     "title": "Hashing & Frequency Map Pattern Variation 51",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -35892,7 +35892,7 @@ const PROBLEMS = [
     "id": 465,
     "title": "Prefix Sum & Difference Arra Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -35953,7 +35953,7 @@ const PROBLEMS = [
     "id": 466,
     "title": "Prefix Sum & Difference Arra Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36014,7 +36014,7 @@ const PROBLEMS = [
     "id": 467,
     "title": "Prefix Sum & Difference Arra Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36075,7 +36075,7 @@ const PROBLEMS = [
     "id": 468,
     "title": "Hashing & Frequency Map Pattern Variation 53",
     "difficulty": "Hard",
-    "topic": "Hashing & Frequency Maps",
+    "topic": "Hashing",
     "pattern": "Hashing & Frequency Maps Pattern",
     "description": "Optimal FAANG interview problem focused on Hashing & Frequency Maps algorithms.",
     "examples": [
@@ -36136,7 +36136,7 @@ const PROBLEMS = [
     "id": 469,
     "title": "Prefix Sum & Difference Arra Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36197,7 +36197,7 @@ const PROBLEMS = [
     "id": 470,
     "title": "Prefix Sum & Difference Arra Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36258,7 +36258,7 @@ const PROBLEMS = [
     "id": 471,
     "title": "Prefix Sum & Difference Arra Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36428,7 +36428,7 @@ const PROBLEMS = [
     "id": 473,
     "title": "Prefix Sum & Difference Arra Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -36492,7 +36492,7 @@ const PROBLEMS = [
     "title": "Search in Rotated Sorted Array Challenge",
     "slug": "search-in-rotated-sorted-array-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -36601,7 +36601,7 @@ const PROBLEMS = [
     "title": "Spiral Matrix Challenge",
     "slug": "spiral-matrix-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -36819,7 +36819,7 @@ const PROBLEMS = [
     "title": "Spiral Matrix II Challenge",
     "slug": "spiral-matrix-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -36928,7 +36928,7 @@ const PROBLEMS = [
     "title": "Set Matrix Zeroes Challenge",
     "slug": "set-matrix-zeroes-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -37146,7 +37146,7 @@ const PROBLEMS = [
     "title": "Search a 2D Matrix Challenge",
     "slug": "search-a-2d-matrix-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -37255,7 +37255,7 @@ const PROBLEMS = [
     "title": "Search in Rotated Sorted Array II Challenge",
     "slug": "search-in-rotated-sorted-array-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -37364,7 +37364,7 @@ const PROBLEMS = [
     "title": "Find Minimum in Rotated Sorted Array Optimization",
     "slug": "find-minimum-in-rotated-sorted-array-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -37582,7 +37582,7 @@ const PROBLEMS = [
     "title": "Search a 2D Matrix II Challenge",
     "slug": "search-a-2d-matrix-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -37691,7 +37691,7 @@ const PROBLEMS = [
     "title": "Random Flip Matrix Optimization",
     "slug": "random-flip-matrix-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -37800,7 +37800,7 @@ const PROBLEMS = [
     "title": "01 Matrix Challenge",
     "slug": "01-matrix-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -38018,7 +38018,7 @@ const PROBLEMS = [
     "title": "Pyramid Transition Matrix Optimization",
     "slug": "pyramid-transition-matrix-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -38127,7 +38127,7 @@ const PROBLEMS = [
     "title": "Rotated Digits Challenge",
     "slug": "rotated-digits-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -38236,7 +38236,7 @@ const PROBLEMS = [
     "title": "Score After Flipping Matrix Challenge",
     "slug": "score-after-flipping-matrix-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -38454,7 +38454,7 @@ const PROBLEMS = [
     "title": "Koko Eating Bananas Optimization",
     "slug": "koko-eating-bananas-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -38563,7 +38563,7 @@ const PROBLEMS = [
     "title": "Spiral Matrix III Optimization",
     "slug": "spiral-matrix-iii-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -38669,7 +38669,7 @@ const PROBLEMS = [
     "id": 494,
     "title": "Binary Search & Search Spac Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -38839,7 +38839,7 @@ const PROBLEMS = [
     "id": 496,
     "title": "Binary Search & Search Spac Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -38900,7 +38900,7 @@ const PROBLEMS = [
     "id": 497,
     "title": "Binary Search & Search Spac Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -38961,7 +38961,7 @@ const PROBLEMS = [
     "id": 498,
     "title": "Binary Search & Search Spac Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39131,7 +39131,7 @@ const PROBLEMS = [
     "id": 500,
     "title": "Binary Search & Search Spac Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39192,7 +39192,7 @@ const PROBLEMS = [
     "id": 501,
     "title": "Binary Search & Search Spac Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39253,7 +39253,7 @@ const PROBLEMS = [
     "id": 502,
     "title": "Binary Search & Search Spac Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39423,7 +39423,7 @@ const PROBLEMS = [
     "id": 504,
     "title": "Binary Search & Search Spac Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39484,7 +39484,7 @@ const PROBLEMS = [
     "id": 505,
     "title": "Binary Search & Search Spac Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39654,7 +39654,7 @@ const PROBLEMS = [
     "id": 507,
     "title": "Binary Search & Search Spac Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39715,7 +39715,7 @@ const PROBLEMS = [
     "id": 508,
     "title": "Binary Search & Search Spac Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39776,7 +39776,7 @@ const PROBLEMS = [
     "id": 509,
     "title": "Binary Search & Search Spac Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -39946,7 +39946,7 @@ const PROBLEMS = [
     "id": 511,
     "title": "Binary Search & Search Spac Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40007,7 +40007,7 @@ const PROBLEMS = [
     "id": 512,
     "title": "Binary Search & Search Spac Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40068,7 +40068,7 @@ const PROBLEMS = [
     "id": 513,
     "title": "Binary Search & Search Spac Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40238,7 +40238,7 @@ const PROBLEMS = [
     "id": 515,
     "title": "Binary Search & Search Spac Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40299,7 +40299,7 @@ const PROBLEMS = [
     "id": 516,
     "title": "Binary Search & Search Spac Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40360,7 +40360,7 @@ const PROBLEMS = [
     "id": 517,
     "title": "Binary Search & Search Spac Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40530,7 +40530,7 @@ const PROBLEMS = [
     "id": 519,
     "title": "Binary Search & Search Spac Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40591,7 +40591,7 @@ const PROBLEMS = [
     "id": 520,
     "title": "Binary Search & Search Spac Pattern Variation 39",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40652,7 +40652,7 @@ const PROBLEMS = [
     "id": 521,
     "title": "Binary Search & Search Spac Pattern Variation 41",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40822,7 +40822,7 @@ const PROBLEMS = [
     "id": 523,
     "title": "Binary Search & Search Spac Pattern Variation 43",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search & Search Space Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search & Search Space algorithms.",
     "examples": [
@@ -40886,7 +40886,7 @@ const PROBLEMS = [
     "title": "Valid Sudoku Challenge",
     "slug": "valid-sudoku-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -40995,7 +40995,7 @@ const PROBLEMS = [
     "title": "Combination Sum Optimization",
     "slug": "combination-sum-optimization",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41213,7 +41213,7 @@ const PROBLEMS = [
     "title": "Combination Sum II Challenge",
     "slug": "combination-sum-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41322,7 +41322,7 @@ const PROBLEMS = [
     "title": "Permutations Challenge",
     "slug": "permutations-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41431,7 +41431,7 @@ const PROBLEMS = [
     "title": "Permutations II Challenge",
     "slug": "permutations-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41649,7 +41649,7 @@ const PROBLEMS = [
     "title": "Subsets Challenge",
     "slug": "subsets-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41758,7 +41758,7 @@ const PROBLEMS = [
     "title": "Word Search Challenge",
     "slug": "word-search-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -41976,7 +41976,7 @@ const PROBLEMS = [
     "title": "Subsets II Challenge",
     "slug": "subsets-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -42085,7 +42085,7 @@ const PROBLEMS = [
     "title": "Combination Sum III Challenge",
     "slug": "combination-sum-iii-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -42194,7 +42194,7 @@ const PROBLEMS = [
     "title": "Combination Sum IV Challenge",
     "slug": "combination-sum-iv-challenge",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -42412,7 +42412,7 @@ const PROBLEMS = [
     "title": "Partition to K Equal Sum Subsets Optimization",
     "slug": "partition-to-k-equal-sum-subsets-optimization",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -42521,7 +42521,7 @@ const PROBLEMS = [
     "title": "Word Subsets Optimization",
     "slug": "word-subsets-optimization",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -42627,7 +42627,7 @@ const PROBLEMS = [
     "id": 540,
     "title": "Recursion & Backtrackin Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -42797,7 +42797,7 @@ const PROBLEMS = [
     "id": 542,
     "title": "Recursion & Backtrackin Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -42858,7 +42858,7 @@ const PROBLEMS = [
     "id": 543,
     "title": "Recursion & Backtrackin Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -42919,7 +42919,7 @@ const PROBLEMS = [
     "id": 544,
     "title": "Recursion & Backtrackin Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43089,7 +43089,7 @@ const PROBLEMS = [
     "id": 546,
     "title": "Recursion & Backtrackin Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43150,7 +43150,7 @@ const PROBLEMS = [
     "id": 547,
     "title": "Recursion & Backtrackin Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43211,7 +43211,7 @@ const PROBLEMS = [
     "id": 548,
     "title": "Recursion & Backtrackin Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43381,7 +43381,7 @@ const PROBLEMS = [
     "id": 550,
     "title": "Recursion & Backtrackin Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43442,7 +43442,7 @@ const PROBLEMS = [
     "id": 551,
     "title": "Recursion & Backtrackin Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43503,7 +43503,7 @@ const PROBLEMS = [
     "id": 552,
     "title": "Recursion & Backtrackin Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43673,7 +43673,7 @@ const PROBLEMS = [
     "id": 554,
     "title": "Recursion & Backtrackin Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43734,7 +43734,7 @@ const PROBLEMS = [
     "id": 555,
     "title": "Recursion & Backtrackin Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43795,7 +43795,7 @@ const PROBLEMS = [
     "id": 556,
     "title": "Recursion & Backtrackin Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -43965,7 +43965,7 @@ const PROBLEMS = [
     "id": 558,
     "title": "Recursion & Backtrackin Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44026,7 +44026,7 @@ const PROBLEMS = [
     "id": 559,
     "title": "Recursion & Backtrackin Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44196,7 +44196,7 @@ const PROBLEMS = [
     "id": 561,
     "title": "Recursion & Backtrackin Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44257,7 +44257,7 @@ const PROBLEMS = [
     "id": 562,
     "title": "Recursion & Backtrackin Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44318,7 +44318,7 @@ const PROBLEMS = [
     "id": 563,
     "title": "Recursion & Backtrackin Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44488,7 +44488,7 @@ const PROBLEMS = [
     "id": 565,
     "title": "Recursion & Backtrackin Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44549,7 +44549,7 @@ const PROBLEMS = [
     "id": 566,
     "title": "Recursion & Backtrackin Pattern Variation 39",
     "difficulty": "Medium",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "pattern": "Recursion & Backtracking Pattern",
     "description": "Optimal FAANG interview problem focused on Recursion & Backtracking algorithms.",
     "examples": [
@@ -44613,7 +44613,7 @@ const PROBLEMS = [
     "title": "LRU Cache Challenge",
     "slug": "lru-cache-challenge",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -44828,7 +44828,7 @@ const PROBLEMS = [
     "id": 569,
     "title": "Reverse Linked List II",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Reverses a portion of the linked list from position m to n in a single pass.",
     "examples": [
@@ -44889,7 +44889,7 @@ const PROBLEMS = [
     "id": 570,
     "title": "Reorder List",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Reorders a singly linked list in L0 -> Ln -> L1 -> Ln-1 order using slow/fast pointers and list reversal.",
     "examples": [
@@ -44950,7 +44950,7 @@ const PROBLEMS = [
     "id": 571,
     "title": "Remove Nth Node From End of List",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Removes the Nth node from the end of a singly linked list using two pointers.",
     "examples": [
@@ -45120,7 +45120,7 @@ const PROBLEMS = [
     "id": 573,
     "title": "Copy List with Random Pointer",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Creates a deep copy of a linked list where nodes contain next and random pointers.",
     "examples": [
@@ -45181,7 +45181,7 @@ const PROBLEMS = [
     "id": 574,
     "title": "Swap Nodes in Pairs",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Swaps every two adjacent nodes in a linked list in-place.",
     "examples": [
@@ -45242,7 +45242,7 @@ const PROBLEMS = [
     "id": 575,
     "title": "Rotate List",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Rotates a linked list to the right by K places.",
     "examples": [
@@ -45412,7 +45412,7 @@ const PROBLEMS = [
     "id": 577,
     "title": "Partition List",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Partitions a linked list such that nodes less than X come before nodes greater than or equal to X.",
     "examples": [
@@ -45473,7 +45473,7 @@ const PROBLEMS = [
     "id": 578,
     "title": "Add Two Numbers",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Adds two non-empty linked lists representing non-negative integers in reverse digit order.",
     "examples": [
@@ -45534,7 +45534,7 @@ const PROBLEMS = [
     "id": 579,
     "title": "Sort List",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Sorts a linked list in O(N log N) time complexity using Merge Sort.",
     "examples": [
@@ -45704,7 +45704,7 @@ const PROBLEMS = [
     "id": 581,
     "title": "Linked List FAANG Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -45765,7 +45765,7 @@ const PROBLEMS = [
     "id": 582,
     "title": "Linked List FAANG Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -45826,7 +45826,7 @@ const PROBLEMS = [
     "id": 583,
     "title": "Linked List FAANG Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -45996,7 +45996,7 @@ const PROBLEMS = [
     "id": 585,
     "title": "Linked List FAANG Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46057,7 +46057,7 @@ const PROBLEMS = [
     "id": 586,
     "title": "Linked List FAANG Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46179,7 +46179,7 @@ const PROBLEMS = [
     "id": 588,
     "title": "Linked List FAANG Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46240,7 +46240,7 @@ const PROBLEMS = [
     "id": 589,
     "title": "Linked List FAANG Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46301,7 +46301,7 @@ const PROBLEMS = [
     "id": 590,
     "title": "Linked List FAANG Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46423,7 +46423,7 @@ const PROBLEMS = [
     "id": 592,
     "title": "Linked List FAANG Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46484,7 +46484,7 @@ const PROBLEMS = [
     "id": 593,
     "title": "Linked List FAANG Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46545,7 +46545,7 @@ const PROBLEMS = [
     "id": 594,
     "title": "Linked List FAANG Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46667,7 +46667,7 @@ const PROBLEMS = [
     "id": 596,
     "title": "Linked List FAANG Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46728,7 +46728,7 @@ const PROBLEMS = [
     "id": 597,
     "title": "Linked List FAANG Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46789,7 +46789,7 @@ const PROBLEMS = [
     "id": 598,
     "title": "Linked List FAANG Pattern Variation 39",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46911,7 +46911,7 @@ const PROBLEMS = [
     "id": 600,
     "title": "Linked List FAANG Pattern Variation 41",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -46972,7 +46972,7 @@ const PROBLEMS = [
     "id": 601,
     "title": "Linked List FAANG Pattern Variation 43",
     "difficulty": "Medium",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -47036,7 +47036,7 @@ const PROBLEMS = [
     "title": "Min Stack Challenge",
     "slug": "min-stack-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -47206,7 +47206,7 @@ const PROBLEMS = [
     "title": "Validate Stack Sequences Challenge",
     "slug": "validate-stack-sequences-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -47315,7 +47315,7 @@ const PROBLEMS = [
     "title": "Generate Parentheses Optimization",
     "slug": "generate-parentheses-optimization",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -47424,7 +47424,7 @@ const PROBLEMS = [
     "title": "Different Ways to Add Parentheses Challenge",
     "slug": "different-ways-to-add-parentheses-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -47533,7 +47533,7 @@ const PROBLEMS = [
     "title": "Count of Range Sum Optimization",
     "slug": "count-of-range-sum-optimization",
     "difficulty": "Hard",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -47642,7 +47642,7 @@ const PROBLEMS = [
     "title": "Next Greater Element II Challenge",
     "slug": "next-greater-element-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -47751,7 +47751,7 @@ const PROBLEMS = [
     "title": "Next Greater Element III Optimization",
     "slug": "next-greater-element-iii-optimization",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -47860,7 +47860,7 @@ const PROBLEMS = [
     "title": "Daily Temperatures Optimization",
     "slug": "daily-temperatures-optimization",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -47966,7 +47966,7 @@ const PROBLEMS = [
     "id": 611,
     "title": "Prefix Sum & Difference Arra Pattern Variation 2",
     "difficulty": "Hard",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -48030,7 +48030,7 @@ const PROBLEMS = [
     "title": "Score of Parentheses Challenge",
     "slug": "score-of-parentheses-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -48139,7 +48139,7 @@ const PROBLEMS = [
     "title": "Minimum Add to Make Parentheses Valid Challenge",
     "slug": "minimum-add-to-make-parentheses-valid-challenge",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -48245,7 +48245,7 @@ const PROBLEMS = [
     "id": 614,
     "title": "Stack & Monotonic Stac Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48306,7 +48306,7 @@ const PROBLEMS = [
     "id": 615,
     "title": "Prefix Sum & Difference Arra Pattern Variation 6",
     "difficulty": "Hard",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -48367,7 +48367,7 @@ const PROBLEMS = [
     "id": 616,
     "title": "Stack & Monotonic Stac Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48428,7 +48428,7 @@ const PROBLEMS = [
     "id": 617,
     "title": "Stack & Monotonic Stac Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48489,7 +48489,7 @@ const PROBLEMS = [
     "id": 618,
     "title": "Prefix Sum & Difference Arra Pattern Variation 8",
     "difficulty": "Hard",
-    "topic": "Prefix Sum & Difference Array",
+    "topic": "Prefix Sum",
     "pattern": "Prefix Sum & Difference Array Pattern",
     "description": "Optimal FAANG interview problem focused on Prefix Sum & Difference Array algorithms.",
     "examples": [
@@ -48550,7 +48550,7 @@ const PROBLEMS = [
     "id": 619,
     "title": "Stack & Monotonic Stac Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48611,7 +48611,7 @@ const PROBLEMS = [
     "id": 620,
     "title": "Stack & Monotonic Stac Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48672,7 +48672,7 @@ const PROBLEMS = [
     "id": 621,
     "title": "Stack & Monotonic Stac Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48736,7 +48736,7 @@ const PROBLEMS = [
     "title": "Find Minimum in Rotated Sorted Array II Optimization",
     "slug": "find-minimum-in-rotated-sorted-array-ii-optimization",
     "difficulty": "Hard",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -48842,7 +48842,7 @@ const PROBLEMS = [
     "id": 623,
     "title": "Stack & Monotonic Stac Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48903,7 +48903,7 @@ const PROBLEMS = [
     "id": 624,
     "title": "Stack & Monotonic Stac Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -48964,7 +48964,7 @@ const PROBLEMS = [
     "id": 625,
     "title": "Stack & Monotonic Stac Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49028,7 +49028,7 @@ const PROBLEMS = [
     "title": "Longest Increasing Path in a Matrix Challenge",
     "slug": "longest-increasing-path-in-a-matrix-challenge",
     "difficulty": "Hard",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -49134,7 +49134,7 @@ const PROBLEMS = [
     "id": 627,
     "title": "Stack & Monotonic Stac Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49195,7 +49195,7 @@ const PROBLEMS = [
     "id": 628,
     "title": "Stack & Monotonic Stac Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49256,7 +49256,7 @@ const PROBLEMS = [
     "id": 629,
     "title": "Stack & Monotonic Stac Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49320,7 +49320,7 @@ const PROBLEMS = [
     "title": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix Challenge",
     "slug": "minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix-challenge",
     "difficulty": "Hard",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -49426,7 +49426,7 @@ const PROBLEMS = [
     "id": 631,
     "title": "Stack & Monotonic Stac Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49487,7 +49487,7 @@ const PROBLEMS = [
     "id": 632,
     "title": "Stack & Monotonic Stac Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49548,7 +49548,7 @@ const PROBLEMS = [
     "id": 633,
     "title": "Stack & Monotonic Stac Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49612,7 +49612,7 @@ const PROBLEMS = [
     "title": "Sudoku Solver Optimization",
     "slug": "sudoku-solver-optimization",
     "difficulty": "Hard",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -49718,7 +49718,7 @@ const PROBLEMS = [
     "id": 635,
     "title": "Stack & Monotonic Stac Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49779,7 +49779,7 @@ const PROBLEMS = [
     "id": 636,
     "title": "Stack & Monotonic Stac Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49840,7 +49840,7 @@ const PROBLEMS = [
     "id": 637,
     "title": "Stack & Monotonic Stac Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -49904,7 +49904,7 @@ const PROBLEMS = [
     "title": "N-Queens Optimization",
     "slug": "n-queens-optimization",
     "difficulty": "Hard",
-    "topic": "Recursion & Backtracking",
+    "topic": "Backtracking",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -50010,7 +50010,7 @@ const PROBLEMS = [
     "id": 639,
     "title": "Stack & Monotonic Stac Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -50071,7 +50071,7 @@ const PROBLEMS = [
     "id": 640,
     "title": "Stack & Monotonic Stac Pattern Variation 39",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -50132,7 +50132,7 @@ const PROBLEMS = [
     "id": 641,
     "title": "Stack & Monotonic Stac Pattern Variation 41",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -50196,7 +50196,7 @@ const PROBLEMS = [
     "title": "LFU Cache Optimization",
     "slug": "lfu-cache-optimization",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -50302,7 +50302,7 @@ const PROBLEMS = [
     "id": 643,
     "title": "Stack & Monotonic Stac Pattern Variation 43",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -50363,7 +50363,7 @@ const PROBLEMS = [
     "id": 644,
     "title": "Stack & Monotonic Stac Pattern Variation 45",
     "difficulty": "Medium",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "pattern": "Stack & Monotonic Stack Pattern",
     "description": "Optimal FAANG interview problem focused on Stack & Monotonic Stack algorithms.",
     "examples": [
@@ -50424,7 +50424,7 @@ const PROBLEMS = [
     "id": 645,
     "title": "Merge K Sorted Lists",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked List",
     "description": "Merges K sorted linked lists into one single sorted list using a Min-Heap Priority Queue.",
     "examples": [
@@ -50488,7 +50488,7 @@ const PROBLEMS = [
     "title": "Queue Reconstruction by Height Challenge",
     "slug": "queue-reconstruction-by-height-challenge",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -50597,7 +50597,7 @@ const PROBLEMS = [
     "title": "Design Circular Queue Challenge",
     "slug": "design-circular-queue-challenge",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -50706,7 +50706,7 @@ const PROBLEMS = [
     "title": "Design Circular Deque Challenge",
     "slug": "design-circular-deque-challenge",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -50812,7 +50812,7 @@ const PROBLEMS = [
     "id": 649,
     "title": "Linked List FAANG Pattern Variation 14",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -50873,7 +50873,7 @@ const PROBLEMS = [
     "id": 650,
     "title": "Queue & Dequ Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -50934,7 +50934,7 @@ const PROBLEMS = [
     "id": 651,
     "title": "Queue & Dequ Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -50995,7 +50995,7 @@ const PROBLEMS = [
     "id": 652,
     "title": "Queue & Dequ Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51056,7 +51056,7 @@ const PROBLEMS = [
     "id": 653,
     "title": "Linked List FAANG Pattern Variation 18",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -51117,7 +51117,7 @@ const PROBLEMS = [
     "id": 654,
     "title": "Queue & Dequ Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51178,7 +51178,7 @@ const PROBLEMS = [
     "id": 655,
     "title": "Queue & Dequ Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51239,7 +51239,7 @@ const PROBLEMS = [
     "id": 656,
     "title": "Queue & Dequ Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51300,7 +51300,7 @@ const PROBLEMS = [
     "id": 657,
     "title": "Linked List FAANG Pattern Variation 20",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -51361,7 +51361,7 @@ const PROBLEMS = [
     "id": 658,
     "title": "Queue & Dequ Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51422,7 +51422,7 @@ const PROBLEMS = [
     "id": 659,
     "title": "Queue & Dequ Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51483,7 +51483,7 @@ const PROBLEMS = [
     "id": 660,
     "title": "Queue & Dequ Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51544,7 +51544,7 @@ const PROBLEMS = [
     "id": 661,
     "title": "Linked List FAANG Pattern Variation 24",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -51605,7 +51605,7 @@ const PROBLEMS = [
     "id": 662,
     "title": "Queue & Dequ Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51666,7 +51666,7 @@ const PROBLEMS = [
     "id": 663,
     "title": "Queue & Dequ Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51727,7 +51727,7 @@ const PROBLEMS = [
     "id": 664,
     "title": "Queue & Dequ Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51788,7 +51788,7 @@ const PROBLEMS = [
     "id": 665,
     "title": "Linked List FAANG Pattern Variation 26",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -51849,7 +51849,7 @@ const PROBLEMS = [
     "id": 666,
     "title": "Queue & Dequ Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51910,7 +51910,7 @@ const PROBLEMS = [
     "id": 667,
     "title": "Queue & Dequ Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -51971,7 +51971,7 @@ const PROBLEMS = [
     "id": 668,
     "title": "Queue & Dequ Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "pattern": "Queue & Deque Pattern",
     "description": "Optimal FAANG interview problem focused on Queue & Deque algorithms.",
     "examples": [
@@ -52032,7 +52032,7 @@ const PROBLEMS = [
     "id": 669,
     "title": "Linked List FAANG Pattern Variation 30",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -52096,7 +52096,7 @@ const PROBLEMS = [
     "title": "Binary Tree Level Order Traversal Challenge",
     "slug": "binary-tree-level-order-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52205,7 +52205,7 @@ const PROBLEMS = [
     "title": "Binary Tree Zigzag Level Order Traversal Challenge",
     "slug": "binary-tree-zigzag-level-order-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52311,7 +52311,7 @@ const PROBLEMS = [
     "id": 672,
     "title": "Linked List FAANG Pattern Variation 32",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -52375,7 +52375,7 @@ const PROBLEMS = [
     "title": "Construct Binary Tree from Preorder and Inorder Traversal Challenge",
     "slug": "construct-binary-tree-from-preorder-and-inorder-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52484,7 +52484,7 @@ const PROBLEMS = [
     "title": "Construct Binary Tree from Inorder and Postorder Traversal Challenge",
     "slug": "construct-binary-tree-from-inorder-and-postorder-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52593,7 +52593,7 @@ const PROBLEMS = [
     "title": "Binary Tree Level Order Traversal II Challenge",
     "slug": "binary-tree-level-order-traversal-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52699,7 +52699,7 @@ const PROBLEMS = [
     "id": 676,
     "title": "Linked List FAANG Pattern Variation 36",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -52763,7 +52763,7 @@ const PROBLEMS = [
     "title": "Binary Tree Right Side View Optimization",
     "slug": "binary-tree-right-side-view-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -52872,7 +52872,7 @@ const PROBLEMS = [
     "title": "Count Complete Tree Nodes Challenge",
     "slug": "count-complete-tree-nodes-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -52981,7 +52981,7 @@ const PROBLEMS = [
     "title": "Lowest Common Ancestor of a Binary Tree Challenge",
     "slug": "lowest-common-ancestor-of-a-binary-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53087,7 +53087,7 @@ const PROBLEMS = [
     "id": 680,
     "title": "Linked List FAANG Pattern Variation 38",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -53151,7 +53151,7 @@ const PROBLEMS = [
     "title": "Minimum Height Trees Optimization",
     "slug": "minimum-height-trees-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53260,7 +53260,7 @@ const PROBLEMS = [
     "title": "Verify Preorder Serialization of a Binary Tree Optimization",
     "slug": "verify-preorder-serialization-of-a-binary-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53369,7 +53369,7 @@ const PROBLEMS = [
     "title": "Construct Quad Tree Optimization",
     "slug": "construct-quad-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53475,7 +53475,7 @@ const PROBLEMS = [
     "id": 684,
     "title": "Linked List FAANG Pattern Variation 42",
     "difficulty": "Hard",
-    "topic": "Linked Lists",
+    "topic": "Linked List",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -53539,7 +53539,7 @@ const PROBLEMS = [
     "title": "N-ary Tree Level Order Traversal Challenge",
     "slug": "n-ary-tree-level-order-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53648,7 +53648,7 @@ const PROBLEMS = [
     "title": "Most Frequent Subtree Sum Optimization",
     "slug": "most-frequent-subtree-sum-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53757,7 +53757,7 @@ const PROBLEMS = [
     "title": "Find Bottom Left Tree Value Optimization",
     "slug": "find-bottom-left-tree-value-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -53866,7 +53866,7 @@ const PROBLEMS = [
     "title": "Maximum Frequency Stack Challenge",
     "slug": "maximum-frequency-stack-challenge",
     "difficulty": "Hard",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -53975,7 +53975,7 @@ const PROBLEMS = [
     "title": "Find Largest Value in Each Tree Row Challenge",
     "slug": "find-largest-value-in-each-tree-row-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54084,7 +54084,7 @@ const PROBLEMS = [
     "title": "Logical OR of Two Binary Grids Represented as Quad-Trees Challenge",
     "slug": "logical-or-of-two-binary-grids-represented-as-quad-trees-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54193,7 +54193,7 @@ const PROBLEMS = [
     "title": "Tree Node Optimization",
     "slug": "tree-node-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -54302,7 +54302,7 @@ const PROBLEMS = [
     "title": "Dinner Plate Stacks Optimization",
     "slug": "dinner-plate-stacks-optimization",
     "difficulty": "Hard",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -54411,7 +54411,7 @@ const PROBLEMS = [
     "title": "Add One Row to Tree Optimization",
     "slug": "add-one-row-to-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54520,7 +54520,7 @@ const PROBLEMS = [
     "title": "Find Duplicate Subtrees Optimization",
     "slug": "find-duplicate-subtrees-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54629,7 +54629,7 @@ const PROBLEMS = [
     "title": "Maximum Binary Tree Challenge",
     "slug": "maximum-binary-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54738,7 +54738,7 @@ const PROBLEMS = [
     "title": "Longest Valid Parentheses Challenge",
     "slug": "longest-valid-parentheses-challenge",
     "difficulty": "Hard",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -54847,7 +54847,7 @@ const PROBLEMS = [
     "title": "Print Binary Tree Optimization",
     "slug": "print-binary-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -54956,7 +54956,7 @@ const PROBLEMS = [
     "title": "Maximum Width of Binary Tree Optimization",
     "slug": "maximum-width-of-binary-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -55065,7 +55065,7 @@ const PROBLEMS = [
     "title": "Largest Rectangle in Histogram Optimization",
     "slug": "largest-rectangle-in-histogram-optimization",
     "difficulty": "Hard",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -55174,7 +55174,7 @@ const PROBLEMS = [
     "title": "Binary Tree Pruning Optimization",
     "slug": "binary-tree-pruning-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -55283,7 +55283,7 @@ const PROBLEMS = [
     "title": "Binary Trees With Factors Challenge",
     "slug": "binary-trees-with-factors-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -55392,7 +55392,7 @@ const PROBLEMS = [
     "title": "All Nodes Distance K in Binary Tree Optimization",
     "slug": "all-nodes-distance-k-in-binary-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -55501,7 +55501,7 @@ const PROBLEMS = [
     "title": "Remove Invalid Parentheses Optimization",
     "slug": "remove-invalid-parentheses-optimization",
     "difficulty": "Hard",
-    "topic": "Stack & Monotonic Stack",
+    "topic": "Stack",
     "subtopic": "Monotonic Stack",
     "pattern": "Monotonic Stack",
     "secondary_patterns": [
@@ -55610,7 +55610,7 @@ const PROBLEMS = [
     "title": "Smallest Subtree with all the Deepest Nodes Challenge",
     "slug": "smallest-subtree-with-all-the-deepest-nodes-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -55719,7 +55719,7 @@ const PROBLEMS = [
     "title": "Construct Binary Tree from Preorder and Postorder Traversal Challenge",
     "slug": "construct-binary-tree-from-preorder-and-postorder-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -55828,7 +55828,7 @@ const PROBLEMS = [
     "title": "All Possible Full Binary Trees Optimization",
     "slug": "all-possible-full-binary-trees-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -55937,7 +55937,7 @@ const PROBLEMS = [
     "title": "Sliding Window Maximum Optimization",
     "slug": "sliding-window-maximum-optimization",
     "difficulty": "Hard",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -56046,7 +56046,7 @@ const PROBLEMS = [
     "title": "Complete Binary Tree Inserter Challenge",
     "slug": "complete-binary-tree-inserter-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -56155,7 +56155,7 @@ const PROBLEMS = [
     "title": "Flip Equivalent Binary Trees Challenge",
     "slug": "flip-equivalent-binary-trees-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -56264,7 +56264,7 @@ const PROBLEMS = [
     "title": "Check Completeness of a Binary Tree Challenge",
     "slug": "check-completeness-of-a-binary-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -56373,7 +56373,7 @@ const PROBLEMS = [
     "title": "Orderly Queue Optimization",
     "slug": "orderly-queue-optimization",
     "difficulty": "Hard",
-    "topic": "Queue & Deque",
+    "topic": "Queue",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -56482,7 +56482,7 @@ const PROBLEMS = [
     "title": "Flip Binary Tree To Match Preorder Traversal Challenge",
     "slug": "flip-binary-tree-to-match-preorder-traversal-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -56591,7 +56591,7 @@ const PROBLEMS = [
     "title": "Construct String from Binary Tree Challenge",
     "slug": "construct-string-from-binary-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -56697,7 +56697,7 @@ const PROBLEMS = [
     "id": 714,
     "title": "Binary Tree Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Binary Trees",
+    "topic": "Trees",
     "pattern": "Binary Trees Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Trees algorithms.",
     "examples": [
@@ -56758,7 +56758,7 @@ const PROBLEMS = [
     "id": 715,
     "title": "Minimum Window Substring",
     "difficulty": "Hard",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Sliding Window",
     "description": "Finds the minimum window substring of S that contains all characters of string T.",
     "examples": [
@@ -56819,7 +56819,7 @@ const PROBLEMS = [
     "id": 716,
     "title": "Longest Substring Without Repeating Characters",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Sliding Window",
     "description": "Finds the length of the longest substring without repeating characters using a sliding window and set/map.",
     "examples": [
@@ -56880,7 +56880,7 @@ const PROBLEMS = [
     "id": 717,
     "title": "Longest Repeating Character Replacement",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Sliding Window",
     "description": "Finds the length of the longest substring containing same letters after at most K character replacements.",
     "examples": [
@@ -56944,7 +56944,7 @@ const PROBLEMS = [
     "title": "Unique Binary Search Trees II Challenge",
     "slug": "unique-binary-search-trees-ii-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57050,7 +57050,7 @@ const PROBLEMS = [
     "id": 719,
     "title": "Find Median from Data Stream",
     "difficulty": "Hard",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap",
     "description": "Calculates the running median of a data stream in O(log N) time using a Max-Heap for lower half and Min-Heap for upper half.",
     "examples": [
@@ -57114,7 +57114,7 @@ const PROBLEMS = [
     "title": "Unique Binary Search Trees Challenge",
     "slug": "unique-binary-search-trees-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57223,7 +57223,7 @@ const PROBLEMS = [
     "title": "Validate Binary Search Tree Challenge",
     "slug": "validate-binary-search-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57332,7 +57332,7 @@ const PROBLEMS = [
     "title": "Recover Binary Search Tree Challenge",
     "slug": "recover-binary-search-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57438,7 +57438,7 @@ const PROBLEMS = [
     "id": 723,
     "title": "Word Search II",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie",
     "description": "Finds all words in a 2D grid of letters using a Trie to prune DFS search paths.",
     "examples": [
@@ -57502,7 +57502,7 @@ const PROBLEMS = [
     "title": "Binary Search Tree Iterator Challenge",
     "slug": "binary-search-tree-iterator-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57611,7 +57611,7 @@ const PROBLEMS = [
     "title": "Lowest Common Ancestor of a Binary Search Tree Challenge",
     "slug": "lowest-common-ancestor-of-a-binary-search-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57717,7 +57717,7 @@ const PROBLEMS = [
     "id": 726,
     "title": "Trie (Prefix Tree FAANG Core Problem 6",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -57781,7 +57781,7 @@ const PROBLEMS = [
     "title": "Trim a Binary Search Tree Challenge",
     "slug": "trim-a-binary-search-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57890,7 +57890,7 @@ const PROBLEMS = [
     "title": "Insert into a Binary Search Tree Challenge",
     "slug": "insert-into-a-binary-search-tree-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -57999,7 +57999,7 @@ const PROBLEMS = [
     "title": "Longest Palindromic Substring Challenge",
     "slug": "longest-palindromic-substring-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -58105,7 +58105,7 @@ const PROBLEMS = [
     "id": 730,
     "title": "Trie (Prefix Tree FAANG Core Problem 8",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -58169,7 +58169,7 @@ const PROBLEMS = [
     "title": "Convert BST to Greater Tree Optimization",
     "slug": "convert-bst-to-greater-tree-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Tree Traversal & Recursion",
     "pattern": "Tree Traversal & Recursion",
     "secondary_patterns": [
@@ -58278,7 +58278,7 @@ const PROBLEMS = [
     "title": "Kth Smallest Element in a BST Challenge",
     "slug": "kth-smallest-element-in-a-bst-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -58387,7 +58387,7 @@ const PROBLEMS = [
     "title": "Longest Substring with At Least K Repeating Characters Optimization",
     "slug": "longest-substring-with-at-least-k-repeating-characters-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -58493,7 +58493,7 @@ const PROBLEMS = [
     "id": 734,
     "title": "Trie (Prefix Tree FAANG Core Problem 12",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -58557,7 +58557,7 @@ const PROBLEMS = [
     "title": "Serialize and Deserialize BST Challenge",
     "slug": "serialize-and-deserialize-bst-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -58666,7 +58666,7 @@ const PROBLEMS = [
     "title": "Delete Node in a BST Optimization",
     "slug": "delete-node-in-a-bst-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -58775,7 +58775,7 @@ const PROBLEMS = [
     "title": "Unique Substrings in Wraparound String Optimization",
     "slug": "unique-substrings-in-wraparound-string-optimization",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -58881,7 +58881,7 @@ const PROBLEMS = [
     "id": 738,
     "title": "Trie (Prefix Tree FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -58945,7 +58945,7 @@ const PROBLEMS = [
     "title": "Palindromic Substrings Challenge",
     "slug": "palindromic-substrings-challenge",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "subtopic": "Sliding Window",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -59051,7 +59051,7 @@ const PROBLEMS = [
     "id": 740,
     "title": "Binary Search Trees (BST Pattern Variation 1",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -59112,7 +59112,7 @@ const PROBLEMS = [
     "id": 741,
     "title": "Binary Search Trees (BST Pattern Variation 3",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -59173,7 +59173,7 @@ const PROBLEMS = [
     "id": 742,
     "title": "Trie (Prefix Tree FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -59234,7 +59234,7 @@ const PROBLEMS = [
     "id": 743,
     "title": "Binary Search Trees (BST Pattern Variation 5",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -59295,7 +59295,7 @@ const PROBLEMS = [
     "id": 744,
     "title": "Binary Search Trees (BST Pattern Variation 7",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -59356,7 +59356,7 @@ const PROBLEMS = [
     "id": 745,
     "title": "Binary Search Trees (BST Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Binary Search Trees (BST)",
+    "topic": "BST",
     "pattern": "Binary Search Trees (BST) Pattern",
     "description": "Optimal FAANG interview problem focused on Binary Search Trees (BST) algorithms.",
     "examples": [
@@ -59417,7 +59417,7 @@ const PROBLEMS = [
     "id": 746,
     "title": "Trie (Prefix Tree FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -59481,7 +59481,7 @@ const PROBLEMS = [
     "title": "Kth Largest Element in an Array Challenge",
     "slug": "kth-largest-element-in-an-array-challenge",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -59590,7 +59590,7 @@ const PROBLEMS = [
     "title": "Top K Frequent Elements Challenge",
     "slug": "top-k-frequent-elements-challenge",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -59699,7 +59699,7 @@ const PROBLEMS = [
     "title": "Top K Frequent Words Challenge",
     "slug": "top-k-frequent-words-challenge",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -59805,7 +59805,7 @@ const PROBLEMS = [
     "id": 750,
     "title": "Graphs, BFS & DF FAANG Core Problem 2",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -59866,7 +59866,7 @@ const PROBLEMS = [
     "id": 751,
     "title": "Reorganize String",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap",
     "description": "Rearranges characters of a string such that no two adjacent characters are identical using Max-Heap frequency tracking.",
     "examples": [
@@ -59927,7 +59927,7 @@ const PROBLEMS = [
     "id": 752,
     "title": "K Closest Points to Origin",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap",
     "description": "Finds the K closest 2D points to the origin (0, 0) using Euclidean distance and Max-Heap.",
     "examples": [
@@ -59988,7 +59988,7 @@ const PROBLEMS = [
     "id": 753,
     "title": "Graphs, BFS & DF FAANG Core Problem 6",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -60049,7 +60049,7 @@ const PROBLEMS = [
     "id": 754,
     "title": "Heap & Priority Queu Pattern Variation 9",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60110,7 +60110,7 @@ const PROBLEMS = [
     "id": 755,
     "title": "Heap & Priority Queu Pattern Variation 11",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60171,7 +60171,7 @@ const PROBLEMS = [
     "id": 756,
     "title": "Heap & Priority Queu Pattern Variation 13",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60232,7 +60232,7 @@ const PROBLEMS = [
     "id": 757,
     "title": "Graphs, BFS & DF FAANG Core Problem 8",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -60293,7 +60293,7 @@ const PROBLEMS = [
     "id": 758,
     "title": "Heap & Priority Queu Pattern Variation 15",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60354,7 +60354,7 @@ const PROBLEMS = [
     "id": 759,
     "title": "Heap & Priority Queu Pattern Variation 17",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60415,7 +60415,7 @@ const PROBLEMS = [
     "id": 760,
     "title": "Heap & Priority Queu Pattern Variation 19",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60476,7 +60476,7 @@ const PROBLEMS = [
     "id": 761,
     "title": "Graphs, BFS & DF FAANG Core Problem 12",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -60537,7 +60537,7 @@ const PROBLEMS = [
     "id": 762,
     "title": "Heap & Priority Queu Pattern Variation 21",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60598,7 +60598,7 @@ const PROBLEMS = [
     "id": 763,
     "title": "Heap & Priority Queu Pattern Variation 23",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60659,7 +60659,7 @@ const PROBLEMS = [
     "id": 764,
     "title": "Heap & Priority Queu Pattern Variation 25",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60720,7 +60720,7 @@ const PROBLEMS = [
     "id": 765,
     "title": "Graphs, BFS & DF FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -60781,7 +60781,7 @@ const PROBLEMS = [
     "id": 766,
     "title": "Heap & Priority Queu Pattern Variation 27",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60842,7 +60842,7 @@ const PROBLEMS = [
     "id": 767,
     "title": "Heap & Priority Queu Pattern Variation 29",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60903,7 +60903,7 @@ const PROBLEMS = [
     "id": 768,
     "title": "Heap & Priority Queu Pattern Variation 31",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -60964,7 +60964,7 @@ const PROBLEMS = [
     "id": 769,
     "title": "Graphs, BFS & DF FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -61025,7 +61025,7 @@ const PROBLEMS = [
     "id": 770,
     "title": "Heap & Priority Queu Pattern Variation 33",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61086,7 +61086,7 @@ const PROBLEMS = [
     "id": 771,
     "title": "Heap & Priority Queu Pattern Variation 35",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61147,7 +61147,7 @@ const PROBLEMS = [
     "id": 772,
     "title": "Heap & Priority Queu Pattern Variation 37",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61208,7 +61208,7 @@ const PROBLEMS = [
     "id": 773,
     "title": "Graphs, BFS & DF FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -61269,7 +61269,7 @@ const PROBLEMS = [
     "id": 774,
     "title": "Heap & Priority Queu Pattern Variation 39",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61330,7 +61330,7 @@ const PROBLEMS = [
     "id": 775,
     "title": "Heap & Priority Queu Pattern Variation 41",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61391,7 +61391,7 @@ const PROBLEMS = [
     "id": 776,
     "title": "Heap & Priority Queu Pattern Variation 43",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61452,7 +61452,7 @@ const PROBLEMS = [
     "id": 777,
     "title": "Graphs, BFS & DF FAANG Core Problem 24",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -61513,7 +61513,7 @@ const PROBLEMS = [
     "id": 778,
     "title": "Heap & Priority Queu Pattern Variation 45",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61574,7 +61574,7 @@ const PROBLEMS = [
     "id": 779,
     "title": "Heap & Priority Queu Pattern Variation 47",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61635,7 +61635,7 @@ const PROBLEMS = [
     "id": 780,
     "title": "Graphs, BFS & DF FAANG Core Problem 26",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -61696,7 +61696,7 @@ const PROBLEMS = [
     "id": 781,
     "title": "Heap & Priority Queu Pattern Variation 49",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61757,7 +61757,7 @@ const PROBLEMS = [
     "id": 782,
     "title": "Heap & Priority Queu Pattern Variation 51",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61818,7 +61818,7 @@ const PROBLEMS = [
     "id": 783,
     "title": "Heap & Priority Queu Pattern Variation 53",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -61879,7 +61879,7 @@ const PROBLEMS = [
     "id": 784,
     "title": "Graphs, BFS & DF FAANG Core Problem 30",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -61940,7 +61940,7 @@ const PROBLEMS = [
     "id": 785,
     "title": "Heap & Priority Queu Pattern Variation 55",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -62001,7 +62001,7 @@ const PROBLEMS = [
     "id": 786,
     "title": "Heap & Priority Queu Pattern Variation 57",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -62062,7 +62062,7 @@ const PROBLEMS = [
     "id": 787,
     "title": "Heap & Priority Queu Pattern Variation 59",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Heap & Priority Queue Pattern",
     "description": "Optimal FAANG interview problem focused on Heap & Priority Queue algorithms.",
     "examples": [
@@ -62123,7 +62123,7 @@ const PROBLEMS = [
     "id": 788,
     "title": "Graphs, BFS & DF FAANG Core Problem 32",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -62184,7 +62184,7 @@ const PROBLEMS = [
     "id": 789,
     "title": "Find K Pairs with Smallest Sums",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Min-Heap Priority Queue",
     "description": "Finds K pairs (u, v) with the smallest sums from two non-decreasingly sorted arrays nums1 and nums2.",
     "examples": [
@@ -62245,7 +62245,7 @@ const PROBLEMS = [
     "id": 790,
     "title": "Ugly Number II",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Min-Heap / Dynamic Programming 3-Pointers",
     "description": "Finds the Nth ugly number whose prime factors are limited to 2, 3, and 5.",
     "examples": [
@@ -62305,7 +62305,7 @@ const PROBLEMS = [
     "id": 791,
     "title": "Implement Trie (Prefix Tree)",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie",
     "description": "Implements a Trie data structure supporting insert, search, and startsWith operations.",
     "examples": [
@@ -62366,7 +62366,7 @@ const PROBLEMS = [
     "id": 792,
     "title": "Graphs, BFS & DF FAANG Core Problem 36",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -62427,7 +62427,7 @@ const PROBLEMS = [
     "id": 793,
     "title": "Design Add and Search Words Data Structure",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie",
     "description": "Designs a data structure that supports adding words and searching with '.' wildcard matching.",
     "examples": [
@@ -62488,7 +62488,7 @@ const PROBLEMS = [
     "id": 794,
     "title": "Replace Words",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie",
     "description": "Replaces words in a sentence with their shortest dictionary root prefix stored in a Trie.",
     "examples": [
@@ -62549,7 +62549,7 @@ const PROBLEMS = [
     "id": 795,
     "title": "Maximum XOR of Two Numbers in an Array",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie",
     "description": "Finds the maximum XOR pair in an array of integers using a Binary Bit Trie in O(32N) time.",
     "examples": [
@@ -62610,7 +62610,7 @@ const PROBLEMS = [
     "id": 796,
     "title": "Graphs, BFS & DF FAANG Core Problem 38",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -62671,7 +62671,7 @@ const PROBLEMS = [
     "id": 797,
     "title": "Trie (Prefix Tree FAANG Core Problem 7",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -62732,7 +62732,7 @@ const PROBLEMS = [
     "id": 798,
     "title": "Trie (Prefix Tree FAANG Core Problem 9",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -62793,7 +62793,7 @@ const PROBLEMS = [
     "id": 799,
     "title": "Trie (Prefix Tree FAANG Core Problem 11",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -62854,7 +62854,7 @@ const PROBLEMS = [
     "id": 800,
     "title": "Graphs, BFS & DF FAANG Core Problem 42",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -62915,7 +62915,7 @@ const PROBLEMS = [
     "id": 801,
     "title": "Trie (Prefix Tree FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -62976,7 +62976,7 @@ const PROBLEMS = [
     "id": 802,
     "title": "Trie (Prefix Tree FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -63037,7 +63037,7 @@ const PROBLEMS = [
     "id": 803,
     "title": "Trie (Prefix Tree FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -63098,7 +63098,7 @@ const PROBLEMS = [
     "id": 804,
     "title": "Graphs, BFS & DF FAANG Core Problem 44",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63159,7 +63159,7 @@ const PROBLEMS = [
     "id": 805,
     "title": "Trie (Prefix Tree FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -63220,7 +63220,7 @@ const PROBLEMS = [
     "id": 806,
     "title": "Trie (Prefix Tree FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Trie (Prefix Tree)",
+    "topic": "Trie",
     "pattern": "Trie (Prefix Tree) Pattern",
     "description": "Optimal FAANG interview problem focused on Trie (Prefix Tree) algorithms.",
     "examples": [
@@ -63281,7 +63281,7 @@ const PROBLEMS = [
     "id": 807,
     "title": "Graphs, BFS & DF FAANG Core Problem 1",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63342,7 +63342,7 @@ const PROBLEMS = [
     "id": 808,
     "title": "Graphs, BFS & DF FAANG Core Problem 48",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63403,7 +63403,7 @@ const PROBLEMS = [
     "id": 809,
     "title": "Graphs, BFS & DF FAANG Core Problem 3",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63464,7 +63464,7 @@ const PROBLEMS = [
     "id": 810,
     "title": "Graphs, BFS & DF FAANG Core Problem 5",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63525,7 +63525,7 @@ const PROBLEMS = [
     "id": 811,
     "title": "Graphs, BFS & DF FAANG Core Problem 50",
     "difficulty": "Hard",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63586,7 +63586,7 @@ const PROBLEMS = [
     "id": 812,
     "title": "Graphs, BFS & DF FAANG Core Problem 7",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63647,7 +63647,7 @@ const PROBLEMS = [
     "id": 813,
     "title": "Graphs, BFS & DF FAANG Core Problem 9",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63708,7 +63708,7 @@ const PROBLEMS = [
     "id": 814,
     "title": "Graphs, BFS & DF FAANG Core Problem 11",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63769,7 +63769,7 @@ const PROBLEMS = [
     "id": 815,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 6",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -63830,7 +63830,7 @@ const PROBLEMS = [
     "id": 816,
     "title": "Graphs, BFS & DF FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63891,7 +63891,7 @@ const PROBLEMS = [
     "id": 817,
     "title": "Graphs, BFS & DF FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -63952,7 +63952,7 @@ const PROBLEMS = [
     "id": 818,
     "title": "Graphs, BFS & DF FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64013,7 +64013,7 @@ const PROBLEMS = [
     "id": 819,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 8",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -64074,7 +64074,7 @@ const PROBLEMS = [
     "id": 820,
     "title": "Graphs, BFS & DF FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64135,7 +64135,7 @@ const PROBLEMS = [
     "id": 821,
     "title": "Graphs, BFS & DF FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64196,7 +64196,7 @@ const PROBLEMS = [
     "id": 822,
     "title": "Graphs, BFS & DF FAANG Core Problem 23",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64257,7 +64257,7 @@ const PROBLEMS = [
     "id": 823,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 12",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -64318,7 +64318,7 @@ const PROBLEMS = [
     "id": 824,
     "title": "Graphs, BFS & DF FAANG Core Problem 25",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64379,7 +64379,7 @@ const PROBLEMS = [
     "id": 825,
     "title": "Graphs, BFS & DF FAANG Core Problem 27",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64440,7 +64440,7 @@ const PROBLEMS = [
     "id": 826,
     "title": "Graphs, BFS & DF FAANG Core Problem 29",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64501,7 +64501,7 @@ const PROBLEMS = [
     "id": 827,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -64562,7 +64562,7 @@ const PROBLEMS = [
     "id": 828,
     "title": "Graphs, BFS & DF FAANG Core Problem 31",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64623,7 +64623,7 @@ const PROBLEMS = [
     "id": 829,
     "title": "Graphs, BFS & DF FAANG Core Problem 33",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64684,7 +64684,7 @@ const PROBLEMS = [
     "id": 830,
     "title": "Graphs, BFS & DF FAANG Core Problem 35",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64745,7 +64745,7 @@ const PROBLEMS = [
     "id": 831,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -64806,7 +64806,7 @@ const PROBLEMS = [
     "id": 832,
     "title": "Graphs, BFS & DF FAANG Core Problem 37",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64867,7 +64867,7 @@ const PROBLEMS = [
     "id": 833,
     "title": "Graphs, BFS & DF FAANG Core Problem 39",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64928,7 +64928,7 @@ const PROBLEMS = [
     "id": 834,
     "title": "Graphs, BFS & DF FAANG Core Problem 41",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -64989,7 +64989,7 @@ const PROBLEMS = [
     "id": 835,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -65050,7 +65050,7 @@ const PROBLEMS = [
     "id": 836,
     "title": "Graphs, BFS & DF FAANG Core Problem 43",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -65111,7 +65111,7 @@ const PROBLEMS = [
     "id": 837,
     "title": "Graphs, BFS & DF FAANG Core Problem 45",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -65172,7 +65172,7 @@ const PROBLEMS = [
     "id": 838,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 24",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -65233,7 +65233,7 @@ const PROBLEMS = [
     "id": 839,
     "title": "Graphs, BFS & DF FAANG Core Problem 47",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -65294,7 +65294,7 @@ const PROBLEMS = [
     "id": 840,
     "title": "Graphs, BFS & DF FAANG Core Problem 49",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -65355,7 +65355,7 @@ const PROBLEMS = [
     "id": 841,
     "title": "Graphs, BFS & DF FAANG Core Problem 51",
     "difficulty": "Medium",
-    "topic": "Graphs, BFS & DFS",
+    "topic": "Graphs",
     "pattern": "Graphs, BFS & DFS Pattern",
     "description": "Optimal FAANG interview problem focused on Graphs, BFS & DFS algorithms.",
     "examples": [
@@ -65416,7 +65416,7 @@ const PROBLEMS = [
     "id": 842,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 26",
     "difficulty": "Hard",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -65477,7 +65477,7 @@ const PROBLEMS = [
     "id": 843,
     "title": "Course Schedule",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort",
     "description": "Determines if all courses can be finished using Kahn's BFS algorithm for cycle detection in a DAG.",
     "examples": [
@@ -65538,7 +65538,7 @@ const PROBLEMS = [
     "id": 844,
     "title": "Course Schedule II",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort",
     "description": "Returns a valid topological ordering of courses to take given prerequisite dependencies.",
     "examples": [
@@ -65599,7 +65599,7 @@ const PROBLEMS = [
     "id": 845,
     "title": "Network Delay Time",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Shortest Path",
     "description": "Finds the minimum time for a signal to reach all nodes in a weighted graph using Dijkstra's Algorithm.",
     "examples": [
@@ -65660,7 +65660,7 @@ const PROBLEMS = [
     "id": 846,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 6",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -65721,7 +65721,7 @@ const PROBLEMS = [
     "id": 847,
     "title": "Cheapest Flights Within K Stops",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Shortest Path",
     "description": "Finds the cheapest flight route from src to dst with at most K stops using Bellman-Ford / BFS.",
     "examples": [
@@ -65782,7 +65782,7 @@ const PROBLEMS = [
     "id": 848,
     "title": "Path with Minimum Effort",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Shortest Path",
     "description": "Finds a path from top-left to bottom-right of a grid minimizing maximum height difference using Dijkstra.",
     "examples": [
@@ -65843,7 +65843,7 @@ const PROBLEMS = [
     "id": 849,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 7",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -65904,7 +65904,7 @@ const PROBLEMS = [
     "id": 850,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 8",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -65965,7 +65965,7 @@ const PROBLEMS = [
     "id": 851,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 9",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66026,7 +66026,7 @@ const PROBLEMS = [
     "id": 852,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 11",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66087,7 +66087,7 @@ const PROBLEMS = [
     "id": 853,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66148,7 +66148,7 @@ const PROBLEMS = [
     "id": 854,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 12",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -66209,7 +66209,7 @@ const PROBLEMS = [
     "id": 855,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66270,7 +66270,7 @@ const PROBLEMS = [
     "id": 856,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66331,7 +66331,7 @@ const PROBLEMS = [
     "id": 857,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66392,7 +66392,7 @@ const PROBLEMS = [
     "id": 858,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -66453,7 +66453,7 @@ const PROBLEMS = [
     "id": 859,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66514,7 +66514,7 @@ const PROBLEMS = [
     "id": 860,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 23",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66575,7 +66575,7 @@ const PROBLEMS = [
     "id": 861,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 25",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66636,7 +66636,7 @@ const PROBLEMS = [
     "id": 862,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -66697,7 +66697,7 @@ const PROBLEMS = [
     "id": 863,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 27",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66758,7 +66758,7 @@ const PROBLEMS = [
     "id": 864,
     "title": "Topological Sort & Shortest Pat FAANG Core Problem 29",
     "difficulty": "Medium",
-    "topic": "Topological Sort & Shortest Path",
+    "topic": "Graphs",
     "pattern": "Topological Sort & Shortest Path Pattern",
     "description": "Optimal FAANG interview problem focused on Topological Sort & Shortest Path algorithms.",
     "examples": [
@@ -66819,7 +66819,7 @@ const PROBLEMS = [
     "id": 865,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -66880,7 +66880,7 @@ const PROBLEMS = [
     "id": 866,
     "title": "Number of Connected Components in an Undirected Graph",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "DSU",
     "description": "Finds the number of connected components in an undirected graph using DSU.",
     "examples": [
@@ -66941,7 +66941,7 @@ const PROBLEMS = [
     "id": 867,
     "title": "Redundant Connection",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "DSU",
     "description": "Finds an edge that can be removed so that a graph becomes a tree of N nodes using DSU cycle detection.",
     "examples": [
@@ -67002,7 +67002,7 @@ const PROBLEMS = [
     "id": 868,
     "title": "Accounts Merge",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "DSU",
     "description": "Merges user accounts with overlapping email addresses using DSU.",
     "examples": [
@@ -67063,7 +67063,7 @@ const PROBLEMS = [
     "id": 869,
     "title": "Greedy Algorithm FAANG Core Problem 2",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -67124,7 +67124,7 @@ const PROBLEMS = [
     "id": 870,
     "title": "Evaluate Division",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "DSU",
     "description": "Evaluates division query paths in a directed weighted graph using Weighted DSU.",
     "examples": [
@@ -67185,7 +67185,7 @@ const PROBLEMS = [
     "id": 871,
     "title": "Most Stones Removed with Same Row or Column",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "DSU",
     "description": "Finds the maximum number of stones that can be removed by linking same row/col coordinates using DSU.",
     "examples": [
@@ -67246,7 +67246,7 @@ const PROBLEMS = [
     "id": 872,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 7",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67307,7 +67307,7 @@ const PROBLEMS = [
     "id": 873,
     "title": "Greedy Algorithm FAANG Core Problem 6",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -67368,7 +67368,7 @@ const PROBLEMS = [
     "id": 874,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 9",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67429,7 +67429,7 @@ const PROBLEMS = [
     "id": 875,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 11",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67490,7 +67490,7 @@ const PROBLEMS = [
     "id": 876,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67551,7 +67551,7 @@ const PROBLEMS = [
     "id": 877,
     "title": "Greedy Algorithm FAANG Core Problem 8",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -67612,7 +67612,7 @@ const PROBLEMS = [
     "id": 878,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67673,7 +67673,7 @@ const PROBLEMS = [
     "id": 879,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67734,7 +67734,7 @@ const PROBLEMS = [
     "id": 880,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67795,7 +67795,7 @@ const PROBLEMS = [
     "id": 881,
     "title": "Greedy Algorithm FAANG Core Problem 12",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -67856,7 +67856,7 @@ const PROBLEMS = [
     "id": 882,
     "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Disjoint Set Union (Union Find / DSU)",
+    "topic": "Union Find",
     "pattern": "Disjoint Set Union (Union Find / DSU) Pattern",
     "description": "Optimal FAANG interview problem focused on Disjoint Set Union (Union Find / DSU) algorithms.",
     "examples": [
@@ -67917,7 +67917,7 @@ const PROBLEMS = [
     "id": 883,
     "title": "Greedy Algorithm FAANG Core Problem 1",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -67978,7 +67978,7 @@ const PROBLEMS = [
     "id": 884,
     "title": "Greedy Algorithm FAANG Core Problem 3",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68039,7 +68039,7 @@ const PROBLEMS = [
     "id": 885,
     "title": "Greedy Algorithm FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68100,7 +68100,7 @@ const PROBLEMS = [
     "id": 886,
     "title": "Design Twitter",
     "difficulty": "Medium",
-    "topic": "Heap & Priority Queue",
+    "topic": "Heap",
     "pattern": "Min-Heap / Object Design",
     "description": "Designs a simplified version of Twitter supporting postTweet, getNewsFeed, follow, and unfollow operations.",
     "examples": [
@@ -68161,7 +68161,7 @@ const PROBLEMS = [
     "id": 887,
     "title": "Greedy Algorithm FAANG Core Problem 5",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68222,7 +68222,7 @@ const PROBLEMS = [
     "id": 888,
     "title": "Greedy Algorithm FAANG Core Problem 7",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68283,7 +68283,7 @@ const PROBLEMS = [
     "id": 889,
     "title": "Greedy Algorithm FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68344,7 +68344,7 @@ const PROBLEMS = [
     "id": 890,
     "title": "Greedy Algorithm FAANG Core Problem 9",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68405,7 +68405,7 @@ const PROBLEMS = [
     "id": 891,
     "title": "Greedy Algorithm FAANG Core Problem 11",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68466,7 +68466,7 @@ const PROBLEMS = [
     "id": 892,
     "title": "Greedy Algorithm FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68527,7 +68527,7 @@ const PROBLEMS = [
     "id": 893,
     "title": "Greedy Algorithm FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68588,7 +68588,7 @@ const PROBLEMS = [
     "id": 894,
     "title": "Greedy Algorithm FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68649,7 +68649,7 @@ const PROBLEMS = [
     "id": 895,
     "title": "Greedy Algorithm FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68710,7 +68710,7 @@ const PROBLEMS = [
     "id": 896,
     "title": "Greedy Algorithm FAANG Core Problem 24",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68771,7 +68771,7 @@ const PROBLEMS = [
     "id": 897,
     "title": "Greedy Algorithm FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68832,7 +68832,7 @@ const PROBLEMS = [
     "id": 898,
     "title": "Greedy Algorithm FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68893,7 +68893,7 @@ const PROBLEMS = [
     "id": 899,
     "title": "Greedy Algorithm FAANG Core Problem 23",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -68954,7 +68954,7 @@ const PROBLEMS = [
     "id": 900,
     "title": "Greedy Algorithm FAANG Core Problem 26",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69015,7 +69015,7 @@ const PROBLEMS = [
     "id": 901,
     "title": "Greedy Algorithm FAANG Core Problem 25",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69076,7 +69076,7 @@ const PROBLEMS = [
     "id": 902,
     "title": "Greedy Algorithm FAANG Core Problem 27",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69137,7 +69137,7 @@ const PROBLEMS = [
     "id": 903,
     "title": "Greedy Algorithm FAANG Core Problem 29",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69198,7 +69198,7 @@ const PROBLEMS = [
     "id": 904,
     "title": "Greedy Algorithm FAANG Core Problem 30",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69259,7 +69259,7 @@ const PROBLEMS = [
     "id": 905,
     "title": "Greedy Algorithm FAANG Core Problem 31",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69320,7 +69320,7 @@ const PROBLEMS = [
     "id": 906,
     "title": "Greedy Algorithm FAANG Core Problem 33",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69381,7 +69381,7 @@ const PROBLEMS = [
     "id": 907,
     "title": "Greedy Algorithm FAANG Core Problem 35",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69442,7 +69442,7 @@ const PROBLEMS = [
     "id": 908,
     "title": "Greedy Algorithm FAANG Core Problem 32",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69503,7 +69503,7 @@ const PROBLEMS = [
     "id": 909,
     "title": "Greedy Algorithm FAANG Core Problem 37",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69564,7 +69564,7 @@ const PROBLEMS = [
     "id": 910,
     "title": "Greedy Algorithm FAANG Core Problem 39",
     "difficulty": "Medium",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69628,7 +69628,7 @@ const PROBLEMS = [
     "title": "Linked List Cycle Optimization",
     "slug": "linked-list-cycle-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -69734,7 +69734,7 @@ const PROBLEMS = [
     "id": 912,
     "title": "Greedy Algorithm FAANG Core Problem 36",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -69798,7 +69798,7 @@ const PROBLEMS = [
     "title": "Intersection of Two Linked Lists Challenge",
     "slug": "intersection-of-two-linked-lists-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -69907,7 +69907,7 @@ const PROBLEMS = [
     "title": "Remove Linked List Elements Optimization",
     "slug": "remove-linked-list-elements-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -70016,7 +70016,7 @@ const PROBLEMS = [
     "title": "Reverse Linked List Optimization",
     "slug": "reverse-linked-list-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -70122,7 +70122,7 @@ const PROBLEMS = [
     "id": 916,
     "title": "Greedy Algorithm FAANG Core Problem 38",
     "difficulty": "Hard",
-    "topic": "Greedy Algorithms",
+    "topic": "Greedy",
     "pattern": "Greedy Algorithms Pattern",
     "description": "Optimal FAANG interview problem focused on Greedy Algorithms algorithms.",
     "examples": [
@@ -70186,7 +70186,7 @@ const PROBLEMS = [
     "title": "Merge Two Sorted Lists Challenge",
     "slug": "merge-two-sorted-lists-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -70295,7 +70295,7 @@ const PROBLEMS = [
     "title": "Palindrome Linked List Optimization",
     "slug": "palindrome-linked-list-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -70401,7 +70401,7 @@ const PROBLEMS = [
     "id": 919,
     "title": "Linked List FAANG Core Problem 14",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -70465,7 +70465,7 @@ const PROBLEMS = [
     "title": "Middle of the Linked List Optimization",
     "slug": "middle-of-the-linked-list-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -70574,7 +70574,7 @@ const PROBLEMS = [
     "title": "Convert Binary Number in a Linked List to Integer Optimization",
     "slug": "convert-binary-number-in-a-linked-list-to-integer-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Pointer Manipulation",
     "pattern": "Pointer Manipulation",
     "secondary_patterns": [
@@ -70683,7 +70683,7 @@ const PROBLEMS = [
     "title": "Climbing Stairs Optimization",
     "slug": "climbing-stairs-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -70789,7 +70789,7 @@ const PROBLEMS = [
     "id": 923,
     "title": "Linked List FAANG Core Problem 18",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -70853,7 +70853,7 @@ const PROBLEMS = [
     "title": "Remove Duplicates from Sorted List Challenge",
     "slug": "remove-duplicates-from-sorted-list-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Two Pointers",
     "pattern": "Two Pointers",
     "secondary_patterns": [
@@ -70962,7 +70962,7 @@ const PROBLEMS = [
     "title": "Path Sum Optimization",
     "slug": "path-sum-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71071,7 +71071,7 @@ const PROBLEMS = [
     "title": "Is Subsequence Challenge",
     "slug": "is-subsequence-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71177,7 +71177,7 @@ const PROBLEMS = [
     "id": 927,
     "title": "Linked List FAANG Core Problem 20",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -71241,7 +71241,7 @@ const PROBLEMS = [
     "title": "Longest Uncommon Subsequence I Optimization",
     "slug": "longest-uncommon-subsequence-i-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71350,7 +71350,7 @@ const PROBLEMS = [
     "title": "Longest Harmonious Subsequence Challenge",
     "slug": "longest-harmonious-subsequence-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71459,7 +71459,7 @@ const PROBLEMS = [
     "title": "Minimum Index Sum of Two Lists Optimization",
     "slug": "minimum-index-sum-of-two-lists-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -71565,7 +71565,7 @@ const PROBLEMS = [
     "id": 931,
     "title": "Linked List FAANG Core Problem 24",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -71629,7 +71629,7 @@ const PROBLEMS = [
     "title": "Longest Continuous Increasing Subsequence Challenge",
     "slug": "longest-continuous-increasing-subsequence-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71738,7 +71738,7 @@ const PROBLEMS = [
     "title": "Min Cost Climbing Stairs Optimization",
     "slug": "min-cost-climbing-stairs-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -71847,7 +71847,7 @@ const PROBLEMS = [
     "title": "Decompress Run-Length Encoded List Optimization",
     "slug": "decompress-run-length-encoded-list-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -71953,7 +71953,7 @@ const PROBLEMS = [
     "id": 935,
     "title": "Linked List FAANG Core Problem 26",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72017,7 +72017,7 @@ const PROBLEMS = [
     "title": "List the Products Ordered in a Period Challenge",
     "slug": "list-the-products-ordered-in-a-period-challenge",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -72126,7 +72126,7 @@ const PROBLEMS = [
     "title": "Remove Palindromic Subsequences Optimization",
     "slug": "remove-palindromic-subsequences-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -72235,7 +72235,7 @@ const PROBLEMS = [
     "title": "Minimum Subsequence in Non-Increasing Order Optimization",
     "slug": "minimum-subsequence-in-non-increasing-order-optimization",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "subtopic": "Dynamic Programming Memoization",
     "pattern": "Dynamic Programming Memoization",
     "secondary_patterns": [
@@ -72341,7 +72341,7 @@ const PROBLEMS = [
     "id": 939,
     "title": "Linked List FAANG Core Problem 30",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72402,7 +72402,7 @@ const PROBLEMS = [
     "id": 940,
     "title": "Dynamic Programming (1D & 2D Pattern Variation 4",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Dynamic Programming (1D & 2D) Pattern",
     "description": "Optimal FAANG interview problem focused on Dynamic Programming (1D & 2D) algorithms.",
     "examples": [
@@ -72463,7 +72463,7 @@ const PROBLEMS = [
     "id": 941,
     "title": "Dynamic Programming (1D & 2D Pattern Variation 10",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Dynamic Programming (1D & 2D) Pattern",
     "description": "Optimal FAANG interview problem focused on Dynamic Programming (1D & 2D) algorithms.",
     "examples": [
@@ -72524,7 +72524,7 @@ const PROBLEMS = [
     "id": 942,
     "title": "Dynamic Programming (1D & 2D Pattern Variation 16",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Dynamic Programming (1D & 2D) Pattern",
     "description": "Optimal FAANG interview problem focused on Dynamic Programming (1D & 2D) algorithms.",
     "examples": [
@@ -72585,7 +72585,7 @@ const PROBLEMS = [
     "id": 943,
     "title": "Linked List FAANG Core Problem 32",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72646,7 +72646,7 @@ const PROBLEMS = [
     "id": 944,
     "title": "Dynamic Programming (1D & 2D Pattern Variation 22",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Dynamic Programming (1D & 2D) Pattern",
     "description": "Optimal FAANG interview problem focused on Dynamic Programming (1D & 2D) algorithms.",
     "examples": [
@@ -72707,7 +72707,7 @@ const PROBLEMS = [
     "id": 945,
     "title": "Linked List FAANG Core Problem 13",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72768,7 +72768,7 @@ const PROBLEMS = [
     "id": 946,
     "title": "Linked List FAANG Core Problem 36",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72829,7 +72829,7 @@ const PROBLEMS = [
     "id": 947,
     "title": "Linked List FAANG Core Problem 15",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72890,7 +72890,7 @@ const PROBLEMS = [
     "id": 948,
     "title": "Linked List FAANG Core Problem 17",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -72951,7 +72951,7 @@ const PROBLEMS = [
     "id": 949,
     "title": "Linked List FAANG Core Problem 19",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73012,7 +73012,7 @@ const PROBLEMS = [
     "id": 950,
     "title": "Linked List FAANG Core Problem 38",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73073,7 +73073,7 @@ const PROBLEMS = [
     "id": 951,
     "title": "Linked List FAANG Core Problem 21",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73134,7 +73134,7 @@ const PROBLEMS = [
     "id": 952,
     "title": "Linked List FAANG Core Problem 23",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73195,7 +73195,7 @@ const PROBLEMS = [
     "id": 953,
     "title": "Linked List FAANG Core Problem 25",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73256,7 +73256,7 @@ const PROBLEMS = [
     "id": 954,
     "title": "Linked List FAANG Core Problem 42",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73317,7 +73317,7 @@ const PROBLEMS = [
     "id": 955,
     "title": "Linked List FAANG Core Problem 27",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73378,7 +73378,7 @@ const PROBLEMS = [
     "id": 956,
     "title": "Linked List FAANG Core Problem 29",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73439,7 +73439,7 @@ const PROBLEMS = [
     "id": 957,
     "title": "Linked List FAANG Core Problem 31",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73500,7 +73500,7 @@ const PROBLEMS = [
     "id": 958,
     "title": "Linked List Pattern Variation 14",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73561,7 +73561,7 @@ const PROBLEMS = [
     "id": 959,
     "title": "Linked List FAANG Core Problem 33",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73622,7 +73622,7 @@ const PROBLEMS = [
     "id": 960,
     "title": "Linked List FAANG Core Problem 35",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73683,7 +73683,7 @@ const PROBLEMS = [
     "id": 961,
     "title": "Linked List FAANG Core Problem 37",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73744,7 +73744,7 @@ const PROBLEMS = [
     "id": 962,
     "title": "Linked List Pattern Variation 18",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73805,7 +73805,7 @@ const PROBLEMS = [
     "id": 963,
     "title": "Linked List FAANG Core Problem 39",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73866,7 +73866,7 @@ const PROBLEMS = [
     "id": 964,
     "title": "Linked List FAANG Core Problem 41",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73927,7 +73927,7 @@ const PROBLEMS = [
     "id": 965,
     "title": "Linked List FAANG Core Problem 43",
     "difficulty": "Medium",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -73988,7 +73988,7 @@ const PROBLEMS = [
     "id": 966,
     "title": "Linked List Pattern Variation 20",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -74376,7 +74376,7 @@ const PROBLEMS = [
     "id": 970,
     "title": "Linked List Pattern Variation 24",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -74655,7 +74655,7 @@ const PROBLEMS = [
     "id": 973,
     "title": "Linked List Pattern Variation 26",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -75043,7 +75043,7 @@ const PROBLEMS = [
     "id": 977,
     "title": "Linked List Pattern Variation 30",
     "difficulty": "Hard",
-    "topic": "Dynamic Programming (1D & 2D)",
+    "topic": "Dynamic Programming",
     "pattern": "Linked Lists Pattern",
     "description": "Optimal FAANG interview problem focused on Linked Lists algorithms.",
     "examples": [
@@ -76189,7 +76189,7 @@ const PROBLEMS = [
     "id": 995,
     "title": "Time Based Key-Value Store",
     "difficulty": "Medium",
-    "topic": "Binary Search & Search Space",
+    "topic": "Binary Search",
     "pattern": "Binary Search on Timestamps",
     "description": "Designs a time-based key-value data structure that can store multiple values for the same key at different timestamps.",
     "examples": [
