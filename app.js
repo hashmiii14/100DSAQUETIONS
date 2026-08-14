@@ -733,7 +733,15 @@ class DSAApp {
           ${modalCtaBtn}
         </div>
 
-        <div style="margin-top: 12px;">
+        <div style="margin-top: 14px; background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
+            <span style="font-size: 11.5px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${this.escapeHtml(p.stageName || 'FAANG Master Learning Roadmap')}</span>
+            <span style="font-size: 11px; background: var(--accent-light); color: var(--accent-primary); padding: 2px 6px; border-radius: 4px; font-weight: 600;">Transition: ${this.escapeHtml(p.transitionType || 'EXTEND')}</span>
+          </div>
+          <div style="font-size: 13px; color: var(--text-primary); font-weight: 600;">What You'll Learn: <span style="font-weight: 400; color: var(--text-secondary);">${this.escapeHtml(p.newConcept || 'Core DSA Pattern')}</span></div>
+        </div>
+
+        <div style="margin-top: 14px;">
           <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">PROBLEM STATEMENT</strong>
           <p style="font-size: 14px; color: var(--text-primary); line-height: 1.6;">${this.escapeHtml(p.statement || 'Given standard constraints, solve the problem efficiently.')}</p>
         </div>
