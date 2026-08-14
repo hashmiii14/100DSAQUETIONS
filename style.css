@@ -804,6 +804,19 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   color: #ffffff;
 }
 
+.btn-solve.disabled {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.btn-solve.disabled:hover {
+  background: var(--bg-card);
+  color: var(--text-muted);
+}
+
 .col-status {
   width: 80px;
   text-align: center;

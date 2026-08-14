@@ -504,7 +504,11 @@ class DSAApp {
 
         const diffClass = this.getDiffClass(p.difficulty);
         const formattedId = `#${String(p.id).padStart(3, '0')}`;
-        const practiceUrl = p.leetcodeUrl || `https://leetcode.com/problems/${p.slug || 'two-sum'}/`;
+        const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.leetcode_url || p.leetcodeUrl);
+        const practiceUrl = isLeetCodeAvailable ? (p.leetcode_url || p.leetcodeUrl) : null;
+        const ctaBtnHtml = practiceUrl
+          ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve on LeetCode →</a>`
+          : `<span class="btn-solve disabled" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
 
         // Desktop Row HTML
         tableRowsHtml += `<tr class="${isSolved ? 'solved-row' : ''}">
@@ -516,7 +520,7 @@ class DSAApp {
           <td class="col-topic"><span class="topic-badge" title="${this.escapeHtml(p.topic || '')}">${this.escapeHtml(p.topic || '-')}</span></td>
           <td class="col-pattern"><span class="pattern-badge" title="${this.escapeHtml(p.pattern || '')}">${this.escapeHtml(p.pattern || '-')}</span></td>
           <td class="col-practice">
-            <a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve ↗</a>
+            ${ctaBtnHtml}
           </td>
           <td class="col-status">
             <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem solved"/>
@@ -538,7 +542,7 @@ class DSAApp {
             <span class="pattern-badge">${this.escapeHtml(p.pattern || '-')}</span>
           </div>
           <div class="card-actions-row">
-            <a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve ↗</a>
+            ${ctaBtnHtml}
             <div style="display: flex; align-items: center; gap: 8px;">
               <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})"/>
               <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})">${isBm ? '★' : '☆'}</button>
@@ -666,12 +670,18 @@ class DSAApp {
       const diffClass = this.getDiffClass(p.difficulty);
       const savedNote = this.state ? this.state.getNote(p.id) : '';
 
+      const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.leetcode_url || p.leetcodeUrl);
+      const practiceUrl = isLeetCodeAvailable ? (p.leetcode_url || p.leetcodeUrl) : null;
+      const modalCtaBtn = practiceUrl
+        ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">Solve on LeetCode →</a>`
+        : `<span class="btn-solve disabled" style="margin-left: auto;" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
+
       bodyEl.innerHTML = `
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
           <span class="diff-badge ${diffClass}">${p.difficulty}</span>
           <span class="topic-badge">${this.escapeHtml(p.topic || '')}</span>
           <span class="pattern-badge">${this.escapeHtml(p.pattern || '')}</span>
-          <a href="${p.leetcodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">Open on LeetCode ↗</a>
+          ${modalCtaBtn}
         </div>
 
         <div style="margin-top: 12px;">

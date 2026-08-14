@@ -25,8 +25,8 @@ assert(PROBLEMS.length === 1000, `Expected 1000 problems, found ${PROBLEMS.lengt
 
 // 2. Validate all 1000 problems fields
 console.log("\n[Test 2] Validating Data Schema for all 1000 problems...");
-let begCount = 0, easyCount = 0, medCount = 0, hardCount = 0, expCount = 0;
-const validDifficulties = new Set(['Beginner', 'Easy', 'Medium', 'Hard', 'Expert']);
+let easyCount = 0, medCount = 0, hardCount = 0;
+const validDifficulties = new Set(['Easy', 'Medium', 'Hard']);
 const seenIds = new Set();
 
 PROBLEMS.forEach((p, idx) => {
@@ -38,7 +38,11 @@ PROBLEMS.forEach((p, idx) => {
   assert(validDifficulties.has(p.difficulty), `Problem #${p.id} invalid difficulty: ${p.difficulty}`);
   assert(typeof p.topic === 'string' && p.topic.trim().length > 0, `Problem #${p.id} missing topic`);
   assert(typeof p.pattern === 'string' && p.pattern.trim().length > 0, `Problem #${p.id} missing pattern`);
-  assert(p.leetcodeUrl && p.leetcodeUrl.startsWith('https://leetcode.com/problems/'), `Problem #${p.id} invalid LeetCode URL`);
+  assert(['verified', 'related', 'no_direct_match'].includes(p.leetcode_match_status), `Problem #${p.id} invalid leetcode_match_status`);
+
+  if (p.leetcode_match_status !== 'no_direct_match') {
+    assert(p.leetcode_url && p.leetcode_url.startsWith('https://leetcode.com/problems/'), `Problem #${p.id} invalid LeetCode URL: ${p.leetcode_url}`);
+  }
   
   assert(typeof p.statement === 'string' && p.statement.trim().length > 0, `Problem #${p.id} missing statement`);
   assert(Array.isArray(p.constraints), `Problem #${p.id} constraints must be array`);
@@ -54,19 +58,15 @@ PROBLEMS.forEach((p, idx) => {
   assert(Array.isArray(p.edgeCases), `Problem #${p.id} edgeCases must be array`);
   assert(Array.isArray(p.commonMistakes), `Problem #${p.id} commonMistakes must be array`);
 
-  if (p.difficulty === 'Beginner') begCount++;
   if (p.difficulty === 'Easy') easyCount++;
   if (p.difficulty === 'Medium') medCount++;
   if (p.difficulty === 'Hard') hardCount++;
-  if (p.difficulty === 'Expert') expCount++;
 });
 
-console.log(`   Data Verification Passed: Total 1000 | Beginner: ${begCount} | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount} | Expert: ${expCount}`);
-assert(begCount === 100, `Expected 100 Beginner problems, found ${begCount}`);
-assert(easyCount === 200, `Expected 200 Easy problems, found ${easyCount}`);
+console.log(`   Data Verification Passed: Total 1000 | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount}`);
+assert(easyCount === 300, `Expected 300 Easy problems, found ${easyCount}`);
 assert(medCount === 450, `Expected 450 Medium problems, found ${medCount}`);
-assert(hardCount === 200, `Expected 200 Hard problems, found ${hardCount}`);
-assert(expCount === 50, `Expected 50 Expert problems, found ${expCount}`);
+assert(hardCount === 250, `Expected 250 Hard problems, found ${hardCount}`);
 
 // 3. Test AppState logic
 console.log("\n[Test 3] Testing AppState & Storage Operations...");
