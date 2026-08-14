@@ -186,9 +186,26 @@ class AppState {
   }
 
   setTheme(theme) {
-    this.theme = theme;
-    localStorage.setItem(STORAGE_KEYS.THEME, theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    const validTheme = theme === 'dark' ? 'dark' : 'light';
+    this.theme = validTheme;
+    localStorage.setItem(STORAGE_KEYS.THEME, validTheme);
+    if (typeof document !== 'undefined') {
+      if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+        document.documentElement.setAttribute('data-theme', validTheme);
+      }
+      if (typeof document.getElementById === 'function') {
+        const themeIcon = document.getElementById('theme-icon');
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        if (themeIcon) {
+          themeIcon.textContent = validTheme === 'dark' ? '☀️' : '🌙';
+        }
+        if (themeBtn) {
+          const nextLabel = validTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+          themeBtn.setAttribute('aria-label', nextLabel);
+          themeBtn.setAttribute('title', nextLabel);
+        }
+      }
+    }
   }
 }
 

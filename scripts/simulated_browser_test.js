@@ -224,6 +224,24 @@ if (!AppState.done.has(2)) {
 console.log("Testing Dashboard rendering after solving #2...");
 appInstance.renderDashboard();
 
+console.log("Testing Theme Toggle in simulated browser...");
+appInstance.setTheme('light');
+if (documentMock.documentElement.getAttribute('data-theme') !== 'light') {
+  console.error("❌ FAIL: setTheme('light') failed");
+  process.exit(1);
+}
+appInstance.toggleTheme();
+if (documentMock.documentElement.getAttribute('data-theme') !== 'dark') {
+  console.error("❌ FAIL: toggleTheme() to dark failed");
+  process.exit(1);
+}
+appInstance.toggleTheme();
+if (documentMock.documentElement.getAttribute('data-theme') !== 'light') {
+  console.error("❌ FAIL: toggleTheme() back to light failed");
+  process.exit(1);
+}
+console.log(" Theme toggle simulation passed!");
+
 console.log("\n==================================================");
 console.log("✅ SIMULATION COMPLETED! All views, actions, and dataset bindings pass 100%!");
 console.log("==================================================\n");

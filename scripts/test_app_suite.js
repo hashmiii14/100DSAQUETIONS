@@ -126,6 +126,40 @@ if (missingIds.length > 0) {
 }
 assert(missingIds.length === 0, `Missing DOM element IDs: ${missingIds.join(', ')}`);
 
+// 6. Test Theme Toggle logic and Storage persistence
+console.log("\n[Test 6] Testing Theme Toggle & LocalStorage persistence...");
+AppState.setTheme('dark');
+assert(AppState.theme === 'dark', "AppState.theme should be 'dark'");
+assert(localStorageStore['dsaproblems_theme_v3'] === 'dark', "localStorage should store 'dark'");
+
+AppState.setTheme('light');
+assert(AppState.theme === 'light', "AppState.theme should be 'light'");
+assert(localStorageStore['dsaproblems_theme_v3'] === 'light', "localStorage should store 'light'");
+
+// 7. Test Navigation Section Ordering in index.html
+console.log("\n[Test 7] Validating Nav Section Ordering in index.html...");
+const expectedNavOrder = ['problems', 'guide', 'progress', 'privacy', 'contact', 'about'];
+
+// Extract main-nav desktop buttons
+const mainNavMatch = indexHtml.match(/<nav[^>]*id=["']main-nav["'][^>]*>([\s\S]*?)<\/nav>/);
+assert(mainNavMatch, "main-nav element must exist in index.html");
+const desktopViews = [...mainNavMatch[1].matchAll(/data-view=["']([^"']+)["']/g)].map(m => m[1]);
+assert(JSON.stringify(desktopViews) === JSON.stringify(expectedNavOrder), `Desktop nav order mismatch: expected ${expectedNavOrder.join(', ')} but got ${desktopViews.join(', ')}`);
+
+// Extract mobile drawer buttons
+const mobileDrawerMatch = indexHtml.match(/<aside[^>]*id=["']mobile-drawer["'][^>]*>([\s\S]*?)<\/aside>/);
+assert(mobileDrawerMatch, "mobile-drawer element must exist in index.html");
+const mobileViews = [...mobileDrawerMatch[1].matchAll(/data-view=["']([^"']+)["']/g)].map(m => m[1]);
+assert(JSON.stringify(mobileViews) === JSON.stringify(expectedNavOrder), `Mobile drawer nav order mismatch: expected ${expectedNavOrder.join(', ')} but got ${mobileViews.join(', ')}`);
+
+// Extract footer links
+const footerMatch = indexHtml.match(/<div[^>]*class=["']footer-links["'][^>]*>([\s\S]*?)<\/div>/);
+assert(footerMatch, "footer-links element must exist in index.html");
+const footerHrefs = [...footerMatch[1].matchAll(/href=["']\/([^"']+)["']/g)].map(m => m[1]);
+assert(JSON.stringify(footerHrefs) === JSON.stringify(expectedNavOrder), `Footer nav order mismatch: expected ${expectedNavOrder.join(', ')} but got ${footerHrefs.join(', ')}`);
+
+console.log("   Navigation order verified for Desktop, Mobile Drawer, and Footer links!");
+
 console.log(`\n==================================================`);
 console.log(`✅ QA TEST SUITE COMPLETED SUCCESSFULLY! Passed ${passedTests} assertions.`);
 console.log(`==================================================\n`);

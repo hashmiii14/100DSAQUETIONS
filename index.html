@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+<script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('dsaproblems_theme_v3');
+      if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch(e) {}
+  })();
+</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DSAProblems — 1000 DSA Problems</title>
@@ -65,9 +77,9 @@
         <button class="nav-btn active" data-view="problems" onclick="app.navigate('/problems')">Problems</button>
         <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">DSA Guide</button>
         <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress')">Progress</button>
-        <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
         <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy')">Privacy Policy</button>
         <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact')">Contact</button>
+        <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
       </nav>
 
       <!-- Header Right Actions -->
@@ -97,9 +109,9 @@
       <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
       <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">DSA Guide</button>
       <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
-      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
       <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
       <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
+      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
     </div>
   </aside>
 
@@ -412,9 +424,9 @@
       <a href="/problems" onclick="event.preventDefault(); app.navigate('/problems');">Problems</a>
       <a href="/guide" onclick="event.preventDefault(); app.navigate('/guide');">DSA Guide</a>
       <a href="/progress" onclick="event.preventDefault(); app.navigate('/progress');">Progress</a>
-      <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
       <a href="/privacy" onclick="event.preventDefault(); app.navigate('/privacy');">Privacy Policy</a>
       <a href="/contact" onclick="event.preventDefault(); app.navigate('/contact');">Contact</a>
+      <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
     </div>
     <div style="margin-top: 6px;">Contact: <a href="mailto:mdhashmi955@gmail.com" style="color: var(--text-secondary); text-decoration: underline;">mdhashmi955@gmail.com</a></div>
     <div style="margin-top: 8px; font-size: 11.5px; opacity: 0.8;">© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
