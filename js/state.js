@@ -1,33 +1,23 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// js/state.js — State Management & Persistence for DSAProblems.site (ProgressStore)
-// Handles guest local storage, spaced repetition, mastery tracking, and JSON sync
-// ─────────────────────────────────────────────────────────────────────────────
-
+// State Management & Persistence for DSAProblems.site
 const STORAGE_KEYS = {
   DONE: 'dsaproblems_done_v3',
   ATTEMPTED: 'dsaproblems_attempted_v3',
-  MASTERY: 'dsaproblems_mastery_v3', // { pid: 'not-started' | 'attempted' | 'solved' | 'needs-revision' | 'repeated-success' | 'mastered' }
   BOOKMARKED: 'dsaproblems_bookmarked_v3',
   NOTES: 'dsaproblems_notes_v3',
   REVISION: 'dsaproblems_revision_v3',
   STREAK: 'dsaproblems_streak_v3',
-  THEME: 'dsaproblems_theme_v3',
-  TARGET_COMPANY: 'dsaproblems_target_company_v3',
-  MOCK_HISTORY: 'dsaproblems_mock_history_v3'
+  THEME: 'dsaproblems_theme_v3'
 };
 
 class AppState {
   constructor() {
     this.done = this.loadSet(STORAGE_KEYS.DONE);
     this.attempted = this.loadSet(STORAGE_KEYS.ATTEMPTED);
-    this.mastery = this.loadObj(STORAGE_KEYS.MASTERY);
     this.bookmarked = this.loadSet(STORAGE_KEYS.BOOKMARKED);
     this.notes = this.loadObj(STORAGE_KEYS.NOTES);
-    this.revisionQueue = this.loadObj(STORAGE_KEYS.REVISION);
+    this.revisionQueue = this.loadObj(STORAGE_KEYS.REVISION); // { pid: { nextDue: timestamp, intervalDays: 1, status: 'due' } }
     this.streakData = this.loadObj(STORAGE_KEYS.STREAK, { current: 1, max: 1, lastDate: new Date().toDateString() });
-    this.theme = (typeof localStorage !== 'undefined' ? localStorage.getItem(STORAGE_KEYS.THEME) : null) || 'dark';
-    this.targetCompany = (typeof localStorage !== 'undefined' ? localStorage.getItem(STORAGE_KEYS.TARGET_COMPANY) : null) || 'all';
-    this.mockHistory = this.loadArray(STORAGE_KEYS.MOCK_HISTORY);
+    this.theme = localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
 
     this.checkAndUpdateStreak();
   }
@@ -41,7 +31,6 @@ class AppState {
 
   loadSet(key) {
     try {
-      if (typeof localStorage === 'undefined') return new Set();
       const raw = localStorage.getItem(key);
       if (!raw) return new Set();
       const data = JSON.parse(raw);
@@ -51,6 +40,7 @@ class AppState {
         .filter(n => typeof n === 'number' && !isNaN(n) && n > 0)
         .map(n => this.mapToCanonicalId(n));
       const canonicalSet = new Set(migrated);
+      // Persist migrated canonical data back to localStorage
       this.saveSet(key, canonicalSet);
       return canonicalSet;
     } catch (_) {
@@ -59,14 +49,11 @@ class AppState {
   }
 
   saveSet(key, set) {
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(key, JSON.stringify([...set]));
-    }
+    localStorage.setItem(key, JSON.stringify([...set]));
   }
 
   loadObj(key, defaultVal = {}) {
     try {
-      if (typeof localStorage === 'undefined') return defaultVal;
       const raw = localStorage.getItem(key);
       if (!raw) return defaultVal;
       const parsed = JSON.parse(raw);
@@ -93,71 +80,23 @@ class AppState {
   }
 
   saveObj(key, obj) {
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(key, JSON.stringify(obj));
-    }
+    localStorage.setItem(key, JSON.stringify(obj));
   }
 
-  loadArray(key) {
-    try {
-      if (typeof localStorage === 'undefined') return [];
-      const raw = localStorage.getItem(key);
-      if (!raw) return [];
-      const parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (_) {
-      return [];
-    }
-  }
-
-  /* ── Status & Mastery Actions ───────────────────────────────────────────── */
   toggleDone(pid) {
     pid = Number(pid);
     if (this.done.has(pid)) {
       this.done.delete(pid);
-      delete this.mastery[pid];
       this.removeFromRevision(pid);
     } else {
       this.done.add(pid);
       this.attempted.add(pid);
-      this.mastery[pid] = 'solved';
-      this.scheduleRevision(pid, 1); // 1 day initial review
+      this.scheduleRevision(pid, 1); // 1-day initial review
       this.checkAndUpdateStreak();
     }
     this.saveSet(STORAGE_KEYS.DONE, this.done);
     this.saveSet(STORAGE_KEYS.ATTEMPTED, this.attempted);
-    this.saveObj(STORAGE_KEYS.MASTERY, this.mastery);
     return this.done.has(pid);
-  }
-
-  setMasteryStatus(pid, status) {
-    pid = Number(pid);
-    // status: 'not-started' | 'attempted' | 'solved' | 'needs-revision' | 'repeated-success' | 'mastered'
-    if (status === 'not-started') {
-      this.done.delete(pid);
-      this.attempted.delete(pid);
-      delete this.mastery[pid];
-      this.removeFromRevision(pid);
-    } else {
-      this.attempted.add(pid);
-      if (['solved', 'repeated-success', 'mastered'].includes(status)) {
-        this.done.add(pid);
-      } else {
-        this.done.delete(pid);
-      }
-      this.mastery[pid] = status;
-    }
-    this.saveSet(STORAGE_KEYS.DONE, this.done);
-    this.saveSet(STORAGE_KEYS.ATTEMPTED, this.attempted);
-    this.saveObj(STORAGE_KEYS.MASTERY, this.mastery);
-  }
-
-  getMasteryStatus(pid) {
-    pid = Number(pid);
-    if (this.mastery[pid]) return this.mastery[pid];
-    if (this.done.has(pid)) return 'solved';
-    if (this.attempted.has(pid)) return 'attempted';
-    return 'not-started';
   }
 
   toggleBookmark(pid) {
@@ -185,7 +124,6 @@ class AppState {
     return this.notes[Number(pid)] || '';
   }
 
-  /* ── Spaced Repetition (SRS) ────────────────────────────────────────────── */
   scheduleRevision(pid, days) {
     pid = Number(pid);
     const now = Date.now();
@@ -194,31 +132,26 @@ class AppState {
       pid,
       nextDue,
       intervalDays: days,
-      scheduledAt: now,
-      reviewCount: (this.revisionQueue[pid]?.reviewCount || 0) + 1
+      scheduledAt: now
     };
     this.saveObj(STORAGE_KEYS.REVISION, this.revisionQueue);
   }
 
-  updateRevisionRating(pid, rating) {
-    // rating: 'easy' (+14d) | 'okay' (+7d) | 'hard' (+3d) | 'forgot' (+1d)
+  updateRevisionStatus(pid, rating) {
+    // rating: 'know' | 'review' | 'forgot'
     pid = Number(pid);
-    let days = 1;
-    if (rating === 'easy') {
-      days = 14;
-      this.mastery[pid] = 'mastered';
-    } else if (rating === 'okay') {
-      days = 7;
-      this.mastery[pid] = 'repeated-success';
-    } else if (rating === 'hard') {
-      days = 3;
-      this.mastery[pid] = 'solved';
+    const item = this.revisionQueue[pid] || { intervalDays: 1 };
+    let nextInterval = 1;
+    if (rating === 'know') {
+      const intervals = [1, 3, 7, 14, 30];
+      const curIdx = intervals.indexOf(item.intervalDays);
+      nextInterval = curIdx !== -1 && curIdx < intervals.length - 1 ? intervals[curIdx + 1] : 30;
+    } else if (rating === 'review') {
+      nextInterval = 3;
     } else {
-      days = 1;
-      this.mastery[pid] = 'needs-revision';
+      nextInterval = 1;
     }
-    this.saveObj(STORAGE_KEYS.MASTERY, this.mastery);
-    this.scheduleRevision(pid, days);
+    this.scheduleRevision(pid, nextInterval);
   }
 
   removeFromRevision(pid) {
@@ -235,39 +168,6 @@ class AppState {
       }
     }
     return due;
-  }
-
-  /* ── Mock Interview & Target Company ──────────────────────────────────── */
-  setTargetCompany(companyId) {
-    this.targetCompany = companyId || 'all';
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(STORAGE_KEYS.TARGET_COMPANY, this.targetCompany);
-    }
-  }
-
-  recordMockSession(sessionResult) {
-    if (!sessionResult) return;
-    this.mockHistory.unshift({
-      id: Date.now(),
-      date: new Date().toLocaleDateString(),
-      timestamp: Date.now(),
-      scorePct: sessionResult.scorePct || 0,
-      difficulty: sessionResult.difficulty || 'Mixed',
-      timeSpentSeconds: sessionResult.timeSpentSeconds || 0,
-      attemptedCount: sessionResult.attemptedCount || 0,
-      totalCount: sessionResult.totalCount || 3,
-      dimensions: sessionResult.dimensions || {
-        problemSolving: 3,
-        patternRecognition: 3,
-        coding: 3,
-        complexity: 3,
-        testing: 3,
-        communication: 3
-      }
-    });
-    // Keep last 20 sessions
-    if (this.mockHistory.length > 20) this.mockHistory.pop();
-    this.saveObj(STORAGE_KEYS.MOCK_HISTORY, this.mockHistory);
   }
 
   checkAndUpdateStreak() {
@@ -288,68 +188,28 @@ class AppState {
   setTheme(theme) {
     const validTheme = theme === 'dark' ? 'dark' : 'light';
     this.theme = validTheme;
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem(STORAGE_KEYS.THEME, validTheme);
-    }
-    if (typeof document !== 'undefined' && document.documentElement) {
-      document.documentElement.setAttribute('data-theme', validTheme);
-    }
-  }
+    localStorage.setItem(STORAGE_KEYS.THEME, validTheme);
+    if (typeof document !== 'undefined') {
+      if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+        document.documentElement.setAttribute('data-theme', validTheme);
+      }
+      if (typeof document.getElementById === 'function') {
+        const themeIcon = document.getElementById('theme-icon');
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const mobileLabel = document.getElementById('mobile-theme-label');
 
-  /* ── JSON Export & Import ────────────────────────────────────────────────── */
-  exportDataJSON() {
-    const exportObject = {
-      version: "3.0",
-      exportedAt: new Date().toISOString(),
-      done: [...this.done],
-      attempted: [...this.attempted],
-      mastery: this.mastery,
-      bookmarked: [...this.bookmarked],
-      notes: this.notes,
-      revisionQueue: this.revisionQueue,
-      streakData: this.streakData,
-      targetCompany: this.targetCompany,
-      mockHistory: this.mockHistory
-    };
-    return JSON.stringify(exportObject, null, 2);
-  }
-
-  importDataJSON(jsonStr) {
-    try {
-      const data = JSON.parse(jsonStr);
-      if (!data || typeof data !== 'object') throw new Error("Invalid JSON structure");
-
-      if (Array.isArray(data.done)) {
-        this.done = new Set(data.done.map(n => this.mapToCanonicalId(n)));
-        this.saveSet(STORAGE_KEYS.DONE, this.done);
+        if (themeIcon) {
+          themeIcon.textContent = validTheme === 'dark' ? '🌙' : '☀️';
+        }
+        if (themeBtn) {
+          const modeLabel = validTheme === 'dark' ? 'Night Mode (🌙)' : 'Day Mode (☀️)';
+          themeBtn.setAttribute('aria-label', modeLabel);
+          themeBtn.setAttribute('title', modeLabel);
+        }
+        if (mobileLabel) {
+          mobileLabel.textContent = validTheme === 'dark' ? '🌙 Night Mode' : '☀️ Day Mode';
+        }
       }
-      if (Array.isArray(data.attempted)) {
-        this.attempted = new Set(data.attempted.map(n => this.mapToCanonicalId(n)));
-        this.saveSet(STORAGE_KEYS.ATTEMPTED, this.attempted);
-      }
-      if (Array.isArray(data.bookmarked)) {
-        this.bookmarked = new Set(data.bookmarked.map(n => this.mapToCanonicalId(n)));
-        this.saveSet(STORAGE_KEYS.BOOKMARKED, this.bookmarked);
-      }
-      if (data.mastery && typeof data.mastery === 'object') {
-        this.mastery = data.mastery;
-        this.saveObj(STORAGE_KEYS.MASTERY, this.mastery);
-      }
-      if (data.notes && typeof data.notes === 'object') {
-        this.notes = data.notes;
-        this.saveObj(STORAGE_KEYS.NOTES, this.notes);
-      }
-      if (data.revisionQueue && typeof data.revisionQueue === 'object') {
-        this.revisionQueue = data.revisionQueue;
-        this.saveObj(STORAGE_KEYS.REVISION, this.revisionQueue);
-      }
-      if (data.mockHistory && Array.isArray(data.mockHistory)) {
-        this.mockHistory = data.mockHistory;
-        this.saveObj(STORAGE_KEYS.MOCK_HISTORY, this.mockHistory);
-      }
-      return { success: true, message: "Progress imported successfully!" };
-    } catch (e) {
-      return { success: false, message: "Import failed: " + e.message };
     }
   }
 }

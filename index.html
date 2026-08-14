@@ -15,8 +15,8 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FAANG DSA Preparation System — 1000 Problems & Pattern Mastery</title>
-<meta name="description" content="FAANG DSA Preparation System — Master 1,000 verified LeetCode problems through pattern recognition, company practice, spaced revision, and 45-minute timed mock interviews."/>
+<title>FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.</title>
+<meta name="description" content="FAANG DSA Forge — A progressive 1000-problem DSA journey designed to take you from programming fundamentals to advanced FAANG interview problem solving."/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
@@ -28,8 +28,8 @@
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
 
 <!-- Open Graph SEO -->
-<meta property="og:title" content="FAANG DSA Preparation System — 1000 Problems & Pattern Mastery"/>
-<meta property="og:description" content="A complete interview-oriented DSA preparation system featuring pattern-based roadmaps, company hubs, spaced revision, and timed mock interviews."/>
+<meta property="og:title" content="FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready."/>
+<meta property="og:description" content="A progressive 1000-problem DSA journey designed to take you from programming fundamentals to advanced FAANG interview problem solving."/>
 <meta property="og:url" content="https://www.dsaproblems.site/"/>
 <meta property="og:type" content="website"/>
 
@@ -57,11 +57,8 @@
 <script src="data/patterns.js"></script>
 <script src="data/ds_algo_library.js"></script>
 <script src="data/tracks.js"></script>
-<script src="js/company_data.js"></script>
-<script src="js/roadmaps_data.js"></script>
 <script src="js/state.js"></script>
 <script src="js/recommendation.js"></script>
-<script src="js/interview_mode.js"></script>
 <script src="js/duplicate_prevention.js"></script>
 <script src="app.js"></script>
 </head>
@@ -78,32 +75,24 @@
   <!-- Header Topbar -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="brand-section" onclick="event.preventDefault(); app.navigate('/dashboard');">
-        <div class="brand-logo">DSA<span>Forge</span></div>
+      <a href="/" class="brand-section" onclick="event.preventDefault(); app.navigate('/');">
+        <div class="brand-logo">DSA<span>Problems</span></div>
       </a>
 
-      <!-- Desktop Nav Links (10 Primary Core Areas) -->
+      <!-- Desktop Nav Links (Exact Ordered Sequence) -->
       <nav class="nav-links" id="main-nav">
-        <button class="nav-btn" data-view="dashboard" onclick="app.navigate('/dashboard')">Dashboard</button>
         <button class="nav-btn active" data-view="problems" onclick="app.navigate('/problems')">Problems</button>
-        <button class="nav-btn" data-view="roadmap" onclick="app.navigate('/roadmap')">Roadmap</button>
-        <button class="nav-btn" data-view="patterns" onclick="app.navigate('/patterns')">Patterns</button>
-        <button class="nav-btn" data-view="companies" onclick="app.navigate('/companies')">Companies</button>
-        <button class="nav-btn" data-view="practice" onclick="app.navigate('/practice')">Practice</button>
-        <button class="nav-btn" data-view="mock" onclick="app.navigate('/mock-interview')">Mock Interview</button>
-        <button class="nav-btn" data-view="revision" onclick="app.navigate('/revision')">Revision</button>
+        <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">DSA Guide</button>
         <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress')">Progress</button>
-        <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">Interview Guide</button>
+        <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy')">Privacy Policy</button>
+        <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact')">Contact</button>
+        <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
       </nav>
 
       <!-- Header Right Actions -->
       <div class="header-actions">
-        <button class="btn-secondary" onclick="app.openExportImportModal()" title="Export or Import Progress" style="padding: 6px 10px; font-size: 12.5px;">
-          💾 Sync
-        </button>
-
         <button class="search-trigger-btn" onclick="app.openCommandPalette()" aria-label="Quick Search">
-          <span>Search 1,000 problems...</span>
+          <span>Search problems...</span>
           <span class="shortcut-kbd">⌘K</span>
         </button>
 
@@ -111,7 +100,7 @@
           <span class="theme-toggle-icon" id="theme-icon">☀️</span>
         </button>
 
-        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Menu">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu">☰</button>
       </div>
     </div>
   </header>
@@ -120,143 +109,64 @@
   <div class="drawer-backdrop" id="drawer-backdrop" onclick="app.toggleMobileMenu(false)"></div>
   <aside class="mobile-drawer" id="mobile-drawer">
     <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
-      <strong style="font-size: 16px;">DSAForge Navigation</strong>
+      <strong style="font-size: 16px;">DSAProblems Navigation</strong>
       <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" style="padding: 4px 10px;">✕</button>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; overflow-y: auto;">
-      <button class="nav-btn" data-view="dashboard" onclick="app.navigate('/dashboard'); app.toggleMobileMenu(false);">🎯 Dashboard & Readiness</button>
-      <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">📚 Problems Database (1000)</button>
-      <button class="nav-btn" data-view="roadmap" onclick="app.navigate('/roadmap'); app.toggleMobileMenu(false);">🗺️ FAANG Roadmaps</button>
-      <button class="nav-btn" data-view="patterns" onclick="app.navigate('/patterns'); app.toggleMobileMenu(false);">⚡ 20+ Core Patterns</button>
-      <button class="nav-btn" data-view="companies" onclick="app.navigate('/companies'); app.toggleMobileMenu(false);">🏢 Company Preparation</button>
-      <button class="nav-btn" data-view="practice" onclick="app.navigate('/practice'); app.toggleMobileMenu(false);">🔥 Practice Modes</button>
-      <button class="nav-btn" data-view="mock" onclick="app.navigate('/mock-interview'); app.toggleMobileMenu(false);">⏱️ 45-Min Mock Arena</button>
-      <button class="nav-btn" data-view="revision" onclick="app.navigate('/revision'); app.toggleMobileMenu(false);">🔄 Spaced Revision Queue</button>
-      <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">📊 Mastery Analytics</button>
-      <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">📖 Interview Guide</button>
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+      <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
+      <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">DSA Guide</button>
+      <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
       <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
-      <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact & Support</button>
-      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About Platform</button>
+      <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
+      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
     </div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-color);">
-      <span style="font-size: 13px; color: var(--text-secondary);">Theme</span>
-      <button class="theme-toggle-btn" onclick="app.toggleTheme()">
-        <span id="mobile-theme-label" style="font-size: 12.5px; font-weight: 600;">☀️ Day Mode</span>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color);">
+      <span style="font-size: 13.5px; color: var(--text-secondary); font-weight: 500;">Theme</span>
+      <button class="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Day/Night Mode">
+        <span id="mobile-theme-label" style="font-size: 13px; font-weight: 600;">☀️ Day Mode</span>
       </button>
     </div>
   </aside>
 
-  <!-- Main Content Area -->
+  <!-- Main Content Container -->
   <main class="main-content">
 
-    <!-- View 1: Dashboard & FAANG Readiness -->
-    <section class="view-section" id="view-dashboard">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Interview Readiness Dashboard</h1>
-        <p style="color: var(--text-secondary); font-size: 14px;">An explainable, 8-dimensional measurement of your FAANG interview preparedness.</p>
-      </div>
-
-      <div class="dashboard-grid">
-        <!-- FAANG Readiness Score Card -->
-        <div class="readiness-card">
-          <div class="readiness-header">
-            <div>
-              <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">FAANG Readiness Score</span>
-              <div class="readiness-score-display">
-                <span class="readiness-big-num" id="dash-readiness-score">0</span>
-                <span class="readiness-max">/ 100</span>
-              </div>
-            </div>
-            <span class="readiness-tag" id="dash-readiness-tier">Needs Foundation</span>
-          </div>
-
-          <div class="readiness-explain-box" id="dash-readiness-explain">
-            Calculating your readiness metrics across topic coverage, pattern mastery, difficulty balance, consistency, revision strength, and mock performance...
-          </div>
-
-          <div class="dimension-radar-grid">
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Topic Coverage</span><span id="dim-topic-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-topic-bar" style="width: 0%;"></div></div>
-            </div>
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Pattern Coverage</span><span id="dim-pattern-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-pattern-bar" style="width: 0%;"></div></div>
-            </div>
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Difficulty Balance</span><span id="dim-diff-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-diff-bar" style="width: 0%;"></div></div>
-            </div>
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Consistency & Streak</span><span id="dim-streak-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-streak-bar" style="width: 0%;"></div></div>
-            </div>
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Revision Retention</span><span id="dim-rev-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-rev-bar" style="width: 0%;"></div></div>
-            </div>
-            <div class="dimension-row">
-              <div class="dimension-label-row"><span>Mock Performance</span><span id="dim-mock-val">0%</span></div>
-              <div class="dimension-bar-bg"><div class="dimension-bar-fill" id="dim-mock-bar" style="width: 0%;"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- "What Should I Solve TODAY?" Card -->
-        <div class="next-today-card">
-          <span class="today-badge">⚡ Recommended Next Target</span>
-          <div id="dash-next-content">
-            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;" id="dash-next-title">Loading recommendation...</h3>
-            <p style="color: var(--text-secondary); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px;" id="dash-next-reason">
-              Analyzing curriculum dependencies and weak area data...
-            </p>
-            <div style="display: flex; gap: 10px; align-items: center;" id="dash-next-actions">
-              <button class="btn-primary" id="btn-dash-solve-next">Solve Problem Now →</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Action Cards -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px;">
-        <div class="info-card-container" style="padding: 20px; cursor: pointer;" onclick="app.navigate('/mock-interview')">
-          <div style="font-size: 20px;">⏱️</div>
-          <strong style="font-size: 15px;">Timed Mock Arena</strong>
-          <p style="font-size: 12.5px; color: var(--text-secondary);">Simulate a realistic 45-minute FAANG interview round.</p>
-        </div>
-        <div class="info-card-container" style="padding: 20px; cursor: pointer;" onclick="app.navigate('/revision')">
-          <div style="font-size: 20px;">🔄</div>
-          <strong style="font-size: 15px;">Spaced Revision (<span id="dash-due-count">0</span> Due)</strong>
-          <p style="font-size: 12.5px; color: var(--text-secondary);">Reinforce problem memory with optimal intervals.</p>
-        </div>
-        <div class="info-card-container" style="padding: 20px; cursor: pointer;" onclick="app.navigate('/roadmap')">
-          <div style="font-size: 20px;">🗺️</div>
-          <strong style="font-size: 15px;">Target Roadmaps</strong>
-          <p style="font-size: 12.5px; color: var(--text-secondary);">Follow structured 12-week or 6-week intensive tracks.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- View 2: Main Problems Directory -->
+    <!-- View 1: Main Problem Sheet (Homepage) -->
     <section class="view-section active" id="view-problems">
-      <!-- Hero Section -->
+      
+      <!-- Hero Section (Compact & Sleek) -->
       <div class="hero-section">
         <div class="hero-header-compact">
           <div class="hero-title-area">
             <div class="hero-title-row">
-              <h1>FAANG DSA Curriculum</h1>
-              <span class="hero-mini-tag">1000 Verified LeetCode Problems</span>
+              <h1>FAANG DSA Forge</h1>
+              <span class="hero-mini-tag">1000 Problems • Beginner to FAANG-Ready</span>
             </div>
             <p class="hero-description-compact">
-              Explore 1,000 real problems organized by pattern dependencies, estimated solve times, and company associations.
+              Master Data Structures and Algorithms step-by-step with 1,000 verified LeetCode problems organized by concept dependencies and pattern recognition.
             </p>
+            <div class="hero-compact-pills">
+              <span class="compact-pill">🔗 Curated DSA Problems</span>
+              <span class="compact-pill">⚡ 20+ Core DSA Patterns</span>
+              <span class="compact-pill">🎯 Beginner → Interview Ready</span>
+              <span class="compact-pill">📈 Track Your Progress</span>
+            </div>
           </div>
 
           <div class="hero-compact-stats">
             <div class="stat-chips-inline">
-              <div class="compact-chip"><span class="chip-lbl">Total</span><span class="chip-val">1000</span></div>
-              <div class="compact-chip"><span class="chip-lbl">Solved</span><span class="chip-val" id="hero-solved-count">0</span></div>
-              <div class="compact-chip"><span class="chip-lbl">Progress</span><span class="chip-val" id="hero-progress-pct">0.0%</span></div>
+              <div class="compact-chip">
+                <span class="chip-lbl">Total</span>
+                <span class="chip-val">1000</span>
+              </div>
+              <div class="compact-chip">
+                <span class="chip-lbl">Solved</span>
+                <span class="chip-val" id="hero-solved-count">0</span>
+              </div>
+              <div class="compact-chip">
+                <span class="chip-lbl">Progress</span>
+                <span class="chip-val" id="hero-progress-pct">0.0%</span>
+              </div>
             </div>
             <div class="hero-progress-bar-wrap">
               <div class="hero-progress-bar-fill" id="hero-progress-bar"></div>
@@ -272,11 +182,11 @@
         </div>
       </div>
 
-      <!-- Multi-Faceted Filter Controls Bar -->
+      <!-- Filter Controls Bar -->
       <div class="filter-controls-bar">
         <div class="search-input-group">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          <input type="text" class="search-input" id="problem-search-input" placeholder="Search by title, ID, topic, pattern or company..." oninput="app.handleSearchInput(this.value)"/>
+          <input type="text" class="search-input" id="problem-search-input" placeholder="Search by title, ID, topic or pattern..." oninput="app.handleSearchInput(this.value)"/>
         </div>
 
         <div class="filter-selects-group">
@@ -288,12 +198,10 @@
           </select>
 
           <select class="filter-select" id="status-filter" onchange="app.handleStatusFilter(this.value)">
-            <option value="all">All Statuses</option>
+            <option value="all">All Status</option>
             <option value="unsolved">Unsolved</option>
             <option value="solved">Solved</option>
             <option value="bookmarked">Bookmarked</option>
-            <option value="needs-revision">Needs Revision</option>
-            <option value="mastered">Mastered</option>
           </select>
 
           <select class="filter-select" id="topic-filter" onchange="app.handleTopicFilter(this.value)">
@@ -302,18 +210,6 @@
 
           <select class="filter-select" id="pattern-filter" onchange="app.handlePatternFilter(this.value)">
             <option value="all">All Patterns</option>
-          </select>
-
-          <select class="filter-select" id="company-filter" onchange="app.handleCompanyFilter(this.value)">
-            <option value="all">All Companies</option>
-            <option value="google">Google</option>
-            <option value="meta">Meta</option>
-            <option value="amazon">Amazon</option>
-            <option value="microsoft">Microsoft</option>
-            <option value="apple">Apple</option>
-            <option value="netflix">Netflix</option>
-            <option value="uber">Uber</option>
-            <option value="bloomberg">Bloomberg</option>
           </select>
         </div>
       </div>
@@ -344,7 +240,7 @@
         </table>
       </div>
 
-      <!-- Mobile Stacked Card List -->
+      <!-- Mobile Stacked Card List (Hidden on Desktop) -->
       <div class="mobile-card-list" id="mobile-problem-card-list">
         <!-- Dynamic mobile cards rendered via JS -->
       </div>
@@ -360,144 +256,65 @@
       </div>
     </section>
 
-    <!-- View 3: FAANG Roadmaps -->
-    <section class="view-section" id="view-roadmap">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">FAANG Learning Roadmaps</h1>
-        <p style="color: var(--text-secondary);">Structured step-by-step problem trajectories adapted to your target timeline.</p>
-      </div>
-
-      <div class="topic-tabs-wrapper">
-        <div class="topic-tabs-list" id="roadmap-tabs-container">
-          <!-- Dynamic Roadmap Tabs rendered via JS -->
+    <!-- View 2: DSA Guide -->
+    <section class="view-section" id="view-guide">
+      <!-- Mobile & Tablet Chapter Navigation (Dropdown & Horizontal Scrollable Pills) -->
+      <div class="guide-mobile-nav-wrap">
+        <select class="filter-select guide-mobile-selector" id="guide-mobile-select" onchange="app.selectGuideTopic(this.value)">
+          <!-- Dynamic options rendered via JS -->
+        </select>
+        <div class="topic-tabs-wrapper guide-mobile-pills-wrap">
+          <div class="topic-tabs-list" id="guide-mobile-pills">
+            <!-- Dynamic topic pills rendered via JS -->
+          </div>
         </div>
       </div>
 
-      <div class="info-card-container" id="roadmap-details-area">
-        <!-- Dynamic Roadmap Content rendered via JS -->
-      </div>
-    </section>
+      <div class="guide-container">
+        <aside class="guide-sidebar">
+          <h3>DSA Guide Topics</h3>
+          <ul class="guide-nav-list" id="guide-topics-nav">
+            <!-- Dynamically populated topics list -->
+          </ul>
+        </aside>
 
-    <!-- View 4: Patterns Hub -->
-    <section class="view-section" id="view-patterns">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Core DSA Patterns Hub</h1>
-        <p style="color: var(--text-secondary);">Master problem-solving through pattern recognition signals, code templates, and common pitfalls.</p>
-      </div>
-
-      <div class="cards-grid-3" id="patterns-grid-container">
-        <!-- Dynamic Pattern Cards rendered via JS -->
-      </div>
-    </section>
-
-    <!-- View 5: Company Preparation Hub -->
-    <section class="view-section" id="view-companies">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Target Company Portals</h1>
-        <p style="color: var(--text-secondary);">Targeted preparation sets for Google, Meta, Amazon, Microsoft, Apple, Uber, Bloomberg & Netflix.</p>
-      </div>
-
-      <div class="cards-grid-3" id="companies-grid-container">
-        <!-- Dynamic Company Cards rendered via JS -->
-      </div>
-
-      <div class="info-card-container" id="company-active-portal" style="margin-top: 24px; display: none;">
-        <!-- Rendered when a company is selected -->
-      </div>
-    </section>
-
-    <!-- View 6: Practice Modes -->
-    <section class="view-section" id="view-practice">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Targeted Practice Modes</h1>
-        <p style="color: var(--text-secondary);">Choose your drill style to eliminate weak spots and simulate real interview conditions.</p>
-      </div>
-
-      <div class="cards-grid-3">
-        <div class="practice-card" onclick="app.launchPracticeMode('random')">
-          <div style="font-size: 24px;">🎲</div>
-          <strong style="font-size: 16px;">Random Drill</strong>
-          <p style="font-size: 13px; color: var(--text-secondary);">Test your pattern recognition on 5 randomly picked problems.</p>
-        </div>
-        <div class="practice-card" onclick="app.launchPracticeMode('weakness')">
-          <div style="font-size: 24px;">🎯</div>
-          <strong style="font-size: 16px;">Weak Area Focus</strong>
-          <p style="font-size: 13px; color: var(--text-secondary);">Automatically targets your lowest mastery topics.</p>
-        </div>
-        <div class="practice-card" onclick="app.navigate('/mock-interview')">
-          <div style="font-size: 24px;">⏱️</div>
-          <strong style="font-size: 16px;">45-Min Mock Interview</strong>
-          <p style="font-size: 13px; color: var(--text-secondary);">Full 4-phase timed interview simulation with hints & self-rating.</p>
-        </div>
-        <div class="practice-card" onclick="app.navigate('/revision')">
-          <div style="font-size: 24px;">🔄</div>
-          <strong style="font-size: 16px;">Spaced Revision Session</strong>
-          <p style="font-size: 13px; color: var(--text-secondary);">Review problems scheduled for today based on SRS intervals.</p>
+        <div class="guide-content-area" id="guide-content-area">
+          <!-- Rendered dynamically -->
         </div>
       </div>
     </section>
 
-    <!-- View 7: 45-Min Mock Interview Arena -->
-    <section class="view-section" id="view-mock">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">45-Minute Timed Mock Arena</h1>
-        <p style="color: var(--text-secondary);">Simulate an end-to-end FAANG technical interview round under realistic time constraints.</p>
-      </div>
-
-      <div class="info-card-container" id="mock-arena-container">
-        <!-- Rendered dynamically by app.js / interview_mode.js -->
-      </div>
-    </section>
-
-    <!-- View 8: Spaced Revision Queue -->
-    <section class="view-section" id="view-revision">
-      <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Spaced Repetition Queue</h1>
-        <p style="color: var(--text-secondary);">Problems scheduled for review to ensure long-term retention before your interview.</p>
-      </div>
-
-      <div class="info-card-container">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="font-size: 18px; font-weight: 700;">Problems Due for Review (<span id="rev-due-count-num">0</span>)</h3>
-        </div>
-
-        <div id="revision-due-list" style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">
-          <!-- Dynamically populated due problems -->
-        </div>
-      </div>
-    </section>
-
-    <!-- View 9: Mastery Analytics -->
+    <!-- View 3: Progress Dashboard -->
     <section class="view-section" id="view-progress">
       <div style="margin-bottom: 20px;">
-        <h1 style="font-size: 24px; font-weight: 800;">Detailed Mastery Analytics</h1>
+        <h2 style="font-size: 20px; font-weight: 800;">Progress Dashboard</h2>
         <p style="color: var(--text-secondary);">Track your DSA preparation, difficulty breakdown, and topic mastery.</p>
       </div>
 
-      <div class="progress-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
-        <div class="info-card-container" style="padding: 16px;">
-          <span style="font-size: 12px; color: var(--text-muted);">Total Solved</span>
-          <span style="font-size: 22px; font-weight: 800;" id="dash-total-solved">0 / 1000</span>
-          <span style="font-size: 11.5px; color: var(--text-secondary);" id="dash-pct">0.0% Completed</span>
+      <div class="progress-grid">
+        <div class="stat-box">
+          <span class="stat-box-title">Total Solved</span>
+          <span class="stat-box-number" id="dash-total-solved">0 / 1000</span>
+          <span class="stat-box-sub" id="dash-pct">0.0% Completed</span>
         </div>
-        <div class="info-card-container" style="padding: 16px;">
-          <span style="font-size: 12px; color: var(--easy-color);">Easy Solved</span>
-          <span style="font-size: 22px; font-weight: 800; color: var(--easy-color);" id="dash-easy-solved">0 / 200</span>
-          <span style="font-size: 11.5px; color: var(--text-secondary);" id="dash-easy-pct">0.0%</span>
+        <div class="stat-box">
+          <span class="stat-box-title">Easy Solved</span>
+          <span class="stat-box-number" style="color: var(--easy-color);" id="dash-easy-solved">0 / 400</span>
+          <span class="stat-box-sub" id="dash-easy-pct">0.0%</span>
         </div>
-        <div class="info-card-container" style="padding: 16px;">
-          <span style="font-size: 12px; color: var(--medium-color);">Medium Solved</span>
-          <span style="font-size: 22px; font-weight: 800; color: var(--medium-color);" id="dash-medium-solved">0 / 500</span>
-          <span style="font-size: 11.5px; color: var(--text-secondary);" id="dash-medium-pct">0.0%</span>
+        <div class="stat-box">
+          <span class="stat-box-title">Medium Solved</span>
+          <span class="stat-box-number" style="color: var(--medium-color);" id="dash-medium-solved">0 / 500</span>
+          <span class="stat-box-sub" id="dash-medium-pct">0.0%</span>
         </div>
-        <div class="info-card-container" style="padding: 16px;">
-          <span style="font-size: 12px; color: var(--hard-color);">Hard Solved</span>
-          <span style="font-size: 22px; font-weight: 800; color: var(--hard-color);" id="dash-hard-solved">0 / 300</span>
-          <span style="font-size: 11.5px; color: var(--text-secondary);" id="dash-hard-pct">0.0%</span>
+        <div class="stat-box">
+          <span class="stat-box-title">Hard Solved</span>
+          <span class="stat-box-number" style="color: var(--hard-color);" id="dash-hard-solved">0 / 100</span>
+          <span class="stat-box-sub" id="dash-hard-pct">0.0%</span>
         </div>
       </div>
 
-      <div class="info-card-container">
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
         <h3 style="font-size: 16px; margin-bottom: 16px;">Topic Progress Breakdown</h3>
         <div style="overflow-x: auto;">
           <table class="problem-table">
@@ -517,108 +334,124 @@
       </div>
     </section>
 
-    <!-- View 10: Interview Prep & Communication Guide -->
-    <section class="view-section" id="view-guide">
-      <div class="guide-mobile-nav-wrap" style="margin-bottom: 16px;">
-        <select class="filter-select guide-mobile-selector" id="guide-mobile-select" onchange="app.selectGuideTopic(this.value)" style="width: 100%;">
-          <!-- Dynamic options rendered via JS -->
-        </select>
-      </div>
-
-      <div class="guide-container" style="display: grid; grid-template-columns: 240px 1fr; gap: 24px;">
-        <aside class="guide-sidebar">
-          <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 12px;">Interview Guide Modules</h3>
-          <ul class="guide-nav-list" id="guide-topics-nav" style="list-style: none; display: flex; flex-direction: column; gap: 4px;">
-            <!-- Dynamically populated topics list -->
-          </ul>
-        </aside>
-
-        <div class="guide-content-area info-card-container" id="guide-content-area">
-          <!-- Rendered dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- View 11: About -->
+    <!-- View 4: About -->
     <section class="view-section" id="view-about">
       <div class="info-card-container">
-        <h2 style="font-size: 24px; font-weight: 800;">About FAANG DSA Preparation System</h2>
+        <h2 style="font-size: 24px; font-weight: 800;">About FAANG DSA Forge</h2>
         <p style="color: var(--text-secondary); line-height: 1.7;">
-          FAANG DSA Forge is a comprehensive, pattern-first interview preparation platform built to help software engineers navigate the journey from fundamental data structures to advanced FAANG coding rounds.
+          FAANG DSA Forge is a clean, modern, developer-focused problem sheet designed to take software engineers from programming fundamentals to advanced FAANG interview problem solving.
         </p>
-        <h3 style="font-size: 16px; font-weight: 700; margin-top: 8px;">The 1,000 Verified LeetCode Curriculum</h3>
+        <h3 style="font-size: 16px; font-weight: 700; margin-top: 8px;">The 1000 Curriculum</h3>
         <p style="color: var(--text-secondary); line-height: 1.7;">
-          The curriculum features 1,000 verified LeetCode problems (200 Easy, 500 Medium, 300 Hard) mapped into 20+ core pattern recognition signals and target company preparation tracks.
+          The curriculum consists of exactly 1000 real and verified LeetCode problems categorized into 200 Easy, 500 Medium, and 300 Hard questions covering key patterns like Two Pointers, Sliding Window, Monotonic Stack, Binary Search, Trees, Graphs, and Dynamic Programming.
+        </p>
+        <h3 style="font-size: 16px; font-weight: 700; margin-top: 8px;">How Students Use It</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          Follow the <strong>FAANG DSA Forge Learning Path</strong>, pick a topic, start solving, and track your progress locally in your browser. All bookmarks, notes, and progress persistence happen automatically via local storage (`localStorage`).
         </p>
       </div>
     </section>
 
-    <!-- View 12: Privacy Policy -->
+    <!-- View 5: Privacy Policy -->
     <section class="view-section" id="view-privacy">
       <div class="info-card-container">
         <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Privacy Policy</h2>
         <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Last updated: August 2026</p>
         
-        <h3 style="font-size: 16px; font-weight: 700;">1. Local Storage Privacy</h3>
+        <h3 style="font-size: 16px; font-weight: 700;">1. Introduction</h3>
         <p style="color: var(--text-secondary); line-height: 1.7;">
-          All problem progress, solved status, personal notes, bookmarks, revision intervals, and theme choices are saved locally in your Web Browser using <code style="font-family: var(--font-mono); background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">localStorage</code>. No personal progress data is transmitted to external servers.
+          At FAANG DSA Forge, we value your privacy. This policy outlines how your data is handled when you use our web platform.
         </p>
 
-        <h3 style="font-size: 16px; font-weight: 700;">2. Contact Information</h3>
+        <h3 style="font-size: 16px; font-weight: 700;">2. Information We Collect & Local Storage</h3>
         <p style="color: var(--text-secondary); line-height: 1.7;">
-          For privacy inquiries, email us at <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent-primary);">mdhashmi955@gmail.com</a>.
+          We do not require user account registration. All problem-solving progress, solved problem IDs, personal notes, bookmarks, and theme preferences are saved locally in your Web Browser using <code style="font-family: var(--font-mono); background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">localStorage</code> (`dsaproblems_done_v3`, `dsaproblems_bookmarked_v3`, `dsaproblems_notes_v3`, `dsaproblems_theme_v3`). No personal data or progress statistics are transmitted to our servers.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">3. External Problem Links</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          External practice links safely open verified problem statements directly on LeetCode in a new browser tab.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">4. Cookies & Analytics</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          We do not use tracking cookies or third-party analytics trackers to profile user identity. Standard AdSense script configurations comply with Google publisher guidelines.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">5. Contact Information</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          If you have questions regarding this Privacy Policy, contact us at <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent-primary);">mdhashmi955@gmail.com</a>.
         </p>
       </div>
     </section>
 
-    <!-- View 13: Contact & Support -->
+    <!-- View 6: Contact & Support Section -->
     <section class="view-section" id="view-contact">
       <div style="display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%;">
+        
+        <!-- Get in Touch Card -->
         <div class="info-card-container" style="max-width: 600px; text-align: center; align-items: center;">
-          <h2 style="font-size: 24px; font-weight: 800;">Get in Touch</h2>
-          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 14.5px;">
-            Have questions, dataset corrections, or feedback? Reach out directly via email.
+          <h2 style="font-size: 24px; font-weight: 800; color: var(--text-primary);">Get in Touch</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 480px; font-size: 14.5px;">
+            Have questions, dataset corrections, or suggestions? Reach out directly via email.
           </p>
-          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); font-weight: 600;">
+          
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); font-weight: 600; margin: 8px 0;">
             mdhashmi955@gmail.com
           </div>
-          <div style="display: flex; gap: 12px; margin-top: 4px;">
-            <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 22px;">✉️ Email Us</a>
-            <button class="btn-secondary" onclick="app.copyContactEmail()" style="padding: 10px 18px;">📋 Copy Email</button>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 4px; flex-wrap: wrap;">
+            <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">✉️ Email Us</a>
+            <button class="btn-secondary" id="btn-copy-email" onclick="app.copyContactEmail()" style="padding: 10px 18px; font-size: 14px;">📋 Copy Email</button>
           </div>
         </div>
 
-        <div class="info-card-container" style="max-width: 600px; text-align: center; align-items: center;">
-          <h2 style="font-size: 22px; font-weight: 800;">Support the Project</h2>
-          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 14.5px;">
-            This DSA preparation platform is completely free. If it helped you land your offer, you can support the platform maintenance.
+        <!-- Support the Project Section -->
+        <div class="info-card-container support-card-container" style="max-width: 600px; text-align: center; align-items: center;">
+          <h2 style="font-size: 22px; font-weight: 800; color: var(--text-primary);">Support the Project</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 520px; font-size: 14.5px;">
+            This DSA sheet is completely free. If it helped you in your preparation, you can support the project and help me maintain and improve it.
           </p>
-          <div class="upi-details-container">
-            <div class="upi-id-pill" onclick="app.copyUpiId()">
-              <span style="color: var(--text-muted); font-size: 13px;">UPI ID:</span>
-              <strong style="font-family: var(--font-mono); color: var(--accent-primary); font-size: 15px;">8595018458@ptsbi</strong>
-              <span style="font-size: 12px; background: var(--bg-surface); padding: 2px 8px; border-radius: 4px;">Copy</span>
+
+          <!-- UPI QR Code & ID Container -->
+          <div class="upi-details-container" id="upi-details-box">
+            <div class="upi-id-pill" onclick="app.copyUpiId()" title="Click to copy UPI ID">
+              <span style="color: var(--text-muted); font-weight: 500; font-size: 13px;">UPI ID:</span>
+              <strong style="font-family: var(--font-mono); color: var(--accent-primary); font-size: 15px; letter-spacing: 0.3px;">8595018458@ptsbi</strong>
+              <span style="font-size: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; color: var(--text-secondary);">Copy</span>
             </div>
-            <div style="margin-top: 8px;">
+
+            <div class="upi-qr-card">
               <img src="images/upi-qr.png" alt="UPI Payment QR Code" class="upi-qr-image" />
+              <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; font-weight: 500;">Scan with GPay, PhonePe, Paytm, or BHIM</div>
             </div>
+
+            <a href="paytmmp://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR" class="upi-direct-link" onclick="app.openPaytmApp(event)">
+              Open in Paytm
+            </a>
           </div>
+
+          <p class="support-subtle-note">
+            Optional — the DSA sheet will always remain free.
+          </p>
         </div>
+
       </div>
     </section>
 
-    <!-- View 14: Quality Control -->
+    <!-- View 7: Admin Quality Control (Relocated) -->
     <section class="view-section" id="view-admin-quality">
       <div class="info-card-container">
-        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Dataset Quality Inspection Tool</h2>
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Dataset Quality & Duplicate Prevention Tool</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Internal tool for dataset verification and title normalization.</p>
         <button class="btn-primary" onclick="app.runQualityCheck()">Run Quality Inspection</button>
-        <div id="admin-quality-results" style="margin-top: 16px; font-family: var(--font-mono); font-size: 12px;"></div>
+        <div id="admin-quality-results" style="margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);"></div>
       </div>
     </section>
 
   </main>
 
-  <!-- Problem Detail Modal -->
+  <!-- Problem Solution & Notes Detail Modal -->
   <div class="modal-overlay" id="problem-modal" onclick="if(event.target === this) app.closeProblemModal()">
     <div class="modal-container">
       <div class="modal-header">
@@ -628,26 +461,18 @@
         </div>
         <button class="modal-close-btn" onclick="app.closeProblemModal()">✕</button>
       </div>
-
-      <div class="modal-tabs">
-        <button class="modal-tab-btn active" onclick="app.switchModalTab('overview')">1. Signals & Setup</button>
-        <button class="modal-tab-btn" onclick="app.switchModalTab('hints')">2. Progressive Hints</button>
-        <button class="modal-tab-btn" onclick="app.switchModalTab('editorial')">3. Solution & Code</button>
-        <button class="modal-tab-btn" onclick="app.switchModalTab('pitch')">4. Verbal Pitch & Edge Cases</button>
-        <button class="modal-tab-btn" onclick="app.switchModalTab('notes')">5. Notes & SRS Rating</button>
-      </div>
-
       <div class="modal-body" id="modal-problem-body">
-        <!-- Rendered dynamically via app.js -->
+        <div id="modal-code-display" style="display:none;"></div>
+        <textarea id="modal-note-input" style="display:none;"></textarea>
       </div>
     </div>
   </div>
 
-  <!-- Command Palette Modal -->
+  <!-- Command Palette Search Modal -->
   <div class="modal-overlay" id="command-palette-modal" onclick="if(event.target === this) app.closeCommandPalette()">
     <div class="modal-container" style="max-width: 600px;">
       <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-color);">
-        <input type="text" class="search-input" id="cmd-palette-input" placeholder="Type to search 1,000 problems..." oninput="app.handleCmdPaletteSearch(this.value)"/>
+        <input type="text" class="search-input" id="cmd-palette-input" placeholder="Type to search 1000 problems..." oninput="app.handleCmdPaletteSearch(this.value)"/>
       </div>
       <div style="max-height: 400px; overflow-y: auto; padding: 12px 16px;" id="cmd-palette-results">
         <!-- Dynamic search items -->
@@ -655,47 +480,18 @@
     </div>
   </div>
 
-  <!-- Export / Import Progress Modal -->
-  <div class="modal-overlay" id="export-import-modal" onclick="if(event.target === this) app.closeExportImportModal()">
-    <div class="modal-container" style="max-width: 650px;">
-      <div class="modal-header">
-        <h3 class="modal-title">Progress Sync & Backup (JSON)</h3>
-        <button class="modal-close-btn" onclick="app.closeExportImportModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size: 13.5px; color: var(--text-secondary);">
-          Export your solved problems, notes, bookmarks, and revision queue as a JSON file, or paste your JSON backup to restore progress across devices.
-        </p>
-
-        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-          <label style="font-weight: 600; font-size: 12.5px;">Progress Data (JSON)</label>
-          <textarea id="sync-json-textarea" style="width: 100%; height: 160px; font-family: var(--font-mono); font-size: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px; border-radius: var(--radius-md); resize: vertical;"></textarea>
-        </div>
-
-        <div style="display: flex; gap: 12px; margin-top: 12px;">
-          <button class="btn-primary" onclick="app.handleExportProgress()">📋 Generate & Copy Export</button>
-          <button class="btn-secondary" onclick="app.handleImportProgress()">📥 Restore / Import Data</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-links">
-      <a href="/dashboard" onclick="event.preventDefault(); app.navigate('/dashboard');">Dashboard</a>
       <a href="/problems" onclick="event.preventDefault(); app.navigate('/problems');">Problems</a>
-      <a href="/roadmap" onclick="event.preventDefault(); app.navigate('/roadmap');">Roadmap</a>
-      <a href="/patterns" onclick="event.preventDefault(); app.navigate('/patterns');">Patterns</a>
-      <a href="/companies" onclick="event.preventDefault(); app.navigate('/companies');">Companies</a>
-      <a href="/practice" onclick="event.preventDefault(); app.navigate('/practice');">Practice</a>
-      <a href="/mock-interview" onclick="event.preventDefault(); app.navigate('/mock-interview');">Mock Interview</a>
-      <a href="/revision" onclick="event.preventDefault(); app.navigate('/revision');">Revision</a>
+      <a href="/guide" onclick="event.preventDefault(); app.navigate('/guide');">DSA Guide</a>
       <a href="/progress" onclick="event.preventDefault(); app.navigate('/progress');">Progress</a>
-      <a href="/guide" onclick="event.preventDefault(); app.navigate('/guide');">Interview Guide</a>
+      <a href="/privacy" onclick="event.preventDefault(); app.navigate('/privacy');">Privacy Policy</a>
+      <a href="/contact" onclick="event.preventDefault(); app.navigate('/contact');">Contact</a>
+      <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
     </div>
     <div style="margin-top: 6px;">Contact: <a href="mailto:mdhashmi955@gmail.com" style="color: var(--text-secondary); text-decoration: underline;">mdhashmi955@gmail.com</a></div>
-    <div style="margin-top: 8px; font-size: 11.5px; opacity: 0.8;">© 2026 DSAForge — Premium FAANG Preparation Platform.</div>
+    <div style="margin-top: 8px; font-size: 11.5px; opacity: 0.8;">© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
   </footer>
 
 </div>
