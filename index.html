@@ -45,7 +45,15 @@
 <meta name="twitter:description" content="Master 1,000 curated LeetCode DSA problems organized by core patterns with multi-language code solutions."/>
 <meta name="twitter:image" content="https://www.dsaproblems.site/images/og-image.png"/>
 
-<!-- JSON-LD Structured Data for Search Engine Indexing (Schema.org) -->
+<!-- Web App Manifest -->
+<link rel="manifest" href="/manifest.json"/>
+
+<!-- Resource Hints & Performance Preconnect -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com"/>
+
+<!-- JSON-LD Structured Data for Search Engine Indexing (Schema.org Rich Snippets) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,6 +80,79 @@
         "name": "DSA Problems",
         "url": "https://www.dsaproblems.site/"
       }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "DSA Problems",
+      "url": "https://www.dsaproblems.site/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dsaproblems.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DSA Problems Sheet",
+          "item": "https://www.dsaproblems.site/problems"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DSA Guide",
+          "item": "https://www.dsaproblems.site/guide"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is DSA Problems (dsaproblems.site)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems (dsaproblems.site) is a clean, developer-focused problem sheet featuring 1,000 verified LeetCode Data Structures & Algorithms questions organized by core pattern dependencies from beginner to pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many LeetCode questions are in DSA Problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems includes exactly 1,000 verified LeetCode questions: 200 Easy, 500 Medium, and 300 Hard problems covering 20+ core DSA patterns like Two Pointers, Sliding Window, Trees, Graphs, and Dynamic Programming."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DSA Problems offer multi-language solution code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems provides high-quality solution code in C++, Java, Python, and JavaScript for every problem along with time and space complexity analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is DSA Problems completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems is 100% free with no mandatory account registration required. Progress, bookmarks, and notes are saved locally in your web browser."
+          }
+        }
+      ]
     }
   ]
 }
