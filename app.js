@@ -555,29 +555,72 @@ class DSAApp {
       if (mobileList) mobileList.innerHTML = mobileCardsHtml;
     }
 
-    // Pagination Info & Buttons
     const pageInfoEl = document.getElementById('pagination-info');
     if (pageInfoEl) {
       const endIdx = Math.min(startIdx + this.pageSize, totalCount);
       pageInfoEl.textContent = totalCount > 0 ? `Showing ${startIdx + 1}–${endIdx} of ${totalCount}` : 'Showing 0 of 0';
     }
 
-    const prevBtn = document.getElementById('btn-prev-page');
-    if (prevBtn) prevBtn.disabled = this.currentPage <= 1;
+    // Pagination Controls rendering
+    const container = document.getElementById('pagination-controls-container') || document.querySelector('.pagination-controls');
+    if (container) {
+      let controlsHtml = '';
+      const isFirstDisabled = this.currentPage <= 1;
+      const isLastDisabled = this.currentPage >= totalPages;
 
-    const nextBtn = document.getElementById('btn-next-page');
-    if (nextBtn) nextBtn.disabled = this.currentPage >= totalPages;
+      controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)">« First</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})">‹ Previous</button>`;
 
-    const pageNumEl = document.getElementById('page-numbers-container');
-    if (pageNumEl) pageNumEl.textContent = `Page ${this.currentPage} / ${totalPages}`;
+      // Render page numbers for direct jumping
+      let pages = [];
+      if (totalPages <= 10) {
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
+      } else {
+        pages.push(1);
+        let start = Math.max(2, this.currentPage - 2);
+        let end = Math.min(totalPages - 1, this.currentPage + 2);
+
+        if (this.currentPage <= 4) {
+          start = 2;
+          end = Math.min(totalPages - 1, 6);
+        } else if (this.currentPage >= totalPages - 3) {
+          start = Math.max(2, totalPages - 5);
+          end = totalPages - 1;
+        }
+
+        if (start > 2) pages.push('...');
+        for (let i = start; i <= end; i++) pages.push(i);
+        if (end < totalPages - 1) pages.push('...');
+        pages.push(totalPages);
+      }
+
+      pages.forEach(p => {
+        if (p === '...') {
+          controlsHtml += `<span class="page-ellipsis">…</span>`;
+        } else {
+          const isActive = p === this.currentPage;
+          controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})">${p}</button>`;
+        }
+      });
+
+      controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})">Next ›</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-last-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${totalPages})">Last »</button>`;
+
+      container.innerHTML = controlsHtml;
+    }
   }
 
-  changePage(delta) {
-    this.currentPage += delta;
+  goToPage(pageNum) {
+    const totalPages = Math.ceil((this.filteredProblems ? this.filteredProblems.length : 0) / this.pageSize) || 1;
+    this.currentPage = Math.max(1, Math.min(pageNum, totalPages));
     this.renderProblemSheet();
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+  changePage(delta) {
+    this.goToPage(this.currentPage + delta);
   }
 
   /* ── Interactive Solved & Bookmark Toggles ─────────────────────────────── */
