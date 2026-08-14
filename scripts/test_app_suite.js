@@ -25,8 +25,8 @@ assert(PROBLEMS.length === 1000, `Expected 1000 problems, found ${PROBLEMS.lengt
 
 // 2. Validate all 1000 problems fields
 console.log("\n[Test 2] Validating Data Schema for all 1000 problems...");
-let easyCount = 0, medCount = 0, hardCount = 0;
-const validDifficulties = new Set(['Easy', 'Medium', 'Hard']);
+let begCount = 0, easyCount = 0, medCount = 0, hardCount = 0, expCount = 0;
+const validDifficulties = new Set(['Beginner', 'Easy', 'Medium', 'Hard', 'Expert']);
 const seenIds = new Set();
 
 PROBLEMS.forEach((p, idx) => {
@@ -54,15 +54,19 @@ PROBLEMS.forEach((p, idx) => {
   assert(Array.isArray(p.edgeCases), `Problem #${p.id} edgeCases must be array`);
   assert(Array.isArray(p.commonMistakes), `Problem #${p.id} commonMistakes must be array`);
 
+  if (p.difficulty === 'Beginner') begCount++;
   if (p.difficulty === 'Easy') easyCount++;
   if (p.difficulty === 'Medium') medCount++;
   if (p.difficulty === 'Hard') hardCount++;
+  if (p.difficulty === 'Expert') expCount++;
 });
 
-console.log(`   Data Verification Passed: Total 1000 | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount}`);
-assert(easyCount === 400, `Expected 400 Easy problems, found ${easyCount}`);
-assert(medCount === 500, `Expected 500 Medium problems, found ${medCount}`);
-assert(hardCount === 100, `Expected 100 Hard problems, found ${hardCount}`);
+console.log(`   Data Verification Passed: Total 1000 | Beginner: ${begCount} | Easy: ${easyCount} | Medium: ${medCount} | Hard: ${hardCount} | Expert: ${expCount}`);
+assert(begCount === 100, `Expected 100 Beginner problems, found ${begCount}`);
+assert(easyCount === 200, `Expected 200 Easy problems, found ${easyCount}`);
+assert(medCount === 450, `Expected 450 Medium problems, found ${medCount}`);
+assert(hardCount === 200, `Expected 200 Hard problems, found ${hardCount}`);
+assert(expCount === 50, `Expected 50 Expert problems, found ${expCount}`);
 
 // 3. Test AppState logic
 console.log("\n[Test 3] Testing AppState & Storage Operations...");

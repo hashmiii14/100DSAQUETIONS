@@ -3,6 +3,7 @@ const PROBLEMS = require('../data/questions.js');
 console.log("=== VERIFYING DATASET INTEGRITY FOR ALL 1000 PROBLEMS ===");
 
 let errors = 0;
+const validDifficulties = ['Beginner', 'Easy', 'Medium', 'Hard', 'Expert'];
 
 PROBLEMS.forEach((p, idx) => {
   if (p.id !== idx + 1) {
@@ -13,7 +14,7 @@ PROBLEMS.forEach((p, idx) => {
     console.error(`Missing title for #${p.id}`);
     errors++;
   }
-  if (!['Easy', 'Medium', 'Hard'].includes(p.difficulty)) {
+  if (!validDifficulties.includes(p.difficulty)) {
     console.error(`Invalid difficulty '${p.difficulty}' for #${p.id}`);
     errors++;
   }

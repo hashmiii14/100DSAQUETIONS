@@ -70,6 +70,16 @@ class DSAApp {
     }
   }
 
+  getDiffClass(difficulty) {
+    const d = (difficulty || '').toLowerCase();
+    if (d === 'beginner') return 'diff-beginner';
+    if (d === 'easy') return 'diff-easy';
+    if (d === 'medium') return 'diff-medium';
+    if (d === 'hard') return 'diff-hard';
+    if (d === 'expert') return 'diff-expert';
+    return 'diff-medium';
+  }
+
   applyInitialTheme() {
     const savedTheme = localStorage.getItem('dsaproblems_theme_v3');
     const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
@@ -492,7 +502,7 @@ class DSAApp {
         const isSolved = doneSet.has(p.id);
         const isBm = bmSet.has(p.id);
 
-        const diffClass = p.difficulty === 'Easy' ? 'diff-easy' : (p.difficulty === 'Medium' ? 'diff-medium' : 'diff-hard');
+        const diffClass = this.getDiffClass(p.difficulty);
         const formattedId = `#${String(p.id).padStart(3, '0')}`;
         const practiceUrl = p.leetcodeUrl || `https://leetcode.com/problems/${p.slug || 'two-sum'}/`;
 
@@ -653,7 +663,7 @@ class DSAApp {
 
     const bodyEl = document.getElementById('modal-problem-body');
     if (bodyEl) {
-      const diffClass = p.difficulty === 'Easy' ? 'diff-easy' : (p.difficulty === 'Medium' ? 'diff-medium' : 'diff-hard');
+      const diffClass = this.getDiffClass(p.difficulty);
       const savedNote = this.state ? this.state.getNote(p.id) : '';
 
       bodyEl.innerHTML = `

@@ -731,6 +731,12 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   line-height: 1.2;
 }
 
+.diff-beginner {
+  color: #0284c7;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
 .diff-easy {
   color: var(--easy-color);
   background: var(--easy-bg);
@@ -747,6 +753,12 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   color: var(--hard-color);
   background: var(--hard-bg);
   border: 1px solid var(--hard-border);
+}
+
+.diff-expert {
+  color: #9333ea;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .col-topic, .col-pattern {
