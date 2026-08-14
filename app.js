@@ -584,8 +584,8 @@ class DSAApp {
       const isFirstDisabled = this.currentPage <= 1;
       const isLastDisabled = this.currentPage >= totalPages;
 
-      controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)">« First</button>`;
-      controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})">‹ Previous</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)" title="First Page">First</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page">Prev</button>`;
 
       // Render ALL page numbers from 1 to totalPages directly
       for (let p = 1; p <= totalPages; p++) {
@@ -593,8 +593,8 @@ class DSAApp {
         controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})" aria-label="Go to page ${p}">${p}</button>`;
       }
 
-      controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})">Next ›</button>`;
-      controlsHtml += `<button class="page-btn" id="btn-last-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${totalPages})">Last »</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})" title="Next Page">Next</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-last-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${totalPages})" title="Last Page">Last</button>`;
 
       container.innerHTML = controlsHtml;
     }

@@ -174,9 +174,11 @@ function goToPage(target) {
   currentPage = Math.max(1, Math.min(target, totalPages));
 }
 
-// Test sequence 1 -> 6 -> 15 -> 20 -> 1
+// Test sequence 1 -> 6 -> 10 -> 15 -> 20 -> 1
 goToPage(6);
 assert(currentPage === 6, "Direct jump to Page 6 failed");
+goToPage(10);
+assert(currentPage === 10, "Direct jump to Page 10 failed");
 goToPage(15);
 assert(currentPage === 15, "Direct jump to Page 15 failed");
 goToPage(20);
@@ -188,7 +190,7 @@ assert(currentPage === 1, "Direct jump to Page 1 (First) failed");
 const allPageNumbers = Array.from({ length: 20 }, (_, i) => i + 1);
 assert(allPageNumbers.length === 20, "All 20 page numbers must be present");
 
-console.log("   Direct Jump Pagination verified for Page 1 → 6 → 15 → 20 → 1 (All 20 Pages Rendered)!");
+console.log("   Direct Jump Pagination verified for Page 1 → 6 → 10 → 15 → 20 → 1 (All 20 Pages Rendered)!");
 
 console.log(`\n==================================================`);
 console.log(`✅ QA TEST SUITE COMPLETED SUCCESSFULLY! Passed ${passedTests} assertions.`);

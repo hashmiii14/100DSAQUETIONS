@@ -932,33 +932,48 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
-  padding: 12px 16px;
+  margin-top: 14px;
+  padding: 8px 12px;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+}
+
+#pagination-info {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .pagination-controls {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 3px;
 }
 
 .page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 25px;
+  padding: 2px 6px;
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 12.5px;
-  padding: 4px 9px;
+  font-size: 11.5px;
+  font-weight: 500;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: all 120ms ease;
+  user-select: none;
+  line-height: 1;
 }
 
 .page-btn:hover:not(:disabled) {
@@ -977,7 +992,25 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   color: #ffffff !important;
   border-color: var(--accent-primary) !important;
   font-weight: 700 !important;
-  box-shadow: 0 2px 6px var(--accent-light);
+  box-shadow: 0 1px 4px var(--accent-light);
+}
+
+@media (max-width: 640px) {
+  .pagination-bar {
+    padding: 8px 10px;
+    gap: 6px;
+    justify-content: center;
+  }
+  .pagination-controls {
+    gap: 2px;
+    justify-content: center;
+  }
+  .page-btn {
+    min-width: 22px;
+    height: 24px;
+    font-size: 11px;
+    padding: 1px 4px;
+  }
 }
 
 .page-ellipsis {
