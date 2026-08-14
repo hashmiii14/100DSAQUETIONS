@@ -569,6 +569,7 @@ class DSAApp {
           <td class="col-num">${formattedId}</td>
           <td class="col-title">
             <a class="problem-title-link" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</a>
+            ${isSolved ? '<span class="solved-tag-pill">✓ Done</span>' : ''}
           </td>
           <td class="col-diff"><span class="diff-badge ${diffClass}">${p.difficulty}</span></td>
           <td class="col-topic"><span class="topic-badge" title="${this.escapeHtml(p.topic || '')}">${this.escapeHtml(p.topic || '-')}</span></td>
@@ -588,6 +589,7 @@ class DSAApp {
             <div class="card-title-wrap">
               <span class="card-num">${formattedId}</span>
               <a class="card-title" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</a>
+              ${isSolved ? '<span class="solved-tag-pill">✓ Done</span>' : ''}
             </div>
             <span class="diff-badge ${diffClass}">${p.difficulty}</span>
           </div>
