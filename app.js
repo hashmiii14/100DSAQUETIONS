@@ -587,28 +587,10 @@ class DSAApp {
       controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)" title="First Page">First</button>`;
       controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page">Prev</button>`;
 
-      // Render 5 page numbers at a time with overlapping boundary (1-5, 5-10, 10-15, 15-20)
-      let startPage = 1;
-      let endPage = 5;
-
-      if (this.currentPage <= 5) {
-        startPage = 1;
-        endPage = Math.min(5, totalPages);
-      } else if (this.currentPage <= 10) {
-        startPage = 5;
-        endPage = Math.min(10, totalPages);
-      } else if (this.currentPage <= 15) {
-        startPage = 10;
-        endPage = Math.min(15, totalPages);
-      } else if (this.currentPage <= 20) {
-        startPage = 15;
-        endPage = Math.min(20, totalPages);
-      } else {
-        const groupIdx = Math.floor((this.currentPage - 1) / 5);
-        startPage = groupIdx * 5;
-        if (startPage < 1) startPage = 1;
-        endPage = Math.min(startPage + 5, totalPages);
-      }
+      // Render 5-page sections (Group 1: 1-5, Group 2: 6-10, Group 3: 11-15, Group 4: 16-20)
+      const groupIdx = Math.floor((this.currentPage - 1) / 5);
+      const startPage = groupIdx * 5 + 1;
+      const endPage = Math.min(startPage + 4, totalPages);
 
       for (let p = startPage; p <= endPage; p++) {
         const isActive = p === this.currentPage;
