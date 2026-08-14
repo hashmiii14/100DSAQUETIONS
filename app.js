@@ -751,7 +751,7 @@ class DSAApp {
 
   copyUpiId() {
     const upiId = '8595018458@ptsbi';
-    const msg = '📋 UPI ID copied: 8595018458@ptsbi';
+    const msg = 'UPI ID copied: 8595018458@ptsbi';
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(upiId).then(() => {
         this.showToast(msg);
@@ -780,14 +780,13 @@ class DSAApp {
 
   openPaytmApp(e) {
     const paytmUrl = 'paytmmp://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR';
-    const upiId = '8595018458@ptsbi';
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
       window.location.href = paytmUrl;
     } else {
       if (e) e.preventDefault();
       this.copyUpiId();
-      this.showToast('📋 UPI ID copied: 8595018458@ptsbi (Scan QR code with Paytm)');
+      this.showToast('UPI ID copied: 8595018458@ptsbi (Scan QR code with Paytm)');
     }
   }
 
