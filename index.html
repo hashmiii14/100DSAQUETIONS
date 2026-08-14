@@ -136,29 +136,78 @@
       
       <!-- Hero Section -->
       <div class="hero-section">
-        <div class="hero-header">
-          <div class="hero-title-area">
+        <div class="hero-grid">
+          <!-- Left Column: Title, Subtitle, Description & Feature Badges -->
+          <div class="hero-content-col">
+            <div class="hero-badge">
+              <span class="hero-badge-icon">⚡</span>
+              <span>FAANG DSA Forge • 1,000 Questions</span>
+            </div>
             <h1>FAANG DSA Forge</h1>
             <p class="hero-subtitle">1000 Problems. Beginner to FAANG-Ready.</p>
-            <p style="font-size: 13.5px; color: var(--text-secondary); margin-top: 6px; line-height: 1.55;">Master Data Structures and Algorithms with a curated 1,000-problem curriculum. Built on proven pattern recognition, concept dependencies, and progressive difficulty to take you step-by-step from core coding logic to top-tier interview readiness.</p>
+            <p class="hero-description">
+              Master Data Structures and Algorithms with a curated 1,000-problem curriculum. Built on proven pattern recognition, concept dependencies, and progressive difficulty to take you step-by-step from core coding logic to top-tier interview readiness.
+            </p>
+            <div class="hero-feature-pills">
+              <div class="feature-pill">
+                <span class="feature-pill-dot green"></span>
+                <span>200 Easy • 500 Medium • 300 Hard</span>
+              </div>
+              <div class="feature-pill">
+                <span class="feature-pill-dot blue"></span>
+                <span>20+ Essential Algorithm Patterns</span>
+              </div>
+              <div class="feature-pill">
+                <span class="feature-pill-dot purple"></span>
+                <span>100% Verified Canonical LeetCode Links</span>
+              </div>
+              <div class="feature-pill">
+                <span class="feature-pill-dot amber"></span>
+                <span>Step-by-Step Concept Progression</span>
+              </div>
+            </div>
           </div>
-          <div class="hero-stats-row">
-            <div class="stat-chip">
-              <span class="stat-chip-label">Total:</span>
-              <span class="stat-chip-val">1000</span>
+
+          <!-- Right Column: Interactive Progress & Stats Card -->
+          <div class="hero-stats-card">
+            <div class="stats-card-header">
+              <span class="stats-card-title">Learning Journey Progress</span>
+              <span class="stats-card-tag">Local Storage</span>
             </div>
-            <div class="stat-chip">
-              <span class="stat-chip-label">Solved:</span>
-              <span class="stat-chip-val" id="hero-solved-count">0</span>
+            
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-box-label">Curriculum Total</span>
+                <span class="stat-box-value">1,000</span>
+                <span class="stat-box-sub">Verified Problems</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">Problems Solved</span>
+                <span class="stat-box-value" id="hero-solved-count">0</span>
+                <span class="stat-box-sub">Target: 1,000</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">Overall Completion</span>
+                <span class="stat-box-value" id="hero-progress-pct">0.0%</span>
+                <span class="stat-box-sub">Auto Saved</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-box-label">Difficulty Split</span>
+                <span class="stat-box-value" style="font-size: 14px;">200E / 500M / 300H</span>
+                <span class="stat-box-sub">FAANG Ratio</span>
+              </div>
             </div>
-            <div class="stat-chip">
-              <span class="stat-chip-label">Progress:</span>
-              <span class="stat-chip-val" id="hero-progress-pct">0.0%</span>
+
+            <div class="stats-card-progress">
+              <div class="progress-info-row">
+                <span>Progress Bar</span>
+                <span style="font-size: 11px; opacity: 0.8;">1,000 Sheet</span>
+              </div>
+              <div class="hero-progress-bar-wrap">
+                <div class="hero-progress-bar-fill" id="hero-progress-bar"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="hero-progress-bar-wrap">
-          <div class="hero-progress-bar-fill" id="hero-progress-bar"></div>
         </div>
       </div>
 
