@@ -521,8 +521,8 @@ class DSAApp {
 
         const diffClass = this.getDiffClass(p.difficulty);
         const formattedId = `#${String(p.id).padStart(3, '0')}`;
-        const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.leetcode_url || p.leetcodeUrl);
-        const practiceUrl = isLeetCodeAvailable ? (p.leetcode_url || p.leetcodeUrl) : null;
+        const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl);
+        const practiceUrl = isLeetCodeAvailable ? (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl) : null;
         const ctaBtnHtml = practiceUrl
           ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve on LeetCode →</a>`
           : `<span class="btn-solve disabled" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
