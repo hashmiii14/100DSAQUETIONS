@@ -585,7 +585,6 @@ class DSAApp {
       const isFirstDisabled = this.currentPage <= 1;
       const isLastDisabled = this.currentPage >= totalPages;
 
-      controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)" title="First Page">First</button>`;
       controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page">Prev</button>`;
 
       // Render 5-page sections (Group 1: 1-5, Group 2: 6-10, Group 3: 11-15, Group 4: 16-20)
@@ -599,7 +598,6 @@ class DSAApp {
       }
 
       controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})" title="Next Page">Next</button>`;
-      controlsHtml += `<button class="page-btn" id="btn-last-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${totalPages})" title="Last Page">Last</button>`;
 
       container.innerHTML = controlsHtml;
     }
@@ -1140,14 +1138,33 @@ class DSAApp {
         <h2>${selected.title}</h2>
         <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">${selected.summary}</p>
         <div>${selected.theory}</div>
+        
         ${selected.code ? `
-          <div style="margin-top: 20px;">
-            <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 6px;">C++ CODE TEMPLATE / EXAMPLE</strong>
-            <div class="code-block-wrap"><pre><code>${this.escapeHtml(selected.code)}</code></pre></div>
+          <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+              <div>
+                <strong style="font-size: 14.5px; color: var(--text-primary); display: block;">Practical Example: ${selected.exampleTitle || 'Working Implementation'}</strong>
+                ${selected.explanation ? `<p style="font-size: 13px; color: var(--text-secondary); margin: 4px 0 0 0;">${selected.explanation}</p>` : ''}
+              </div>
+              <div class="guide-lang-tabs">
+                <button class="guide-lang-btn ${this.activeGuideLang === 'cpp' ? 'active' : ''}" onclick="app.setGuideLang('cpp')">C++</button>
+                <button class="guide-lang-btn ${this.activeGuideLang === 'java' ? 'active' : ''}" onclick="app.setGuideLang('java')">Java</button>
+                <button class="guide-lang-btn ${this.activeGuideLang === 'python' ? 'active' : ''}" onclick="app.setGuideLang('python')">Python</button>
+              </div>
+            </div>
+
+            <div class="code-block-wrap"><pre><code>${this.escapeHtml(codeContent)}</code></pre></div>
+
+            ${(selected.timeComplexity || selected.spaceComplexity) ? `
+              <div style="display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap;">
+                ${selected.timeComplexity ? `<div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px;"><span style="color: var(--text-muted); font-weight: 600;">Time Complexity:</span> <code style="color: var(--accent-primary); font-weight: 700;">${selected.timeComplexity}</code></div>` : ''}
+                ${selected.spaceComplexity ? `<div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px;"><span style="color: var(--text-muted); font-weight: 600;">Space Complexity:</span> <code style="color: var(--easy-color, #10b981); font-weight: 700;">${selected.spaceComplexity}</code></div>` : ''}
+              </div>
+            ` : ''}
           </div>
         ` : ''}
 
-        <div class="guide-nav-controls">
+        <div class="guide-nav-controls" style="margin-top: 28px;">
           ${prevTopic ? `<button class="btn-secondary" onclick="app.selectGuideTopic('${prevTopic.id}')">← ${prevTopic.title}</button>` : `<div></div>`}
           ${nextTopic ? `<button class="btn-primary" onclick="app.selectGuideTopic('${nextTopic.id}')">${nextTopic.title} →</button>` : `<div></div>`}
         </div>

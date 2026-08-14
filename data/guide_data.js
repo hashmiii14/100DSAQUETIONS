@@ -1,243 +1,419 @@
-// Comprehensive 20-Chapter DSA Guide Dataset with Multilingual Code Examples (C++, Java, Python)
+// Comprehensive 26-Chapter DSA Guide Dataset with Working Code Examples (C++, Java, Python)
 const GUIDE_DATA = [
   {
-    "id": "fundamentals",
-    "title": "1. DSA Fundamentals & Asymptotic Complexity",
-    "category": "Basics",
-    "summary": "Understand Data Structures & Algorithms, Big-O, Big-Omega, Big-Theta notations, and time/space complexity analysis.",
-    "theory": "\n              <h3>What is DSA & Why it Matters</h3>\n              <p><strong>Data Structures</strong> provide structured ways to store, organize, and manage data efficiently in computer memory. <strong>Algorithms</strong> are step-by-step procedure definitions for performing calculations, processing data, and automated reasoning tasks.</p>\n              <p>In software engineering and FAANG technical interviews, selecting the correct Data Structure and Algorithm can optimize execution runtime from hours down to milliseconds, and reduce RAM consumption from gigabytes to megabytes.</p>\n\n              <h3>Asymptotic Notations</h3>\n              <ul>\n                <li><strong>Big-O Notation (O):</strong> Represents the <strong>worst-case scenario</strong> (upper bound) of an algorithm's growth rate as input size N approaches infinity.</li>\n                <li><strong>Big-Omega Notation (\u03a9):</strong> Represents the <strong>best-case scenario</strong> (lower bound) execution limit.</li>\n                <li><strong>Big-Theta Notation (\u0398):</strong> Represents the <strong>tight bound</strong> (exact average-case behavior) when worst-case and best-case growth rates coincide.</li>\n              </ul>\n\n              <h3>Common Complexity Orders (Fastest to Slowest)</h3>\n              <table style=\"width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 16px;\">\n                <thead>\n                  <tr style=\"border-bottom: 1px solid var(--border-color); text-align: left;\">\n                    <th style=\"padding: 6px;\">Notation</th>\n                    <th style=\"padding: 6px;\">Name</th>\n                    <th style=\"padding: 6px;\">Example Operation</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(1)</code></td><td>Constant</td><td>Hash Map Lookup, Array Indexing, Stack Push/Pop</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(log N)</code></td><td>Logarithmic</td><td>Binary Search, Balanced BST Insertion</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(N)</code></td><td>Linear</td><td>Array Traversal, Linear Search</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(N log N)</code></td><td>Linearithmic</td><td>Merge Sort, Quick Sort (average case)</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(N\u00b2)</code></td><td>Quadratic</td><td>Nested Loops, Bubble Sort</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\"><code>O(2^N)</code></td><td>Exponential</td><td>Recursive Fibonacci, Subsets Backtracking</td></tr>\n                </tbody>\n              </table>\n            ",
-    "code": {
-      "cpp": "// C++ Asymptotic Analysis Demonstration\n#include <iostream>\n#include <vector>\n\nvoid analyzeComplexity(const std::vector<int>& arr) {\n    int n = arr.size();\n\n    // 1. O(1) Constant Time\n    int firstElement = arr[0];\n\n    // 2. O(log N) Logarithmic Time (Binary Search)\n    int low = 0, high = n - 1;\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (arr[mid] == 42) break;\n        if (arr[mid] < 42) low = mid + 1;\n        else high = mid - 1;\n    }\n\n    // 3. O(N) Linear Time (Single Pass)\n    long long totalSum = 0;\n    for (int i = 0; i < n; i++) {\n        totalSum += arr[i];\n    }\n}",
-      "java": "// Java Asymptotic Analysis Demonstration\nimport java.util.*;\n\npublic class ComplexityAnalysis {\n    public static void analyze(int[] arr) {\n        int n = arr.length;\n\n        // 1. O(1) Constant Time\n        int firstElement = arr[0];\n\n        // 2. O(log N) Logarithmic Time (Binary Search)\n        int low = 0, high = n - 1;\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (arr[mid] == 42) break;\n            if (arr[mid] < 42) low = mid + 1;\n            else high = mid - 1;\n        }\n\n        // 3. O(N) Linear Time\n        long totalSum = 0;\n        for (int i = 0; i < n; i++) {\n            totalSum += arr[i];\n        }\n    }\n}",
-      "python": "# Python Asymptotic Analysis Demonstration\n\ndef analyze_complexity(arr: list[int]) -> None:\n    n = len(arr)\n\n    # 1. O(1) Constant Time\n    first_element = arr[0]\n\n    # 2. O(log N) Logarithmic Time (Binary Search)\n    low, high = 0, n - 1\n    while low <= high:\n        mid = low + (high - low) // 2\n        if arr[mid] == 42:\n            break\n        if arr[mid] < 42:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    # 3. O(N) Linear Time\n    total_sum = sum(arr)\n"
-    }
-  },
-  {
     "id": "arrays",
-    "title": "2. Arrays & Dynamic Vectors",
+    "title": "1. Arrays & Subarray Techniques",
     "category": "Linear Data Structures",
-    "summary": "Master array memory layout, dynamic sizing, contiguous memory access, and essential array operations.",
-    "theory": "\n              <h3>Arrays & Memory Contiguity</h3>\n              <p>An <strong>Array</strong> is a linear data structure storing fixed-size homogenous elements in <strong>contiguous memory locations</strong>. Memory address calculation for index <code>i</code> is calculated instantly via <code>BaseAddress + (i * ElementSize)</code>, providing instantaneous <strong>O(1) random access</strong>.</p>\n\n              <h3>Static vs Dynamic Arrays</h3>\n              <ul>\n                <li><strong>Static Arrays:</strong> Fixed size allocated at compile time (e.g. <code>int arr[100]</code>).</li>\n                <li><strong>Dynamic Arrays:</strong> Automatically resize upon reaching capacity (e.g. <code>std::vector</code> in C++, <code>ArrayList</code> in Java, <code>list</code> in Python). Growth factor is typically 1.5x or 2x, yielding <strong>Amortized O(1) insertion time</strong>.</li>\n              </ul>\n            ",
+    "summary": "Array indexing, contiguous memory allocation, vector resizing, and Kadane's maximum subarray algorithm.",
+    "theory": "\n              <h3>Array Data Structure</h3>\n              <p>An array stores elements of homogenous data types in contiguous memory blocks. Element access at index <code>i</code> computes in instant <strong>O(1) time complexity</strong> via formula <code>BaseAddress + (i * ElementSize)</code>.</p>\n              <h3>Key Operations & Complexities</h3>\n              <ul>\n                <li><strong>Access:</strong> O(1) time</li>\n                <li><strong>Search:</strong> O(N) linear time (un-sorted) / O(log N) binary search (sorted)</li>\n                <li><strong>Insertion / Deletion:</strong> O(N) time due to element shifting</li>\n              </ul>\n            ",
+    "exampleTitle": "Kadane's Algorithm for Maximum Subarray Sum",
+    "explanation": "Kadane's algorithm computes the maximum contiguous subarray sum in a single linear pass by maintaining local current max and global max.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Dynamic Vector Operations\n#include <iostream>\n#include <vector>\n\nvoid vectorDemo() {\n    std::vector<int> nums = {10, 20, 30, 40};\n    \n    // O(1) Push Back\n    nums.push_back(50);\n    \n    // O(1) Random Access\n    int val = nums[2]; \n    \n    // O(N) Insertion at index\n    nums.insert(nums.begin() + 1, 15);\n    \n    // O(N) Deletion at index\n    nums.erase(nums.begin() + 3);\n}",
-      "java": "// Java ArrayList Operations\nimport java.util.*;\n\npublic class ArrayDemo {\n    public static void main(String[] args) {\n        List<Integer> nums = new ArrayList<>(Arrays.asList(10, 20, 30, 40));\n        \n        // O(1) Append\n        nums.add(50);\n        \n        // O(1) Access\n        int val = nums.get(2);\n        \n        // O(N) Insertion\n        nums.add(1, 15);\n        \n        // O(N) Deletion\n        nums.remove(3);\n    }\n}",
-      "python": "# Python Dynamic List Operations\n\ndef list_demo():\n    nums = [10, 20, 30, 40]\n    \n    # O(1) Append\n    nums.append(50)\n    \n    # O(1) Access\n    val = nums[2]\n    \n    # O(N) Insert\n    nums.insert(1, 15)\n    \n    # O(N) Delete\n    nums.pop(3)\n"
+      "cpp": "// C++ Kadane's Algorithm implementation\n#include <iostream>\n#include <vector>\n#include <algorithm>\n\nint maxSubArray(const std::vector<int>& nums) {\n    int maxSoFar = nums[0];\n    int currentMax = nums[0];\n    \n    for (size_t i = 1; i < nums.size(); ++i) {\n        currentMax = std::max(nums[i], currentMax + nums[i]);\n        maxSoFar = std::max(maxSoFar, currentMax);\n    }\n    return maxSoFar;\n}",
+      "java": "// Java Kadane's Algorithm implementation\npublic class ArrayExample {\n    public static int maxSubArray(int[] nums) {\n        int maxSoFar = nums[0];\n        int currentMax = nums[0];\n        \n        for (int i = 1; i < nums.length; i++) {\n            currentMax = Math.max(nums[i], currentMax + nums[i]);\n            maxSoFar = Math.max(maxSoFar, currentMax);\n        }\n        return maxSoFar;\n    }\n}",
+      "python": "# Python Kadane's Algorithm implementation\n\ndef max_sub_array(nums: list[int]) -> int:\n    max_so_far = nums[0]\n    current_max = nums[0]\n    \n    for i in range(1, len(nums)):\n        current_max = max(nums[i], current_max + nums[i])\n        max_so_far = max(max_so_far, current_max)\n        \n    return max_so_far\n"
     }
   },
   {
     "id": "strings",
-    "title": "3. Strings & Character Manipulation",
+    "title": "2. Strings & Character Frequency",
     "category": "Linear Data Structures",
-    "summary": "String immutability vs mutability, ASCII operations, frequency maps, palindromes, and pattern matching.",
-    "theory": "\n              <h3>String Memory & Mutability</h3>\n              <p>Strings represent sequences of characters. In languages like <strong>Java and Python</strong>, strings are <strong>immutable</strong> (modifications create new string objects in memory). In <strong>C++</strong>, <code>std::string</code> is <strong>mutable</strong> and can be modified in place.</p>\n              <p>For extensive string concatenations in Java, always use <code>StringBuilder</code> to prevent $O(N^2)$ memory garbage creation.</p>\n            ",
+    "summary": "String immutability vs mutability, ASCII array hashing, palindrome verification, and anagram checks.",
+    "theory": "\n              <h3>String Memory Representation</h3>\n              <p>Strings are arrays of characters. In C++, <code>std::string</code> is mutable. In Java and Python, strings are immutable, making string concatenation inside loops computationally expensive (creates O(N^2) garbage memory).</p>\n            ",
+    "exampleTitle": "Valid Anagram Check using Frequency Table",
+    "explanation": "Increments character counts for string S and decrements for string T using a 26-element frequency array. If all counts return 0, the strings are valid anagrams.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1) (fixed 26-size alphabet array)",
     "code": {
-      "cpp": "// C++ String In-Place Manipulation & Palindrome Check\n#include <iostream>\n#include <string>\n\nbool isPalindrome(std::string s) {\n    int left = 0, right = s.length() - 1;\n    while (left < right) {\n        if (s[left] != s[right]) return false;\n        left++;\n        right--;\n    }\n    return true;\n}",
-      "java": "// Java String & StringBuilder Operations\npublic class StringDemo {\n    public static boolean isPalindrome(String s) {\n        int left = 0, right = s.length() - 1;\n        while (left < right) {\n            if (s.charAt(left) != s.charAt(right)) return false;\n            left++;\n            right--;\n        }\n        return true;\n    }\n}",
-      "python": "# Python String & Slicing Operations\n\ndef is_palindrome(s: str) -> bool:\n    # O(N) Slice Comparison\n    return s == s[::-1]\n"
+      "cpp": "// C++ Valid Anagram Check\n#include <string>\n#include <vector>\n\nbool isAnagram(std::string s, std::string t) {\n    if (s.length() != t.length()) return false;\n    std::vector<int> count(26, 0);\n    for (size_t i = 0; i < s.length(); i++) {\n        count[s[i] - 'a']++;\n        count[t[i] - 'a']--;\n    }\n    for (int c : count) {\n        if (c != 0) return false;\n    }\n    return true;\n}",
+      "java": "// Java Valid Anagram Check\npublic class StringExample {\n    public static boolean isAnagram(String s, String t) {\n        if (s.length() != t.length()) return false;\n        int[] count = new int[26];\n        for (int i = 0; i < s.length(); i++) {\n            count[s.charAt(i) - 'a']++;\n            count[t.charAt(i) - 'a']--;\n        }\n        for (int c : count) {\n            if (c != 0) return false;\n        }\n        return true;\n    }\n}",
+      "python": "# Python Valid Anagram Check\n\ndef is_anagram(s: str, t: str) -> bool:\n    if len(s) != len(t):\n        return False\n    count = [0] * 26\n    for i in range(len(s)):\n        count[ord(s[i]) - ord('a')] += 1\n        count[ord(t[i]) - ord('a')] -= 1\n    return all(c == 0 for c in count)\n"
     }
   },
   {
     "id": "hashing",
-    "title": "4. Hashing, HashMap & HashSet",
+    "title": "3. Hashing, HashMap & HashSet",
     "category": "Linear Data Structures",
-    "summary": "Hash functions, collision handling via chaining & open addressing, O(1) average lookup, and frequency counting.",
-    "theory": "\n              <h3>Hash Table Architecture</h3>\n              <p>A <strong>Hash Table</strong> maps keys to values using a <strong>Hash Function</strong>. It converts keys into integer array indices, delivering <strong>O(1) average time complexity</strong> for insertion, lookup, and deletion.</p>\n              <h3>Collision Resolution Techniques</h3>\n              <ul>\n                <li><strong>Chaining (Separate Chaining):</strong> Each bucket contains a linked list or balanced tree of keys sharing the same hash code.</li>\n                <li><strong>Open Addressing:</strong> Searches for next available slot in array via Linear Probing or Quadratic Probing.</li>\n              </ul>\n            ",
+    "summary": "Hash tables, collision handling via chaining & open addressing, O(1) average lookup, and Two-Sum complement search.",
+    "theory": "\n              <h3>Hash Table Operations</h3>\n              <p>Maps arbitrary keys to table indices using a Hash Function. Delivers average <strong>O(1) time complexity</strong> for search, insertion, and deletion operations.</p>\n            ",
+    "exampleTitle": "Two Sum Target Lookup using HashMap",
+    "explanation": "Store previously seen numbers and their indices in a hash map. For each element X, query if (Target - X) exists in the map.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(N)",
     "code": {
-      "cpp": "// C++ Unordered Map & Unordered Set\n#include <iostream>\n#include <unordered_map>\n#include <unordered_set>\n#include <vector>\n\nstd::vector<int> twoSum(const std::vector<int>& nums, int target) {\n    std::unordered_map<int, int> map; // key: val, value: index\n    for (int i = 0; i < nums.size(); i++) {\n        int complement = target - nums[i];\n        if (map.count(complement)) {\n            return {map[complement], i};\n        }\n        map[nums[i]] = i;\n    }\n    return {};\n}",
-      "java": "// Java HashMap & HashSet Operations\nimport java.util.*;\n\npublic class HashDemo {\n    public static int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<>();\n        for (int i = 0; i < nums.length; i++) {\n            int complement = target - nums[i];\n            if (map.containsKey(complement)) {\n                return new int[]{map.get(complement), i};\n            }\n            map.put(nums[i], i);\n        }\n        return new int[]{};\n    }\n}",
-      "python": "# Python Dictionary & Set Operations\n\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    num_map = {} # val -> index\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_map:\n            return [num_map[complement], i]\n        num_map[num] = i\n    return []\n"
+      "cpp": "// C++ Two Sum using std::unordered_map\n#include <vector>\n#include <unordered_map>\n\nstd::vector<int> twoSum(const std::vector<int>& nums, int target) {\n    std::unordered_map<int, int> map; // value -> index\n    for (int i = 0; i < nums.size(); i++) {\n        int complement = target - nums[i];\n        if (map.find(complement) != map.end()) {\n            return {map[complement], i};\n        }\n        map[nums[i]] = i;\n    }\n    return {};\n}",
+      "java": "// Java Two Sum using HashMap\nimport java.util.*;\n\npublic class HashExample {\n    public static int[] twoSum(int[] nums, int target) {\n        Map<Integer, Integer> map = new HashMap<>();\n        for (int i = 0; i < nums.length; i++) {\n            int complement = target - nums[i];\n            if (map.containsKey(complement)) {\n                return new int[]{map.get(complement), i};\n            }\n            map.put(nums[i], i);\n        }\n        return new int[]{};\n    }\n}",
+      "python": "# Python Two Sum using Dict\n\ndef two_sum(nums: list[int], target: int) -> list[int]:\n    num_map = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_map:\n            return [num_map[complement], i]\n        num_map[num] = i\n    return []\n"
     }
   },
   {
     "id": "two-pointers",
-    "title": "5. Two Pointers Pattern",
+    "title": "4. Two Pointers Pattern",
     "category": "Linear Data Structures",
-    "summary": "Opposite convergence pointers and same-direction fast & slow pointers to eliminate nested loop iterations.",
-    "theory": "\n              <h3>Two Pointers Strategy</h3>\n              <p>The <strong>Two Pointers</strong> pattern uses two index references iterating over a linear data structure simultaneously. It optimizes brute-force $O(N^2)$ nested loop algorithms down to <strong>O(N) time complexity</strong>.</p>\n              <h3>Variants</h3>\n              <ul>\n                <li><strong>Opposite Directions:</strong> Left starts at index 0, Right starts at N-1 (e.g. 2Sum in sorted array, Container With Most Water).</li>\n                <li><strong>Same Direction (Fast & Slow):</strong> Fast pointer scans ahead while Slow pointer tracks condition boundary (e.g. Floyd's Cycle Detection, Remove Duplicates).</li>\n              </ul>\n            ",
+    "summary": "Opposite convergence pointers and same-direction fast/slow pointers to optimize quadratic loops to linear time.",
+    "theory": "\n              <h3>Two Pointers Mechanics</h3>\n              <p>Maintains two index references moving across a sequence. Reduces quadratic $O(N^2)$ brute-force iterations down to <strong>O(N) linear time</strong>.</p>\n            ",
+    "exampleTitle": "Two Sum II in Sorted Array (Opposite Convergence)",
+    "explanation": "With a sorted array, increment left pointer if sum < target, and decrement right pointer if sum > target.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Two Pointers Sorted 2-Sum\n#include <vector>\n\nbool hasArrayPairWithSum(std::vector<int>& arr, int target) {\n    int left = 0, right = arr.size() - 1;\n    while (left < right) {\n        int sum = arr[left] + arr[right];\n        if (sum == target) return true;\n        if (sum < target) left++;\n        else right--;\n    }\n    return false;\n}",
-      "java": "// Java Two Pointers Sorted 2-Sum\npublic class TwoPointersDemo {\n    public static boolean hasPair(int[] arr, int target) {\n        int left = 0, right = arr.length - 1;\n        while (left < right) {\n            int sum = arr[left] + arr[right];\n            if (sum == target) return true;\n            if (sum < target) left++;\n            else right--;\n        }\n        return false;\n    }\n}",
-      "python": "# Python Two Pointers Sorted 2-Sum\n\ndef has_pair(arr: list[int], target: int) -> bool:\n    left, right = 0, len(arr) - 1\n    while left < right:\n        curr_sum = arr[left] + arr[right]\n        if curr_sum == target:\n            return True\n        if curr_sum < target:\n            left += 1\n        else:\n            right -= 1\n    return False\n"
+      "cpp": "// C++ Two Pointers on Sorted Array\n#include <vector>\n\nstd::vector<int> twoSumSorted(const std::vector<int>& numbers, int target) {\n    int left = 0, right = numbers.size() - 1;\n    while (left < right) {\n        int sum = numbers[left] + numbers[right];\n        if (sum == target) return {left + 1, right + 1};\n        if (sum < target) left++;\n        else right--;\n    }\n    return {};\n}",
+      "java": "// Java Two Pointers on Sorted Array\npublic class TwoPointersExample {\n    public static int[] twoSum(int[] numbers, int target) {\n        int left = 0, right = numbers.length - 1;\n        while (left < right) {\n            int sum = numbers[left] + numbers[right];\n            if (sum == target) return new int[]{left + 1, right + 1};\n            if (sum < target) left++;\n            else right--;\n        }\n        return new int[]{};\n    }\n}",
+      "python": "# Python Two Pointers on Sorted Array\n\ndef two_sum_sorted(numbers: list[int], target: int) -> list[int]:\n    left, right = 0, len(numbers) - 1\n    while left < right:\n        curr_sum = numbers[left] + numbers[right]\n        if curr_sum == target:\n            return [left + 1, right + 1]\n        if curr_sum < target:\n            left += 1\n        else:\n            right -= 1\n    return []\n"
     }
   },
   {
     "id": "sliding-window",
-    "title": "6. Sliding Window Technique",
+    "title": "5. Sliding Window Technique",
     "category": "Linear Data Structures",
     "summary": "Fixed and variable length window mechanics for optimal contiguous subarray & substring processing.",
-    "theory": "\n              <h3>Sliding Window Concept</h3>\n              <p>A window is formed over a contiguous subsegment of an array or string. By dynamically sliding the window bounds (adding element at <code>right</code>, removing element at <code>left</code>), we process subarray state in <strong>O(N) time</strong> instead of $O(N^2)$.</p>\n            ",
+    "theory": "\n              <h3>Sliding Window Concept</h3>\n              <p>Maintains dynamic bounds over a contiguous window segment. As right boundary expands, left boundary contracts when constraints are broken.</p>\n            ",
+    "exampleTitle": "Maximum Sum Subarray of Size K (Fixed Window)",
+    "explanation": "Computes sum of initial K elements, then slides window right by adding incoming element and subtracting outgoing element.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Fixed Window Max Sum of Size K\n#include <vector>\n#include <algorithm>\n\nint maxSumSubarray(const std::vector<int>& arr, int k) {\n    int windowSum = 0;\n    for (int i = 0; i < k; i++) windowSum += arr[i];\n    \n    int maxSum = windowSum;\n    for (int i = k; i < arr.size(); i++) {\n        windowSum += arr[i] - arr[i - k];\n        maxSum = std::max(maxSum, windowSum);\n    }\n    return maxSum;\n}",
-      "java": "// Java Fixed Window Max Sum of Size K\npublic class SlidingWindow {\n    public static int maxSum(int[] arr, int k) {\n        int windowSum = 0;\n        for (int i = 0; i < k; i++) windowSum += arr[i];\n        \n        int maxSum = windowSum;\n        for (int i = k; i < arr.length; i++) {\n            windowSum += arr[i] - arr[i - k];\n            maxSum = Math.max(maxSum, windowSum);\n        }\n        return maxSum;\n    }\n}",
-      "python": "# Python Fixed Window Max Sum of Size K\n\ndef max_sum_subarray(arr: list[int], k: int) -> int:\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum += arr[i] - arr[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n"
+      "cpp": "// C++ Fixed Sliding Window\n#include <vector>\n#include <algorithm>\n\nint maxSubarraySumK(const std::vector<int>& arr, int k) {\n    int windowSum = 0;\n    for (int i = 0; i < k; i++) windowSum += arr[i];\n    \n    int maxSum = windowSum;\n    for (size_t i = k; i < arr.size(); i++) {\n        windowSum += arr[i] - arr[i - k];\n        maxSum = std::max(maxSum, windowSum);\n    }\n    return maxSum;\n}",
+      "java": "// Java Fixed Sliding Window\npublic class SlidingWindowExample {\n    public static int maxSubarraySumK(int[] arr, int k) {\n        int windowSum = 0;\n        for (int i = 0; i < k; i++) windowSum += arr[i];\n        \n        int maxSum = windowSum;\n        for (int i = k; i < arr.length; i++) {\n            windowSum += arr[i] - arr[i - k];\n            maxSum = Math.max(maxSum, windowSum);\n        }\n        return maxSum;\n    }\n}",
+      "python": "# Python Fixed Sliding Window\n\ndef max_subarray_sum_k(arr: list[int], k: int) -> int:\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum += arr[i] - arr[i - k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n"
     }
   },
   {
     "id": "prefix-sum",
-    "title": "7. Prefix Sum & Difference Arrays",
+    "title": "6. Prefix Sum & Range Queries",
     "category": "Linear Data Structures",
-    "summary": "Precompute cumulative sums for O(1) range query evaluations and range update algorithms.",
-    "theory": "\n              <h3>1D Prefix Sum Array</h3>\n              <p>Construct a prefix array where <code>pref[i] = pref[i-1] + arr[i-1]</code>. Any range sum <code>sum(L...R)</code> is evaluated in <strong>O(1) time</strong> via <code>pref[R + 1] - pref[L]</code>.</p>\n            ",
+    "summary": "Cumulative precomputation array to evaluate range queries sum(L...R) in instant O(1) time.",
+    "theory": "\n              <h3>1D Prefix Array Formula</h3>\n              <p>Construct array <code>pref[i] = pref[i-1] + arr[i-1]</code>. Range sum in index interval <code>[L, R]</code> is evaluated in <strong>O(1) time</strong> via <code>pref[R + 1] - pref[L]</code>.</p>\n            ",
+    "exampleTitle": "Subarray Sum Equals K using Prefix Sum & Map",
+    "explanation": "Calculates cumulative prefix sum at each index. If (currentPrefix - K) occurred previously, adds its frequency to count.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(N)",
     "code": {
-      "cpp": "// C++ Prefix Sum Range Query\n#include <vector>\n\nclass PrefixSum {\n    std::vector<int> pref;\npublic:\n    PrefixSum(const std::vector<int>& nums) {\n        pref.resize(nums.size() + 1, 0);\n        for (size_t i = 0; i < nums.size(); i++) {\n            pref[i + 1] = pref[i] + nums[i];\n        }\n    }\n    int query(int left, int right) {\n        return pref[right + 1] - pref[left];\n    }\n};",
-      "java": "// Java Prefix Sum Range Query\npublic class PrefixSum {\n    private int[] pref;\n    public PrefixSum(int[] nums) {\n        pref = new int[nums.length + 1];\n        for (int i = 0; i < nums.length; i++) {\n            pref[i + 1] = pref[i] + nums[i];\n        }\n    }\n    public int query(int left, int right) {\n        return pref[right + 1] - pref[left];\n    }\n}",
-      "python": "# Python Prefix Sum Range Query\n\nclass PrefixSum:\n    def __init__(self, nums: list[int]):\n        self.pref = [0] * (len(nums) + 1)\n        for i, val in enumerate(nums):\n            self.pref[i + 1] = self.pref[i] + val\n\n    def query(self, left: int, right: int) -> int:\n        return self.pref[right + 1] - self.pref[left]\n"
+      "cpp": "// C++ Subarray Sum Equals K\n#include <vector>\n#include <unordered_map>\n\nint subarraySumK(const std::vector<int>& nums, int k) {\n    int count = 0, currentSum = 0;\n    std::unordered_map<int, int> prefixMap;\n    prefixMap[0] = 1;\n    \n    for (int num : nums) {\n        currentSum += num;\n        if (prefixMap.count(currentSum - k)) {\n            count += prefixMap[currentSum - k];\n        }\n        prefixMap[currentSum]++;\n    }\n    return count;\n}",
+      "java": "// Java Subarray Sum Equals K\nimport java.util.*;\n\npublic class PrefixSumExample {\n    public static int subarraySum(int[] nums, int k) {\n        int count = 0, currentSum = 0;\n        Map<Integer, Integer> map = new HashMap<>();\n        map.put(0, 1);\n        \n        for (int num : nums) {\n            currentSum += num;\n            if (map.containsKey(currentSum - k)) {\n                count += map.get(currentSum - k);\n            }\n            map.put(currentSum, map.getOrDefault(currentSum, 0) + 1);\n        }\n        return count;\n    }\n}",
+      "python": "# Python Subarray Sum Equals K\n\ndef subarray_sum(nums: list[int], k: int) -> int:\n    count = 0\n    current_sum = 0\n    prefix_map = {0: 1}\n    \n    for num in nums:\n        current_sum += num\n        if (current_sum - k) in prefix_map:\n            count += prefix_map[current_sum - k]\n        prefix_map[current_sum] = prefix_map.get(current_sum, 0) + 1\n        \n    return count\n"
     }
   },
   {
-    "id": "searching-sorting",
-    "title": "8. Searching & Sorting Algorithms",
+    "id": "sorting",
+    "title": "7. Sorting Algorithms (Merge Sort, Quick Sort)",
     "category": "Searching/Sorting",
-    "summary": "Binary search space reduction O(log N), Merge Sort, Quick Sort, and custom sorting comparators.",
-    "theory": "\n              <h3>Binary Search Space Reduction</h3>\n              <p>Requires a monotonic (sorted) search space. Halves the search range in each iteration, achieving <strong>O(log N) runtime complexity</strong>.</p>\n              <h3>Sorting Algorithm Comparison</h3>\n              <ul>\n                <li><strong>Merge Sort:</strong> Divide and Conquer, Stable, <strong>O(N log N) worst time</strong>, O(N) space.</li>\n                <li><strong>Quick Sort:</strong> Pivot partitioning, Unstable, <strong>O(N log N) average time</strong>, O(log N) space.</li>\n              </ul>\n            ",
+    "summary": "Divide and conquer sorting, Merge Sort O(N log N) stable, and Quick Sort in-place partitioning.",
+    "theory": "\n              <h3>Comparison of Sorting Methods</h3>\n              <ul>\n                <li><strong>Merge Sort:</strong> Stable, O(N log N) worst-case time, O(N) space.</li>\n                <li><strong>Quick Sort:</strong> In-place, O(N log N) average time, O(log N) stack space.</li>\n              </ul>\n            ",
+    "exampleTitle": "QuickSort In-Place Partitioning & Sorting",
+    "explanation": "Chooses pivot element, partitions array such that elements smaller than pivot go left and larger go right, then recursively sorts partitions.",
+    "timeComplexity": "O(N log N) average, O(N^2) worst case",
+    "spaceComplexity": "O(log N) recursive call stack",
     "code": {
-      "cpp": "// C++ Binary Search Implementation\n#include <vector>\n\nint binarySearch(const std::vector<int>& nums, int target) {\n    int low = 0, high = nums.size() - 1;\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (nums[mid] == target) return mid;\n        if (nums[mid] < target) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}",
-      "java": "// Java Binary Search Implementation\npublic class BinarySearch {\n    public static int search(int[] nums, int target) {\n        int low = 0, high = nums.length - 1;\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (nums[mid] == target) return mid;\n            if (nums[mid] < target) low = mid + 1;\n            else high = mid - 1;\n        }\n        return -1;\n    }\n}",
-      "python": "# Python Binary Search Implementation\n\ndef binary_search(nums: list[int], target: int) -> int:\n    low, high = 0, len(nums) - 1\n    while low <= high:\n        mid = low + (high - low) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n"
+      "cpp": "// C++ QuickSort Implementation\n#include <vector>\n#include <algorithm>\n\nint partition(std::vector<int>& arr, int low, int high) {\n    int pivot = arr[high];\n    int i = low - 1;\n    for (int j = low; j < high; j++) {\n        if (arr[j] < pivot) {\n            i++;\n            std::swap(arr[i], arr[j]);\n        }\n    }\n    std::swap(arr[i + 1], arr[high]);\n    return i + 1;\n}\n\nvoid quickSort(std::vector<int>& arr, int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        quickSort(arr, low, pi - 1);\n        quickSort(arr, pi + 1, high);\n    }\n}",
+      "java": "// Java QuickSort Implementation\npublic class SortExample {\n    private static int partition(int[] arr, int low, int high) {\n        int pivot = arr[high];\n        int i = low - 1;\n        for (int j = low; j < high; j++) {\n            if (arr[j] < pivot) {\n                i++;\n                int temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;\n            }\n        }\n        int temp = arr[i + 1]; arr[i + 1] = arr[high]; arr[high] = temp;\n        return i + 1;\n    }\n\n    public static void quickSort(int[] arr, int low, int high) {\n        if (low < high) {\n            int pi = partition(arr, low, high);\n            quickSort(arr, low, pi - 1);\n            quickSort(arr, pi + 1, high);\n        }\n    }\n}",
+      "python": "# Python QuickSort Implementation\n\ndef quick_sort(arr: list[int], low: int, high: int) -> None:\n    if low < high:\n        pivot = arr[high]\n        i = low - 1\n        for j in range(low, high):\n            if arr[j] < pivot:\n                i += 1\n                arr[i], arr[j] = arr[j], arr[i]\n        arr[i + 1], arr[high] = arr[high], arr[i + 1]\n        pi = i + 1\n        \n        quick_sort(arr, low, pi - 1)\n        quick_sort(arr, pi + 1, high)\n"
     }
   },
   {
-    "id": "recursion-backtracking",
-    "title": "9. Recursion & Backtracking",
+    "id": "binary-search",
+    "title": "8. Binary Search & Search Space",
     "category": "Searching/Sorting",
-    "summary": "Base case design, call stack management, state space tree traversal, pruning, and combinatorial search.",
-    "theory": "\n              <h3>Backtracking Framework</h3>\n              <p>Backtracking builds solution candidates incrementally and abandons (prunes) a candidate as soon as it determines that the candidate cannot lead to a valid final solution.</p>\n              <p><strong>Standard Backtracking Template:</strong> <code>Choose \u2794 Recurse / Explore \u2794 Unchoose (Backtrack)</code>.</p>\n            ",
+    "summary": "Logarithmic O(log N) search on monotonic arrays and binary search on solution spaces.",
+    "theory": "\n              <h3>Search Space Reduction</h3>\n              <p>Halves search range in each iteration. Requires sorted arrays or monotonic predicate functions <code>[FFFFTTTT]</code>.</p>\n            ",
+    "exampleTitle": "Binary Search in Sorted Array",
+    "explanation": "Compares middle element with target. If mid equals target return index, else eliminate half of search space.",
+    "timeComplexity": "O(log N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Subsets Generation Backtracking\n#include <vector>\n\nvoid backtrack(int start, const std::vector<int>& nums, std::vector<int>& current, std::vector<std::vector<int>>& result) {\n    result.push_back(current);\n    for (int i = start; i < nums.size(); i++) {\n        current.push_back(nums[i]); // Choose\n        backtrack(i + 1, nums, current, result); // Explore\n        current.pop_back(); // Unchoose\n    }\n}",
-      "java": "// Java Subsets Generation Backtracking\nimport java.util.*;\n\npublic class BacktrackDemo {\n    public static void backtrack(int start, int[] nums, List<Integer> current, List<List<Integer>> result) {\n        result.add(new ArrayList<>(current));\n        for (int i = start; i < nums.length; i++) {\n            current.add(nums[i]); // Choose\n            backtrack(i + 1, nums, current, result); // Explore\n            current.remove(current.size() - 1); // Unchoose\n        }\n    }\n}",
-      "python": "# Python Subsets Generation Backtracking\n\ndef subsets(nums: list[int]) -> list[list[int]]:\n    result = []\n    def backtrack(start, current):\n        result.append(list(current))\n        for i in range(start, len(nums)):\n            current.append(nums[i]) # Choose\n            backtrack(i + 1, current) # Explore\n            current.pop() # Unchoose\n    backtrack(0, [])\n    return result\n"
+      "cpp": "// C++ Iterative Binary Search\n#include <vector>\n\nint binarySearch(const std::vector<int>& nums, int target) {\n    int low = 0, high = nums.size() - 1;\n    while (low <= high) {\n        int mid = low + (high - low) / 2;\n        if (nums[mid] == target) return mid;\n        if (nums[mid] < target) low = mid + 1;\n        else high = mid - 1;\n    }\n    return -1;\n}",
+      "java": "// Java Iterative Binary Search\npublic class SearchExample {\n    public static int binarySearch(int[] nums, int target) {\n        int low = 0, high = nums.length - 1;\n        while (low <= high) {\n            int mid = low + (high - low) / 2;\n            if (nums[mid] == target) return mid;\n            if (nums[mid] < target) low = mid + 1;\n            else high = mid - 1;\n        }\n        return -1;\n    }\n}",
+      "python": "# Python Iterative Binary Search\n\ndef binary_search(nums: list[int], target: int) -> int:\n    low, high = 0, len(nums) - 1\n    while low <= high:\n        mid = low + (high - low) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n"
     }
   },
   {
-    "id": "linked-lists",
-    "title": "10. Linked Lists (Singly, Doubly, Circular)",
+    "id": "recursion",
+    "title": "9. Recursion & Call Stack",
+    "category": "Searching/Sorting",
+    "summary": "Base case design, recursive function call stack, call depth, and exponentiation algorithm.",
+    "theory": "\n              <h3>Recursive Architecture</h3>\n              <p>A function calls itself with simplified parameters until hitting a <strong>Base Case</strong>. Excess recursive depth triggers Stack Overflow.</p>\n            ",
+    "exampleTitle": "Fast Exponentiation Power(x, n)",
+    "explanation": "Calculates x^n recursively by squaring power of n/2 in O(log N) operations.",
+    "timeComplexity": "O(log N)",
+    "spaceComplexity": "O(log N) stack frames",
+    "code": {
+      "cpp": "// C++ Fast Power Recursion\ndouble myPow(double x, long long n) {\n    if (n == 0) return 1.0;\n    if (n < 0) return 1.0 / myPow(x, -n);\n    double half = myPow(x, n / 2);\n    if (n % 2 == 0) return half * half;\n    else return half * half * x;\n}",
+      "java": "// Java Fast Power Recursion\npublic class RecursionExample {\n    public static double myPow(double x, long n) {\n        if (n == 0) return 1.0;\n        if (n < 0) return 1.0 / myPow(x, -n);\n        double half = myPow(x, n / 2);\n        if (n % 2 == 0) return half * half;\n        else return half * half * x;\n    }\n}",
+      "python": "# Python Fast Power Recursion\n\ndef my_pow(x: float, n: int) -> float:\n    if n == 0:\n        return 1.0\n    if n < 0:\n        return 1.0 / my_pow(x, -n)\n    half = my_pow(x, n // 2)\n    if n % 2 == 0:\n        return half * half\n    else:\n        return half * half * x\n"
+    }
+  },
+  {
+    "id": "backtracking",
+    "title": "10. Backtracking & Combinatorial Search",
+    "category": "Searching/Sorting",
+    "summary": "State space tree search, Choose-Explore-Unchoose design template, pruning, and subset generation.",
+    "theory": "\n              <h3>Backtracking Framework</h3>\n              <p>Systematic search space traversal. Template: <code>Choose candidate \u2794 Recurse \u2794 Unchoose (backtrack) candidate</code>.</p>\n            ",
+    "exampleTitle": "Subsets Generation (Power Set)",
+    "explanation": "Generates all 2^N subsets of a given array by making binary include/exclude decisions at each element.",
+    "timeComplexity": "O(N * 2^N)",
+    "spaceComplexity": "O(N) recursive space",
+    "code": {
+      "cpp": "// C++ Subsets Backtracking\n#include <vector>\n\nvoid backtrack(int start, const std::vector<int>& nums, std::vector<int>& current, std::vector<std::vector<int>>& result) {\n    result.push_back(current);\n    for (size_t i = start; i < nums.size(); i++) {\n        current.push_back(nums[i]); // Choose\n        backtrack(i + 1, nums, current, result); // Explore\n        current.pop_back(); // Unchoose\n    }\n}",
+      "java": "// Java Subsets Backtracking\nimport java.util.*;\n\npublic class BacktrackExample {\n    public static void backtrack(int start, int[] nums, List<Integer> current, List<List<Integer>> result) {\n        result.add(new ArrayList<>(current));\n        for (int i = start; i < nums.length; i++) {\n            current.add(nums[i]); // Choose\n            backtrack(i + 1, nums, current, result); // Explore\n            current.remove(current.size() - 1); // Unchoose\n        }\n    }\n}",
+      "python": "# Python Subsets Backtracking\n\ndef subsets(nums: list[int]) -> list[list[int]]:\n    result = []\n    def backtrack(start: int, current: list[int]):\n        result.append(list(current))\n        for i in range(start, len(nums)):\n            current.append(nums[i]) # Choose\n            backtrack(i + 1, current) # Explore\n            current.pop() # Unchoose\n    backtrack(0, [])\n    return result\n"
+    }
+  },
+  {
+    "id": "linked-list",
+    "title": "11. Linked Lists (Singly, Doubly, Circular)",
     "category": "Linear Data Structures",
-    "summary": "Node pointer manipulation, list reversal, Floyd's cycle detection, and dummy head patterns.",
-    "theory": "\n              <h3>Linked List Structure</h3>\n              <p>Nodes connected via memory pointers. Provides <strong>O(1) insertion/deletion</strong> given a pointer reference, but <strong>O(N) sequential search access</strong>.</p>\n            ",
+    "summary": "Node pointer linkages, head/tail dummy nodes, list reversal, and Floyd's cycle detection algorithm.",
+    "theory": "\n              <h3>Linked List Pointers</h3>\n              <p>Linear structure of nodes connected via pointers. O(1) prepend/insertion with node references, O(N) index access.</p>\n            ",
+    "exampleTitle": "Reverse Singly Linked List In-Place",
+    "explanation": "Iterates through list while updating next pointers to point backwards to previous node.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Reverse Singly Linked List\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x) : val(x), next(nullptr) {}\n};\n\nListNode* reverseList(ListNode* head) {\n    ListNode* prev = nullptr;\n    ListNode* curr = head;\n    while (curr != nullptr) {\n        ListNode* nextNode = curr->next;\n        curr->next = prev;\n        prev = curr;\n        curr = nextNode;\n    }\n    return prev;\n}",
-      "java": "// Java Reverse Singly Linked List\nclass ListNode {\n    int val;\n    ListNode next;\n    ListNode(int val) { this.val = val; }\n}\n\npublic class LinkedListDemo {\n    public static ListNode reverseList(ListNode head) {\n        ListNode prev = null;\n        ListNode curr = head;\n        while (curr != null) {\n            ListNode nextNode = curr.next;\n            curr.next = prev;\n            prev = curr;\n            curr = nextNode;\n        }\n        return prev;\n    }\n}",
-      "python": "# Python Reverse Singly Linked List\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_list(head: ListNode) -> ListNode:\n    prev = None\n    curr = head\n    while curr:\n        next_node = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_node\n    return prev\n"
+      "cpp": "// C++ Reverse Linked List\nstruct ListNode {\n    int val;\n    ListNode* next;\n    ListNode(int x) : val(x), next(nullptr) {}\n};\n\nListNode* reverseList(ListNode* head) {\n    ListNode *prev = nullptr, *curr = head;\n    while (curr != nullptr) {\n        ListNode* nextTemp = curr->next;\n        curr->next = prev;\n        prev = curr;\n        curr = nextTemp;\n    }\n    return prev;\n}",
+      "java": "// Java Reverse Linked List\nclass ListNode {\n    int val;\n    ListNode next;\n    ListNode(int val) { this.val = val; }\n}\n\npublic class LinkedListExample {\n    public static ListNode reverseList(ListNode head) {\n        ListNode prev = null, curr = head;\n        while (curr != null) {\n            ListNode nextTemp = curr.next;\n            curr.next = prev;\n            prev = curr;\n            curr = nextTemp;\n        }\n        return prev;\n    }\n}",
+      "python": "# Python Reverse Linked List\n\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_list(head: ListNode) -> ListNode:\n    prev, curr = None, head\n    while curr:\n        next_temp = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_temp\n    return prev\n"
     }
   },
   {
-    "id": "stacks-queues",
-    "title": "11. Stacks, Queues & Monotonic Stack",
+    "id": "stack",
+    "title": "12. Stack & Monotonic Stack",
     "category": "Linear Data Structures",
-    "summary": "LIFO Stacks, FIFO Queues, Monotonic Stack for Next Greater Element, and Min-Stack design.",
-    "theory": "\n              <h3>Stack & Queue Fundamentals</h3>\n              <ul>\n                <li><strong>Stack (LIFO):</strong> Last-In-First-Out. Operations: <code>push</code>, <code>pop</code>, <code>top</code> in <strong>O(1) time</strong>.</li>\n                <li><strong>Queue (FIFO):</strong> First-In-First-Out. Operations: <code>enqueue</code>, <code>dequeue</code> in <strong>O(1) time</strong>.</li>\n                <li><strong>Monotonic Stack:</strong> Stack maintaining elements in strictly increasing/decreasing order to find Next Greater Element in <strong>O(N) time</strong>.</li>\n              </ul>\n            ",
+    "summary": "Last-In-First-Out (LIFO) stack operations, parentheses verification, and Monotonic Stack Next Greater Element.",
+    "theory": "\n              <h3>Monotonic Stack Invariant</h3>\n              <p>Maintains stack elements in strictly monotonic increasing/decreasing order. Resolves nearest greater/smaller element queries in linear time.</p>\n            ",
+    "exampleTitle": "Next Greater Element using Monotonic Stack",
+    "explanation": "Pushes array indices onto stack. When current number exceeds stack top, pops top index and records current number as its next greater element.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(N)",
     "code": {
-      "cpp": "// C++ Monotonic Stack Next Greater Element\n#include <vector>\n#include <stack>\n\nstd::vector<int> nextGreaterElement(const std::vector<int>& nums) {\n    int n = nums.size();\n    std::vector<int> result(n, -1);\n    std::stack<int> st; // stores indices\n    \n    for (int i = 0; i < n; i++) {\n        while (!st.empty() && nums[st.top()] < nums[i]) {\n            result[st.top()] = nums[i];\n            st.pop();\n        }\n        st.push(i);\n    }\n    return result;\n}",
-      "java": "// Java Monotonic Stack Next Greater Element\nimport java.util.*;\n\npublic class StackDemo {\n    public static int[] nextGreater(int[] nums) {\n        int n = nums.length;\n        int[] result = new int[n];\n        Arrays.fill(result, -1);\n        Deque<Integer> st = new ArrayDeque<>();\n        \n        for (int i = 0; i < n; i++) {\n            while (!st.isEmpty() && nums[st.peek()] < nums[i]) {\n                result[st.pop()] = nums[i];\n            }\n            st.push(i);\n        }\n        return result;\n    }\n}",
-      "python": "# Python Monotonic Stack Next Greater Element\n\ndef next_greater_element(nums: list[int]) -> list[int]:\n    n = len(nums)\n    result = [-1] * n\n    stack = [] # stores indices\n    \n    for i in range(n):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n"
+      "cpp": "// C++ Monotonic Stack Next Greater Element\n#include <vector>\n#include <stack>\n\nstd::vector<int> nextGreaterElement(const std::vector<int>& nums) {\n    int n = nums.size();\n    std::vector<int> result(n, -1);\n    std::stack<int> st; // stores index\n    \n    for (int i = 0; i < n; i++) {\n        while (!st.empty() && nums[st.top()] < nums[i]) {\n            result[st.top()] = nums[i];\n            st.pop();\n        }\n        st.push(i);\n    }\n    return result;\n}",
+      "java": "// Java Monotonic Stack Next Greater Element\nimport java.util.*;\n\npublic class StackExample {\n    public static int[] nextGreater(int[] nums) {\n        int n = nums.length;\n        int[] result = new int[n];\n        Arrays.fill(result, -1);\n        Deque<Integer> st = new ArrayDeque<>();\n        \n        for (int i = 0; i < n; i++) {\n            while (!st.isEmpty() && nums[st.peek()] < nums[i]) {\n                result[st.pop()] = nums[i];\n            }\n            st.push(i);\n        }\n        return result;\n    }\n}",
+      "python": "# Python Monotonic Stack Next Greater Element\n\ndef next_greater_element(nums: list[int]) -> list[int]:\n    n = len(nums)\n    result = [-1] * n\n    stack = []\n    \n    for i in range(n):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n        \n    return result\n"
     }
   },
   {
-    "id": "trees-bst",
-    "title": "12. Binary Trees & Binary Search Trees (BST)",
-    "category": "Trees",
-    "summary": "Tree traversals (DFS Inorder/Preorder/Postorder, BFS Level-Order), BST properties, and height balance.",
-    "theory": "\n              <h3>Tree Architecture</h3>\n              <p>A <strong>Binary Tree</strong> is a hierarchical node structure where each node has at most 2 children (left and right). A <strong>Binary Search Tree (BST)</strong> satisfies: <code>left.val < root.val < right.val</code> for all nodes.</p>\n              <p>In-order traversal of a BST yields elements in <strong>strictly sorted order</strong>.</p>\n            ",
+    "id": "queue-deque",
+    "title": "13. Queue & Double-Ended Queue (Deque)",
+    "category": "Linear Data Structures",
+    "summary": "First-In-First-Out (FIFO) queue, circular deque operations, and sliding window maximum using monotonic queue.",
+    "theory": "\n              <h3>Queue Mechanics</h3>\n              <p>Queue offers <strong>O(1) enqueue/dequeue</strong>. Deque supports O(1) insertion/deletion at both front and back ends.</p>\n            ",
+    "exampleTitle": "Sliding Window Maximum using Monotonic Deque",
+    "explanation": "Maintains deque of indices in decreasing order of element values. Front of deque always holds index of maximum element in current window.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(K)",
     "code": {
-      "cpp": "// C++ Tree Node & Inorder Traversal\n#include <vector>\n\nstruct TreeNode {\n    int val;\n    TreeNode* left;\n    TreeNode* right;\n    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}\n};\n\nvoid inorder(TreeNode* root, std::vector<int>& res) {\n    if (!root) return;\n    inorder(root->left, res);\n    res.push_back(root->val);\n    inorder(root->right, res);\n}",
-      "java": "// Java Tree Node & Inorder Traversal\nimport java.util.*;\n\nclass TreeNode {\n    int val;\n    TreeNode left, right;\n    TreeNode(int val) { this.val = val; }\n}\n\npublic class TreeDemo {\n    public static void inorder(TreeNode root, List<Integer> res) {\n        if (root == null) return;\n        inorder(root.left, res);\n        res.add(root.val);\n        inorder(root.right, res);\n    }\n}",
-      "python": "# Python Tree Node & Inorder Traversal\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef inorder(root: TreeNode, res: list[int]) -> None:\n    if not root:\n        return\n    inorder(root.left, res)\n    res.append(root.val)\n    inorder(root.right, res)\n"
+      "cpp": "// C++ Sliding Window Maximum using Deque\n#include <vector>\n#include <deque>\n\nstd::vector<int> maxSlidingWindow(const std::vector<int>& nums, int k) {\n    std::deque<int> dq;\n    std::vector<int> result;\n    for (int i = 0; i < nums.size(); i++) {\n        if (!dq.empty() && dq.front() == i - k) dq.pop_front();\n        while (!dq.empty() && nums[dq.back()] < nums[i]) dq.pop_back();\n        dq.push_back(i);\n        if (i >= k - 1) result.push_back(nums[dq.front()]);\n    }\n    return result;\n}",
+      "java": "// Java Sliding Window Maximum using Deque\nimport java.util.*;\n\npublic class QueueExample {\n    public static int[] maxSlidingWindow(int[] nums, int k) {\n        Deque<Integer> dq = new ArrayDeque<>();\n        int[] res = new int[nums.length - k + 1];\n        int ri = 0;\n        for (int i = 0; i < nums.length; i++) {\n            if (!dq.isEmpty() && dq.peek() == i - k) dq.poll();\n            while (!dq.isEmpty() && nums[dq.peekLast()] < nums[i]) dq.pollLast();\n            dq.offer(i);\n            if (i >= k - 1) res[ri++] = nums[dq.peek()];\n        }\n        return res;\n    }\n}",
+      "python": "# Python Sliding Window Maximum using Deque\nfrom collections import deque\n\ndef max_sliding_window(nums: list[int], k: int) -> list[int]:\n    dq = deque()\n    result = []\n    for i, num in enumerate(nums):\n        if dq and dq[0] == i - k:\n            dq.popleft()\n        while dq and nums[dq[-1]] < num:\n            dq.pop()\n        dq.append(i)\n        if i >= k - 1:\n            result.append(nums[dq[0]])\n    return result\n"
     }
   },
   {
-    "id": "heaps",
-    "title": "13. Heaps & Priority Queues",
+    "id": "trees",
+    "title": "14. Binary Trees & Traversals",
     "category": "Trees",
-    "summary": "Binary Max/Min-Heap arrays, Heapify O(N), push/pop O(log N), Top-K elements, and two-heap median stream.",
-    "theory": "\n              <h3>Priority Queue & Heap Property</h3>\n              <p>A <strong>Binary Heap</strong> is a complete binary tree stored inside a contiguous array. Parent at index <code>i</code> has children at <code>2i + 1</code> and <code>2i + 2</code>.</p>\n              <ul>\n                <li><strong>Push / Pop:</strong> <code>O(log N)</code> time.</li>\n                <li><strong>Peek Min/Max:</strong> <code>O(1)</code> time.</li>\n                <li><strong>Build Heap (Heapify):</strong> <code>O(N)</code> time.</li>\n              </ul>\n            ",
+    "summary": "Tree hierarchy, DFS Inorder/Preorder/Postorder traversals, and BFS Level-Order traversal.",
+    "theory": "\n              <h3>Tree Traversals</h3>\n              <ul>\n                <li><strong>Inorder:</strong> Left \u2794 Root \u2794 Right</li>\n                <li><strong>Preorder:</strong> Root \u2794 Left \u2794 Right</li>\n                <li><strong>Postorder:</strong> Left \u2794 Right \u2794 Root</li>\n                <li><strong>Level-Order:</strong> Breadth-first search queue level by level</li>\n              </ul>\n            ",
+    "exampleTitle": "Binary Tree Level-Order Traversal (BFS)",
+    "explanation": "Uses a Queue to traverse tree nodes level by level from top to bottom.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(N)",
     "code": {
-      "cpp": "// C++ Min-Heap Priority Queue\n#include <queue>\n#include <vector>\n\nstd::vector<int> findKSmallest(const std::vector<int>& nums, int k) {\n    std::priority_queue<int> maxHeap; // stores k smallest\n    for (int x : nums) {\n        maxHeap.push(x);\n        if (maxHeap.size() > k) maxHeap.pop();\n    }\n    std::vector<int> result;\n    while (!maxHeap.empty()) {\n        result.push_back(maxHeap.top());\n        maxHeap.pop();\n    }\n    return result;\n}",
-      "java": "// Java PriorityQueue (Max-Heap for K smallest)\nimport java.util.*;\n\npublic class HeapDemo {\n    public static List<Integer> findKSmallest(int[] nums, int k) {\n        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());\n        for (int x : nums) {\n            maxHeap.offer(x);\n            if (maxHeap.size() > k) maxHeap.poll();\n        }\n        return new ArrayList<>(maxHeap);\n    }\n}",
-      "python": "# Python heapq (Min-Heap / Max-Heap for K smallest)\nimport heapq\n\ndef find_k_smallest(nums: list[int], k: int) -> list[int]:\n    # Use nsmallest in O(N log K) time\n    return heapq.nsmallest(k, nums)\n"
+      "cpp": "// C++ Tree Level Order Traversal\n#include <vector>\n#include <queue>\n\nstruct TreeNode {\n    int val;\n    TreeNode *left, *right;\n    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}\n};\n\nstd::vector<std::vector<int>> levelOrder(TreeNode* root) {\n    std::vector<std::vector<int>> result;\n    if (!root) return result;\n    std::queue<TreeNode*> q;\n    q.push(root);\n    \n    while (!q.empty()) {\n        int sz = q.size();\n        std::vector<int> level;\n        for (int i = 0; i < sz; i++) {\n            TreeNode* node = q.front(); q.pop();\n            level.push_back(node->val);\n            if (node->left) q.push(node->left);\n            if (node->right) q.push(node->right);\n        }\n        result.push_back(level);\n    }\n    return result;\n}",
+      "java": "// Java Tree Level Order Traversal\nimport java.util.*;\n\nclass TreeNode {\n    int val;\n    TreeNode left, right;\n    TreeNode(int val) { this.val = val; }\n}\n\npublic class TreeExample {\n    public static List<List<Integer>> levelOrder(TreeNode root) {\n        List<List<Integer>> result = new ArrayList<>();\n        if (root == null) return result;\n        Queue<TreeNode> q = new LinkedList<>();\n        q.offer(root);\n        \n        while (!q.isEmpty()) {\n            int sz = q.size();\n            List<Integer> level = new ArrayList<>();\n            for (int i = 0; i < sz; i++) {\n                TreeNode node = q.poll();\n                level.add(node.val);\n                if (node.left != null) q.offer(node.left);\n                if (node.right != null) q.offer(node.right);\n            }\n            result.add(level);\n        }\n        return result;\n    }\n}",
+      "python": "# Python Tree Level Order Traversal\nfrom collections import deque\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef level_order(root: TreeNode) -> list[list[int]]:\n    if not root:\n        return []\n    result = []\n    queue = deque([root])\n    \n    while queue:\n        level = []\n        for _ in range(len(queue)):\n            node = queue.popleft()\n            level.append(node.val)\n            if node.left: queue.append(node.left)\n            if node.right: queue.append(node.right)\n        result.append(level)\n        \n    return result\n"
+    }
+  },
+  {
+    "id": "bst",
+    "title": "15. Binary Search Trees (BST)",
+    "category": "Trees",
+    "summary": "BST properties (left < root < right), inorder sorted property, search, insertion, and validation.",
+    "theory": "\n              <h3>BST Invariant</h3>\n              <p>For any node: <code>left.val < node.val < right.val</code>. Inorder traversal produces strictly sorted elements.</p>\n            ",
+    "exampleTitle": "Search in a Binary Search Tree",
+    "explanation": "Navigates left if target < current node, and right if target > current node, achieving O(log N) search in balanced BST.",
+    "timeComplexity": "O(log N) average, O(N) worst case",
+    "spaceComplexity": "O(log N) call stack",
+    "code": {
+      "cpp": "// C++ BST Search\nTreeNode* searchBST(TreeNode* root, int val) {\n    if (!root || root->val == val) return root;\n    return val < root->val ? searchBST(root->left, val) : searchBST(root->right, val);\n}",
+      "java": "// Java BST Search\npublic class BSTExample {\n    public static TreeNode searchBST(TreeNode root, int val) {\n        if (root == null || root.val == val) return root;\n        return val < root.val ? searchBST(root.left, val) : searchBST(root.right, val);\n    }\n}",
+      "python": "# Python BST Search\n\ndef search_bst(root: TreeNode, val: int) -> TreeNode:\n    if not root or root.val == val:\n        return root\n    return search_bst(root.left, val) if val < root.val else search_bst(root.right, val)\n"
+    }
+  },
+  {
+    "id": "heap",
+    "title": "16. Heaps & Priority Queues",
+    "category": "Trees",
+    "summary": "Binary Min/Max Heaps, Heapify O(N), push/pop O(log N), Top K elements, and median stream processing.",
+    "theory": "\n              <h3>Heap Property</h3>\n              <p>Complete binary tree in array representation. Min-Heap root holds minimum element; Max-Heap root holds maximum element.</p>\n            ",
+    "exampleTitle": "Top K Frequent Elements using Priority Queue",
+    "explanation": "Counts frequency of elements, then uses a Min-Heap of size K to retain the top K most frequent elements.",
+    "timeComplexity": "O(N log K)",
+    "spaceComplexity": "O(N)",
+    "code": {
+      "cpp": "// C++ Min-Heap Priority Queue for Top K\n#include <vector>\n#include <unordered_map>\n#include <queue>\n\nstd::vector<int> topKFrequent(const std::vector<int>& nums, int k) {\n    std::unordered_map<int, int> counts;\n    for (int num : nums) counts[num]++;\n    \n    // Min-heap storing pair<frequency, num>\n    using Element = std::pair<int, int>;\n    std::priority_queue<Element, std::vector<Element>, std::greater<Element>> minHeap;\n    \n    for (auto& entry : counts) {\n        minHeap.push({entry.second, entry.first});\n        if (minHeap.size() > k) minHeap.pop();\n    }\n    \n    std::vector<int> result;\n    while (!minHeap.empty()) {\n        result.push_back(minHeap.top().second);\n        minHeap.pop();\n    }\n    return result;\n}",
+      "java": "// Java PriorityQueue for Top K\nimport java.util.*;\n\npublic class HeapExample {\n    public static int[] topKFrequent(int[] nums, int k) {\n        Map<Integer, Integer> counts = new HashMap<>();\n        for (int num : nums) counts.put(num, counts.getOrDefault(num, 0) + 1);\n        \n        PriorityQueue<Map.Entry<Integer, Integer>> minHeap = \n            new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));\n            \n        for (var entry : counts.entrySet()) {\n            minHeap.offer(entry);\n            if (minHeap.size() > k) minHeap.poll();\n        }\n        \n        int[] result = new int[k];\n        for (int i = 0; i < k; i++) {\n            result[i] = minHeap.poll().getKey();\n        }\n        return result;\n    }\n}",
+      "python": "# Python heapq for Top K\nimport heapq\nfrom collections import Counter\n\ndef top_k_frequent(nums: list[int], k: int) -> list[int]:\n    counts = Counter(nums)\n    return [item for item, freq in heapq.nlargest(k, counts.items(), key=lambda x: x[1])]\n"
     }
   },
   {
     "id": "trie",
-    "title": "14. Trie (Prefix Tree)",
+    "title": "17. Trie (Prefix Tree)",
     "category": "Trees",
-    "summary": "Prefix tree node hierarchy, O(L) insert & search, autocomplete, and Maximum XOR Pair queries.",
-    "theory": "\n              <h3>Trie Data Structure</h3>\n              <p>A <strong>Trie</strong> (Prefix Tree) is an $N$-ary tree optimized for string storage and prefix retrieval. Insertion and search require <strong>O(L) time complexity</strong>, where $L$ is the string length.</p>\n            ",
+    "summary": "Tree of alphabet character nodes, O(L) insert & search, autocomplete, and prefix matching.",
+    "theory": "\n              <h3>Trie Architecture</h3>\n              <p>N-ary tree structure optimized for string operations. Fast prefix search in <strong>O(L) time</strong> where L is word length.</p>\n            ",
+    "exampleTitle": "Trie Insert and Search Operations",
+    "explanation": "Inserts string character by character creating child nodes, and marks the final node as end-of-word.",
+    "timeComplexity": "O(L) per operation",
+    "spaceComplexity": "O(N * L)",
     "code": {
-      "cpp": "// C++ Trie Implementation\n#include <string>\n#include <unordered_map>\n\nclass TrieNode {\npublic:\n    std::unordered_map<char, TrieNode*> children;\n    bool isEnd = false;\n};\n\nclass Trie {\n    TrieNode* root;\npublic:\n    Trie() { root = new TrieNode(); }\n    void insert(std::string word) {\n        TrieNode* curr = root;\n        for (char c : word) {\n            if (!curr->children.count(c)) curr->children[c] = new TrieNode();\n            curr = curr->children[c];\n        }\n        curr->isEnd = true;\n    }\n    bool search(std::string word) {\n        TrieNode* curr = root;\n        for (char c : word) {\n            if (!curr->children.count(c)) return false;\n            curr = curr->children[c];\n        }\n        return curr->isEnd;\n    }\n};",
-      "java": "// Java Trie Implementation\nimport java.util.*;\n\nclass TrieNode {\n    Map<Character, TrieNode> children = new HashMap<>();\n    boolean isEnd = false;\n}\n\npublic class Trie {\n    private TrieNode root = new TrieNode();\n    public void insert(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new TrieNode());\n            curr = curr.children.get(c);\n        }\n        curr.isEnd = true;\n    }\n    public boolean search(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            if (!curr.children.containsKey(c)) return false;\n            curr = curr.children.get(c);\n        }\n        return curr.isEnd;\n    }\n}",
+      "cpp": "// C++ Trie Implementation\n#include <string>\n#include <unordered_map>\n\nclass TrieNode {\npublic:\n    std::unordered_map<char, TrieNode*> children;\n    bool isEnd = false;\n};\n\nclass Trie {\n    TrieNode* root;\npublic:\n    Trie() { root = new TrieNode(); }\n    \n    void insert(const std::string& word) {\n        TrieNode* curr = root;\n        for (char c : word) {\n            if (!curr->children.count(c)) curr->children[c] = new TrieNode();\n            curr = curr->children[c];\n        }\n        curr->isEnd = true;\n    }\n    \n    bool search(const std::string& word) {\n        TrieNode* curr = root;\n        for (char c : word) {\n            if (!curr->children.count(c)) return false;\n            curr = curr->children[c];\n        }\n        return curr->isEnd;\n    }\n};",
+      "java": "// Java Trie Implementation\nimport java.util.*;\n\nclass TrieNode {\n    Map<Character, TrieNode> children = new HashMap<>();\n    boolean isEnd = false;\n}\n\npublic class Trie {\n    private TrieNode root = new TrieNode();\n    \n    public void insert(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new TrieNode());\n            curr = curr.children.get(c);\n        }\n        curr.isEnd = true;\n    }\n    \n    public boolean search(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            if (!curr.children.containsKey(c)) return false;\n            curr = curr.children.get(c);\n        }\n        return curr.isEnd;\n    }\n}",
       "python": "# Python Trie Implementation\n\nclass TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.is_end = False\n\nclass Trie:\n    def __init__(self):\n        self.root = TrieNode()\n\n    def insert(self, word: str) -> None:\n        curr = self.root\n        for char in word:\n            if char not in curr.children:\n                curr.children[char] = TrieNode()\n            curr = curr.children[char]\n        curr.is_end = True\n\n    def search(self, word: str) -> bool:\n        curr = self.root\n        for char in word:\n            if char not in curr.children:\n                return False\n            curr = curr.children[char]\n        return curr.is_end\n"
     }
   },
   {
     "id": "graphs",
-    "title": "15. Graphs (BFS, DFS, Topological Sort, Dijkstra)",
+    "title": "18. Graphs & Network Representations",
     "category": "Graphs",
-    "summary": "Adjacency lists, BFS shortest path, DFS cycle detection, Topological Sort (Kahn's), and Dijkstra's algorithm.",
-    "theory": "\n              <h3>Graph Representations</h3>\n              <p>A Graph $G = (V, E)$ consists of Vertices $V$ and Edges $E$. Represented via <strong>Adjacency List</strong> ($O(V + E)$ space) or <strong>Adjacency Matrix</strong> ($O(V^2)$ space).</p>\n              <h3>Core Graph Algorithms</h3>\n              <ul>\n                <li><strong>BFS (Breadth-First Search):</strong> Level-order queue traversal. Finds shortest path in unweighted graphs in $O(V + E)$ time.</li>\n                <li><strong>DFS (Depth-First Search):</strong> Recursive stack traversal for connected components and cycle detection.</li>\n                <li><strong>Dijkstra's Algorithm:</strong> Min-heap Priority Queue shortest path in weighted graphs in $O((V + E) \\log V)$ time.</li>\n              </ul>\n            ",
+    "summary": "Adjacency List & Matrix representations, BFS, DFS, connected components, and cycle detection.",
+    "theory": "\n              <h3>Graph Representations</h3>\n              <p>Adjacency List uses O(V + E) memory space and allows fast neighbor iteration. Adjacency Matrix uses O(V^2) memory space.</p>\n            ",
+    "exampleTitle": "Adjacency List Graph & BFS Traversal",
+    "explanation": "Builds adjacency list representation and traverses vertices level by level using a queue.",
+    "timeComplexity": "O(V + E)",
+    "spaceComplexity": "O(V + E)",
     "code": {
-      "cpp": "// C++ BFS Graph Traversal\n#include <vector>\n#include <queue>\n\nvoid bfs(int startNode, const std::vector<std::vector<int>>& adj, std::vector<bool>& visited) {\n    std::queue<int> q;\n    q.push(startNode);\n    visited[startNode] = true;\n    \n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                q.push(v);\n            }\n        }\n    }\n}",
-      "java": "// Java BFS Graph Traversal\nimport java.util.*;\n\npublic class GraphBFS {\n    public static void bfs(int startNode, List<List<Integer>> adj, boolean[] visited) {\n        Queue<Integer> q = new LinkedList<>();\n        q.offer(startNode);\n        visited[startNode] = true;\n        \n        while (!q.isEmpty()) {\n            int u = q.poll();\n            for (int v : adj.get(u)) {\n                if (!visited[v]) {\n                    visited[v] = true;\n                    q.offer(v);\n                }\n            }\n        }\n    }\n}",
-      "python": "# Python BFS Graph Traversal\nfrom collections import deque\n\ndef bfs(start_node: int, adj: list[list[int]], visited: list[bool]) -> None:\n    queue = deque([start_node])\n    visited[start_node] = True\n    \n    while queue:\n        u = queue.popleft()\n        for v in adj[u]:\n            if not visited[v]:\n                visited[v] = True\n                queue.append(v)\n"
+      "cpp": "// C++ Graph BFS\n#include <vector>\n#include <queue>\n\nvoid bfs(int start, const std::vector<std::vector<int>>& adj, std::vector<bool>& visited) {\n    std::queue<int> q;\n    q.push(start);\n    visited[start] = true;\n    \n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                q.push(v);\n            }\n        }\n    }\n}",
+      "java": "// Java Graph BFS\nimport java.util.*;\n\npublic class GraphExample {\n    public static void bfs(int start, List<List<Integer>> adj, boolean[] visited) {\n        Queue<Integer> q = new LinkedList<>();\n        q.offer(start);\n        visited[start] = true;\n        \n        while (!q.isEmpty()) {\n            int u = q.poll();\n            for (int v : adj.get(u)) {\n                if (!visited[v]) {\n                    visited[v] = true;\n                    q.offer(v);\n                }\n            }\n        }\n    }\n}",
+      "python": "# Python Graph BFS\nfrom collections import deque\n\ndef bfs(start: int, adj: list[list[int]], visited: list[bool]) -> None:\n    queue = deque([start])\n    visited[start] = True\n    \n    while queue:\n        u = queue.popleft()\n        for v in adj[u]:\n            if not visited[v]:\n                visited[v] = True\n                queue.append(v)\n"
     }
   },
   {
-    "id": "dsu",
-    "title": "16. Disjoint Set Union (Union Find / DSU)",
+    "id": "bfs-dfs",
+    "title": "19. BFS & DFS Search Algorithms",
     "category": "Graphs",
-    "summary": "Path Compression, Union by Rank/Size, near-constant O(alpha(N)) amortized time, and Kruskal's MST.",
-    "theory": "\n              <h3>DSU Mechanics</h3>\n              <p>Tracks partitioned disjoint sets. Operations <code>find(x)</code> (with Path Compression) and <code>union(x, y)</code> (with Rank/Size) operate in <strong>amortized O(\u03b1(N)) time</strong> (where $\\alpha$ is the Inverse Ackermann function, effectively constant $< 5$).</p>\n            ",
+    "summary": "Breadth-First Search queue traversal for shortest unweighted paths and Depth-First Search stack recursion.",
+    "theory": "\n              <h3>BFS vs DFS Comparison</h3>\n              <ul>\n                <li><strong>BFS:</strong> Queue level-order traversal. Guarantees shortest path in unweighted graphs.</li>\n                <li><strong>DFS:</strong> Recursive stack exploration. Ideal for connected components, topological ordering, and path checking.</li>\n              </ul>\n            ",
+    "exampleTitle": "Number of Islands using 2D Grid DFS",
+    "explanation": "Iterates over grid. Upon encountering '1', increments island count and triggers DFS to sink all connected land cells.",
+    "timeComplexity": "O(M * N)",
+    "spaceComplexity": "O(M * N) call stack",
     "code": {
-      "cpp": "// C++ DSU with Path Compression & Rank\n#include <vector>\n\nclass DSU {\n    std::vector<int> parent, rank;\npublic:\n    DSU(int n) {\n        parent.resize(n);\n        rank.resize(n, 0);\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n    int find(int i) {\n        if (parent[i] == i) return i;\n        return parent[i] = find(parent[i]); // Path Compression\n    }\n    bool unite(int i, int j) {\n        int rootI = find(i), rootJ = find(j);\n        if (rootI == rootJ) return false;\n        if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n        else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n        else { parent[rootJ] = rootI; rank[rootI]++; }\n        return true;\n    }\n};",
-      "java": "// Java DSU with Path Compression & Rank\npublic class DSU {\n    private int[] parent, rank;\n    public DSU(int n) {\n        parent = new int[n];\n        rank = new int[n];\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n    public int find(int i) {\n        if (parent[i] == i) return i;\n        return parent[i] = find(parent[i]);\n    }\n    public boolean unite(int i, int j) {\n        int rootI = find(i), rootJ = find(j);\n        if (rootI == rootJ) return false;\n        if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n        else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n        else { parent[rootJ] = rootI; rank[rootI]++; }\n        return true;\n    }\n}",
-      "python": "# Python DSU with Path Compression & Rank\n\nclass DSU:\n    def __init__(self, n: int):\n        self.parent = list(range(n))\n        self.rank = [0] * n\n\n    def find(self, i: int) -> int:\n        if self.parent[i] == i:\n            return i\n        self.parent[i] = self.find(self.parent[i])\n        return self.parent[i]\n\n    def unite(self, i: int, j: int) -> bool:\n        root_i, root_j = self.find(i), self.find(j)\n        if root_i == root_j:\n            return False\n        if self.rank[root_i] < self.rank[root_j]:\n            self.parent[root_i] = root_j\n        elif self.rank[root_i] > self.rank[root_j]:\n            self.parent[root_j] = root_i\n        else:\n            self.parent[root_j] = root_i\n            self.rank[root_i] += 1\n        return True\n"
+      "cpp": "// C++ Grid DFS (Number of Islands)\n#include <vector>\n\nvoid dfsSink(std::vector<std::vector<char>>& grid, int r, int c) {\n    int m = grid.size(), n = grid[0].size();\n    if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] != '1') return;\n    grid[r][c] = '0'; // sink land\n    dfsSink(grid, r + 1, c);\n    dfsSink(grid, r - 1, c);\n    dfsSink(grid, r, c + 1);\n    dfsSink(grid, r, c - 1);\n}\n\nint numIslands(std::vector<std::vector<char>>& grid) {\n    if (grid.empty()) return 0;\n    int count = 0;\n    for (int r = 0; r < grid.size(); r++) {\n        for (int c = 0; c < grid[0].size(); c++) {\n            if (grid[r][c] == '1') {\n                count++;\n                dfsSink(grid, r, c);\n            }\n        }\n    }\n    return count;\n}",
+      "java": "// Java Grid DFS (Number of Islands)\npublic class DFSExample {\n    private static void dfs(char[][] grid, int r, int c) {\n        int m = grid.length, n = grid[0].length;\n        if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] != '1') return;\n        grid[r][c] = '0';\n        dfs(grid, r + 1, c);\n        dfs(grid, r - 1, c);\n        dfs(grid, r, c + 1);\n        dfs(grid, r, c - 1);\n    }\n\n    public static int numIslands(char[][] grid) {\n        if (grid == null || grid.length == 0) return 0;\n        int count = 0;\n        for (int r = 0; r < grid.length; r++) {\n            for (int c = 0; c < grid[0].length; c++) {\n                if (grid[r][c] == '1') {\n                    count++;\n                    dfs(grid, r, c);\n                }\n            }\n        }\n        return count;\n    }\n}",
+      "python": "# Python Grid DFS (Number of Islands)\n\ndef num_islands(grid: list[list[str]]) -> int:\n    if not grid:\n        return 0\n    m, n = len(grid), len(grid[0])\n    count = 0\n\n    def dfs(r: int, c: int):\n        if r < 0 or r >= m or c < 0 or c >= n or grid[r][c] != '1':\n            return\n        grid[r][c] = '0'\n        dfs(r + 1, c)\n        dfs(r - 1, c)\n        dfs(r, c + 1)\n        dfs(r, c - 1)\n\n    for r in range(m):\n        for c in range(n):\n            if grid[r][c] == '1':\n                count += 1\n                dfs(r, c)\n                \n    return count\n"
+    }
+  },
+  {
+    "id": "topological-sort",
+    "title": "20. Topological Sort (Kahn's Algorithm)",
+    "category": "Graphs",
+    "summary": "Linear ordering of vertices in Directed Acyclic Graphs (DAG) using indegree counts and BFS queue.",
+    "theory": "\n              <h3>DAG Topological Ordering</h3>\n              <p>Orders vertices such that for every directed edge <code>u \u2794 v</code>, vertex <code>u</code> comes before <code>v</code>. Kahn's algorithm tracks <strong>In-degree counts</strong> in O(V + E) time.</p>\n            ",
+    "exampleTitle": "Course Schedule Cycle & Topological Order (Kahn's BFS)",
+    "explanation": "Pushes zero indegree nodes onto queue, processes neighbors reducing indegree counts, and verifies if all nodes are processed.",
+    "timeComplexity": "O(V + E)",
+    "spaceComplexity": "O(V + E)",
+    "code": {
+      "cpp": "// C++ Kahn's Topological Sort Algorithm\n#include <vector>\n#include <queue>\n\nbool canFinishCourses(int numCourses, const std::vector<std::vector<int>>& prerequisites) {\n    std::vector<std::vector<int>> adj(numCourses);\n    std::vector<int> indegree(numCourses, 0);\n    \n    for (const auto& pre : prerequisites) {\n        adj[pre[1]].push_back(pre[0]);\n        indegree[pre[0]]++;\n    }\n    \n    std::queue<int> q;\n    for (int i = 0; i < numCourses; i++) {\n        if (indegree[i] == 0) q.push(i);\n    }\n    \n    int processed = 0;\n    while (!q.empty()) {\n        int u = q.front(); q.pop();\n        processed++;\n        for (int v : adj[u]) {\n            if (--indegree[v] == 0) q.push(v);\n        }\n    }\n    return processed == numCourses;\n}",
+      "java": "// Java Kahn's Topological Sort Algorithm\nimport java.util.*;\n\npublic class TopoSortExample {\n    public static boolean canFinish(int numCourses, int[][] prerequisites) {\n        List<List<Integer>> adj = new ArrayList<>();\n        for (int i = 0; i < numCourses; i++) adj.add(new ArrayList<>());\n        int[] indegree = new int[numCourses];\n        \n        for (int[] pre : prerequisites) {\n            adj.get(pre[1]).add(pre[0]);\n            indegree[pre[0]]++;\n        }\n        \n        Queue<Integer> q = new LinkedList<>();\n        for (int i = 0; i < numCourses; i++) {\n            if (indegree[i] == 0) q.offer(i);\n        }\n        \n        int processed = 0;\n        while (!q.isEmpty()) {\n            int u = q.poll();\n            processed++;\n            for (int v : adj.get(u)) {\n                if (--indegree[v] == 0) q.offer(v);\n            }\n        }\n        return processed == numCourses;\n    }\n}",
+      "python": "# Python Kahn's Topological Sort Algorithm\nfrom collections import deque\n\ndef can_finish(num_courses: int, prerequisites: list[list[int]]) -> bool:\n    adj = [[] for _ in range(num_courses)]\n    indegree = [0] * num_courses\n    \n    for course, pre in prerequisites:\n        adj[pre].append(course)\n        indegree[course] += 1\n        \n    queue = deque([i for i in range(num_courses) if indegree[i] == 0])\n    processed = 0\n    \n    while queue:\n        u = queue.popleft()\n        processed += 1\n        for v in adj[u]:\n            indegree[v] -= 1\n            if indegree[v] == 0:\n                queue.append(v)\n                \n    return processed == num_courses\n"
+    }
+  },
+  {
+    "id": "shortest-path",
+    "title": "21. Shortest Path Algorithms (Dijkstra)",
+    "category": "Graphs",
+    "summary": "Single-source shortest paths in non-negative weighted graphs using Min-Heap Priority Queue.",
+    "theory": "\n              <h3>Dijkstra's Algorithm</h3>\n              <p>Computes shortest distances from source to all vertices in non-negative weighted graphs in <strong>O((V + E) log V) time</strong> using a Min-Heap Priority Queue.</p>\n            ",
+    "exampleTitle": "Dijkstra's Algorithm Implementation",
+    "explanation": "Maintains tentative distance array and min-heap. Greedily pops minimum distance node and relaxes neighbor edges.",
+    "timeComplexity": "O((V + E) log V)",
+    "spaceComplexity": "O(V + E)",
+    "code": {
+      "cpp": "// C++ Dijkstra Shortest Path\n#include <vector>\n#include <queue>\n\nconst int INF = 1e9;\n\nstd::vector<int> dijkstra(int n, int src, const std::vector<std::vector<std::pair<int, int>>>& adj) {\n    std::vector<int> dist(n, INF);\n    using Pair = std::pair<int, int>; // dist, node\n    std::priority_queue<Pair, std::vector<Pair>, std::greater<Pair>> pq;\n    \n    dist[src] = 0;\n    pq.push({0, src});\n    \n    while (!pq.empty()) {\n        auto [d, u] = pq.top(); pq.pop();\n        if (d > dist[u]) continue;\n        for (auto& [v, weight] : adj[u]) {\n            if (dist[u] + weight < dist[v]) {\n                dist[v] = dist[u] + weight;\n                pq.push({dist[v], v});\n            }\n        }\n    }\n    return dist;\n}",
+      "java": "// Java Dijkstra Shortest Path\nimport java.util.*;\n\npublic class DijkstraExample {\n    public static int[] dijkstra(int n, int src, List<List<int[]>> adj) {\n        int[] dist = new int[n];\n        Arrays.fill(dist, Integer.MAX_VALUE);\n        dist[src] = 0;\n        \n        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));\n        pq.offer(new int[]{0, src});\n        \n        while (!pq.isEmpty()) {\n            int[] curr = pq.poll();\n            int d = curr[0], u = curr[1];\n            if (d > dist[u]) continue;\n            for (int[] edge : adj.get(u)) {\n                int v = edge[0], weight = edge[1];\n                if (dist[u] + weight < dist[v]) {\n                    dist[v] = dist[u] + weight;\n                    pq.offer(new int[]{dist[v], v});\n                }\n            }\n        }\n        return dist;\n    }\n}",
+      "python": "# Python Dijkstra Shortest Path\nimport heapq\n\ndef dijkstra(n: int, src: int, adj: list[list[tuple[int, int]]]) -> list[int]:\n    dist = [float('inf')] * n\n    dist[src] = 0\n    pq = [(0, src)] # dist, node\n    \n    while pq:\n        d, u = heapq.heappop(pq)\n        if d > dist[u]:\n            continue\n        for v, weight in adj[u]:\n            if dist[u] + weight < dist[v]:\n                dist[v] = dist[u] + weight\n                heapq.heappush(pq, (dist[v], v))\n                \n    return dist\n"
+    }
+  },
+  {
+    "id": "union-find",
+    "title": "22. Disjoint Set Union (DSU / Union-Find)",
+    "category": "Graphs",
+    "summary": "Path Compression, Union by Rank/Size, near-constant O(alpha(N)) amortized operations, and Kruskal's MST.",
+    "theory": "\n              <h3>DSU Optimization Techniques</h3>\n              <ul>\n                <li><strong>Path Compression:</strong> Flattens tree height during <code>find(x)</code> lookup.</li>\n                <li><strong>Union by Rank / Size:</strong> Attaches smaller depth tree under larger tree root during <code>union(x, y)</code>.</li>\n              </ul>\n            ",
+    "exampleTitle": "DSU Class with Path Compression & Union by Rank",
+    "explanation": "Implements efficient find with path compression and union with rank heuristics, operating in amortized near-constant time.",
+    "timeComplexity": "O(\u03b1(N)) amortized per operation",
+    "spaceComplexity": "O(N)",
+    "code": {
+      "cpp": "// C++ DSU Implementation\n#include <vector>\n\nclass DSU {\n    std::vector<int> parent, rank;\npublic:\n    DSU(int n) {\n        parent.resize(n);\n        rank.resize(n, 0);\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n    \n    int find(int i) {\n        if (parent[i] == i) return i;\n        return parent[i] = find(parent[i]); // Path Compression\n    }\n    \n    bool unite(int i, int j) {\n        int rootI = find(i), rootJ = find(j);\n        if (rootI == rootJ) return false;\n        if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n        else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n        else { parent[rootJ] = rootI; rank[rootI]++; }\n        return true;\n    }\n};",
+      "java": "// Java DSU Implementation\npublic class DSUExample {\n    static class DSU {\n        private int[] parent, rank;\n        public DSU(int n) {\n            parent = new int[n];\n            rank = new int[n];\n            for (int i = 0; i < n; i++) parent[i] = i;\n        }\n        \n        public int find(int i) {\n            if (parent[i] == i) return i;\n            return parent[i] = find(parent[i]);\n        }\n        \n        public boolean unite(int i, int j) {\n            int rootI = find(i), rootJ = find(j);\n            if (rootI == rootJ) return false;\n            if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n            else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n            else { parent[rootJ] = rootI; rank[rootI]++; }\n            return true;\n        }\n    }\n}",
+      "python": "# Python DSU Implementation\n\nclass DSU:\n    def __init__(self, n: int):\n        self.parent = list(range(n))\n        self.rank = [0] * n\n\n    def find(self, i: int) -> int:\n        if self.parent[i] == i:\n            return i\n        self.parent[i] = self.find(self.parent[i])\n        return self.parent[i]\n\n    def unite(self, i: int, j: int) -> bool:\n        root_i, root_j = self.find(i), self.find(j)\n        if root_i == root_j:\n            return False\n        if self.rank[root_i] < self.rank[root_j]:\n            self.parent[root_i] = root_j\n        elif self.rank[root_i] > self.rank[root_j]:\n            self.parent[root_j] = root_i\n        else:\n            self.parent[root_j] = root_i\n            self.rank[root_i] += 1\n        return True\n"
     }
   },
   {
     "id": "greedy",
-    "title": "17. Greedy Algorithms",
+    "title": "23. Greedy Algorithms",
     "category": "Greedy",
-    "summary": "Greedy Choice Property, Optimal Substructure, Activity Selection, Gas Station, and Fractional Knapsack.",
-    "theory": "\n              <h3>Greedy Choice Principle</h3>\n              <p>A <strong>Greedy Algorithm</strong> makes the locally optimal choice at each decision step, aiming to reach a globally optimal solution. It is faster than Dynamic Programming but requires proving that greedy choice holds.</p>\n            ",
+    "summary": "Greedy Choice Property, Optimal Substructure, Non-overlapping Intervals, and Fractional Knapsack.",
+    "theory": "\n              <h3>Greedy Choice Principle</h3>\n              <p>Makes locally optimal decision at each step to reach a globally optimal solution. Proof of correctness relies on exchange argument.</p>\n            ",
+    "exampleTitle": "Non-Overlapping Intervals Selection",
+    "explanation": "Sorts intervals by end-time. Greedily keeps interval with earliest end time to leave maximum space for remaining intervals.",
+    "timeComplexity": "O(N log N)",
+    "spaceComplexity": "O(1)",
     "code": {
       "cpp": "// C++ Non-Overlapping Intervals Greedy Algorithm\n#include <vector>\n#include <algorithm>\n\nint eraseOverlapIntervals(std::vector<std::vector<int>>& intervals) {\n    if (intervals.empty()) return 0;\n    std::sort(intervals.begin(), intervals.end(), [](const auto& a, const auto& b) {\n        return a[1] < b[1]; // sort by end time\n    });\n    int count = 0, prevEnd = intervals[0][1];\n    for (size_t i = 1; i < intervals.size(); i++) {\n        if (intervals[i][0] < prevEnd) count++;\n        else prevEnd = intervals[i][1];\n    }\n    return count;\n}",
-      "java": "// Java Non-Overlapping Intervals Greedy Algorithm\nimport java.util.*;\n\npublic class GreedyDemo {\n    public static int eraseOverlap(int[][] intervals) {\n        if (intervals.length == 0) return 0;\n        Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));\n        int count = 0, prevEnd = intervals[0][1];\n        for (int i = 1; i < intervals.length; i++) {\n            if (intervals[i][0] < prevEnd) count++;\n            else prevEnd = intervals[i][1];\n        }\n        return count;\n    }\n}",
-      "python": "# Python Non-Overlapping Intervals Greedy Algorithm\n\ndef erase_overlap_intervals(intervals: list[list[int]]) -> int:\n    if not intervals:\n        return 0\n    intervals.sort(key=lambda x: x[1]) # sort by end time\n    count = 0\n    prev_end = intervals[0][1]\n    for i in range(1, len(intervals)):\n        if intervals[i][0] < prev_end:\n            count += 1\n        else:\n            prev_end = intervals[i][1]\n    return count\n"
+      "java": "// Java Non-Overlapping Intervals Greedy Algorithm\nimport java.util.*;\n\npublic class GreedyExample {\n    public static int eraseOverlap(int[][] intervals) {\n        if (intervals.length == 0) return 0;\n        Arrays.sort(intervals, Comparator.comparingInt(a -> a[1]));\n        int count = 0, prevEnd = intervals[0][1];\n        for (int i = 1; i < intervals.length; i++) {\n            if (intervals[i][0] < prevEnd) count++;\n            else prevEnd = intervals[i][1];\n        }\n        return count;\n    }\n}",
+      "python": "# Python Non-Overlapping Intervals Greedy Algorithm\n\ndef erase_overlap_intervals(intervals: list[list[int]]) -> int:\n    if not intervals:\n        return 0\n    intervals.sort(key=lambda x: x[1])\n    count = 0\n    prev_end = intervals[0][1]\n    for i in range(1, len(intervals)):\n        if intervals[i][0] < prev_end:\n            count += 1\n        else:\n            prev_end = intervals[i][1]\n    return count\n"
     }
   },
   {
     "id": "dp",
-    "title": "18. Dynamic Programming (Memoization & Tabulation)",
+    "title": "24. Dynamic Programming (Memoization & Tabulation)",
     "category": "DP",
-    "summary": "Overlapping Subproblems, Optimal Substructure, Top-Down Memoization vs Bottom-Up Tabulation, 1D & 2D DP.",
-    "theory": "\n              <h3>Dynamic Programming Essentials</h3>\n              <p>Dynamic Programming solves complex problems by breaking them into simpler overlapping subproblems, solving each subproblem once, and storing their results.</p>\n              <ul>\n                <li><strong>Top-Down (Memoization):</strong> Recursion with caching table.</li>\n                <li><strong>Bottom-Up (Tabulation):</strong> Iterative array table filling from base cases.</li>\n              </ul>\n            ",
+    "summary": "Overlapping subproblems, optimal substructure, Top-Down Memoization vs Bottom-Up Tabulation, 0/1 Knapsack, LCS.",
+    "theory": "\n              <h3>DP Principles</h3>\n              <ul>\n                <li><strong>Overlapping Subproblems:</strong> Problem decomposes into sub-problems solved repeatedly.</li>\n                <li><strong>Optimal Substructure:</strong> Optimal solution constructed from optimal sub-solutions.</li>\n              </ul>\n            ",
+    "exampleTitle": "0/1 Knapsack Tabulation DP",
+    "explanation": "Fills 2D table dp[i][w] representing maximum value achievable with first i items and weight capacity w.",
+    "timeComplexity": "O(N * W)",
+    "spaceComplexity": "O(N * W)",
     "code": {
-      "cpp": "// C++ 0/1 Knapsack Bottom-Up DP\n#include <vector>\n#include <algorithm>\n\nint knapsack(int W, const std::vector<int>& wt, const std::vector<int>& val, int n) {\n    std::vector<std::vector<int>> dp(n + 1, std::vector<int>(W + 1, 0));\n    for (int i = 1; i <= n; i++) {\n        for (int w = 1; w <= W; w++) {\n            if (wt[i - 1] <= w)\n                dp[i][w] = std::max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);\n            else\n                dp[i][w] = dp[i - 1][w];\n        }\n    }\n    return dp[n][W];\n}",
-      "java": "// Java 0/1 Knapsack Bottom-Up DP\npublic class DPDemo {\n    public static int knapsack(int W, int[] wt, int[] val, int n) {\n        int[][] dp = new int[n + 1][W + 1];\n        for (int i = 1; i <= n; i++) {\n            for (int w = 1; w <= W; w++) {\n                if (wt[i - 1] <= w)\n                    dp[i][w] = Math.max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);\n                else\n                    dp[i][w] = dp[i - 1][w];\n            }\n        }\n        return dp[n][W];\n    }\n}",
+      "cpp": "// C++ 0/1 Knapsack Bottom-Up DP\n#include <vector>\n#include <algorithm>\n\nint knapsack(int W, const std::vector<int>& wt, const std::vector<int>& val, int n) {\n    std::vector<std::vector<int>> dp(n + 1, std::vector<int>(W + 1, 0));\n    for (int i = 1; i <= n; i++) {\n        for (int w = 1; w <= W; w++) {\n            if (wt[i - 1] <= w) {\n                dp[i][w] = std::max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);\n            } else {\n                dp[i][w] = dp[i - 1][w];\n            }\n        }\n    }\n    return dp[n][W];\n}",
+      "java": "// Java 0/1 Knapsack Bottom-Up DP\npublic class DPExample {\n    public static int knapsack(int W, int[] wt, int[] val, int n) {\n        int[][] dp = new int[n + 1][W + 1];\n        for (int i = 1; i <= n; i++) {\n            for (int w = 1; w <= W; w++) {\n                if (wt[i - 1] <= w) {\n                    dp[i][w] = Math.max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w]);\n                } else {\n                    dp[i][w] = dp[i - 1][w];\n                }\n            }\n        }\n        return dp[n][W];\n    }\n}",
       "python": "# Python 0/1 Knapsack Bottom-Up DP\n\ndef knapsack(W: int, wt: list[int], val: list[int], n: int) -> int:\n    dp = [[0] * (W + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(1, W + 1):\n            if wt[i - 1] <= w:\n                dp[i][w] = max(val[i - 1] + dp[i - 1][w - wt[i - 1]], dp[i - 1][w])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][W]\n"
     }
   },
   {
     "id": "bit-manipulation",
-    "title": "19. Bit Manipulation & Bitwise Operations",
+    "title": "25. Bit Manipulation & Bitwise Operations",
     "category": "Bit Manipulation",
-    "summary": "Bitwise operators AND, OR, XOR, NOT, shift operations, bitmasking, and single number cancellation.",
-    "theory": "\n              <h3>Bitwise Operators Cheat Sheet</h3>\n              <ul>\n                <li><code>AND (&)</code>: 1 if both bits are 1. Used for bit masking.</li>\n                <li><code>OR (|)</code>: 1 if either bit is 1. Used for setting bits.</li>\n                <li><code>XOR (^)</code>: 1 if bits differ. Properties: <code>x ^ x = 0</code>, <code>x ^ 0 = x</code>.</li>\n                <li><code>Clear Lowest Set Bit:</code> <code>x & (x - 1)</code>.</li>\n                <li><code>Isolate Lowest Set Bit:</code> <code>x & (-x)</code>.</li>\n              </ul>\n            ",
+    "summary": "Bitwise AND, OR, XOR, NOT, left/right shifts, bitmasking, and single number cancellation.",
+    "theory": "\n              <h3>Essential Bitwise Formulas</h3>\n              <ul>\n                <li><code>x & (x - 1)</code>: Clears lowest set bit in O(1) time.</li>\n                <li><code>x & (-x)</code>: Extracts lowest set bit.</li>\n                <li><code>x ^ x = 0</code>: XOR cancels pairs of identical numbers.</li>\n              </ul>\n            ",
+    "exampleTitle": "Single Number Search & Set Bit Counting",
+    "explanation": "Uses XOR property to isolate single unique number in O(N) time and O(1) space.",
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(1)",
     "code": {
-      "cpp": "// C++ Bit Manipulation Tricks\n#include <vector>\n\nint singleNumber(const std::vector<int>& nums) {\n    int result = 0;\n    for (int x : nums) result ^= x; // XOR eliminates duplicates\n    return result;\n}\n\nint countSetBits(int n) {\n    int count = 0;\n    while (n > 0) {\n        n &= (n - 1); // Clears lowest set bit in O(set_bits)\n        count++;\n    }\n    return count;\n}",
-      "java": "// Java Bit Manipulation Tricks\npublic class BitDemo {\n    public static int singleNumber(int[] nums) {\n        int result = 0;\n        for (int x : nums) result ^= x;\n        return result;\n    }\n    public static int countSetBits(int n) {\n        int count = 0;\n        while (n > 0) {\n            n &= (n - 1);\n            count++;\n        }\n        return count;\n    }\n}",
-      "python": "# Python Bit Manipulation Tricks\n\ndef single_number(nums: list[int]) -> int:\n    result = 0\n    for num in nums:\n        result ^= num\n    return result\n\ndef count_set_bits(n: int) -> int:\n    count = 0\n    while n > 0:\n        n &= (n - 1)\n        count += 1\n    return count\n"
+      "cpp": "// C++ Bitwise Operations\n#include <vector>\n\nint singleNumber(const std::vector<int>& nums) {\n    int result = 0;\n    for (int x : nums) result ^= x;\n    return result;\n}\n\nint countSetBits(int n) {\n    int count = 0;\n    while (n > 0) {\n        n &= (n - 1);\n        count++;\n    }\n    return count;\n}",
+      "java": "// Java Bitwise Operations\npublic class BitExample {\n    public static int singleNumber(int[] nums) {\n        int result = 0;\n        for (int x : nums) result ^= x;\n        return result;\n    }\n    \n    public static int countSetBits(int n) {\n        int count = 0;\n        while (n > 0) {\n            n &= (n - 1);\n            count++;\n        }\n        return count;\n    }\n}",
+      "python": "# Python Bitwise Operations\n\ndef single_number(nums: list[int]) -> int:\n    result = 0\n    for num in nums:\n        result ^= num\n    return result\n\ndef count_set_bits(n: int) -> int:\n    count = 0\n    while n > 0:\n        n &= (n - 1)\n        count += 1\n    return count\n"
     }
   },
   {
     "id": "advanced-dsa",
-    "title": "20. Advanced Data Structures & FAANG Interview Cheat Sheet",
+    "title": "26. Advanced Data Structures (Fenwick / Segment Tree)",
     "category": "Advanced DSA",
-    "summary": "Segment Tree, Fenwick Tree / BIT, Monotonic Queue, and diagnostic decision matrix for technical interviews.",
-    "theory": "\n              <h3>Master FAANG Interview Decision Matrix</h3>\n              <p>Use this decision tree during live technical coding interviews:</p>\n              <table style=\"width: 100%; border-collapse: collapse; margin-top: 10px;\">\n                <thead>\n                  <tr style=\"border-bottom: 1px solid var(--border-color); text-align: left;\">\n                    <th style=\"padding: 6px;\">Problem Keyword / Condition</th>\n                    <th style=\"padding: 6px;\">Recommended Data Structure / Pattern</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Sorted Array & Target Sum / Palindrome</td><td>Two Pointers</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Contiguous Subarray / Substring Max/Min</td><td>Sliding Window / Monotonic Deque</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Range Sum Query Static / Dynamic</td><td>Prefix Sum (Static) / Fenwick or Segment Tree (Dynamic)</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Top K Frequent / Kth Largest Element</td><td>Min-Heap / Max-Heap Priority Queue</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Next Greater Element / Histogram Area</td><td>Monotonic Stack</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Prefix Search / Word Dictionary</td><td>Trie</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Connected Components / MST</td><td>Disjoint Set Union (DSU / Union-Find)</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Shortest Path Weighted / Unweighted</td><td>Dijkstra (Weighted) / BFS (Unweighted)</td></tr>\n                  <tr style=\"border-bottom: 1px solid var(--border-subtle);\"><td style=\"padding: 6px;\">Overlapping Choices / Subproblems</td><td>Dynamic Programming (Memoization / Tabulation)</td></tr>\n                </tbody>\n              </table>\n            ",
+    "summary": "Fenwick Tree (Binary Indexed Tree), Segment Tree range min/sum queries in O(log N), lazy propagation, and interview cheat sheet.",
+    "theory": "\n              <h3>Fenwick Tree (Binary Indexed Tree)</h3>\n              <p>Array-based structure for answering prefix sums and updating elements in <strong>O(log N) time</strong> using lowbit operations <code>i & (-i)</code>.</p>\n            ",
+    "exampleTitle": "Fenwick Tree Range Sum Query & Point Update",
+    "explanation": "Maintains cumulative tree array using bitwise lowbit steps for point update and prefix sum query.",
+    "timeComplexity": "O(log N) per update/query",
+    "spaceComplexity": "O(N)",
     "code": {
-      "cpp": "// C++ Monotonic Queue Sliding Window Maximum\n#include <vector>\n#include <deque>\n\nstd::vector<int> maxSlidingWindow(const std::vector<int>& nums, int k) {\n    std::deque<int> dq; // stores indices\n    std::vector<int> result;\n    for (int i = 0; i < nums.size(); i++) {\n        if (!dq.empty() && dq.front() == i - k) dq.pop_front();\n        while (!dq.empty() && nums[dq.back()] < nums[i]) dq.pop_back();\n        dq.push_back(i);\n        if (i >= k - 1) result.push_back(nums[dq.front()]);\n    }\n    return result;\n}",
-      "java": "// Java Monotonic Queue Sliding Window Maximum\nimport java.util.*;\n\npublic class AdvancedDemo {\n    public static int[] maxSlidingWindow(int[] nums, int k) {\n        Deque<Integer> dq = new ArrayDeque<>();\n        int[] result = new int[nums.length - k + 1];\n        int ri = 0;\n        for (int i = 0; i < nums.length; i++) {\n            if (!dq.isEmpty() && dq.peek() == i - k) dq.poll();\n            while (!dq.isEmpty() && nums[dq.peekLast()] < nums[i]) dq.pollLast();\n            dq.offer(i);\n            if (i >= k - 1) result[ri++] = nums[dq.peek()];\n        }\n        return result;\n    }\n}",
-      "python": "# Python Monotonic Queue Sliding Window Maximum\nfrom collections import deque\n\ndef max_sliding_window(nums: list[int], k: int) -> list[int]:\n    dq = deque() # stores indices\n    result = []\n    for i, num in enumerate(nums):\n        if dq and dq[0] == i - k:\n            dq.popleft()\n        while dq and nums[dq[-1]] < num:\n            dq.pop()\n        dq.append(i)\n        if i >= k - 1:\n            result.append(nums[dq[0]])\n    return result\n"
+      "cpp": "// C++ Fenwick Tree (Binary Indexed Tree)\n#include <vector>\n\nclass FenwickTree {\n    std::vector<int> tree;\npublic:\n    FenwickTree(int n) : tree(n + 1, 0) {}\n    \n    void add(int i, int delta) {\n        for (; i < tree.size(); i += i & -i) {\n            tree[i] += delta;\n        }\n    }\n    \n    int query(int i) {\n        int sum = 0;\n        for (; i > 0; i -= i & -i) {\n            sum += tree[i];\n        }\n        return sum;\n    }\n};",
+      "java": "// Java Fenwick Tree (Binary Indexed Tree)\npublic class AdvancedExample {\n    static class FenwickTree {\n        private int[] tree;\n        public FenwickTree(int n) {\n            tree = new int[n + 1];\n        }\n        \n        public void add(int i, int delta) {\n            for (; i < tree.length; i += i & -i) {\n                tree[i] += delta;\n            }\n        }\n        \n        public int query(int i) {\n            int sum = 0;\n            for (; i > 0; i -= i & -i) {\n                sum += tree[i];\n            }\n            return sum;\n        }\n    }\n}",
+      "python": "# Python Fenwick Tree (Binary Indexed Tree)\n\nclass FenwickTree:\n    def __init__(self, n: int):\n        self.tree = [0] * (n + 1)\n\n    def add(self, i: int, delta: int) -> None:\n        while i < len(self.tree):\n            self.tree[i] += delta\n            i += i & -i\n\n    def query(self, i: int) -> int:\n        total = 0\n        while i > 0:\n            total += self.tree[i]\n            i -= i & -i\n        return total\n"
     }
   }
 ];
