@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <script>
   (function() {
     try {
       var saved = localStorage.getItem('dsaproblems_theme_v3');
-      if (saved === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
+      if (saved === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     } catch(e) {}
   })();

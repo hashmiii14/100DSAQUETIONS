@@ -71,9 +71,8 @@ class DSAApp {
   }
 
   applyInitialTheme() {
-    // MANDATORY DEFAULT IS LIGHT / WHITE THEME
     const savedTheme = localStorage.getItem('dsaproblems_theme_v3');
-    const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+    const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
     this.setTheme(initialTheme);
   }
 
