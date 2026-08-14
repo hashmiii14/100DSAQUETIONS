@@ -181,17 +181,17 @@ class DSAApp {
     };
 
     const routeTitleMap = {
-      'problems': 'DSA Problems — 1000 Problems. Beginner to FAANG-Ready.',
-      'guide': 'DSA Guide — DSA Problems',
-      'progress': 'Learning Progress — DSA Problems',
-      'about': 'About — DSA Problems',
-      'privacy': 'Privacy Policy — DSA Problems',
-      'contact': 'Contact — DSA Problems',
+      'problems': 'DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap',
+      'guide': 'DSA Guide — Data Structures & Algorithms Roadmap | DSA Problems',
+      'progress': 'Track Your DSA Progress — DSA Problems',
+      'about': 'About DSA Problems — 1000 LeetCode Problem Sheet',
+      'privacy': 'Privacy Policy — DSA Problems (dsaproblems.site)',
+      'contact': 'Contact Us — DSA Problems (dsaproblems.site)',
       'admin-quality': 'Quality Control — DSA Problems'
     };
 
     const targetViewName = viewNameMap[route] || 'problems';
-    document.title = routeTitleMap[targetViewName] || 'DSA Problems — 1000 Problems. Beginner to FAANG-Ready.';
+    document.title = routeTitleMap[targetViewName] || 'DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap';
 
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-btn').forEach(btn => {
