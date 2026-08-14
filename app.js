@@ -737,27 +737,57 @@ class DSAApp {
 
   copyContactEmail() {
     const email = 'mdhashmi955@gmail.com';
+    const msg = '📋 Email copied to clipboard: mdhashmi955@gmail.com';
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(email).then(() => {
-        this.showToast('📋 Email copied to clipboard: mdhashmi955@gmail.com');
+        this.showToast(msg);
       }).catch(() => {
-        this.fallbackCopyText(email);
+        this.fallbackCopyText(email, msg);
       });
     } else {
-      this.fallbackCopyText(email);
+      this.fallbackCopyText(email, msg);
     }
   }
 
-  fallbackCopyText(text) {
+  copyUpiId() {
+    const upiId = '8595018458@ptsbi';
+    const msg = '📋 UPI ID copied: 8595018458@ptsbi';
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(upiId).then(() => {
+        this.showToast(msg);
+      }).catch(() => {
+        this.fallbackCopyText(upiId, msg);
+      });
+    } else {
+      this.fallbackCopyText(upiId, msg);
+    }
+  }
+
+  toggleUpiDetails() {
+    const box = document.getElementById('upi-details-box');
+    if (!box) return;
+    if (box.style.display === 'none') {
+      box.style.display = 'flex';
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      box.style.borderColor = 'var(--accent-primary)';
+      setTimeout(() => {
+        box.style.borderColor = 'var(--border-color)';
+      }, 1000);
+    }
+  }
+
+  fallbackCopyText(text, message) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
     document.body.appendChild(textArea);
     textArea.select();
     try {
       document.execCommand('copy');
-      this.showToast('📋 Email copied to clipboard: mdhashmi955@gmail.com');
+      this.showToast(message || ('📋 Copied: ' + text));
     } catch (_) {
-      this.showToast('mdhashmi955@gmail.com');
+      this.showToast(text);
     }
     document.body.removeChild(textArea);
   }

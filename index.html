@@ -364,22 +364,69 @@
       </div>
     </section>
 
-    <!-- View 6: Contact (Clean, Basic & Lightweight Layout) -->
+    <!-- View 6: Contact & Support Section -->
     <section class="view-section" id="view-contact">
-      <div class="info-card-container" style="max-width: 600px; text-align: center; align-items: center;">
-        <h2 style="font-size: 24px; font-weight: 800; color: var(--text-primary);">Get in Touch</h2>
-        <p style="color: var(--text-secondary); line-height: 1.6; max-width: 480px; font-size: 14.5px;">
-          Have questions, dataset corrections, or suggestions? Reach out directly via email.
-        </p>
+      <div style="display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%;">
         
-        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); font-weight: 600; margin: 8px 0;">
-          mdhashmi955@gmail.com
+        <!-- Get in Touch Card -->
+        <div class="info-card-container" style="max-width: 600px; text-align: center; align-items: center;">
+          <h2 style="font-size: 24px; font-weight: 800; color: var(--text-primary);">Get in Touch</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 480px; font-size: 14.5px;">
+            Have questions, dataset corrections, or suggestions? Reach out directly via email.
+          </p>
+          
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); font-weight: 600; margin: 8px 0;">
+            mdhashmi955@gmail.com
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 4px; flex-wrap: wrap;">
+            <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">✉️ Email Us</a>
+            <button class="btn-secondary" id="btn-copy-email" onclick="app.copyContactEmail()" style="padding: 10px 18px; font-size: 14px;">📋 Copy Email</button>
+          </div>
         </div>
 
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 4px; flex-wrap: wrap;">
-          <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">✉️ Email Us</a>
-          <button class="btn-secondary" id="btn-copy-email" onclick="app.copyContactEmail()" style="padding: 10px 18px; font-size: 14px;">📋 Copy Email</button>
+        <!-- Support the Project Section -->
+        <div class="info-card-container support-card-container" style="max-width: 600px; text-align: center; align-items: center;">
+          <div class="support-badge">
+            <span>💙 Support</span>
+          </div>
+          <h2 style="font-size: 22px; font-weight: 800; color: var(--text-primary);">Support the Project</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 520px; font-size: 14.5px;">
+            This DSA sheet is completely free. If it helped you in your preparation, you can support the project and help me maintain and improve it.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 6px 0; flex-wrap: wrap;">
+            <button class="btn-primary" id="btn-support-upi" onclick="app.toggleUpiDetails()" style="padding: 10px 22px; font-size: 14px; gap: 6px; display: inline-flex; align-items: center;">
+              <span>💳</span> Support via UPI
+            </button>
+            <button class="btn-secondary" id="btn-copy-upi" onclick="app.copyUpiId()" style="padding: 10px 18px; font-size: 14px;">
+              📋 Copy UPI ID
+            </button>
+          </div>
+
+          <!-- UPI QR Code & ID Container -->
+          <div class="upi-details-container" id="upi-details-box">
+            <div class="upi-id-pill" onclick="app.copyUpiId()" title="Click to copy UPI ID">
+              <span style="color: var(--text-muted); font-weight: 500; font-size: 13px;">UPI ID:</span>
+              <strong style="font-family: var(--font-mono); color: var(--accent-primary); font-size: 15px; letter-spacing: 0.3px;">8595018458@ptsbi</strong>
+              <span style="font-size: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; color: var(--text-secondary);">Copy</span>
+            </div>
+
+            <div class="upi-qr-card">
+              <img src="images/upi-qr.png" alt="UPI Payment QR Code" class="upi-qr-image" />
+              <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; font-weight: 500;">Scan with GPay, PhonePe, Paytm, or BHIM</div>
+            </div>
+
+            <a href="upi://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR" class="upi-direct-link">
+              ⚡ Open in UPI App
+            </a>
+          </div>
+
+          <p class="support-subtle-note">
+            Optional — the DSA sheet will always remain free.
+          </p>
         </div>
+
       </div>
     </section>
 
