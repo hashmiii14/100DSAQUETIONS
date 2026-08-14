@@ -719,8 +719,8 @@ class DSAApp {
       const diffClass = this.getDiffClass(p.difficulty);
       const savedNote = this.state ? this.state.getNote(p.id) : '';
 
-      const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.leetcode_url || p.leetcodeUrl);
-      const practiceUrl = isLeetCodeAvailable ? (p.leetcode_url || p.leetcodeUrl) : null;
+      const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl);
+      const practiceUrl = isLeetCodeAvailable ? (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl) : null;
       const modalCtaBtn = practiceUrl
         ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">Solve on LeetCode →</a>`
         : `<span class="btn-solve disabled" style="margin-left: auto;" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
