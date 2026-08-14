@@ -147,6 +147,22 @@ class DSAApp {
         route = hashRoute;
       }
     }
+
+    if (typeof window !== 'undefined' && window.location && window.location.search) {
+      try {
+        const searchParams = new URLSearchParams(window.location.search);
+        const pVal = searchParams.get('page');
+        if (pVal) {
+          const parsed = parseInt(pVal, 10);
+          if (!isNaN(parsed) && parsed > 0) {
+            this.currentPage = parsed;
+          }
+        }
+      } catch (e) {
+        // Fallback
+      }
+    }
+
     this.renderRoute(route);
   }
 
@@ -561,7 +577,7 @@ class DSAApp {
       pageInfoEl.textContent = totalCount > 0 ? `Showing ${startIdx + 1}–${endIdx} of ${totalCount}` : 'Showing 0 of 0';
     }
 
-    // Pagination Controls rendering
+    // Pagination Controls rendering - Render ALL available page numbers (1..totalPages)
     const container = document.getElementById('pagination-controls-container') || document.querySelector('.pagination-controls');
     if (container) {
       let controlsHtml = '';
@@ -571,37 +587,11 @@ class DSAApp {
       controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)">« First</button>`;
       controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})">‹ Previous</button>`;
 
-      // Render page numbers for direct jumping
-      let pages = [];
-      if (totalPages <= 10) {
-        for (let i = 1; i <= totalPages; i++) pages.push(i);
-      } else {
-        pages.push(1);
-        let start = Math.max(2, this.currentPage - 2);
-        let end = Math.min(totalPages - 1, this.currentPage + 2);
-
-        if (this.currentPage <= 4) {
-          start = 2;
-          end = Math.min(totalPages - 1, 6);
-        } else if (this.currentPage >= totalPages - 3) {
-          start = Math.max(2, totalPages - 5);
-          end = totalPages - 1;
-        }
-
-        if (start > 2) pages.push('...');
-        for (let i = start; i <= end; i++) pages.push(i);
-        if (end < totalPages - 1) pages.push('...');
-        pages.push(totalPages);
+      // Render ALL page numbers from 1 to totalPages directly
+      for (let p = 1; p <= totalPages; p++) {
+        const isActive = p === this.currentPage;
+        controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})" aria-label="Go to page ${p}">${p}</button>`;
       }
-
-      pages.forEach(p => {
-        if (p === '...') {
-          controlsHtml += `<span class="page-ellipsis">…</span>`;
-        } else {
-          const isActive = p === this.currentPage;
-          controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})">${p}</button>`;
-        }
-      });
 
       controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})">Next ›</button>`;
       controlsHtml += `<button class="page-btn" id="btn-last-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${totalPages})">Last »</button>`;
@@ -611,8 +601,21 @@ class DSAApp {
   }
 
   goToPage(pageNum) {
-    const totalPages = Math.ceil((this.filteredProblems ? this.filteredProblems.length : 0) / this.pageSize) || 1;
+    const filtered = this.getFilteredProblems();
+    const totalPages = Math.ceil(filtered.length / this.pageSize) || 1;
     this.currentPage = Math.max(1, Math.min(pageNum, totalPages));
+
+    // Synchronize URL search parameter ?page=X
+    if (typeof window !== 'undefined' && window.history && typeof window.history.pushState === 'function') {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', this.currentPage);
+        window.history.pushState({ page: this.currentPage }, '', url.toString());
+      } catch (e) {
+        // Fallback for non-standard environments
+      }
+    }
+
     this.renderProblemSheet();
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 0, behavior: 'smooth' });

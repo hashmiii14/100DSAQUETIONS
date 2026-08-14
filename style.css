@@ -946,7 +946,8 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 .pagination-controls {
   display: flex;
   align-items: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .page-btn {
@@ -954,27 +955,29 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-size: 12.5px;
-  padding: 4px 10px;
+  padding: 4px 9px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 150ms ease;
 }
 
 .page-btn:hover:not(:disabled) {
-  border-color: var(--border-hover);
-  background: var(--bg-surface-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-light);
 }
 
 .page-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
 .page-btn.active {
-  background: var(--accent-primary);
-  color: #ffffff;
-  border-color: var(--accent-primary);
-  font-weight: 700;
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--accent-primary) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px var(--accent-light);
 }
 
 .page-ellipsis {
