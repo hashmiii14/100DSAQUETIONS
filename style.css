@@ -481,50 +481,51 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 /* ── Topic Tabs Bar ──────────────────────────────────────────────────────────── */
 .topic-tabs-wrapper {
   margin-bottom: 16px;
-  overflow-x: auto;
-  padding: 4px 2px 8px 2px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-hover) transparent;
-}
-
-.topic-tabs-wrapper::-webkit-scrollbar {
-  height: 5px;
-}
-
-.topic-tabs-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.topic-tabs-wrapper::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
-}
-
-.topic-tabs-wrapper::-webkit-scrollbar-thumb:hover {
-  background: var(--border-hover);
+  width: 100%;
+  padding: 2px 0;
 }
 
 .topic-tabs-list {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 6px;
-  min-width: max-content;
+  flex-wrap: wrap;
+  gap: 7px;
+  width: 100%;
 }
 
 .topic-tab-pill {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
-  padding: 6px 14px;
+  padding: 5px 13px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 150ms ease;
   user-select: none;
   white-space: nowrap;
-  flex-shrink: 0;
+}
+
+.btn-reset-filters {
+  background: var(--accent-primary, #f97316);
+  color: #ffffff !important;
+  border: 1px solid var(--accent-primary, #f97316);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 6px var(--accent-light);
+}
+
+.btn-reset-filters:hover {
+  background: var(--accent-hover, #ea580c);
+  border-color: var(--accent-hover, #ea580c);
+  color: #ffffff !important;
 }
 
 .topic-tab-pill:hover {
