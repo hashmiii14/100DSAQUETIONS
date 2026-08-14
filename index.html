@@ -89,9 +89,11 @@
           <span class="shortcut-kbd">⌘K</span>
         </button>
 
-        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Theme">
-          <span id="theme-icon">🌙</span>
-        </button>
+        <div class="theme-toggle-group" id="theme-toggle-btn" role="group" aria-label="Theme Selector">
+          <button class="theme-btn-segment active" id="theme-btn-light" onclick="app.setTheme('light')" aria-label="Switch to Light Mode" title="Light Mode (☀️)">☀️</button>
+          <button class="theme-btn-segment" id="theme-btn-dark" onclick="app.setTheme('dark')" aria-label="Switch to Dark Mode" title="Dark Mode (🌙)">🌙</button>
+          <span id="theme-icon" style="display:none;">☀️</span>
+        </div>
 
         <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu">☰</button>
       </div>
@@ -112,6 +114,13 @@
       <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
       <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
       <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color);">
+      <span style="font-size: 13.5px; color: var(--text-secondary); font-weight: 500;">Theme Mode</span>
+      <div class="theme-toggle-group" role="group" aria-label="Mobile Theme Selector">
+        <button class="theme-btn-segment" id="mobile-theme-btn-light" onclick="app.setTheme('light')" title="Light Mode">☀️ Light</button>
+        <button class="theme-btn-segment" id="mobile-theme-btn-dark" onclick="app.setTheme('dark')" title="Dark Mode">🌙 Dark</button>
+      </div>
     </div>
   </aside>
 
