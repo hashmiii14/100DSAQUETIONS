@@ -1,4 +1,4 @@
-# FAANG DSA Forge
+# DSA Problems
 
 > **1000 Problems. Beginner to FAANG-Ready.**
 
@@ -7,7 +7,7 @@ A progressive 1000-problem DSA journey designed to take you from programming fun
 ## Features
 
 - **1000 Verified LeetCode Problems**: Exactly 200 Easy, 500 Medium, and 300 Hard questions.
-- **FAANG DSA Forge Learning Path**: Curriculum organized for progressive mastery.
+- **DSA Problems Learning Path**: Curriculum organized for progressive mastery.
 - **Zero Broken Links**: Every problem maps to a canonical, working LeetCode URL.
 - **Multi-Language Solutions**: High-quality solution code in C++, Java, Python, and JavaScript.
 - **Local Progress Persistence**: Progress, bookmarks, and notes are saved directly in your browser.
@@ -20,4 +20,4 @@ Simply open `index.html` in your browser or run a local web server:
 npx serve .
 ```
 
-© 2026 FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.
+© 2026 DSA Problems — 1000 Problems. Beginner to FAANG-Ready.

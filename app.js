@@ -181,17 +181,17 @@ class DSAApp {
     };
 
     const routeTitleMap = {
-      'problems': 'FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.',
-      'guide': 'DSA Guide — FAANG DSA Forge',
-      'progress': 'Learning Progress — FAANG DSA Forge',
-      'about': 'About — FAANG DSA Forge',
-      'privacy': 'Privacy Policy — FAANG DSA Forge',
-      'contact': 'Contact — FAANG DSA Forge',
-      'admin-quality': 'Quality Control — FAANG DSA Forge'
+      'problems': 'DSA Problems — 1000 Problems. Beginner to FAANG-Ready.',
+      'guide': 'DSA Guide — DSA Problems',
+      'progress': 'Learning Progress — DSA Problems',
+      'about': 'About — DSA Problems',
+      'privacy': 'Privacy Policy — DSA Problems',
+      'contact': 'Contact — DSA Problems',
+      'admin-quality': 'Quality Control — DSA Problems'
     };
 
     const targetViewName = viewNameMap[route] || 'problems';
-    document.title = routeTitleMap[targetViewName] || 'FAANG DSA Forge — 1000 Problems. Beginner to FAANG-Ready.';
+    document.title = routeTitleMap[targetViewName] || 'DSA Problems — 1000 Problems. Beginner to FAANG-Ready.';
 
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -241,11 +241,48 @@ class DSAApp {
 
   /* ── Topic Pills & Filter Populating ─────────────────────────────────────── */
   getUniqueTopics() {
+    const TOPIC_ORDER = [
+      "Arrays",
+      "Strings",
+      "Two Pointers",
+      "Sliding Window",
+      "Prefix Sum",
+      "Linked List",
+      "Stack",
+      "Queue",
+      "Binary Search",
+      "Trees",
+      "BST",
+      "Heap",
+      "Trie",
+      "Greedy",
+      "Union Find",
+      "Graphs",
+      "Dynamic Programming",
+      "Backtracking",
+      "Bit Manipulation",
+      "Math",
+      "Hashing",
+      "Segment Tree",
+      "Geometry",
+      "Simulation",
+      "BFS",
+      "Sort"
+    ];
     const topicsSet = new Set();
     this.getProblems().forEach(p => {
       if (p.topic) topicsSet.add(p.topic);
     });
-    return Array.from(topicsSet);
+    const foundTopics = Array.from(topicsSet);
+    foundTopics.sort((a, b) => {
+      const idxA = TOPIC_ORDER.indexOf(a);
+      const idxB = TOPIC_ORDER.indexOf(b);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+      return a.localeCompare(b);
+    });
+    return foundTopics;
   }
 
   getUniquePatterns() {
@@ -735,7 +772,7 @@ class DSAApp {
 
         <div style="margin-top: 14px; background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md);">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
-            <span style="font-size: 11.5px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${this.escapeHtml(p.stageName || 'FAANG DSA Forge Learning Path')}</span>
+            <span style="font-size: 11.5px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">${this.escapeHtml(p.stageName || 'DSA Problems Learning Path')}</span>
             <span style="font-size: 11px; background: var(--accent-light); color: var(--accent-primary); padding: 2px 6px; border-radius: 4px; font-weight: 600;">Transition: ${this.escapeHtml(p.transitionType || 'EXTEND')}</span>
           </div>
           <div style="font-size: 13px; color: var(--text-primary); font-weight: 600;">What You'll Learn: <span style="font-weight: 400; color: var(--text-secondary);">${this.escapeHtml(p.newConcept || 'Core DSA Pattern')}</span></div>
