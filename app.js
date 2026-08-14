@@ -587,8 +587,30 @@ class DSAApp {
       controlsHtml += `<button class="page-btn" id="btn-first-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(1)" title="First Page">First</button>`;
       controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page">Prev</button>`;
 
-      // Render ALL page numbers from 1 to totalPages directly
-      for (let p = 1; p <= totalPages; p++) {
+      // Render 5 page numbers at a time with overlapping boundary (1-5, 5-10, 10-15, 15-20)
+      let startPage = 1;
+      let endPage = 5;
+
+      if (this.currentPage <= 5) {
+        startPage = 1;
+        endPage = Math.min(5, totalPages);
+      } else if (this.currentPage <= 10) {
+        startPage = 5;
+        endPage = Math.min(10, totalPages);
+      } else if (this.currentPage <= 15) {
+        startPage = 10;
+        endPage = Math.min(15, totalPages);
+      } else if (this.currentPage <= 20) {
+        startPage = 15;
+        endPage = Math.min(20, totalPages);
+      } else {
+        const groupIdx = Math.floor((this.currentPage - 1) / 5);
+        startPage = groupIdx * 5;
+        if (startPage < 1) startPage = 1;
+        endPage = Math.min(startPage + 5, totalPages);
+      }
+
+      for (let p = startPage; p <= endPage; p++) {
         const isActive = p === this.currentPage;
         controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})" aria-label="Go to page ${p}">${p}</button>`;
       }

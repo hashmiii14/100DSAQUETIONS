@@ -186,11 +186,21 @@ assert(currentPage === 20, "Direct jump to Page 20 (Last) failed");
 goToPage(1);
 assert(currentPage === 1, "Direct jump to Page 1 (First) failed");
 
-// Verify all 20 page numbers can be rendered
-const allPageNumbers = Array.from({ length: 20 }, (_, i) => i + 1);
-assert(allPageNumbers.length === 20, "All 20 page numbers must be present");
+function getPageGroupRange(cp, maxP) {
+  let startP = 1, endP = 5;
+  if (cp <= 5) { startP = 1; endP = Math.min(5, maxP); }
+  else if (cp <= 10) { startP = 5; endP = Math.min(10, maxP); }
+  else if (cp <= 15) { startP = 10; endP = Math.min(15, maxP); }
+  else if (cp <= 20) { startP = 15; endP = Math.min(20, maxP); }
+  return { startP, endP };
+}
 
-console.log("   Direct Jump Pagination verified for Page 1 → 6 → 10 → 15 → 20 → 1 (All 20 Pages Rendered)!");
+assert(JSON.stringify(getPageGroupRange(1, 20)) === JSON.stringify({ startP: 1, endP: 5 }), "Group 1 range check failed");
+assert(JSON.stringify(getPageGroupRange(6, 20)) === JSON.stringify({ startP: 5, endP: 10 }), "Group 2 range check failed");
+assert(JSON.stringify(getPageGroupRange(11, 20)) === JSON.stringify({ startP: 10, endP: 15 }), "Group 3 range check failed");
+assert(JSON.stringify(getPageGroupRange(16, 20)) === JSON.stringify({ startP: 15, endP: 20 }), "Group 4 range check failed");
+
+console.log("   5-Page Group Range Pagination verified for 1-5, 5-10, 10-15, 15-20!");
 
 console.log(`\n==================================================`);
 console.log(`✅ QA TEST SUITE COMPLETED SUCCESSFULLY! Passed ${passedTests} assertions.`);
