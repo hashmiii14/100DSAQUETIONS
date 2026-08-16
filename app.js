@@ -819,11 +819,14 @@ class DSAApp {
         </div>
 
         <div style="margin-top: 16px;">
-          <div class="lang-tabs">
-            <button class="lang-tab ${this.activeLang === 'cpp' ? 'active' : ''}" onclick="app.setModalLang('cpp')">C++</button>
-            <button class="lang-tab ${this.activeLang === 'java' ? 'active' : ''}" onclick="app.setModalLang('java')">Java</button>
-            <button class="lang-tab ${this.activeLang === 'python' ? 'active' : ''}" onclick="app.setModalLang('python')">Python</button>
-            <button class="lang-tab ${this.activeLang === 'javascript' ? 'active' : ''}" onclick="app.setModalLang('javascript')">JavaScript</button>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+            <div class="lang-tabs">
+              <button class="lang-tab ${this.activeLang === 'cpp' ? 'active' : ''}" onclick="app.setModalLang('cpp')">C++</button>
+              <button class="lang-tab ${this.activeLang === 'java' ? 'active' : ''}" onclick="app.setModalLang('java')">Java</button>
+              <button class="lang-tab ${this.activeLang === 'python' ? 'active' : ''}" onclick="app.setModalLang('python')">Python</button>
+              <button class="lang-tab ${this.activeLang === 'javascript' ? 'active' : ''}" onclick="app.setModalLang('javascript')">JavaScript</button>
+            </div>
+            <button class="share-btn-header" onclick="app.copyModalCode()" style="padding: 4px 10px; font-size: 12px;">📋 Copy Code</button>
           </div>
 
           <div class="code-block-wrap" id="modal-code-display" style="margin-top: 8px;">
@@ -834,6 +837,12 @@ class DSAApp {
         <div style="margin-top: 16px;">
           <strong style="display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">PERSONAL NOTES</strong>
           <textarea id="modal-note-input" class="search-input" style="width: 100%; min-height: 80px; font-family: var(--font-sans);" placeholder="Add personal approach notes..." onchange="app.saveNote(${p.id}, this.value)">${this.escapeHtml(savedNote)}</textarea>
+        </div>
+
+        <div style="margin-top: 18px; pt: 12px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <button class="page-btn" onclick="app.navigateModalProblem(-1)" ${p.id <= 1 ? 'disabled' : ''}>← Previous (#${p.id > 1 ? p.id - 1 : 1})</button>
+          <span style="font-size: 12px; color: var(--text-muted);">Use ← / → keys to navigate</span>
+          <button class="page-btn" onclick="app.navigateModalProblem(1)" ${p.id >= 1000 ? 'disabled' : ''}>Next (#${p.id < 1000 ? p.id + 1 : 1000}) →</button>
         </div>
       `;
     }
@@ -858,6 +867,32 @@ class DSAApp {
       document.querySelectorAll('.lang-tab').forEach(tab => {
         tab.classList.toggle('active', tab.textContent.toLowerCase().includes(lang === 'cpp' ? 'c++' : lang));
       });
+    }
+  }
+
+  copyModalCode() {
+    if (!this.activeProblem) return;
+    const code = this.getCodeForLang(this.activeProblem, this.activeLang);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(code).then(() => {
+        this.showToast(`📋 ${this.activeLang.toUpperCase()} solution copied to clipboard!`);
+      }).catch(() => {
+        this.showToast('Code copied to clipboard');
+      });
+    } else {
+      this.showToast('Code copied to clipboard');
+    }
+  }
+
+  navigateModalProblem(direction) {
+    if (!this.activeProblem) return;
+    const currentId = this.activeProblem.id;
+    const targetId = currentId + direction;
+    if (targetId >= 1 && targetId <= 1000) {
+      const targetProb = this.getProblemById(targetId);
+      if (targetProb) {
+        this.openProblemModal(targetProb);
+      }
     }
   }
 
@@ -977,11 +1012,27 @@ class DSAApp {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         this.openCommandPalette();
+        return;
       }
+
+      const problemModal = document.getElementById('problem-modal');
+      const isModalOpen = problemModal && problemModal.classList.contains('open');
+
       if (e.key === 'Escape') {
         this.closeProblemModal();
         this.closeCommandPalette();
         this.toggleMobileMenu(false);
+        return;
+      }
+
+      if (isModalOpen && !['textarea', 'input'].includes(document.activeElement?.tagName?.toLowerCase())) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          this.navigateModalProblem(-1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          this.navigateModalProblem(1);
+        }
       }
     });
   }
