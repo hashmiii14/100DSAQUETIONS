@@ -1286,6 +1286,25 @@ class DSAApp {
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
+
+  shareWebsite() {
+    const shareData = {
+      title: 'DSA Problems — 1000 Verified LeetCode Sheet & DSA Roadmap',
+      text: 'Master 1,000 verified LeetCode Data Structures & Algorithms problems organized by core patterns with multi-language C++, Java, Python, and JS solutions!',
+      url: 'https://www.dsaproblems.site/'
+    };
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(shareData.url).then(() => {
+        this.showToast('📋 Link copied to clipboard! Share it with your friends.');
+      }).catch(() => {
+        this.showToast('https://www.dsaproblems.site/');
+      });
+    } else {
+      this.showToast('https://www.dsaproblems.site/');
+    }
+  }
 }
 
 // Instantiate App globally
