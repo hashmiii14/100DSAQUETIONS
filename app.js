@@ -380,9 +380,12 @@ class DSAApp {
 
   /* ── Filter Handlers ──────────────────────────────────────────────────────── */
   handleSearchInput(query) {
-    this.searchQuery = query.trim().toLowerCase();
-    this.currentPage = 1;
-    this.renderProblemSheet();
+    if (this._searchTimeout) clearTimeout(this._searchTimeout);
+    this._searchTimeout = setTimeout(() => {
+      this.searchQuery = query.trim().toLowerCase();
+      this.currentPage = 1;
+      this.renderProblemSheet();
+    }, 120);
   }
 
   handleDifficultyFilter(val) {
@@ -1312,6 +1315,11 @@ let app;
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
     app = new DSAApp();
+    if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
   });
 }
 if (typeof window !== 'undefined') {
