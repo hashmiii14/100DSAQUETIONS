@@ -34,5 +34,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/(problems|guide|progress|about|privacy|contact)",
+      "destination": "/index.html"
+    }
   ]
 }
