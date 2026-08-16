@@ -1779,3 +1779,26 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ── Google AdSense Slots & Containers ────────────────────────────────────────── */
+.adsense-slot-wrapper {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.adsense-slot-wrapper .adsbygoogle {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+

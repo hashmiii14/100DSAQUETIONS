@@ -190,8 +190,38 @@ class DSAApp {
       'admin-quality': 'Quality Control — DSA Problems'
     };
 
+    const routeDescMap = {
+      'problems': 'DSA Problems (dsaproblems.site) — Free progressive 1,000 LeetCode Data Structures & Algorithms problem sheet. Master 20+ core DSA patterns with verified C++, Java, Python, and JavaScript solutions.',
+      'guide': 'Comprehensive Data Structures and Algorithms learning guide. Master Arrays, Two Pointers, Sliding Window, Trees, Graphs, Dynamic Programming and 20+ core DSA patterns.',
+      'progress': 'Track your coding interview preparation progress, difficulty breakdown, topic mastery, solved problems, and bookmarked questions locally in your browser.',
+      'about': 'Learn about DSA Problems — A clean, developer-focused 1,000 LeetCode problem sheet designed for structured coding interview prep.',
+      'privacy': 'Privacy Policy for DSA Problems (dsaproblems.site). Learn about our zero-tracking, privacy-first local storage model.',
+      'contact': 'Get in touch with the DSA Problems team. Suggestions, feedback, and support for the 1000 LeetCode DSA roadmap.',
+      'admin-quality': 'Internal quality control and dataset verification tool for DSA Problems.'
+    };
+
     const targetViewName = viewNameMap[route] || 'problems';
     document.title = routeTitleMap[targetViewName] || 'DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap';
+
+    // Dynamic Google Search SEO Meta Tag Updates
+    try {
+      const descTag = document.querySelector('meta[name="description"]');
+      if (descTag) {
+        descTag.setAttribute('content', routeDescMap[targetViewName] || routeDescMap['problems']);
+      }
+      const canonicalTag = document.querySelector('link[rel="canonical"]');
+      if (canonicalTag) {
+        const cleanPath = targetViewName === 'problems' ? '' : targetViewName;
+        canonicalTag.setAttribute('href', `https://www.dsaproblems.site/${cleanPath}`);
+      }
+      const ogTitleTag = document.querySelector('meta[property="og:title"]');
+      if (ogTitleTag) ogTitleTag.setAttribute('content', routeTitleMap[targetViewName] || routeTitleMap['problems']);
+      const ogUrlTag = document.querySelector('meta[property="og:url"]');
+      if (ogUrlTag) {
+        const cleanPath = targetViewName === 'problems' ? '' : targetViewName;
+        ogUrlTag.setAttribute('href', `https://www.dsaproblems.site/${cleanPath}`);
+      }
+    } catch (_) {}
 
     // Update Nav Buttons Active State
     document.querySelectorAll('.nav-btn').forEach(btn => {
