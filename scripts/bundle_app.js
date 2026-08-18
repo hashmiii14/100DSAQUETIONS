@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('--- BUNDLING CLIENT JS MODULES ---');
+console.log('--- BUNDLING & MINIFYING CLIENT JS MODULES ---');
 
 const filesToBundle = [
   path.join(__dirname, '../js/state.js'),
@@ -13,24 +13,26 @@ const filesToBundle = [
   path.join(__dirname, '../app.js')
 ];
 
-let bundledJs = '/* DSAProblems.site Production App Bundle */\n';
+let rawJs = '';
 
 for (const filePath of filesToBundle) {
   if (fs.existsSync(filePath)) {
-    const content = fs.readFileSync(filePath, 'utf8');
-    bundledJs += `\n/* File: ${path.basename(filePath)} */\n` + content + '\n';
+    rawJs += fs.readFileSync(filePath, 'utf8') + '\n;';
   } else {
     console.error(`Warning: ${filePath} not found`);
   }
 }
 
-// Clean comments
-const cleanLines = bundledJs.split('\n').filter(line => {
-  const t = line.trim();
-  return !t.startsWith('//') && !t.startsWith('/*');
-});
+// Deep Minification Regex Pass
+let minJs = rawJs
+  .replace(/\/\*[\s\S]*?\*\//g, '') // Strip block comments
+  .replace(/^\s*\/\/.*$/gm, '')      // Strip single-line comments
+  .split('\n')
+  .map(line => line.trim())
+  .filter(line => line.length > 0)
+  .join('\n');
 
 const outputBundlePath = path.join(__dirname, '../js/app.bundle.min.js');
-fs.writeFileSync(outputBundlePath, cleanLines.join('\n'), 'utf8');
+fs.writeFileSync(outputBundlePath, minJs, 'utf8');
 
 console.log(`✓ js/app.bundle.min.js generated (${(fs.statSync(outputBundlePath).size / 1024).toFixed(1)} KB)`);

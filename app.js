@@ -266,7 +266,9 @@ class DSAApp {
     this.renderCurrentView();
 
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(function() {
+        window.scrollTo({ top: 0 });
+      });
     }
   }
 
@@ -721,7 +723,9 @@ class DSAApp {
 
     this.renderProblemSheet();
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(function() {
+        window.scrollTo({ top: 0 });
+      });
     }
   }
 
@@ -1335,7 +1339,9 @@ class DSAApp {
     this.activeGuideTopic = topicId;
     this.renderGuideSection();
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(function() {
+        window.scrollTo({ top: 0 });
+      });
     }
   }
 
