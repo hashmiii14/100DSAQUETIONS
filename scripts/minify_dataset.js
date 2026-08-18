@@ -27,15 +27,15 @@ if (problems) {
   fs.writeFileSync(minJsPath, minifiedJs, 'utf8');
   console.log(`✓ questions.min.js generated (${(fs.statSync(minJsPath).size / 1024 / 1024).toFixed(2)} MB)`);
 
-  // 2. High-speed Index dataset questions_index.min.js (~150 KB for fast mobile parse time)
+  // 2. High-speed Index dataset questions_index.min.js (~120 KB for fast mobile parse time)
   const indexArray = problems.map(p => ({
-    id: p.id,
-    title: p.title,
-    difficulty: p.difficulty,
-    topic: p.topic,
-    pattern: p.pattern,
-    canonicalUrl: p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || '',
-    stageName: p.stageName || p.stage || ''
+    i: p.id,
+    t: p.title,
+    d: p.difficulty,
+    tp: p.topic,
+    p: p.pattern,
+    u: p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || '',
+    s: p.stageName || p.stage || ''
   }));
 
   const indexJs = `const PROBLEMS_INDEX=${JSON.stringify(indexArray)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_INDEX;`;
