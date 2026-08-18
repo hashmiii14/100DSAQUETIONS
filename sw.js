@@ -20,6 +20,7 @@ const ASSETS_TO_CACHE = [
   '/data/questions.min.js',
   '/data/questions.json',
   '/data/guide_data.js',
+  '/data/guide_data.min.js',
   '/data/patterns.js',
   '/data/ds_algo_library.js',
   '/data/tracks.js',
