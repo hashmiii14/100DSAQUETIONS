@@ -788,6 +788,8 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   overflow-x: auto;
+  min-height: 500px;
+  contain: layout style;
 }
 
 .problem-table {

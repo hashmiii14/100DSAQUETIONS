@@ -51,10 +51,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-<!-- AI Agentic Browsing Metadata -->
+<!-- AI Agentic Browsing Metadata (Desktop & Mobile Agent Standards) -->
 <meta name="ai-agent-ready" content="true"/>
+<meta name="agentic-browsing" content="enabled"/>
 <meta name="llm-index" content="https://www.dsaproblems.site/llms.txt"/>
 <meta name="llm-dataset" content="https://www.dsaproblems.site/llms-full.txt"/>
+<meta name="ai-api" content="https://www.dsaproblems.site/data/questions.json"/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
@@ -74,10 +76,14 @@
 <meta name="twitter:description" content="Master 1,000 curated LeetCode DSA problems organized by core patterns with multi-language code solutions."/>
 <meta name="twitter:image" content="https://www.dsaproblems.site/images/og-image.png"/>
 
-<!-- Web App Manifest & AI Agent Specs -->
+<!-- Web App Manifest & Desktop/Mobile AI Agent Specs -->
 <link rel="manifest" href="/manifest.json"/>
-<link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt"/>
+<link rel="alternate" type="text/plain" title="LLMs.txt Overview" href="/llms.txt"/>
+<link rel="alternate" type="text/plain" title="LLMs Full Dataset" href="/llms-full.txt"/>
+<link rel="alternate" type="text/plain" title="AI Agent Directives" href="/ai.txt"/>
 <link rel="alternate" type="application/json" title="AI Agent Plugin Spec" href="/.well-known/ai-plugin.json"/>
+<link rel="alternate" type="application/json" title="Agentic Browsing Discovery Spec" href="/.well-known/agentic.json"/>
+<link rel="alternate" type="application/json" title="JSON Dataset API" href="/data/questions.json"/>
 
 <!-- Resource Hints & Performance Preconnect -->
 <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
