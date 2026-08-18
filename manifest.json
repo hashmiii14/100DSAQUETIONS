@@ -1,16 +1,20 @@
 {
+  "id": "https://www.dsaproblems.site/",
   "name": "DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap",
-  "short_name": "dsaproblems",
+  "short_name": "DSAProblems",
   "description": "Master 1,000 curated LeetCode Data Structures & Algorithms problems organized by 20+ core DSA patterns.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#09090b",
   "theme_color": "#f97316",
+  "categories": ["education", "developer", "utilities"],
   "icons": [
     {
       "src": "images/og-image.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

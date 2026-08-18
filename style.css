@@ -24,8 +24,8 @@
   --border-accent: rgba(249, 115, 22, 0.35);
 
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  --text-secondary: #334155;
+  --text-muted: #475569;
 
   /* Developer Orange Accent */
   --accent-primary: #ea580c;
@@ -72,7 +72,7 @@
 
   --text-primary: #f4f4f5;
   --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-muted: #a1a1aa;
 
   --accent-primary: #f97316;
   --accent-hover: #ea580c;
@@ -105,6 +105,30 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* ── Skip to Main Content Link (Accessibility) ────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--accent-primary);
+  color: #ffffff;
+  padding: 10px 16px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ── High-Contrast Focus Visible Outline ──────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent-primary) !important;
+  outline-offset: 2px !important;
 }
 
 /* ── Ambient Developer Grid Background ───────────────────────────────────────── */

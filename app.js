@@ -601,7 +601,7 @@ class DSAApp {
         tableRowsHtml += `<tr class="${isSolved ? 'solved-row' : ''}">
           <td class="col-num">${formattedId}</td>
           <td class="col-title">
-            <a class="problem-title-link" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</a>
+            <a class="problem-title-link" href="javascript:void(0)" onclick="app.openProblemModal(${p.id})" tabindex="0" role="button" aria-label="View problem ${formattedId} details: ${this.escapeHtml(p.title)}">${this.escapeHtml(p.title)}</a>
             ${isSolved ? '<span class="solved-tag-pill">✓ Done</span>' : ''}
           </td>
           <td class="col-diff"><span class="diff-badge ${diffClass}">${p.difficulty}</span></td>
@@ -611,8 +611,8 @@ class DSAApp {
             ${ctaBtnHtml}
           </td>
           <td class="col-status">
-            <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem solved"/>
-            <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})" aria-label="Bookmark problem">${isBm ? '★' : '☆'}</button>
+            <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem ${formattedId} solved"/>
+            <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})" aria-label="Bookmark problem ${formattedId}">${isBm ? '★' : '☆'}</button>
           </td>
         </tr>`;
 
@@ -621,7 +621,7 @@ class DSAApp {
           <div class="card-header-row">
             <div class="card-title-wrap">
               <span class="card-num">${formattedId}</span>
-              <a class="card-title" onclick="app.openProblemModal(${p.id})">${this.escapeHtml(p.title)}</a>
+              <a class="card-title" href="javascript:void(0)" onclick="app.openProblemModal(${p.id})" tabindex="0" role="button" aria-label="View problem ${formattedId} details: ${this.escapeHtml(p.title)}">${this.escapeHtml(p.title)}</a>
               ${isSolved ? '<span class="solved-tag-pill">✓ Done</span>' : ''}
             </div>
             <span class="diff-badge ${diffClass}">${p.difficulty}</span>
@@ -633,8 +633,8 @@ class DSAApp {
           <div class="card-actions-row">
             ${ctaBtnHtml}
             <div style="display: flex; align-items: center; gap: 8px;">
-              <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})"/>
-              <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})">${isBm ? '★' : '☆'}</button>
+              <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem ${formattedId} solved"/>
+              <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})" aria-label="Bookmark problem ${formattedId}">${isBm ? '★' : '☆'}</button>
             </div>
           </div>
         </div>`;

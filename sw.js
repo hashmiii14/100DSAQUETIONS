@@ -1,16 +1,25 @@
 // Service Worker for DSA Problems (dsaproblems.site)
-const CACHE_NAME = 'dsaproblems-v1';
+const CACHE_NAME = 'dsaproblems-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/style.css',
   '/app.js',
-  '/data.js',
   '/manifest.json',
   '/ads.txt',
   '/robots.txt',
   '/sitemap.xml',
-  '/images/og-image.png'
+  '/llms.txt',
+  '/images/og-image.png',
+  '/images/upi-qr.png',
+  '/data/questions.js',
+  '/data/guide_data.js',
+  '/data/patterns.js',
+  '/data/ds_algo_library.js',
+  '/data/tracks.js',
+  '/js/state.js',
+  '/js/recommendation.js',
+  '/js/duplicate_prevention.js'
 ];
 
 // Install Event: Cache essential core static assets
