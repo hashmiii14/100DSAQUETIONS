@@ -58,26 +58,28 @@ if (problems) {
 
 // 4. Minify guide_data.js
 const guidePath = path.join(__dirname, '../data/guide_data.js');
-const rawGuide = fs.readFileSync(guidePath, 'utf8');
-const guideMatch = rawGuide.match(/const GUIDE_TOPICS = (\[[\s\S]*\]);/);
-let guideTopics;
-if (guideMatch) {
-  try {
-    guideTopics = JSON.parse(guideMatch[1]);
-  } catch (e) {
-    const vm = require('vm');
-    const sandbox = {};
-    vm.createContext(sandbox);
-    vm.runInContext(rawGuide, sandbox);
-    guideTopics = sandbox.GUIDE_TOPICS;
+if (fs.existsSync(guidePath)) {
+  const rawGuide = fs.readFileSync(guidePath, 'utf8');
+  const guideMatch = rawGuide.match(/const (?:GUIDE_DATA|GUIDE_TOPICS) = (\[[\s\S]*\]);/);
+  let guideTopics;
+  if (guideMatch) {
+    try {
+      guideTopics = JSON.parse(guideMatch[1]);
+    } catch (e) {
+      const vm = require('vm');
+      const sandbox = {};
+      vm.createContext(sandbox);
+      vm.runInContext(rawGuide, sandbox);
+      guideTopics = sandbox.GUIDE_DATA || sandbox.GUIDE_TOPICS;
+    }
   }
-}
 
-if (guideTopics) {
-  const minifiedGuideJs = `const GUIDE_TOPICS=${JSON.stringify(guideTopics)};`;
-  const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
-  fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
-  console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);
+  if (guideTopics) {
+    const minifiedGuideJs = `const GUIDE_DATA=${JSON.stringify(guideTopics)};`;
+    const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
+    fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
+    console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);
+  }
 }
 
 console.log('--- ALL DATASETS GENERATED SUCCESSFULLY ---');

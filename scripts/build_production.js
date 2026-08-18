@@ -12,22 +12,33 @@ execSync('node scripts/minify_dataset.js', { stdio: 'inherit', cwd: path.join(__
 console.log('\n[2/4] Bundling & Minifying Client JS...');
 execSync('node scripts/bundle_app.js', { stdio: 'inherit', cwd: path.join(__dirname, '..') });
 
-// Step 3: Read Minified CSS and Page 1 Dataset
-console.log('\n[3/4] Inlining Critical Styles & Page 1 Data into index.html...');
+// Step 3: Minify & Inline Critical Styles into index.html
+console.log('\n[3/4] Minifying & Inlining Critical Styles into index.html...');
+const styleSrcPath = path.join(__dirname, '../style.css');
 const styleMinPath = path.join(__dirname, '../style.min.css');
-const page1MinPath = path.join(__dirname, '../data/questions_page1.min.js');
 const indexHtmlPath = path.join(__dirname, '../index.html');
 
+if (fs.existsSync(styleSrcPath)) {
+  const rawCss = fs.readFileSync(styleSrcPath, 'utf8');
+  const minCss = rawCss
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*([{}:;,])\s*/g, '$1')
+    .replace(/;\}/g, '}')
+    .trim();
+  fs.writeFileSync(styleMinPath, minCss, 'utf8');
+  console.log(`✓ style.min.css compiled (${(fs.statSync(styleMinPath).size / 1024).toFixed(1)} KB)`);
+}
+
 const minifiedCss = fs.readFileSync(styleMinPath, 'utf8');
-const minifiedPage1Js = fs.readFileSync(page1MinPath, 'utf8');
 let html = fs.readFileSync(indexHtmlPath, 'utf8');
 
-// Replace stylesheet links with inlined style tag
-const cssTagRegex = /<!-- Asynchronous Non-Blocking Stylesheet -->[\s\S]*?<noscript>[\s\S]*?<\/noscript>/;
-const inlineCssReplacement = `<!-- Inlined Application Styles (Zero Network Latency FCP) -->\n<style id="app-main-styles">\n${minifiedCss}\n</style>`;
+// Replace stylesheet links or existing style tag with updated inlined CSS
+const existingStyleRegex = /<style id="app-main-styles">[\s\S]*?<\/style>/;
+const inlineCssReplacement = `<style id="app-main-styles">\n${minifiedCss}\n</style>`;
 
-if (cssTagRegex.test(html)) {
-  html = html.replace(cssTagRegex, inlineCssReplacement);
+if (existingStyleRegex.test(html)) {
+  html = html.replace(existingStyleRegex, inlineCssReplacement);
 } else if (html.includes('style.min.css')) {
   html = html.replace(/<link rel="stylesheet" href="style\.min\.css"[^>]*\/>/, inlineCssReplacement);
 }
