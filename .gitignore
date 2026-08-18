@@ -22,3 +22,6 @@ __pycache__/
 *.log
 .gemini/
 data/questions_backup.js
+
+.vercel
+.env*
