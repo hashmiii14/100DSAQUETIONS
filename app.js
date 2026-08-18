@@ -1221,6 +1221,9 @@ class DSAApp {
 
   /* ── 20-Chapter DSA Guide Theory & Multilingual Code Dataset ─────────────────── */
   getGuideTopicData() {
+    if (typeof window !== 'undefined' && window.GUIDE_DATA && Array.isArray(window.GUIDE_DATA)) {
+      return window.GUIDE_DATA;
+    }
     if (typeof GUIDE_DATA !== 'undefined' && Array.isArray(GUIDE_DATA)) {
       return GUIDE_DATA;
     }
@@ -1241,8 +1244,37 @@ class DSAApp {
     const contentArea = document.getElementById('guide-content-area');
     if (!contentArea) return;
 
-    const topics = this.getGuideTopicData();
-    if (!topics || topics.length === 0) return;
+    let topics = this.getGuideTopicData();
+    if (!topics || topics.length === 0) {
+      contentArea.innerHTML = `<div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+        <p style="font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Loading DSA Guide Chapters...</p>
+        <p style="font-size: 13px;">Fetching 26 comprehensive DSA topics & multilingual solution code...</p>
+      </div>`;
+
+      if (!this._guideLoadingScript && typeof document !== 'undefined') {
+        const targetHead = document.head || document.body;
+        if (targetHead && typeof targetHead.appendChild === 'function') {
+          this._guideLoadingScript = true;
+          const s = document.createElement('script');
+          s.src = 'data/guide_data.min.js';
+          s.onload = () => {
+            this._guideLoadingScript = false;
+            this.renderGuideSection();
+          };
+          s.onerror = () => {
+            const fallback = document.createElement('script');
+            fallback.src = 'data/guide_data.js';
+            fallback.onload = () => {
+              this._guideLoadingScript = false;
+              this.renderGuideSection();
+            };
+            if (typeof targetHead.appendChild === 'function') targetHead.appendChild(fallback);
+          };
+          targetHead.appendChild(s);
+        }
+      }
+      return;
+    }
 
     // Populate Mobile Dropdown Select
     if (mobileSelect) {

@@ -113,7 +113,13 @@ for (const m of navMatches) {
 const domListeners = [];
 const documentMock = {
   documentElement: new Element('html'),
+  head: new Element('head'),
   body: new Element('body'),
+  getElementsByTagName: (tag) => {
+    if (tag.toLowerCase() === 'head') return [documentMock.head];
+    if (tag.toLowerCase() === 'body') return [documentMock.body];
+    return [];
+  },
   getElementById: (id) => elementMap[id] || new Element('div', id),
   querySelector: (sel) => documentMock.body.querySelector(sel),
   querySelectorAll: (sel) => {

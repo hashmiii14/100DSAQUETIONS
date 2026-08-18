@@ -246,6 +246,7 @@
 
 <!-- Datasets & High-Performance Single App Bundle -->
 <script defer src="data/questions_page1.min.js"></script>
+<script defer src="data/guide_data.min.js"></script>
 <script defer src="js/app.bundle.min.js"></script>
 <script>
   window.addEventListener('load', function() {
@@ -265,6 +266,11 @@
 
         var s2 = document.createElement('script');
         s2.src = 'data/guide_data.min.js';
+        s2.onload = function() {
+          if (typeof app !== 'undefined' && app.currentRoute === '/guide') {
+            app.renderGuideSection();
+          }
+        };
         document.head.appendChild(s2);
       }
     };
