@@ -36,7 +36,7 @@
   --easy-bg: #dcfce7;
   --easy-border: #86efac;
 
-  --medium-color: #d97706;
+  --medium-color: #b45309;
   --medium-bg: #fef3c7;
   --medium-border: #fde047;
 
@@ -434,6 +434,8 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 .view-section {
   display: none;
   width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
 }
 
 .view-section.active {
@@ -1810,6 +1812,53 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    min-height: 44px;
+    font-size: 13.5px;
+  }
+
+  .search-input {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .topic-tab-pill {
+    min-height: 44px;
+    padding: 8px 14px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status-checkbox {
+    min-width: 24px;
+    min-height: 24px;
+    cursor: pointer;
+  }
+
+  .bookmark-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .page-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-solve {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
   }
 }
 

@@ -32,9 +32,19 @@
 <!-- Google Search Console Ownership Verification -->
 <meta name="google-site-verification" content="Sif4lO6LQRgkg-Myl7gIMx3csO2z5Y2jaNaIL1nvWU0" />
 
-<!-- Google AdSense Account Verification & Auto-Ads -->
+<!-- Google AdSense Account Verification & Auto-Ads (Deferred for Mobile Performance) -->
 <meta name="google-adsense-account" content="ca-pub-2781286202640992">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992" crossorigin="anonymous"></script>
+<script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992" crossorigin="anonymous"></script>
+
+<!-- Mobile Web App Capability & Status Bar -->
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<!-- AI Agentic Browsing Metadata -->
+<meta name="ai-agent-ready" content="true"/>
+<meta name="llm-index" content="https://www.dsaproblems.site/llms.txt"/>
+<meta name="llm-dataset" content="https://www.dsaproblems.site/llms-full.txt"/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://www.dsaproblems.site/"/>
@@ -57,6 +67,7 @@
 <!-- Web App Manifest & AI Agent Specs -->
 <link rel="manifest" href="/manifest.json"/>
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="/llms.txt"/>
+<link rel="alternate" type="application/json" title="AI Agent Plugin Spec" href="/.well-known/ai-plugin.json"/>
 
 <!-- Resource Hints & Performance Preconnect -->
 <link rel="dns-prefetch" href="//fonts.googleapis.com"/>

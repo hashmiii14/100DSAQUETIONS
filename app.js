@@ -361,7 +361,7 @@ class DSAApp {
       const count = isAll ? allProblems.length : allProblems.filter(p => p.topic === t).length;
       const isActive = this.filterTopic === t;
 
-      html += `<button class="topic-tab-pill ${isActive ? 'active' : ''}" onclick="app.handleTopicPillClick('${t.replace(/'/g, "\\'")}')">
+      html += `<button class="topic-tab-pill ${isActive ? 'active' : ''}" role="tab" aria-selected="${isActive ? 'true' : 'false'}" aria-label="Filter problems by topic ${label}" onclick="app.handleTopicPillClick('${t.replace(/'/g, "\\'")}')">
         ${label} <span class="pill-count">(${count})</span>
       </button>`;
     });
