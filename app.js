@@ -34,9 +34,15 @@ class DSAApp {
   }
 
   getProblems() {
-    if (!this.problems || this.problems.length === 0) {
+    if (!this.problems || this.problems.length === 0 || (typeof window !== 'undefined' && window.__FULL_SOLUTIONS_READY__ && !this._fullLoaded)) {
       let raw = [];
-      if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS)) {
+      if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS) && window.PROBLEMS[0] && window.PROBLEMS[0].statement) {
+        raw = window.PROBLEMS;
+        this._fullLoaded = true;
+      } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS[0] && PROBLEMS[0].statement) {
+        raw = PROBLEMS;
+        this._fullLoaded = true;
+      } else if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS)) {
         raw = window.PROBLEMS;
       } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
         raw = PROBLEMS;
@@ -62,6 +68,9 @@ class DSAApp {
               leetcode_url: item.u,
               leetcodeUrl: item.u,
               stageName: item.s,
+              subtopic: item.st || '',
+              transitionType: item.tr || '',
+              newConcept: item.nc || '',
               leetcode_match_status: 'verified'
             };
           }
@@ -72,6 +81,46 @@ class DSAApp {
       }
     }
     return this.problems;
+  }
+
+  loadFullDataset(callback) {
+    if (typeof window !== 'undefined' && window.__SOLUTIONS_LOADED__ && typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS[0] && PROBLEMS[0].statement) {
+      this.problems = PROBLEMS;
+      this._fullLoaded = true;
+      if (callback) callback();
+      return;
+    }
+    if (typeof window !== 'undefined' && !window.__SOLUTIONS_LOADING__) {
+      window.__SOLUTIONS_LOADING__ = true;
+      const s = document.createElement('script');
+      s.src = 'data/questions.min.js';
+      s.onload = () => {
+        window.__SOLUTIONS_LOADED__ = true;
+        window.__SOLUTIONS_LOADING__ = false;
+        window.__FULL_SOLUTIONS_READY__ = true;
+        if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
+          this.problems = PROBLEMS;
+          this._fullLoaded = true;
+        }
+        if (callback) callback();
+      };
+      s.onerror = () => {
+        window.__SOLUTIONS_LOADING__ = false;
+        if (callback) callback();
+      };
+      document.head.appendChild(s);
+    } else {
+      const timer = setInterval(() => {
+        if (typeof window !== 'undefined' && (window.__SOLUTIONS_LOADED__ || (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS[0] && PROBLEMS[0].statement))) {
+          clearInterval(timer);
+          if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
+            this.problems = PROBLEMS;
+            this._fullLoaded = true;
+          }
+          if (callback) callback();
+        }
+      }, 50);
+    }
   }
 
   init() {
@@ -806,8 +855,12 @@ class DSAApp {
 
   /* ── Problem Detail Solution Modal ─────────────────────────────────────── */
   openProblemModal(pid) {
-    const p = this.getProblems().find(item => item.id === pid);
+    let p = this.getProblems().find(item => item.id === pid);
     if (!p) return;
+
+    if (!p.statement && !p.optimalSolution && typeof window !== 'undefined' && !window.__SOLUTIONS_LOADED__) {
+      this.loadFullDataset(() => this.openProblemModal(pid));
+    }
 
     this.activeProblem = p;
     const modal = document.getElementById('problem-modal');

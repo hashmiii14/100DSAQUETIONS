@@ -35,7 +35,10 @@ if (problems) {
     tp: p.topic,
     p: p.pattern,
     u: p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || '',
-    s: p.stageName || p.stage || ''
+    s: p.stageName || p.stage || '',
+    st: p.subtopic || '',
+    tr: p.transitionType || '',
+    nc: p.newConcept || ''
   }));
 
   const indexJs = `const PROBLEMS_INDEX=${JSON.stringify(indexArray)};if(typeof window!=='undefined'){window.PROBLEMS_INDEX=PROBLEMS_INDEX;window.PROBLEMS=PROBLEMS_INDEX;}`;
