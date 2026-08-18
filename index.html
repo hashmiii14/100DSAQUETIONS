@@ -32,9 +32,19 @@
 <!-- Google Search Console Ownership Verification -->
 <meta name="google-site-verification" content="Sif4lO6LQRgkg-Myl7gIMx3csO2z5Y2jaNaIL1nvWU0" />
 
-<!-- Google AdSense Account Verification & Auto-Ads (Deferred for Mobile Performance) -->
+<!-- Google AdSense Account Verification & Auto-Ads (Performance Deferred) -->
 <meta name="google-adsense-account" content="ca-pub-2781286202640992">
-<script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992" crossorigin="anonymous"></script>
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var adsScript = document.createElement('script');
+      adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992";
+      adsScript.crossOrigin = "anonymous";
+      adsScript.async = true;
+      document.head.appendChild(adsScript);
+    }, 2500);
+  });
+</script>
 
 <!-- Mobile Web App Capability & Status Bar -->
 <meta name="mobile-web-app-capable" content="yes"/>
@@ -210,10 +220,11 @@
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
 
-<!-- Fonts -->
+<!-- Fonts (Non-blocking asynchronous load) -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"/></noscript>
 
 <!-- Styles -->
 <link rel="stylesheet" href="style.css"/>
@@ -517,13 +528,13 @@
       <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
         <h3 style="font-size: 16px; margin-bottom: 16px;">Topic Progress Breakdown</h3>
         <div style="overflow-x: auto;">
-          <table class="problem-table">
+          <table class="problem-table" aria-label="Topic Progress Breakdown Table">
             <thead>
               <tr>
-                <th>Topic</th>
-                <th>Solved</th>
-                <th>Total</th>
-                <th>Completion</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Solved</th>
+                <th scope="col">Total</th>
+                <th scope="col">Completion</th>
               </tr>
             </thead>
             <tbody id="topic-progress-tbody">
