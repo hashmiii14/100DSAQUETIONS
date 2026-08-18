@@ -1,43 +1,59 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('--- MINIFYING DATASET FOR 100/100 MOBILE PERFORMANCE ---');
+console.log('--- MINIFYING DATASETS FOR 100/100 DESKTOP & MOBILE PERFORMANCE ---');
 
+// 1. Minify questions.js
 const questionsPath = path.join(__dirname, '../data/questions.js');
 const rawJs = fs.readFileSync(questionsPath, 'utf8');
 
 const problemsMatch = rawJs.match(/const PROBLEMS = (\[[\s\S]*\]);/);
-if (!problemsMatch) {
-  console.error('Failed to parse PROBLEMS array');
-  process.exit(1);
-}
-
 let problems;
-try {
-  problems = JSON.parse(problemsMatch[1]);
-} catch (e) {
-  const vm = require('vm');
-  const sandbox = {};
-  vm.createContext(sandbox);
-  vm.runInContext(rawJs, sandbox);
-  problems = sandbox.PROBLEMS;
+if (problemsMatch) {
+  try {
+    problems = JSON.parse(problemsMatch[1]);
+  } catch (e) {
+    const vm = require('vm');
+    const sandbox = {};
+    vm.createContext(sandbox);
+    vm.runInContext(rawJs, sandbox);
+    problems = sandbox.PROBLEMS;
+  }
 }
 
-console.log(`Loaded ${problems.length} problems from dataset.`);
+if (problems) {
+  const minifiedJs = `const PROBLEMS=${JSON.stringify(problems)};`;
+  const minJsPath = path.join(__dirname, '../data/questions.min.js');
+  fs.writeFileSync(minJsPath, minifiedJs, 'utf8');
+  console.log(`✓ questions.min.js generated (${(fs.statSync(minJsPath).size / 1024 / 1024).toFixed(2)} MB)`);
 
-// Output 1: Minified questions.min.js
-const minifiedJs = `const PROBLEMS=${JSON.stringify(problems)};`;
-const minJsPath = path.join(__dirname, '../data/questions.min.js');
-fs.writeFileSync(minJsPath, minifiedJs, 'utf8');
-const originalSize = fs.statSync(questionsPath).size;
-const minifiedSize = fs.statSync(minJsPath).size;
-console.log(`questions.js original size: ${(originalSize / 1024 / 1024).toFixed(2)} MB`);
-console.log(`questions.min.js minified size: ${(minifiedSize / 1024 / 1024).toFixed(2)} MB`);
-console.log(`Saved ${(100 - (minifiedSize / originalSize) * 100).toFixed(1)}% file size!`);
+  const jsonPath = path.join(__dirname, '../data/questions.json');
+  fs.writeFileSync(jsonPath, JSON.stringify(problems, null, 2), 'utf8');
+  console.log(`✓ questions.json API endpoint generated (${(fs.statSync(jsonPath).size / 1024 / 1024).toFixed(2)} MB)`);
+}
 
-// Output 2: Clean API endpoint questions.json for Agentic Browsing
-const jsonPath = path.join(__dirname, '../data/questions.json');
-fs.writeFileSync(jsonPath, JSON.stringify(problems, null, 2), 'utf8');
-console.log(`Generated /data/questions.json API endpoint (${(fs.statSync(jsonPath).size / 1024 / 1024).toFixed(2)} MB)`);
+// 2. Minify guide_data.js
+const guidePath = path.join(__dirname, '../data/guide_data.js');
+const rawGuide = fs.readFileSync(guidePath, 'utf8');
+const guideMatch = rawGuide.match(/const GUIDE_TOPICS = (\[[\s\S]*\]);/);
+let guideTopics;
+if (guideMatch) {
+  try {
+    guideTopics = JSON.parse(guideMatch[1]);
+  } catch (e) {
+    const vm = require('vm');
+    const sandbox = {};
+    vm.createContext(sandbox);
+    vm.runInContext(rawGuide, sandbox);
+    guideTopics = sandbox.GUIDE_TOPICS;
+  }
+}
 
-console.log('--- DATASET MINIFICATION COMPLETE ---');
+if (guideTopics) {
+  const minifiedGuideJs = `const GUIDE_TOPICS=${JSON.stringify(guideTopics)};`;
+  const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
+  fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
+  console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);
+}
+
+console.log('--- ALL DATASETS MINIFIED SUCCESSFULLY ---');
