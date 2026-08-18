@@ -27,7 +27,7 @@ if (problems) {
   fs.writeFileSync(minJsPath, minifiedJs, 'utf8');
   console.log(`✓ questions.min.js generated (${(fs.statSync(minJsPath).size / 1024 / 1024).toFixed(2)} MB)`);
 
-  // 2. High-speed Index dataset questions_index.min.js (~120 KB for fast mobile parse time)
+  // 2. High-speed Index dataset questions_index.min.js (~186 KB)
   const indexArray = problems.map(p => ({
     i: p.id,
     t: p.title,
@@ -38,10 +38,17 @@ if (problems) {
     s: p.stageName || p.stage || ''
   }));
 
-  const indexJs = `const PROBLEMS_INDEX=${JSON.stringify(indexArray)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_INDEX;`;
+  const indexJs = `const PROBLEMS_INDEX=${JSON.stringify(indexArray)};if(typeof window!=='undefined'){window.PROBLEMS_INDEX=PROBLEMS_INDEX;window.PROBLEMS=PROBLEMS_INDEX;}`;
   const indexJsPath = path.join(__dirname, '../data/questions_index.min.js');
   fs.writeFileSync(indexJsPath, indexJs, 'utf8');
   console.log(`✓ questions_index.min.js generated (${(fs.statSync(indexJsPath).size / 1024).toFixed(1)} KB)`);
+
+  // 2b. Initial Paint Chunk questions_page1.min.js (~6.5 KB for 100/100 Mobile Score)
+  const page1Array = indexArray.slice(0, 50);
+  const page1Js = `const PROBLEMS_PAGE1=${JSON.stringify(page1Array)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_PAGE1;`;
+  const page1JsPath = path.join(__dirname, '../data/questions_page1.min.js');
+  fs.writeFileSync(page1JsPath, page1Js, 'utf8');
+  console.log(`✓ questions_page1.min.js generated (${(fs.statSync(page1JsPath).size / 1024).toFixed(1)} KB)`);
 
   // 3. API endpoint questions.json for Agentic Browsing
   const jsonPath = path.join(__dirname, '../data/questions.json');
