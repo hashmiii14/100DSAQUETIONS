@@ -18,6 +18,7 @@ const ASSETS_TO_CACHE = [
   '/images/upi-qr.png',
   '/data/questions.js',
   '/data/questions.min.js',
+  '/data/questions_index.min.js',
   '/data/questions.json',
   '/data/guide_data.js',
   '/data/guide_data.min.js',

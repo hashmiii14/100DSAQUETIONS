@@ -39,6 +39,8 @@ class DSAApp {
         this.problems = window.PROBLEMS;
       } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
         this.problems = PROBLEMS;
+      } else if (typeof PROBLEMS_INDEX !== 'undefined' && Array.isArray(PROBLEMS_INDEX)) {
+        this.problems = PROBLEMS_INDEX;
       } else {
         this.problems = [];
       }
