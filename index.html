@@ -34,15 +34,25 @@
 <!-- Google AdSense Account Verification & Auto-Ads (Performance Deferred) -->
 <meta name="google-adsense-account" content="ca-pub-2781286202640992">
 <script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
+  (function() {
+    var loaded = false;
+    function loadAdSense() {
+      if (loaded) return;
+      loaded = true;
+      ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+        window.removeEventListener(evt, loadAdSense);
+      });
       var adsScript = document.createElement('script');
       adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992";
       adsScript.crossOrigin = "anonymous";
       adsScript.async = true;
       document.head.appendChild(adsScript);
-    }, 2500);
-  });
+    }
+    ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+      window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+    });
+    setTimeout(loadAdSense, 6000);
+  })();
 </script>
 
 <!-- Mobile Web App Capability & Status Bar -->
