@@ -1,0 +1,16 @@
+# AI Crawler & Agentic Browsing Directives for dsaproblems.site
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /data/questions.json
+Allow: /.well-known/ai-plugin.json
+Allow: /.well-known/agentic.json
+
+# Agentic Browsing Specifications
+Site-Name: DSA Problems
+Dataset-Format: JSON, Markdown, Text
+Dataset-Location: https://www.dsaproblems.site/llms-full.txt
+JSON-API: https://www.dsaproblems.site/data/questions.json
+LLMs-Index: https://www.dsaproblems.site/llms.txt

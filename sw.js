@@ -1,5 +1,5 @@
 // Service Worker for DSA Problems (dsaproblems.site)
-const CACHE_NAME = 'dsaproblems-v2';
+const CACHE_NAME = 'dsaproblems-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -10,9 +10,15 @@ const ASSETS_TO_CACHE = [
   '/robots.txt',
   '/sitemap.xml',
   '/llms.txt',
+  '/llms-full.txt',
+  '/ai.txt',
+  '/.well-known/ai-plugin.json',
+  '/.well-known/agentic.json',
   '/images/og-image.png',
   '/images/upi-qr.png',
   '/data/questions.js',
+  '/data/questions.min.js',
+  '/data/questions.json',
   '/data/guide_data.js',
   '/data/patterns.js',
   '/data/ds_algo_library.js',

@@ -21,3 +21,6 @@ Allow: /
 
 Sitemap: https://www.dsaproblems.site/sitemap.xml
 # LLMs.txt for Agentic Browsing: https://www.dsaproblems.site/llms.txt
+# Agentic Browsing Spec: https://www.dsaproblems.site/.well-known/agentic.json
+# AI Directives: https://www.dsaproblems.site/ai.txt
+# JSON API: https://www.dsaproblems.site/data/questions.json
