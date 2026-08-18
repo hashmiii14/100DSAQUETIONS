@@ -237,7 +237,6 @@
 
 <!-- Datasets & Modules (Non-blocking deferred execution) -->
 <script defer src="data/questions_index.min.js"></script>
-<script defer src="data/questions.min.js"></script>
 <script defer src="data/guide_data.min.js"></script>
 <script defer src="data/patterns.js"></script>
 <script defer src="data/ds_algo_library.js"></script>
@@ -246,6 +245,23 @@
 <script defer src="js/recommendation.js"></script>
 <script defer src="js/duplicate_prevention.js"></script>
 <script defer src="app.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    var loadFullData = function() {
+      if (!window.__FULL_DATA_LOADED__) {
+        window.__FULL_DATA_LOADED__ = true;
+        var s = document.createElement('script');
+        s.src = 'data/questions.min.js';
+        document.head.appendChild(s);
+      }
+    };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadFullData, { timeout: 2000 });
+    } else {
+      setTimeout(loadFullData, 1000);
+    }
+  });
+</script>
 </head>
 <body>
 
@@ -269,30 +285,30 @@
 
       <!-- Desktop Nav Links (Exact Ordered Sequence) -->
       <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
-        <button class="nav-btn active" data-view="problems" onclick="app.navigate('/problems')">Problems</button>
-        <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide')">DSA Guide</button>
-        <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress')">Progress</button>
-        <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy')">Privacy Policy</button>
-        <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact')">Contact</button>
-        <button class="nav-btn" data-view="about" onclick="app.navigate('/about')">About</button>
+        <button class="nav-btn active" data-view="problems" data-testid="nav-problems" onclick="app.navigate('/problems')">Problems</button>
+        <button class="nav-btn" data-view="guide" data-testid="nav-guide" onclick="app.navigate('/guide')">DSA Guide</button>
+        <button class="nav-btn" data-view="progress" data-testid="nav-progress" onclick="app.navigate('/progress')">Progress</button>
+        <button class="nav-btn" data-view="privacy" data-testid="nav-privacy" onclick="app.navigate('/privacy')">Privacy Policy</button>
+        <button class="nav-btn" data-view="contact" data-testid="nav-contact" onclick="app.navigate('/contact')">Contact</button>
+        <button class="nav-btn" data-view="about" data-testid="nav-about" onclick="app.navigate('/about')">About</button>
       </nav>
 
       <!-- Header Right Actions -->
       <div class="header-actions">
-        <button class="search-trigger-btn" onclick="app.openCommandPalette()" aria-label="Quick Search Problems">
+        <button class="search-trigger-btn" data-testid="search-trigger" onclick="app.openCommandPalette()" aria-label="Quick Search Problems">
           <span>Search problems...</span>
           <span class="shortcut-kbd">⌘K</span>
         </button>
 
-        <button class="share-btn-header" onclick="app.shareWebsite()" aria-label="Share DSA Sheet" title="Share DSA Sheet (🔗)">
+        <button class="share-btn-header" data-testid="share-btn" onclick="app.shareWebsite()" aria-label="Share DSA Sheet" title="Share DSA Sheet (🔗)">
           <span>🔗 Share</span>
         </button>
 
-        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Theme" title="Toggle Theme">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" data-testid="theme-toggle" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Theme" title="Toggle Theme">
           <span class="theme-toggle-icon" id="theme-icon">☀️</span>
         </button>
 
-        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" data-testid="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">☰</button>
       </div>
     </div>
   </header>
@@ -305,16 +321,16 @@
       <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" aria-label="Close mobile navigation menu" style="padding: 4px 10px;">✕</button>
     </div>
     <nav style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;" aria-label="Mobile Drawer Navigation">
-      <button class="nav-btn" data-view="problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
-      <button class="nav-btn" data-view="guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">DSA Guide</button>
-      <button class="nav-btn" data-view="progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
-      <button class="nav-btn" data-view="privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
-      <button class="nav-btn" data-view="contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
-      <button class="nav-btn" data-view="about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
+      <button class="nav-btn" data-view="problems" data-testid="mobile-nav-problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
+      <button class="nav-btn" data-view="guide" data-testid="mobile-nav-guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">DSA Guide</button>
+      <button class="nav-btn" data-view="progress" data-testid="mobile-nav-progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
+      <button class="nav-btn" data-view="privacy" data-testid="mobile-nav-privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
+      <button class="nav-btn" data-view="contact" data-testid="mobile-nav-contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
+      <button class="nav-btn" data-view="about" data-testid="mobile-nav-about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
     </nav>
     <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color);">
       <span style="font-size: 13.5px; color: var(--text-secondary); font-weight: 500;">Theme</span>
-      <button class="theme-toggle-btn" onclick="app.toggleTheme()" aria-label="Toggle Light/Dark Mode">
+      <button class="theme-toggle-btn" data-testid="mobile-theme-toggle" onclick="app.toggleTheme()" aria-label="Toggle Light/Dark Mode">
         <span id="mobile-theme-label" style="font-size: 13px; font-weight: 600;">☀️ Day Mode</span>
       </button>
     </div>
@@ -391,29 +407,29 @@
       <div class="filter-controls-bar">
         <div class="search-input-group">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          <input type="text" class="search-input" id="problem-search-input" placeholder="Search by title, ID, topic or pattern..." aria-label="Search problems by title, ID, topic or pattern" oninput="app.handleSearchInput(this.value)"/>
+          <input type="text" class="search-input" id="problem-search-input" data-testid="problem-search-input" placeholder="Search by title, ID, topic or pattern..." aria-label="Search problems by title, ID, topic or pattern" oninput="app.handleSearchInput(this.value)"/>
         </div>
 
         <div class="filter-selects-group">
-          <select class="filter-select" id="difficulty-filter" aria-label="Filter by difficulty" onchange="app.handleDifficultyFilter(this.value)">
+          <select class="filter-select" id="difficulty-filter" data-testid="difficulty-filter" aria-label="Filter by difficulty" onchange="app.handleDifficultyFilter(this.value)">
             <option value="all">All Difficulties</option>
             <option value="Easy">Easy</option>
             <option value="Medium">Medium</option>
             <option value="Hard">Hard</option>
           </select>
 
-          <select class="filter-select" id="status-filter" aria-label="Filter by status" onchange="app.handleStatusFilter(this.value)">
+          <select class="filter-select" id="status-filter" data-testid="status-filter" aria-label="Filter by status" onchange="app.handleStatusFilter(this.value)">
             <option value="all">All Status</option>
             <option value="unsolved">Unsolved</option>
             <option value="solved">Solved</option>
             <option value="bookmarked">Bookmarked</option>
           </select>
 
-          <select class="filter-select" id="topic-filter" aria-label="Filter by topic" onchange="app.handleTopicFilter(this.value)">
+          <select class="filter-select" id="topic-filter" data-testid="topic-filter" aria-label="Filter by topic" onchange="app.handleTopicFilter(this.value)">
             <option value="all">All Topics</option>
           </select>
 
-          <select class="filter-select" id="pattern-filter" aria-label="Filter by pattern" onchange="app.handlePatternFilter(this.value)">
+          <select class="filter-select" id="pattern-filter" data-testid="pattern-filter" aria-label="Filter by pattern" onchange="app.handlePatternFilter(this.value)">
             <option value="all">All Patterns</option>
           </select>
         </div>
@@ -421,8 +437,8 @@
 
       <!-- Results Count Info -->
       <div class="results-meta-row">
-        <div>Showing <span id="results-count">50</span> of <span id="total-results-count">1000</span> problems</div>
-        <button class="btn-reset-filters" id="btn-reset-filters" onclick="app.resetFilters()" aria-label="Reset search filters">↺ Reset Filters</button>
+        <div>Showing <span id="results-count" aria-live="polite">50</span> of <span id="total-results-count">1000</span> problems</div>
+        <button class="btn-reset-filters" id="btn-reset-filters" data-testid="btn-reset-filters" onclick="app.resetFilters()" aria-label="Reset search filters">↺ Reset Filters</button>
       </div>
 
       <!-- Desktop Table Container -->
@@ -454,9 +470,9 @@
       <div class="pagination-bar">
         <div id="pagination-info">Showing 1–50 of 1000</div>
         <nav class="pagination-controls" id="pagination-controls-container" aria-label="Pagination Navigation">
-          <button class="page-btn" id="btn-prev-page" onclick="app.changePage(-1)" aria-label="Go to previous page">← Previous</button>
+          <button class="page-btn" id="btn-prev-page" data-testid="btn-prev-page" onclick="app.changePage(-1)" aria-label="Go to previous page">← Previous</button>
           <span id="page-numbers-container" style="font-weight: 600; padding: 0 4px;">Page 1</span>
-          <button class="page-btn" id="btn-next-page" onclick="app.changePage(1)" aria-label="Go to next page">Next →</button>
+          <button class="page-btn" id="btn-next-page" data-testid="btn-next-page" onclick="app.changePage(1)" aria-label="Go to next page">Next →</button>
         </nav>
       </div>
 
@@ -693,7 +709,7 @@
   <div class="modal-overlay" id="command-palette-modal" role="dialog" aria-modal="true" aria-label="Quick Search Command Palette" onclick="if(event.target === this) app.closeCommandPalette()">
     <div class="modal-container" style="max-width: 600px;">
       <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-color);">
-        <input type="text" class="search-input" id="cmd-palette-input" placeholder="Type to search 1000 problems..." aria-label="Type to search 1000 problems" oninput="app.handleCmdPaletteSearch(this.value)"/>
+        <input type="text" class="search-input" id="cmd-palette-input" data-testid="cmd-palette-input" placeholder="Type to search 1000 problems..." aria-label="Type to search 1000 problems" oninput="app.handleCmdPaletteSearch(this.value)"/>
       </div>
       <div style="max-height: 400px; overflow-y: auto; padding: 12px 16px;" id="cmd-palette-results">
         <!-- Dynamic search items -->

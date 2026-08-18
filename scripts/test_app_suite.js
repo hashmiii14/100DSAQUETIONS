@@ -157,7 +157,7 @@ const mobileViews = [...mobileDrawerMatch[1].matchAll(/data-view=["']([^"']+)["'
 assert(JSON.stringify(mobileViews) === JSON.stringify(expectedNavOrder), `Mobile drawer nav order mismatch: expected ${expectedNavOrder.join(', ')} but got ${mobileViews.join(', ')}`);
 
 // Extract footer links
-const footerMatch = indexHtml.match(/<div[^>]*class=["']footer-links["'][^>]*>([\s\S]*?)<\/div>/);
+const footerMatch = indexHtml.match(/<(?:div|nav)[^>]*class=["']footer-links["'][^>]*>([\s\S]*?)<\/(?:div|nav)>/);
 assert(footerMatch, "footer-links element must exist in index.html");
 const footerHrefs = [...footerMatch[1].matchAll(/href=["']\/([^"']+)["']/g)].map(m => m[1]);
 assert(JSON.stringify(footerHrefs) === JSON.stringify(expectedNavOrder), `Footer nav order mismatch: expected ${expectedNavOrder.join(', ')} but got ${footerHrefs.join(', ')}`);

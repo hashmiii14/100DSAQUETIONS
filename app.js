@@ -600,7 +600,7 @@ class DSAApp {
           : `<span class="btn-solve disabled" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
 
         // Desktop Row HTML
-        tableRowsHtml += `<tr class="${isSolved ? 'solved-row' : ''}">
+        tableRowsHtml += `<tr class="${isSolved ? 'solved-row' : ''}" data-testid="problem-row-${p.id}">
           <td class="col-num">${formattedId}</td>
           <td class="col-title">
             <a class="problem-title-link" href="javascript:void(0)" onclick="app.openProblemModal(${p.id})" tabindex="0" role="button" aria-label="View problem ${formattedId} details: ${this.escapeHtml(p.title)}">${this.escapeHtml(p.title)}</a>
@@ -613,8 +613,8 @@ class DSAApp {
             ${ctaBtnHtml}
           </td>
           <td class="col-status">
-            <input type="checkbox" class="status-checkbox" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem ${formattedId} solved"/>
-            <button class="bookmark-btn ${isBm ? 'active' : ''}" onclick="app.toggleBookmark(${p.id})" aria-label="Bookmark problem ${formattedId}">${isBm ? '★' : '☆'}</button>
+            <input type="checkbox" class="status-checkbox" data-testid="solved-checkbox-${p.id}" ${isSolved ? 'checked' : ''} onchange="app.toggleSolved(${p.id})" aria-label="Mark problem ${formattedId} solved"/>
+            <button class="bookmark-btn ${isBm ? 'active' : ''}" data-testid="bookmark-btn-${p.id}" onclick="app.toggleBookmark(${p.id})" aria-label="Bookmark problem ${formattedId}">${isBm ? '★' : '☆'}</button>
           </td>
         </tr>`;
 
