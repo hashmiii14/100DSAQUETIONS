@@ -679,11 +679,10 @@ class DSAApp {
 
         const diffClass = this.getDiffClass(p.difficulty);
         const formattedId = `#${String(p.id).padStart(3, '0')}`;
-        const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl);
-        const practiceUrl = isLeetCodeAvailable ? (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl) : null;
+        const practiceUrl = p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || p.u || null;
         const ctaBtnHtml = practiceUrl
-          ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve on LeetCode →</a>`
-          : `<span class="btn-solve disabled" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
+          ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">🔗 Solve on LeetCode</a>`
+          : `<span class="btn-solve disabled" title="No direct link">No Link</span>`;
 
         // Desktop Row HTML
         tableRowsHtml += `<tr class="${isSolved ? 'solved-row' : ''}" data-testid="problem-row-${p.id}">
@@ -902,11 +901,10 @@ class DSAApp {
       const diffClass = this.getDiffClass(p.difficulty);
       const savedNote = this.state ? this.state.getNote(p.id) : '';
 
-      const isLeetCodeAvailable = p.leetcode_match_status !== 'no_direct_match' && (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl);
-      const practiceUrl = isLeetCodeAvailable ? (p.canonicalUrl || p.leetcode_url || p.leetcodeUrl) : null;
+      const practiceUrl = p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || p.u || null;
       const modalCtaBtn = practiceUrl
-        ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">Solve on LeetCode →</a>`
-        : `<span class="btn-solve disabled" style="margin-left: auto;" title="Original problem — No direct LeetCode match">No Direct Match</span>`;
+        ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">🔗 Solve on LeetCode</a>`
+        : `<span class="btn-solve disabled" style="margin-left: auto;" title="No direct link">No Link</span>`;
 
       bodyEl.innerHTML = `
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
