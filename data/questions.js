@@ -9124,7 +9124,7 @@ const PROBLEMS = [
     "title": "Set Mismatch",
     "slug": "set-mismatch",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Sort",
     "subtopic": "Arrays Optimization",
     "pattern": "Cyclic Sort / Sign Marking",
     "secondary_patterns": [
@@ -9308,7 +9308,7 @@ const PROBLEMS = [
     "title": "Height Checker",
     "slug": "height-checker",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Sort",
     "subtopic": "Arrays Optimization",
     "pattern": "Sort Mismatch Count",
     "secondary_patterns": [
@@ -9492,7 +9492,7 @@ const PROBLEMS = [
     "title": "Distribute Candies to People",
     "slug": "distribute-candies-to-people",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Round-Robin Simulation",
     "secondary_patterns": [
@@ -9584,7 +9584,7 @@ const PROBLEMS = [
     "title": "Projection Area of 3D Shapes",
     "slug": "projection-area-of-3d-shapes",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Geometry",
     "subtopic": "Arrays Optimization",
     "pattern": "Grid Projection Max",
     "secondary_patterns": [
@@ -9860,7 +9860,7 @@ const PROBLEMS = [
     "title": "Kids With the Greatest Number of Candies",
     "slug": "kids-with-the-greatest-number-of-candies",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Max Comparison",
     "secondary_patterns": [
@@ -10044,7 +10044,7 @@ const PROBLEMS = [
     "title": "Find Numbers with Even Number of Digits",
     "slug": "find-numbers-with-even-number-of-digits",
     "difficulty": "Easy",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Digit Count",
     "secondary_patterns": [
@@ -22552,7 +22552,7 @@ const PROBLEMS = [
     "title": "Subarray Sum Equals K",
     "slug": "subarray-sum-equals-k",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Prefix Sum",
     "subtopic": "Hashing & Array Optimization",
     "pattern": "Hashing & Array Optimization",
     "secondary_patterns": [
@@ -22646,7 +22646,7 @@ const PROBLEMS = [
     "title": "Set Matrix Zeroes",
     "slug": "set-matrix-zeroes",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Hashing",
     "subtopic": "Binary Search",
     "pattern": "Binary Search",
     "secondary_patterns": [
@@ -23944,7 +23944,7 @@ const PROBLEMS = [
     "title": "Count and Say",
     "slug": "count-and-say",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -24884,7 +24884,7 @@ const PROBLEMS = [
     "title": "Best Time to Buy and Sell Stock II",
     "slug": "best-time-to-buy-and-sell-stock-ii",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -24978,7 +24978,7 @@ const PROBLEMS = [
     "title": "Linked List Cycle II",
     "slug": "linked-list-cycle-ii",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -26106,7 +26106,7 @@ const PROBLEMS = [
     "title": "Bitwise AND of Numbers Range",
     "slug": "bitwise-and-of-numbers-range",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -26576,7 +26576,7 @@ const PROBLEMS = [
     "title": "Delete Node in a Linked List",
     "slug": "delete-node-in-a-linked-list",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -26952,7 +26952,7 @@ const PROBLEMS = [
     "title": "Bulls and Cows",
     "slug": "bulls-and-cows",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -27140,7 +27140,7 @@ const PROBLEMS = [
     "title": "Best Time to Buy and Sell Stock with Cooldown",
     "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -27610,7 +27610,7 @@ const PROBLEMS = [
     "title": "Odd Even Linked List",
     "slug": "odd-even-linked-list",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -27892,7 +27892,7 @@ const PROBLEMS = [
     "title": "Flatten Nested List Iterator",
     "slug": "flatten-nested-list-iterator",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28080,7 +28080,7 @@ const PROBLEMS = [
     "title": "Count Numbers with Unique Digits",
     "slug": "count-numbers-with-unique-digits",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28174,7 +28174,7 @@ const PROBLEMS = [
     "title": "Water and Jug Problem",
     "slug": "water-and-jug-problem",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28268,7 +28268,7 @@ const PROBLEMS = [
     "title": "Largest Divisible Subset",
     "slug": "largest-divisible-subset",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Hashing",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28456,7 +28456,7 @@ const PROBLEMS = [
     "title": "Super Pow",
     "slug": "super-pow",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28738,7 +28738,7 @@ const PROBLEMS = [
     "title": "Insert Delete GetRandom O(1)",
     "slug": "insert-delete-getrandom-o1",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -28832,7 +28832,7 @@ const PROBLEMS = [
     "title": "Linked List Random Node",
     "slug": "linked-list-random-node",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -29584,7 +29584,7 @@ const PROBLEMS = [
     "title": "Random Pick Index",
     "slug": "random-pick-index",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -29678,7 +29678,7 @@ const PROBLEMS = [
     "title": "Nth Digit",
     "slug": "nth-digit",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -29772,7 +29772,7 @@ const PROBLEMS = [
     "title": "Remove K Digits",
     "slug": "remove-k-digits",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -30054,7 +30054,7 @@ const PROBLEMS = [
     "title": "Reconstruct Original Digits from English",
     "slug": "reconstruct-original-digits-from-english",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -30148,7 +30148,7 @@ const PROBLEMS = [
     "title": "Flatten a Multilevel Doubly Linked List",
     "slug": "flatten-a-multilevel-doubly-linked-list",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -30242,7 +30242,7 @@ const PROBLEMS = [
     "title": "Find Right Interval",
     "slug": "find-right-interval",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Sort",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -30336,7 +30336,7 @@ const PROBLEMS = [
     "title": "Find All Anagrams in a String",
     "slug": "find-all-anagrams-in-a-string",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Hashing",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -30994,7 +30994,7 @@ const PROBLEMS = [
     "title": "Circular Array Loop",
     "slug": "circular-array-loop",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Queue",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -31370,7 +31370,7 @@ const PROBLEMS = [
     "title": "Implement Rand10() Using Rand7()",
     "slug": "implement-rand10-using-rand7",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -31464,7 +31464,7 @@ const PROBLEMS = [
     "title": "Ones and Zeroes",
     "slug": "ones-and-zeroes",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -32686,7 +32686,7 @@ const PROBLEMS = [
     "title": "Random Pick with Weight",
     "slug": "random-pick-with-weight",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -32968,7 +32968,7 @@ const PROBLEMS = [
     "title": "Encode and Decode TinyURL",
     "slug": "encode-and-decode-tinyurl",
     "difficulty": "Medium",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -65265,7 +65265,7 @@ const PROBLEMS = [
     "title": "Subarrays with K Different Integers",
     "slug": "subarrays-with-k-different-integers",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Sliding Window",
     "subtopic": "Arrays Optimization",
     "pattern": "Sliding Window",
     "secondary_patterns": [
@@ -66105,7 +66105,7 @@ const PROBLEMS = [
     "title": "Trips and Users",
     "slug": "trips-and-users",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -66387,7 +66387,7 @@ const PROBLEMS = [
     "title": "Insert Delete GetRandom O(1) - Duplicates allowed",
     "slug": "insert-delete-getrandom-o1-duplicates-allowed",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -67703,7 +67703,7 @@ const PROBLEMS = [
     "title": "Smallest Range Covering Elements from K Lists",
     "slug": "smallest-range-covering-elements-from-k-lists",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -67985,7 +67985,7 @@ const PROBLEMS = [
     "title": "Random Pick with Blacklist",
     "slug": "random-pick-with-blacklist",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -68173,7 +68173,7 @@ const PROBLEMS = [
     "title": "Set Intersection Size At Least Two",
     "slug": "set-intersection-size-at-least-two",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Hashing",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -68925,7 +68925,7 @@ const PROBLEMS = [
     "title": "Numbers With Repeated Digits",
     "slug": "numbers-with-repeated-digits",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Math",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -69865,7 +69865,7 @@ const PROBLEMS = [
     "title": "Design Skiplist",
     "slug": "design-skiplist",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Linked List",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -70805,7 +70805,7 @@ const PROBLEMS = [
     "title": "Maximum Candies You Can Get from Boxes",
     "slug": "maximum-candies-you-can-get-from-boxes",
     "difficulty": "Hard",
-    "topic": "Arrays",
+    "topic": "Bit Manipulation",
     "subtopic": "Arrays Optimization",
     "pattern": "Arrays Pattern",
     "secondary_patterns": [
@@ -92901,4 +92901,5 @@ const PROBLEMS = [
     "learningOrder": 1000
   }
 ];
-if (typeof module !== 'undefined' && module.exports) { module.exports = PROBLEMS; }
+if (typeof window !== 'undefined') window.PROBLEMS = PROBLEMS;
+if (typeof module !== 'undefined') module.exports = PROBLEMS;

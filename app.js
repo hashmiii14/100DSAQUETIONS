@@ -1511,7 +1511,9 @@ if (typeof document !== 'undefined') {
     app = new DSAApp();
     if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+          if (reg && typeof reg.update === 'function') reg.update();
+        }).catch(() => {});
       });
     }
   });

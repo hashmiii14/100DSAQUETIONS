@@ -1,13 +1,11 @@
 // Service Worker for DSA Problems (dsaproblems.site)
-const CACHE_NAME = 'dsaproblems-v4';
+const CACHE_NAME = 'dsaproblems-v5';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/images/og-image.webp',
-  '/images/upi-qr.png',
-  '/data/questions_page1.min.js',
   '/data/questions_index.min.js',
+  '/data/guide_data.min.js',
   '/js/app.bundle.min.js'
 ];
 
@@ -35,26 +33,23 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event: Stale-While-Revalidate Caching Strategy for superfast loads
+// Fetch Event: Network-First Strategy (Always fetch latest code from Vercel deployment)
 self.addEventListener('fetch', (event) => {
-  // Ignore non-GET requests or Google AdSense / external API calls
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const fetchPromise = fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200) {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
-        }
-        return networkResponse;
-      }).catch(() => cachedResponse);
-
-      return cachedResponse || fetchPromise;
+    fetch(event.request).then((networkResponse) => {
+      if (networkResponse && networkResponse.status === 200) {
+        const responseClone = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseClone);
+        });
+      }
+      return networkResponse;
+    }).catch(() => {
+      return caches.match(event.request);
     })
   );
 });
