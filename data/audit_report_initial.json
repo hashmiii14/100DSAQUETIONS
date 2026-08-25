@@ -1,0 +1,82 @@
+{
+  "totalProblems": 1000,
+  "categoryCounts": {
+    "Arrays": 87,
+    "Strings": 81,
+    "Two Pointers": 47,
+    "Sliding Window": 22,
+    "Prefix Sum": 23,
+    "Stack": 39,
+    "Linked List": 17,
+    "Queue": 8,
+    "Binary Search": 40,
+    "Trees": 78,
+    "BST": 32,
+    "Heap": 20,
+    "Trie": 24,
+    "Greedy": 64,
+    "Union Find": 39,
+    "Graphs": 120,
+    "Dynamic Programming": 133,
+    "Backtracking": 29,
+    "Bit Manipulation": 36,
+    "Math": 14,
+    "Hashing": 34,
+    "Segment Tree": 6,
+    "Geometry": 3,
+    "BFS": 1,
+    "Simulation": 2,
+    "Sort": 1
+  },
+  "difficultyCounts": {
+    "Easy": 200,
+    "Medium": 500,
+    "Hard": 300
+  },
+  "urlTypes": {
+    "valid_leetcode": 994,
+    "search_url": 6,
+    "synthetic_or_invalid": 0,
+    "empty": 0
+  },
+  "dupUrlList": [],
+  "dupTitleList": [],
+  "searchUrlList": [
+    {
+      "id": 46,
+      "title": "Search Insert Position",
+      "topic": "Strings",
+      "url": "https://leetcode.com/problems/search-insert-position/"
+    },
+    {
+      "id": 149,
+      "title": "Search in Rotated Sorted Array",
+      "topic": "Arrays",
+      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+    },
+    {
+      "id": 184,
+      "title": "Search a 2D Matrix",
+      "topic": "Binary Search",
+      "url": "https://leetcode.com/problems/search-a-2d-matrix/"
+    },
+    {
+      "id": 188,
+      "title": "Search in Rotated Sorted Array II",
+      "topic": "Binary Search",
+      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/"
+    },
+    {
+      "id": 192,
+      "title": "Search a 2D Matrix II",
+      "topic": "Binary Search",
+      "url": "https://leetcode.com/problems/search-a-2d-matrix-ii/"
+    },
+    {
+      "id": 517,
+      "title": "Search in a Binary Search Tree",
+      "topic": "BST",
+      "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
+    }
+  ]
+}

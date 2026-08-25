@@ -1,0 +1,34 @@
+# DSA Problems (dsaproblems.site)
+
+> Free, developer-focused 1,000 verified LeetCode Data Structures & Algorithms problem sheet and learning roadmap. Categorized into 20+ core DSA patterns with multi-language C++, Java, Python, and JavaScript solutions.
+
+## Overview
+DSA Problems is an open-access educational platform designed to take software engineers from programming fundamentals to advanced interview readiness. It features a progressive 1,000-problem sheet with zero mandatory registration. All progress, bookmarks, and notes are saved locally in the browser via `localStorage`.
+
+## Main Navigation & Pages
+- [Problems Sheet](https://www.dsaproblems.site/problems): Interactive table and mobile-card grid of all 1,000 LeetCode DSA questions with status tracking, filtering, and search.
+- [DSA Guide](https://www.dsaproblems.site/guide): In-depth algorithmic guides, pattern cheat sheets, time/space complexity matrices, and standard implementation templates.
+- [Progress Dashboard](https://www.dsaproblems.site/progress): Detailed metrics on solved problems broken down by difficulty (Easy/Medium/Hard) and topic breakdown.
+- [About](https://www.dsaproblems.site/about): Information regarding the 1,000 DSA curriculum structure and methodology.
+- [Privacy Policy](https://www.dsaproblems.site/privacy): Explanation of local storage data persistence and third-party advertising disclosure.
+- [Contact & Support](https://www.dsaproblems.site/contact): Community support details, email contact (`mdhashmi955@gmail.com`), and voluntary contribution channels.
+
+## Core DSA Patterns Covered (20+ Patterns)
+- **Two Pointers**: Opposite direction, fast-slow pointers, 3Sum, container with most water.
+- **Sliding Window**: Fixed size, dynamic size, maximum subarray, substring constraints.
+- **Monotonic Stack & Queue**: Next greater element, daily temperatures, histogram area.
+- **Binary Search**: Search range, rotated array search, lower/upper bound, answer space search.
+- **Trees & Binary Search Trees**: Inorder/preorder/postorder traversals, LCA, level order, path sum.
+- **Graphs & Topo Sort**: BFS, DFS, Dijkstra, Kahn's algorithm, connected components, cycle detection.
+- **Dynamic Programming**: 1D DP, 2D grid DP, knapsack variations, LCS, LIS, interval DP.
+- **Heaps & Priority Queues**: K-th largest element, median stream, top K frequent elements.
+- **Trie & Prefix Trees**: Word dictionary, prefix search, autocomplete implementations.
+- **Bit Manipulation**: XOR properties, bit masking, counting set bits, single number.
+- **Backtracking**: Subsets, permutations, combination sum, N-Queens, sudoku solver.
+- **Greedy Algorithms**: Interval scheduling, gas station, jump game, Huffman coding.
+- **Union Find / Disjoint Set**: Graph connectivity, Kruskal's MST, redundant connection.
+
+## Complete Machine-Readable Dataset
+- [LLMs Full Dataset](https://www.dsaproblems.site/llms-full.txt): Complete structured text list of all 1,000 LeetCode verified problems with problem ID, title, difficulty, pattern, and practice link.
+- [Sitemap](https://www.dsaproblems.site/sitemap.xml): XML sitemap for automated indexing.
+- [Robots.txt](https://www.dsaproblems.site/robots.txt): Crawler rules allowing AI agents.

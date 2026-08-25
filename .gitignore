@@ -1,0 +1,27 @@
+# Dependencies & Build
+node_modules/
+dist/
+build/
+.next/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Logs & System Files
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+.gemini/
+data/questions_backup.js
+
+.vercel
+.env*

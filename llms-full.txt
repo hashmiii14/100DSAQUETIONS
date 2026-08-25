@@ -1,0 +1,1014 @@
+# DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap (Full Dataset)
+
+https://www.dsaproblems.site/
+
+Total Problems: 1000
+Difficulty Breakdown:
+- Easy: 200
+- Medium: 500
+- Hard: 300
+
+================================================================================
+PROBLEMS LIST
+================================================================================
+
+#1 | Contains Duplicate | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/contains-duplicate/
+#2 | Custom Sort String | Medium | Strings | Custom Priority Map Sort | https://leetcode.com/problems/custom-sort-string/
+#3 | Palindrome Number | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/palindrome-number/
+#4 | Longest Consecutive Sequence | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/longest-consecutive-sequence/
+#5 | Remove Element | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/remove-element/
+#6 | Ambiguous Coordinates | Medium | Strings | Decimal Insertion Backtracking | https://leetcode.com/problems/ambiguous-coordinates/
+#7 | Valid Palindrome | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/valid-palindrome/
+#8 | Consecutive Numbers | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/consecutive-numbers/
+#9 | Contains Duplicate II | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/contains-duplicate-ii/
+#10 | Reordered Power of 2 | Medium | Strings | Sorted Digit Count Match | https://leetcode.com/problems/reordered-power-of-2/
+#11 | Longest Palindrome | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/longest-palindrome/
+#12 | Permutation in String | Medium | Sliding Window | Hashing & Array Optimization | https://leetcode.com/problems/permutation-in-string/
+#13 | Two Sum | Easy | Arrays | Two Pointers | https://leetcode.com/problems/two-sum/
+#14 | Masking Personal Information | Medium | Strings | Regex Format Masking | https://leetcode.com/problems/masking-personal-information/
+#15 | Valid Palindrome II | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/valid-palindrome-ii/
+#16 | Split Array into Consecutive Subsequences | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/split-array-into-consecutive-subsequences/
+#17 | Plus One | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/plus-one/
+#18 | Find And Replace in String | Medium | Strings | Index Replacement Map | https://leetcode.com/problems/find-and-replace-in-string/
+#19 | Delete Columns to Make Sorted | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/delete-columns-to-make-sorted/
+#20 | Numbers With Same Consecutive Differences | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/numbers-with-same-consecutive-differences/
+#21 | Remove Duplicates from Sorted Array | Easy | Arrays | Two Pointers | https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+#22 | Remove Comments | Medium | Strings | State Parsing Machine | https://leetcode.com/problems/remove-comments/
+#23 | Element Appearing More Than 25% In Sorted Array | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+#24 | Max Consecutive Ones III | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/max-consecutive-ones-iii/
+#25 | Pascal's Triangle | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/pascals-triangle/
+#26 | Reorder Data in Log Files | Medium | Strings | Custom Log Comparator | https://leetcode.com/problems/reorder-data-in-log-files/
+#27 | Count Negative Numbers in a Sorted Matrix | Easy | Two Pointers | Two Pointers | https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
+#28 | Fruit Into Baskets | Medium | Sliding Window | Sliding Window | https://leetcode.com/problems/fruit-into-baskets/
+#29 | Pascal's Triangle II | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/pascals-triangle-ii/
+#30 | HTML Entity Parser | Medium | Strings | Trie / Map Replacement | https://leetcode.com/problems/html-entity-parser/
+#31 | Backspace String Compare | Easy | Two Pointers | Backward Pointer Skip | https://leetcode.com/problems/backspace-string-compare/
+#32 | Max Consecutive Ones | Easy | Sliding Window | Sliding Window | https://leetcode.com/problems/max-consecutive-ones/
+#33 | Best Time to Buy and Sell Stock | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+#34 | Roman to Integer | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/roman-to-integer/
+#35 | Positions of Large Groups | Easy | Two Pointers | Pointer Group Boundaries | https://leetcode.com/problems/positions-of-large-groups/
+#36 | Longest Nice Substring | Easy | Sliding Window | Divide & Conquer Set Check | https://leetcode.com/problems/longest-nice-substring/
+#37 | Majority Element | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/majority-element/
+#38 | Longest Common Prefix | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/longest-common-prefix/
+#39 | Duplicate Zeros | Easy | Two Pointers | In-Place Right Shift | https://leetcode.com/problems/duplicate-zeros/
+#40 | Range Sum Query - Immutable | Easy | Prefix Sum | Hashing & Array Optimization | https://leetcode.com/problems/range-sum-query-immutable/
+#41 | Missing Number | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/missing-number/
+#42 | Find the Index of the First Occurrence in a String | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+#43 | Implement Stack using Queues | Easy | Stack | Monotonic Stack | https://leetcode.com/problems/implement-stack-using-queues/
+#44 | Running Sum of 1d Array | Easy | Prefix Sum | Running Prefix Sum | https://leetcode.com/problems/running-sum-of-1d-array/
+#45 | Intersection of Two Arrays | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/intersection-of-two-arrays/
+#46 | Search Insert Position | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/search-insert-position/
+#47 | Implement Queue using Stacks | Easy | Stack | Monotonic Stack | https://leetcode.com/problems/implement-queue-using-stacks/
+#48 | Find the Highest Altitude | Easy | Prefix Sum | Running Altitude Max | https://leetcode.com/problems/find-the-highest-altitude/
+#49 | Intersection of Two Arrays II | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/intersection-of-two-arrays-ii/
+#50 | Length of Last Word | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/length-of-last-word/
+#51 | Valid Parentheses | Easy | Stack | Monotonic Stack | https://leetcode.com/problems/valid-parentheses/
+#52 | Bag of Tokens | Medium | Two Pointers | Greedy Score Swap | https://leetcode.com/problems/bag-of-tokens/
+#53 | Third Maximum Number | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/third-maximum-number/
+#54 | Multiply Strings | Medium | Strings | Digit Array Column Multiplication | https://leetcode.com/problems/multiply-strings/
+#55 | Maximum Population Year | Easy | Prefix Sum | Difference Array Sweep | https://leetcode.com/problems/maximum-population-year/
+#56 | Expressive Words | Medium | Two Pointers | Run Length Compression Match | https://leetcode.com/problems/expressive-words/
+#57 | Merge Sorted Array | Easy | Arrays | Two Pointers | https://leetcode.com/problems/merge-sorted-array/
+#58 | Frequency of the Most Frequent Element | Medium | Sliding Window | Sum Invariant Window | https://leetcode.com/problems/frequency-of-the-most-frequent-element/
+#59 | Add Binary | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/add-binary/
+#60 | Advantage Shuffle | Medium | Two Pointers | Greedy Tian Ji Horse Race | https://leetcode.com/problems/advantage-shuffle/
+#61 | Find All Numbers Disappeared in an Array | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+#62 | Longest Substring Of All Vowels in Order | Medium | Sliding Window | State Monotonic Window | https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/
+#63 | Sqrt(x) | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/sqrtx/
+#64 | Maximize Distance to Closest Person | Medium | Two Pointers | Zero Run Length Max | https://leetcode.com/problems/maximize-distance-to-closest-person/
+#65 | Move Zeroes | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/move-zeroes/
+#66 | Minimum Operations to Reduce X to Zero | Medium | Sliding Window | Max Subarray Target Sum | https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
+#67 | Excel Sheet Column Title | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/excel-sheet-column-title/
+#68 | Push Dominoes | Medium | Two Pointers | Bipolar Force Traversal | https://leetcode.com/problems/push-dominoes/
+#69 | Teemo Attacking | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/teemo-attacking/
+#70 | Range Sum Query 2D - Immutable | Medium | Prefix Sum | Hashing & Array Optimization | https://leetcode.com/problems/range-sum-query-2d-immutable/
+#71 | Excel Sheet Column Number | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/excel-sheet-column-number/
+#72 | Sort Array By Parity II | Medium | Two Pointers | Odd Even Write Pointers | https://leetcode.com/problems/sort-array-by-parity-ii/
+#73 | Squares of a Sorted Array | Easy | Arrays | Two Pointers | https://leetcode.com/problems/squares-of-a-sorted-array/
+#74 | Range Sum Query - Mutable | Medium | Prefix Sum | Hashing & Array Optimization | https://leetcode.com/problems/range-sum-query-mutable/
+#75 | Combine Two Tables | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/combine-two-tables/
+#76 | Longest Pressable Key | Medium | Two Pointers | Pointer Skip Match | https://leetcode.com/problems/longest-pressable-key/
+#77 | Array Partition | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/array-partition/
+#78 | Shifting Letters | Medium | Prefix Sum | Suffix Sum Shifts | https://leetcode.com/problems/shifting-letters/
+#79 | Employees Earning More Than Their Managers | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/employees-earning-more-than-their-managers/
+#80 | DI String Match | Medium | Two Pointers | Min Max Pointer Assign | https://leetcode.com/problems/di-string-match/
+#81 | Find Pivot Index | Easy | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/find-pivot-index/
+#82 | Number of Sub-arrays With Odd Sum | Medium | Prefix Sum | Even-Odd Parity DP | https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/
+#83 | Duplicate Emails | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/duplicate-emails/
+#84 | Max Number of K-Sum Pairs | Medium | Two Pointers | Sorted 2Sum Counter | https://leetcode.com/problems/max-number-of-k-sum-pairs/
+#85 | Reshape the Matrix | Easy | Arrays | Binary Search | https://leetcode.com/problems/reshape-the-matrix/
+#86 | Range Sum of Sorted Subarray Sums | Medium | Prefix Sum | Priority Queue Sums | https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/
+#87 | Customers Who Never Order | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/customers-who-never-order/
+#88 | Sentence Similarity III | Medium | Two Pointers | Deque Prefix-Suffix Match | https://leetcode.com/problems/sentence-similarity-iii/
+#89 | Toeplitz Matrix | Easy | Arrays | Binary Search | https://leetcode.com/problems/toeplitz-matrix/
+#90 | Number of Ways to Split a String | Medium | Prefix Sum | Combinatoric Ones Split | https://leetcode.com/problems/number-of-ways-to-split-a-string/
+#91 | Valid Phone Numbers | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/valid-phone-numbers/
+#92 | Rotating the Box | Medium | Two Pointers | Right Gravity Shift | https://leetcode.com/problems/rotating-the-box/
+#93 | Transpose Matrix | Easy | Arrays | Binary Search | https://leetcode.com/problems/transpose-matrix/
+#94 | Matrix Block Sum | Medium | Prefix Sum | 2D Prefix Sum Matrix | https://leetcode.com/problems/matrix-block-sum/
+#95 | Tenth Line | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/tenth-line/
+#96 | Form Array by Concatenating Subarrays of Another Array | Medium | Two Pointers | Sequential Subarray Match | https://leetcode.com/problems/form-array-by-concatenating-subarrays-of-another-array/
+#97 | Maximum Product of Three Numbers | Easy | Arrays | Top 3 Max & Min 2 | https://leetcode.com/problems/maximum-product-of-three-numbers/
+#98 | Ways to Split Array Into Three Subarrays | Medium | Prefix Sum | Binary Search Bounds | https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/
+#99 | Delete Duplicate Emails | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/delete-duplicate-emails/
+#100 | Next Permutation | Medium | Two Pointers | Lexicographical Peak Swap | https://leetcode.com/problems/next-permutation/
+#101 | Set Mismatch | Easy | Arrays | Cyclic Sort / Sign Marking | https://leetcode.com/problems/set-mismatch/
+#102 | Find Kth Largest XOR Coordinate Value | Medium | Prefix Sum | 2D Prefix XOR + Min-Heap | https://leetcode.com/problems/find-kth-largest-xor-coordinate-value/
+#103 | Happy Number | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/happy-number/
+#104 | LRU Cache | Medium | Linked List | Hashing & Array Optimization | https://leetcode.com/problems/lru-cache/
+#105 | Contains Duplicate III | Hard | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/contains-duplicate-iii/
+#106 | Ways to Make a Fair Array | Medium | Prefix Sum | Even-Odd Dynamic Prefix Suffix | https://leetcode.com/problems/ways-to-make-a-fair-array/
+#107 | Summary Ranges | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/summary-ranges/
+#108 | Reverse Linked List II | Medium | Linked List | Linked List | https://leetcode.com/problems/reverse-linked-list-ii/
+#109 | Degree of an Array | Easy | Arrays | Frequency Map Range | https://leetcode.com/problems/degree-of-an-array/
+#110 | Median of Two Sorted Arrays | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/median-of-two-sorted-arrays/
+#111 | Power of Two | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/power-of-two/
+#112 | Make Sum Divisible by P | Medium | Prefix Sum | Modulus Remainder HashMap | https://leetcode.com/problems/make-sum-divisible-by-p/
+#113 | Height Checker | Easy | Arrays | Sort Mismatch Count | https://leetcode.com/problems/height-checker/
+#114 | Reorder List | Medium | Linked List | Linked List | https://leetcode.com/problems/reorder-list/
+#115 | Integer to English Words | Hard | Strings | Chunk Recursive Parsing | https://leetcode.com/problems/integer-to-english-words/
+#116 | Min Stack | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/min-stack/
+#117 | Relative Sort Array | Easy | Arrays | Custom Frequency Sorting | https://leetcode.com/problems/relative-sort-array/
+#118 | Remove Nth Node From End of List | Medium | Linked List | Linked List | https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+#119 | Valid Anagram | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/valid-anagram/
+#120 | Palindrome Partitioning II | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/palindrome-partitioning-ii/
+#121 | Largest Number At Least Twice of Others | Easy | Arrays | Top Two Max Values | https://leetcode.com/problems/largest-number-at-least-twice-of-others/
+#122 | Copy List with Random Pointer | Medium | Linked List | Linked List | https://leetcode.com/problems/copy-list-with-random-pointer/
+#123 | Add Digits | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/add-digits/
+#124 | Validate Stack Sequences | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/validate-stack-sequences/
+#125 | Trapping Rain Water | Hard | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/trapping-rain-water/
+#126 | Swap Nodes in Pairs | Medium | Linked List | Linked List | https://leetcode.com/problems/swap-nodes-in-pairs/
+#127 | Ugly Number | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/ugly-number/
+#128 | Generate Parentheses | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/generate-parentheses/
+#129 | Largest Triangle Area | Easy | Arrays | Shoelace Formula | https://leetcode.com/problems/largest-triangle-area/
+#130 | 3Sum Closest | Hard | Two Pointers | Hashing & Array Optimization | https://leetcode.com/problems/3sum-closest/
+#131 | First Bad Version | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/first-bad-version/
+#132 | Rotate List | Medium | Linked List | Linked List | https://leetcode.com/problems/rotate-list/
+#133 | Flipping an Image | Easy | Arrays | Two Pointer Invert Swap | https://leetcode.com/problems/flipping-an-image/
+#134 | Different Ways to Add Parentheses | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/different-ways-to-add-parentheses/
+#135 | Shortest Palindrome | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/shortest-palindrome/
+#136 | Partition List | Medium | Linked List | Linked List | https://leetcode.com/problems/partition-list/
+#137 | Valid Boomerang | Easy | Arrays | Cross Product Area | https://leetcode.com/problems/valid-boomerang/
+#138 | Next Greater Element II | Medium | Stack | Hashing & Array Optimization | https://leetcode.com/problems/next-greater-element-ii/
+#139 | Queue Reconstruction by Height | Medium | Queue | Hashing & Array Optimization | https://leetcode.com/problems/queue-reconstruction-by-height/
+#140 | Find First and Last Position of Element in Sorted Array | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+#141 | Product of Array Except Self | Medium | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/product-of-array-except-self/
+#142 | Add Two Numbers | Medium | Linked List | Linked List | https://leetcode.com/problems/add-two-numbers/
+#143 | Next Greater Element III | Medium | Stack | Hashing & Array Optimization | https://leetcode.com/problems/next-greater-element-iii/
+#144 | Design Circular Queue | Medium | Queue | Hashing & Array Optimization | https://leetcode.com/problems/design-circular-queue/
+#145 | Container With Most Water | Hard | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/container-with-most-water/
+#146 | Sort List | Medium | Linked List | Linked List | https://leetcode.com/problems/sort-list/
+#147 | Daily Temperatures | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/daily-temperatures/
+#148 | Design Circular Deque | Medium | Queue | Hashing & Array Optimization | https://leetcode.com/problems/design-circular-deque/
+#149 | Search in Rotated Sorted Array | Medium | Arrays | Two Pointers | https://leetcode.com/problems/search-in-rotated-sorted-array/
+#150 | Sort Colors | Hard | Two Pointers | Hashing & Array Optimization | https://leetcode.com/problems/sort-colors/
+#151 | Nim Game | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/nim-game/
+#152 | Linked List Components | Medium | Linked List | HashSet Component Count | https://leetcode.com/problems/linked-list-components/
+#153 | Distribute Candies to People | Easy | Arrays | Round-Robin Simulation | https://leetcode.com/problems/distribute-candies-to-people/
+#154 | Score of Parentheses | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/score-of-parentheses/
+#155 | Palindrome Pairs | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/palindrome-pairs/
+#156 | Merge In Between Linked Lists | Medium | Linked List | Pointer Splice | https://leetcode.com/problems/merge-in-between-linked-lists/
+#157 | Projection Area of 3D Shapes | Easy | Arrays | Grid Projection Max | https://leetcode.com/problems/projection-area-of-3d-shapes/
+#158 | Minimum Add to Make Parentheses Valid | Medium | Stack | Monotonic Stack | https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+#159 | Power of Three | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/power-of-three/
+#160 | Remove Duplicates from Sorted Array II | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+#161 | Richest Customer Wealth | Easy | Arrays | Row Sum Max | https://leetcode.com/problems/richest-customer-wealth/
+#162 | Maximum Twin Sum of a Linked List | Medium | Linked List | Fast & Slow Pointers | https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+#163 | Power of Four | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/power-of-four/
+#164 | Online Stock Span | Medium | Stack | Monotonic Decreasing Stack | https://leetcode.com/problems/online-stock-span/
+#165 | 3Sum | Hard | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/3sum/
+#166 | Number of Recent Calls | Medium | Queue | Sliding Queue 3000ms | https://leetcode.com/problems/number-of-recent-calls/
+#167 | Reverse String | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/reverse-string/
+#168 | Maximum Width Ramp | Medium | Stack | Monotonic Stack Decreasing Index | https://leetcode.com/problems/maximum-width-ramp/
+#169 | Shuffle the Array | Easy | Arrays | Array Interleaving | https://leetcode.com/problems/shuffle-the-array/
+#170 | Populating Next Right Pointers in Each Node | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+#171 | Reverse Vowels of a String | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/reverse-vowels-of-a-string/
+#172 | Decoded String at Index | Medium | Stack | Reverse Tape Deconstruction | https://leetcode.com/problems/decoded-string-at-index/
+#173 | Kids With the Greatest Number of Candies | Easy | Arrays | Max Comparison | https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+#174 | Reveal Cards In Increasing Order | Medium | Queue | Reverse Queue Simulation | https://leetcode.com/problems/reveal-cards-in-increasing-order/
+#175 | Trapping Rain Water II | Hard | Two Pointers | Hashing & Array Optimization | https://leetcode.com/problems/trapping-rain-water-ii/
+#176 | Car Fleet | Medium | Stack | Sort & Monotonic Time Stack | https://leetcode.com/problems/car-fleet/
+#177 | Create Target Array in the Given Order | Easy | Arrays | Index Insertion | https://leetcode.com/problems/create-target-array-in-the-given-order/
+#178 | Design Front Middle Back Queue | Medium | Queue | Two Deques Balance | https://leetcode.com/problems/design-front-middle-back-queue/
+#179 | Valid Perfect Square | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/valid-perfect-square/
+#180 | Populating Next Right Pointers in Each Node II | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+#181 | Find Numbers with Even Number of Digits | Easy | Arrays | Digit Count | https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
+#182 | Asteroid Collision | Medium | Stack | Stack Size Collisions | https://leetcode.com/problems/asteroid-collision/
+#183 | Guess Number Higher or Lower | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/guess-number-higher-or-lower/
+#184 | Search a 2D Matrix | Medium | Binary Search | Binary Search | https://leetcode.com/problems/search-a-2d-matrix/
+#185 | 4Sum | Hard | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/4sum/
+#186 | Design a Stack With Increment Operation | Medium | Stack | Lazy Increment Stack | https://leetcode.com/problems/design-a-stack-with-increment-operation/
+#187 | Ransom Note | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/ransom-note/
+#188 | Search in Rotated Sorted Array II | Medium | Binary Search | Two Pointers | https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+#189 | Subarray Sum Equals K | Medium | Arrays | Hashing & Array Optimization | https://leetcode.com/problems/subarray-sum-equals-k/
+#190 | Palindrome Partitioning | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/palindrome-partitioning/
+#191 | Minimum Insertions to Balance a Parentheses String | Medium | Stack | Greedy Right Bracket Counter | https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/
+#192 | Search a 2D Matrix II | Medium | Binary Search | Binary Search | https://leetcode.com/problems/search-a-2d-matrix-ii/
+#193 | Spiral Matrix | Medium | Arrays | Binary Search | https://leetcode.com/problems/spiral-matrix/
+#194 | Binary Tree Level Order Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-level-order-traversal/
+#195 | Largest Palindrome Product | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/largest-palindrome-product/
+#196 | Maximum Score From Removing Substrings | Medium | Stack | Two-Pass Greedy Stack | https://leetcode.com/problems/maximum-score-from-removing-substrings/
+#197 | Spiral Matrix II | Medium | Arrays | Binary Search | https://leetcode.com/problems/spiral-matrix-ii/
+#198 | Random Flip Matrix | Medium | Binary Search | Binary Search | https://leetcode.com/problems/random-flip-matrix/
+#199 | Binary Tree Zigzag Level Order Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+#200 | Two Sum II - Input Array Is Sorted | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+#201 | String Matching in an Array | Easy | Arrays | Substring Search | https://leetcode.com/problems/string-matching-in-an-array/
+#202 | Decode String | Medium | Stack | Nested Bracket Multiplier Stack | https://leetcode.com/problems/decode-string/
+#203 | First Unique Character in a String | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/first-unique-character-in-a-string/
+#204 | 01 Matrix | Medium | Binary Search | Binary Search | https://leetcode.com/problems/01-matrix/
+#205 | Shortest Unsorted Continuous Subarray | Hard | Arrays | Two Pointers | https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+#206 | Construct Binary Tree from Preorder and Inorder Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+#207 | Find the Difference | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/find-the-difference/
+#208 | Pyramid Transition Matrix | Medium | Binary Search | Binary Search | https://leetcode.com/problems/pyramid-transition-matrix/
+#209 | Check If All 1's Are at Least Length K Places Away | Easy | Arrays | Index Gap Check | https://leetcode.com/problems/check-if-all-1s-are-at-least-length-k-places-away/
+#210 | Kth Smallest Element in a Sorted Matrix | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+#211 | Binary Watch | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/binary-watch/
+#212 | Rotated Digits | Medium | Binary Search | Binary Search | https://leetcode.com/problems/rotated-digits/
+#213 | Make Two Arrays Equal by Reversing Sub-arrays | Easy | Arrays | Frequency Equal Test | https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/
+#214 | Construct Binary Tree from Inorder and Postorder Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+#215 | 4Sum II | Hard | Two Pointers | Hashing & Array Optimization | https://leetcode.com/problems/4sum-ii/
+#216 | Score After Flipping Matrix | Medium | Binary Search | Binary Search | https://leetcode.com/problems/score-after-flipping-matrix/
+#217 | Maximum Product of Two Elements in an Array | Easy | Arrays | Top 2 Max Values | https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
+#218 | Binary Tree Level Order Traversal II | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+#219 | Sum of Left Leaves | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/sum-of-left-leaves/
+#220 | Single Element in a Sorted Array | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/single-element-in-a-sorted-array/
+#221 | Count Good Triplets | Easy | Arrays | 3-Loop Delta Filter | https://leetcode.com/problems/count-good-triplets/
+#222 | Koko Eating Bananas | Medium | Binary Search | Hashing & Array Optimization | https://leetcode.com/problems/koko-eating-bananas/
+#223 | Convert a Number to Hexadecimal | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+#224 | Binary Tree Right Side View | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-right-side-view/
+#225 | Subarrays with K Different Integers | Hard | Arrays | Sliding Window | https://leetcode.com/problems/subarrays-with-k-different-integers/
+#226 | Spiral Matrix III | Medium | Binary Search | Binary Search | https://leetcode.com/problems/spiral-matrix-iii/
+#227 | Fizz Buzz | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/fizz-buzz/
+#228 | Count Complete Tree Nodes | Medium | Trees | Pointer Manipulation | https://leetcode.com/problems/count-complete-tree-nodes/
+#229 | Matrix Diagonal Sum | Easy | Arrays | Main & Anti Diagonal Sum | https://leetcode.com/problems/matrix-diagonal-sum/
+#230 | Max Chunks To Make Sorted | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/max-chunks-to-make-sorted/
+#231 | Add Strings | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/add-strings/
+#232 | Time Based Key-Value Store | Medium | Binary Search | Binary Search on Timestamps | https://leetcode.com/problems/time-based-key-value-store/
+#233 | Special Positions in a Binary Matrix | Easy | Arrays | Row & Col Sum 1 Check | https://leetcode.com/problems/special-positions-in-a-binary-matrix/
+#234 | Lowest Common Ancestor of a Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+#235 | Prime Palindrome | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/prime-palindrome/
+#236 | Peak Index in a Mountain Array | Medium | Binary Search | Ternary / Binary Peak Search | https://leetcode.com/problems/peak-index-in-a-mountain-array/
+#237 | Sum of All Odd Length Subarrays | Easy | Arrays | Contribution Contribution Math | https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+#238 | Minimum Height Trees | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/minimum-height-trees/
+#239 | Longest Substring Without Repeating Characters | Medium | BST | Sliding Window | https://leetcode.com/problems/longest-substring-without-repeating-characters/
+#240 | 3Sum With Multiplicity | Hard | Two Pointers | Hashing & Array Optimization | https://leetcode.com/problems/3sum-with-multiplicity/
+#241 | Set Matrix Zeroes | Medium | Arrays | Binary Search | https://leetcode.com/problems/set-matrix-zeroes/
+#242 | My Calendar I | Medium | Binary Search | TreeMap Interval Booking | https://leetcode.com/problems/my-calendar-i/
+#243 | Verify Preorder Serialization of a Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+#244 | Longest Repeating Character Replacement | Medium | BST | Sliding Window | https://leetcode.com/problems/longest-repeating-character-replacement/
+#245 | First Missing Positive | Hard | Arrays | In-Place Cyclic Placement | https://leetcode.com/problems/first-missing-positive/
+#246 | My Calendar II | Medium | Binary Search | Overlap List Booking | https://leetcode.com/problems/my-calendar-ii/
+#247 | Construct Quad Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/construct-quad-tree/
+#248 | Unique Binary Search Trees II | Medium | BST | Binary Search | https://leetcode.com/problems/unique-binary-search-trees-ii/
+#249 | Find Minimum in Rotated Sorted Array | Medium | Arrays | Two Pointers | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+#250 | Delete Columns to Make Sorted II | Hard | Two Pointers | Two Pointers | https://leetcode.com/problems/delete-columns-to-make-sorted-ii/
+#251 | Number of Segments in a String | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/number-of-segments-in-a-string/
+#252 | Online Election | Medium | Binary Search | Leading Candidate Vector | https://leetcode.com/problems/online-election/
+#253 | Check if Array Is Sorted and Rotated | Easy | Arrays | Drop Point Count | https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
+#254 | N-ary Tree Level Order Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/n-ary-tree-level-order-traversal/
+#255 | Three Equal Parts | Hard | Two Pointers | Bit Triplet Matching | https://leetcode.com/problems/three-equal-parts/
+#256 | Minimum Absolute Sum Difference | Medium | Binary Search | Sorted Array Closest Search | https://leetcode.com/problems/minimum-absolute-sum-difference/
+#257 | Count Items Matching a Rule | Easy | Arrays | Key Match Filter | https://leetcode.com/problems/count-items-matching-a-rule/
+#258 | Most Frequent Subtree Sum | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/most-frequent-subtree-sum/
+#259 | Arranging Coins | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/arranging-coins/
+#260 | Get the Maximum Score | Hard | Two Pointers | Two Array Intersection Max Sum | https://leetcode.com/problems/get-the-maximum-score/
+#261 | Determine Whether Matrix Can Be Obtained By Rotation | Easy | Arrays | 90-Degree Rotation Test | https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+#262 | Minimum Speed to Arrive on Time | Medium | Binary Search | Search on Speed Space | https://leetcode.com/problems/minimum-speed-to-arrive-on-time/
+#263 | Assign Cookies | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/assign-cookies/
+#264 | Find Bottom Left Tree Value | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/find-bottom-left-tree-value/
+#265 | Maximum Building Height | Hard | Arrays | Two-Pass Left-Right Min Bounds | https://leetcode.com/problems/maximum-building-height/
+#266 | Maximum Value at a Given Index in a Bounded Array | Medium | Binary Search | Pyramid Sum Binary Search | https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/
+#267 | Hamming Distance | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/hamming-distance/
+#268 | Find Largest Value in Each Tree Row | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/find-largest-value-in-each-tree-row/
+#269 | Minimum Value to Get Positive Step by Step Sum | Easy | Prefix Sum | Running Prefix Min | https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
+#270 | Minimum Number of Moves to Make Palindrome | Hard | Two Pointers | Greedy Boundary Swaps | https://leetcode.com/problems/minimum-number-of-moves-to-make-palindrome/
+#271 | Number Complement | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/number-complement/
+#272 | Rotate Array | Medium | Arrays | Three Reverse Swap | https://leetcode.com/problems/rotate-array/
+#273 | Maximum Score After Splitting a String | Easy | Prefix Sum | Zeros & Ones Count | https://leetcode.com/problems/maximum-score-after-splitting-a-string/
+#274 | Minimum Limit of Balls in a Bag | Medium | Binary Search | Penalty Binary Search | https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
+#275 | Sliding Window Median | Hard | Sliding Window | Sliding Window | https://leetcode.com/problems/sliding-window-median/
+#276 | Sort an Array | Medium | Arrays | MergeSort / QuickSort | https://leetcode.com/problems/sort-an-array/
+#277 | License Key Formatting | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/license-key-formatting/
+#278 | Sell Diminishing-Valued Colored Balls | Medium | Binary Search | Value Threshold Sum | https://leetcode.com/problems/sell-diminishing-valued-colored-balls/
+#279 | Rising Temperature | Easy | Stack | Monotonic Stack | https://leetcode.com/problems/rising-temperature/
+#280 | Non-negative Integers without Consecutive Ones | Hard | Sliding Window | Sliding Window | https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/
+#281 | Construct the Rectangle | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/construct-the-rectangle/
+#282 | Max Increase to Keep City Skyline | Medium | Arrays | Row & Column Max Vectors | https://leetcode.com/problems/max-increase-to-keep-city-skyline/
+#283 | Next Greater Element I | Easy | Stack | Hashing & Array Optimization | https://leetcode.com/problems/next-greater-element-i/
+#284 | Magnetic Force Between Two Balls | Medium | Binary Search | Min Distance Search Space | https://leetcode.com/problems/magnetic-force-between-two-balls/
+#285 | Consecutive Numbers Sum | Hard | Sliding Window | Sliding Window | https://leetcode.com/problems/consecutive-numbers-sum/
+#286 | Card Flipping Game | Medium | Arrays | Set Difference Min | https://leetcode.com/problems/card-flipping-game/
+#287 | Keyboard Row | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/keyboard-row/
+#288 | Minimum Number of Days to Make m Bouquets | Medium | Binary Search | Day Space Binary Search | https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+#289 | Logical OR of Two Binary Grids Represented as Quad-Trees | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/
+#290 | Minimum Number of K Consecutive Bit Flips | Hard | Sliding Window | Sliding Window | https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/
+#291 | Position of Large Groups | Medium | Arrays | Two Pointer Window | https://leetcode.com/problems/position-of-large-groups/
+#292 | Find Peak Element | Medium | Binary Search | Logarithmic Boundary Search | https://leetcode.com/problems/find-peak-element/
+#293 | Tree Node | Medium | Trees | Pointer Manipulation | https://leetcode.com/problems/tree-node/
+#294 | Unique Binary Search Trees | Medium | BST | Binary Search | https://leetcode.com/problems/unique-binary-search-trees/
+#295 | Constrained Subsequence Sum | Hard | Sliding Window | Monotonic Deque DP | https://leetcode.com/problems/constrained-subsequence-sum/
+#296 | Magic Squares In Grid | Medium | Arrays | 3x3 Grid Verification | https://leetcode.com/problems/magic-squares-in-grid/
+#297 | Add One Row to Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/add-one-row-to-tree/
+#298 | Validate Binary Search Tree | Medium | BST | Binary Search | https://leetcode.com/problems/validate-binary-search-tree/
+#299 | Kth Largest Element in an Array | Medium | Heap | Hashing & Array Optimization | https://leetcode.com/problems/kth-largest-element-in-an-array/
+#300 | Max Value of Equation | Hard | Sliding Window | Monotonic Deque Max Difference | https://leetcode.com/problems/max-value-of-equation/
+#301 | Base 7 | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/base-7/
+#302 | Image Overlap | Medium | Arrays | Translation Offset Hash | https://leetcode.com/problems/image-overlap/
+#303 | Count of Range Sum | Hard | Prefix Sum | Hashing & Array Optimization | https://leetcode.com/problems/count-of-range-sum/
+#304 | Find Duplicate Subtrees | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/find-duplicate-subtrees/
+#305 | Relative Ranks | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/relative-ranks/
+#306 | Minimum Window Subsequence | Hard | Sliding Window | Dynamic Subsequence Match | https://leetcode.com/problems/minimum-window-substring-subsequence/
+#307 | Remove Outermost Parentheses | Easy | Stack | Monotonic Stack | https://leetcode.com/problems/remove-outermost-parentheses/
+#308 | Candy Crush | Medium | Arrays | Grid Drop Gravity Simulation | https://leetcode.com/problems/candy-crush/
+#309 | Maximum Sum of 3 Non-Overlapping Subarrays | Hard | Prefix Sum | 3-Window DP Prefix Suffix | https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
+#310 | Maximum Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/maximum-binary-tree/
+#311 | Perfect Number | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/perfect-number/
+#312 | Count Subarrays With Fixed Bounds | Hard | Sliding Window | Min Max Bound Window | https://leetcode.com/problems/count-subarrays-with-fixed-bounds/
+#313 | Baseball Game | Easy | Stack | Stack Score Simulation | https://leetcode.com/problems/baseball-game/
+#314 | Monotonic Array | Medium | Arrays | One-Pass Direction Check | https://leetcode.com/problems/monotonic-array/
+#315 | Smallest Rotation with Highest Score | Hard | Prefix Sum | Difference Array Rotations | https://leetcode.com/problems/smallest-rotation-with-highest-score/
+#316 | Print Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/print-binary-tree/
+#317 | Fibonacci Number | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/fibonacci-number/
+#318 | Minimum Number of Operations to Make Array Continuous | Hard | Sliding Window | Sort & Sliding Window | https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/
+#319 | Remove All Adjacent Duplicates In String | Easy | Stack | Char Stack Deduplication | https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+#320 | RLE Iterator | Medium | Arrays | Run-Length Skip Pointer | https://leetcode.com/problems/rle-iterator/
+#321 | Number of Submatrices That Sum to Target | Hard | Prefix Sum | 2D Submatrix Prefix Hash | https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/
+#322 | Maximum Width of Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/maximum-width-of-binary-tree/
+#323 | Game Play Analysis I | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/game-play-analysis-i/
+#324 | Maximum Number of Robots Within Budget | Hard | Sliding Window | Monotonic Queue Cost Window | https://leetcode.com/problems/maximum-number-of-robots-within-budget/
+#325 | Build an Array With Stack Operations | Easy | Stack | Push Pop Stream Simulation | https://leetcode.com/problems/build-an-array-with-stack-operations/
+#326 | Sort Array By Parity | Medium | Arrays | In-Place Even Odd Swap | https://leetcode.com/problems/sort-array-by-parity/
+#327 | Count Subarrays With Median K | Hard | Prefix Sum | Balance Prefix Map | https://leetcode.com/problems/count-subarrays-with-median-k/
+#328 | Binary Tree Pruning | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-pruning/
+#329 | Detect Capital | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/detect-capital/
+#330 | All O`one Data Structure | Hard | Linked List | Doubly Linked List + HashMap | https://leetcode.com/problems/all-oone-data-structure/
+#331 | Sum of Subarray Minimums | Medium | Arrays | Monotonic Stack Left/Right | https://leetcode.com/problems/sum-of-subarray-minimums/
+#332 | Binary Trees With Factors | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-trees-with-factors/
+#333 | Sum of Total Strength of Wizards | Hard | Prefix Sum | Monotonic Stack Double Prefix Sum | https://leetcode.com/problems/sum-of-total-strength-of-wizards/
+#334 | Recover Binary Search Tree | Medium | BST | Binary Search | https://leetcode.com/problems/recover-binary-search-tree/
+#335 | Smallest Range I | Medium | Arrays | Max Min Delta K | https://leetcode.com/problems/smallest-range-i/
+#336 | LFU Cache | Hard | Linked List | Hashing & Array Optimization | https://leetcode.com/problems/lfu-cache/
+#337 | All Nodes Distance K in Binary Tree | Medium | Trees | Pointer Manipulation | https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+#338 | Binary Search Tree Iterator | Medium | BST | Binary Search | https://leetcode.com/problems/binary-search-tree-iterator/
+#339 | Maximum Frequency Stack | Hard | Stack | Monotonic Stack | https://leetcode.com/problems/maximum-frequency-stack/
+#340 | N-Repeated Element in Size 2N Array | Medium | Arrays | Distance 1-3 Duplicate | https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+#341 | Smallest Subtree with all the Deepest Nodes | Medium | Trees | Pointer Manipulation | https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
+#342 | Merge K Sorted Lists | Hard | Linked List | Linked List | https://leetcode.com/problems/merge-k-sorted-lists/
+#343 | Lowest Common Ancestor of a Binary Search Tree | Medium | BST | Binary Search | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+#344 | Subrectangle Queries | Medium | Arrays | Matrix Modification | https://leetcode.com/problems/subrectangle-queries/
+#345 | Dinner Plate Stacks | Hard | Stack | Monotonic Stack | https://leetcode.com/problems/dinner-plate-stacks/
+#346 | Construct Binary Tree from Preorder and Postorder Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
+#347 | Trim a Binary Search Tree | Medium | BST | Binary Search | https://leetcode.com/problems/trim-a-binary-search-tree/
+#348 | Count Nice Pairs in an Array | Medium | Arrays | Number Delta Map | https://leetcode.com/problems/count-nice-pairs-in-an-array/
+#349 | Top K Frequent Elements | Medium | Heap | Hashing & Array Optimization | https://leetcode.com/problems/top-k-frequent-elements/
+#350 | All Possible Full Binary Trees | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/all-possible-full-binary-trees/
+#351 | Reverse String II | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/reverse-string-ii/
+#352 | Coordinate With Maximum Network Quality | Medium | Arrays | Grid Distance Formula | https://leetcode.com/problems/coordinate-with-maximum-network-quality/
+#353 | Reverse Nodes in k-Group | Hard | Linked List | Grouped Pointer Reversal | https://leetcode.com/problems/reverse-nodes-in-k-group/
+#354 | Complete Binary Tree Inserter | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/complete-binary-tree-inserter/
+#355 | Student Attendance Record I | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/student-attendance-record-i/
+#356 | Longest Valid Parentheses | Hard | Stack | Monotonic Stack | https://leetcode.com/problems/longest-valid-parentheses/
+#357 | Binary Search | Easy | Binary Search | Binary Search | https://leetcode.com/problems/binary-search/
+#358 | Rotate Image | Medium | Arrays | Transpose & Reverse | https://leetcode.com/problems/rotate-image/
+#359 | Sliding Window Maximum | Hard | Queue | Sliding Window | https://leetcode.com/problems/sliding-window-maximum/
+#360 | Flip Equivalent Binary Trees | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/flip-equivalent-binary-trees/
+#361 | Reverse Words in a String III | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/reverse-words-in-a-string-iii/
+#362 | Largest Rectangle in Histogram | Hard | Stack | Monotonic Stack | https://leetcode.com/problems/largest-rectangle-in-histogram/
+#363 | Matrix Cells in Distance Order | Easy | Binary Search | Binary Search | https://leetcode.com/problems/matrix-cells-in-distance-order/
+#364 | Jump Game | Medium | Arrays | Max Reachable Index | https://leetcode.com/problems/jump-game/
+#365 | Orderly Queue | Hard | Queue | Hashing & Array Optimization | https://leetcode.com/problems/orderly-queue/
+#366 | Check Completeness of a Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+#367 | Distribute Candies | Easy | Strings | Hashing & Array Optimization | https://leetcode.com/problems/distribute-candies/
+#368 | Remove Invalid Parentheses | Hard | Stack | Monotonic Stack | https://leetcode.com/problems/remove-invalid-parentheses/
+#369 | Cells with Odd Values in a Matrix | Easy | Binary Search | Binary Search | https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
+#370 | Jump Game II | Medium | Arrays | BFS Level Farthest Reach | https://leetcode.com/problems/jump-game-ii/
+#371 | Subtree of Another Tree | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/subtree-of-another-tree/
+#372 | Insert into a Binary Search Tree | Medium | BST | Binary Search | https://leetcode.com/problems/insert-into-a-binary-search-tree/
+#373 | Find Words That Can Be Formed by Characters | Easy | Strings | Frequency Map Subset | https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
+#374 | Number of Atoms | Hard | Stack | Nested Bracket Parsing Stack | https://leetcode.com/problems/number-of-atoms/
+#375 | The K Weakest Rows in a Matrix | Easy | Binary Search | Binary Search | https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
+#376 | Flip Binary Tree To Match Preorder Traversal | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/
+#377 | Range Sum of BST | Hard | BST | Hashing & Array Optimization | https://leetcode.com/problems/range-sum-of-bst/
+#378 | Top K Frequent Words | Medium | Heap | Hashing & Array Optimization | https://leetcode.com/problems/top-k-frequent-words/
+#379 | Defanging an IP Address | Easy | Strings | Substring Replace | https://leetcode.com/problems/defanging-an-ip-address/
+#380 | Parse Lisp Expression | Hard | Stack | Scope Map Recursion Stack | https://leetcode.com/problems/parse-lisp-expression/
+#381 | Construct String from Binary Tree | Medium | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/construct-string-from-binary-tree/
+#382 | Longest Palindromic Substring | Medium | BST | Sliding Window | https://leetcode.com/problems/longest-palindromic-substring/
+#383 | Find Minimum in Rotated Sorted Array II | Hard | Binary Search | Two Pointers | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+#384 | Reorganize String | Medium | Heap | Heap | https://leetcode.com/problems/reorganize-string/
+#385 | Exam Room | Medium | Trees | Ordered Interval Map | https://leetcode.com/problems/exam-room/
+#386 | Basic Calculator III | Hard | Stack | Full Operator Precedence Stack | https://leetcode.com/problems/basic-calculator-iii/
+#387 | Convert BST to Greater Tree | Medium | BST | Tree Traversal & Recursion | https://leetcode.com/problems/convert-bst-to-greater-tree/
+#388 | K Closest Points to Origin | Medium | Heap | Heap | https://leetcode.com/problems/k-closest-points-to-origin/
+#389 | Longest Increasing Path in a Matrix | Hard | Binary Search | Binary Search | https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+#390 | Sum of Distances in Tree | Medium | Trees | Rerooting DP Post-Order | https://leetcode.com/problems/sum-of-distances-in-tree/
+#391 | Kth Smallest Element in a BST | Medium | BST | Hashing & Array Optimization | https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+#392 | Maximal Rectangle | Hard | Stack | Histogram Height Monotonic Stack | https://leetcode.com/problems/maximal-rectangle/
+#393 | Find K Pairs with Smallest Sums | Medium | Heap | Min-Heap Priority Queue | https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+#394 | Deepest Leaves Sum | Medium | Trees | BFS Level Sum | https://leetcode.com/problems/deepest-leaves-sum/
+#395 | Minimum Number of Flips to Convert Binary Matrix to Zero Matrix | Hard | Binary Search | Binary Search | https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/
+#396 | Longest Substring with At Least K Repeating Characters | Medium | BST | Sliding Window | https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
+#397 | Ugly Number II | Medium | Heap | Min-Heap / Dynamic Programming 3-Pointers | https://leetcode.com/problems/ugly-number-ii/
+#398 | Maximum Level Sum of a Binary Tree | Medium | Trees | Level Order BFS Max | https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
+#399 | Implement Trie (Prefix Tree) | Medium | Trie | Trie | https://leetcode.com/problems/implement-trie-prefix-tree/
+#400 | Serialize and Deserialize BST | Medium | BST | Hashing & Array Optimization | https://leetcode.com/problems/serialize-and-deserialize-bst/
+#401 | Number of Lines To Write String | Easy | Strings | Width Counter | https://leetcode.com/problems/number-of-lines-to-write-string/
+#402 | Pseudo-Palindromic Paths in a Binary Tree | Medium | Trees | Bitmask Parity DFS | https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
+#403 | Basic Calculator IV | Hard | Stack | Polynomial Expression Parsing | https://leetcode.com/problems/basic-calculator-iv/
+#404 | Delete Node in a BST | Medium | BST | Pointer Manipulation | https://leetcode.com/problems/delete-node-in-a-bst/
+#405 | Most Common Word | Easy | Strings | Clean Word Frequency | https://leetcode.com/problems/most-common-word/
+#406 | Kth Smallest Number in Multiplication Table | Hard | Binary Search | Search on Answer Space | https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/
+#407 | Binary Tree Inorder Traversal | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-inorder-traversal/
+#408 | Unique Substrings in Wraparound String | Medium | BST | Sliding Window | https://leetcode.com/problems/unique-substrings-in-wraparound-string/
+#409 | Reverse Substrings Between Each Pair of Parentheses | Hard | Stack | Stack Jump Manipulation | https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses-hard/
+#410 | Design Twitter | Medium | Heap | Min-Heap / Object Design | https://leetcode.com/problems/design-twitter/
+#411 | Goat Latin | Easy | Strings | Vowel/Consonant String Transform | https://leetcode.com/problems/goat-latin/
+#412 | Max Sum of Rectangle No Larger Than K | Hard | Binary Search | 2D Prefix Sum + TreeSet | https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/
+#413 | Same Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/same-tree/
+#414 | Palindromic Substrings | Medium | BST | Sliding Window | https://leetcode.com/problems/palindromic-substrings/
+#415 | Smallest K-Length Subsequence With Occurrences of a Letter | Hard | Stack | Monotonic Stack Frequency | https://leetcode.com/problems/smallest-k-length-subsequence-with-occurrences-of-a-letter/
+#416 | Minimum Cost to Hire K Workers | Medium | Heap | Ratio Sorting + Max-Heap | https://leetcode.com/problems/minimum-cost-to-hire-k-workers/
+#417 | Find Common Characters | Easy | Strings | Frequency Min Intersect | https://leetcode.com/problems/find-common-characters/
+#418 | Find K-th Smallest Pair Distance | Hard | Binary Search | Binary Search + Two Pointers | https://leetcode.com/problems/find-k-th-smallest-pair-distance/
+#419 | Symmetric Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/symmetric-tree/
+#420 | Balance a Binary Search Tree | Medium | BST | Inorder Sort + Divide & Conquer | https://leetcode.com/problems/balance-a-binary-search-tree/
+#421 | Kth Largest Element in a Stream | Hard | Heap | Hashing & Array Optimization | https://leetcode.com/problems/kth-largest-element-in-a-stream/
+#422 | Design Add and Search Words Data Structure | Medium | Trie | Trie | https://leetcode.com/problems/design-add-and-search-words-data-structure/
+#423 | Greatest Common Divisor of Strings | Easy | Strings | GCD String Length Check | https://leetcode.com/problems/greatest-common-divisor-of-strings/
+#424 | Kth Smallest Product of Two Sorted Arrays | Hard | Binary Search | Double Binary Search Product | https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/
+#425 | Maximum Depth of Binary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/maximum-depth-of-binary-tree/
+#426 | All Elements in Two Binary Search Trees | Medium | BST | Inorder Merge Sort | https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
+#427 | Find Median from Data Stream | Hard | Heap | Heap | https://leetcode.com/problems/find-median-from-data-stream/
+#428 | Replace Words | Medium | Trie | Trie | https://leetcode.com/problems/replace-words/
+#429 | Split a String in Balanced Strings | Easy | Strings | Greedy Counter | https://leetcode.com/problems/split-a-string-in-balanced-strings/
+#430 | Minimum Time to Complete Trips | Hard | Binary Search | Time Space Search | https://leetcode.com/problems/minimum-time-to-complete-trips/
+#431 | Count Good Nodes in Binary Tree | Medium | Trees | Path Max DFS | https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+#432 | Construct Binary Search Tree from Preorder Traversal | Medium | BST | Monotonic Stack BST Build | https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+#433 | Maximum Performance of a Team | Hard | Heap | Efficiency Sort + Speed Min-Heap | https://leetcode.com/problems/maximum-performance-of-a-team/
+#434 | Maximum XOR of Two Numbers in an Array | Medium | Trie | Trie | https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/
+#435 | Number of Nodes in the Sub-Tree With the Same Label | Medium | Trees | Post-Order Frequency Vector | https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
+#436 | Longest Subsequence With Limited Sum | Hard | Binary Search | Sort & Prefix Sum Binary Search | https://leetcode.com/problems/longest-subsequence-with-limited-sum/
+#437 | Maximum Number of Eaten Apples | Medium | Heap | Min-Heap Expiration Date | https://leetcode.com/problems/maximum-number-of-eaten-apples/
+#438 | Trie (Prefix Tree FAANG Core Problem 7 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-7/
+#439 | N-ary Tree Preorder Traversal | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/n-ary-tree-preorder-traversal/
+#440 | Greedy Algorithm FAANG Core Problem 1 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-1/
+#441 | Number of Orders in the Backlog | Medium | Heap | Buy-Sell Priority Queues | https://leetcode.com/problems/number-of-orders-in-the-backlog/
+#442 | Minimum Cost to Make Array Equal | Hard | Binary Search | Weighted Median Convex Search | https://leetcode.com/problems/minimum-cost-to-make-array-equal/
+#443 | Flatten Binary Tree to Linked List | Medium | Trees | Preorder Pointer Reversal | https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+#444 | Trie (Prefix Tree FAANG Core Problem 9 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-9/
+#445 | Minimum Window Substring | Hard | BST | Sliding Window | https://leetcode.com/problems/minimum-window-substring/
+#446 | Single-Threaded CPU | Medium | Heap | Task Queue Priority Processing | https://leetcode.com/problems/single-threaded-cpu/
+#447 | Sum Root to Leaf Numbers | Medium | Trees | DFS Preorder Accumulator | https://leetcode.com/problems/sum-root-to-leaf-numbers/
+#448 | Trie (Prefix Tree FAANG Core Problem 11 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-11/
+#449 | Greedy Algorithm FAANG Core Problem 3 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-3/
+#450 | Number of Connected Components in an Undirected Graph | Medium | Union Find | DSU | https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+#451 | Reformat The String | Easy | Strings | Alpha-Digit Interleave | https://leetcode.com/problems/reformat-the-string/
+#452 | Trie (Prefix Tree FAANG Core Problem 13 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-13/
+#453 | N-ary Tree Postorder Traversal | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/n-ary-tree-postorder-traversal/
+#454 | Greedy Algorithm FAANG Core Problem 5 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-5/
+#455 | Consecutive Characters | Easy | Strings | Max Streak Counter | https://leetcode.com/problems/consecutive-characters/
+#456 | Number of Ways to Reorder Array to Get Same BST | Hard | BST | Combinatorics Tree Split | https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
+#457 | Lucky Numbers in a Matrix | Easy | Binary Search | Binary Search | https://leetcode.com/problems/lucky-numbers-in-a-matrix/
+#458 | Trie (Prefix Tree FAANG Core Problem 15 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-15/
+#459 | Merge Two Binary Trees | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/merge-two-binary-trees/
+#460 | Greedy Algorithm FAANG Core Problem 7 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-7/
+#461 | Shuffle String | Easy | Strings | Index Placement Swap | https://leetcode.com/problems/shuffle-string/
+#462 | Data Stream as Disjoint Intervals | Hard | BST | TreeMap Range Merge | https://leetcode.com/problems/data-stream-as-disjoint-intervals/
+#463 | Find Smallest Letter Greater Than Target | Easy | Binary Search | Binary Search Bounds | https://leetcode.com/problems/find-smallest-letter-greater-than-target/
+#464 | Trie (Prefix Tree FAANG Core Problem 17 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-17/
+#465 | Average of Levels in Binary Tree | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/average-of-levels-in-binary-tree/
+#466 | Greedy Algorithm FAANG Core Problem 9 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-9/
+#467 | Reformat Date | Easy | Strings | Date Parsing | https://leetcode.com/problems/reformat-date/
+#468 | Construct Target Array With Multiple Sums | Hard | Heap | Reverse Max-Heap Reduction | https://leetcode.com/problems/construct-target-array-with-multiple-sums/
+#469 | Find the Distance Value Between Two Arrays | Easy | Binary Search | Range Distance Check | https://leetcode.com/problems/find-the-distance-value-between-two-arrays/
+#470 | Trie (Prefix Tree FAANG Core Problem 19 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-19/
+#471 | Second Minimum Node In a Binary Tree | Hard | Trees | Pointer Manipulation | https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
+#472 | Greedy Algorithm FAANG Core Problem 11 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-11/
+#473 | Goal Parser Interpretation | Easy | Strings | String Token Replace | https://leetcode.com/problems/goal-parser-interpretation/
+#474 | The Skyline Problem | Hard | Heap | Sweep-Line Event Max-Heap | https://leetcode.com/problems/the-skyline-problem/
+#475 | Balanced Binary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/balanced-binary-tree/
+#476 | Trie (Prefix Tree FAANG Core Problem 21 | Medium | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-21/
+#477 | Lemonade Change | Hard | Greedy | Hashing & Array Optimization | https://leetcode.com/problems/lemonade-change/
+#478 | Redundant Connection | Medium | Union Find | DSU | https://leetcode.com/problems/redundant-connection/
+#479 | Determine if String Halves Are Alike | Easy | Strings | Vowel Count Halves | https://leetcode.com/problems/determine-if-string-halves-are-alike/
+#480 | Leaf-Similar Trees | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/leaf-similar-trees/
+#481 | Greedy Algorithm FAANG Core Problem 13 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-13/
+#482 | Accounts Merge | Medium | Union Find | DSU | https://leetcode.com/problems/accounts-merge/
+#483 | Design Movie Rental System | Hard | Heap | Multi-Set Price Track | https://leetcode.com/problems/design-movie-rental-system/
+#484 | Graphs, BFS & DF FAANG Core Problem 1 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-1/
+#485 | Greedy Algorithm FAANG Core Problem 15 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-15/
+#486 | Increasing Order Search Tree | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/increasing-order-search-tree/
+#487 | Evaluate Division | Medium | Union Find | DSU | https://leetcode.com/problems/evaluate-division/
+#488 | Graphs, BFS & DF FAANG Core Problem 3 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-3/
+#489 | Minimum Number of Refueling Stops | Hard | Heap | Max-Heap Gas Tank | https://leetcode.com/problems/minimum-number-of-refueling-stops/
+#490 | Greedy Algorithm FAANG Core Problem 17 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-17/
+#491 | Most Stones Removed with Same Row or Column | Medium | Union Find | DSU | https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
+#492 | Univalued Binary Tree | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/univalued-binary-tree/
+#493 | Graphs, BFS & DF FAANG Core Problem 5 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-5/
+#494 | Greedy Algorithm FAANG Core Problem 19 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-19/
+#495 | Find the K-Sum of an Array | Hard | Heap | Min-Heap Subsequence Choice | https://leetcode.com/problems/find-the-k-sum-of-an-array/
+#496 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 7 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-7/
+#497 | Graphs, BFS & DF FAANG Core Problem 7 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-7/
+#498 | Greedy Algorithm FAANG Core Problem 21 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-21/
+#499 | Linked List Cycle | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/linked-list-cycle/
+#500 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 9 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-9/
+#501 | Sorting the Sentence | Easy | Strings | Word Index Extraction Sort | https://leetcode.com/problems/sorting-the-sentence/
+#502 | Greedy Algorithm FAANG Core Problem 23 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-23/
+#503 | Cousins in Binary Tree | Hard | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/cousins-in-binary-tree/
+#504 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 11 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-11/
+#505 | Convert Sorted Array to Binary Search Tree | Easy | BST | Two Pointers | https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+#506 | Big Countries | Hard | Trie | Hashing & Array Optimization | https://leetcode.com/problems/big-countries/
+#507 | Minimum Depth of Binary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/minimum-depth-of-binary-tree/
+#508 | Greedy Algorithm FAANG Core Problem 25 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-25/
+#509 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 10 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-10/
+#510 | Graphs, BFS & DF FAANG Core Problem 9 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-9/
+#511 | Binary Tree Preorder Traversal | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-preorder-traversal/
+#512 | Trie (Prefix Tree FAANG Core Problem 10 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-10/
+#513 | Find Mode in Binary Search Tree | Easy | BST | Binary Search | https://leetcode.com/problems/find-mode-in-binary-search-tree/
+#514 | Greedy Algorithm FAANG Core Problem 27 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-27/
+#515 | Find a Corresponding Node of a Binary Tree in a Clone of That Tree | Hard | Trees | Pointer Manipulation | https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/
+#516 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 13 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-13/
+#517 | Search in a Binary Search Tree | Easy | BST | Binary Search | https://leetcode.com/problems/search-in-a-binary-search-tree/
+#518 | Trie (Prefix Tree FAANG Core Problem 16 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-16/
+#519 | Binary Tree Postorder Traversal | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-postorder-traversal/
+#520 | Greedy Algorithm FAANG Core Problem 29 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-29/
+#521 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 16 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-16/
+#522 | Graphs, BFS & DF FAANG Core Problem 11 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-11/
+#523 | Invert Binary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/invert-binary-tree/
+#524 | Word Search II | Hard | Trie | Trie | https://leetcode.com/problems/word-search-ii/
+#525 | Minimum Absolute Difference in BST | Easy | BST | Hashing & Array Optimization | https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+#526 | Greedy Algorithm FAANG Core Problem 31 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-31/
+#527 | Binary Tree Cameras | Hard | Trees | Greedy DFS Post-Order | https://leetcode.com/problems/binary-tree-cameras/
+#528 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 15 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-15/
+#529 | Two Sum IV - Input is a BST | Easy | BST | Two Pointers | https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+#530 | Trie (Prefix Tree FAANG Core Problem 6 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-6/
+#531 | Greedy Algorithm FAANG Core Problem 33 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-33/
+#532 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 17 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-17/
+#533 | Vertical Order Traversal of a Binary Tree | Hard | Trees | DFS Coordinate Map Sort | https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+#534 | Graphs, BFS & DF FAANG Core Problem 13 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-13/
+#535 | Greedy Algorithm FAANG Core Problem 35 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-35/
+#536 | Trie (Prefix Tree FAANG Core Problem 8 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-8/
+#537 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 19 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-19/
+#538 | Graphs, BFS & DF FAANG Core Problem 15 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-15/
+#539 | Frog Position After T Seconds | Hard | Trees | Probability DFS Tree | https://leetcode.com/problems/frog-position-after-t-seconds/
+#540 | Greedy Algorithm FAANG Core Problem 37 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-37/
+#541 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 21 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-21/
+#542 | Trie (Prefix Tree FAANG Core Problem 12 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-12/
+#543 | Graphs, BFS & DF FAANG Core Problem 17 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-17/
+#544 | Greedy Algorithm FAANG Core Problem 39 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-39/
+#545 | Kth Ancestor of a Tree Node | Hard | Trees | Binary Lifting Ancestor Matrix | https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
+#546 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 18 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-18/
+#547 | Graphs, BFS & DF FAANG Core Problem 19 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-19/
+#548 | Greedy Algorithm FAANG Core Problem 2 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-2/
+#549 | Intersection of Two Linked Lists | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/intersection-of-two-linked-lists/
+#550 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 20 | Medium | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-20/
+#551 | Binary Tree Paths | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-paths/
+#552 | Greedy Algorithm FAANG Core Problem 6 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-6/
+#553 | Trie (Prefix Tree FAANG Core Problem 14 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-14/
+#554 | Regions Cut By Slashes | Medium | Union Find | 3x3 Grid Upscaling DSU | https://leetcode.com/problems/regions-cut-by-slashes/
+#555 | Diameter of Binary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/diameter-of-binary-tree/
+#556 | Fair Candy Swap | Hard | Greedy | Hashing & Array Optimization | https://leetcode.com/problems/fair-candy-swap/
+#557 | Count Binary Substrings | Easy | BST | Sliding Window | https://leetcode.com/problems/count-binary-substrings/
+#558 | Bricks Falling When Hit | Medium | Union Find | Reverse Time DSU | https://leetcode.com/problems/bricks-falling-when-hit/
+#559 | Binary Tree Maximum Path Sum | Hard | Trees | Post-Order Tree Path Max | https://leetcode.com/problems/binary-tree-maximum-path-sum/
+#560 | Greedy Algorithm FAANG Core Problem 8 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-8/
+#561 | Minimum Distance Between BST Nodes | Easy | BST | Pointer Manipulation | https://leetcode.com/problems/minimum-distance-between-bst-nodes/
+#562 | Trie (Prefix Tree FAANG Core Problem 18 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-18/
+#563 | Maximum Depth of N-ary Tree | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+#564 | Greedy Algorithm FAANG Core Problem 12 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-12/
+#565 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 6 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-6/
+#566 | Graphs, BFS & DF FAANG Core Problem 21 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-21/
+#567 | Binary Tree Tilt | Easy | Trees | Tree Traversal & Recursion | https://leetcode.com/problems/binary-tree-tilt/
+#568 | Trie (Prefix Tree FAANG Core Problem 20 | Hard | Trie | Trie (Prefix Tree) Pattern | https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-20/
+#569 | Maximize Sum Of Array After K Negations | Easy | Greedy | Sort & Flip Smallest | https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+#570 | Similar String Groups | Medium | Union Find | Word Edge DSU | https://leetcode.com/problems/similar-string-groups/
+#571 | Serialize and Deserialize Binary Tree | Hard | Trees | Preorder Queue Traversal | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+#572 | Graphs, BFS & DF FAANG Core Problem 23 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-23/
+#573 | Minimum Subsequence in Non-Increasing Order | Easy | Greedy | Sort & Prefix Sum | https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/
+#574 | Prefix and Suffix Search | Hard | Trie | Combined Prefix-Suffix Trie | https://leetcode.com/problems/prefix-and-suffix-search/
+#575 | Path Sum III | Easy | Trees | Prefix Sum DFS | https://leetcode.com/problems/path-sum-iii/
+#576 | Sentence Similarity II | Medium | Union Find | Word Equivalence DSU | https://leetcode.com/problems/sentence-similarity-ii/
+#577 | Greedy Algorithm FAANG Core Problem 4 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-4/
+#578 | Graphs, BFS & DF FAANG Core Problem 25 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-25/
+#579 | Sum of All Subset XOR Totals | Easy | Backtracking | Subset OR Bit Contribution | https://leetcode.com/problems/sum-of-all-subset-xor-totals/
+#580 | Create Components With Same Value | Hard | Trees | Tree Divisor BFS | https://leetcode.com/problems/create-components-with-same-value/
+#581 | Greedy Algorithm FAANG Core Problem 14 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-14/
+#582 | Minimize Hamming Distance After Swap Operations | Medium | Union Find | Component Frequency Count | https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/
+#583 | Word Squares | Hard | Trie | Prefix Trie Backtracking | https://leetcode.com/problems/word-squares/
+#584 | Graphs, BFS & DF FAANG Core Problem 27 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-27/
+#585 | Greedy Algorithm FAANG Core Problem 18 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-18/
+#586 | Count Nodes With the Highest Score | Hard | Trees | Subtree Size Product DFS | https://leetcode.com/problems/count-nodes-with-the-highest-score/
+#587 | Remove Linked List Elements | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/remove-linked-list-elements/
+#588 | Graphs, BFS & DF FAANG Core Problem 29 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-29/
+#589 | Greedy Algorithm FAANG Core Problem 10 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-10/
+#590 | Valid Sudoku | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/valid-sudoku/
+#591 | Reverse Linked List | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/reverse-linked-list/
+#592 | Sum of Subtree Heights | Hard | Trees | DFS Subtree Heights | https://leetcode.com/problems/sum-of-subtree-heights/
+#593 | Greedy Algorithm FAANG Core Problem 20 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-20/
+#594 | Graphs, BFS & DF FAANG Core Problem 31 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-31/
+#595 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 8 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-8/
+#596 | Merge Two Sorted Lists | Medium | Dynamic Programming | Two Pointers | https://leetcode.com/problems/merge-two-sorted-lists/
+#597 | Greedy Algorithm FAANG Core Problem 24 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-24/
+#598 | Graphs, BFS & DF FAANG Core Problem 33 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-33/
+#599 | Combination Sum | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/combination-sum/
+#600 | Palindrome Linked List | Medium | Dynamic Programming | Two Pointers | https://leetcode.com/problems/palindrome-linked-list/
+#601 | Decode XORed Array | Easy | Bit Manipulation | Prefix XOR Array | https://leetcode.com/problems/decode-xored-array/
+#602 | Greedy Algorithm FAANG Core Problem 26 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-26/
+#603 | Subtree Removal Game | Hard | Trees | Tree Nim Game Nim-Sum | https://leetcode.com/problems/subtree-removal-game/
+#604 | Graphs, BFS & DF FAANG Core Problem 35 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-35/
+#605 | Subtract the Product and Sum of Digits of an Integer | Easy | Math | Digit Iteration | https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+#606 | Greedy Algorithm FAANG Core Problem 16 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-16/
+#607 | Isomorphic Strings | Easy | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/isomorphic-strings/
+#608 | Graphs, BFS & DF FAANG Core Problem 37 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-37/
+#609 | Count Paths That Can Form a Palindrome in a Tree | Hard | Trees | Bitmask Path Parity DFS | https://leetcode.com/problems/count-paths-that-can-form-a-palindrome-in-a-tree/
+#610 | Greedy Algorithm FAANG Core Problem 30 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-30/
+#611 | Middle of the Linked List | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/middle-of-the-linked-list/
+#612 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 12 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-12/
+#613 | Graphs, BFS & DF FAANG Core Problem 39 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-39/
+#614 | Greedy Algorithm FAANG Core Problem 32 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-32/
+#615 | Linked List FAANG Core Problem 16 | Hard | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-16/
+#616 | Combination Sum II | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/combination-sum-ii/
+#617 | Graphs, BFS & DF FAANG Core Problem 41 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-41/
+#618 | Greedy Algorithm FAANG Core Problem 22 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-22/
+#619 | Convert Binary Number in a Linked List to Integer | Medium | Dynamic Programming | Pointer Manipulation | https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+#620 | Permutations | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/permutations/
+#621 | Disjoint Set Union (Union Find / DSU FAANG Core Problem 14 | Hard | Union Find | Disjoint Set Union (Union Find / DSU) Pattern | https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-14/
+#622 | Greedy Algorithm FAANG Core Problem 36 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-36/
+#623 | Graphs, BFS & DF FAANG Core Problem 43 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-43/
+#624 | Linked List FAANG Core Problem 22 | Hard | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-22/
+#625 | Permutations II | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/permutations-ii/
+#626 | Greedy Algorithm FAANG Core Problem 38 | Medium | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-38/
+#627 | Minimize Malware Spread | Hard | Union Find | Component Size DSU | https://leetcode.com/problems/minimize-malware-spread/
+#628 | Graphs, BFS & DF FAANG Core Problem 45 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-45/
+#629 | Climbing Stairs | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/climbing-stairs/
+#630 | Greedy Algorithm FAANG Core Problem 28 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-28/
+#631 | Subsets | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/subsets/
+#632 | Graphs, BFS & DF FAANG Core Problem 47 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-47/
+#633 | Redundant Connection II | Hard | Union Find | Directed Graph Two Parents DSU | https://leetcode.com/problems/redundant-connection-ii/
+#634 | Guess the Word | Medium | Greedy | Minimax Candidate Filtering | https://leetcode.com/problems/guess-the-word/
+#635 | Remove Duplicates from Sorted List | Medium | Dynamic Programming | Two Pointers | https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+#636 | Island Perimeter | Hard | Graphs | Graph Traversal & BFS/DFS | https://leetcode.com/problems/island-perimeter/
+#637 | Word Search | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/word-search/
+#638 | Hand of Straights | Medium | Greedy | TreeMap Frequency Consecutives | https://leetcode.com/problems/hand-of-straights/
+#639 | Making A Large Island | Hard | Union Find | Grid Component Union ID | https://leetcode.com/problems/making-a-large-island/
+#640 | Graphs, BFS & DF FAANG Core Problem 49 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-49/
+#641 | Path Sum | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/path-sum/
+#642 | Greedy Algorithm FAANG Core Problem 34 | Hard | Greedy | Greedy Algorithms Pattern | https://leetcode.com/problems/greedy-algorithm-faang-core-problem-34/
+#643 | Subsets II | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/subsets-ii/
+#644 | Graphs, BFS & DF FAANG Core Problem 51 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-51/
+#645 | Minimize Malware Spread II | Hard | Union Find | Infection Component DSU | https://leetcode.com/problems/minimize-malware-spread-ii/
+#646 | Minimum Increment to Make Array Unique | Medium | Greedy | Sort & Running Peak | https://leetcode.com/problems/minimum-increment-to-make-array-unique/
+#647 | Linked List FAANG Core Problem 28 | Hard | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-28/
+#648 | Shortest Completing Word | Hard | Graphs | Graph Traversal & BFS/DFS | https://leetcode.com/problems/shortest-completing-word/
+#649 | Largest Component Size by Common Factor | Hard | Union Find | Prime Factor DSU | https://leetcode.com/problems/largest-component-size-by-common-factor/
+#650 | Stamping the Sequence | Hard | Greedy | Reverse Target Replacement | https://leetcode.com/problems/stamping-the-sequence/
+#651 | Maximum 69 Number | Easy | Math | First Digit Replacement | https://leetcode.com/problems/maximum-69-number/
+#652 | Course Schedule | Medium | Graphs | Topological Sort | https://leetcode.com/problems/course-schedule/
+#653 | Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree | Hard | Union Find | Kruskal MST Edge Analysis | https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/
+#654 | Minimum Deletions to Make Character Frequencies Unique | Medium | Greedy | Set Frequency Decrement | https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/
+#655 | Water Bottles | Easy | Math | Exchange Division Simulation | https://leetcode.com/problems/water-bottles/
+#656 | Shortest Distance to a Character | Hard | Graphs | Graph Traversal & BFS/DFS | https://leetcode.com/problems/shortest-distance-to-a-character/
+#657 | Design HashSet | Easy | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/design-hashset/
+#658 | Partitioning Into Minimum Number of Deci-Binary Numbers | Medium | Greedy | Max Digit Extraction | https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
+#659 | Couples Holding Hands | Hard | Union Find | Swap Component Graph | https://leetcode.com/problems/couples-holding-hands/
+#660 | Course Schedule II | Medium | Graphs | Topological Sort | https://leetcode.com/problems/course-schedule-ii/
+#661 | Is Subsequence | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/is-subsequence/
+#662 | Minimum Number of Increments on Subarrays to Form a Target Array | Hard | Greedy | One-Pass Positive Delta Sum | https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/
+#663 | Combination Sum III | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/combination-sum-iii/
+#664 | Network Delay Time | Medium | Graphs | Shortest Path | https://leetcode.com/problems/network-delay-time/
+#665 | Maximum Segment Sum After Removals | Hard | Union Find | Reverse Time DSU Segment Sum | https://leetcode.com/problems/maximum-segment-sum-after-removals/
+#666 | Minimum Elements to Add to Form a Given Sum | Medium | Greedy | Ceil Division Delta | https://leetcode.com/problems/minimum-elements-to-add-to-form-a-given-sum/
+#667 | Longest Uncommon Subsequence I | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/longest-uncommon-subsequence-i/
+#668 | Graphs, BFS & DF FAANG Core Problem 4 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-4/
+#669 | Combination Sum IV | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/combination-sum-iv/
+#670 | Maximum Ice Cream Bars | Medium | Greedy | Greedy Cost Sorting | https://leetcode.com/problems/maximum-ice-cream-bars/
+#671 | Remove Max Number of Edges to Keep Graph Fully Traversable | Hard | Union Find | Two-Person DSU Edge Count | https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
+#672 | Cheapest Flights Within K Stops | Medium | Graphs | Shortest Path | https://leetcode.com/problems/cheapest-flights-within-k-stops/
+#673 | Longest Harmonious Subsequence | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/longest-harmonious-subsequence/
+#674 | Patching Array | Hard | Greedy | Miss Bound Accumulator | https://leetcode.com/problems/patching-array/
+#675 | Partition to K Equal Sum Subsets | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
+#676 | Path with Minimum Effort | Medium | Graphs | Shortest Path | https://leetcode.com/problems/path-with-minimum-effort/
+#677 | Checking Existence of Edge Length Limited Paths | Hard | Union Find | Offline Query DSU | https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/
+#678 | Maximum Element After Decreasing and Rearranging | Medium | Greedy | Sort & Bound Increment | https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/
+#679 | Minimum Index Sum of Two Lists | Medium | Dynamic Programming | Hashing & Array Optimization | https://leetcode.com/problems/minimum-index-sum-of-two-lists/
+#680 | Graphs, BFS & DF FAANG Core Problem 10 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-10/
+#681 | Word Subsets | Medium | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/word-subsets/
+#682 | Minimum Number of People to Teach | Medium | Greedy | Language Overlap Count | https://leetcode.com/problems/minimum-number-of-people-to-teach/
+#683 | Process Restricted Friend Requests | Hard | Union Find | Restriction Check DSU | https://leetcode.com/problems/process-restricted-friend-requests/
+#684 | Topological Sort & Shortest Pat FAANG Core Problem 7 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-7/
+#685 | Longest Continuous Increasing Subsequence | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+#686 | Super Washing Machines | Hard | Greedy | Max Net Flow Pass | https://leetcode.com/problems/super-washing-machines/
+#687 | Split Array into Fibonacci Sequence | Medium | Backtracking | Fibonacci Backtracking | https://leetcode.com/problems/split-array-into-fibonacci-sequence/
+#688 | Topological Sort & Shortest Pat FAANG Core Problem 9 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-9/
+#689 | Number of Good Paths | Hard | Union Find | Sorted Value Edge Union DSU | https://leetcode.com/problems/number-of-good-paths/
+#690 | Maximum Binary String After Change | Medium | Greedy | Leading Ones & Zero Count | https://leetcode.com/problems/maximum-binary-string-after-change/
+#691 | Min Cost Climbing Stairs | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/min-cost-climbing-stairs/
+#692 | Graphs, BFS & DF FAANG Core Problem 16 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-16/
+#693 | Construct the Lexicographically Largest Valid Sequence | Medium | Backtracking | Pruned Distance Backtracking | https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/
+#694 | Smallest String With A Given Numeric Value | Medium | Greedy | Greedy Right Z Assignment | https://leetcode.com/problems/smallest-string-with-a-given-numeric-value/
+#695 | Find the String with LCP | Hard | Union Find | LCP Matrix DSU Reconstruct | https://leetcode.com/problems/find-the-string-with-lcp/
+#696 | Topological Sort & Shortest Pat FAANG Core Problem 11 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-11/
+#697 | Linked List FAANG Core Problem 34 | Hard | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-34/
+#698 | Minimum Cost to Set Cooking Time | Hard | Greedy | Digit Format Trade | https://leetcode.com/problems/minimum-cost-to-set-cooking-time/
+#699 | Sudoku Solver | Hard | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/sudoku-solver/
+#700 | Graphs, BFS & DF FAANG Core Problem 22 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-22/
+#701 | Calculate Money in Leetcode Bank | Easy | Math | Weekly Progression Arithmetic | https://leetcode.com/problems/calculate-money-in-leetcode-bank/
+#702 | Minimum Numbers of Function Calls to Make Target Array | Medium | Greedy | Max Bit Len + Bit Sum | https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/
+#703 | Linked List FAANG Core Problem 40 | Hard | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-40/
+#704 | Topological Sort & Shortest Pat FAANG Core Problem 13 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-13/
+#705 | Design HashMap | Easy | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/design-hashmap/
+#706 | Minimum Initial Energy to Complete Tasks | Hard | Greedy | Sort Delta Energy Greed | https://leetcode.com/problems/minimum-initial-energy-to-complete-tasks/
+#707 | Find Center of Star Graph | Easy | Graphs | Degree 2 Node Check | https://leetcode.com/problems/find-center-of-star-graph/
+#708 | Decompress Run-Length Encoded List | Medium | Dynamic Programming | Hashing & Array Optimization | https://leetcode.com/problems/decompress-run-length-encoded-list/
+#709 | N-Queens | Hard | Backtracking | Hashing & Array Optimization | https://leetcode.com/problems/n-queens/
+#710 | Least Number of Unique Integers after K Removals | Medium | Greedy | Frequency Frequency Sort | https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/
+#711 | Topological Sort & Shortest Pat FAANG Core Problem 15 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-15/
+#712 | Super Egg Drop | Hard | Dynamic Programming | Binary Search DP State | https://leetcode.com/problems/super-egg-drop/
+#713 | Split a String Into the Max Number of Unique Substrings | Medium | Backtracking | HashSet String Branching | https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/
+#714 | Merge Intervals | Medium | Greedy | Sort & Sweep Line | https://leetcode.com/problems/merge-intervals/
+#715 | Graphs, BFS & DF FAANG Core Problem 28 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-28/
+#716 | List the Products Ordered in a Period | Medium | Dynamic Programming | Hashing & Array Optimization | https://leetcode.com/problems/list-the-products-ordered-in-a-period/
+#717 | The k-th Lexicographical String of All Happy Strings of Length n | Medium | Backtracking | Pruned String Generation | https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/
+#718 | Transform to Chessboard | Hard | Bit Manipulation | Matrix Pattern Verification | https://leetcode.com/problems/transform-to-chessboard/
+#719 | Insert Interval | Medium | Greedy | 3-Stage Interval Split | https://leetcode.com/problems/insert-interval/
+#720 | Topological Sort & Shortest Pat FAANG Core Problem 17 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-17/
+#721 | Cat and Mouse | Hard | Dynamic Programming | Minimax Game Graph State | https://leetcode.com/problems/cat-and-mouse/
+#722 | Letter Combinations of a Phone Number | Medium | Backtracking | Digit Map Backtracking | https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+#723 | Single Number | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/single-number/
+#724 | Graphs, BFS & DF FAANG Core Problem 34 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-34/
+#725 | Remove Palindromic Subsequences | Medium | Dynamic Programming | Dynamic Programming Memoization | https://leetcode.com/problems/remove-palindromic-subsequences/
+#726 | Self Dividing Numbers | Medium | Math | Digit Modulo Check | https://leetcode.com/problems/self-dividing-numbers/
+#727 | Unique Paths III | Hard | Backtracking | Grid Hamiltonian Path DFS | https://leetcode.com/problems/unique-paths-iii/
+#728 | Topological Sort & Shortest Pat FAANG Core Problem 19 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-19/
+#729 | Linked List FAANG Core Problem 13 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-13/
+#730 | Triples with Bitwise AND Equal To Zero | Hard | Bit Manipulation | Frequency Map XOR/AND | https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/
+#731 | Super Palindromes | Medium | Math | Palindrome Square Search | https://leetcode.com/problems/super-palindromes/
+#732 | Topological Sort & Shortest Pat FAANG Core Problem 21 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-21/
+#733 | Tallest Billboard | Hard | Dynamic Programming | Diff Map State DP | https://leetcode.com/problems/tallest-billboard/
+#734 | Reverse Bits | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/reverse-bits/
+#735 | Minimum Movement to Equal Array | Medium | Math | Sum Min Delta | https://leetcode.com/problems/minimum-movement-to-equal-array/
+#736 | Graphs, BFS & DF FAANG Core Problem 40 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-40/
+#737 | Linked List FAANG Core Problem 15 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-15/
+#738 | Number of 1 Bits | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/number-of-1-bits/
+#739 | Number of Squareful Arrays | Hard | Backtracking | Permutation Graph DFS | https://leetcode.com/problems/number-of-squareful-arrays/
+#740 | Topological Sort & Shortest Pat FAANG Core Problem 23 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-23/
+#741 | Linked List FAANG Core Problem 17 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-17/
+#742 | Find Longest Awesome Substring | Hard | Bit Manipulation | Prefix Bitmask Parity Map | https://leetcode.com/problems/find-longest-awesome-substring/
+#743 | Simplified Fractions | Medium | Math | GCD Fraction Filter | https://leetcode.com/problems/simplified-fractions/
+#744 | Topological Sort & Shortest Pat FAANG Core Problem 25 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-25/
+#745 | Find the Shortest Superstring | Hard | Dynamic Programming | TSP Overlap Bitmask DP | https://leetcode.com/problems/find-the-shortest-superstring/
+#746 | Counting Bits | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/counting-bits/
+#747 | Probability of a Two Boxes Having The Same Number of Distinct Balls | Hard | Backtracking | Multinomial Coefficient DFS | https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/
+#748 | Graphs, BFS & DF FAANG Core Problem 46 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-46/
+#749 | Minimum Swaps To Make Sequences Increasing | Hard | Dynamic Programming | State DP Swap / No-Swap | https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/
+#750 | Number of Valid Words for Each Puzzle | Hard | Bit Manipulation | Submask Iteration Bitmask | https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/
+#751 | Number of Equivalent Domino Pairs | Easy | Hashing | Normalized Pair Hash | https://leetcode.com/problems/number-of-equivalent-domino-pairs/
+#752 | Topological Sort & Shortest Pat FAANG Core Problem 27 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-27/
+#753 | Cat and Mouse II | Hard | Dynamic Programming | Minimax Game Graph DP | https://leetcode.com/problems/cat-and-mouse-ii/
+#754 | Biggest Single Number | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/biggest-single-number/
+#755 | Unique Morse Code Words | Easy | Hashing | Transformation Set | https://leetcode.com/problems/unique-morse-code-words/
+#756 | Graphs, BFS & DF FAANG Core Problem 52 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-52/
+#757 | Subdomain Visit Count | Easy | Hashing | Subdomain Frequency Map | https://leetcode.com/problems/subdomain-visit-count/
+#758 | Linked List FAANG Core Problem 19 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-19/
+#759 | 24 Game | Hard | Backtracking | Floating Point Expression DFS | https://leetcode.com/problems/24-game/
+#760 | Topological Sort & Shortest Pat FAANG Core Problem 29 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-29/
+#761 | Binary Number with Alternating Bits | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/binary-number-with-alternating-bits/
+#762 | Delete Columns to Make Sorted III | Hard | Dynamic Programming | LIS Across Columns | https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
+#763 | Pow(x, n) | Medium | Math | Binary Exponentiation | https://leetcode.com/problems/powx-n/
+#764 | Graphs, BFS & DF FAANG Core Problem 36 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-36/
+#765 | N-Queens II | Hard | Backtracking | Bitmask Constraints Board | https://leetcode.com/problems/n-queens-ii/
+#766 | Linked List FAANG Core Problem 21 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-21/
+#767 | 1-bit and 2-bit Characters | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/1-bit-and-2-bit-characters/
+#768 | Topological Sort & Shortest Pat FAANG Core Problem 10 | Hard | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-10/
+#769 | Vowel Spellchecker | Medium | Hashing | Multiple Precedence HashMaps | https://leetcode.com/problems/vowel-spellchecker/
+#770 | Linked List FAANG Core Problem 23 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-23/
+#771 | Expression Add Operators | Hard | Backtracking | Eval Target Backtracking | https://leetcode.com/problems/expression-add-operators/
+#772 | Graphs, BFS & DF FAANG Core Problem 38 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-38/
+#773 | Prime Number of Set Bits in Binary Representation | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
+#774 | Least Operators to Express Number | Hard | Dynamic Programming | Base Target Recursion DP | https://leetcode.com/problems/least-operators-to-express-number/
+#775 | Groups of Special-Equivalent Strings | Medium | Hashing | Odd-Even Character Signature | https://leetcode.com/problems/groups-of-special-equivalent-strings/
+#776 | Graphs, BFS & DF FAANG Core Problem 42 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-42/
+#777 | Zuma Game | Hard | Backtracking | Board Reduction DFS | https://leetcode.com/problems/zuma-game/
+#778 | Linked List FAANG Core Problem 25 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-25/
+#779 | Sort Integers by The Number of 1 Bits | Medium | Bit Manipulation | Hashing & Array Optimization | https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
+#780 | Topological Sort & Shortest Pat FAANG Core Problem 16 | Hard | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-16/
+#781 | Sentence Similarity | Medium | Hashing | Pair HashSet Match | https://leetcode.com/problems/sentence-similarity/
+#782 | Linked List FAANG Core Problem 27 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-27/
+#783 | Maximum Path Quality of a Graph | Hard | Backtracking | Time-Bounded DFS Backtracking | https://leetcode.com/problems/maximum-path-quality-of-a-graph/
+#784 | Graphs, BFS & DF FAANG Core Problem 44 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-44/
+#785 | Bit Manipulatio FAANG Core Problem 4 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-4/
+#786 | Minimum Cost to Merge Stones | Hard | Dynamic Programming | Interval Merge DP | https://leetcode.com/problems/minimum-cost-to-merge-stones/
+#787 | Minimum Area Rectangle | Medium | Hashing | Diagonal Point Set Lookup | https://leetcode.com/problems/minimum-area-rectangle/
+#788 | Graphs, BFS & DF FAANG Core Problem 48 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-48/
+#789 | Matchsticks to Square | Hard | Backtracking | 4-Subset Sum DFS | https://leetcode.com/problems/matchsticks-to-square/
+#790 | Linked List FAANG Core Problem 29 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-29/
+#791 | Bit Manipulatio FAANG Core Problem 10 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-10/
+#792 | Topological Sort & Shortest Pat FAANG Core Problem 22 | Hard | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-22/
+#793 | Display Table of Food Orders in a Restaurant | Medium | Hashing | Nested TreeMap Hash | https://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/
+#794 | Linked List FAANG Core Problem 31 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-31/
+#795 | Count Subtrees With Max Distance Between Cities | Hard | Bit Manipulation | Bitmask Tree Diameter BFS | https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/
+#796 | Graphs, BFS & DF FAANG Core Problem 50 | Medium | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-50/
+#797 | Reaching Points | Hard | Math | Modulo Backward Reduction | https://leetcode.com/problems/reaching-points/
+#798 | Build Array Where You Can Find The Maximum Exactly K Comparisons | Hard | Dynamic Programming | 3D DP State Recurrence | https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/
+#799 | Minimum One Bit Operations to Make Integers Zero | Hard | Bit Manipulation | Gray Code Reversal | https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/
+#800 | Topological Sort & Shortest Pat FAANG Core Problem 28 | Hard | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-28/
+#801 | Number of Good Pairs | Easy | Hashing | Combination Pair Hash | https://leetcode.com/problems/number-of-good-pairs/
+#802 | Linked List FAANG Core Problem 33 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-33/
+#803 | Equal Rational Numbers | Hard | Math | Fraction Parsing Equality | https://leetcode.com/problems/equal-rational-numbers/
+#804 | Topological Sort & Shortest Pat FAANG Core Problem 6 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-6/
+#805 | How Many Numbers Are Smaller Than the Current Number | Easy | Hashing | Sorted Rank Map | https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+#806 | Number of Ways to Wear Different Hats to Each Other | Hard | Dynamic Programming | Bitmask Hat Assignment DP | https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/
+#807 | Count Largest Group | Easy | Hashing | Digit Sum Bucket Count | https://leetcode.com/problems/count-largest-group/
+#808 | Topological Sort & Shortest Pat FAANG Core Problem 8 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-8/
+#809 | Number of Digit One | Hard | Math | Digit Position Count Formula | https://leetcode.com/problems/number-of-digit-one/
+#810 | Linked List FAANG Core Problem 35 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-35/
+#811 | Bit Manipulatio FAANG Core Problem 16 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-16/
+#812 | Graphs, BFS & DF FAANG Core Problem 2 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-2/
+#813 | Minimum Number of Steps to Make Two Strings Anagram | Medium | Hashing | Frequency Delta Sum | https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+#814 | Linked List FAANG Core Problem 37 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-37/
+#815 | Self Crossing | Hard | Math | Segment Intersection Conditions | https://leetcode.com/problems/self-crossing/
+#816 | Topological Sort & Shortest Pat FAANG Core Problem 12 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-12/
+#817 | Bit Manipulatio FAANG Core Problem 1 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-1/
+#818 | Number of Ways of Cutting a Pizza | Hard | Dynamic Programming | 2D Suffix Apple DP | https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/
+#819 | Tuple with Same Product | Medium | Hashing | Product Pair Frequency | https://leetcode.com/problems/tuple-with-same-product/
+#820 | Topological Sort & Shortest Pat FAANG Core Problem 14 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-14/
+#821 | Count Array Pairs Divisible by K | Hard | Math | GCD Map Frequency Pairs | https://leetcode.com/problems/count-array-pairs-divisible-by-k/
+#822 | Linked List FAANG Core Problem 39 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-39/
+#823 | Bit Manipulatio FAANG Core Problem 3 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-3/
+#824 | Graphs, BFS & DF FAANG Core Problem 6 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-6/
+#825 | Evaluate the Bracket Pairs of a String | Medium | Hashing | Key Map Replacement | https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/
+#826 | Linked List FAANG Core Problem 41 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-41/
+#827 | Falling Squares | Hard | Segment Tree | Interval Max Height Coordinate Compression | https://leetcode.com/problems/falling-squares/
+#828 | Topological Sort & Shortest Pat FAANG Core Problem 18 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-18/
+#829 | Bit Manipulatio FAANG Core Problem 5 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-5/
+#830 | Find All Good Strings | Hard | Dynamic Programming | KMP + Digit DP State | https://leetcode.com/problems/find-all-good-strings/
+#831 | Finding the Users Active Minutes | Medium | Hashing | Set Map Minute Counter | https://leetcode.com/problems/finding-the-users-active-minutes/
+#832 | Topological Sort & Shortest Pat FAANG Core Problem 20 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-20/
+#833 | Range Module | Hard | Segment Tree | Interval Set Vector | https://leetcode.com/problems/range-module/
+#834 | Linked List FAANG Core Problem 43 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-43/
+#835 | Bit Manipulatio FAANG Core Problem 7 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-7/
+#836 | Graphs, BFS & DF FAANG Core Problem 8 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-8/
+#837 | Determine if Two Strings Are Close | Medium | Hashing | Set & Frequency Sort Match | https://leetcode.com/problems/determine-if-two-strings-are-close/
+#838 | Linked List FAANG Core Problem 14 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-14/
+#839 | Create Sorted Array through Instructions | Hard | Segment Tree | Fenwick Tree Inversion Count | https://leetcode.com/problems/create-sorted-array-through-instructions/
+#840 | Topological Sort & Shortest Pat FAANG Core Problem 24 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-24/
+#841 | Bit Manipulatio FAANG Core Problem 9 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-9/
+#842 | Form Largest Integer With Digits That Add up to Target | Hard | Dynamic Programming | Unbounded Knapsack String DP | https://leetcode.com/problems/form-largest-integer-with-digits-that-add-up-to-target/
+#843 | Number of Ways Where Square of Number Is Equal to Product of Two Numbers | Medium | Hashing | Product Frequency Hash | https://leetcode.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
+#844 | Topological Sort & Shortest Pat FAANG Core Problem 26 | Medium | Graphs | Topological Sort & Shortest Path Pattern | https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-26/
+#845 | Maximum Sum Queries | Hard | Segment Tree | 2D Range Max Query Segment Tree | https://leetcode.com/problems/maximum-sum-queries/
+#846 | Linked List FAANG Core Problem 18 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-18/
+#847 | Group Anagrams | Hard | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/group-anagrams/
+#848 | Graphs, BFS & DF FAANG Core Problem 12 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-12/
+#849 | Erect the Fence | Hard | Geometry | Monotone Chain Convex Hull | https://leetcode.com/problems/erect-the-fence/
+#850 | Cherry Pickup II | Hard | Dynamic Programming | 3D Grid Two Robot DP | https://leetcode.com/problems/cherry-pickup-ii/
+#851 | Destination City | Easy | Hashing | Out-Degree Zero Node | https://leetcode.com/problems/destination-city/
+#852 | Snakes and Ladders | Medium | Graphs | Grid Flatten BFS | https://leetcode.com/problems/snakes-and-ladders/
+#853 | Best Position for a Service Centre | Hard | Geometry | Weiszfeld Algorithm / Gradient Descent | https://leetcode.com/problems/best-position-for-a-service-centre/
+#854 | Linked List FAANG Core Problem 20 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-20/
+#855 | Count the Number of Consistent Strings | Easy | Hashing | Bitmask Allowed Chars | https://leetcode.com/problems/count-the-number-of-consistent-strings/
+#856 | Graphs, BFS & DF FAANG Core Problem 14 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-14/
+#857 | Maximum Number of Balls in a Box | Easy | Hashing | Digit Sum Frequency | https://leetcode.com/problems/maximum-number-of-balls-in-a-box/
+#858 | Linked List FAANG Core Problem 24 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-24/
+#859 | Sliding Puzzle | Hard | BFS | 2x3 Board State BFS | https://leetcode.com/problems/sliding-puzzle/
+#860 | Shortest Bridge | Medium | Graphs | Multi-Source BFS | https://leetcode.com/problems/shortest-bridge/
+#861 | Bit Manipulatio FAANG Core Problem 11 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-11/
+#862 | Parallel Courses II | Hard | Dynamic Programming | Bitmask Subgraph DP | https://leetcode.com/problems/parallel-courses-ii/
+#863 | Making File Names Unique | Medium | Hashing | Folder Name Counter | https://leetcode.com/problems/making-file-names-unique/
+#864 | All Paths From Source to Target | Medium | Graphs | DAG DFS Backtracking | https://leetcode.com/problems/all-paths-from-source-to-target/
+#865 | Graphs, BFS & DF FAANG Core Problem 18 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-18/
+#866 | Linked List FAANG Core Problem 26 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-26/
+#867 | Bit Manipulatio FAANG Core Problem 13 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-13/
+#868 | Word Frequency | Hard | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/word-frequency/
+#869 | Shortest Path to Get All Keys | Medium | Graphs | Bitmask BFS State | https://leetcode.com/problems/shortest-path-to-get-all-keys/
+#870 | Linked List FAANG Core Problem 30 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-30/
+#871 | Graphs, BFS & DF FAANG Core Problem 20 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-20/
+#872 | Bit Manipulatio FAANG Core Problem 15 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-15/
+#873 | Check If a String Contains All Binary Codes of Size K | Medium | Hashing | Rolling Bitmask Set | https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
+#874 | Allocate Mailboxes | Hard | Dynamic Programming | 1D Partition Distance DP | https://leetcode.com/problems/allocate-mailboxes/
+#875 | K-Similar Strings | Medium | Graphs | BFS String Swap State | https://leetcode.com/problems/k-similar-strings/
+#876 | Bit Manipulatio FAANG Core Problem 2 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-2/
+#877 | Maximum Equal Frequency | Hard | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/maximum-equal-frequency/
+#878 | Linked List FAANG Core Problem 32 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-32/
+#879 | Find Eventual Safe States | Medium | Graphs | DFS Tri-Color Cycle Check | https://leetcode.com/problems/find-eventual-safe-states/
+#880 | Graphs, BFS & DF FAANG Core Problem 24 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-24/
+#881 | Bit Manipulatio FAANG Core Problem 6 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-6/
+#882 | Linked List FAANG Core Problem 36 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-36/
+#883 | Sort Characters By Frequency | Hard | Hashing | Hashing & Array Optimization | https://leetcode.com/problems/sort-characters-by-frequency/
+#884 | Loud and Rich | Medium | Graphs | Topological Sort / DFS Memo | https://leetcode.com/problems/loud-and-rich/
+#885 | Bit Manipulatio FAANG Core Problem 8 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-8/
+#886 | Dungeon Game | Hard | Dynamic Programming | Bottom-Up Minimum Health DP | https://leetcode.com/problems/dungeon-game/
+#887 | Rectangle Area II | Medium | Segment Tree | Sweep-Line Interval Area | https://leetcode.com/problems/rectangle-area-ii/
+#888 | Shortest Path Visiting All Nodes | Medium | Graphs | Bitmask BFS Shortest Path | https://leetcode.com/problems/shortest-path-visiting-all-nodes/
+#889 | Grid Illumination | Hard | Hashing | Line & Diagonal Count Maps | https://leetcode.com/problems/grid-illumination/
+#890 | Linked List FAANG Core Problem 38 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-38/
+#891 | Bit Manipulatio FAANG Core Problem 12 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-12/
+#892 | Graphs, BFS & DF FAANG Core Problem 26 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-26/
+#893 | My Calendar III | Medium | Segment Tree | Sweep Line Boundary Map | https://leetcode.com/problems/my-calendar-iii/
+#894 | Linked List FAANG Core Problem 42 | Medium | Dynamic Programming | Linked Lists Pattern | https://leetcode.com/problems/linked-list-faang-core-problem-42/
+#895 | Max Points on a Line | Hard | Hashing | Slope Pair Frequency Map | https://leetcode.com/problems/max-points-on-a-line/
+#896 | Keys and Rooms | Medium | Graphs | BFS Room Graph | https://leetcode.com/problems/keys-and-rooms/
+#897 | Graphs, BFS & DF FAANG Core Problem 30 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-30/
+#898 | String Compression II | Hard | Dynamic Programming | 2D Run-Length Deletion DP | https://leetcode.com/problems/string-compression-ii/
+#899 | Naming a Company | Hard | Hashing | Initial Char Set Intersect | https://leetcode.com/problems/naming-a-company/
+#900 | Graphs, BFS & DF FAANG Core Problem 32 | Hard | Graphs | Graphs, BFS & DFS Pattern | https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-32/
+#901 | Check if Number Has Equal Digit Count and Digit Value | Easy | Hashing | Frequency Self Check | https://leetcode.com/problems/check-if-number-has-equal-digit-count-and-digit-value/
+#902 | Minimum Cost to Cut a Stick | Hard | Dynamic Programming | Interval Cut DP | https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
+#903 | Bit Manipulatio FAANG Core Problem 14 | Medium | Bit Manipulation | Bit Manipulation Pattern | https://leetcode.com/problems/bit-manipulatio-faang-core-problem-14/
+#904 | Cut Off Trees for Golf Event | Hard | Graphs | Step-by-Step BFS Path | https://leetcode.com/problems/cut-off-trees-for-golf-event/
+#905 | Rectangle Overlap | Medium | Geometry | 1D Projection Overlap | https://leetcode.com/problems/rectangle-overlap/
+#906 | Stone Game V | Hard | Dynamic Programming | Interval Prefix Sum DP | https://leetcode.com/problems/stone-game-v/
+#907 | Single Number II | Medium | Bit Manipulation | Bitwise Modular Count | https://leetcode.com/problems/single-number-ii/
+#908 | Cracking the Safe | Hard | Graphs | De Bruijn Cycle Eulerian Path | https://leetcode.com/problems/cracking-the-safe/
+#909 | Incremental Memory Leak | Medium | Simulation | Two Memory Stick Simulation | https://leetcode.com/problems/incremental-memory-leak/
+#910 | Minimum Number of Days to Eat N Oranges | Hard | Dynamic Programming | BFS / Memoized Division DP | https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/
+#911 | Single Number III | Medium | Bit Manipulation | XOR Grouping Diff Bit | https://leetcode.com/problems/single-number-iii/
+#912 | Swim in Rising Water | Hard | Graphs | Dijkstra Grid Binary Search | https://leetcode.com/problems/swim-in-rising-water/
+#913 | Minimum Number of Operations to Reinitialize a Permutation | Medium | Simulation | Index Cycle Tracking | https://leetcode.com/problems/minimum-number-of-operations-to-reinitialize-a-permutation/
+#914 | Strange Printer | Hard | Dynamic Programming | Interval Character Match DP | https://leetcode.com/problems/strange-printer/
+#915 | Chalkboard XOR Game | Medium | Bit Manipulation | XOR Parity Win Condition | https://leetcode.com/problems/chalkboard-xor-game/
+#916 | Strange Printer II | Hard | Graphs | Topological Sort Color Overlap | https://leetcode.com/problems/strange-printer-ii/
+#917 | Pancake Sorting | Medium | Sort | Prefix Flip Selection | https://leetcode.com/problems/pancake-sorting/
+#918 | Remove Boxes | Hard | Dynamic Programming | 3D Interval Streak DP | https://leetcode.com/problems/remove-boxes/
+#919 | Bitwise ORs of Subarrays | Medium | Bit Manipulation | Set Accumulator ORs | https://leetcode.com/problems/bitwise-ors-of-subarrays/
+#920 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Hard | Graphs | Floyd-Warshall Shortest Path | https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
+#921 | Bus Routes | Medium | Graphs | Multi-Route BFS Graph | https://leetcode.com/problems/bus-routes/
+#922 | Sticker to Spell Word | Hard | Dynamic Programming | Bitmask Frequency DP | https://leetcode.com/problems/sticker-to-spell-word/
+#923 | Flood Fill | Medium | Graphs | Grid DFS/BFS Fill | https://leetcode.com/problems/flood-fill/
+#924 | Minimum Cost to Make at Least One Valid Path in a Grid | Hard | Graphs | 0-1 BFS Grid Shortest Path | https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/
+#925 | Reorder Routes to Make All Paths Lead to the City Zero | Medium | Graphs | Directed Tree Reversal BFS | https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/
+#926 | Count Different Palindromic Subsequences | Hard | Dynamic Programming | Interval 4-Char DP | https://leetcode.com/problems/count-different-palindromic-subsequences/
+#927 | Minimum Number of Vertices to Reach All Nodes | Medium | Graphs | In-Degree Zero Vertices | https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
+#928 | Contain Virus | Hard | Graphs | Grid BFS Wall Simulation | https://leetcode.com/problems/contain-virus/
+#929 | Map of Highest Peak | Medium | Graphs | Multi-Source Water BFS | https://leetcode.com/problems/map-of-highest-peak/
+#930 | Distinct Subsequences | Hard | Dynamic Programming | 2D String Frequency Recurrence | https://leetcode.com/problems/distinct-subsequences/
+#931 | Surrounded Regions | Medium | Graphs | Boundary Connected DFS | https://leetcode.com/problems/surrounded-regions/
+#932 | Alien Dictionary | Hard | Graphs | Character Order Topological Sort | https://leetcode.com/problems/alien-dictionary/
+#933 | Number of Islands | Medium | Graphs | Grid DFS Connected Components | https://leetcode.com/problems/number-of-islands/
+#934 | Scramble String | Hard | Dynamic Programming | 3D Substring Partition DP | https://leetcode.com/problems/scramble-string/
+#935 | Pacific Atlantic Water Flow | Medium | Graphs | Multi-Source Reverse DFS | https://leetcode.com/problems/pacific-atlantic-water-flow/
+#936 | Word Ladder II | Hard | Graphs | BFS Shortest Path + DFS Trace | https://leetcode.com/problems/word-ladder-ii/
+#937 | Length of Longest Fibonacci Subsequence | Medium | Dynamic Programming | 2D DP Pair Transitions | https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
+#938 | Word Ladder | Hard | Graphs | BFS Word Transformation Graph | https://leetcode.com/problems/word-ladder/
+#939 | Knight Dialer | Medium | Dynamic Programming | Transition DP Matrix | https://leetcode.com/problems/knight-dialer/
+#940 | Reconstruct Itinerary | Hard | Graphs | Eulerian Path Hierholzer DFS | https://leetcode.com/problems/reconstruct-itinerary/
+#941 | Minimum Falling Path Sum | Medium | Dynamic Programming | 2D Grid Path Min | https://leetcode.com/problems/minimum-falling-path-sum/
+#942 | Shortest Path in a Grid with Obstacles Elimination | Hard | Graphs | BFS Grid State K | https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/
+#943 | Split Array With Same Average | Medium | Dynamic Programming | Subset Sum DP Meet-in-Middle | https://leetcode.com/problems/split-array-with-same-average/
+#944 | Parallel Courses III | Hard | Graphs | Topological Sort Max Time DP | https://leetcode.com/problems/parallel-courses-iii/
+#945 | Build a Matrix With Conditions | Hard | Graphs | Row Col Topological Sort | https://leetcode.com/problems/build-a-matrix-with-conditions/
+#946 | Minimum Time to Visit a Cell In a Grid | Hard | Graphs | Grid Dijkstra Ping-Pong | https://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/
+#947 | Regular Expression Matching | Hard | Dynamic Programming | Wildcard Match DP | https://leetcode.com/problems/regular-expression-matching/
+#948 | Design Graph With Shortest Path Calculator | Hard | Graphs | Dijkstra Priority Queue Graph | https://leetcode.com/problems/design-graph-with-shortest-path-calculator/
+#949 | Modify Graph Edge Weights | Hard | Graphs | Dijkstra Two-Pass Edge Modification | https://leetcode.com/problems/modify-graph-edge-weights/
+#950 | Minimum Obstacle Removal to Reach Corner | Hard | Graphs | 0-1 Deque BFS Obstacles | https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/
+#951 | Word Pattern | Easy | Hashing | Bijection String Map | https://leetcode.com/problems/word-pattern/
+#952 | Wildcard Matching | Hard | Dynamic Programming | Question Star DP State | https://leetcode.com/problems/wildcard-matching/
+#953 | Race Car | Medium | Dynamic Programming | BFS / DP Shortest Instruction | https://leetcode.com/problems/race-car/
+#954 | Best Time to Buy and Sell Stock III | Hard | Dynamic Programming | At Most 2 Transaction DP | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+#955 | New 21 Game | Medium | Dynamic Programming | Sliding Window DP Probability | https://leetcode.com/problems/new-21-game/
+#956 | Best Time to Buy and Sell Stock IV | Hard | Dynamic Programming | K-Transaction State DP | https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+#957 | Numbers At Most N Given Digit Set | Medium | Dynamic Programming | Digit DP Combinatorics | https://leetcode.com/problems/numbers-at-most-n-given-digit-set/
+#958 | Word Break II | Hard | Dynamic Programming | Memoized Trie Backtracking | https://leetcode.com/problems/word-break-ii/
+#959 | Valid Permutations for DI Sequence | Medium | Dynamic Programming | DI Prefix Swap DP | https://leetcode.com/problems/valid-permutations-for-di-sequence/
+#960 | Russian Doll Envelopes | Hard | Dynamic Programming | 2D Sort LIS Binary Search | https://leetcode.com/problems/russian-doll-envelopes/
+#961 | Flip String to Monotone Increasing | Medium | Dynamic Programming | 0/1 Flip Min DP | https://leetcode.com/problems/flip-string-to-monotone-increasing/
+#962 | Frog Jump | Hard | Dynamic Programming | Stone Step HashMap DP | https://leetcode.com/problems/frog-jump/
+#963 | Find Two Non-overlapping Sub-arrays Each With Target Sum | Medium | Dynamic Programming | Prefix Suffix Min Window DP | https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
+#964 | Freedom Trail | Hard | Dynamic Programming | Circular Ring Dial DP | https://leetcode.com/problems/freedom-trail/
+#965 | Maximum Score from Performing Multiplication Operations | Medium | Dynamic Programming | 2D Interval Multiplier DP | https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/
+#966 | Number of Great Partitions | Hard | Dynamic Programming | Knapsack Complement DP | https://leetcode.com/problems/number-of-great-partitions/
+#967 | Minimum Deletions to Make String Balanced | Medium | Dynamic Programming | b-Count / Deletion DP | https://leetcode.com/problems/minimum-deletions-to-make-string-balanced/
+#968 | Number of Music Playlists | Hard | Dynamic Programming | 2D Combination Playlists DP | https://leetcode.com/problems/number-of-music-playlists/
+#969 | Maximum Non Negative Product in a Matrix | Medium | Dynamic Programming | 2D Min-Max Product DP | https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/
+#970 | Profitable Schemes | Hard | Dynamic Programming | 3D Knapsack Profit DP | https://leetcode.com/problems/profitable-schemes/
+#971 | Maximum Length of Subarray With Positive Product | Medium | Dynamic Programming | Pos/Neg Dynamic State | https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/
+#972 | Shortest Common Supersequence | Hard | Dynamic Programming | LCS Reconstruction DP | https://leetcode.com/problems/shortest-common-supersequence/
+#973 | Unique Paths II | Medium | Dynamic Programming | 2D Grid Obstacle DP | https://leetcode.com/problems/unique-paths-ii/
+#974 | Delivering Boxes from Storage to Ports | Hard | Dynamic Programming | Monotonic Queue DP | https://leetcode.com/problems/delivering-boxes-from-storage-to-ports/
+#975 | Minimum Path Sum | Medium | Dynamic Programming | 2D Grid Min Path DP | https://leetcode.com/problems/minimum-path-sum/
+#976 | Count Fertile Pyramids in a Map | Hard | Dynamic Programming | 2D Height Pyramid DP | https://leetcode.com/problems/count-fertile-pyramids-in-a-map/
+#977 | Triangle | Medium | Dynamic Programming | Bottom-Up Row Min DP | https://leetcode.com/problems/triangle/
+#978 | Maximum Number of Non-overlapping Palindrome Substrings | Hard | Dynamic Programming | Palindrome Center + DP | https://leetcode.com/problems/maximum-number-of-non-overlapping-palindrome-substrings/
+#979 | Target Sum | Medium | Dynamic Programming | Subset Sum Offset DP | https://leetcode.com/problems/target-sum/
+#980 | Number of Beautiful Partitions | Hard | Dynamic Programming | Prime Split Interval DP | https://leetcode.com/problems/number-of-beautiful-partitions/
+#981 | Decode Ways | Medium | Dynamic Programming | 1D String Parsing DP | https://leetcode.com/problems/decode-ways/
+#982 | Minimum Cost to Split an Array | Hard | Dynamic Programming | 1D Partition Trim DP | https://leetcode.com/problems/minimum-cost-to-split-an-array/
+#983 | House Robber | Medium | Dynamic Programming | 1D DP Skip Neighbor | https://leetcode.com/problems/house-robber/
+#984 | Maximum Value of K Coins From Piles | Hard | Dynamic Programming | Prefix Sum Knapsack DP | https://leetcode.com/problems/maximum-value-of-k-coins-from-piles/
+#985 | House Robber II | Medium | Dynamic Programming | Circular Row DP | https://leetcode.com/problems/house-robber-ii/
+#986 | Substring With Largest Variance | Hard | Dynamic Programming | 2-Char Variance Kadane DP | https://leetcode.com/problems/substring-with-largest-variance/
+#987 | Coin Change | Medium | Dynamic Programming | Unbounded Knapsack Min Coins | https://leetcode.com/problems/coin-change/
+#988 | Number of Increasing Paths in a Grid | Hard | Dynamic Programming | 2D Grid DFS Memo DP | https://leetcode.com/problems/number-of-increasing-paths-in-a-grid/
+#989 | Longest Increasing Subsequence | Medium | Dynamic Programming | Patience Sorting / LIS DP | https://leetcode.com/problems/longest-increasing-subsequence/
+#990 | Minimum Insertion Steps to Make a String Palindrome | Hard | Dynamic Programming | LCS String Recurrence | https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
+#991 | Partition Equal Subset Sum | Medium | Dynamic Programming | 0/1 Knapsack Target Sum DP | https://leetcode.com/problems/partition-equal-subset-sum/
+#992 | Count All Valid Pickup and Delivery Options | Hard | Dynamic Programming | Combinatorics Permutations DP | https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+#993 | Word Break | Medium | Dynamic Programming | 1D Prefix DP | https://leetcode.com/problems/word-break/
+#994 | Number of Ways to Paint N 3 Grid | Hard | Dynamic Programming | State Transition Color DP | https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/
+#995 | Restore The Array | Hard | Dynamic Programming | 1D String Parsing DP | https://leetcode.com/problems/restore-the-array/
+#996 | Max Dot Product of Two Subsequences | Hard | Dynamic Programming | 2D Subsequence Dot Product DP | https://leetcode.com/problems/max-dot-product-of-two-subsequences/
+#997 | Minimum Cost to Connect Two Groups of Points | Hard | Dynamic Programming | Bipartite Bitmask DP | https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/
+#998 | Number of Ways to Form a Target String Given a Dictionary | Hard | Dynamic Programming | 2D Frequency Vector Target DP | https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/
+#999 | Kth Smallest Instructions | Hard | Dynamic Programming | Pascal Combinations Grid Path | https://leetcode.com/problems/kth-smallest-instructions/
+#1000 | Maximize Grid Happiness | Hard | Dynamic Programming | 3D Bitmask Grid DP | https://leetcode.com/problems/maximize-grid-happiness/

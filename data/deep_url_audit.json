@@ -1,0 +1,1297 @@
+{
+  "summary": {
+    "total": 1000,
+    "validSlugMatches": 788,
+    "titleMatchedWithDiffSlug": 2,
+    "searchUrls": 0,
+    "invalidOrSynthetic": 210,
+    "totalIssues": 212,
+    "page1_2_issuesCount": 1
+  },
+  "page1_2_issues": [
+    {
+      "id": 76,
+      "title": "Longest Pressable Key",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/longest-pressable-key/"
+    }
+  ],
+  "allIssues": [
+    {
+      "id": 76,
+      "title": "Longest Pressable Key",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/longest-pressable-key/"
+    },
+    {
+      "id": 213,
+      "title": "Make Two Arrays Equal by Reversing Sub-arrays",
+      "issue": "INVALID_SLUG_TITLE_MATCHED",
+      "currentUrl": "https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/",
+      "suggestedUrl": "https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/",
+      "suggestedSlug": "make-two-arrays-equal-by-reversing-subarrays"
+    },
+    {
+      "id": 291,
+      "title": "Position of Large Groups",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/position-of-large-groups/"
+    },
+    {
+      "id": 306,
+      "title": "Minimum Window Subsequence",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/minimum-window-substring-subsequence/"
+    },
+    {
+      "id": 308,
+      "title": "Candy Crush",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/candy-crush/"
+    },
+    {
+      "id": 386,
+      "title": "Basic Calculator III",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/basic-calculator-iii/"
+    },
+    {
+      "id": 409,
+      "title": "Reverse Substrings Between Each Pair of Parentheses",
+      "issue": "INVALID_SLUG_TITLE_MATCHED",
+      "currentUrl": "https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses-hard/",
+      "suggestedUrl": "https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/",
+      "suggestedSlug": "reverse-substrings-between-each-pair-of-parentheses"
+    },
+    {
+      "id": 438,
+      "title": "Trie (Prefix Tree FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-7/"
+    },
+    {
+      "id": 440,
+      "title": "Greedy Algorithm FAANG Core Problem 1",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-1/"
+    },
+    {
+      "id": 444,
+      "title": "Trie (Prefix Tree FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-9/"
+    },
+    {
+      "id": 448,
+      "title": "Trie (Prefix Tree FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-11/"
+    },
+    {
+      "id": 449,
+      "title": "Greedy Algorithm FAANG Core Problem 3",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-3/"
+    },
+    {
+      "id": 450,
+      "title": "Number of Connected Components in an Undirected Graph",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
+    },
+    {
+      "id": 452,
+      "title": "Trie (Prefix Tree FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-13/"
+    },
+    {
+      "id": 454,
+      "title": "Greedy Algorithm FAANG Core Problem 5",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-5/"
+    },
+    {
+      "id": 458,
+      "title": "Trie (Prefix Tree FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-15/"
+    },
+    {
+      "id": 460,
+      "title": "Greedy Algorithm FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-7/"
+    },
+    {
+      "id": 464,
+      "title": "Trie (Prefix Tree FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-17/"
+    },
+    {
+      "id": 466,
+      "title": "Greedy Algorithm FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-9/"
+    },
+    {
+      "id": 470,
+      "title": "Trie (Prefix Tree FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-19/"
+    },
+    {
+      "id": 472,
+      "title": "Greedy Algorithm FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-11/"
+    },
+    {
+      "id": 476,
+      "title": "Trie (Prefix Tree FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-21/"
+    },
+    {
+      "id": 481,
+      "title": "Greedy Algorithm FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-13/"
+    },
+    {
+      "id": 484,
+      "title": "Graphs, BFS & DF FAANG Core Problem 1",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-1/"
+    },
+    {
+      "id": 485,
+      "title": "Greedy Algorithm FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-15/"
+    },
+    {
+      "id": 488,
+      "title": "Graphs, BFS & DF FAANG Core Problem 3",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-3/"
+    },
+    {
+      "id": 490,
+      "title": "Greedy Algorithm FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-17/"
+    },
+    {
+      "id": 493,
+      "title": "Graphs, BFS & DF FAANG Core Problem 5",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-5/"
+    },
+    {
+      "id": 494,
+      "title": "Greedy Algorithm FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-19/"
+    },
+    {
+      "id": 496,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-7/"
+    },
+    {
+      "id": 497,
+      "title": "Graphs, BFS & DF FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-7/"
+    },
+    {
+      "id": 498,
+      "title": "Greedy Algorithm FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-21/"
+    },
+    {
+      "id": 500,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-9/"
+    },
+    {
+      "id": 502,
+      "title": "Greedy Algorithm FAANG Core Problem 23",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-23/"
+    },
+    {
+      "id": 504,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-11/"
+    },
+    {
+      "id": 508,
+      "title": "Greedy Algorithm FAANG Core Problem 25",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-25/"
+    },
+    {
+      "id": 509,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-10/"
+    },
+    {
+      "id": 510,
+      "title": "Graphs, BFS & DF FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-9/"
+    },
+    {
+      "id": 512,
+      "title": "Trie (Prefix Tree FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-10/"
+    },
+    {
+      "id": 514,
+      "title": "Greedy Algorithm FAANG Core Problem 27",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-27/"
+    },
+    {
+      "id": 516,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-13/"
+    },
+    {
+      "id": 518,
+      "title": "Trie (Prefix Tree FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-16/"
+    },
+    {
+      "id": 520,
+      "title": "Greedy Algorithm FAANG Core Problem 29",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-29/"
+    },
+    {
+      "id": 521,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-16/"
+    },
+    {
+      "id": 522,
+      "title": "Graphs, BFS & DF FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-11/"
+    },
+    {
+      "id": 526,
+      "title": "Greedy Algorithm FAANG Core Problem 31",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-31/"
+    },
+    {
+      "id": 528,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-15/"
+    },
+    {
+      "id": 530,
+      "title": "Trie (Prefix Tree FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-6/"
+    },
+    {
+      "id": 531,
+      "title": "Greedy Algorithm FAANG Core Problem 33",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-33/"
+    },
+    {
+      "id": 532,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-17/"
+    },
+    {
+      "id": 534,
+      "title": "Graphs, BFS & DF FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-13/"
+    },
+    {
+      "id": 535,
+      "title": "Greedy Algorithm FAANG Core Problem 35",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-35/"
+    },
+    {
+      "id": 536,
+      "title": "Trie (Prefix Tree FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-8/"
+    },
+    {
+      "id": 537,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-19/"
+    },
+    {
+      "id": 538,
+      "title": "Graphs, BFS & DF FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-15/"
+    },
+    {
+      "id": 540,
+      "title": "Greedy Algorithm FAANG Core Problem 37",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-37/"
+    },
+    {
+      "id": 541,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-21/"
+    },
+    {
+      "id": 542,
+      "title": "Trie (Prefix Tree FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-12/"
+    },
+    {
+      "id": 543,
+      "title": "Graphs, BFS & DF FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-17/"
+    },
+    {
+      "id": 544,
+      "title": "Greedy Algorithm FAANG Core Problem 39",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-39/"
+    },
+    {
+      "id": 546,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-18/"
+    },
+    {
+      "id": 547,
+      "title": "Graphs, BFS & DF FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-19/"
+    },
+    {
+      "id": 548,
+      "title": "Greedy Algorithm FAANG Core Problem 2",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-2/"
+    },
+    {
+      "id": 550,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-20/"
+    },
+    {
+      "id": 552,
+      "title": "Greedy Algorithm FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-6/"
+    },
+    {
+      "id": 553,
+      "title": "Trie (Prefix Tree FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-14/"
+    },
+    {
+      "id": 560,
+      "title": "Greedy Algorithm FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-8/"
+    },
+    {
+      "id": 562,
+      "title": "Trie (Prefix Tree FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-18/"
+    },
+    {
+      "id": 564,
+      "title": "Greedy Algorithm FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-12/"
+    },
+    {
+      "id": 565,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-6/"
+    },
+    {
+      "id": 566,
+      "title": "Graphs, BFS & DF FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-21/"
+    },
+    {
+      "id": 568,
+      "title": "Trie (Prefix Tree FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/trie--prefix-tree-faang-core-problem-20/"
+    },
+    {
+      "id": 572,
+      "title": "Graphs, BFS & DF FAANG Core Problem 23",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-23/"
+    },
+    {
+      "id": 576,
+      "title": "Sentence Similarity II",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/sentence-similarity-ii/"
+    },
+    {
+      "id": 577,
+      "title": "Greedy Algorithm FAANG Core Problem 4",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-4/"
+    },
+    {
+      "id": 578,
+      "title": "Graphs, BFS & DF FAANG Core Problem 25",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-25/"
+    },
+    {
+      "id": 581,
+      "title": "Greedy Algorithm FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-14/"
+    },
+    {
+      "id": 583,
+      "title": "Word Squares",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/word-squares/"
+    },
+    {
+      "id": 584,
+      "title": "Graphs, BFS & DF FAANG Core Problem 27",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-27/"
+    },
+    {
+      "id": 585,
+      "title": "Greedy Algorithm FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-18/"
+    },
+    {
+      "id": 588,
+      "title": "Graphs, BFS & DF FAANG Core Problem 29",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-29/"
+    },
+    {
+      "id": 589,
+      "title": "Greedy Algorithm FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-10/"
+    },
+    {
+      "id": 592,
+      "title": "Sum of Subtree Heights",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/sum-of-subtree-heights/"
+    },
+    {
+      "id": 593,
+      "title": "Greedy Algorithm FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-20/"
+    },
+    {
+      "id": 594,
+      "title": "Graphs, BFS & DF FAANG Core Problem 31",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-31/"
+    },
+    {
+      "id": 595,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-8/"
+    },
+    {
+      "id": 597,
+      "title": "Greedy Algorithm FAANG Core Problem 24",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-24/"
+    },
+    {
+      "id": 598,
+      "title": "Graphs, BFS & DF FAANG Core Problem 33",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-33/"
+    },
+    {
+      "id": 602,
+      "title": "Greedy Algorithm FAANG Core Problem 26",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-26/"
+    },
+    {
+      "id": 603,
+      "title": "Subtree Removal Game",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/subtree-removal-game/"
+    },
+    {
+      "id": 604,
+      "title": "Graphs, BFS & DF FAANG Core Problem 35",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-35/"
+    },
+    {
+      "id": 606,
+      "title": "Greedy Algorithm FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-16/"
+    },
+    {
+      "id": 608,
+      "title": "Graphs, BFS & DF FAANG Core Problem 37",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-37/"
+    },
+    {
+      "id": 610,
+      "title": "Greedy Algorithm FAANG Core Problem 30",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-30/"
+    },
+    {
+      "id": 612,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-12/"
+    },
+    {
+      "id": 613,
+      "title": "Graphs, BFS & DF FAANG Core Problem 39",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-39/"
+    },
+    {
+      "id": 614,
+      "title": "Greedy Algorithm FAANG Core Problem 32",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-32/"
+    },
+    {
+      "id": 615,
+      "title": "Linked List FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-16/"
+    },
+    {
+      "id": 617,
+      "title": "Graphs, BFS & DF FAANG Core Problem 41",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-41/"
+    },
+    {
+      "id": 618,
+      "title": "Greedy Algorithm FAANG Core Problem 22",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-22/"
+    },
+    {
+      "id": 621,
+      "title": "Disjoint Set Union (Union Find / DSU FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/disjoint-set-union--union-find---dsu-faang-core-problem-14/"
+    },
+    {
+      "id": 622,
+      "title": "Greedy Algorithm FAANG Core Problem 36",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-36/"
+    },
+    {
+      "id": 623,
+      "title": "Graphs, BFS & DF FAANG Core Problem 43",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-43/"
+    },
+    {
+      "id": 624,
+      "title": "Linked List FAANG Core Problem 22",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-22/"
+    },
+    {
+      "id": 626,
+      "title": "Greedy Algorithm FAANG Core Problem 38",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-38/"
+    },
+    {
+      "id": 628,
+      "title": "Graphs, BFS & DF FAANG Core Problem 45",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-45/"
+    },
+    {
+      "id": 630,
+      "title": "Greedy Algorithm FAANG Core Problem 28",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-28/"
+    },
+    {
+      "id": 632,
+      "title": "Graphs, BFS & DF FAANG Core Problem 47",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-47/"
+    },
+    {
+      "id": 640,
+      "title": "Graphs, BFS & DF FAANG Core Problem 49",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-49/"
+    },
+    {
+      "id": 642,
+      "title": "Greedy Algorithm FAANG Core Problem 34",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/greedy-algorithm-faang-core-problem-34/"
+    },
+    {
+      "id": 644,
+      "title": "Graphs, BFS & DF FAANG Core Problem 51",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-51/"
+    },
+    {
+      "id": 647,
+      "title": "Linked List FAANG Core Problem 28",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-28/"
+    },
+    {
+      "id": 668,
+      "title": "Graphs, BFS & DF FAANG Core Problem 4",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-4/"
+    },
+    {
+      "id": 680,
+      "title": "Graphs, BFS & DF FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-10/"
+    },
+    {
+      "id": 684,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-7/"
+    },
+    {
+      "id": 688,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-9/"
+    },
+    {
+      "id": 692,
+      "title": "Graphs, BFS & DF FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-16/"
+    },
+    {
+      "id": 696,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-11/"
+    },
+    {
+      "id": 697,
+      "title": "Linked List FAANG Core Problem 34",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-34/"
+    },
+    {
+      "id": 700,
+      "title": "Graphs, BFS & DF FAANG Core Problem 22",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-22/"
+    },
+    {
+      "id": 703,
+      "title": "Linked List FAANG Core Problem 40",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-40/"
+    },
+    {
+      "id": 704,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-13/"
+    },
+    {
+      "id": 706,
+      "title": "Minimum Initial Energy to Complete Tasks",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/minimum-initial-energy-to-complete-tasks/"
+    },
+    {
+      "id": 711,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-15/"
+    },
+    {
+      "id": 715,
+      "title": "Graphs, BFS & DF FAANG Core Problem 28",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-28/"
+    },
+    {
+      "id": 720,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-17/"
+    },
+    {
+      "id": 724,
+      "title": "Graphs, BFS & DF FAANG Core Problem 34",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-34/"
+    },
+    {
+      "id": 728,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-19/"
+    },
+    {
+      "id": 729,
+      "title": "Linked List FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-13/"
+    },
+    {
+      "id": 732,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-21/"
+    },
+    {
+      "id": 735,
+      "title": "Minimum Movement to Equal Array",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/minimum-movement-to-equal-array/"
+    },
+    {
+      "id": 736,
+      "title": "Graphs, BFS & DF FAANG Core Problem 40",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-40/"
+    },
+    {
+      "id": 737,
+      "title": "Linked List FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-15/"
+    },
+    {
+      "id": 740,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 23",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-23/"
+    },
+    {
+      "id": 741,
+      "title": "Linked List FAANG Core Problem 17",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-17/"
+    },
+    {
+      "id": 744,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 25",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-25/"
+    },
+    {
+      "id": 748,
+      "title": "Graphs, BFS & DF FAANG Core Problem 46",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-46/"
+    },
+    {
+      "id": 752,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 27",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-27/"
+    },
+    {
+      "id": 756,
+      "title": "Graphs, BFS & DF FAANG Core Problem 52",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-52/"
+    },
+    {
+      "id": 758,
+      "title": "Linked List FAANG Core Problem 19",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-19/"
+    },
+    {
+      "id": 760,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 29",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-29/"
+    },
+    {
+      "id": 764,
+      "title": "Graphs, BFS & DF FAANG Core Problem 36",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-36/"
+    },
+    {
+      "id": 766,
+      "title": "Linked List FAANG Core Problem 21",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-21/"
+    },
+    {
+      "id": 768,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-10/"
+    },
+    {
+      "id": 770,
+      "title": "Linked List FAANG Core Problem 23",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-23/"
+    },
+    {
+      "id": 772,
+      "title": "Graphs, BFS & DF FAANG Core Problem 38",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-38/"
+    },
+    {
+      "id": 776,
+      "title": "Graphs, BFS & DF FAANG Core Problem 42",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-42/"
+    },
+    {
+      "id": 778,
+      "title": "Linked List FAANG Core Problem 25",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-25/"
+    },
+    {
+      "id": 780,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-16/"
+    },
+    {
+      "id": 781,
+      "title": "Sentence Similarity",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/sentence-similarity/"
+    },
+    {
+      "id": 782,
+      "title": "Linked List FAANG Core Problem 27",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-27/"
+    },
+    {
+      "id": 784,
+      "title": "Graphs, BFS & DF FAANG Core Problem 44",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-44/"
+    },
+    {
+      "id": 785,
+      "title": "Bit Manipulatio FAANG Core Problem 4",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-4/"
+    },
+    {
+      "id": 788,
+      "title": "Graphs, BFS & DF FAANG Core Problem 48",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-48/"
+    },
+    {
+      "id": 790,
+      "title": "Linked List FAANG Core Problem 29",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-29/"
+    },
+    {
+      "id": 791,
+      "title": "Bit Manipulatio FAANG Core Problem 10",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-10/"
+    },
+    {
+      "id": 792,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 22",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-22/"
+    },
+    {
+      "id": 794,
+      "title": "Linked List FAANG Core Problem 31",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-31/"
+    },
+    {
+      "id": 796,
+      "title": "Graphs, BFS & DF FAANG Core Problem 50",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-50/"
+    },
+    {
+      "id": 800,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 28",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-28/"
+    },
+    {
+      "id": 802,
+      "title": "Linked List FAANG Core Problem 33",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-33/"
+    },
+    {
+      "id": 804,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-6/"
+    },
+    {
+      "id": 808,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-8/"
+    },
+    {
+      "id": 810,
+      "title": "Linked List FAANG Core Problem 35",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-35/"
+    },
+    {
+      "id": 811,
+      "title": "Bit Manipulatio FAANG Core Problem 16",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-16/"
+    },
+    {
+      "id": 812,
+      "title": "Graphs, BFS & DF FAANG Core Problem 2",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-2/"
+    },
+    {
+      "id": 814,
+      "title": "Linked List FAANG Core Problem 37",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-37/"
+    },
+    {
+      "id": 816,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-12/"
+    },
+    {
+      "id": 817,
+      "title": "Bit Manipulatio FAANG Core Problem 1",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-1/"
+    },
+    {
+      "id": 820,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-14/"
+    },
+    {
+      "id": 822,
+      "title": "Linked List FAANG Core Problem 39",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-39/"
+    },
+    {
+      "id": 823,
+      "title": "Bit Manipulatio FAANG Core Problem 3",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-3/"
+    },
+    {
+      "id": 824,
+      "title": "Graphs, BFS & DF FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-6/"
+    },
+    {
+      "id": 826,
+      "title": "Linked List FAANG Core Problem 41",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-41/"
+    },
+    {
+      "id": 828,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-18/"
+    },
+    {
+      "id": 829,
+      "title": "Bit Manipulatio FAANG Core Problem 5",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-5/"
+    },
+    {
+      "id": 832,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-20/"
+    },
+    {
+      "id": 834,
+      "title": "Linked List FAANG Core Problem 43",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-43/"
+    },
+    {
+      "id": 835,
+      "title": "Bit Manipulatio FAANG Core Problem 7",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-7/"
+    },
+    {
+      "id": 836,
+      "title": "Graphs, BFS & DF FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-8/"
+    },
+    {
+      "id": 838,
+      "title": "Linked List FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-14/"
+    },
+    {
+      "id": 840,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 24",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-24/"
+    },
+    {
+      "id": 841,
+      "title": "Bit Manipulatio FAANG Core Problem 9",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-9/"
+    },
+    {
+      "id": 844,
+      "title": "Topological Sort & Shortest Pat FAANG Core Problem 26",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/topological-sort---shortest-pat-faang-core-problem-26/"
+    },
+    {
+      "id": 846,
+      "title": "Linked List FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-18/"
+    },
+    {
+      "id": 848,
+      "title": "Graphs, BFS & DF FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-12/"
+    },
+    {
+      "id": 854,
+      "title": "Linked List FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-20/"
+    },
+    {
+      "id": 856,
+      "title": "Graphs, BFS & DF FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-14/"
+    },
+    {
+      "id": 858,
+      "title": "Linked List FAANG Core Problem 24",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-24/"
+    },
+    {
+      "id": 861,
+      "title": "Bit Manipulatio FAANG Core Problem 11",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-11/"
+    },
+    {
+      "id": 865,
+      "title": "Graphs, BFS & DF FAANG Core Problem 18",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-18/"
+    },
+    {
+      "id": 866,
+      "title": "Linked List FAANG Core Problem 26",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-26/"
+    },
+    {
+      "id": 867,
+      "title": "Bit Manipulatio FAANG Core Problem 13",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-13/"
+    },
+    {
+      "id": 870,
+      "title": "Linked List FAANG Core Problem 30",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-30/"
+    },
+    {
+      "id": 871,
+      "title": "Graphs, BFS & DF FAANG Core Problem 20",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-20/"
+    },
+    {
+      "id": 872,
+      "title": "Bit Manipulatio FAANG Core Problem 15",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-15/"
+    },
+    {
+      "id": 876,
+      "title": "Bit Manipulatio FAANG Core Problem 2",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-2/"
+    },
+    {
+      "id": 878,
+      "title": "Linked List FAANG Core Problem 32",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-32/"
+    },
+    {
+      "id": 880,
+      "title": "Graphs, BFS & DF FAANG Core Problem 24",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-24/"
+    },
+    {
+      "id": 881,
+      "title": "Bit Manipulatio FAANG Core Problem 6",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-6/"
+    },
+    {
+      "id": 882,
+      "title": "Linked List FAANG Core Problem 36",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-36/"
+    },
+    {
+      "id": 885,
+      "title": "Bit Manipulatio FAANG Core Problem 8",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-8/"
+    },
+    {
+      "id": 890,
+      "title": "Linked List FAANG Core Problem 38",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-38/"
+    },
+    {
+      "id": 891,
+      "title": "Bit Manipulatio FAANG Core Problem 12",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-12/"
+    },
+    {
+      "id": 892,
+      "title": "Graphs, BFS & DF FAANG Core Problem 26",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-26/"
+    },
+    {
+      "id": 894,
+      "title": "Linked List FAANG Core Problem 42",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/linked-list-faang-core-problem-42/"
+    },
+    {
+      "id": 897,
+      "title": "Graphs, BFS & DF FAANG Core Problem 30",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-30/"
+    },
+    {
+      "id": 900,
+      "title": "Graphs, BFS & DF FAANG Core Problem 32",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/graphs--bfs---df-faang-core-problem-32/"
+    },
+    {
+      "id": 903,
+      "title": "Bit Manipulatio FAANG Core Problem 14",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/bit-manipulatio-faang-core-problem-14/"
+    },
+    {
+      "id": 922,
+      "title": "Sticker to Spell Word",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/sticker-to-spell-word/"
+    },
+    {
+      "id": 932,
+      "title": "Alien Dictionary",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/alien-dictionary/"
+    },
+    {
+      "id": 976,
+      "title": "Count Fertile Pyramids in a Map",
+      "issue": "UNKNOWN_OR_SYNTHETIC",
+      "currentUrl": "https://leetcode.com/problems/count-fertile-pyramids-in-a-map/"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "name": "DSA Problems Agentic Specification",
+  "description": "Agentic browsing endpoints and structured datasets for AI coding assistants and LLMs.",
+  "site_url": "https://www.dsaproblems.site/",
+  "llms_txt": "https://www.dsaproblems.site/llms.txt",
+  "llms_full_txt": "https://www.dsaproblems.site/llms-full.txt",
+  "ai_plugin_spec": "https://www.dsaproblems.site/.well-known/ai-plugin.json",
+  "data_api_json": "https://www.dsaproblems.site/data/questions.json",
+  "sitemap_xml": "https://www.dsaproblems.site/sitemap.xml",
+  "total_problems": 1000,
+  "difficulty_distribution": {
+    "easy": 200,
+    "medium": 500,
+    "hard": 300
+  },
+  "supported_languages": ["cpp", "java", "python", "javascript"]
+}

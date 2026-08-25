@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('dsaproblems_theme_v3');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch(e) {}
+  })();
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DSA Problems — 1000 Verified LeetCode Problems & DSA Sheet Roadmap</title>
+<meta name="description" content="DSA Problems (dsaproblems.site) — Free 1,000 verified LeetCode Data Structures & Algorithms problem sheet. Master 20+ core DSA patterns with multi-language C++, Java, Python, and JavaScript solutions."/>
+<meta name="keywords" content="dsa problems, dsaproblems, dsaproblems.site, dsa sheet, 1000 dsa problems, leetcode 1000 sheet, dsa roadmap, dsa questions, data structures and algorithms, leetcode solutions cpp java python javascript, top 1000 dsa questions, best dsa sheet for faang, dsa interview prep 2026, dsa guide, striver dsa sheet alternative, neetcode alternative"/>
+<meta name="author" content="DSA Problems"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta name="theme-color" content="#f97316"/>
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+<link rel="alternate" hreflang="x-default" href="https://www.dsaproblems.site/"/>
+<link rel="alternate" hreflang="en" href="https://www.dsaproblems.site/"/>
+<meta name="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0" content="827ab5c66d6d2d843b6a045d6af5f9b7e43a8fb0"/>
+
+<!-- Google Search Console Ownership Verification -->
+<meta name="google-site-verification" content="Sif4lO6LQRgkg-Myl7gIMx3csO2z5Y2jaNaIL1nvWU0" />
+
+<!-- Google AdSense Account Verification & Auto-Ads (Performance Deferred) -->
+<meta name="google-adsense-account" content="ca-pub-2781286202640992">
+<script>
+  (function() {
+    var loaded = false;
+    function loadAdSense() {
+      if (loaded) return;
+      loaded = true;
+      ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+        window.removeEventListener(evt, loadAdSense);
+      });
+      var adsScript = document.createElement('script');
+      adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992";
+      adsScript.crossOrigin = "anonymous";
+      adsScript.async = true;
+      document.head.appendChild(adsScript);
+    }
+    ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+      window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+    });
+    setTimeout(loadAdSense, 6000);
+  })();
+</script>
+
+<!-- Mobile Web App Capability & Status Bar -->
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<!-- AI Agentic Browsing Metadata (Desktop & Mobile Agent Standards) -->
+<meta name="ai-agent-ready" content="true"/>
+<meta name="agentic-browsing" content="enabled"/>
+<meta name="llm-index" content="https://www.dsaproblems.site/llms.txt"/>
+<meta name="llm-dataset" content="https://www.dsaproblems.site/llms-full.txt"/>
+<meta name="ai-api" content="https://www.dsaproblems.site/data/questions.json"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.dsaproblems.site/"/>
+
+<!-- Open Graph / Facebook SEO -->
+<meta property="og:site_name" content="DSA Problems"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap"/>
+<meta property="og:description" content="Master 1,000 curated LeetCode Data Structures & Algorithms problems organized by core patterns with C++, Java, Python, and JavaScript solutions on dsaproblems.site."/>
+<meta property="og:url" content="https://www.dsaproblems.site/"/>
+<meta property="og:image" content="https://www.dsaproblems.site/images/og-image.webp"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter Card SEO -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap"/>
+<meta name="twitter:description" content="Master 1,000 curated LeetCode DSA problems organized by core patterns with multi-language code solutions."/>
+<meta name="twitter:image" content="https://www.dsaproblems.site/images/og-image.webp"/>
+
+<!-- Web App Manifest & Desktop/Mobile AI Agent Specs -->
+<link rel="manifest" href="/manifest.json"/>
+<link rel="alternate" type="text/plain" title="LLMs.txt Overview" href="/llms.txt"/>
+<link rel="alternate" type="text/plain" title="LLMs Full Dataset" href="/llms-full.txt"/>
+<link rel="alternate" type="text/plain" title="AI Agent Directives" href="/ai.txt"/>
+<link rel="alternate" type="application/json" title="AI Agent Plugin Spec" href="/.well-known/ai-plugin.json"/>
+<link rel="alternate" type="application/json" title="Agentic Browsing Discovery Spec" href="/.well-known/agentic.json"/>
+<link rel="alternate" type="application/json" title="JSON Dataset API" href="/data/questions.json"/>
+
+<!-- Resource Hints & Performance Preconnect -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com"/>
+
+<!-- JSON-LD Structured Data for Search Engine Indexing (Schema.org Rich Snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.dsaproblems.site/#website",
+      "url": "https://www.dsaproblems.site/",
+      "name": "DSA Problems",
+      "alternateName": ["dsaproblems", "dsaproblems.site", "DSAProblems", "DSA Problems Sheet"],
+      "description": "Progressive 1,000 verified LeetCode Data Structures & Algorithms problem sheet and learning roadmap.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.dsaproblems.site/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "1,000 Verified LeetCode Data Structures & Algorithms Problem Sheet",
+      "description": "A curated dataset of 1,000 verified LeetCode questions categorized across 20+ core DSA patterns with C++, Java, Python, and JavaScript code solutions.",
+      "url": "https://www.dsaproblems.site/llms-full.txt",
+      "sameAs": "https://www.dsaproblems.site/llms.txt",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://www.dsaproblems.site/llms-full.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.dsaproblems.site/#organization",
+      "name": "DSA Problems",
+      "url": "https://www.dsaproblems.site/",
+      "logo": "https://www.dsaproblems.site/images/og-image.png",
+      "sameAs": [
+        "https://github.com/hashmiii14/100DSAQUETIONS"
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "1000 DSA Problems Mastery Roadmap",
+      "description": "A progressive 1,000-problem Data Structures & Algorithms curriculum taking software engineers from programming fundamentals to advanced interview readiness.",
+      "provider": {
+        "@type": "Organization",
+        "name": "DSA Problems",
+        "url": "https://www.dsaproblems.site/"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "DSA Problems",
+      "url": "https://www.dsaproblems.site/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dsaproblems.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DSA Problems Sheet",
+          "item": "https://www.dsaproblems.site/problems"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DSA Guide",
+          "item": "https://www.dsaproblems.site/guide"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is DSA Problems (dsaproblems.site)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems (dsaproblems.site) is a clean, developer-focused problem sheet featuring 1,000 verified LeetCode Data Structures & Algorithms questions organized by core pattern dependencies from beginner to pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many LeetCode questions are in DSA Problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems includes exactly 1,000 verified LeetCode questions: 200 Easy, 500 Medium, and 300 Hard problems covering 20+ core DSA patterns like Two Pointers, Sliding Window, Trees, Graphs, and Dynamic Programming."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DSA Problems offer multi-language solution code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems provides high-quality solution code in C++, Java, Python, and JavaScript for every problem along with time and space complexity analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is DSA Problems completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems is 100% free with no mandatory account registration required. Progress, bookmarks, and notes are saved locally in your web browser."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+  (function() {
+    var loaded = false;
+    function loadAdSense() {
+      if (loaded) return;
+      loaded = true;
+      ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+        window.removeEventListener(evt, loadAdSense);
+      });
+      var adsScript = document.createElement('script');
+      adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2781286202640992";
+      adsScript.crossOrigin = "anonymous";
+      adsScript.async = true;
+      document.head.appendChild(adsScript);
+    }
+    ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
+      window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+    });
+    setTimeout(loadAdSense, 6000);
+  })();
+</script>
+
+<!-- Mobile Web App Capability & Status Bar -->
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<!-- AI Agentic Browsing Metadata (Desktop & Mobile Agent Standards) -->
+<meta name="ai-agent-ready" content="true"/>
+<meta name="agentic-browsing" content="enabled"/>
+<meta name="llm-index" content="https://www.dsaproblems.site/llms.txt"/>
+<meta name="llm-dataset" content="https://www.dsaproblems.site/llms-full.txt"/>
+<meta name="ai-api" content="https://www.dsaproblems.site/data/questions.json"/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.dsaproblems.site/"/>
+
+<!-- Open Graph / Facebook SEO -->
+<meta property="og:site_name" content="DSA Problems"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap"/>
+<meta property="og:description" content="Master 1,000 curated LeetCode Data Structures & Algorithms problems organized by core patterns with C++, Java, Python, and JavaScript solutions on dsaproblems.site."/>
+<meta property="og:url" content="https://www.dsaproblems.site/"/>
+<meta property="og:image" content="https://www.dsaproblems.site/images/og-image.webp"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter Card SEO -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DSA Problems — 1000 Verified LeetCode Problems & DSA Roadmap"/>
+<meta name="twitter:description" content="Master 1,000 curated LeetCode DSA problems organized by core patterns with multi-language code solutions."/>
+<meta name="twitter:image" content="https://www.dsaproblems.site/images/og-image.webp"/>
+
+<!-- Web App Manifest & Desktop/Mobile AI Agent Specs -->
+<link rel="manifest" href="/manifest.json"/>
+<link rel="alternate" type="text/plain" title="LLMs.txt Overview" href="/llms.txt"/>
+<link rel="alternate" type="text/plain" title="LLMs Full Dataset" href="/llms-full.txt"/>
+<link rel="alternate" type="text/plain" title="AI Agent Directives" href="/ai.txt"/>
+<link rel="alternate" type="application/json" title="AI Agent Plugin Spec" href="/.well-known/ai-plugin.json"/>
+<link rel="alternate" type="application/json" title="Agentic Browsing Discovery Spec" href="/.well-known/agentic.json"/>
+<link rel="alternate" type="application/json" title="JSON Dataset API" href="/data/questions.json"/>
+
+<!-- Resource Hints & Performance Preconnect -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="//fonts.gstatic.com"/>
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com"/>
+
+<!-- JSON-LD Structured Data for Search Engine Indexing (Schema.org Rich Snippets) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.dsaproblems.site/#website",
+      "url": "https://www.dsaproblems.site/",
+      "name": "DSA Problems",
+      "alternateName": ["dsaproblems", "dsaproblems.site", "DSAProblems", "DSA Problems Sheet"],
+      "description": "Progressive 1,000 verified LeetCode Data Structures & Algorithms problem sheet and learning roadmap.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.dsaproblems.site/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "1,000 Verified LeetCode Data Structures & Algorithms Problem Sheet",
+      "description": "A curated dataset of 1,000 verified LeetCode questions categorized across 20+ core DSA patterns with C++, Java, Python, and JavaScript code solutions.",
+      "url": "https://www.dsaproblems.site/llms-full.txt",
+      "sameAs": "https://www.dsaproblems.site/llms.txt",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://www.dsaproblems.site/llms-full.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.dsaproblems.site/#organization",
+      "name": "DSA Problems",
+      "url": "https://www.dsaproblems.site/",
+      "logo": "https://www.dsaproblems.site/images/og-image.png",
+      "sameAs": [
+        "https://github.com/hashmiii14/100DSAQUETIONS"
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "1000 DSA Problems Mastery Roadmap",
+      "description": "A progressive 1,000-problem Data Structures & Algorithms curriculum taking software engineers from programming fundamentals to advanced interview readiness.",
+      "provider": {
+        "@type": "Organization",
+        "name": "DSA Problems",
+        "url": "https://www.dsaproblems.site/"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "DSA Problems",
+      "url": "https://www.dsaproblems.site/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dsaproblems.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DSA Problems Sheet",
+          "item": "https://www.dsaproblems.site/problems"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DSA Guide",
+          "item": "https://www.dsaproblems.site/guide"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is DSA Problems (dsaproblems.site)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems (dsaproblems.site) is a clean, developer-focused problem sheet featuring 1,000 verified LeetCode Data Structures & Algorithms questions organized by core pattern dependencies from beginner to pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many LeetCode questions are in DSA Problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DSA Problems includes exactly 1,000 verified LeetCode questions: 200 Easy, 500 Medium, and 300 Hard problems covering 20+ core DSA patterns like Two Pointers, Sliding Window, Trees, Graphs, and Dynamic Programming."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DSA Problems offer multi-language solution code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems provides high-quality solution code in C++, Java, Python, and JavaScript for every problem along with time and space complexity analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is DSA Problems completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, DSA Problems is 100% free with no mandatory account registration required. Progress, bookmarks, and notes are saved locally in your web browser."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Vercel Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- Fonts (Google Web Font Optimization) -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"/></noscript>
+
+<!-- Inlined Application Styles (Zero Network Latency FCP) -->
+<style id="app-main-styles">
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root,[data-theme="light"]{--bg-base:#ffffff;--bg-surface:#ffffff;--bg-surface-hover:#f8fafc;--bg-subtle:#f1f5f9;--bg-elevated:#ffffff;--border-color:#e2e8f0;--border-hover:#cbd5e1;--border-accent:rgba(249,115,22,0.35);--text-primary:#0f172a;--text-secondary:#334155;--text-muted:#475569;--accent-primary:#ea580c;--accent-hover:#c2410c;--accent-light:rgba(234,88,12,0.08);--easy-color:#047857;--easy-bg:#dcfce7;--easy-border:#86efac;--medium-color:#b45309;--medium-bg:#fef3c7;--medium-border:#fde047;--hard-color:#b91c1c;--hard-bg:#fee2e2;--hard-border:#fca5a5;--solved-row-bg:rgba(16,185,129,0.12);--solved-row-border:rgba(16,185,129,0.45);--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-mono:'JetBrains Mono',monospace;--radius-sm:6px;--radius-md:8px;--radius-lg:12px;--max-width:1280px;--header-height:60px}[data-theme="dark"]{--bg-base:#09090b;--bg-surface:#121215;--bg-surface-hover:#1a1a1e;--bg-subtle:#18181b;--bg-elevated:#18181c;--border-color:rgba(255,255,255,0.09);--border-hover:rgba(255,255,255,0.18);--border-accent:rgba(249,115,22,0.4);--text-primary:#f4f4f5;--text-secondary:#a1a1aa;--text-muted:#a1a1aa;--accent-primary:#f97316;--accent-hover:#ea580c;--accent-light:rgba(249,115,22,0.14);--easy-color:#10b981;--easy-bg:rgba(16,185,129,0.14);--easy-border:rgba(16,185,129,0.35);--medium-color:#f59e0b;--medium-bg:rgba(245,158,11,0.14);--medium-border:rgba(245,158,11,0.35);--hard-color:#ef4444;--hard-bg:rgba(239,68,68,0.14);--hard-border:rgba(239,68,68,0.35);--solved-row-bg:rgba(16,185,129,0.16);--solved-row-border:rgba(16,185,129,0.5)}html,body{width:100%;max-width:100vw;min-height:100%;background-color:var(--bg-base);color:var(--text-primary);font-family:var(--font-sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}.skip-link{position:absolute;top:-100px;left:16px;background:var(--accent-primary);color:#ffffff;padding:10px 16px;font-weight:700;border-radius:var(--radius-md);z-index:9999;text-decoration:none;transition:top 0.2s ease}.skip-link:focus{top:16px}:focus-visible{outline:2px solid var(--accent-primary) !important;outline-offset:2px !important}.ambient-grid-bg{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:0;background-image:linear-gradient(to right,rgba(15,23,42,0.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(15,23,42,0.055) 1px,transparent 1px);background-size:32px 32px;background-position:center top;opacity:1}.ambient-grid-bg::after{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(circle,rgba(234,88,12,0.07) 0%,rgba(234,88,12,0) 70%);pointer-events:none}[data-theme="dark"] .ambient-grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,0.065) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.065) 1px,transparent 1px)}[data-theme="dark"] .ambient-grid-bg::after{background:radial-gradient(circle,rgba(249,115,22,0.12) 0%,rgba(249,115,22,0) 70%)}.app-container{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}.site-header{position:sticky;top:0;z-index:50;height:var(--header-height);background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border-color)}[data-theme="dark"] .site-header{background:rgba(9,9,11,0.88)}.header-inner{max-width:var(--max-width);margin:0 auto;height:100%;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand-section{display:flex;align-items:center;gap:10px;text-decoration:none}.brand-logo{font-size:18px;font-weight:800;color:var(--text-primary);text-decoration:none;letter-spacing:-0.02em;display:flex;align-items:center;gap:4px}.brand-logo span{color:var(--accent-primary)}.brand-tag{font-size:11px;font-family:var(--font-mono);font-weight:600;padding:2px 6px;border-radius:var(--radius-sm);background:var(--accent-light);color:var(--accent-primary);border:1px solid var(--border-accent)}.nav-links{display:flex;align-items:center;gap:4px}.nav-btn{background:transparent;border:none;color:var(--text-secondary);font-family:var(--font-sans);font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:var(--radius-md);cursor:pointer;transition:all 150ms ease;text-decoration:none;display:inline-flex;align-items:center;gap:6px}.nav-btn:hover{color:var(--text-primary);background:var(--bg-surface-hover)}.nav-btn.active{color:var(--accent-primary);background:var(--accent-light);border:1px solid var(--border-accent);font-weight:600}.header-actions{display:flex;align-items:center;gap:10px}.share-btn-header{display:inline-flex;align-items:center;gap:5px;background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-secondary);font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:var(--radius-md);cursor:pointer;transition:all 150ms ease}.share-btn-header:hover{background:var(--bg-surface-hover);border-color:var(--accent-primary);color:var(--accent-primary)}.search-trigger-btn{display:inline-flex;align-items:center;gap:8px;background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-muted);font-size:12.5px;padding:6px 12px;border-radius:var(--radius-md);cursor:pointer;transition:all 150ms ease}.search-trigger-btn:hover{border-color:var(--border-hover);color:var(--text-secondary)}.shortcut-kbd{font-family:var(--font-mono);font-size:11px;background:var(--bg-subtle);border:1px solid var(--border-color);padding:1px 5px;border-radius:4px;color:var(--text-secondary)}body,.site-header,.site-footer,.view-section,.info-card-container,.problem-card{transition:background-color 0.3s cubic-bezier(0.4,0,0.2,1),color 0.3s cubic-bezier(0.4,0,0.2,1),border-color 0.3s cubic-bezier(0.4,0,0.2,1)}.theme-toggle-btn{background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-primary);height:38px;min-width:38px;padding:0 10px;border-radius:var(--radius-md);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;user-select:none;box-shadow:0 1px 3px rgba(0,0,0,0.05);transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1),background-color 0.3s ease,border-color 0.3s ease,box-shadow 0.2s ease}.theme-toggle-btn:hover{transform:scale(1.08);border-color:var(--accent-primary);box-shadow:0 4px 12px rgba(249,115,22,0.15)}.theme-toggle-btn:active{transform:scale(0.94)}.theme-toggle-icon{display:inline-block;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}.theme-toggle-btn.animating .theme-toggle-icon{transform:rotate(360deg) scale(1.25)}.mobile-menu-btn{display:none;background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-primary);width:40px;height:40px;border-radius:var(--radius-md);font-size:20px;cursor:pointer;align-items:center;justify-content:center}.mobile-drawer{display:none;position:fixed;top:0;right:0;width:290px;max-width:85vw;height:100vh;background:var(--bg-surface);border-left:1px solid var(--border-color);z-index:1000;padding:20px;flex-direction:column;gap:16px;transform:translateX(100%);transition:transform 200ms cubic-bezier(0.16,1,0.3,1);box-shadow:-10px 0 30px rgba(0,0,0,0.3)}.mobile-drawer.open{display:flex;transform:translateX(0)}.drawer-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);z-index:999}.drawer-backdrop.open{display:block}.main-content{flex:1;max-width:var(--max-width);width:100%;margin:0 auto;padding:24px 20px 60px}.view-section{display:none;width:100%;content-visibility:auto;contain-intrinsic-size:1px 800px}.view-section.active{display:block;animation:fadeIn 150ms ease}@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.hero-section{margin-bottom:20px;padding:16px 20px;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);box-shadow:0 2px 10px rgba(0,0,0,0.02)}.hero-header-compact{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}.hero-title-area{display:flex;flex-direction:column;gap:4px;flex:1;min-width:280px}.hero-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.hero-title-row h1{font-size:20px;font-weight:800;letter-spacing:-0.02em;color:var(--text-primary);margin:0;line-height:1.2}.hero-mini-tag{font-size:12px;font-weight:700;color:var(--accent-primary);background:var(--accent-light);padding:2px 8px;border-radius:999px}.hero-description-compact{color:var(--text-secondary);font-size:12.5px;line-height:1.45;margin:2px 0 4px 0;max-width:680px}.hero-compact-pills{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:2px}.compact-pill{font-size:11.5px;font-weight:500;color:var(--text-secondary);background:var(--bg-subtle);border:1px solid var(--border-color);padding:3px 9px;border-radius:var(--radius-md)}.hero-compact-stats{display:flex;flex-direction:column;gap:8px;min-width:260px}.stat-chips-inline{display:flex;align-items:center;gap:8px}.compact-chip{flex:1;background:var(--bg-subtle);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:5px 10px;display:flex;flex-direction:column;align-items:center}.chip-lbl{font-size:10.5px;color:var(--text-muted);font-weight:500}.chip-val{font-size:14px;font-weight:700;color:var(--text-primary);font-family:var(--font-mono)}.hero-progress-bar-wrap{width:100%;height:6px;background:var(--border-color);border-radius:999px;overflow:hidden}.hero-progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent-primary),#10b981);border-radius:999px;transition:width 0.4s cubic-bezier(0.4,0,0.2,1);width:0%}@media (max-width:860px){.hero-header-compact{flex-direction:column;align-items:stretch;gap:12px}.hero-compact-stats{width:100%;min-width:100%}}@media (max-width:600px){.hero-section{padding:12px 14px;margin-bottom:14px}.hero-title-row h1{font-size:18px}.hero-mini-tag{font-size:11px}.hero-description-compact{font-size:12px}.compact-chip{padding:4px 6px}.chip-val{font-size:13px}}.topic-tabs-wrapper{margin-bottom:16px;width:100%;padding:2px 0}.topic-tabs-list{display:flex;flex-wrap:wrap;gap:7px;width:100%}.topic-tab-pill{background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-primary);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:999px;cursor:pointer;transition:all 150ms ease;user-select:none;white-space:nowrap}.btn-reset-filters{background:#c2410c;color:#ffffff !important;border:1px solid #c2410c;padding:5px 14px;font-size:12px;font-weight:700;border-radius:var(--radius-sm);cursor:pointer;transition:all 150ms ease;display:inline-flex;align-items:center;gap:4px;box-shadow:0 2px 6px rgba(194,65,12,0.25)}.btn-reset-filters:hover{background:#9a3412;border-color:#9a3412;color:#ffffff !important}.topic-tab-pill:hover{color:var(--text-primary);border-color:var(--border-hover);background:var(--bg-surface-hover)}.topic-tab-pill.active{background:#c2410c;color:#ffffff !important;border-color:#c2410c;font-weight:700}.topic-tab-pill .pill-count{font-size:11px;opacity:1 !important;color:var(--text-secondary);font-family:var(--font-mono);margin-left:4px;font-weight:600}.topic-tab-pill.active .pill-count{color:#ffffff !important;opacity:1 !important}.filter-controls-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}.search-input-group{position:relative;flex:1 1 280px;min-width:220px}.search-input-group svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-muted);width:16px;height:16px}.search-input{width:100%;background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-primary);font-family:var(--font-sans);font-size:13.5px;padding:8px 12px 8px 36px;border-radius:var(--radius-md);outline:none;transition:all 150ms ease}.search-input:focus{border-color:var(--accent-primary);box-shadow:0 0 0 2px var(--accent-light)}.filter-selects-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1 1 auto}.filter-select{background:var(--bg-surface);border:1px solid var(--border-color);color:var(--text-secondary);font-family:var(--font-sans);font-size:13px;padding:8px 12px;border-radius:var(--radius-md);outline:none;cursor:pointer;transition:all 150ms ease;max-width:100%;box-sizing:border-box}.filter-select:focus,.filter-select:hover{border-color:var(--border-hover);color:var(--text-primary)}.cmd-palette-item{padding:10px 14px;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-md);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:all 150ms ease}.cmd-palette-item:hover{border-color:var(--accent-primary);background:var(--bg-surface-hover)}.results-meta-row{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--text-muted);margin-bottom:12px}.table-container{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);overflow-x:auto;min-height:800px;contain:layout style}.problem-table{width:100%;border-collapse:collapse;text-align:left}.problem-table th{background:var(--bg-subtle);color:var(--text-muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:12px 16px;border-bottom:1px solid var(--border-color);height:44px}.problem-table td{padding:12px 16px;border-bottom:1px solid var(--border-color);font-size:13.5px;vertical-align:middle;height:52px}.problem-table tr:last-child td{border-bottom:none}.problem-table tbody tr{transition:background-color 150ms ease}.problem-table tbody tr:hover{background:var(--bg-surface-hover)}.problem-table tbody tr.solved-row{background:var(--solved-row-bg) !important;box-shadow:inset 4px 0 0 0 #10b981}.problem-table tbody tr.solved-row .problem-title-link{color:#10b981;font-weight:700}[data-theme="light"] .problem-table tbody tr.solved-row .problem-title-link{color:#047857}.col-num{width:70px;font-family:var(--font-mono);color:var(--text-muted);font-size:12.5px}.col-title{min-width:220px}.problem-title-link{color:var(--text-primary);font-weight:600;text-decoration:none;cursor:pointer;transition:color 150ms ease}.problem-title-link:hover{color:var(--accent-primary)}.col-diff{width:100px}.diff-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:600;line-height:1.2}.diff-beginner{color:#0284c7;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3)}.diff-easy{color:var(--easy-color);background:var(--easy-bg);border:1px solid var(--easy-border)}.diff-medium{color:var(--medium-color);background:var(--medium-bg);border:1px solid var(--medium-border)}.diff-hard{color:var(--hard-color);background:var(--hard-bg);border:1px solid var(--hard-border)}.diff-expert{color:#9333ea;background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3)}.col-topic,.col-pattern{width:150px}.topic-badge,.pattern-badge{display:inline-block;max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;color:var(--text-secondary);background:var(--bg-subtle);border:1px solid var(--border-color);padding:2px 8px;border-radius:var(--radius-sm)}.col-practice{width:100px;text-align:center}.btn-solve{display:inline-flex;align-items:center;gap:4px;background:var(--accent-light);color:var(--accent-primary);border:1px solid var(--border-accent);padding:4px 10px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;text-decoration:none;transition:all 150ms ease}.btn-solve:hover{background:var(--accent-primary);color:#ffffff}.btn-solve.disabled{background:var(--bg-card);color:var(--text-muted);border-color:var(--border-color);cursor:not-allowed;opacity:0.65}.btn-solve.disabled:hover{background:var(--bg-card);color:var(--text-muted)}.col-status{width:80px;text-align:center}.status-checkbox{appearance:none;-webkit-appearance:none;width:22px;height:22px;border:2px solid var(--border-hover);border-radius:6px;background:var(--bg-surface);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all 200ms cubic-bezier(0.4,0,0.2,1);vertical-align:middle;position:relative}.status-checkbox:hover{border-color:#10b981;transform:scale(1.1);box-shadow:0 0 8px rgba(16,185,129,0.3)}.status-checkbox:checked{background:#10b981 !important;border-color:#10b981 !important;box-shadow:0 0 12px rgba(16,185,129,0.6) !important;transform:scale(1.08)}.status-checkbox:checked::after{content:'✓';color:#ffffff;font-weight:900;font-size:14px;line-height:1}.solved-tag-pill{display:inline-flex;align-items:center;gap:3px;margin-left:8px;font-size:11px;font-weight:700;color:#ffffff;background:#10b981;padding:2px 8px;border-radius:12px;letter-spacing:0.03em;box-shadow:0 2px 6px rgba(16,185,129,0.35);vertical-align:middle}.bookmark-btn{background:transparent;border:none;color:var(--text-muted);font-size:16px;cursor:pointer;padding:2px;transition:color 150ms ease}.bookmark-btn:hover,.bookmark-btn.active{color:#f59e0b}.mobile-card-list{display:none;flex-direction:column;gap:10px}.problem-card{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:14px;display:flex;flex-direction:column;gap:10px}.problem-card.solved-row{background:var(--solved-row-bg) !important;border-color:var(--solved-row-border) !important;border-left:4px solid #10b981 !important}.problem-card.solved-row .card-title{color:#10b981;font-weight:700}.card-header-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.card-title-wrap{display:flex;align-items:flex-start;gap:8px}.card-num{font-family:var(--font-mono);color:var(--text-muted);font-size:12px}.card-title{font-weight:600;font-size:14px;color:var(--text-primary);text-decoration:none}.card-tags-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.card-actions-row{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px solid var(--border-color)}.pagination-bar{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:8px 12px;background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-md);font-size:12px;color:var(--text-secondary);flex-wrap:wrap;gap:8px}#pagination-info{font-size:12px;font-weight:500;color:var(--text-muted);white-space:nowrap}.pagination-controls{display:flex;align-items:center;flex-wrap:wrap;gap:3px}.page-btn{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:25px;padding:2px 6px;background:var(--bg-subtle);border:1px solid var(--border-color);color:var(--text-primary);font-size:11.5px;font-weight:500;border-radius:var(--radius-sm);cursor:pointer;transition:all 120ms ease;user-select:none;line-height:1}.page-btn:hover:not(:disabled){border-color:var(--accent-primary);color:var(--accent-primary);background:var(--accent-light)}.page-btn:disabled{opacity:0.35;cursor:not-allowed}.page-btn.active{background:var(--accent-primary) !important;color:#ffffff !important;border-color:var(--accent-primary) !important;font-weight:700 !important;box-shadow:0 1px 4px var(--accent-light)}@media (max-width:640px){.pagination-bar{padding:8px 10px;gap:6px;justify-content:center}.pagination-controls{gap:2px;justify-content:center}.page-btn{min-width:22px;height:24px;font-size:11px;padding:1px 4px}}.page-ellipsis{color:var(--text-muted);font-size:13px;padding:0 2px;user-select:none}.guide-container{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start;width:100%}.guide-sidebar{position:sticky;top:calc(var(--header-height) + 20px);background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:16px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 100px);overflow-y:auto}.guide-sidebar h3{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--text-muted);letter-spacing:0.05em}.guide-nav-list{display:flex;flex-direction:column;gap:4px;list-style:none}.guide-nav-item{color:var(--text-secondary);text-decoration:none;padding:8px 12px;border-radius:var(--radius-sm);font-size:13px;cursor:pointer;transition:all 150ms ease}.guide-nav-item:hover,.guide-nav-item.active{color:var(--accent-primary);background:var(--accent-light);font-weight:600}.guide-mobile-nav-wrap{display:none;flex-direction:column;gap:10px;margin-bottom:16px;width:100%}.guide-mobile-selector{width:100%;font-weight:600;padding:10px 12px}.guide-mobile-pills-wrap{width:100%;margin-bottom:0}.guide-content-area{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;gap:20px;width:100%;box-sizing:border-box;overflow:hidden}.guide-article{width:100%}.guide-lang-tabs{display:flex;gap:6px;margin-top:14px;margin-bottom:8px;align-items:center}.guide-lang-btn{background:var(--bg-subtle);border:1px solid var(--border-color);color:var(--text-secondary);padding:4px 12px;font-size:12px;font-weight:600;border-radius:var(--radius-sm);cursor:pointer;transition:all 150ms ease;user-select:none}.guide-lang-btn:hover{color:var(--text-primary);border-color:var(--accent-primary);background:var(--accent-light)}.guide-lang-btn.active{background:var(--accent-primary) !important;color:#ffffff !important;border-color:var(--accent-primary) !important}.guide-article h2{font-size:22px;font-weight:800;color:var(--text-primary);margin-bottom:12px;line-height:1.3;word-break:break-word}.guide-article h3{font-size:16px;font-weight:700;color:var(--text-primary);margin:16px 0 8px;word-break:break-word}.guide-article p{color:var(--text-secondary);font-size:14.5px;line-height:1.7;margin-bottom:12px;word-break:break-word}.guide-article ul{color:var(--text-secondary);font-size:14px;line-height:1.7;margin-left:20px;margin-bottom:12px}.guide-article li{margin-bottom:4px}.code-block-wrap{background:#0d1117;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:14px 16px;font-family:var(--font-mono);font-size:12.5px;color:#e6edf3;overflow-x:auto;max-width:100%;white-space:pre;box-sizing:border-box}[data-theme="dark"] .code-block-wrap{background:#09090b;border-color:rgba(255,255,255,0.12);color:#f4f4f5}.guide-nav-controls{display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1px solid var(--border-color);gap:12px;flex-wrap:wrap}.info-card-container{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:32px;max-width:800px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:16px;box-sizing:border-box}.support-card-container{position:relative;overflow:hidden;transition:border-color 200ms ease,box-shadow 200ms ease}.support-card-container:hover{border-color:var(--border-hover)}.support-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent-primary);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;border:1px solid var(--border-accent)}.upi-details-container{width:100%;max-width:440px;margin-top:8px;padding:20px;background:var(--bg-subtle);border:1px solid var(--border-color);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;gap:16px;transition:border-color 250ms ease,box-shadow 250ms ease}.upi-id-pill{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--bg-surface);border:1px dashed var(--border-color);padding:10px 16px;border-radius:var(--radius-md);width:100%;cursor:pointer;transition:border-color 150ms ease,background-color 150ms ease}.upi-id-pill:hover{border-color:var(--accent-primary);background-color:var(--accent-light)}.upi-qr-card{background:#ffffff;padding:16px;border-radius:var(--radius-md);border:1px solid var(--border-color);box-shadow:0 4px 12px rgba(0,0,0,0.05);display:flex;flex-direction:column;align-items:center;width:100%;max-width:220px}.upi-qr-image{width:180px;height:180px;object-fit:contain;border-radius:4px}.upi-direct-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent-primary);text-decoration:none;padding:8px 16px;border-radius:var(--radius-md);background:var(--accent-light);border:1px solid var(--border-accent);transition:background 150ms ease,transform 150ms ease}.upi-direct-link:hover{background:var(--accent-primary);color:#ffffff}.support-subtle-note{font-size:12.5px;color:var(--text-muted);font-style:italic;margin-top:6px}.toast-notification{position:fixed;bottom:24px;right:24px;background:var(--accent-primary);color:#ffffff;padding:10px 20px;border-radius:var(--radius-md);font-weight:600;font-size:13px;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000;opacity:0;transform:translateY(10px);transition:all 200ms ease;pointer-events:none}.toast-notification.show{opacity:1;transform:translateY(0)}.progress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}.stat-box{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;gap:8px}.stat-box-title{font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase}.stat-box-number{font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--text-primary)}.stat-box-sub{font-size:12px;color:var(--text-secondary)}.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:20px}.modal-overlay.open{display:flex}.modal-container{background:var(--bg-surface);border:1px solid var(--border-color);border-radius:var(--radius-lg);max-width:800px;width:100%;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 40px rgba(0,0,0,0.4);overflow:hidden}.modal-header{padding:16px 20px;border-bottom:1px solid var(--border-color);display:flex;align-items:center;justify-content:space-between}.modal-title{font-size:16px;font-weight:700;color:var(--text-primary)}.modal-close-btn{background:transparent;border:none;color:var(--text-muted);font-size:20px;cursor:pointer}.modal-body{padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}.lang-tabs{display:flex;gap:6px;border-bottom:1px solid var(--border-color);padding-bottom:8px}.lang-tab{background:transparent;border:none;color:var(--text-muted);font-size:13px;font-weight:600;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer}.lang-tab.active{background:var(--accent-light);color:var(--accent-primary)}.btn-primary{background:var(--accent-primary);color:#ffffff;border:none;padding:8px 16px;border-radius:var(--radius-md);font-weight:600;font-size:13px;cursor:pointer;transition:all 150ms ease;text-decoration:none;display:inline-flex;align-items:center;gap:6px}.btn-primary:hover{background:var(--accent-hover)}.btn-secondary{background:var(--bg-subtle);color:var(--text-primary);border:1px solid var(--border-color);padding:8px 16px;border-radius:var(--radius-md);font-weight:500;font-size:13px;cursor:pointer;transition:all 150ms ease}.btn-secondary:hover{border-color:var(--border-hover);background:var(--bg-surface-hover)}.empty-state{padding:48px 20px;text-align:center;color:var(--text-muted)}.empty-state h3{color:var(--text-secondary);font-size:16px;margin-bottom:6px}.site-footer{border-top:1px solid var(--border-color);padding:24px 20px;text-align:center;color:var(--text-muted);font-size:12.5px;background:var(--bg-base);margin-top:auto}.footer-links{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:10px;flex-wrap:wrap}.footer-links a{color:var(--text-secondary);text-decoration:none;transition:color 150ms ease}.footer-links a:hover{color:var(--accent-primary)}@media (max-width:1024px){.guide-container{grid-template-columns:220px 1fr;gap:16px}}@media (max-width:900px){.guide-container{grid-template-columns:1fr}.guide-sidebar{display:none}.guide-mobile-nav-wrap{display:flex}}@media (max-width:768px){.nav-links,.search-trigger-btn{display:none}.mobile-menu-btn{display:flex}.problem-table{display:none}.mobile-card-list{display:flex}.hero-header{flex-direction:column}.main-content{padding:16px 12px 40px}.info-card-container{padding:20px 16px}.guide-content-area{padding:18px 14px;border-radius:var(--radius-md)}.guide-article h2{font-size:19px}.code-block-wrap{padding:12px;font-size:12px}.search-input-group{width:100%;flex:1 1 100%}.filter-selects-group{width:100%;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.filter-select{width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;min-height:44px;font-size:13.5px}.search-input{min-height:44px;font-size:14px}.topic-tab-pill{min-height:44px;padding:8px 14px;font-size:13px;display:inline-flex;align-items:center;justify-content:center}.status-checkbox{min-width:24px;min-height:24px;cursor:pointer}.bookmark-btn{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:18px}.page-btn{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}.btn-solve{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 14px}}@media (max-width:480px){.guide-content-area{padding:14px 12px}.guide-article h2{font-size:18px}.filter-selects-group{grid-template-columns:1fr 1fr}}.adsense-slot-wrapper{width:100%;margin:20px 0;display:flex;justify-content:center;align-items:center;min-height:90px;background:var(--bg-surface);border:1px dashed var(--border-color);border-radius:var(--radius-md);overflow:hidden;box-sizing:border-box;padding:8px}.adsense-slot-wrapper .adsbygoogle{display:block !important;width:100% !important;min-width:250px !important;min-height:90px !important}@media print{.site-header,.adsense-slot-wrapper,.mobile-menu-btn,.header-actions,.mobile-drawer,.drawer-backdrop,.btn-reset-filters,.topic-tabs-wrapper{display:none !important}body{background:#ffffff !important;color:#000000 !important}.app-container{max-width:100% !important;padding:0 !important}.problem-table{border:1px solid #ddd !important}.problem-table th,.problem-table td{border-bottom:1px solid #ddd !important;color:#000000 !important}}
+</style>
+
+<!-- Datasets & High-Performance Single App Bundle -->
+<script defer src="data/questions_page1.min.js"></script>
+<script defer src="js/app.bundle.min.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    var loadIndexData = function() {
+      if (!window.__INDEX_LOADED__) {
+        window.__INDEX_LOADED__ = true;
+        var s1 = document.createElement('script');
+        s1.src = 'data/questions_index.min.js';
+        s1.onload = function() {
+          if (typeof app !== 'undefined' && app.problems) {
+            app.problems = [];
+            app.getProblems();
+            if (app.currentRoute === '/problems') app.renderProblemSheet();
+          }
+        };
+        document.head.appendChild(s1);
+      }
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadIndexData, { timeout: 300 });
+    } else {
+      setTimeout(loadIndexData, 200);
+    }
+  });
+</script>
+</head>
+<body>
+
+<!-- Accessibility Skip to Content Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Ambient Grid Background -->
+<div class="ambient-grid-bg"></div>
+
+<!-- Toast Notification -->
+<div class="toast-notification" id="toast-notification">Notification</div>
+
+<div class="app-container">
+
+  <!-- Header Topbar -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="brand-section" onclick="event.preventDefault(); app.navigate('/');" aria-label="DSA Problems Homepage">
+        <div class="brand-logo">DSA<span>Problems</span></div>
+      </a>
+
+      <!-- Desktop Nav Links (Exact Ordered Sequence) -->
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <button class="nav-btn active" data-view="problems" data-testid="nav-problems" onclick="app.navigate('/problems')">Problems</button>
+        <button class="nav-btn" data-view="guide" data-testid="nav-guide" onclick="app.navigate('/guide')">DSA Guide</button>
+        <button class="nav-btn" data-view="progress" data-testid="nav-progress" onclick="app.navigate('/progress')">Progress</button>
+        <button class="nav-btn" data-view="privacy" data-testid="nav-privacy" onclick="app.navigate('/privacy')">Privacy Policy</button>
+        <button class="nav-btn" data-view="contact" data-testid="nav-contact" onclick="app.navigate('/contact')">Contact</button>
+        <button class="nav-btn" data-view="about" data-testid="nav-about" onclick="app.navigate('/about')">About</button>
+      </nav>
+
+      <!-- Header Right Actions -->
+      <div class="header-actions">
+        <button class="search-trigger-btn" data-testid="search-trigger" onclick="app.openCommandPalette()" aria-label="Quick Search Problems">
+          <span>Search problems...</span>
+          <span class="shortcut-kbd">⌘K</span>
+        </button>
+
+        <button class="share-btn-header" data-testid="share-btn" onclick="app.shareWebsite()" aria-label="Share DSA Sheet" title="Share DSA Sheet (🔗)">
+          <span>🔗 Share</span>
+        </button>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn" data-testid="theme-toggle" onclick="app.toggleTheme()" aria-label="Toggle Light or Dark Theme" title="Toggle Theme">
+          <span class="theme-toggle-icon" id="theme-icon">☀️</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" data-testid="mobile-menu-btn" onclick="app.toggleMobileMenu()" aria-label="Toggle Mobile Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="app.toggleMobileMenu(false)"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+      <strong style="font-size: 16px;">DSAProblems Navigation</strong>
+      <button class="btn-secondary" onclick="app.toggleMobileMenu(false)" aria-label="Close mobile navigation menu" style="padding: 4px 10px;">✕</button>
+    </div>
+    <nav style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;" aria-label="Mobile Drawer Navigation">
+      <button class="nav-btn" data-view="problems" data-testid="mobile-nav-problems" onclick="app.navigate('/problems'); app.toggleMobileMenu(false);">Problems</button>
+      <button class="nav-btn" data-view="guide" data-testid="mobile-nav-guide" onclick="app.navigate('/guide'); app.toggleMobileMenu(false);">DSA Guide</button>
+      <button class="nav-btn" data-view="progress" data-testid="mobile-nav-progress" onclick="app.navigate('/progress'); app.toggleMobileMenu(false);">Progress</button>
+      <button class="nav-btn" data-view="privacy" data-testid="mobile-nav-privacy" onclick="app.navigate('/privacy'); app.toggleMobileMenu(false);">Privacy Policy</button>
+      <button class="nav-btn" data-view="contact" data-testid="mobile-nav-contact" onclick="app.navigate('/contact'); app.toggleMobileMenu(false);">Contact</button>
+      <button class="nav-btn" data-view="about" data-testid="mobile-nav-about" onclick="app.navigate('/about'); app.toggleMobileMenu(false);">About</button>
+    </nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color);">
+      <span style="font-size: 13.5px; color: var(--text-secondary); font-weight: 500;">Theme</span>
+      <button class="theme-toggle-btn" data-testid="mobile-theme-toggle" onclick="app.toggleTheme()" aria-label="Toggle Light/Dark Mode">
+        <span id="mobile-theme-label" style="font-size: 13px; font-weight: 600;">☀️ Day Mode</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="main-content" id="main-content" role="main">
+
+    <!-- View 1: Main Problem Sheet (Homepage) -->
+    <section class="view-section active" id="view-problems">
+      
+      <!-- Hero Section (Compact & Sleek) -->
+      <div class="hero-section">
+        <div class="hero-header-compact">
+          <div class="hero-title-area">
+            <div class="hero-title-row">
+              <h1>DSA Problems</h1>
+              <span class="hero-mini-tag">1000 Problems • Beginner to FAANG-Ready</span>
+            </div>
+            <p class="hero-description-compact">
+              Master Data Structures and Algorithms step-by-step with 1,000 verified LeetCode problems organized by concept dependencies and pattern recognition.
+            </p>
+            <div class="hero-compact-pills">
+              <span class="compact-pill">🔗 Curated DSA Problems</span>
+              <span class="compact-pill">⚡ 20+ Core DSA Patterns</span>
+              <span class="compact-pill">🎯 Beginner → Interview Ready</span>
+              <span class="compact-pill">📈 Track Your Progress</span>
+            </div>
+          </div>
+
+          <div class="hero-compact-stats">
+            <div class="stat-chips-inline">
+              <div class="compact-chip">
+                <span class="chip-lbl">Total</span>
+                <span class="chip-val">1000</span>
+              </div>
+              <div class="compact-chip">
+                <span class="chip-lbl">Solved</span>
+                <span class="chip-val" id="hero-solved-count">0</span>
+              </div>
+              <div class="compact-chip">
+                <span class="chip-lbl">Progress</span>
+                <span class="chip-val" id="hero-progress-pct">0.0%</span>
+              </div>
+            </div>
+            <div class="hero-progress-bar-wrap">
+              <div class="hero-progress-bar-fill" id="hero-progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google AdSense Top Responsive Banner Slot -->
+      <div class="adsense-slot-wrapper adsense-top-banner">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2781286202640992"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+        </script>
+      </div>
+
+      <!-- Topic Pills Tabs Bar -->
+      <div class="topic-tabs-wrapper">
+        <div class="topic-tabs-list" id="topic-pills-container" role="tablist" aria-label="DSA Topic Navigation Tabs">
+          <!-- Dynamic Pills rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="filter-controls-bar">
+        <div class="search-input-group">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input type="text" class="search-input" id="problem-search-input" data-testid="problem-search-input" placeholder="Search by title, ID, topic or pattern..." aria-label="Search problems by title, ID, topic or pattern" oninput="app.handleSearchInput(this.value)"/>
+        </div>
+
+        <div class="filter-selects-group">
+          <select class="filter-select" id="difficulty-filter" data-testid="difficulty-filter" aria-label="Filter by difficulty" onchange="app.handleDifficultyFilter(this.value)">
+            <option value="all">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+
+          <select class="filter-select" id="status-filter" data-testid="status-filter" aria-label="Filter by status" onchange="app.handleStatusFilter(this.value)">
+            <option value="all">All Status</option>
+            <option value="unsolved">Unsolved</option>
+            <option value="solved">Solved</option>
+            <option value="bookmarked">Bookmarked</option>
+          </select>
+
+          <select class="filter-select" id="topic-filter" data-testid="topic-filter" aria-label="Filter by topic" onchange="app.handleTopicFilter(this.value)">
+            <option value="all">All Topics</option>
+          </select>
+
+          <select class="filter-select" id="pattern-filter" data-testid="pattern-filter" aria-label="Filter by pattern" onchange="app.handlePatternFilter(this.value)">
+            <option value="all">All Patterns</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results Count Info -->
+      <div class="results-meta-row">
+        <div>Showing <span id="results-count" aria-live="polite">50</span> of <span id="total-results-count">1000</span> problems</div>
+        <button class="btn-reset-filters" id="btn-reset-filters" data-testid="btn-reset-filters" onclick="app.resetFilters()" aria-label="Reset search filters">↺ Reset Filters</button>
+      </div>
+
+      <!-- Desktop Table Container -->
+      <div class="table-container">
+        <table class="problem-table" aria-label="LeetCode Verified DSA Problems Table">
+          <thead>
+            <tr>
+              <th class="col-num" scope="col">#</th>
+              <th class="col-title" scope="col">Problem</th>
+              <th class="col-diff" scope="col">Difficulty</th>
+              <th class="col-topic" scope="col">Topic</th>
+              <th class="col-pattern" scope="col">Pattern</th>
+              <th class="col-practice" scope="col">Practice</th>
+              <th class="col-status" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="problem-table-body">
+            <!-- Dynamic rows rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Stacked Card List (Hidden on Desktop) -->
+      <div class="mobile-card-list" id="mobile-problem-card-list">
+        <!-- Dynamic mobile cards rendered via JS -->
+      </div>
+
+      <!-- Pagination Bar -->
+      <div class="pagination-bar">
+        <div id="pagination-info">Showing 1–50 of 1000</div>
+        <nav class="pagination-controls" id="pagination-controls-container" aria-label="Pagination Navigation">
+          <button class="page-btn" id="btn-prev-page" data-testid="btn-prev-page" onclick="app.changePage(-1)" aria-label="Go to previous page">← Previous</button>
+          <span id="page-numbers-container" style="font-weight: 600; padding: 0 4px;">Page 1</span>
+          <button class="page-btn" id="btn-next-page" data-testid="btn-next-page" onclick="app.changePage(1)" aria-label="Go to next page">Next →</button>
+        </nav>
+      </div>
+
+      <!-- Google AdSense Bottom Responsive Banner Slot -->
+      <div class="adsense-slot-wrapper adsense-bottom-banner">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2781286202640992"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </section>
+
+    <!-- View 2: DSA Guide -->
+    <section class="view-section" id="view-guide">
+      <!-- Mobile & Tablet Chapter Navigation (Dropdown & Horizontal Scrollable Pills) -->
+      <div class="guide-mobile-nav-wrap">
+        <select class="filter-select guide-mobile-selector" id="guide-mobile-select" onchange="app.selectGuideTopic(this.value)">
+          <!-- Dynamic options rendered via JS -->
+        </select>
+        <div class="topic-tabs-wrapper guide-mobile-pills-wrap">
+          <div class="topic-tabs-list" id="guide-mobile-pills" role="tablist" aria-label="DSA Guide Chapter Navigation Tabs">
+            <!-- Dynamic topic pills rendered via JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-container">
+        <aside class="guide-sidebar">
+          <h3>DSA Guide Topics</h3>
+          <ul class="guide-nav-list" id="guide-topics-nav">
+            <!-- Dynamically populated topics list -->
+          </ul>
+        </aside>
+
+        <div class="guide-content-area" id="guide-content-area">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- View 3: Progress Dashboard -->
+    <section class="view-section" id="view-progress">
+      <div style="margin-bottom: 20px;">
+        <h2 style="font-size: 20px; font-weight: 800;">Progress Dashboard</h2>
+        <p style="color: var(--text-secondary);">Track your DSA preparation, difficulty breakdown, and topic mastery.</p>
+      </div>
+
+      <div class="progress-grid">
+        <div class="stat-box">
+          <span class="stat-box-title">Total Solved</span>
+          <span class="stat-box-number" id="dash-total-solved">0 / 1000</span>
+          <span class="stat-box-sub" id="dash-pct">0.0% Completed</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Easy Solved</span>
+          <span class="stat-box-number" style="color: var(--easy-color);" id="dash-easy-solved">0 / 400</span>
+          <span class="stat-box-sub" id="dash-easy-pct">0.0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Medium Solved</span>
+          <span class="stat-box-number" style="color: var(--medium-color);" id="dash-medium-solved">0 / 500</span>
+          <span class="stat-box-sub" id="dash-medium-pct">0.0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-box-title">Hard Solved</span>
+          <span class="stat-box-number" style="color: var(--hard-color);" id="dash-hard-solved">0 / 100</span>
+          <span class="stat-box-sub" id="dash-hard-pct">0.0%</span>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;">
+        <h3 style="font-size: 16px; margin-bottom: 16px;">Topic Progress Breakdown</h3>
+        <div style="overflow-x: auto;">
+          <table class="problem-table" aria-label="Topic Progress Breakdown Table">
+            <thead>
+              <tr>
+                <th scope="col">Topic</th>
+                <th scope="col">Solved</th>
+                <th scope="col">Total</th>
+                <th scope="col">Completion</th>
+              </tr>
+            </thead>
+            <tbody id="topic-progress-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 4: About -->
+    <section class="view-section" id="view-about">
+      <div class="info-card-container">
+        <h2 style="font-size: 24px; font-weight: 800;">About DSA Problems</h2>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          DSA Problems is a clean, modern, developer-focused problem sheet designed to take software engineers from programming fundamentals to advanced FAANG interview problem solving.
+        </p>
+        <h3 style="font-size: 16px; font-weight: 700; margin-top: 8px;">The 1000 Curriculum</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          The curriculum consists of exactly 1000 real and verified LeetCode problems categorized into 200 Easy, 500 Medium, and 300 Hard questions covering key patterns like Two Pointers, Sliding Window, Monotonic Stack, Binary Search, Trees, Graphs, and Dynamic Programming.
+        </p>
+        <h3 style="font-size: 16px; font-weight: 700; margin-top: 8px;">How Students Use It</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          Follow the <strong>DSA Problems Learning Path</strong>, pick a topic, start solving, and track your progress locally in your browser. All bookmarks, notes, and progress persistence happen automatically via local storage (`localStorage`).
+        </p>
+      </div>
+    </section>
+
+    <!-- View 5: Privacy Policy -->
+    <section class="view-section" id="view-privacy">
+      <div class="info-card-container">
+        <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Privacy Policy</h2>
+        <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Last updated: August 2026</p>
+        
+        <h3 style="font-size: 16px; font-weight: 700;">1. Introduction</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          At DSA Problems, we value your privacy. This policy outlines how your data is handled when you use our web platform.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">2. Information We Collect & Local Storage</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          We do not require user account registration. All problem-solving progress, solved problem IDs, personal notes, bookmarks, and theme preferences are saved locally in your Web Browser using <code style="font-family: var(--font-mono); background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px;">localStorage</code> (`dsaproblems_done_v3`, `dsaproblems_bookmarked_v3`, `dsaproblems_notes_v3`, `dsaproblems_theme_v3`). No personal data or progress statistics are transmitted to our servers.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">3. External Problem Links</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          External practice links safely open verified problem statements directly on LeetCode in a new browser tab.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">4. Google AdSense & Third-Party Advertising Cookies</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          We use Google AdSense to serve advertisements on dsaproblems.site. Google, as a third-party vendor, uses cookies to serve ads based on users' prior visits to our website or other websites on the Internet. Google's use of advertising cookies enables it and its partners to serve ads tailored to users based on their browsing activity.
+        </p>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-top: 8px;">
+          Users may opt out of personalized advertising at any time by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">Google Ad Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary);">aboutads.info</a>. Standard AdSense script configurations on our platform strictly comply with Google Publisher Policies.
+        </p>
+
+        <h3 style="font-size: 16px; font-weight: 700;">5. Contact Information</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          If you have questions regarding this Privacy Policy, contact us at <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent-primary);">mdhashmi955@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- View 6: Contact & Support Section -->
+    <section class="view-section" id="view-contact">
+      <div style="display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%;">
+        
+        <!-- Get in Touch Card -->
+        <div class="info-card-container" style="max-width: 600px; text-align: center; align-items: center;">
+          <h2 style="font-size: 24px; font-weight: 800; color: var(--text-primary);">Get in Touch</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 480px; font-size: 14.5px;">
+            Have questions, dataset corrections, or suggestions? Reach out directly via email.
+          </p>
+          
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); padding: 12px 20px; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 15px; color: var(--accent-primary); font-weight: 600; margin: 8px 0;">
+            mdhashmi955@gmail.com
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 4px; flex-wrap: wrap;">
+            <a href="mailto:mdhashmi955@gmail.com" class="btn-primary" style="padding: 10px 22px; font-size: 14px;">✉️ Email Us</a>
+            <button class="btn-secondary" id="btn-copy-email" onclick="app.copyContactEmail()" style="padding: 10px 18px; font-size: 14px;">📋 Copy Email</button>
+          </div>
+        </div>
+
+        <!-- Support the Project Section -->
+        <div class="info-card-container support-card-container" style="max-width: 600px; text-align: center; align-items: center;">
+          <h2 style="font-size: 22px; font-weight: 800; color: var(--text-primary);">Support the Project</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; max-width: 520px; font-size: 14.5px;">
+            This DSA sheet is completely free. If it helped you in your preparation, you can support the project and help me maintain and improve it.
+          </p>
+
+          <!-- UPI QR Code & ID Container -->
+          <div class="upi-details-container" id="upi-details-box">
+            <div class="upi-id-pill" onclick="app.copyUpiId()" title="Click to copy UPI ID">
+              <span style="color: var(--text-muted); font-weight: 500; font-size: 13px;">UPI ID:</span>
+              <strong style="font-family: var(--font-mono); color: var(--accent-primary); font-size: 15px; letter-spacing: 0.3px;">8595018458@ptsbi</strong>
+              <span style="font-size: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; color: var(--text-secondary);">Copy</span>
+            </div>
+
+            <div class="upi-qr-card">
+              <img src="images/upi-qr.png" alt="UPI Payment QR Code" class="upi-qr-image" width="200" height="200" loading="lazy" decoding="async" />
+              <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; font-weight: 500;">Scan with GPay, PhonePe, Paytm, or BHIM</div>
+            </div>
+
+            <a href="paytmmp://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR" class="upi-direct-link" onclick="app.openPaytmApp(event)" aria-label="Open payment link in Paytm app">
+              Open in Paytm
+            </a>
+          </div>
+
+          <p class="support-subtle-note">
+            Optional — the DSA sheet will always remain free.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- View 7: Admin Quality Control (Relocated) -->
+    <section class="view-section" id="view-admin-quality">
+      <div class="info-card-container">
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Dataset Quality & Duplicate Prevention Tool</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Internal tool for dataset verification and title normalization.</p>
+        <button class="btn-primary" onclick="app.runQualityCheck()">Run Quality Inspection</button>
+        <div id="admin-quality-results" style="margin-top: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary);"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Problem Solution & Notes Detail Modal -->
+  <div class="modal-overlay" id="problem-modal" role="dialog" aria-modal="true" aria-label="Problem Solution Details" onclick="if(event.target === this) app.closeProblemModal()">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span id="modal-problem-id" style="font-family: var(--font-mono); color: var(--text-muted); font-size: 12px;">#001</span>
+          <h3 class="modal-title" id="modal-problem-title" style="display: inline-block; margin-left: 8px;">Problem Title</h3>
+        </div>
+        <button class="modal-close-btn" onclick="app.closeProblemModal()" aria-label="Close problem details modal">✕</button>
+      </div>
+      <div class="modal-body" id="modal-problem-body">
+        <div id="modal-code-display" style="display:none;"></div>
+        <textarea id="modal-note-input" style="display:none;" aria-label="Personal problem notes"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette Search Modal -->
+  <div class="modal-overlay" id="command-palette-modal" role="dialog" aria-modal="true" aria-label="Quick Search Command Palette" onclick="if(event.target === this) app.closeCommandPalette()">
+    <div class="modal-container" style="max-width: 600px;">
+      <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-color);">
+        <input type="text" class="search-input" id="cmd-palette-input" data-testid="cmd-palette-input" placeholder="Type to search 1000 problems..." aria-label="Type to search 1000 problems" oninput="app.handleCmdPaletteSearch(this.value)"/>
+      </div>
+      <div style="max-height: 400px; overflow-y: auto; padding: 12px 16px;" id="cmd-palette-results">
+        <!-- Dynamic search items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <nav class="footer-links" aria-label="Footer Navigation">
+      <a href="/problems" onclick="event.preventDefault(); app.navigate('/problems');">Problems</a>
+      <a href="/guide" onclick="event.preventDefault(); app.navigate('/guide');">DSA Guide</a>
+      <a href="/progress" onclick="event.preventDefault(); app.navigate('/progress');">Progress</a>
+      <a href="/privacy" onclick="event.preventDefault(); app.navigate('/privacy');">Privacy Policy</a>
+      <a href="/contact" onclick="event.preventDefault(); app.navigate('/contact');">Contact</a>
+      <a href="/about" onclick="event.preventDefault(); app.navigate('/about');">About</a>
+    </nav>
+    <div style="margin-top: 6px;">Contact: <a href="mailto:mdhashmi955@gmail.com" style="color: var(--text-secondary); text-decoration: underline;">mdhashmi955@gmail.com</a></div>
+    <div style="margin-top: 8px; font-size: 11.5px; opacity: 0.8;">© 2026 DSAProblems.site — Premium DSA Sheet & 1000 Curriculum.</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "DSA Problems",
+  "name_for_model": "dsaproblems",
+  "description_for_human": "Master 1,000 verified LeetCode Data Structures & Algorithms problems categorized by 20+ core patterns.",
+  "description_for_model": "Plugin allowing AI agents to query 1,000 verified LeetCode Data Structures & Algorithms problems, search by topic, pattern, or difficulty, and retrieve C++, Java, Python, and JavaScript solution code and guides.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.dsaproblems.site/sitemap.xml"
+  },
+  "logo_url": "https://www.dsaproblems.site/images/og-image.png",
+  "contact_email": "mdhashmi955@gmail.com",
+  "legal_info_url": "https://www.dsaproblems.site/privacy"
+}
