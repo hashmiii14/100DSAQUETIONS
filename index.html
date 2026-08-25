@@ -439,6 +439,15 @@
 </style>
 
 <!-- Datasets & High-Performance Single App Bundle -->
+<script>
+  if ('caches' in window && !localStorage.getItem('__sw_v5_cleared__')) {
+    caches.keys().then(function(names) {
+      return Promise.all(names.map(function(name) { return caches.delete(name); }));
+    }).then(function() {
+      localStorage.setItem('__sw_v5_cleared__', 'true');
+    }).catch(function() {});
+  }
+</script>
 <script defer src="data/questions_index.min.js"></script>
 <script defer src="data/guide_data.min.js"></script>
 <script defer src="js/app.bundle.min.js"></script>
