@@ -41,14 +41,14 @@ if (problems) {
     nc: p.newConcept || ''
   }));
 
-  const indexJs = `const PROBLEMS_INDEX=${JSON.stringify(indexArray)};if(typeof window!=='undefined'){window.PROBLEMS_INDEX=PROBLEMS_INDEX;window.PROBLEMS=PROBLEMS_INDEX;}`;
+  const indexJs = `if(typeof window!=='undefined'){window.PROBLEMS_INDEX=window.PROBLEMS=${JSON.stringify(indexArray)};}var PROBLEMS_INDEX=window.PROBLEMS_INDEX;`;
   const indexJsPath = path.join(__dirname, '../data/questions_index.min.js');
   fs.writeFileSync(indexJsPath, indexJs, 'utf8');
   console.log(`✓ questions_index.min.js generated (${(fs.statSync(indexJsPath).size / 1024).toFixed(1)} KB)`);
 
   // 2b. Initial Paint Chunk questions_page1.min.js (~6.5 KB for 100/100 Mobile Score)
   const page1Array = indexArray.slice(0, 50);
-  const page1Js = `const PROBLEMS_PAGE1=${JSON.stringify(page1Array)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_PAGE1;`;
+  const page1Js = `var PROBLEMS_PAGE1=${JSON.stringify(page1Array)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_PAGE1;`;
   const page1JsPath = path.join(__dirname, '../data/questions_page1.min.js');
   fs.writeFileSync(page1JsPath, page1Js, 'utf8');
   console.log(`✓ questions_page1.min.js generated (${(fs.statSync(page1JsPath).size / 1024).toFixed(1)} KB)`);
@@ -78,7 +78,7 @@ if (fs.existsSync(guidePath)) {
   }
 
   if (guideTopics) {
-    const minifiedGuideJs = `const GUIDE_DATA=${JSON.stringify(guideTopics)};if(typeof window!=='undefined'){window.GUIDE_DATA=GUIDE_DATA;}`;
+    const minifiedGuideJs = `if(typeof window!=='undefined'){window.GUIDE_DATA=${JSON.stringify(guideTopics)};}var GUIDE_DATA=window.GUIDE_DATA;`;
     const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
     fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
     console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);
