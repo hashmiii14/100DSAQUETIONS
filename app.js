@@ -34,28 +34,31 @@ class DSAApp {
   }
 
   getProblems() {
-    if (!this.problems || this.problems.length === 0 || (typeof window !== 'undefined' && window.__FULL_SOLUTIONS_READY__ && !this._fullLoaded)) {
-      let raw = [];
-      if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS) && window.PROBLEMS[0] && window.PROBLEMS[0].statement) {
-        raw = window.PROBLEMS;
-        this._fullLoaded = true;
-      } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS[0] && PROBLEMS[0].statement) {
-        raw = PROBLEMS;
-        this._fullLoaded = true;
-      } else if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS)) {
-        raw = window.PROBLEMS;
-      } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
-        raw = PROBLEMS;
-      } else if (typeof window !== 'undefined' && window.PROBLEMS_INDEX && Array.isArray(window.PROBLEMS_INDEX)) {
-        raw = window.PROBLEMS_INDEX;
-      } else if (typeof PROBLEMS_INDEX !== 'undefined' && Array.isArray(PROBLEMS_INDEX)) {
-        raw = PROBLEMS_INDEX;
-      } else if (typeof window !== 'undefined' && window.PROBLEMS_PAGE1 && Array.isArray(window.PROBLEMS_PAGE1)) {
-        raw = window.PROBLEMS_PAGE1;
-      } else if (typeof PROBLEMS_PAGE1 !== 'undefined' && Array.isArray(PROBLEMS_PAGE1)) {
-        raw = PROBLEMS_PAGE1;
-      }
-      if (Array.isArray(raw) && raw.length > 0) {
+    let raw = [];
+    if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS) && window.PROBLEMS[0] && window.PROBLEMS[0].statement) {
+      raw = window.PROBLEMS;
+      this._fullLoaded = true;
+    } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS) && PROBLEMS[0] && PROBLEMS[0].statement) {
+      raw = PROBLEMS;
+      this._fullLoaded = true;
+    } else if (typeof window !== 'undefined' && window.PROBLEMS && Array.isArray(window.PROBLEMS)) {
+      raw = window.PROBLEMS;
+    } else if (typeof PROBLEMS !== 'undefined' && Array.isArray(PROBLEMS)) {
+      raw = PROBLEMS;
+    } else if (typeof window !== 'undefined' && window.PROBLEMS_INDEX && Array.isArray(window.PROBLEMS_INDEX)) {
+      raw = window.PROBLEMS_INDEX;
+    } else if (typeof PROBLEMS_INDEX !== 'undefined' && Array.isArray(PROBLEMS_INDEX)) {
+      raw = PROBLEMS_INDEX;
+    } else if (typeof window !== 'undefined' && window.PROBLEMS_PAGE1 && Array.isArray(window.PROBLEMS_PAGE1)) {
+      raw = window.PROBLEMS_PAGE1;
+    } else if (typeof PROBLEMS_PAGE1 !== 'undefined' && Array.isArray(PROBLEMS_PAGE1)) {
+      raw = PROBLEMS_PAGE1;
+    }
+
+    if (Array.isArray(raw) && raw.length > 0) {
+      const currentLen = this.problems ? this.problems.length : 0;
+      const isNewer = !this.problems || currentLen === 0 || raw.length > currentLen || (raw[0] && raw[0].statement && !this._fullLoaded);
+      if (isNewer) {
         this.problems = raw.map(item => {
           if (item && item.i !== undefined) {
             return {
@@ -76,9 +79,15 @@ class DSAApp {
           }
           return item;
         });
-      } else {
-        this.problems = [];
+        if (currentLen > 0 && this.problems.length > currentLen) {
+          try {
+            this.populateFilterDropdowns();
+            this.renderTopicPills();
+          } catch (_) {}
+        }
       }
+    } else if (!this.problems) {
+      this.problems = [];
     }
     return this.problems;
   }
@@ -729,26 +738,43 @@ class DSAApp {
       pageInfoEl.textContent = totalCount > 0 ? `Showing ${startIdx + 1}–${endIdx} of ${totalCount}` : 'Showing 0 of 0';
     }
 
-    // Pagination Controls rendering - Render ALL available page numbers (1..totalPages)
+    // Pagination Controls rendering - Smart Page Number Buttons
     const container = document.getElementById('pagination-controls-container') || document.querySelector('.pagination-controls');
     if (container) {
       let controlsHtml = '';
       const isFirstDisabled = this.currentPage <= 1;
       const isLastDisabled = this.currentPage >= totalPages;
 
-      controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page">Prev</button>`;
+      controlsHtml += `<button class="page-btn" id="btn-prev-page" ${isFirstDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage - 1})" title="Previous Page" aria-label="Previous Page">Prev</button>`;
 
-      // Render 5-page sections (Group 1: 1-5, Group 2: 6-10, Group 3: 11-15, Group 4: 16-20)
-      const groupIdx = Math.floor((this.currentPage - 1) / 5);
-      const startPage = groupIdx * 5 + 1;
-      const endPage = Math.min(startPage + 4, totalPages);
+      const pagesToShow = new Set();
+      pagesToShow.add(1);
+      pagesToShow.add(totalPages);
 
-      for (let p = startPage; p <= endPage; p++) {
-        const isActive = p === this.currentPage;
-        controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})" aria-label="Go to page ${p}">${p}</button>`;
+      for (let p = Math.max(1, this.currentPage - 2); p <= Math.min(totalPages, this.currentPage + 2); p++) {
+        pagesToShow.add(p);
       }
 
-      controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})" title="Next Page">Next</button>`;
+      if (this.currentPage <= 4) {
+        for (let p = 1; p <= Math.min(5, totalPages); p++) pagesToShow.add(p);
+      }
+      if (this.currentPage >= totalPages - 3) {
+        for (let p = Math.max(1, totalPages - 4); p <= totalPages; p++) pagesToShow.add(p);
+      }
+
+      const sortedPages = Array.from(pagesToShow).sort((a, b) => a - b);
+      let lastP = 0;
+
+      sortedPages.forEach(p => {
+        if (lastP > 0 && p - lastP > 1) {
+          controlsHtml += `<span class="page-ellipsis">…</span>`;
+        }
+        const isActive = p === this.currentPage;
+        controlsHtml += `<button class="page-btn ${isActive ? 'active' : ''}" onclick="app.goToPage(${p})" aria-label="Go to page ${p}">${p}</button>`;
+        lastP = p;
+      });
+
+      controlsHtml += `<button class="page-btn" id="btn-next-page" ${isLastDisabled ? 'disabled' : ''} onclick="app.goToPage(${this.currentPage + 1})" title="Next Page" aria-label="Next Page">Next</button>`;
 
       container.innerHTML = controlsHtml;
     }

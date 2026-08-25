@@ -418,3 +418,4 @@ const GUIDE_DATA = [
   }
 ];
 if (typeof module !== 'undefined') module.exports = GUIDE_DATA;
+if (typeof window !== 'undefined') window.GUIDE_DATA = GUIDE_DATA;

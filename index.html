@@ -439,31 +439,23 @@
 </style>
 
 <!-- Datasets & High-Performance Single App Bundle -->
-<script defer src="data/questions_page1.min.js"></script>
+<script defer src="data/questions_index.min.js"></script>
+<script defer src="data/guide_data.min.js"></script>
 <script defer src="js/app.bundle.min.js"></script>
 <script>
   window.addEventListener('load', function() {
     var loadIndexData = function() {
       if (!window.__INDEX_LOADED__) {
         window.__INDEX_LOADED__ = true;
-        var s1 = document.createElement('script');
-        s1.src = 'data/questions_index.min.js';
-        s1.onload = function() {
-          if (typeof app !== 'undefined' && app.problems) {
-            app.problems = [];
-            app.getProblems();
-            if (app.currentRoute === '/problems') app.renderProblemSheet();
-          }
-        };
-        document.head.appendChild(s1);
+        if (typeof app !== 'undefined') {
+          app.getProblems();
+          app.populateFilterDropdowns();
+          app.renderTopicPills();
+          if (app.currentRoute === '/problems') app.renderProblemSheet();
+        }
       }
     };
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadIndexData, { timeout: 300 });
-    } else {
-      setTimeout(loadIndexData, 200);
-    }
+    loadIndexData();
   });
 </script>
 </head>

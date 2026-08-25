@@ -78,7 +78,7 @@ if (fs.existsSync(guidePath)) {
   }
 
   if (guideTopics) {
-    const minifiedGuideJs = `const GUIDE_DATA=${JSON.stringify(guideTopics)};`;
+    const minifiedGuideJs = `const GUIDE_DATA=${JSON.stringify(guideTopics)};if(typeof window!=='undefined'){window.GUIDE_DATA=GUIDE_DATA;}`;
     const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
     fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
     console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);
