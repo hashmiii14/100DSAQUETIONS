@@ -2074,9 +2074,28 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   }
 }
 
+/* ── Interactive Daily Challenge & Study Enhancements ──────────────────────── */
+.hero-daily-challenge {
+  transition: all 150ms ease;
+}
+
+.hero-daily-challenge:hover {
+  border-color: var(--border-hover);
+}
+
+.btn-copy-code {
+  transition: all 150ms ease;
+}
+
+.btn-copy-code:hover {
+  background: var(--bg-surface-hover) !important;
+  border-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+}
+
 /* ── Print & PDF Export Optimizations ────────────────────────────────────── */
 @media print {
-  .site-header, .adsense-slot-wrapper, .mobile-menu-btn, .header-actions, .mobile-drawer, .drawer-backdrop, .btn-reset-filters, .topic-tabs-wrapper {
+  .site-header, .adsense-slot-wrapper, .mobile-menu-btn, .header-actions, .mobile-drawer, .drawer-backdrop, .btn-reset-filters, .topic-tabs-wrapper, .hero-daily-challenge {
     display: none !important;
   }
   body {
