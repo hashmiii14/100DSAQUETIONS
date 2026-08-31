@@ -106,7 +106,7 @@ class DSAApp {
     if (typeof window !== 'undefined' && !window.__SOLUTIONS_LOADING__) {
       window.__SOLUTIONS_LOADING__ = true;
       const s = document.createElement('script');
-      s.src = '/data/questions.min.js';
+      s.src = '/data/questions.min.js?v=11.0';
       s.onload = () => {
         window.__SOLUTIONS_LOADED__ = true;
         window.__SOLUTIONS_LOADING__ = false;
