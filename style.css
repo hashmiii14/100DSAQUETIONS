@@ -240,7 +240,7 @@ html, body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .nav-btn {
@@ -248,16 +248,16 @@ html, body {
   border: none;
   color: var(--text-secondary);
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 5px 8px;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 150ms ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -1756,9 +1756,23 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 }
 
 /* ── Responsive Breakpoints (Phone, Tablet, Laptop) ──────────────────────────── */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1200px) {
   .header-inner {
-    padding: 0 16px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .nav-btn {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .search-trigger-btn span:first-child {
+    display: none;
+  }
+  .search-trigger-btn {
+    padding: 6px 8px;
   }
   .main-content {
     padding: 14px 16px 40px;
