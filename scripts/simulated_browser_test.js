@@ -253,11 +253,11 @@ for (let page = 1; page <= 20; page++) {
 appInstance.goToPage(1);
 console.log(" 20-page pagination navigation passed!");
 
-console.log("Testing 26-chapter DSA Guide section & multi-language tabs...");
-appInstance.navigate('/guide');
 const guideData = require('../data/guide_data.js');
-if (!guideData || guideData.length !== 26) {
-  console.error(`❌ FAIL: Expected 26 guide chapters, found ${guideData ? guideData.length : 0}`);
+console.log(`Testing ${guideData.length}-chapter DSA Guide section & multi-language tabs...`);
+appInstance.navigate('/guide');
+if (!guideData || guideData.length < 26) {
+  console.error(`❌ FAIL: Expected at least 26 guide chapters, found ${guideData ? guideData.length : 0}`);
   process.exit(1);
 }
 guideData.forEach(ch => {

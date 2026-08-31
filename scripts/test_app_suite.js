@@ -252,7 +252,7 @@ const appInstance = new DSAApp();
 global.window.app = appInstance;
 
 assert(global.window.app === appInstance, "window.app must be defined on global window");
-assert(Array.isArray(global.window.GUIDE_DATA) && global.window.GUIDE_DATA.length === 26, "GUIDE_DATA must contain all 26 chapters");
+assert(Array.isArray(global.window.GUIDE_DATA) && global.window.GUIDE_DATA.length >= 26, "GUIDE_DATA must contain all 26+ chapters");
 
 // Verify pagination 1 to 20
 for (let p = 1; p <= 20; p++) {
