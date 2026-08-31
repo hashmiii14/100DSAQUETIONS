@@ -1357,8 +1357,15 @@ class DSAApp {
             statusAlert.style.color = 'var(--text-primary)';
             statusAlert.innerHTML = '<strong style="color: #10b981;">Message Sent Successfully!</strong> Your message has been sent directly to <strong>mdhashmi955@gmail.com</strong>. Thank you for reaching out!';
           }
-          if (msgEl) msgEl.value = '';
-          if (subjectEl) subjectEl.value = '';
+          const formEl = document.getElementById('contact-form');
+          if (formEl && typeof formEl.reset === 'function') {
+            formEl.reset();
+          } else {
+            if (nameEl) nameEl.value = '';
+            if (emailEl) emailEl.value = '';
+            if (subjectEl) subjectEl.value = '';
+            if (msgEl) msgEl.value = '';
+          }
           this.showToast('Message sent directly to mdhashmi955@gmail.com!');
           return;
         }
