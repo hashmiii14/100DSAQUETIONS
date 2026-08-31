@@ -230,6 +230,51 @@ if (!AppState.done.has(2)) {
 console.log("Testing Dashboard rendering after solving #2...");
 appInstance.renderDashboard();
 
+console.log("Testing 20-page pagination navigation...");
+for (let page = 1; page <= 20; page++) {
+  appInstance.goToPage(page);
+  if (appInstance.currentPage !== page) {
+    console.error(`❌ FAIL: goToPage(${page}) failed`);
+    process.exit(1);
+  }
+}
+appInstance.goToPage(1);
+console.log(" 20-page pagination navigation passed!");
+
+console.log("Testing 26-chapter DSA Guide section & multi-language tabs...");
+appInstance.navigate('/guide');
+const guideData = require('../data/guide_data.js');
+if (!guideData || guideData.length !== 26) {
+  console.error(`❌ FAIL: Expected 26 guide chapters, found ${guideData ? guideData.length : 0}`);
+  process.exit(1);
+}
+guideData.forEach(ch => {
+  appInstance.selectGuideTopic(ch.id);
+  if (appInstance.activeGuideTopic !== ch.id) {
+    console.error(`❌ FAIL: selectGuideTopic(${ch.id}) failed`);
+    process.exit(1);
+  }
+});
+appInstance.setGuideLang('java');
+appInstance.setGuideLang('python');
+appInstance.setGuideLang('cpp');
+console.log(" 26-chapter DSA Guide & code tabs passed!");
+
+console.log("Testing search and filters...");
+appInstance.navigate('/problems');
+appInstance.handleSearchInput('Binary Search');
+if (appInstance.getFilteredProblems().length === 0) {
+  console.error("❌ FAIL: Search 'Binary Search' returned 0 results");
+  process.exit(1);
+}
+appInstance.resetFilters();
+appInstance.handleDifficultyFilter('Hard');
+if (appInstance.getFilteredProblems().length !== 300) {
+  console.error(`❌ FAIL: Hard difficulty filter returned ${appInstance.getFilteredProblems().length}, expected 300`);
+  process.exit(1);
+}
+appInstance.resetFilters();
+
 console.log("Testing Theme Toggle in simulated browser...");
 appInstance.setTheme('light');
 if (documentMock.documentElement.getAttribute('data-theme') !== 'light') {
@@ -249,5 +294,5 @@ if (documentMock.documentElement.getAttribute('data-theme') !== 'light') {
 console.log(" Theme toggle simulation passed!");
 
 console.log("\n==================================================");
-console.log("✅ SIMULATION COMPLETED! All views, actions, and dataset bindings pass 100%!");
+console.log("✅ SIMULATION COMPLETED! All 1000 questions, 20 pages, 26 guide chapters pass 100%!");
 console.log("==================================================\n");

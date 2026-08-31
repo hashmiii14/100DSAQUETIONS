@@ -60,7 +60,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(problems|guide|progress|about|privacy|contact)",
+      "source": "/((?!.*\\.[\\w]+$).*)",
       "destination": "/index.html"
     }
   ]
