@@ -743,18 +743,30 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 }
 
 .filter-select {
-  background: var(--bg-surface);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--bg-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 14px;
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   font-family: var(--font-sans);
   font-size: 12.5px;
-  padding: 7px 10px;
+  font-weight: 500;
+  padding: 7px 26px 7px 10px;
   border-radius: var(--radius-md);
   outline: none;
   cursor: pointer;
   transition: all 150ms ease;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+[data-theme="dark"] .filter-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a1a1aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .filter-select:focus, .filter-select:hover {
@@ -1744,7 +1756,22 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
 }
 
 /* ── Responsive Breakpoints (Phone, Tablet, Laptop) ──────────────────────────── */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+  .main-content {
+    padding: 14px 16px 40px;
+  }
+  .col-title {
+    min-width: 180px;
+  }
+  .col-topic, .col-pattern {
+    width: 115px;
+  }
+  .topic-badge, .pattern-badge {
+    max-width: 105px;
+  }
   .guide-container {
     grid-template-columns: 220px 1fr;
     gap: 16px;
@@ -1762,40 +1789,6 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
     display: flex;
   }
 }
-
-@media (max-width: 768px) {
-  .nav-links, .search-trigger-btn {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-  }
-
-  .problem-table {
-    display: none;
-  }
-
-  .mobile-card-list {
-    display: flex;
-  }
-
-  .hero-header {
-    flex-direction: column;
-  }
-
-  .main-content {
-    padding: 16px 12px 40px;
-  }
-
-  .info-card-container {
-    padding: 20px 16px;
-  }
-
-  .guide-content-area {
-    padding: 18px 14px;
-    border-radius: var(--radius-md);
-  }
 
 @media (max-width: 768px) {
   .nav-links, .search-trigger-btn {
