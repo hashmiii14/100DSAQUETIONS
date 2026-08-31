@@ -6,9 +6,9 @@
 class DSAApp {
   constructor() {
     this.problems = [];
-    this.state = typeof state !== 'undefined' ? state : null;
-    this.patterns = typeof PATTERNS_LIBRARY !== 'undefined' ? PATTERNS_LIBRARY : [];
-    this.dsAlgo = typeof DS_ALGO_LIBRARY !== 'undefined' ? DS_ALGO_LIBRARY : { dataStructures: [], algorithms: [] };
+    this.state = (typeof window !== 'undefined' && window.state) ? window.state : (typeof state !== 'undefined' ? state : null);
+    this.patterns = (typeof window !== 'undefined' && window.PATTERNS_LIBRARY) ? window.PATTERNS_LIBRARY : (typeof PATTERNS_LIBRARY !== 'undefined' ? PATTERNS_LIBRARY : []);
+    this.dsAlgo = (typeof window !== 'undefined' && window.DS_ALGO_LIBRARY) ? window.DS_ALGO_LIBRARY : (typeof DS_ALGO_LIBRARY !== 'undefined' ? DS_ALGO_LIBRARY : { dataStructures: [], algorithms: [] });
 
     // View & Filter State
     this.currentRoute = '/problems';
@@ -27,8 +27,12 @@ class DSAApp {
     this.activeLang = 'cpp'; // 'cpp' | 'java' | 'python' | 'javascript'
 
     // DSA Guide State
-    this.activeGuideTopic = 'fundamentals';
+    this.activeGuideTopic = 'arrays';
     this.activeGuideLang = 'cpp'; // 'cpp' | 'java' | 'python'
+
+    if (typeof window !== 'undefined') {
+      window.app = this;
+    }
 
     this.init();
   }
@@ -132,6 +136,25 @@ class DSAApp {
     }
   }
 
+  _el(id) {
+    if (typeof document !== 'undefined' && typeof document.getElementById === 'function') {
+      return document.getElementById(id);
+    }
+    return null;
+  }
+
+  _scrollToTop() {
+    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(() => {
+          try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) { window.scrollTo(0, 0); }
+        });
+      } else {
+        try { window.scrollTo(0, 0); } catch (_) {}
+      }
+    }
+  }
+
   init() {
     this.getProblems();
     this.applyInitialTheme();
@@ -141,7 +164,9 @@ class DSAApp {
     this.handleRouteFromUrl();
 
     // Listen to browser popstate
-    window.addEventListener('popstate', () => this.handleRouteFromUrl());
+    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+      window.addEventListener('popstate', () => this.handleRouteFromUrl());
+    }
 
     // Async polling fallback if PROBLEMS loads asynchronously
     if (this.problems.length === 0) {
@@ -168,7 +193,12 @@ class DSAApp {
   }
 
   applyInitialTheme() {
-    const savedTheme = localStorage.getItem('dsaproblems_theme_v3');
+    let savedTheme = 'dark';
+    if (typeof localStorage !== 'undefined') {
+      try {
+        savedTheme = localStorage.getItem('dsaproblems_theme_v3');
+      } catch (_) {}
+    }
     const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
     this.setTheme(initialTheme);
   }
@@ -178,37 +208,50 @@ class DSAApp {
     if (this.state) {
       this.state.theme = validTheme;
     }
-    localStorage.setItem('dsaproblems_theme_v3', validTheme);
-    document.documentElement.setAttribute('data-theme', validTheme);
-
-    const themeIcon = document.getElementById('theme-icon');
-    const themeBtn = document.getElementById('theme-toggle-btn');
-    const mobileLabel = document.getElementById('mobile-theme-label');
-
-    // Day Mode -> show sun icon ☀️
-    // Night Mode -> show moon icon 🌙
-    if (themeIcon) {
-      themeIcon.textContent = validTheme === 'dark' ? '🌙' : '☀️';
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem('dsaproblems_theme_v3', validTheme);
+      } catch (_) {}
     }
+    if (typeof document !== 'undefined') {
+      if (document.documentElement && typeof document.documentElement.setAttribute === 'function') {
+        document.documentElement.setAttribute('data-theme', validTheme);
+      }
+      if (typeof document.getElementById === 'function') {
+        const themeIcon = document.getElementById('theme-icon');
+        const themeBtn = document.getElementById('theme-toggle-btn');
+        const mobileLabel = document.getElementById('mobile-theme-label');
 
-    if (themeBtn) {
-      const modeLabel = validTheme === 'dark' ? 'Night Mode (🌙)' : 'Day Mode (☀️)';
-      themeBtn.setAttribute('aria-label', modeLabel);
-      themeBtn.setAttribute('title', modeLabel);
-    }
+        // Day Mode -> show sun icon ☀️
+        // Night Mode -> show moon icon 🌙
+        if (themeIcon) {
+          themeIcon.textContent = validTheme === 'dark' ? '🌙' : '☀️';
+        }
 
-    if (mobileLabel) {
-      mobileLabel.textContent = validTheme === 'dark' ? '🌙 Night Mode' : '☀️ Day Mode';
+        if (themeBtn) {
+          const modeLabel = validTheme === 'dark' ? 'Night Mode (🌙)' : 'Day Mode (☀️)';
+          themeBtn.setAttribute('aria-label', modeLabel);
+          themeBtn.setAttribute('title', modeLabel);
+        }
+
+        if (mobileLabel) {
+          mobileLabel.textContent = validTheme === 'dark' ? '🌙 Night Mode' : '☀️ Day Mode';
+        }
+      }
     }
   }
 
   toggleTheme() {
-    const btn = document.getElementById('theme-toggle-btn');
-    if (btn) {
-      btn.classList.add('animating');
-      setTimeout(() => btn.classList.remove('animating'), 400);
+    if (typeof document !== 'undefined' && typeof document.getElementById === 'function') {
+      const btn = document.getElementById('theme-toggle-btn');
+      if (btn && btn.classList) {
+        btn.classList.add('animating');
+        setTimeout(() => btn.classList.remove('animating'), 400);
+      }
     }
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const current = (typeof document !== 'undefined' && document.documentElement && typeof document.documentElement.getAttribute === 'function')
+      ? (document.documentElement.getAttribute('data-theme') || 'light')
+      : 'dark';
     const next = current === 'dark' ? 'light' : 'dark';
     this.setTheme(next);
   }
@@ -229,7 +272,7 @@ class DSAApp {
     let route = window.location.pathname || '/';
     if (route === '/' || route === '/index.html') route = '/problems';
     if (window.location.hash) {
-      const hashRoute = window.location.hash.replace('#', '');
+      let hashRoute = window.location.hash.replace(/^#\/?/, '/');
       if (['/problems', '/guide', '/progress', '/about', '/privacy', '/contact', '/admin/quality'].includes(hashRoute)) {
         route = hashRoute;
       }
@@ -323,11 +366,7 @@ class DSAApp {
     // Render targeted view contents
     this.renderCurrentView();
 
-    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      requestAnimationFrame(function() {
-        window.scrollTo({ top: 0 });
-      });
-    }
+    this._scrollToTop();
   }
 
   renderCurrentView() {
@@ -408,35 +447,35 @@ class DSAApp {
     this.getProblems().forEach(p => {
       if (p.pattern) patternsSet.add(p.pattern);
     });
-    return Array.from(patternsSet);
+    return Array.from(patternsSet).sort((a, b) => a.localeCompare(b));
   }
 
   populateFilterDropdowns() {
-    const topicSelect = document.getElementById('topic-filter');
+    const topicSelect = this._el('topic-filter');
     if (topicSelect) {
-      topicSelect.innerHTML = '<option value="all">All Topics</option>';
+      const currentVal = this.filterTopic || 'all';
+      let html = '<option value="all">All Topics</option>';
       this.getUniqueTopics().forEach(t => {
-        const opt = document.createElement('option');
-        opt.value = t;
-        opt.textContent = t;
-        topicSelect.appendChild(opt);
+        html += `<option value="${this.escapeHtml(t)}">${this.escapeHtml(t)}</option>`;
       });
+      topicSelect.innerHTML = html;
+      topicSelect.value = currentVal;
     }
 
-    const patternSelect = document.getElementById('pattern-filter');
+    const patternSelect = this._el('pattern-filter');
     if (patternSelect) {
-      patternSelect.innerHTML = '<option value="all">All Patterns</option>';
+      const currentVal = this.filterPattern || 'all';
+      let html = '<option value="all">All Patterns</option>';
       this.getUniquePatterns().forEach(p => {
-        const opt = document.createElement('option');
-        opt.value = p;
-        opt.textContent = p;
-        patternSelect.appendChild(opt);
+        html += `<option value="${this.escapeHtml(p)}">${this.escapeHtml(p)}</option>`;
       });
+      patternSelect.innerHTML = html;
+      patternSelect.value = currentVal;
     }
   }
 
   renderTopicPills() {
-    const container = document.getElementById('topic-pills-container');
+    const container = this._el('topic-pills-container');
     if (!container) return;
 
     const topics = ['all', ...this.getUniqueTopics()];
@@ -634,17 +673,17 @@ class DSAApp {
     const solvedCount = this.state ? this.state.done.size : 0;
     const pct = totalAll > 0 ? ((solvedCount / totalAll) * 100).toFixed(1) : '0.0';
 
-    const heroSolvedEl = document.getElementById('hero-solved-count');
+    const heroSolvedEl = this._el('hero-solved-count');
     if (heroSolvedEl) heroSolvedEl.textContent = `${solvedCount} / ${totalAll}`;
-    const heroPctEl = document.getElementById('hero-progress-pct');
+    const heroPctEl = this._el('hero-progress-pct');
     if (heroPctEl) heroPctEl.textContent = `${pct}%`;
-    const heroBarEl = document.getElementById('hero-progress-bar');
-    if (heroBarEl) heroBarEl.style.width = `${pct}%`;
+    const heroBarEl = this._el('hero-progress-bar');
+    if (heroBarEl && heroBarEl.style) heroBarEl.style.width = `${pct}%`;
 
     // Update Results Meta Count
-    const resCountEl = document.getElementById('results-count');
+    const resCountEl = this._el('results-count');
     if (resCountEl) resCountEl.textContent = totalCount;
-    const totalResCountEl = document.getElementById('total-results-count');
+    const totalResCountEl = this._el('total-results-count');
     if (totalResCountEl) totalResCountEl.textContent = totalAll;
 
     // Paginate Results
@@ -796,11 +835,7 @@ class DSAApp {
     }
 
     this.renderProblemSheet();
-    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      requestAnimationFrame(function() {
-        window.scrollTo({ top: 0 });
-      });
-    }
+    this._scrollToTop();
   }
 
   changePage(delta) {
@@ -957,13 +992,17 @@ class DSAApp {
     }
 
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    if (typeof document !== 'undefined' && document.body && document.body.style) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   closeProblemModal() {
-    const modal = document.getElementById('problem-modal');
-    if (modal) modal.classList.remove('open');
-    document.body.style.overflow = '';
+    const modal = this._el('problem-modal');
+    if (modal && modal.classList) modal.classList.remove('open');
+    if (typeof document !== 'undefined' && document.body && document.body.style) {
+      document.body.style.overflow = '';
+    }
   }
 
   setModalLang(lang) {
@@ -993,15 +1032,18 @@ class DSAApp {
     }
   }
 
+  getProblemById(id) {
+    const numId = Number(id);
+    return this.getProblems().find(p => p.id === numId) || null;
+  }
+
   navigateModalProblem(direction) {
     if (!this.activeProblem) return;
     const currentId = this.activeProblem.id;
     const targetId = currentId + direction;
-    if (targetId >= 1 && targetId <= 1000) {
-      const targetProb = this.getProblemById(targetId);
-      if (targetProb) {
-        this.openProblemModal(targetProb);
-      }
+    const totalProblems = this.getProblems().length;
+    if (targetId >= 1 && targetId <= totalProblems) {
+      this.openProblemModal(targetId);
     }
   }
 
@@ -1117,6 +1159,7 @@ class DSAApp {
   }
 
   bindGlobalKeyboardShortcuts() {
+    if (typeof document === 'undefined' || typeof document.addEventListener !== 'function') return;
     document.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
@@ -1353,6 +1396,11 @@ class DSAApp {
       return;
     }
 
+    const currentIdx = topics.findIndex(t => t.id === this.activeGuideTopic);
+    const selectedIdx = currentIdx !== -1 ? currentIdx : 0;
+    this.activeGuideTopic = topics[selectedIdx].id;
+    const selected = topics[selectedIdx];
+
     // Populate Mobile Dropdown Select
     if (mobileSelect) {
       let mobileOptionsHtml = '';
@@ -1385,10 +1433,6 @@ class DSAApp {
       });
       navList.innerHTML = navHtml;
     }
-
-    const currentIdx = topics.findIndex(t => t.id === this.activeGuideTopic);
-    const selectedIdx = currentIdx !== -1 ? currentIdx : 0;
-    const selected = topics[selectedIdx];
 
     const prevTopic = selectedIdx > 0 ? topics[selectedIdx - 1] : null;
     const nextTopic = selectedIdx < topics.length - 1 ? topics[selectedIdx + 1] : null;
@@ -1447,11 +1491,7 @@ class DSAApp {
   selectGuideTopic(topicId) {
     this.activeGuideTopic = topicId;
     this.renderGuideSection();
-    if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
-      requestAnimationFrame(function() {
-        window.scrollTo({ top: 0 });
-      });
-    }
+    this._scrollToTop();
   }
 
   /* ── Admin Quality Tool ──────────────────────────────────────────────────── */
@@ -1506,21 +1546,41 @@ class DSAApp {
 
 // Instantiate App globally
 let app;
-if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    app = new DSAApp();
-    if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then((reg) => {
-          if (reg && typeof reg.update === 'function') reg.update();
-        }).catch(() => {});
-      });
+function initDSAApp() {
+  if (typeof window !== 'undefined') {
+    if (!window.app) {
+      window.app = new DSAApp();
     }
-  });
+    app = window.app;
+  } else if (!app) {
+    app = new DSAApp();
+  }
+
+  if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator && (typeof window !== 'undefined' && (window.location.protocol === 'https:' || window.location.hostname === 'localhost'))) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then((reg) => {
+        if (reg && typeof reg.update === 'function') reg.update();
+      }).catch(() => {});
+    });
+  }
 }
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDSAApp);
+  } else {
+    initDSAApp();
+  }
+}
+
 if (typeof window !== 'undefined') {
   window.DSAApp = DSAApp;
+  if (!window.app && typeof document !== 'undefined' && document.readyState !== 'loading') {
+    window.app = new DSAApp();
+    app = window.app;
+  }
 }
+
 if (typeof module !== 'undefined') {
   module.exports = DSAApp;
 }

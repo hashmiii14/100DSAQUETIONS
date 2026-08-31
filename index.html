@@ -440,11 +440,11 @@
 
 <!-- Datasets & High-Performance Single App Bundle -->
 <script>
-  if ('caches' in window && !localStorage.getItem('__sw_v5_cleared__')) {
+  if ('caches' in window && !localStorage.getItem('__sw_v6_cleared__')) {
     caches.keys().then(function(names) {
       return Promise.all(names.map(function(name) { return caches.delete(name); }));
     }).then(function() {
-      localStorage.setItem('__sw_v5_cleared__', 'true');
+      localStorage.setItem('__sw_v6_cleared__', 'true');
     }).catch(function() {});
   }
 </script>
@@ -456,11 +456,14 @@
     var loadIndexData = function() {
       if (!window.__INDEX_LOADED__) {
         window.__INDEX_LOADED__ = true;
-        if (typeof app !== 'undefined') {
-          app.getProblems();
-          app.populateFilterDropdowns();
-          app.renderTopicPills();
-          if (app.currentRoute === '/problems') app.renderProblemSheet();
+        var appInstance = window.app || (typeof app !== 'undefined' ? app : null);
+        if (appInstance) {
+          appInstance.getProblems();
+          appInstance.populateFilterDropdowns();
+          appInstance.renderTopicPills();
+          if (appInstance.currentRoute === '/problems' || appInstance.currentRoute === '/') {
+            appInstance.renderProblemSheet();
+          }
         }
       }
     };

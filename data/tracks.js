@@ -65,4 +65,8 @@ const INTERVIEW_TRACKS = [
   }
 ];
 
+if (typeof window !== 'undefined') {
+  window.INTERVIEW_TRACKS = INTERVIEW_TRACKS;
+  window.TRACKS_DATA = INTERVIEW_TRACKS;
+}
 if (typeof module !== 'undefined') module.exports = INTERVIEW_TRACKS;

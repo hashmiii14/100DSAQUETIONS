@@ -90,4 +90,7 @@ const DS_ALGO_LIBRARY = {
   ]
 };
 
+if (typeof window !== 'undefined') {
+  window.DS_ALGO_LIBRARY = DS_ALGO_LIBRARY;
+}
 if (typeof module !== 'undefined') module.exports = DS_ALGO_LIBRARY;

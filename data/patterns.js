@@ -207,4 +207,7 @@ class MinHeap {
   }
 ];
 
+if (typeof window !== 'undefined') {
+  window.PATTERNS_LIBRARY = PATTERNS_LIBRARY;
+}
 if (typeof module !== 'undefined') module.exports = PATTERNS_LIBRARY;

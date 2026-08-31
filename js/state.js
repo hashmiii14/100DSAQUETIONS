@@ -215,4 +215,8 @@ class AppState {
 }
 
 const state = new AppState();
+if (typeof window !== 'undefined') {
+  window.state = state;
+  window.AppState = AppState;
+}
 if (typeof module !== 'undefined') module.exports = state;

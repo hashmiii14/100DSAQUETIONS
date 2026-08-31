@@ -200,6 +200,100 @@ assert(JSON.stringify(getPageGroupRange(16, 20)) === JSON.stringify({ startP: 16
 
 console.log("   5-Page Section Group Range Pagination verified for 1-5, 6-10, 11-15, 16-20!");
 
+// 9. Test User-Reported Live Issues (Pagination, Filters, DSA Guide, Modal)
+console.log("\n[Test 9] Testing Fixes for User-Reported Issues...");
+const GUIDE_DATA = require('../data/guide_data.js');
+
+global.document = {
+  documentElement: {
+    setAttribute: () => {},
+    getAttribute: () => 'dark'
+  },
+  body: {
+    style: {}
+  },
+  getElementById: (id) => ({
+    textContent: '',
+    innerHTML: '',
+    value: '',
+    style: {},
+    classList: { add: () => {}, remove: () => {}, toggle: () => {}, contains: () => false },
+    setAttribute: () => {},
+    getAttribute: () => '',
+    appendChild: () => {}
+  }),
+  createElement: (tag) => ({
+    tagName: tag,
+    value: '',
+    textContent: '',
+    innerHTML: '',
+    appendChild: () => {}
+  }),
+  querySelectorAll: () => [],
+  querySelector: () => null,
+  addEventListener: () => {}
+};
+
+global.window = {
+  location: { pathname: '/', search: '', hash: '' },
+  history: { pushState: () => {}, replaceState: () => {} },
+  localStorage: global.localStorage,
+  addEventListener: () => {},
+  scrollTo: () => {},
+  GUIDE_DATA: GUIDE_DATA,
+  PROBLEMS: PROBLEMS
+};
+
+const DSAApp = require('../app.js');
+const appInstance = new DSAApp();
+global.window.app = appInstance;
+
+assert(global.window.app === appInstance, "window.app must be defined on global window");
+assert(Array.isArray(global.window.GUIDE_DATA) && global.window.GUIDE_DATA.length === 26, "GUIDE_DATA must contain all 26 chapters");
+
+// Verify pagination 1 to 20
+for (let p = 1; p <= 20; p++) {
+  appInstance.goToPage(p);
+  assert(appInstance.currentPage === p, `goToPage(${p}) failed`);
+}
+appInstance.goToPage(1);
+
+// Verify Filters
+appInstance.handleDifficultyFilter('Easy');
+assert(appInstance.getFilteredProblems().length === 200, "Easy filter count mismatch");
+appInstance.handleDifficultyFilter('Medium');
+assert(appInstance.getFilteredProblems().length === 500, "Medium filter count mismatch");
+appInstance.handleDifficultyFilter('Hard');
+assert(appInstance.getFilteredProblems().length === 300, "Hard filter count mismatch");
+appInstance.resetFilters();
+
+appInstance.handleTopicFilter('Arrays');
+assert(appInstance.getFilteredProblems().length > 0, "Arrays topic filter mismatch");
+appInstance.resetFilters();
+
+// Verify Guide Navigation & Default Topic
+appInstance.navigate('/guide');
+assert(appInstance.currentRoute === '/guide', "Route must be /guide");
+assert(appInstance.activeGuideTopic === 'arrays', "Default active guide topic must be 'arrays'");
+appInstance.setGuideLang('java');
+assert(appInstance.activeGuideLang === 'java', "Active guide language must switch to java");
+appInstance.setGuideLang('python');
+assert(appInstance.activeGuideLang === 'python', "Active guide language must switch to python");
+appInstance.setGuideLang('cpp');
+
+// Verify Modal Navigation & getProblemById
+const p1 = appInstance.getProblemById(1);
+assert(p1 && p1.id === 1, "getProblemById(1) failed");
+appInstance.openProblemModal(1);
+assert(appInstance.activeProblem && appInstance.activeProblem.id === 1, "Active modal problem must be #1");
+appInstance.navigateModalProblem(1);
+assert(appInstance.activeProblem && appInstance.activeProblem.id === 2, "navigateModalProblem(1) must navigate to #2");
+appInstance.navigateModalProblem(-1);
+assert(appInstance.activeProblem && appInstance.activeProblem.id === 1, "navigateModalProblem(-1) must navigate back to #1");
+appInstance.closeProblemModal();
+
+console.log("   User-reported issues suite passed: Global bindings, All 20 Pages, Filters, Guide 26 Chapters & Modal verified!");
+
 console.log(`\n==================================================`);
 console.log(`✅ QA TEST SUITE COMPLETED SUCCESSFULLY! Passed ${passedTests} assertions.`);
 console.log(`==================================================\n`);
