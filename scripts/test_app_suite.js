@@ -144,8 +144,8 @@ assert(localStorageStore['dsaproblems_theme_v3'] === 'light', "localStorage shou
 
 // 7. Test Navigation Section Ordering in index.html
 console.log("\n[Test 7] Validating Nav Section Ordering in index.html...");
-const expectedNavOrder = ['problems', 'guide', 'progress', 'privacy', 'contact', 'about'];
-const expectedExtendedNavOrder = ['problems', 'guide', 'progress', 'privacy', 'contact', 'about', 'terms', 'disclaimer'];
+const expectedNavOrder = ['problems', 'guide', 'progress', 'about', 'contact', 'privacy'];
+const expectedExtendedNavOrder = ['problems', 'guide', 'progress', 'about', 'contact', 'privacy', 'terms', 'disclaimer'];
 
 // Extract main-nav desktop buttons
 const mainNavMatch = indexHtml.match(/<nav[^>]*id=["']main-nav["'][^>]*>([\s\S]*?)<\/nav>/);

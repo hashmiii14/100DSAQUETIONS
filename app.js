@@ -1326,7 +1326,7 @@ class DSAApp {
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>⏳ Sending to mdhashmi955@gmail.com...</span>';
+      submitBtn.innerHTML = '<span>Sending message...</span>';
     }
 
     if (statusAlert) {
@@ -1357,11 +1357,11 @@ class DSAApp {
             statusAlert.style.background = 'rgba(16, 185, 129, 0.12)';
             statusAlert.style.border = '1px solid rgba(16, 185, 129, 0.4)';
             statusAlert.style.color = 'var(--text-primary)';
-            statusAlert.innerHTML = '<strong style="color: #10b981;">✅ Message Sent Successfully!</strong> Your message has been sent directly to <strong>mdhashmi955@gmail.com</strong>. Thank you for reaching out!';
+            statusAlert.innerHTML = '<strong style="color: #10b981;">Message Sent Successfully!</strong> Your message has been sent directly to <strong>mdhashmi955@gmail.com</strong>. Thank you for reaching out!';
           }
           if (msgEl) msgEl.value = '';
           if (subjectEl) subjectEl.value = '';
-          this.showToast('✅ Message sent directly to mdhashmi955@gmail.com!');
+          this.showToast('Message sent directly to mdhashmi955@gmail.com!');
           return;
         }
       }
@@ -1379,7 +1379,7 @@ class DSAApp {
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>🚀 Send Message</span>';
+        submitBtn.innerHTML = '<span>Send Message</span>';
       }
     }
   }
