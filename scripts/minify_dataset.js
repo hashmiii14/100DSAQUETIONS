@@ -22,7 +22,7 @@ if (problemsMatch) {
 
 if (problems) {
   // 1. Full minified dataset questions.min.js
-  const minifiedJs = `const PROBLEMS=${JSON.stringify(problems)};`;
+  const minifiedJs = `if(typeof window!=='undefined'){window.PROBLEMS=${JSON.stringify(problems)};window.__SOLUTIONS_LOADED__=true;}var PROBLEMS=typeof window!=='undefined'?window.PROBLEMS:(typeof PROBLEMS!=='undefined'?PROBLEMS:[]);if(typeof module!=='undefined'){module.exports=PROBLEMS;}`;
   const minJsPath = path.join(__dirname, '../data/questions.min.js');
   fs.writeFileSync(minJsPath, minifiedJs, 'utf8');
   console.log(`✓ questions.min.js generated (${(fs.statSync(minJsPath).size / 1024 / 1024).toFixed(2)} MB)`);
@@ -41,14 +41,14 @@ if (problems) {
     nc: p.newConcept || ''
   }));
 
-  const indexJs = `if(typeof window!=='undefined'){window.PROBLEMS_INDEX=window.PROBLEMS=${JSON.stringify(indexArray)};}var PROBLEMS_INDEX=window.PROBLEMS_INDEX;`;
+  const indexJs = `if(typeof window!=='undefined'){window.PROBLEMS_INDEX=window.PROBLEMS=${JSON.stringify(indexArray)};}var PROBLEMS_INDEX=typeof window!=='undefined'?window.PROBLEMS_INDEX:(typeof PROBLEMS_INDEX!=='undefined'?PROBLEMS_INDEX:[]);if(typeof module!=='undefined'){module.exports=PROBLEMS_INDEX;}`;
   const indexJsPath = path.join(__dirname, '../data/questions_index.min.js');
   fs.writeFileSync(indexJsPath, indexJs, 'utf8');
   console.log(`✓ questions_index.min.js generated (${(fs.statSync(indexJsPath).size / 1024).toFixed(1)} KB)`);
 
   // 2b. Initial Paint Chunk questions_page1.min.js (~6.5 KB for 100/100 Mobile Score)
   const page1Array = indexArray.slice(0, 50);
-  const page1Js = `var PROBLEMS_PAGE1=${JSON.stringify(page1Array)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_PAGE1;`;
+  const page1Js = `var PROBLEMS_PAGE1=${JSON.stringify(page1Array)};if(typeof window!=='undefined'&&!window.PROBLEMS)window.PROBLEMS=PROBLEMS_PAGE1;if(typeof module!=='undefined'){module.exports=PROBLEMS_PAGE1;}`;
   const page1JsPath = path.join(__dirname, '../data/questions_page1.min.js');
   fs.writeFileSync(page1JsPath, page1Js, 'utf8');
   console.log(`✓ questions_page1.min.js generated (${(fs.statSync(page1JsPath).size / 1024).toFixed(1)} KB)`);
@@ -78,7 +78,7 @@ if (fs.existsSync(guidePath)) {
   }
 
   if (guideTopics) {
-    const minifiedGuideJs = `if(typeof window!=='undefined'){window.GUIDE_DATA=${JSON.stringify(guideTopics)};}var GUIDE_DATA=window.GUIDE_DATA;`;
+    const minifiedGuideJs = `if(typeof window!=='undefined'){window.GUIDE_DATA=${JSON.stringify(guideTopics)};}var GUIDE_DATA=typeof window!=='undefined'?window.GUIDE_DATA:(typeof GUIDE_DATA!=='undefined'?GUIDE_DATA:[]);if(typeof module!=='undefined'){module.exports=GUIDE_DATA;}`;
     const minGuideJsPath = path.join(__dirname, '../data/guide_data.min.js');
     fs.writeFileSync(minGuideJsPath, minifiedGuideJs, 'utf8');
     console.log(`✓ guide_data.min.js generated (${(fs.statSync(minGuideJsPath).size / 1024).toFixed(1)} KB)`);

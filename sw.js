@@ -1,5 +1,5 @@
 // Service Worker for DSA Problems (dsaproblems.site)
-const CACHE_NAME = 'dsaproblems-v6';
+const CACHE_NAME = 'dsaproblems-v7';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

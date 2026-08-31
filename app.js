@@ -106,7 +106,7 @@ class DSAApp {
     if (typeof window !== 'undefined' && !window.__SOLUTIONS_LOADING__) {
       window.__SOLUTIONS_LOADING__ = true;
       const s = document.createElement('script');
-      s.src = 'data/questions.min.js';
+      s.src = '/data/questions.min.js';
       s.onload = () => {
         window.__SOLUTIONS_LOADED__ = true;
         window.__SOLUTIONS_LOADING__ = false;
@@ -1376,14 +1376,14 @@ class DSAApp {
         if (targetHead && typeof targetHead.appendChild === 'function') {
           this._guideLoadingScript = true;
           const s = document.createElement('script');
-          s.src = 'data/guide_data.min.js';
+          s.src = '/data/guide_data.min.js';
           s.onload = () => {
             this._guideLoadingScript = false;
             this.renderGuideSection();
           };
           s.onerror = () => {
             const fallback = document.createElement('script');
-            fallback.src = 'data/guide_data.js';
+            fallback.src = '/data/guide_data.js';
             fallback.onload = () => {
               this._guideLoadingScript = false;
               this.renderGuideSection();
