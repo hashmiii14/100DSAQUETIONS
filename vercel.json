@@ -35,12 +35,16 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://pagead2.googleadservices.com https://adservice.google.com https://www.googletagservices.com https://tpc.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://pagead2.googlesyndication.com https://pagead2.googleadservices.com https://adservice.google.com https://vitals.vercel-insights.com https://ep1.adtrafficquality.google https://*.adtrafficquality.google https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://pagead2.googleadservices.com https://adservice.google.com https://www.googletagservices.com https://tpc.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net https://*.vercel-insights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://pagead2.googlesyndication.com https://pagead2.googleadservices.com https://adservice.google.com https://vitals.vercel-insights.com https://ep1.adtrafficquality.google https://*.adtrafficquality.google https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
     {
-      "source": "/:path*\\.(js|css|json)",
+      "source": "/(.*)\\.(js|css|json)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -49,7 +53,7 @@
       ]
     },
     {
-      "source": "/:path*\\.(png|jpg|jpeg|gif|ico|svg|woff2|txt|xml)",
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|ico|svg|woff2|txt|xml)",
       "headers": [
         {
           "key": "Cache-Control",
