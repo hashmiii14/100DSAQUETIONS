@@ -11,7 +11,23 @@
   "categories": ["education", "developer", "utilities"],
   "icons": [
     {
-      "src": "images/og-image.png",
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/og-image.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
