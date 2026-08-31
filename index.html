@@ -889,7 +889,7 @@
 
         <h3 style="font-size: 16px; font-weight: 700; color: var(--text-primary); margin-top: 12px;">2. Trademark Notice</h3>
         <p style="color: var(--text-secondary); line-height: 1.7;">
-          "LeetCode" and related names, marks, emblems, and images are registered trademarks of their respective owners. Company names mentioned on problem cards (e.g., Apple, Adobe, Amazon) are listed strictly for historical algorithmic categorization and interview contextualization under Nominative Fair Use.
+          "LeetCode" and related names, marks, emblems, and images are registered trademarks of their respective owners. Company names mentioned on problem cards are listed strictly for historical algorithmic categorization and interview contextualization under Nominative Fair Use.
         </p>
 
         <h3 style="font-size: 16px; font-weight: 700; color: var(--text-primary); margin-top: 12px;">3. Code Implementations</h3>
@@ -899,26 +899,20 @@
       </div>
     </section>
 
-    <!-- View 8: Contact & Support (100% Fully Working Direct Form & Gmail Integration) -->
+    <!-- View 8: Contact & Support (Simple, Clean & 100% Working) -->
     <section class="view-section" id="view-contact">
       <div style="display: flex; flex-direction: column; gap: 24px; align-items: center; width: 100%;">
         
-        <!-- Interactive Contact Form Card -->
-        <div class="info-card-container" style="max-width: 680px;">
+        <!-- Contact Form Card -->
+        <div class="info-card-container" style="max-width: 620px;">
           <h2 style="font-size: 24px; font-weight: 800; color: var(--text-primary); text-align: center;">Contact Us</h2>
-          <p style="color: var(--text-secondary); line-height: 1.6; text-align: center; font-size: 14px; margin-bottom: 8px;">
-            Have questions about a problem explanation, suggestions for curriculum improvement, or bug reports? Send a message directly to <strong>mdhashmi955@gmail.com</strong>.
+          <p style="color: var(--text-secondary); line-height: 1.6; text-align: center; font-size: 14px; margin-bottom: 12px;">
+            Have questions about a problem explanation, suggestions for curriculum improvement, or bug reports? Reach out directly below or email <a href="mailto:mdhashmi955@gmail.com" style="color: var(--accent-primary); font-weight: 600;">mdhashmi955@gmail.com</a>.
           </p>
 
-          <!-- Direct Email Quick Action Pill & Gmail Web Button -->
-          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
-            <div class="upi-id-pill" onclick="app.copyContactEmail()" title="Click to copy email address" style="cursor: pointer; padding: 8px 16px;">
-              <span style="color: var(--text-muted); font-size: 12.5px;">Direct Email:</span>
-              <strong style="font-family: var(--font-mono); color: var(--accent-primary); font-size: 14.5px;">mdhashmi955@gmail.com</strong>
-              <span id="copy-email-badge" style="font-size: 11.5px; background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; color: var(--text-secondary);">📋 Copy</span>
-            </div>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mdhashmi955@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 8px 14px; font-size: 12.5px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
-              <span>📧 Open in Gmail</span>
+          <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+            <a href="mailto:mdhashmi955@gmail.com" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <span>📧 mdhashmi955@gmail.com</span>
             </a>
           </div>
 
@@ -947,19 +941,9 @@
               <textarea id="contact-message" name="message" class="search-input" style="padding: 10px 12px; min-height: 120px; font-family: var(--font-sans);" placeholder="Write your message here..." required></textarea>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 6px;">
-              <button type="submit" id="contact-submit-btn" class="btn-primary" style="padding: 10px 24px; font-size: 14px; min-width: 140px;">
-                <span>🚀 Send Message</span>
-              </button>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <button type="button" class="btn-secondary" onclick="app.openInGmail()" style="padding: 10px 14px; font-size: 12.5px;" title="Compose in Gmail in new tab">
-                  <span>📧 Compose in Gmail</span>
-                </button>
-                <button type="button" class="btn-secondary" onclick="app.openInMailApp()" style="padding: 10px 14px; font-size: 12.5px;" title="Open Default Mail Application">
-                  <span>✉️ Mail App</span>
-                </button>
-              </div>
-            </div>
+            <button type="submit" id="contact-submit-btn" class="btn-primary" style="padding: 11px 24px; font-size: 14px; width: 100%; margin-top: 4px;">
+              <span>🚀 Send Message</span>
+            </button>
           </form>
         </div>
 

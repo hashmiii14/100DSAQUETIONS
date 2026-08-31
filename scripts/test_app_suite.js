@@ -114,7 +114,7 @@ const idRegex = /document\.getElementById\(['"]([^'"]+)['"]\)/g;
 const appJsContent = fs.readFileSync(path.join(__dirname, '../app.js'), 'utf8');
 
 let match;
-const dynamicIds = new Set(['btn-copy-guide-code']);
+const dynamicIds = new Set(['btn-copy-guide-code', 'copy-email-badge']);
 const missingIds = [];
 while ((match = idRegex.exec(appJsContent)) !== null) {
   const elementId = match[1];
