@@ -1885,27 +1885,150 @@ body, .site-header, .site-footer, .view-section, .info-card-container, .problem-
   }
 }
 
-/* ── Google AdSense Slots & Containers ────────────────────────────────────────── */
+/* ── Google AdSense Slots & Containers (100% Policy Compliant) ─────────────── */
 .adsense-slot-wrapper {
   width: 100%;
-  margin: 20px 0;
+  max-width: 970px;
+  margin: 20px auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 90px;
-  background: var(--bg-surface);
-  border: 1px dashed var(--border-color);
+  background: transparent;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 4px;
+}
+
+.adsense-slot-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 4px;
+  display: block;
+  user-select: none;
 }
 
 .adsense-slot-wrapper .adsbygoogle {
   display: block !important;
   width: 100% !important;
-  min-width: 250px !important;
+  min-width: 280px !important;
   min-height: 90px !important;
+}
+
+@media (max-width: 768px) {
+  .adsense-slot-wrapper {
+    max-width: 728px;
+    margin: 16px auto;
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adsense-slot-wrapper {
+    max-width: 336px;
+    margin: 14px auto;
+    min-height: 100px;
+  }
+  .adsense-slot-wrapper .adsbygoogle {
+    min-height: 100px !important;
+  }
+}
+
+/* ── Cookie Consent Banner (GDPR & AdSense Compliance) ─────────────────────── */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 640px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  padding: 16px 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  animation: slideUpConsent 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpConsent {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.cookie-consent-text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cookie-consent-text a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cookie-btn-accept {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 150ms ease;
+  white-space: nowrap;
+}
+
+.cookie-btn-accept:hover {
+  background: var(--accent-hover);
+}
+
+.cookie-btn-decline {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+
+.cookie-btn-decline:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .cookie-consent-banner {
+    flex-direction: column;
+    align-items: stretch;
+    bottom: 12px;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .cookie-consent-actions {
+    justify-content: flex-end;
+  }
 }
 
 /* ── Print & PDF Export Optimizations ────────────────────────────────────── */

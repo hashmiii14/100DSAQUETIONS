@@ -162,6 +162,7 @@ class DSAApp {
     this.renderTopicPills();
     this.bindGlobalKeyboardShortcuts();
     this.handleRouteFromUrl();
+    this.checkCookieConsent();
 
     // Listen to browser popstate
     if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
@@ -256,6 +257,25 @@ class DSAApp {
     this.setTheme(next);
   }
 
+  switchView(viewName) {
+    const routeMap = {
+      'explorer': '/problems',
+      'problems': '/problems',
+      'guide': '/guide',
+      'dashboard': '/progress',
+      'progress': '/progress',
+      'about': '/about',
+      'privacy': '/privacy',
+      'terms': '/terms',
+      'disclaimer': '/disclaimer',
+      'contact': '/contact',
+      'admin-quality': '/admin/quality'
+    };
+    this.currentView = viewName;
+    const targetRoute = routeMap[viewName] || `/${viewName}`;
+    this.navigate(targetRoute);
+  }
+
   /* ── Routing & View Management ────────────────────────────────────────────── */
   navigate(routeStr) {
     if (window.location.pathname !== routeStr && window.location.hash !== '#' + routeStr) {
@@ -273,7 +293,7 @@ class DSAApp {
     if (route === '/' || route === '/index.html') route = '/problems';
     if (window.location.hash) {
       let hashRoute = window.location.hash.replace(/^#\/?/, '/');
-      if (['/problems', '/guide', '/progress', '/about', '/privacy', '/contact', '/admin/quality'].includes(hashRoute)) {
+      if (['/problems', '/guide', '/progress', '/about', '/privacy', '/terms', '/disclaimer', '/contact', '/admin/quality'].includes(hashRoute)) {
         route = hashRoute;
       }
     }
@@ -305,6 +325,8 @@ class DSAApp {
       '/progress': 'progress',
       '/about': 'about',
       '/privacy': 'privacy',
+      '/terms': 'terms',
+      '/disclaimer': 'disclaimer',
       '/contact': 'contact',
       '/admin/quality': 'admin-quality'
     };
@@ -315,6 +337,8 @@ class DSAApp {
       'progress': 'Track Your DSA Progress — DSA Problems',
       'about': 'About DSA Problems — 1000 LeetCode Problem Sheet',
       'privacy': 'Privacy Policy — DSA Problems (dsaproblems.site)',
+      'terms': 'Terms of Service — DSA Problems (dsaproblems.site)',
+      'disclaimer': 'Disclaimer & Fair Use Notice — DSA Problems (dsaproblems.site)',
       'contact': 'Contact Us — DSA Problems (dsaproblems.site)',
       'admin-quality': 'Quality Control — DSA Problems'
     };
@@ -324,7 +348,9 @@ class DSAApp {
       'guide': 'Comprehensive Data Structures and Algorithms learning guide. Master Arrays, Two Pointers, Sliding Window, Trees, Graphs, Dynamic Programming and 20+ core DSA patterns.',
       'progress': 'Track your coding interview preparation progress, difficulty breakdown, topic mastery, solved problems, and bookmarked questions locally in your browser.',
       'about': 'Learn about DSA Problems — A clean, developer-focused 1,000 LeetCode problem sheet designed for structured coding interview prep.',
-      'privacy': 'Privacy Policy for DSA Problems (dsaproblems.site). Learn about our zero-tracking, privacy-first local storage model.',
+      'privacy': 'Privacy Policy for DSA Problems (dsaproblems.site). Learn about our zero-tracking, privacy-first local storage model and Google AdSense compliance.',
+      'terms': 'Terms of Service for DSA Problems (dsaproblems.site). Guidelines, acceptable use policies, and legal terms for our free 1,000 LeetCode problem sheet platform.',
+      'disclaimer': 'Educational disclaimer and third-party fair use statement for DSA Problems (dsaproblems.site).',
       'contact': 'Get in touch with the DSA Problems team. Suggestions, feedback, and support for the 1000 LeetCode DSA roadmap.',
       'admin-quality': 'Internal quality control and dataset verification tool for DSA Problems.'
     };
@@ -720,7 +746,7 @@ class DSAApp {
         const formattedId = `#${String(p.id).padStart(3, '0')}`;
         const practiceUrl = p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || p.u || null;
         const ctaBtnHtml = practiceUrl
-          ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">🔗 Solve on LeetCode</a>`
+          ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve">Solve on LeetCode</a>`
           : `<span class="btn-solve disabled" title="No direct link">No Link</span>`;
 
         // Desktop Row HTML
@@ -938,7 +964,7 @@ class DSAApp {
 
       const practiceUrl = p.canonicalUrl || p.leetcode_url || p.leetcodeUrl || p.u || null;
       const modalCtaBtn = practiceUrl
-        ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">🔗 Solve on LeetCode</a>`
+        ? `<a href="${practiceUrl}" target="_blank" rel="noopener noreferrer" class="btn-solve" style="margin-left: auto;">Solve on LeetCode</a>`
         : `<span class="btn-solve disabled" style="margin-left: auto;" title="No direct link">No Link</span>`;
 
       bodyEl.innerHTML = `
@@ -1228,6 +1254,63 @@ class DSAApp {
     }
   }
 
+  checkCookieConsent() {
+    if (typeof localStorage !== 'undefined' && typeof document !== 'undefined') {
+      try {
+        const consent = localStorage.getItem('dsaproblems_cookie_consent');
+        const banner = document.getElementById('cookie-consent-banner');
+        if (banner) {
+          banner.style.display = consent ? 'none' : 'flex';
+        }
+      } catch (_) {}
+    }
+  }
+
+  acceptCookies() {
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem('dsaproblems_cookie_consent', 'accepted');
+      } catch (_) {}
+    }
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) banner.style.display = 'none';
+    this.showToast('Cookie preferences saved.');
+  }
+
+  declineCookies() {
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem('dsaproblems_cookie_consent', 'declined');
+      } catch (_) {}
+    }
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) banner.style.display = 'none';
+  }
+
+  handleContactSubmit(e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+    const nameEl = document.getElementById('contact-name');
+    const emailEl = document.getElementById('contact-email');
+    const subjectEl = document.getElementById('contact-subject');
+    const msgEl = document.getElementById('contact-message');
+
+    const name = nameEl ? nameEl.value.trim() : '';
+    const email = emailEl ? emailEl.value.trim() : '';
+    const subject = subjectEl ? subjectEl.value.trim() : 'DSA Problems Inquiry';
+    const message = msgEl ? msgEl.value.trim() : '';
+
+    if (!message) {
+      this.showToast('Please enter your message.');
+      return;
+    }
+
+    const mailtoUrl = `mailto:mdhashmi955@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoUrl;
+    }
+    this.showToast('Opening email client...');
+  }
+
   toggleUpiDetails() {
     const box = document.getElementById('upi-details-box');
     if (!box) return;
@@ -1245,11 +1328,11 @@ class DSAApp {
 
   openPaytmApp(e) {
     const paytmUrl = 'paytmmp://pay?pa=8595018458@ptsbi&pn=DSA%20Problems&cu=INR';
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
+    const isMobile = (typeof navigator !== 'undefined') && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile && typeof window !== 'undefined') {
       window.location.href = paytmUrl;
     } else {
-      if (e) e.preventDefault();
+      if (e && typeof e.preventDefault === 'function') e.preventDefault();
       this.copyUpiId();
       this.showToast('UPI ID copied: 8595018458@ptsbi (Scan QR code with Paytm)');
     }

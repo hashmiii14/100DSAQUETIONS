@@ -195,12 +195,24 @@ if (problems.length !== 1000) {
   process.exit(1);
 }
 
-console.log("Testing View Switching across all 6 views...");
-const views = ['explorer', 'guide', 'dashboard', 'about', 'privacy', 'contact'];
+console.log("Testing View Switching across all views...");
+const views = ['explorer', 'guide', 'dashboard', 'about', 'privacy', 'contact', 'terms', 'disclaimer'];
 views.forEach(v => {
   appInstance.switchView(v);
   console.log(` Switched to view '${v}', currentView = '${appInstance.currentView}'`);
 });
+
+console.log("Testing Cookie Consent banner handlers...");
+appInstance.acceptCookies();
+if (localStorageStore['dsaproblems_cookie_consent'] !== 'accepted') {
+  console.error("❌ FAIL: acceptCookies failed");
+  process.exit(1);
+}
+appInstance.declineCookies();
+if (localStorageStore['dsaproblems_cookie_consent'] !== 'declined') {
+  console.error("❌ FAIL: declineCookies failed");
+  process.exit(1);
+}
 
 console.log("Testing Modal Open for Problem #1 (Two Sum)...");
 appInstance.openProblemModal(1);

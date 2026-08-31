@@ -48,7 +48,21 @@
 
   <url>
     <loc>https://www.dsaproblems.site/contact</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dsaproblems.site/terms</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dsaproblems.site/disclaimer</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
